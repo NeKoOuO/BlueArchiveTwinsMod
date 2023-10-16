@@ -1,0 +1,17 @@
+baModDeveloper\character\BATwinsCharacter.class
+baModDeveloper\patch\BATwinsOverlayMenuRenderFix.class
+baModDeveloper\ui\panels\energyorb\BATwinsEnergyMomoiOrb.class
+baModDeveloper\ui\panels\button\BATwinsSwitchOrbButton.class
+baModDeveloper\core\BATwinsEnergyManager.class
+baModDeveloper\character\BATwinsCharacter$Enums.class
+baModDeveloper\ui\panels\BATwinsEnergyPanel.class
+baModDeveloper\ui\panels\BATwinsEnergyPanel$1.class
+baModDeveloper\ui\panels\BATwinsEnergyPanel$EnergyType.class
+baModDeveloper\helpers\ModHelper.class
+baModDeveloper\ui\panels\energyorb\BATwinsEnergyMidoriOrb.class
+baModDeveloper\cards\BATwinsStrick.class
+baModDeveloper\patch\BATwinsOverlayMenuUpdateFix.class
+baModDeveloper\cards\BATwinsModCustomCard.class
+baModDeveloper\effect\BATwinsRefreshEnergyEffect.class
+baModDeveloper\BATwinsMod.class
+baModDeveloper\patch\BATwinsLoadLayerSaveFix.class

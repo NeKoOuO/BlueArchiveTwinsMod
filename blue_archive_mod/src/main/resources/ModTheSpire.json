@@ -1,0 +1,13 @@
+{
+    "modid":"Blue_Archive_Mod",
+    "name":"Blue archive mod",
+    "author_list":[
+        "maming"
+    ],
+    "description":"Blue archive mod",
+    "dependencies":[
+        "basemod"
+    ],
+    "version":"1.0",
+    "sts_version":"9-21-2023"
+}
