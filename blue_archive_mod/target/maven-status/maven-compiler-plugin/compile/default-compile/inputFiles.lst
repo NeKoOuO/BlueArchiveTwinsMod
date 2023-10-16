@@ -1,5 +1,9 @@
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\animation\AbstractGIFCard.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\animation\GifDecoder.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\core\BATwinsEnergyManager.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\animation\AnimationPatch.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\BATwinsMod.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\animation\AbstractAnimation.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\ui\panels\BATwinsEnergyPanel.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\ui\panels\button\BATwinsSwitchOrbButton.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsOverlayMenuRenderFix.java
@@ -8,6 +12,7 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\character\BATwinsCharacter.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\ui\panels\energyorb\BATwinsEnergyMomoiOrb.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsStrick.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\animation\GifAnimation.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\effect\BATwinsRefreshEnergyEffect.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\ui\panels\energyorb\BATwinsEnergyMidoriOrb.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsLoadLayerSaveFix.java
