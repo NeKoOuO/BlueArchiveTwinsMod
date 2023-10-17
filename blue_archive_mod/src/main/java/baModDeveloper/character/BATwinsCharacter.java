@@ -1,7 +1,11 @@
 package baModDeveloper.character;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
+import baModDeveloper.cards.BATwinsMidoriStrick;
+import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomEnergyOrb;
 import com.badlogic.gdx.graphics.Color;
@@ -11,28 +15,32 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.Vajra;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 
 import baModDeveloper.BATwinsMod;
-import baModDeveloper.cards.BATwinsStrick;
+import baModDeveloper.cards.BATwinsMomoiStrick;
 import baModDeveloper.core.BATwinsEnergyManager;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMidoriOrb;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMomoiOrb;
 import basemod.abstracts.CustomPlayer;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 public class BATwinsCharacter extends CustomPlayer {
     private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder1");
@@ -101,7 +109,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public CardColor getCardColor() {
-        return Enums.BATWINS_CARD;
+        return Enums.BATWINS_MOMOI_CARD;
     }
 
     @Override
@@ -113,7 +121,13 @@ public class BATwinsCharacter extends CustomPlayer {
     public Color getCardTrailColor() {
         return BATwinsMod.BATwinsColor;
     }
-
+    public Color getCardTrailColor(BATwinsEnergyPanel.EnergyType cardType){
+        if (cardType== BATwinsEnergyPanel.EnergyType.MOMOI){
+            return BATwinsMod.MOMOIColor;
+        }else{
+            return BATwinsMod.MIDORIColor;
+        }
+    }
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
         return "ATTACK_HEAVY";
@@ -155,14 +169,17 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new BATwinsStrick();
+        return new BATwinsMomoiStrick();
     }
 
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         for (int x = 0; x < 5; x++) {
-            retVal.add(BATwinsStrick.ID);
+            retVal.add(BATwinsMomoiStrick.ID);
+        }
+        for (int x = 0; x < 5; x++) {
+            retVal.add(BATwinsMidoriStrick.ID);
         }
         return retVal;
     }
@@ -199,11 +216,15 @@ public class BATwinsCharacter extends CustomPlayer {
         @SpireEnum
         public static PlayerClass BATwins;
 
-        @SpireEnum(name = "EXAMPLE_GREEN")
-        public static AbstractCard.CardColor BATWINS_CARD;
+        @SpireEnum(name = "BATWINSMOMOICARD")
+        public static AbstractCard.CardColor BATWINS_MOMOI_CARD;
+        @SpireEnum(name = "BATWINSMIDORICARD")
+        public static AbstractCard.CardColor BATWINS_MIDORI_CARD;
 
-        @SpireEnum(name = "EXAMPLE_GREEN")
-        public static CardLibrary.LibraryType BATWINS_LIBRARY;
+        @SpireEnum(name = "BATWINSMOMOICARD")
+        public static CardLibrary.LibraryType BATWINS_MOMOI_LIBRARY;
+        @SpireEnum(name = "BATWINSMIDORICARD")
+        public static CardLibrary.LibraryType BATWINS_MIDORI_LIBRARY;
     }
 
     @Override
@@ -230,4 +251,70 @@ public class BATwinsCharacter extends CustomPlayer {
         BATwinsEnergyPanel.addEnergy(e, BATwinsEnergyPanel.EnergyType.ALL);
         this.hand.glowCheck();
     }
+
+    @Override
+    public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool){
+        AbstractCard.CardColor MomoiColor = Enums.BATWINS_MOMOI_CARD;
+        AbstractCard.CardColor MidoriColor=Enums.BATWINS_MIDORI_CARD;
+        Iterator var3 = CardLibrary.cards.entrySet().iterator();
+
+        while(true) {
+            Map.Entry c;
+            AbstractCard card;
+            do {
+                do {
+                    do {
+                        if (!var3.hasNext()) {
+                            return tmpPool;
+                        }
+
+                        c = (Map.Entry)var3.next();
+                        card = (AbstractCard)c.getValue();
+                    } while(!card.color.equals(MomoiColor)&&!card.color.equals(MidoriColor));
+                } while(card.rarity == AbstractCard.CardRarity.BASIC);
+            } while(UnlockTracker.isCardLocked((String)c.getKey()) && !Settings.isDailyRun);
+
+            tmpPool.add(card);
+        }
+    }
+
+    @Override
+    public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
+        if (c.type == AbstractCard.CardType.ATTACK) {
+            this.useFastAttackAnimation();
+        }
+
+        c.calculateCardDamage(monster);
+        if (c.cost == -1 && EnergyPanel.totalCount < energyOnUse && !c.ignoreEnergyOnUse) {
+            c.energyOnUse = EnergyPanel.totalCount;
+        }
+
+        if (c.cost == -1 && c.isInAutoplay) {
+            c.freeToPlayOnce = true;
+        }
+
+        c.use(this, monster);
+        AbstractDungeon.actionManager.addToBottom(new UseCardAction(c, monster));
+        if (!c.dontTriggerOnUseCard) {
+            this.hand.triggerOnOtherCardPlayed(c);
+        }
+
+        this.hand.removeCard(c);
+        this.cardInUse = c;
+        c.target_x = (float)(Settings.WIDTH / 2);
+        c.target_y = (float)(Settings.HEIGHT / 2);
+        if (c.costForTurn > 0 && !c.freeToPlay() && !c.isInAutoplay && (!this.hasPower("Corruption") || c.type != AbstractCard.CardType.SKILL)) {
+            if(c instanceof BATwinsModCustomCard&&this.energy instanceof BATwinsEnergyManager){
+                ((BATwinsEnergyManager)this.energy).use(c.costForTurn,((BATwinsModCustomCard) c).energyType);
+            }else{
+                this.energy.use(c.costForTurn);
+            }
+        }
+
+        if (!this.hand.canUseAnyCard() && !this.endTurnQueued) {
+            AbstractDungeon.overlayMenu.endTurnButton.isGlowing = true;
+        }
+
+    }
+
 }

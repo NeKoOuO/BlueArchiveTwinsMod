@@ -50,4 +50,8 @@ public class BATwinsEnergyManager extends EnergyManager{
     public void use(int e){
         BATwinsEnergyPanel.useEnergy(e,EnergyType.SPEIFY);
     }
+
+    public void use(int e,EnergyType energyType){
+        BATwinsEnergyPanel.useEnergy(e,energyType);
+    }
 }

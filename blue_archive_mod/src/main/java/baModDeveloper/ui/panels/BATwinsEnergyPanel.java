@@ -121,20 +121,46 @@ public class BATwinsEnergyPanel extends EnergyPanel {
     public static void useEnergy(int e, EnergyType type) {
         switch (type) {
             case MOMOI:
-                MomoiCount -= e;
+                if(e<=MomoiCount){
+                    MomoiCount -= e;
+                }else {
+                    e=e-MomoiCount;
+                    MomoiCount=0;
+                    MidoriCount-=2*e;
+                }
                 break;
             case MIDORI:
-                MidoriCount -= e;
+                if(e<=MidoriCount){
+                    MidoriCount -= e;
+                }else {
+                    e=e-MidoriCount;
+                    MidoriCount=0;
+                    MomoiCount-=2*e;
+                }
                 break;
             case ALL:
                 MomoiCount-=e;
                 MidoriCount-=e;
                 break;
             case SPEIFY:
-                if (selectedEnergySlot==EnergyType.MOMOI)
-                    MomoiCount -= e;
-                else
-                    MidoriCount -= e;
+                if (selectedEnergySlot==EnergyType.MOMOI){
+                    if(e<=MomoiCount){
+                        MomoiCount -= e;
+                    }else {
+                        e=e-MomoiCount;
+                        MomoiCount=0;
+                        MidoriCount-=e;
+                    }
+                }
+                else{
+                    if(e<=MidoriCount){
+                        MidoriCount -= e;
+                    }else {
+                        e=e-MidoriCount;
+                        MidoriCount=0;
+                        MomoiCount-=e;
+                    }
+                }
                 break;
         }
         if (MomoiCount < 0) {

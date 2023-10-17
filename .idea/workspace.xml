@@ -4,25 +4,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="部分图片重新制作，万恶的idea！！！">
-      <change afterPath="$PROJECT_DIR$/.idea/blue_archive_mod.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mods/blue_archive_mod.jar" beforeDir="false" />
+    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="增加animation模块。&#10;增加readme。">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsMidoriStrick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsCardTrailEffectFix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsSoulFix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/BATwinsMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/BATwinsMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsStrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsMomoiStrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/character/BATwinsCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/character/BATwinsCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/core/BATwinsEnergyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/core/BATwinsEnergyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/ui/panels/BATwinsEnergyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/ui/panels/BATwinsEnergyPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/1024/bg_attack_1024.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/1024/bg_attack_1024.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/1024/bg_power_1024.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/1024/bg_power_1024.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/1024/bg_skill_1024.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/1024/bg_skill_1024.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/512/bg_attack_512.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/512/bg_attack_512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/512/bg_power_512.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/512/bg_power_512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/512/bg_skill_512.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/512/bg_skill_512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/anger.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/anger.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/armaments.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/armaments.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/barricade.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/barricade.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/BATwinsMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/BATwinsMod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AbstractAnimation.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AbstractAnimation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AbstractGIFCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AbstractGIFCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AnimationPatch$RenderPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AnimationPatch$RenderPatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AnimationPatch$UpdatePatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AnimationPatch$UpdatePatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AnimationPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/AnimationPatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/GifAnimation.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/GifAnimation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/GifDecoder$DixieMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/GifDecoder$DixieMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/GifDecoder$GifFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/GifDecoder$GifFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/GifDecoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/animation/GifDecoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsStrick.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsStrick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter$Enums.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter$Enums.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/core/BATwinsEnergyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/core/BATwinsEnergyManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/effect/BATwinsRefreshEnergyEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/effect/BATwinsRefreshEnergyEffect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/helpers/ModHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/helpers/ModHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsLoadLayerSaveFix.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsLoadLayerSaveFix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsOverlayMenuRenderFix.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsOverlayMenuRenderFix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsOverlayMenuUpdateFix.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsOverlayMenuUpdateFix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/BATwinsEnergyPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/BATwinsEnergyPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/BATwinsEnergyPanel$EnergyType.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/BATwinsEnergyPanel$EnergyType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/BATwinsEnergyPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/BATwinsEnergyPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/button/BATwinsSwitchOrbButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/button/BATwinsSwitchOrbButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/energyorb/BATwinsEnergyMidoriOrb.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/energyorb/BATwinsEnergyMidoriOrb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/energyorb/BATwinsEnergyMomoiOrb.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/ui/panels/energyorb/BATwinsEnergyMomoiOrb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "MingLaoShi"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MingLaoShi&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -34,30 +85,30 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2WqpDCWZBf58vDXdhHPAuFjFppa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="StartGame" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar" />
@@ -75,7 +126,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697469842861</updated>
-      <workItem from="1697469844348" duration="1058000" />
+      <workItem from="1697469844348" duration="4781000" />
+      <workItem from="1697543770000" duration="9318000" />
     </task>
     <task id="LOCAL-00001" summary="部分图片重新制作，万恶的idea！！！">
       <option name="closed" value="true" />
@@ -85,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697470238247</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="增加animation模块。&#10;增加readme。">
+      <option name="closed" value="true" />
+      <created>1697470949581</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697470949581</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +191,28 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="部分图片重新制作，万恶的idea！！！" />
-    <option name="LAST_COMMIT_MESSAGE" value="部分图片重新制作，万恶的idea！！！" />
+    <MESSAGE value="增加animation模块。&#10;增加readme。" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加animation模块。&#10;增加readme。" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsCardTrailEffectFix.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar!/basemod/BaseMod.class</url>
+          <line>1839</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/core/BATwinsEnergyManager.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
