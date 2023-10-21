@@ -11,7 +11,7 @@ public class BATwinsSoulFix {
     @SpireInsertPatch(rloc = 82)
     public static void updateMovementFix(Soul _instance){
         if(_instance.card instanceof BATwinsModCustomCard){
-            BATwinsCardTrailEffectFix.cardType=((BATwinsModCustomCard)_instance.card).energyType;
+            BATwinsCardTrailEffectFix.cardType=((BATwinsModCustomCard)_instance.card).modifyEnergyType;
         }
     }
 

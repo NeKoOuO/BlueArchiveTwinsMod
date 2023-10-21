@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
-import baModDeveloper.cards.BATwinsMidoriStrick;
-import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.animation.AbstractAnimation;
+import baModDeveloper.animation.GifAnimation;
+import baModDeveloper.cards.*;
+import baModDeveloper.helpers.ImageHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomEnergyOrb;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
@@ -29,12 +33,12 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.Vajra;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 
 import baModDeveloper.BATwinsMod;
-import baModDeveloper.cards.BATwinsMomoiStrick;
 import baModDeveloper.core.BATwinsEnergyManager;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMidoriOrb;
@@ -84,6 +88,9 @@ public class BATwinsCharacter extends CustomPlayer {
     private EnergyOrbInterface energyOrbMomoi;
     private EnergyOrbInterface energyOrbMidori;
 
+
+    private static final String stand_Img=ModHelper.makeImgPath("char","standup");
+//    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
     public BATwinsCharacter(String name) {
         super(name, Enums.BATwins, MOMOI_ORB_TEXTURES, MOMOI_ORB_VFX, LAYER_SPEED, null, null);
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
@@ -92,9 +99,10 @@ public class BATwinsCharacter extends CustomPlayer {
         this.energyOrbMomoi = new BATwinsEnergyMomoiOrb(MOMOI_ORB_TEXTURES, MOMOI_ORB_VFX, LAYER_SPEED,MOMOI_ORB_MARK);
         this.energyOrbMidori = new BATwinsEnergyMidoriOrb(MIDORI_ORB_TEXTURES, MIDORI_ORB_VFX, LAYER_SPEED,MIDORI_ORB_MARK);
 
-        this.initializeClass(ModHelper.makeImgPath("char", "character"), BATWINS_CHARACTER_SHOULDER_2,
+        this.initializeClass(stand_Img, BATWINS_CHARACTER_SHOULDER_2,
                 BATWINS_CHARACTER_SHOULDER_1, BATWINS_CHARACTER_CORPSE, getLoadout(), 0.0F, 0.0F, 200.0F, 200.0F,
                 new BATwinsEnergyManager(2));
+
     }
 
     @Override
@@ -175,12 +183,16 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int x = 0; x < 5; x++) {
-            retVal.add(BATwinsMomoiStrick.ID);
-        }
-        for (int x = 0; x < 5; x++) {
-            retVal.add(BATwinsMidoriStrick.ID);
-        }
+        retVal.add(BATwinsMomoiStrick.ID);
+        retVal.add(BATwinsMomoiStrick.ID);
+        retVal.add(BATwinsMidoriStrick.ID);
+        retVal.add(BATwinsMidoriStrick.ID);
+        retVal.add(BATwinsMomoiDefend.ID);
+        retVal.add(BATwinsMomoiDefend.ID);
+        retVal.add(BATwinsMidoriDefend.ID);
+        retVal.add(BATwinsMidoriDefend.ID);
+        retVal.add(BATwinsAlreadyAngry.ID);
+        retVal.add(BATwinsPaintingConception.ID);
         return retVal;
     }
 
@@ -251,6 +263,10 @@ public class BATwinsCharacter extends CustomPlayer {
         BATwinsEnergyPanel.addEnergy(e, BATwinsEnergyPanel.EnergyType.ALL);
         this.hand.glowCheck();
     }
+    public void gainEnergy(int e, BATwinsEnergyPanel.EnergyType type){
+        BATwinsEnergyPanel.addEnergy(e,type);
+        this.hand.glowCheck();
+    }
 
     @Override
     public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool){
@@ -305,7 +321,7 @@ public class BATwinsCharacter extends CustomPlayer {
         c.target_y = (float)(Settings.HEIGHT / 2);
         if (c.costForTurn > 0 && !c.freeToPlay() && !c.isInAutoplay && (!this.hasPower("Corruption") || c.type != AbstractCard.CardType.SKILL)) {
             if(c instanceof BATwinsModCustomCard&&this.energy instanceof BATwinsEnergyManager){
-                ((BATwinsEnergyManager)this.energy).use(c.costForTurn,((BATwinsModCustomCard) c).energyType);
+                ((BATwinsEnergyManager)this.energy).use(c.costForTurn,((BATwinsModCustomCard) c).modifyEnergyType);
             }else{
                 this.energy.use(c.costForTurn);
             }
@@ -316,5 +332,21 @@ public class BATwinsCharacter extends CustomPlayer {
         }
 
     }
+
+    public TextureAtlas.AtlasRegion getOrb(String word){
+        if(word.equals("[TE]")){
+            return ImageHelper.MOMOISMALLORB;
+        }else{
+            return ImageHelper.MIDORISMALLORB;
+        }
+    }
+
+//    @Override
+//    public void render(SpriteBatch sb){
+//        super.render(sb);
+//        if (!(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+//            character.render(sb,this.drawX - (float)this.img.getWidth() * Settings.scale / 2.0F + this.animX, this.drawY, (float)this.img.getWidth() * Settings.scale, (float)this.img.getHeight() * Settings.scale,(float)character.getWidth(),(float)character.getHeight(),1.0F,1.0F,0.0F,0,0,character.getWidth(), character.getHeight(), false,false);
+//        }
+//    }
 
 }

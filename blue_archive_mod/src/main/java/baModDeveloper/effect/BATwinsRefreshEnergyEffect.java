@@ -49,10 +49,10 @@ public class BATwinsRefreshEnergyEffect extends RefreshEnergyEffect {
         if(type== BATwinsEnergyPanel.EnergyType.MOMOI){
             sb.draw(this.img, this.x, this.y, (float)this.img.packedWidth / 2.0F, (float)this.img.packedHeight / 2.0F, (float)this.img.packedWidth, (float)this.img.packedHeight, this.scale * 1.5F, this.scale * 1.5F, this.rotation);
         } else if (type== BATwinsEnergyPanel.EnergyType.MIDORI) {
-            sb.draw(this.img, this.x+64.0F, this.y+64.0F, (float)this.img.packedWidth / 2.0F, (float)this.img.packedHeight / 2.0F, (float)this.img.packedWidth, (float)this.img.packedHeight, this.scale * 1.5F, this.scale * 1.5F, this.rotation);
+            sb.draw(this.img, this.x-64.0F, this.y+64.0F, (float)this.img.packedWidth / 2.0F, (float)this.img.packedHeight / 2.0F, (float)this.img.packedWidth, (float)this.img.packedHeight, this.scale * 1.5F, this.scale * 1.5F, this.rotation);
         } else if (type== BATwinsEnergyPanel.EnergyType.ALL) {
             sb.draw(this.img, this.x, this.y, (float)this.img.packedWidth / 2.0F, (float)this.img.packedHeight / 2.0F, (float)this.img.packedWidth, (float)this.img.packedHeight, this.scale * 1.5F, this.scale * 1.5F, this.rotation);
-            sb.draw(this.img, this.x+64.0F, this.y+64.0F, (float)this.img.packedWidth / 2.0F, (float)this.img.packedHeight / 2.0F, (float)this.img.packedWidth, (float)this.img.packedHeight, this.scale * 1.5F, this.scale * 1.5F, this.rotation);
+            sb.draw(this.img, this.x-64.0F, this.y+64.0F, (float)this.img.packedWidth / 2.0F, (float)this.img.packedHeight / 2.0F, (float)this.img.packedWidth, (float)this.img.packedHeight, this.scale * 1.5F, this.scale * 1.5F, this.rotation);
         }
         sb.setBlendFunction(770, 771);
 

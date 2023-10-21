@@ -1,0 +1,24 @@
+{
+    "BATwinsMod:BurnPower":{
+        "NAME":"灼伤",
+        "DESCRIPTIONS":[
+            "回合结束时，造成","点伤害。"
+        ]
+    },
+    "BATwinsMod:DeveloperCollaborationPower":{
+        "NAME":"开发者协同",
+        "DESCRIPTIONS":[
+            "交替打出桃牌与绿牌后抽",
+            "张牌。",
+            "(打出的上张牌是：",
+            ")",
+            "桃牌",
+            "绿牌",
+            "无色牌",
+            "诅咒牌",
+            "其他牌",
+            "没有牌"
+        ]
+    }
+
+}

@@ -28,20 +28,20 @@ public class BATwinsEnergyPanel extends EnergyPanel {
     private static final int RAW_W = 256;
     private static final Color ENERGY_TEXT_COLOR = new Color(1.0F, 1.0F, 0.86F, 1.0F);
     private Hitbox tipHitbox_MOMOI = new Hitbox(0.0F, 0.0F, 120.0F * Settings.scale, 120.0F * Settings.scale);
-    private Hitbox tipHitbox_MIDORI=new Hitbox(64.0F,64.0F,120.0F*Settings.scale,120.0F*Settings.scale);
+    private Hitbox tipHitbox_MIDORI=new Hitbox(-128.0F,64.0F,120.0F*Settings.scale,120.0F*Settings.scale);
     private Texture gainEnergyImg;
     private Texture[] gainEnergyImgs;
     private float energyVfxAngle = 0.0F;
     private float energyVfxScale = Settings.scale;
     private Color energyVfxColor = Color.WHITE.cpy();
     private static final float VFX_ROTATE_SPEED = -30.0F;
-
+    private static EnergyType energyVfxType=EnergyType.ALL;
     public static int MomoiCount = 0;
     public static int MidoriCount = 0;
 
     public static EnergyType selectedEnergySlot=EnergyType.MOMOI;
     public enum EnergyType {
-        MOMOI, MIDORI, ALL,SPEIFY
+        MOMOI, MIDORI, ALL,SPEIFY,SHARE
     }
 
     public BATwinsEnergyPanel() {
@@ -91,6 +91,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         AbstractDungeon.effectsQueue.add(new BATwinsRefreshEnergyEffect(type));
         energyVfxTimer = 2.0F;
         fontScale = 2.0F;
+        energyVfxType=type;
     }
 
     public static void addEnergy(int e, EnergyType type) {
@@ -116,6 +117,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         AbstractDungeon.effectsQueue.add(new BATwinsRefreshEnergyEffect(type));
         energyVfxTimer = 2.0F;
         fontScale = 2.0F;
+        energyVfxType=type;
     }
 
     public static void useEnergy(int e, EnergyType type) {
@@ -143,6 +145,26 @@ public class BATwinsEnergyPanel extends EnergyPanel {
                 MidoriCount-=e;
                 break;
             case SPEIFY:
+                if (selectedEnergySlot==EnergyType.MOMOI){
+                    if(e<=MomoiCount){
+                        MomoiCount -= e;
+                    }else {
+                        e=e-MomoiCount;
+                        MomoiCount=0;
+                        MidoriCount-=2*e;
+                    }
+                }
+                else{
+                    if(e<=MidoriCount){
+                        MidoriCount -= e;
+                    }else {
+                        e=e-MidoriCount;
+                        MidoriCount=0;
+                        MomoiCount-=2*e;
+                    }
+                }
+                break;
+            case SHARE:
                 if (selectedEnergySlot==EnergyType.MOMOI){
                     if(e<=MomoiCount){
                         MomoiCount -= e;
@@ -235,7 +257,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
     public void render(SpriteBatch sb) {
 
         this.tipHitbox_MOMOI.move(this.current_x, this.current_y);
-        this.tipHitbox_MIDORI.move(this.current_x+64.0F,this.current_y+64.0F);
+        this.tipHitbox_MIDORI.move(this.current_x-64.0F,this.current_y+64.0F);
         renderOrb(sb);
         renderVfx(sb);
         AbstractPlayer player = AbstractDungeon.player;
@@ -246,7 +268,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             AbstractDungeon.player.getEnergyNumFont().getData().setScale(fontScale);
             FontHelper.renderFontCentered(sb, BAplayer.getEnergyNumFont(), energyMsgMomoi, current_x, current_y,
                     ENERGY_TEXT_COLOR);
-            FontHelper.renderFontCentered(sb, BAplayer.getEnergyNumFont(), energyMsgMidori, current_x + 64,
+            FontHelper.renderFontCentered(sb, BAplayer.getEnergyNumFont(), energyMsgMidori, current_x - 64,
                     current_y + 64, ENERGY_TEXT_COLOR);
             this.tipHitbox_MOMOI.render(sb);
             this.tipHitbox_MIDORI.render(sb);
@@ -255,7 +277,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
                 TipHelper.renderGenericTip(50.0F * Settings.scale, 380.0F * Settings.scale, LABEL[0], MSG[0]);
             if (this.tipHitbox_MIDORI.hovered && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT
                     && !AbstractDungeon.isScreenUp)
-                TipHelper.renderGenericTip(104.0F * Settings.scale, 444.0F * Settings.scale, LABEL[0], MSG[0]);
+                TipHelper.renderGenericTip(-14.0F * Settings.scale, 444.0F * Settings.scale, LABEL[0], MSG[0]);
         }
     }
 
@@ -275,10 +297,12 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         if (energyVfxTimer != 0.0F) {
             sb.setBlendFunction(770, 1);
             sb.setColor(this.energyVfxColor);
-            sb.draw(this.gainEnergyImgs[0], this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F,
+            if(energyVfxType==EnergyType.MOMOI||energyVfxType==EnergyType.ALL)
+                sb.draw(this.gainEnergyImgs[0], this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F,
                     256.0F, this.energyVfxScale, this.energyVfxScale, -this.energyVfxAngle + 50.0F, 0, 0, 256, 256,
                     true, false);
-            sb.draw(this.gainEnergyImgs[1], this.current_x -64.0F, this.current_y -64.0F, 128.0F, 128.0F, 256.0F,
+            if(energyVfxType==EnergyType.MIDORI||energyVfxType==EnergyType.ALL)
+                sb.draw(this.gainEnergyImgs[1], this.current_x -192.0F, this.current_y -64.0F, 128.0F, 128.0F, 256.0F,
                     256.0F, this.energyVfxScale, this.energyVfxScale, this.energyVfxAngle, 0, 0, 256, 256, false,
                     false);
             sb.setBlendFunction(770, 771);

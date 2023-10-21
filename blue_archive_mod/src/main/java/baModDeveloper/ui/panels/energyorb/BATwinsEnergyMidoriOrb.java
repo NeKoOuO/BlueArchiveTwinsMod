@@ -31,12 +31,12 @@ public class BATwinsEnergyMidoriOrb extends CustomEnergyOrb{
     public void renderOrb(SpriteBatch sb, boolean enabled, float current_x, float current_y){
         sb.setColor(Color.WHITE);
 		if(BATwinsEnergyPanel.selectedEnergySlot== BATwinsEnergyPanel.EnergyType.MIDORI){
-			sb.draw(this.orbMark,current_x+84.0F,current_y+19.0F,70.0F/2,115.0F/2);
+			sb.draw(this.orbMark,current_x-44.0F,current_y+19.0F,70.0F/2,115.0F/2);
 		}
         if(enabled){
             for(int i=0;i<energyLayers.length;++i){
                 sb.draw(energyLayers[i],
-						current_x , current_y ,
+						current_x-128.0F , current_y ,
 						64.0f, 64.0f,
 						128.0f, 128.0f,
 						ORB_IMG_SCALE, ORB_IMG_SCALE,
@@ -48,7 +48,7 @@ public class BATwinsEnergyMidoriOrb extends CustomEnergyOrb{
         }else{
             for (int i=0; i<noEnergyLayers.length; ++i) {
 				sb.draw(noEnergyLayers[i],
-						current_x , current_y ,
+						current_x-128.0F , current_y ,
 						64.0f, 64.0f,
 						128.0f, 128.0f,
 						ORB_IMG_SCALE, ORB_IMG_SCALE,
@@ -60,7 +60,7 @@ public class BATwinsEnergyMidoriOrb extends CustomEnergyOrb{
         }
 
         sb.draw(baseLayer,
-				current_x , current_y ,
+				current_x-128.0F , current_y ,
 				64.0f, 64.0f,
 				128.0f, 128.0f,
 				ORB_IMG_SCALE, ORB_IMG_SCALE,

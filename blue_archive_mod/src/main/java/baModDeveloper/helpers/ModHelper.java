@@ -10,6 +10,10 @@ public class ModHelper {
         return "baModResources/img/"+floder+"/"+imgName+".png";
     }
 
+    public static String makeGifPath(String floder,String imgName){
+        return "baModResources/img/"+floder+"/"+imgName+".gif";
+    }
+
     public static <T> T checkBATwinPlayer(T player){
         if(player instanceof BATwinsCharacter){
             return (T)player;

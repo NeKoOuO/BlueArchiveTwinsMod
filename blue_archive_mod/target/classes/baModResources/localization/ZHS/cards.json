@@ -1,7 +1,45 @@
 {
-    "BASenseiMod:BAStrick":{
+    "BATwinsMod:MomoiStrick":{
         "NAME":"打击",
         "DESCRIPTION":"造成 !D! 点伤害。",
         "UPGRADE_DESCRIPTION":"造成 !D! 点伤害。"
+    },
+    "BATwinsMod:MidoriStrick": {
+        "NAME": "打击",
+        "DESCRIPTION":"造成 !D! 点伤害。",
+        "UPGRADE_DESCRIPTION":"造成 !D! 点伤害。"
+    },
+    "BATwinsMod:MomoiDefense":{
+        "NAME":"防御",
+        "DESCRIPTION":"获得 !B! 点格挡。"
+    },
+    "BATwinsMod:MidoriDefense":{
+        "NAME":"防御",
+        "DESCRIPTION":"获得 !B! 点格挡。"
+    },
+    "BATwinsMod:AlreadyAngry":{
+        "NAME":"我生气了！！",
+        "DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 batwinsmod:灼伤 。"
+    },
+    "BATwinsMod:PaintingConception":{
+        "NAME":"画面构思",
+        "DESCRIPTION":"获得 !B! 点格挡，获得 [TE] 。"
+    },
+    "BATwinsMod:ParoxysmalPain":{
+        "NAME":"阵痛",
+        "DESCRIPTION":"对全体敌人造成 !D! 点伤害，给予 !M! 层 batwinsmod:灼伤 。"
+    },
+    "BATwinsMod:PaintingArt":{
+        "NAME":"绘画艺术",
+        "DESCRIPTION":"对随机敌人造成 !D! 点伤害并给予2层中毒 !M! 次。"
+    },
+    "BATwinsMod:DeveloperCollaboration":{
+        "NAME":"开发者协同",
+        "DESCRIPTION":" batwinsmod:共有 。 NL 交替打出 batwinsmod:桃牌 与 batwinsmod:绿牌 后抽 !M! 张牌。"
+    },
+    "BATwinsMod:Exchange":{
+        "NAME":"交换",
+        "DESCRIPTION":" batwinsmod:交换 1张手牌。",
+        "UPGRADE_DESCRIPTION":" batwinsmod:交换 1至3张手牌。"
     }
 }

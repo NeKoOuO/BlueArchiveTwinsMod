@@ -1,0 +1,12 @@
+{
+    "BATwinsMod:Exchange":{
+        "TEXT":[
+            "选择",
+            "手牌交换"
+        ],
+        "EXTRA_TEXT":[
+            "1张",
+            "1至3张"
+        ]
+    }
+}
