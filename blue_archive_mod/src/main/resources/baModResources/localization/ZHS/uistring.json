@@ -8,5 +8,15 @@
             "1张",
             "1至3张"
         ]
+    },
+    "BATwinsMod:BattleCommandAction":{
+        "TEXT":[
+            "选择1张手牌返回抽牌堆"
+        ]
+    },
+    "BATwinsMod:AddHandAccordColorAction":{
+        "TEXT":[
+            "选择1张牌加入手牌"
+        ]
     }
 }

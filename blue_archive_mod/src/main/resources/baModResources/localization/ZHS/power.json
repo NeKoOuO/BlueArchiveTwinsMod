@@ -19,6 +19,45 @@
             "其他牌",
             "没有牌"
         ]
+    },
+    "BATwinsMod:ArtPolishingPower":{
+        "NAME":"艺术打磨",
+        "DESCRIPTIONS":[
+            "给予异常状态时，给予目标",
+            "层中毒。不会因本能力的效果触发。"
+        ]
+    },
+    "BATwinsMod:GainTENextTurnPower":{
+        "NAME":"下回合能量（小桃）",
+        "DESCRIPTIONS":[
+            "下回合获得",
+            "小桃能量。"
+        ]
+    },
+    "BATwinsMod:GainLENextTurnPower":{
+        "NAME":"下回合能量（小绿）",
+        "DESCRIPTIONS":[
+            "下回合获得",
+            "小绿能量。"
+        ]
+    },
+    "BATwinsMod:ArtPolishingExchangePower":{
+        "NAME":"艺术打磨(交换)",
+        "DESCRIPTIONS":[
+            "给予异常状态时，给予目标",
+            "层灼伤。不会因本能力的效果触发。"
+        ]
+    },
+    "BATwinsMod:OnceMorePower":{
+        "NAME":"再来一次",
+        "DESCRIPTIONS":[
+            "回合结束时，触发所有敌人的灼伤。"
+        ]
+    },
+    "BATwinsMod:OnceMoreExchangePower":{
+        "NAME":"再来一次（交换）",
+        "DESCRIPTIONS":[
+            "回合结束时，触发所有敌人的中毒。"
+        ]
     }
-
 }

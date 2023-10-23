@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class BATwinsAlreadyAngry extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("AlreadyAngry");
@@ -39,13 +40,21 @@ public class BATwinsAlreadyAngry extends BATwinsModCustomCard{
         if(!upgraded){
             this.upgradeName();
             this.upgradeDamage(4);
-            this.magicNumber+=2;
+            this.upgradeMagicNumber(2);
         }
     }
 
+
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
-        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new BATwinsBurnPower(abstractMonster,this.magicNumber)));
+        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new BATwinsBurnPower(abstractMonster,abstractPlayer,this.magicNumber)));
+
+    }
+
+    @Override
+    public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.POISON));
+        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new PoisonPower(abstractMonster,abstractPlayer,this.magicNumber)));
     }
 }

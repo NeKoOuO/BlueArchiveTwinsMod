@@ -31,7 +31,7 @@
     },
     "BATwinsMod:PaintingArt":{
         "NAME":"绘画艺术",
-        "DESCRIPTION":"对随机敌人造成 !D! 点伤害并给予2层中毒 !M! 次。"
+        "DESCRIPTION":"对随机敌人造成 !D! 点伤害并给予2层 中毒 !M! 次。"
     },
     "BATwinsMod:DeveloperCollaboration":{
         "NAME":"开发者协同",
@@ -41,5 +41,60 @@
         "NAME":"交换",
         "DESCRIPTION":" batwinsmod:交换 1张手牌。",
         "UPGRADE_DESCRIPTION":" batwinsmod:交换 1至3张手牌。"
+    },
+    "BATwinsMod:KeepItToTheEnd":{
+        "NAME":"严守到底",
+        "DESCRIPTION":"弃置手牌中所有 batwinsmod:桃牌 ，每弃置一张获得 !B! 点格挡。"
+    },
+    "BATwinsMod:ArtPolishing":{
+        "NAME":"艺术打磨",
+        "DESCRIPTION":"给予异常状态时，给予目标 !M! 层 中毒 。不会因此能力的效果触发。"
+    },
+    "BATwinsMod:BattleCommand":{
+        "NAME":"战斗指导",
+        "DESCRIPTION":"选择1张牌返回抽牌堆，从抽牌堆中选择1张不同颜色的卡牌加入手卡。"
+    },
+    "BATwinsMod:IgniteTheUpperBody":{
+        "NAME":"引火上身",
+        "DESCRIPTION":"获得 !B! 点格挡，获得 !M! 层 batwinsmod:灼伤 。"
+    },
+    "BATwinsMod:NotReconciled":{
+        "NAME":"我不甘心！",
+        "DESCRIPTION":"造成 !D! 点伤害。下回合获得 [TE] 。",
+        "UPGRADE_DESCRIPTION":"造成 !D! 点伤害。下回合获得 [TE] 和 [LE] 。"
+    },
+    "BATwinsMod:AdditionalAttacks":{
+        "NAME":"附加攻击",
+        "DESCRIPTION":"造成 !D! 点伤害。这张牌在手牌打出其他攻击牌时，对随机敌人造成 !D! 点伤害。"
+    },
+    "BATwinsMod:AccurateBlocking":{
+        "NAME":"精准格挡",
+        "DESCRIPTION":"获得 !B! 点格挡。这张牌在手牌没有其他 batwinsmod:绿牌 时才能打出。"
+    },
+    "BATwinsMod:GameLaunch":{
+        "NAME":"游戏启动",
+        "DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的牌中随机1张 batwinsmod:桃牌 和随机1张 batwinsmod:绿牌 本回合耗能为0. NL 消耗 ",
+        "UPGRADE_DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的牌中随机2张牌本回合耗能为0. NL 消耗 "
+    },
+    "BATwinsMod:InspirationEmergence":{
+        "NAME":"灵感涌现",
+        "DESCRIPTION":" batwinsmod:共有 。 NL 抽2张牌，若抽到的牌的颜色相同，则 预见 !M! 然后抽1张牌。"
+    },
+    "BATwinsMod:PassageInForce":{
+        "NAME":"强行通过",
+        "DESCRIPTION":"对全体敌人造成 !D! 点伤害，获得 !B! 点格挡，弃置2张牌。"
+    },
+    "BATwinsMod:SiteAdaptation":{
+        "NAME":"场地适应",
+        "DESCRIPTION":"获得 !M! 力量 ， !M! 敏捷 ， !M! 金属化 。"
+    },
+    "BATwinsMod:OnceMore":{
+        "NAME":"再来一次",
+        "DESCRIPTION":"我方回合结束时，触发所有敌人的 batwinsmod:灼伤 。",
+        "UPGRADE_DESCRIPTION":" 固有 。 NL 我方回合结束时，触发所有敌人的 batwinsmod:灼伤 。"
+    },
+    "BATwinsMod:EnchantedBullet":{
+        "NAME":"附魔子弹",
+        "DESCRIPTION":"给予 !M! 层 batwinsmod:灼伤 。"
     }
 }

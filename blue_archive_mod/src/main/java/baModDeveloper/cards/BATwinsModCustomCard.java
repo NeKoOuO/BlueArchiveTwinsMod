@@ -16,12 +16,15 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 
+import java.awt.*;
 import java.util.Iterator;
 
 public abstract class BATwinsModCustomCard extends CustomCard {
     public BATwinsEnergyPanel.EnergyType modifyEnergyType;
+    public CardColor OriginalColor;
     public BATwinsModCustomCard(String ID, String NAME, String IMG_PATH, int COST, String DESCRIPTION, CardType TYPE, CardColor COLOR, CardRarity RARITY, CardTarget TARGET, BATwinsEnergyPanel.EnergyType ENERGYTYPE) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        this.OriginalColor= COLOR;
         this.modifyEnergyType=ENERGYTYPE;
     }
 
@@ -57,6 +60,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
                                     do {
                                         if (!var1.hasNext()) {
                                             if(AbstractDungeon.overlayMenu.energyPanel instanceof BATwinsEnergyPanel){
+                                                if(this.freeToPlay()||this.isInAutoplay){
+                                                    return true;
+                                                }
                                                 boolean hasEnoughEnergy=true;
                                                 if(this.modifyEnergyType== BATwinsEnergyPanel.EnergyType.MOMOI){
                                                     if(BATwinsEnergyPanel.MomoiCount+BATwinsEnergyPanel.MidoriCount/2<this.costForTurn){
@@ -68,6 +74,12 @@ public abstract class BATwinsModCustomCard extends CustomCard {
                                                         this.cantUseMessage=TEXT[11];
                                                         return false;
                                                     }
+                                                } else if (this.modifyEnergyType== BATwinsEnergyPanel.EnergyType.SHARE) {
+                                                    if(BATwinsEnergyPanel.MomoiCount+BATwinsEnergyPanel.MidoriCount<this.costForTurn){
+                                                        this.cantUseMessage=TEXT[11];
+                                                        return false;
+                                                    }
+
                                                 }
                                             }else{
                                                 if (EnergyPanel.totalCount < this.costForTurn && !this.freeToPlay() && !this.isInAutoplay) {
@@ -110,20 +122,56 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     public void conversionColor(){
         if(this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
             this.color=BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
-            this.modifyEnergyType= BATwinsEnergyPanel.EnergyType.MIDORI;
+            if(this.modifyEnergyType!= BATwinsEnergyPanel.EnergyType.SHARE)
+                this.modifyEnergyType= BATwinsEnergyPanel.EnergyType.MIDORI;
         }else{
             this.color=BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
-            this.modifyEnergyType= BATwinsEnergyPanel.EnergyType.MOMOI;
+            if(this.modifyEnergyType!= BATwinsEnergyPanel.EnergyType.SHARE)
+                this.modifyEnergyType= BATwinsEnergyPanel.EnergyType.MOMOI;
         }
+        this.rawDescription=replaceDescription(this.rawDescription);
+        super.initializeDescription();
     }
 
     @Override
     public AbstractCard makeCopy(){
         BATwinsModCustomCard _instance= (BATwinsModCustomCard) super.makeCopy();
         _instance.modifyEnergyType=this.modifyEnergyType;
+        _instance.OriginalColor=this.OriginalColor;
         return _instance;
     }
 
+    @Override
+    public void initializeDescription() {
+        if(this.OriginalColor!=null&&this.OriginalColor!=this.color){
+            this.rawDescription=replaceDescription(this.rawDescription);
+        }
+        super.initializeDescription();
+    }
+
+    @Override
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        if (this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
+            useMOMOI(abstractPlayer,abstractMonster);
+        } else if (this.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
+            useMIDORI(abstractPlayer,abstractMonster);
+        }
+    }
+    abstract public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
+    abstract public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
+    public String replaceDescription(String description){
+        description=exchangeStr(description,"中毒","batwinsmod:灼伤");
+        description=exchangeStr(description,"[TE]","[LE]");
+        description=exchangeStr(description,"batwinsmod:桃牌","batwinsmod:绿牌");
+        return description;
+    }
+    private String exchangeStr(String description,String str1,String str2){
+        String temp="#######";
+        description=description.replace(str1,temp);
+        description=description.replace(str2,str1);
+        description=description.replace(temp,str2);
+        return description;
+    }
     public static class BATwinsAttackEffect{
         @SpireEnum
         public static AbstractGameAction.AttackEffect BATwinsShooting;

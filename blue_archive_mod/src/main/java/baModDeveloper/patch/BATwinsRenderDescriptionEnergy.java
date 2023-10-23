@@ -46,7 +46,7 @@ public class BATwinsRenderDescriptionEnergy {
                               BitmapFont font, Color textColor, @ByRef String[] tmp, GlyphLayout gl)
     {
         Matcher m = r.matcher(tmp[0]);
-        if (tmp[0].equals("[TE]") || m.find()) {
+        if (tmp[0].equals("[TE]")) {
             __instance.renderSmallEnergy(sb, BaseMod.getCardSmallEnergy(MOMOICARD),
                     (start_x[0] - __instance.current_x) / Settings.scale / __instance.drawScale,
                     (draw_y + i * 1.45f * -font.getCapHeight() - 6f - __instance.current_y + font.getCapHeight()) / Settings.scale / __instance.drawScale);
@@ -66,7 +66,7 @@ public class BATwinsRenderDescriptionEnergy {
 
             start_x[0] += gl.width;
             tmp[0] = "";
-        } else if (tmp[0].equals("[LE]") || m.find()) {
+        } else if (tmp[0].equals("[LE]")) {
             __instance.renderSmallEnergy(sb, BaseMod.getCardSmallEnergy(MIDORICARD),
                     (start_x[0] - __instance.current_x) / Settings.scale / __instance.drawScale,
                     (draw_y + i * 1.45f * -font.getCapHeight() - 6f - __instance.current_y + font.getCapHeight()) / Settings.scale / __instance.drawScale);

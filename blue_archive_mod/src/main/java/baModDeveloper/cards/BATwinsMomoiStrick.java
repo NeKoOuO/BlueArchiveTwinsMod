@@ -47,8 +47,14 @@ public class BATwinsMomoiStrick extends BATwinsModCustomCard{
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+    public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+
     }
-    
+
+    @Override
+    public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        useMOMOI(abstractPlayer,abstractMonster);
+    }
+
 }

@@ -38,7 +38,13 @@ public class BATwinsMomoiDefend extends BATwinsModCustomCard{
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer,this.block));
+
+    }
+
+    @Override
+    public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        useMOMOI(abstractPlayer,abstractMonster);
     }
 }

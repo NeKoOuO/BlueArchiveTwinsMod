@@ -19,12 +19,13 @@ public class BATwinsBurnPower extends AbstractPower{
     private static final String[] DESCRIPTIONS=powerStrings.DESCRIPTIONS;
     private static final String IMG_84=ModHelper.makeImgPath("power","Burn84");
     private static final String IMG_32=ModHelper.makeImgPath("power","Burn32");
-    public BATwinsBurnPower(AbstractCreature owner,int Amount){
+    private AbstractCreature source;
+    public BATwinsBurnPower(AbstractCreature owner,AbstractCreature source,int Amount){
         this.name=NAME;
         this.ID=POWER_ID;
         this.owner=owner;
         this.type=TYPE;
-
+        this.source=source;
         this.amount=Amount;
         this.region128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84),0,0,84,84);
         this.region48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32),0,0,32,32);
@@ -38,8 +39,8 @@ public class BATwinsBurnPower extends AbstractPower{
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if(!isPlayer){
-            addToBot(new DamageAction(this.owner,new DamageInfo(this.owner,this.amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
-        }
+        addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
+
     }
+
 }

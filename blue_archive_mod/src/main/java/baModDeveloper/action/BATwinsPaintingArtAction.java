@@ -1,5 +1,6 @@
 package baModDeveloper.action;
 
+import baModDeveloper.power.BATwinsBurnPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -11,24 +12,30 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class BATwinsPaintingArtAction extends AbstractGameAction {
-    private int count;
-    private AbstractCard card;
-    int poisonNum;
-    public BATwinsPaintingArtAction(AbstractCard card,int count,int poisonNum){
-        this.card=card;
-        this.count=count;
+    private int damage;
+    private int poisonNum;
+    private boolean exchange;
+    DamageInfo.DamageType type;
+    public BATwinsPaintingArtAction(int damage, int poisonNum, boolean exchange, DamageInfo.DamageType type){
+        this.damage=damage;
         this.poisonNum=poisonNum;
+        this.exchange=exchange;
+        this.type=type;
     }
     @Override
     public void update() {
-        for(int i=0;i<this.count;i++){
-            this.target=(AbstractCreature) AbstractDungeon.getMonsters().getRandomMonster();
-            if(this.target!=null){
-                this.card.calculateCardDamage((AbstractMonster) this.target);
-                addToTop(new DamageAction(this.target,new DamageInfo(AbstractDungeon.player,this.card.damage,this.card.damageTypeForTurn),AttackEffect.POISON));
+        this.target=(AbstractCreature) AbstractDungeon.getMonsters().getRandomMonster();
+        if(this.target!=null){
+            if (!exchange){
+                addToTop(new DamageAction(this.target,new DamageInfo(AbstractDungeon.player,this.damage,this.type),AttackEffect.POISON));
                 addToTop((new ApplyPowerAction(this.target,AbstractDungeon.player,new PoisonPower(this.target,AbstractDungeon.player,this.poisonNum))));
+            }else{
+                addToTop(new DamageAction(this.target,new DamageInfo(AbstractDungeon.player,this.damage,this.type),AttackEffect.FIRE));
+                addToTop((new ApplyPowerAction(this.target,AbstractDungeon.player,new BATwinsBurnPower(this.target,AbstractDungeon.player,this.poisonNum))));
             }
+
         }
+
 
         this.isDone=true;
     }

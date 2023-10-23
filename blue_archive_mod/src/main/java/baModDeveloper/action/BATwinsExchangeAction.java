@@ -59,7 +59,7 @@ public class BATwinsExchangeAction extends AbstractGameAction {
                     title+=EXTRETEXT[1];
                 }
                 title+=TEXT[1];
-                AbstractDungeon.handCardSelectScreen.open(title,this.amount,true,false,false,false);
+                AbstractDungeon.handCardSelectScreen.open(title,this.amount,true,true,false,false);
                 tickDuration();
                 return;
             }

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class BATwinsParoxysmalPain extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("ParoxysmalPain");
@@ -45,11 +46,20 @@ public class BATwinsParoxysmalPain extends BATwinsModCustomCard{
         }
     }
 
+
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAllEnemiesAction(abstractPlayer,this.multiDamage,this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         for(AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters){
-            addToBot(new ApplyPowerAction(m,abstractPlayer,new BATwinsBurnPower(m,this.magicNumber),this.magicNumber,true, AbstractGameAction.AttackEffect.NONE));
+            addToBot(new ApplyPowerAction(m,abstractPlayer,new BATwinsBurnPower(m,abstractPlayer,this.magicNumber),this.magicNumber,true, AbstractGameAction.AttackEffect.NONE));
+        }
+    }
+
+    @Override
+    public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        addToBot(new DamageAllEnemiesAction(abstractPlayer,this.multiDamage,this.damageTypeForTurn, AbstractGameAction.AttackEffect.POISON));
+        for(AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters){
+            addToBot(new ApplyPowerAction(m,abstractPlayer,new PoisonPower(m,abstractPlayer,this.magicNumber),this.magicNumber,true, AbstractGameAction.AttackEffect.NONE));
         }
     }
 }

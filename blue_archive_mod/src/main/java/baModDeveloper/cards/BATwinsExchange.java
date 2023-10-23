@@ -33,11 +33,19 @@ public class BATwinsExchange extends BATwinsModCustomCard{
         if(!upgraded){
             this.upgradeName();
             this.upgradeMagicNumber(2);
+            this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 
+
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        useMIDORI(abstractPlayer,abstractMonster);
+    }
+
+    @Override
+    public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsExchangeAction(this.magicNumber));
     }
 }

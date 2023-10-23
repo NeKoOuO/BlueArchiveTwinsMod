@@ -47,7 +47,7 @@ import basemod.abstracts.CustomPlayer;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 public class BATwinsCharacter extends CustomPlayer {
-    private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder1");
+    private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder");
     private static final String BATWINS_CHARACTER_SHOULDER_2 = ModHelper.makeImgPath("char", "shoulder2");
     private static final String BATWINS_CHARACTER_CORPSE = ModHelper.makeImgPath("char", "corpse");
     private static final String[] MOMOI_ORB_TEXTURES = new String[] {

@@ -37,8 +37,14 @@ public class BATwinsDeveloperCollaboration extends BATwinsModCustomCard{
         }
     }
 
+
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsDeveloperCollaborationPower(abstractPlayer,this.magicNumber)));
+    }
+
+    @Override
+    public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        useMOMOI(abstractPlayer,abstractMonster);
     }
 }

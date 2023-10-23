@@ -38,8 +38,16 @@ public class BATwinsPaintingConception extends BATwinsModCustomCard{
         }
     }
 
+
+
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        addToBot(new GainBlockAction(abstractPlayer,this.block));
+        addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MIDORI));
+    }
+
+    @Override
+    public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer,this.block));
         addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MOMOI));
     }

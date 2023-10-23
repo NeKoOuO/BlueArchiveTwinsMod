@@ -3,11 +3,13 @@ package baModDeveloper.cards;
 import baModDeveloper.action.BATwinsPaintingArtAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.power.BATwinsBurnPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class BATwinsPaintingArt extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("PaintingArt");
@@ -25,7 +27,9 @@ public class BATwinsPaintingArt extends BATwinsModCustomCard{
     public BATwinsPaintingArt() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseDamage=3;
+        this.damage=this.baseDamage;
         this.baseMagicNumber=3;
+        this.magicNumber=this.baseMagicNumber;
     }
 
     @Override
@@ -36,8 +40,18 @@ public class BATwinsPaintingArt extends BATwinsModCustomCard{
         }
     }
 
+
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsPaintingArtAction(this,this.magicNumber,2));
+    public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        for(int i=0;i<this.magicNumber;i++){
+            addToBot(new BATwinsPaintingArtAction(this.damage,2,true,this.damageTypeForTurn));
+        }
+    }
+
+    @Override
+    public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        for(int i=0;i<this.magicNumber;i++) {
+            addToBot(new BATwinsPaintingArtAction(this.damage, 2, false, this.damageTypeForTurn));
+        }
     }
 }
