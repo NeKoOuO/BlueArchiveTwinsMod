@@ -96,5 +96,27 @@
     "BATwinsMod:EnchantedBullet":{
         "NAME":"附魔子弹",
         "DESCRIPTION":"给予 !M! 层 batwinsmod:灼伤 。"
+    },
+    "BATwinsMod:ExcellentDesigner":{
+        "NAME":"最棒的开发者们",
+        "DESCRIPTION":" 虚无 。 NL 抽到时抽 !M! 张牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。这张牌在手牌时打出其他牌，这张牌在打出前上升那张牌基础伤害值和基础格挡值。",
+        "UPGRADE_DESCRIPTION":"抽到时抽 !M! 张牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。这张牌在手牌时打出其他牌，这张牌在打出前上升那张牌基础伤害值和基础格挡值。"
+    },
+    "BATwinsMod:BadDesigner":{
+        "NAME":"糟糕设计师",
+        "DESCRIPTION":"手牌只有这张牌时才能打出。 NL 这张牌在手牌时，打出其他牌时弃置1张牌。再累计打出 !M! 次的话会发生蜕变。"
+    },
+    "BATwinsMod:BugCard":{
+        "NAME":"漏洞",
+        "DESCRIPTION":"抽到时，随机 消耗 1张其他手牌。 消耗 。"
+    },
+    "BATwinsMod:RushToDraft":{
+        "NAME":"赶稿",
+        "DESCRIPTION":"抽 !M! 张牌。将1张漏洞放入弃牌堆。"
+    },
+    "BATwinsMod:PlotRepair":{
+        "NAME":"剧情修补",
+        "DESCRIPTION":"造成 !D! 点伤害， 消耗 抽牌堆1张漏洞，将1张漏洞放入弃牌堆。",
+        "UPGRADE_DESCRIPTION":"造成 !D! 点伤害， 消耗 抽牌堆所有漏洞，将1张漏洞放入弃牌堆。"
     }
 }

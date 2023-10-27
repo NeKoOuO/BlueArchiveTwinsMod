@@ -1,6 +1,5 @@
 package baModDeveloper.power;
 
-import baModDeveloper.cards.BATwinsOnceMore;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -10,9 +9,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import sun.jvm.hotspot.code.NMethod;
-
-import javax.print.attribute.standard.MediaSize;
 
 public class BATwinsOnceMorePower extends AbstractPower {
     public static final String POWER_ID= ModHelper.makePath("OnceMorePower");
