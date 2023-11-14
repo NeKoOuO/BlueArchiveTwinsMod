@@ -69,7 +69,7 @@
     },
     "BATwinsMod:AccurateBlocking":{
         "NAME":"精准格挡",
-        "DESCRIPTION":"获得 !B! 点格挡。这张牌在手牌没有其他 batwinsmod:绿牌 时才能打出。"
+        "DESCRIPTION":"获得 !B! 点格挡。若当前格挡小于选择敌人的攻击伤害，获得 !B! 点格挡。小于这张牌在手牌没有其他 batwinsmod:绿牌 时才能打出。"
     },
     "BATwinsMod:GameLaunch":{
         "NAME":"游戏启动",
@@ -118,5 +118,50 @@
         "NAME":"剧情修补",
         "DESCRIPTION":"造成 !D! 点伤害， 消耗 抽牌堆1张漏洞，将1张漏洞放入弃牌堆。",
         "UPGRADE_DESCRIPTION":"造成 !D! 点伤害， 消耗 抽牌堆所有漏洞，将1张漏洞放入弃牌堆。"
-    }
+    },
+    "BATwinsMod:BugFix":{
+        "NAME":"漏洞修复",
+        "DESCRIPTION":"回合开始时，抽牌堆随机 !M! 张状态牌或诅咒牌 消耗 。若消耗的是漏洞，获得1 力量 和1 敏捷 。"
+    },
+	"BATwinsMod:AdventureOpening":{
+		"NAME":"冒险-开幕",
+		"DESCRIPTION":" batwinsmod:共有 NL 打出这张牌消耗的牌。从手牌选择一张冒险牌消耗。"
+	},
+	"BATwinsMod:AdventureBattle":{
+		"NAME":"冒险-战斗",
+		"DESCRIPTION":"造成 !D! 点伤害。本回合打出的上一张牌如果是冒险牌，伤害翻倍。 NL 消耗 。"
+	},
+	"BATwinsMod:LightSpeedStrike":{
+		"NAME":"光速打击",
+		"DESCRIPTION":"造成 !D! 点伤害。对目标打出手牌所有打击牌。"
+	},
+	"BATwinsMod:SinglePlayerGame":{
+		"NAME":"单人游戏",
+		"DESCRIPTION":" batwinsmod:共有 。 NL 打出牌后若手牌只有一种颜色。获得 !M! 点格挡。"
+	},
+	"BATwinsMod:CoolingTime":{
+		"NAME":"冷却加速",
+		"DESCRIPTION":"获得 !B! 点格挡。从弃牌堆选择1张 batwinsmod:绿牌 在下回合开始时加入手牌（除非其已消耗）。"
+	},
+	"BATwinsMod:DoubleExperience":{
+		"NAME":"双倍经验",
+		"DESCRIPTION":"本场战斗打出卡牌而获得的 batwinsmod:经验值 变为2倍。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:提升等级 1 . NL 本场战斗打出卡牌而获得的 batwinsmod:经验值 变为2倍。"
+	},
+	"BATwinsMod:BDStudy":{
+		"NAME":"BD学习",
+		"DESCRIPTION":"选择 !M! 张手牌 消耗 。获得等同于其耗能2倍的 batwinsmod:经验值 。"
+	},
+	"BATwinsMod:EmergencyRecovery":{
+		"NAME":"紧急恢复",
+		"DESCRIPTION":"获得 [LE] 。若桃能量为0，获得 [TE] [TE] 。"
+	},
+	"BATwinsMod:AbstractSchool":{
+		"NAME":"抽象派艺术",
+		"DESCRIPTION":"造成 !D! 点伤害X次。X为手牌的颜色数（ !M! ）。"
+	},
+	"BATwinsMod:DefensiveCounterattack":{
+		"NAME":"防守与打击",
+		"DESCRIPTION":"获得 !B! 点格挡。本回合受到攻击时对攻击的怪物打出一张打击。"
+	}
 }

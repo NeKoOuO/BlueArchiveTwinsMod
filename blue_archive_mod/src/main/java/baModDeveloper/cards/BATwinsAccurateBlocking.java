@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.lang.reflect.Field;
+
 public class BATwinsAccurateBlocking extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("AccurateBlocking");
     private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
@@ -20,7 +22,7 @@ public class BATwinsAccurateBlocking extends BATwinsModCustomCard{
     private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE=CardType.SKILL;
     private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
-    private static final CardTarget TARGET=CardTarget.SELF;
+    private static final CardTarget TARGET=CardTarget.SELF_AND_ENEMY;
     private static final CardRarity RARITY=CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MIDORI;
 
@@ -60,5 +62,19 @@ public class BATwinsAccurateBlocking extends BATwinsModCustomCard{
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer,this.block));
+        try{
+            Field multiAmt=AbstractMonster.class.getDeclaredField("intentMultiAmt");
+            multiAmt.setAccessible(true);
+            int amt=multiAmt.getInt(abstractMonster);
+            int dmg = abstractMonster.getIntentDmg();
+            amt=amt==-1?1:amt;
+            if(abstractMonster.intent== AbstractMonster.Intent.ATTACK&&abstractPlayer.currentBlock+this.block<amt*dmg){
+                addToBot(new GainBlockAction(abstractPlayer,this.block));
+            }
+            multiAmt.setAccessible(false);
+        }catch (NoSuchFieldException | IllegalAccessException ignored){
+            ignored.printStackTrace();
+        }
+
     }
 }

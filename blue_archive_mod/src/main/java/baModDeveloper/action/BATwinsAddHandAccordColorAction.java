@@ -57,6 +57,7 @@ public class BATwinsAddHandAccordColorAction extends AbstractGameAction {
                 }
                 this.p.drawPile.moveToHand(c,this.p.drawPile);
             }
+
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             AbstractDungeon.player.hand.refreshHandLayout();
         }

@@ -18,5 +18,15 @@
         "TEXT":[
             "选择1张牌加入手牌"
         ]
-    }
+    },
+    "BATwinsMod:InterpretiveErrorAction":{
+        "TEXT":[
+            "选择1张牌交换"
+        ]
+    },
+	"BATwinsMod:SelectAdventureCard":{
+		"TEXT":[
+			"选择1张冒险牌"
+		]
+	}
 }

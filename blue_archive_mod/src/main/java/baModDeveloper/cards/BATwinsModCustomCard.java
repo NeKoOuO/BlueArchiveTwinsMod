@@ -1,10 +1,13 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.power.BATwinsDoubleExperiencePower;
+import baModDeveloper.power.BATwinsExperiencePower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomCard;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.blights.AbstractBlight;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -156,6 +159,22 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         } else if (this.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
             useMIDORI(abstractPlayer,abstractMonster);
         }
+        if(!this.freeToPlay()&&!this.freeToPlayOnce){
+            if(this.costForTurn>0) {
+                if(AbstractDungeon.player.hasPower(BATwinsDoubleExperiencePower.POWER_ID)){
+                    addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsExperiencePower(abstractPlayer, this.costForTurn*2)));
+                }else{
+                    addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsExperiencePower(abstractPlayer, this.costForTurn)));
+                }
+            }
+            else if(this.costForTurn==-1){
+                if(AbstractDungeon.player.hasPower(BATwinsDoubleExperiencePower.POWER_ID)){
+                    addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsExperiencePower(abstractPlayer,this.energyOnUse*2)));
+                }else{
+                    addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsExperiencePower(abstractPlayer,this.energyOnUse)));
+                }
+            }
+        }
     }
     abstract public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
     abstract public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
@@ -175,5 +194,10 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     public static class BATwinsAttackEffect{
         @SpireEnum
         public static AbstractGameAction.AttackEffect BATwinsShooting;
+    }
+
+    public static class BATwinsCardTags{
+        @SpireEnum
+        public static CardTags Adventrue;
     }
 }

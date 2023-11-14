@@ -28,7 +28,7 @@ public class BATwinsBadDesigner extends BATwinsModCustomCard{
 
     public BATwinsBadDesigner() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.misc=2;
+        this.misc=5;
         this.baseMagicNumber=this.misc;
         this.magicNumber=this.baseMagicNumber;
     }

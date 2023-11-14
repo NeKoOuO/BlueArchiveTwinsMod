@@ -44,14 +44,14 @@ public class BATwinsPaintingArt extends BATwinsModCustomCard{
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         for(int i=0;i<this.magicNumber;i++){
-            addToBot(new BATwinsPaintingArtAction(this.damage,2,true,this.damageTypeForTurn));
+            addToBot(new BATwinsPaintingArtAction(this,2,true,this.damageTypeForTurn));
         }
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         for(int i=0;i<this.magicNumber;i++) {
-            addToBot(new BATwinsPaintingArtAction(this.damage, 2, false, this.damageTypeForTurn));
+            addToBot(new BATwinsPaintingArtAction(this, 2, false, this.damageTypeForTurn));
         }
     }
 }

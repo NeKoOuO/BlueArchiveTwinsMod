@@ -4,6 +4,7 @@ import baModDeveloper.cards.*;
 import basemod.interfaces.EditKeywordsSubscriber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -88,9 +89,21 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsOnceMore());
         BaseMod.addCard(new BATwinsBadDesigner());
         BaseMod.addCard(new BATwinsExcellentDesigner());
-        BaseMod.addCard(new BATwinsBugCard());
-        BaseMod.addCard(new BATwinsPlotRepair());
-        BaseMod.addCard(new BATwinsRushToDraft());
+//        BaseMod.addCard(new BATwinsBugCard());
+//        BaseMod.addCard(new BATwinsPlotRepair());
+//        BaseMod.addCard(new BATwinsRushToDraft());
+//        BaseMod.addCard(new BATwinsPlotRepair());
+//        BaseMod.addCard(new BATwinsBubFix());
+        BaseMod.addCard(new BATwinsAdventureOpening());
+        BaseMod.addCard(new BATwinsAdventureBattle());
+        BaseMod.addCard(new BATwinsLightSpeedStrike());
+        BaseMod.addCard(new BATwinsSinglePlayerGame());
+        BaseMod.addCard(new BATwinsCoolingTime());
+        BaseMod.addCard(new BATwinsDoubleExperience());
+        BaseMod.addCard(new BATwinsBDStudy());
+        BaseMod.addCard(new BATwinsEmergencyRecovery());
+        BaseMod.addCard(new BATwinsAbstractSchool());
+        BaseMod.addCard(new BATwinsDefensiveCounterattack());
     }
 
     @Override

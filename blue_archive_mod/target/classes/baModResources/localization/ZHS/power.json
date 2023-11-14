@@ -2,7 +2,7 @@
     "BATwinsMod:BurnPower":{
         "NAME":"灼伤",
         "DESCRIPTIONS":[
-            "回合结束时，造成","点伤害。"
+            "回合结束时，造成","点伤害。对其他敌人造成1/3的伤害。"
         ]
     },
     "BATwinsMod:DeveloperCollaborationPower":{
@@ -59,5 +59,42 @@
         "DESCRIPTIONS":[
             "回合结束时，触发所有敌人的中毒。"
         ]
-    }
+    },
+    "BATwinsMod:BugFixPower":{
+        "NAME":"漏洞修复",
+        "DESCRIPTIONS":[
+            "回合开始时，抽牌堆随机",
+            "张状态牌或诅咒牌消耗，若消耗的是漏洞，则获得1力量和1敏捷。"
+        ]
+    },
+    "BATwinsMod:ExperiencePower":{
+        "NAME":"经验值",
+        "DESCRIPTIONS":[
+            "打出桃牌或绿牌时，获得等同于其耗能的经验值。\n当前：LV",
+            "（",
+            "/",
+            "）\n卡牌的伤害和格挡增加等级数。",
+            "升级！！"
+        ]
+    },
+	"BATwinsMod:SinglePlayerGamePower":{
+		"NAME":"单人游戏",
+		"DESCRIPTIONS":[
+			"打出牌后若手牌只有一种颜色，获得",
+			"点格挡。"
+		]
+	},
+	"BATwinsMod:CoolingTimePower":{
+		"NAME":"下回合加入手牌",
+		"DESCRIPTIONS":[
+			"下回合开始时，将",
+			"加入手牌（除非其已消耗）。"
+		]
+	},
+	"BATwinsMod:DoubleExperiencePower":{
+		"NAME":"双倍经验",
+		"DESCRIPTIONS":[
+			"获得的经验值变为两倍。"
+		]
+	}
 }
