@@ -52,6 +52,10 @@ public class BATwinsCoolingTimeAction extends AbstractGameAction {
                     }
                 }
             }
+            if(temp.isEmpty()){
+                this.isDone=true;
+                return;
+            }
             AbstractDungeon.gridSelectScreen.open(temp,this.amount,false,"");
             tickDuration();
             return;

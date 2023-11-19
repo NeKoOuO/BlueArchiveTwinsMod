@@ -44,7 +44,9 @@ public class BATwinsBDStudyAction extends AbstractGameAction {
         }
     }
     private void WhatToDoWithCard(AbstractCard card){
-        addToTop(new ApplyPowerAction(this.p,this.p,new BATwinsExperiencePower(this.p,card.costForTurn*2)));
-        this.p.hand.moveToExhaustPile(card);
+        if(card.costForTurn>0){
+            addToTop(new ApplyPowerAction(this.p,this.p,new BATwinsExperiencePower(this.p,card.costForTurn*2)));
+            this.p.hand.moveToExhaustPile(card);
+        }
     }
 }

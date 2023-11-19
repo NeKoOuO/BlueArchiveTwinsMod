@@ -104,6 +104,16 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsEmergencyRecovery());
         BaseMod.addCard(new BATwinsAbstractSchool());
         BaseMod.addCard(new BATwinsDefensiveCounterattack());
+        BaseMod.addCard(new BATwinsAdventureRewards());
+        BaseMod.addCard(new BATwinsAccumulatedStrike());
+        BaseMod.addCard(new BATwinsNormalAttackMethods());
+        BaseMod.addCard(new BATwinsAlternatingAttack());
+        BaseMod.addCard(new BATwinsTemporaryAssistance());
+        BaseMod.addCard(new BATwinsAdventureExperience());
+        BaseMod.addCard(new BATwinsSwitchStrike());
+        BaseMod.addCard(new BATwinsCoverCharge());
+        BaseMod.addCard(new BATwinsMutualUnderstanding());
+        BaseMod.addCard(new BATwinsMysteriousChest());
     }
 
     @Override

@@ -2,7 +2,6 @@ package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsAdventureOpening;
 import baModDeveloper.cards.BATwinsModCustomCard;
-import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -32,7 +31,7 @@ public class BATwinsSelectAdventureCardAction extends AbstractGameAction {
     public void update() {
         if(this.duration==Settings.ACTION_DUR_FAST){
             for(AbstractCard c:this.p.hand.group){
-                if(!c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventrue)){
+                if(!c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventure)){
                     this.isNotAdvCards.add(c);
                 }
             }
@@ -42,7 +41,7 @@ public class BATwinsSelectAdventureCardAction extends AbstractGameAction {
             }
             if(this.p.hand.group.size()-this.isNotAdvCards.size()==1){
                 for(AbstractCard c:this.p.hand.group){
-                    if(c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventrue)){
+                    if(c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventure)){
                         this.card.addStorageCard(c);
                         addToBot(new ExhaustSpecificCardAction(c,this.p.hand));
                         this.isDone=true;

@@ -1,6 +1,7 @@
 package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsMidoriStrick;
+import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.cards.BATwinsMomoiStrick;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -26,7 +28,7 @@ public class BATwinsDefensiveCounterattackAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            AbstractCard cardToPlay;
+            BATwinsModCustomCard cardToPlay;
             if (exchange) {
                 cardToPlay = new BATwinsMomoiStrick();
             } else {
@@ -34,16 +36,19 @@ public class BATwinsDefensiveCounterattackAction extends AbstractGameAction {
             }
             cardToPlay.exhaustOnUseOnce = true;
             AbstractDungeon.player.limbo.group.add(cardToPlay);
-            cardToPlay.current_y = -200.0F * Settings.scale;
-            cardToPlay.target_x = (float) Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
+            cardToPlay.current_y = 0.0F * Settings.scale;
+            cardToPlay.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale;
             cardToPlay.target_y = (float) Settings.HEIGHT / 2.0F;
             cardToPlay.targetAngle = 0.0F;
             cardToPlay.lighten(false);
             cardToPlay.drawScale = 0.12F;
             cardToPlay.targetDrawScale = 0.75F;
             cardToPlay.applyPowers();
-            addToTop(new NewQueueCardAction(cardToPlay, this.target, false, true));
-            addToTop(new UnlimboAction(cardToPlay));
+//            addToTop(new NewQueueCardAction(cardToPlay, this.target, false, true));
+            cardToPlay.purgeOnUse=true;
+//            cardToPlay.playedByOtherCard = true;
+            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, (AbstractMonster) this.target,cardToPlay.energyOnUse,true,true),true);
+//            addToTop(new UnlimboAction(cardToPlay));
             if (!Settings.FAST_MODE) {
                 addToTop(new WaitAction(Settings.ACTION_DUR_MED));
             } else {

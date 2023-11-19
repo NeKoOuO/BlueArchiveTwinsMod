@@ -39,8 +39,8 @@
     },
     "BATwinsMod:Exchange":{
         "NAME":"交换",
-        "DESCRIPTION":" batwinsmod:交换 1张手牌。",
-        "UPGRADE_DESCRIPTION":" batwinsmod:交换 1至3张手牌。"
+        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 1张手牌。",
+        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 1至3张手牌。"
     },
     "BATwinsMod:KeepItToTheEnd":{
         "NAME":"严守到底",
@@ -125,7 +125,8 @@
     },
 	"BATwinsMod:AdventureOpening":{
 		"NAME":"冒险-开幕",
-		"DESCRIPTION":" batwinsmod:共有 NL 打出这张牌消耗的牌。从手牌选择一张冒险牌消耗。"
+		"DESCRIPTION":" 保留 NL 打出这张牌消耗的牌。从手牌选择一张冒险牌消耗。",
+		"UPGRADE_DESCRIPTION":" 保留 batwinsmod:共有 NL 打出这张牌消耗的牌。从手牌选择一张冒险牌消耗。"
 	},
 	"BATwinsMod:AdventureBattle":{
 		"NAME":"冒险-战斗",
@@ -151,5 +152,63 @@
 	"BATwinsMod:BDStudy":{
 		"NAME":"BD学习",
 		"DESCRIPTION":"选择 !M! 张手牌 消耗 。获得等同于其耗能2倍的 batwinsmod:经验值 。"
+	},
+	"BATwinsMod:EmergencyRecovery":{
+		"NAME":"紧急恢复",
+		"DESCRIPTION":"获得 [LE] 。若桃能量为0，获得 [TE] [TE] 。"
+	},
+	"BATwinsMod:AbstractSchool":{
+		"NAME":"抽象派艺术",
+		"DESCRIPTION":"造成 !D! 点伤害X次。X为手牌的颜色数。"
+	},
+	"BATwinsMod:DefensiveCounterattack":{
+		"NAME":"防守与打击",
+		"DESCRIPTION":"获得 !B! 点格挡。本回合受到攻击时对攻击的怪物打出一张打击。"
+	},
+	"BATwinsMod:AdventureRewards":{
+		"NAME":"冒险-奖励",
+		"DESCRIPTION":"随机获得以下1项： NL 获得5 batwinsmod:经验值 NL 回复3生命 NL 获得 [TE] [LE] ,抽2张牌 NL 消耗 。若上张牌是冒险牌，改为随机选择2项。",
+		"UPGRADE_DESCRIPTION":"随机获得以下1项： NL 获得5 batwinsmod:经验值 NL 回复3生命 NL 获得 [TE] [LE] ,抽2张牌 NL 获得1随机药水 NL 消耗 。若上张牌是冒险牌，改为随机选择2项。"
+	},
+	"BATwinsMod:AccumulatedStrike":{
+		"NAME":"蓄力打击",
+		"DESCRIPTION":"造成 !D! 点伤害。本场战斗每打出1张打击牌，这张牌的伤害上升 !M! 。"
+	},
+	"BATwinsMod:NormalAttackMethods":{
+		"NAME":"平A流",
+		"DESCRIPTION":"每回合开始时，将抽牌堆随机1张打击牌加入手牌。那张牌变为 batwinsmod:共有 。",
+		"UPGRADE_DESCRIPTION":"打击牌变为共有。每回合开始时，将抽牌堆随机1张打击牌加入手牌。那张牌变为 batwinsmod:共有 。 NL 抽牌堆打击牌不足时，将弃牌堆洗入抽牌堆。"
+	},
+	"BATwinsMod:AlternatingAttack":{
+		"NAME":"交替攻击",
+		"DESCRIPTION":"造成 !D! 点伤害。从手牌选择1张 batwinsmod:绿牌 攻击牌打出。"
+	},
+	"BATwinsMod:TemporaryAssistance":{
+		"NAME":"暂时援助",
+		"DESCRIPTION":" batwinsmod:交换 1张手牌，那张牌打出后变回原颜色。这张牌在抽牌堆时，耗尽绿能量时加入手牌。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:交换 1张手牌，那张牌打出后变为原颜色。这张牌在抽牌堆或弃牌堆时，耗尽绿能量时加入手牌。"
+	},
+	"BATwinsMod:AdventureExperience":{
+		"NAME":"冒险-历练",
+		"DESCRIPTION":"获得 [TE] [TE] ,抽 !M! 张牌。本回合打出的上一张牌是冒险牌时，获得 [LE] [LE] 。",
+		"UPGRADE_DESCRIPTION":"获得 [TE] [TE] [TE] ,抽 !M! 张牌。本回合打出的上一张牌是冒险牌时，获得 [LE] [LE] 。"
+	},
+	"BATwinsMod:SwitchStrike":{
+		"NAME":"切换打击",
+		"DESCRIPTION":"造成 !D! 点伤害。在手牌增加1张此牌交换后的复制。这张牌被其他牌效果打出时，打出抽牌堆中1张同名的 batwinsmod:绿牌 。"
+	},
+	"BATwinsMod:CoverCharge":{
+		"NAME":"掩护冲锋",
+		"DESCRIPTION":"造成 !D! 点伤害X次，获得 !B! 点格挡Y次。（X为消耗的桃能量数量，Y为消耗的绿能量数量）"
+	},
+	"BATwinsMod:MutualUnderstanding":{
+		"NAME":"双胞胎默契",
+		"DESCRIPTION":"抽 !M! 张牌，若是 batwinsmod:桃牌 ，将其打出。",
+		"UPGRADE_DESCRIPTION":" 预见 2。抽 !M! 张牌，若是 batwinsmod:桃牌 ，将其打出。"
+	},
+	"BATwinsMod:MysteriousChest":{
+		"NAME":"神秘宝箱",
+		"DESCRIPTION":"将1张随机 batwinsmod:绿牌 加入手牌，那张牌获得 虚无 ， 消耗 。 batwinsmod:交换 这张牌。",
+		"UPGRADE_DESCRIPTION":"将1张随机 batwinsmod:绿牌 加入手牌，那张牌获得 保留 ， 消耗 。 batwinsmod:交换 这张牌。"
 	}
 }

@@ -1,8 +1,11 @@
 package baModDeveloper.core;
 
+import baModDeveloper.cards.BATwinsModCustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -52,6 +55,53 @@ public class BATwinsEnergyManager extends EnergyManager{
     }
 
     public void use(int e,EnergyType energyType){
+        int priviousMOMOICount=BATwinsEnergyPanel.getMomoiEnergy();
+        int priviousMIDORICount=BATwinsEnergyPanel.getMidoriCount();
         BATwinsEnergyPanel.useEnergy(e,energyType);
+//        triggerEnengyUseEffect(e,energyType);
+        if(BATwinsEnergyPanel.getMomoiEnergy()==0&&priviousMOMOICount!=0){
+            triggerOnEnengyExhausted(EnergyType.MOMOI);
+        } else if (BATwinsEnergyPanel.getMidoriCount()==0&&priviousMIDORICount!=0) {
+            triggerOnEnengyExhausted(EnergyType.MIDORI);
+        }
     }
+
+//    private void triggerEnengyUseEffect(int e,EnergyType energyType){
+//        AbstractPlayer p=AbstractDungeon.player;
+//        for(AbstractCard card:p.hand.group){
+//            if(card instanceof BATwinsModCustomCard){
+//                ((BATwinsModCustomCard) card).triggerOnEnergyUse(e,energyType);
+//            }
+//        }
+//        for(AbstractCard card:p.drawPile.group){
+//            if(card instanceof BATwinsModCustomCard){
+//                ((BATwinsModCustomCard) card).triggerOnEnergyUse(e,energyType);
+//            }
+//        }
+//        for(AbstractCard card:p.discardPile.group){
+//            if(card instanceof BATwinsModCustomCard){
+//                ((BATwinsModCustomCard) card).triggerOnEnergyUse(e,energyType);
+//            }
+//        }
+//
+//    }
+    private void triggerOnEnengyExhausted(EnergyType energyType){
+        AbstractPlayer p=AbstractDungeon.player;
+        for(AbstractCard card:p.hand.group){
+            if(card instanceof BATwinsModCustomCard){
+                ((BATwinsModCustomCard) card).triggerOnEnergyExhausted(energyType);
+            }
+        }
+        for(AbstractCard card:p.drawPile.group){
+            if(card instanceof BATwinsModCustomCard){
+                ((BATwinsModCustomCard) card).triggerOnEnergyExhausted(energyType);
+            }
+        }
+        for(AbstractCard card:p.discardPile.group){
+            if(card instanceof BATwinsModCustomCard){
+                ((BATwinsModCustomCard) card).triggerOnEnergyExhausted(energyType);
+            }
+        }
+    }
+
 }

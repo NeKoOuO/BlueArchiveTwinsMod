@@ -1,6 +1,7 @@
 package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsAdventureOpening;
+import baModDeveloper.cards.BATwinsModCustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,6 +38,9 @@ public class BATwinsAdventureOpeningAction extends AbstractGameAction {
             }
 
             temp.purgeOnUse=true;
+            if(temp instanceof BATwinsModCustomCard){
+//                ((BATwinsModCustomCard) temp).playedByOtherCard=true;
+            }
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(temp,m,card.energyOnUse,true,true),true);
 
         }

@@ -5,11 +5,9 @@ import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -30,7 +28,7 @@ public class BATwinsAdventureBattle extends BATwinsModCustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseDamage=15;
         this.damage=this.baseDamage;
-        this.tags.add(BATwinsCardTags.Adventrue);
+        this.tags.add(BATwinsCardTags.Adventure);
         this.exhaust=true;
     }
 
@@ -46,29 +44,30 @@ public class BATwinsAdventureBattle extends BATwinsModCustomCard{
 
     @Override
     public void applyPowers() {
-        super.applyPowers();
-        if(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()){
-            AbstractCard previousCard=AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size()-1);
-            if(previousCard.hasTag(BATwinsCardTags.Adventrue)){
-                this.damage*=2;
-            }
+        int realBaseDamage=this.baseDamage;
+        if(BATwinsAdventureOpening.PreviousCardIsAdventrue()){
+            this.baseDamage*=2;
         }
-
+        super.applyPowers();
+        this.baseDamage=realBaseDamage;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
-        if(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()){
-            AbstractCard previousCard=AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size()-1);
-            if(previousCard.hasTag(BATwinsCardTags.Adventrue)){
-                this.damage*=2;
-            }
+        int realBaseDamage=this.baseDamage;
+        if(BATwinsAdventureOpening.PreviousCardIsAdventrue()){
+            this.baseDamage*=2;
         }
+        super.calculateCardDamage(mo);
+        this.baseDamage=realBaseDamage;
     }
 
     @Override
     public void upgrade() {
-
+        if(!upgraded){
+            this.upgradeName();
+            this.upgradeDamage(5);
+        }
     }
+
 }

@@ -3,6 +3,7 @@ package baModDeveloper.power;
 import baModDeveloper.action.BATwinsDefensiveCounterattackAction;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import java.util.ArrayList;
 
 public class BATwinsDefensiveCounterattackPower extends AbstractPower {
     public static final String POWER_ID= ModHelper.makePath("DefensiveCounterattackPower");
@@ -25,6 +28,7 @@ public class BATwinsDefensiveCounterattackPower extends AbstractPower {
     private static final String IMG_84=ModHelper.makeImgPath("power","DefensiveCounterattack84");
     private static final String IMG_32=ModHelper.makeImgPath("power","DefensiveCounterattack32");
     private boolean exchange;
+    private ArrayList<DamageInfo> damageInfos;
     public BATwinsDefensiveCounterattackPower(AbstractCreature owner,int amount,boolean exchange){
         if(exchange){
             this.name=EXCHANGE_NAME;
@@ -38,7 +42,7 @@ public class BATwinsDefensiveCounterattackPower extends AbstractPower {
         this.amount=amount;
         this.region128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84),0,0,84,84);
         this.region48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32),0,0,32,32);
-
+        this.damageInfos=new ArrayList<>();
         updateDescription();
     }
 
@@ -53,7 +57,17 @@ public class BATwinsDefensiveCounterattackPower extends AbstractPower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        addToBot(new BATwinsDefensiveCounterattackAction((AbstractMonster) info.owner,this.exchange));
+        this.damageInfos.add(info);
         return super.onAttacked(info, damageAmount);
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        for(DamageInfo info:damageInfos){
+            for(int i=0;i<this.amount;i++){
+                addToBot(new BATwinsDefensiveCounterattackAction((AbstractMonster) info.owner,this.exchange));
+            }
+        }
+        addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,this.ID));
     }
 }

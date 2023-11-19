@@ -20,12 +20,17 @@ public class BATwinsExchangeAction extends AbstractGameAction {
     public static final String[] EXTRETEXT=uiStrings.EXTRA_TEXT;
     private AbstractPlayer p;
     private ArrayList<AbstractCard> cannotexchange=new ArrayList<>();
+    private boolean playBackOriginColor;
 
-    public BATwinsExchangeAction(int amount){
+    public BATwinsExchangeAction(int amount,boolean playBackOriginColor){
         this.amount=amount;
         this.actionType= ActionType.CARD_MANIPULATION;
         this.p= AbstractDungeon.player;
         this.duration= Settings.ACTION_DUR_FAST;
+        this.playBackOriginColor=playBackOriginColor;
+    }
+    public BATwinsExchangeAction(int amount){
+        this(amount,false);
     }
     @Override
     public void update() {
@@ -43,6 +48,7 @@ public class BATwinsExchangeAction extends AbstractGameAction {
                 for(AbstractCard c:this.p.hand.group){
                     if(c.color== BATwinsCharacter.Enums.BATWINS_MOMOI_CARD||c.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD){
                         ((BATwinsModCustomCard)c).conversionColor();
+                        ((BATwinsModCustomCard) c).playBackOriginalColor=this.playBackOriginColor;
                         c.superFlash();
                         c.applyPowers();
                         this.isDone=true;
@@ -65,6 +71,7 @@ public class BATwinsExchangeAction extends AbstractGameAction {
             }
             if(this.p.hand.group.size()==1){
                 ((BATwinsModCustomCard)this.p.hand.getTopCard()).conversionColor();
+                ((BATwinsModCustomCard)this.p.hand.getTopCard()).playBackOriginalColor=this.playBackOriginColor;
                 this.p.hand.getTopCard().superFlash();
                 this.p.hand.getTopCard().applyPowers();
                 this.isDone=true;
@@ -74,6 +81,7 @@ public class BATwinsExchangeAction extends AbstractGameAction {
         if(!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved){
             for(AbstractCard c:AbstractDungeon.handCardSelectScreen.selectedCards.group){
                 ((BATwinsModCustomCard)c).conversionColor();
+                ((BATwinsModCustomCard) c).playBackOriginalColor=this.playBackOriginColor;
                 c.superFlash();
                 c.applyPowers();
                 this.p.hand.addToTop(c);

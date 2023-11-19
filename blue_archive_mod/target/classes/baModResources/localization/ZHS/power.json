@@ -96,5 +96,32 @@
 		"DESCRIPTIONS":[
 			"获得的经验值变为两倍。"
 		]
+	},
+	"BATwinsMod:DefensiveCounterattackPower":{
+		"NAME":"防守与打击",
+		"DESCRIPTIONS":[
+			"受到攻击时，对攻击的怪物打出",
+			"张打击。"
+		]
+	},
+	"BATwinsMod:DefensiveCounterattackExchangePower":{
+		"NAME":"防守与打击（交换）",
+		"DESCRIPTIONS":[
+			"受到攻击时，对攻击的怪物打出",
+			"张打击。"
+		]
+	},
+	"BATwinsMod:NormalAttackMethodsPower":{
+		"NAME":"平A流",
+		"DESCRIPTIONS":[
+			"每回合开始从抽牌堆将",
+			"张打击牌加入手牌。那张牌变为共有"
+		]
+	},
+	"BATwinsMod:NoramlAttackAuxiliaryPower":{
+		"NAME":"平A辅助",
+		"DESCRIPTIONS":[
+			"平A流将打击牌加入手牌时，若抽牌堆打击牌数量不足，则进行1次洗牌。"
+		]
 	}
 }

@@ -7,6 +7,7 @@ import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -23,7 +24,7 @@ public class BATwinsAdventureOpening extends BATwinsModCustomCard{
     private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET=CardTarget.NONE;
     private static final CardRarity RARITY=CardRarity.COMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.SHARE;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
 
     private ArrayList<AbstractCard> StorageCards;
 
@@ -32,7 +33,8 @@ public class BATwinsAdventureOpening extends BATwinsModCustomCard{
         this.StorageCards=new ArrayList<>();
         this.baseMagicNumber=1;
         this.magicNumber=this.baseMagicNumber;
-        this.tags.add(BATwinsCardTags.Adventrue);
+        this.tags.add(BATwinsCardTags.Adventure);
+        this.selfRetain=true;
     }
 
     @Override
@@ -49,7 +51,7 @@ public class BATwinsAdventureOpening extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.retain=true;
+            this.modifyEnergyType= BATwinsEnergyPanel.EnergyType.SHARE;
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
         }
     }
@@ -82,5 +84,13 @@ public class BATwinsAdventureOpening extends BATwinsModCustomCard{
             }
         }
         this.rawDescription=strBuilder.toString();
+    }
+
+    public static boolean PreviousCardIsAdventrue(){
+        if(!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()){
+            AbstractCard previousCard=AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size()-1);
+            return previousCard.hasTag(BATwinsCardTags.Adventure);
+        }
+        return false;
     }
 }

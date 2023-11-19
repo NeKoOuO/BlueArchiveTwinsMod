@@ -70,7 +70,8 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard{
                 colors.add(c.color);
             }
         }
-        this.magicNumber=colors.size();
+        this.baseMagicNumber=colors.size();
+        this.magicNumber=this.baseMagicNumber;
         super.renderTitle(sb);
     }
 }

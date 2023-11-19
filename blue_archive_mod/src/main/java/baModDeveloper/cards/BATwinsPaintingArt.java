@@ -36,7 +36,7 @@ public class BATwinsPaintingArt extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(1);
         }
     }
 
