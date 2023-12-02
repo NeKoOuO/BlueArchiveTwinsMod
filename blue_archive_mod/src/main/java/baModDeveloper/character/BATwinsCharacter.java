@@ -8,6 +8,7 @@ import baModDeveloper.animation.AbstractAnimation;
 import baModDeveloper.animation.GifAnimation;
 import baModDeveloper.cards.*;
 import baModDeveloper.helpers.ImageHelper;
+import baModDeveloper.relic.BATwinsMomoisGameConsole;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomEnergyOrb;
 import com.badlogic.gdx.graphics.Color;
@@ -199,7 +200,7 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Vajra.ID);
+        retVal.add(BATwinsMomoisGameConsole.ID);
         return retVal;
     }
 
@@ -341,6 +342,14 @@ public class BATwinsCharacter extends CustomPlayer {
         }
     }
 
+    public static CardColor getOtherColor(CardColor color){
+        if(color==Enums.BATWINS_MOMOI_CARD){
+            return Enums.BATWINS_MIDORI_CARD;
+        }else if(color==Enums.BATWINS_MIDORI_CARD){
+            return Enums.BATWINS_MOMOI_CARD;
+        }
+        return color;
+    }
 //    @Override
 //    public void render(SpriteBatch sb){
 //        super.render(sb);

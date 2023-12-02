@@ -1,8 +1,7 @@
 package baModDeveloper.action;
 
-import baModDeveloper.character.BATwinsCharacter;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -11,21 +10,41 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class BATwinsAlternatingAttackAction extends AbstractGameAction {
+public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
     private final AbstractCard.CardColor color;
     private final AbstractPlayer p;
     private final ArrayList<AbstractCard> canNotSelectCards=new ArrayList<>();
-    public BATwinsAlternatingAttackAction(AbstractCard.CardColor color, AbstractMonster target){
+    private final AbstractCard.CardType type;
+    private boolean isRandom;
+    private boolean isRandomTarget;
+    private boolean isAllColor;
+    private boolean isAllType;
+    private int numberOfConnections;
+    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type,int numberOfConnections){
         this.color=color;
         this.p= AbstractDungeon.player;
         this.target=target;
+        this.type=type;
         this.duration= Settings.ACTION_DUR_FAST;
+        this.isAllColor=false;
+        this.isAllType=false;
+        this.numberOfConnections=numberOfConnections;
+    }
+    public BATwinsSelectHandCardToPlayAction(boolean isAllColor,boolean isAllType){
+        this(null,null,null);
+        this.isAllColor=isAllColor;
+        this.isAllType=isAllType;
+    }
+    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type){
+        this(color,target,type,1);
     }
     @Override
     public void update() {
         if(this.duration==Settings.ACTION_DUR_FAST){
             for(AbstractCard c:this.p.hand.group){
-                if(c.color!=this.color||c.type!= AbstractCard.CardType.ATTACK){
+                if(!this.isAllColor&&c.color!=this.color){
+                    this.canNotSelectCards.add(c);
+                } else if (!this.isAllType&&c.type!=this.type) {
                     this.canNotSelectCards.add(c);
                 }
             }
@@ -33,24 +52,10 @@ public class BATwinsAlternatingAttackAction extends AbstractGameAction {
                 this.isDone=true;
                 return;
             }
-            if(this.p.hand.group.size()-this.canNotSelectCards.size()==1){
-                for(AbstractCard c:this.p.hand.group){
-                    if(c.color==this.color&&c.type== AbstractCard.CardType.ATTACK){
-                        wantToUseCard(c);
-                        this.isDone=true;
-                        return;
-                    }
-                }
-            }
             this.p.hand.group.removeAll(this.canNotSelectCards);
-            if(this.p.hand.group.size()>1){
+            if(!this.p.hand.group.isEmpty()){
                 AbstractDungeon.handCardSelectScreen.open("",1,false,false,false);
                 tickDuration();
-                return;
-            }
-            if(this.p.hand.group.size()==1){
-                wantToUseCard(this.p.hand.getTopCard());
-                this.isDone=true;
                 return;
             }
 
@@ -72,7 +77,10 @@ public class BATwinsAlternatingAttackAction extends AbstractGameAction {
 
     private void wantToUseCard(AbstractCard card){
         this.p.hand.addToTop(card);
-        addToTop(new BATwinsPlayHandCardAction(card,this.target));
+        if(this.target==null){
+            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+        }
+        addToTop(new BATwinsPlayHandCardAction(card,this.target,this.numberOfConnections));
 //        card.applyPowers();
 //        card.calculateCardDamage((AbstractMonster) this.target);
 //        addToTop((AbstractGameAction)new NewQueueCardAction(card, this.target, false, true));

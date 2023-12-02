@@ -46,6 +46,7 @@ public class BATwinsDefensiveCounterattackAction extends AbstractGameAction {
             cardToPlay.applyPowers();
 //            addToTop(new NewQueueCardAction(cardToPlay, this.target, false, true));
             cardToPlay.purgeOnUse=true;
+            cardToPlay.numberOfConnections=1;
 //            cardToPlay.playedByOtherCard = true;
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, (AbstractMonster) this.target,cardToPlay.energyOnUse,true,true),true);
 //            addToTop(new UnlimboAction(cardToPlay));

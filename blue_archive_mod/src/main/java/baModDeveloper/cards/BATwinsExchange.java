@@ -26,7 +26,7 @@ public class BATwinsExchange extends BATwinsModCustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseMagicNumber=1;
         this.magicNumber=this.baseMagicNumber;
-        this.retain=true;
+        this.selfRetain=true;
     }
 
     @Override

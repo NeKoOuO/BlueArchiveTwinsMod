@@ -56,11 +56,11 @@ public class BATwinsSwitchStrike extends BATwinsModCustomCard{
     }
 
     @Override
-    public void triggerOnPlayedByOtherCards(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void triggerOnConnectePlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         if(this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD)
-            addToBot(new BATwinsSwitchStrikeAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,abstractMonster));
+            addToBot(new BATwinsSwitchStrikeAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,abstractMonster,this.numberOfConnections+1));
         else if (this.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
-            addToBot(new BATwinsSwitchStrikeAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,abstractMonster));
+            addToBot(new BATwinsSwitchStrikeAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,abstractMonster,this.numberOfConnections+1));
         }
     }
 }

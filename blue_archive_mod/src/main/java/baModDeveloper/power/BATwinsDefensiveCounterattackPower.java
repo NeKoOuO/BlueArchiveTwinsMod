@@ -58,11 +58,13 @@ public class BATwinsDefensiveCounterattackPower extends AbstractPower {
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         this.damageInfos.add(info);
+        this.flash();
         return super.onAttacked(info, damageAmount);
     }
 
     @Override
     public void atStartOfTurn() {
+        this.flash();
         for(DamageInfo info:damageInfos){
             for(int i=0;i<this.amount;i++){
                 addToBot(new BATwinsDefensiveCounterattackAction((AbstractMonster) info.owner,this.exchange));

@@ -1,7 +1,10 @@
 package baModDeveloper;
 
 import baModDeveloper.cards.*;
-import basemod.interfaces.EditKeywordsSubscriber;
+import baModDeveloper.power.BATwinsSeeYouHaveASharenPower;
+import baModDeveloper.relic.BATwinsMomoisGameConsole;
+import basemod.helpers.RelicType;
+import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.compression.lzma.Base;
@@ -16,16 +19,13 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.helpers.ModHelper;
 import basemod.BaseMod;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
 
 import java.nio.charset.StandardCharsets;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber, EditKeywordsSubscriber {
+public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber, EditKeywordsSubscriber , EditRelicsSubscriber {
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -114,6 +114,13 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsCoverCharge());
         BaseMod.addCard(new BATwinsMutualUnderstanding());
         BaseMod.addCard(new BATwinsMysteriousChest());
+        BaseMod.addCard(new BATwisSeeYouHaveASharen());
+        BaseMod.addCard(new BATwinsCheatingCodeEnabled());
+        BaseMod.addCard(new BATwinsFundOverdraft());
+        BaseMod.addCard(new BATwinsTakeActionsSeparately());
+        BaseMod.addCard(new BATwinsRepeatOperation());
+        BaseMod.addCard(new BATwinsConvenientConnectivity());
+        BaseMod.addCard(new BATwinsEndCombo());
     }
 
     @Override
@@ -128,6 +135,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "baModResources/localization/" + lang + "/power.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, "baModResources/localization/" + lang + "/uistring.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class,"baModResources/localization/"+lang+"/relic.json");
     }
 
     @Override
@@ -149,5 +157,10 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
                 BaseMod.addKeyword("batwinsmod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    @Override
+    public void receiveEditRelics() {
+        BaseMod.addRelicToCustomPool(new BATwinsMomoisGameConsole(), Enums.BATWINS_MOMOI_CARD);
     }
 }

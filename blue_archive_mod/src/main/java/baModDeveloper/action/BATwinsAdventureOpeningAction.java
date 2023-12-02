@@ -38,8 +38,9 @@ public class BATwinsAdventureOpeningAction extends AbstractGameAction {
             }
 
             temp.purgeOnUse=true;
+
             if(temp instanceof BATwinsModCustomCard){
-//                ((BATwinsModCustomCard) temp).playedByOtherCard=true;
+                ((BATwinsModCustomCard) temp).numberOfConnections=1;
             }
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(temp,m,card.energyOnUse,true,true),true);
 

@@ -61,10 +61,6 @@ public class BATwinsTemporaryAssistance extends BATwinsModCustomCard{
         if(!trigger){
             return;
         }
-        if(AbstractDungeon.player.drawPile.contains(this)){
-            addToBot(new BATwinsDrawOrDisCardToHandAction(this,AbstractDungeon.player.drawPile));
-        } else if (this.upgraded&&AbstractDungeon.player.discardPile.contains(this)) {
-            addToBot(new BATwinsDrawOrDisCardToHandAction(this,AbstractDungeon.player.discardPile));
-        }
+        addToBot(new BATwinsDrawOrDisCardToHandAction(this));
     }
 }

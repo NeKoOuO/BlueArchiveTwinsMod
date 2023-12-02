@@ -9,9 +9,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BATwinsSwitchStrikeAction extends AbstractGameAction {
     private AbstractCard.CardColor color;
-    public BATwinsSwitchStrikeAction(AbstractCard.CardColor color, AbstractMonster target){
+    private int numberOfConnections;
+    public BATwinsSwitchStrikeAction(AbstractCard.CardColor color, AbstractMonster target,int numberOfConnections){
         this.color=color;
         this.target=target;
+        this.numberOfConnections=numberOfConnections;
     }
     @Override
     public void update() {
@@ -26,7 +28,7 @@ public class BATwinsSwitchStrikeAction extends AbstractGameAction {
             if(this.target==null||this.target.isDead){
                 this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
             }
-            addToTop(new BATwinsPlayDrawPailCardAction(temp,target,false));
+            addToTop(new BATwinsPlayDrawPailCardAction(temp,target,false,this.numberOfConnections));
         }
         this.isDone=true;
     }

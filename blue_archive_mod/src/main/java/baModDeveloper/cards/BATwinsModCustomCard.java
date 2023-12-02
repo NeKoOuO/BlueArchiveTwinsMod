@@ -31,6 +31,8 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     private int startColor=0;
     public boolean gradient=false;
     private float gradientDuration=0.0F;
+
+    public int numberOfConnections=0;
 //    public boolean playedByOtherCard=false;
     public BATwinsModCustomCard(String ID, String NAME, String IMG_PATH, int COST, String DESCRIPTION, CardType TYPE, CardColor COLOR, CardRarity RARITY, CardTarget TARGET, BATwinsEnergyPanel.EnergyType ENERGYTYPE) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
@@ -178,9 +180,13 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             useMIDORI(abstractPlayer,abstractMonster);
         }
         if(this.isInAutoplay){
-            triggerOnPlayedByOtherCards(abstractPlayer,abstractMonster);
+            triggerOnConnectePlayed(abstractPlayer,abstractMonster);
+            if(this.numberOfConnections>1){
+                triggerOnSuperConnectPlayed(abstractPlayer,abstractMonster);
+            }
 //            this.playedByOtherCard=false;
         }
+        this.numberOfConnections=0;
         if(!this.freeToPlay()&&!this.freeToPlayOnce){
             if(this.costForTurn>0) {
                 if(AbstractDungeon.player.hasPower(BATwinsDoubleExperiencePower.POWER_ID)){
@@ -208,6 +214,8 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             });
         }
     }
+
+
     abstract public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
     abstract public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
     public String replaceDescription(String description){
@@ -254,10 +262,10 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         return;
     }
 
-    public void triggerOnPlayedByOtherCards(AbstractPlayer abstractPlayer,AbstractMonster abstractMonster){
+    public void triggerOnConnectePlayed(AbstractPlayer abstractPlayer,AbstractMonster abstractMonster){
         return;
     }
-
+    public void triggerOnSuperConnectPlayed(AbstractPlayer abstractPlayer,AbstractMonster abstractMonster){return;}
     public boolean exchanged(){
         return this.color!=this.OriginalColor;
     }

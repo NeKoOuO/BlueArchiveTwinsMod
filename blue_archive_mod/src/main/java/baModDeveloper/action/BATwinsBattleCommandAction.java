@@ -40,7 +40,7 @@ public class BATwinsBattleCommandAction extends AbstractGameAction {
                 for(AbstractCard c:p.hand.group){
                     if(c instanceof BATwinsModCustomCard){
                         this.p.hand.moveToDeck(c,true);
-                        addToTop(new BATwinsAddHandAccordColorAction(c.color));
+                        addToTop(new BATwinsAddHandAccordColorAction(c.color,true));
                         break;
                     }
                 }
@@ -64,7 +64,7 @@ public class BATwinsBattleCommandAction extends AbstractGameAction {
             this.p.hand.group.addAll(this.cannotSelect);
             this.p.hand.refreshHandLayout();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved=true;
-            addToTop(new BATwinsAddHandAccordColorAction(drawColor));
+            addToTop(new BATwinsAddHandAccordColorAction(drawColor,true));
         }
         tickDuration();
     }

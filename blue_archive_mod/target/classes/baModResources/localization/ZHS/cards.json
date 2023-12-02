@@ -195,7 +195,7 @@
 	},
 	"BATwinsMod:SwitchStrike":{
 		"NAME":"切换打击",
-		"DESCRIPTION":"造成 !D! 点伤害。在手牌增加1张此牌交换后的复制。这张牌被其他牌效果打出时，打出抽牌堆中1张同名的 batwinsmod:绿牌 。"
+		"DESCRIPTION":"造成 !D! 点伤害。在手牌增加1张此牌交换后的复制。 batwinsmod:连携 ：打出抽牌堆中1张同名的 batwinsmod:绿牌 。"
 	},
 	"BATwinsMod:CoverCharge":{
 		"NAME":"掩护冲锋",
@@ -210,5 +210,35 @@
 		"NAME":"神秘宝箱",
 		"DESCRIPTION":"将1张随机 batwinsmod:绿牌 加入手牌，那张牌获得 虚无 ， 消耗 。 batwinsmod:交换 这张牌。",
 		"UPGRADE_DESCRIPTION":"将1张随机 batwinsmod:绿牌 加入手牌，那张牌获得 保留 ， 消耗 。 batwinsmod:交换 这张牌。"
+	},
+	"BATwinsMod:SeeYouHaveAShare":{
+		"NAME":"见者有份！",
+		"DESCRIPTION":"本回合打出的下 !M! 张单体攻击牌会对所有敌人打出1次。"
+	},
+	"BATwinsMod:CheatingCodeEnabled":{
+		"NAME":"作弊码开启",
+		"DESCRIPTION":"弃置手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。",
+		"UPGRADE_DESCRIPTION":"弃置手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。将所有 [LE] 转化为 [TE] 。"
+	},
+	"BATwinsMod:FundOverdraft":{
+		"NAME":"资金透支",
+		"DESCRIPTION":"抽 !M! 张牌。每次打出后抽牌数-1. NL batwinsmod:连携 ：重置为抽2张牌。"
+	},
+	"BATwinsMod:TakeActionsSeparately":{
+		"NAME":"分头行动",
+		"DESCRIPTION":"获得 !B! 点格挡。打出手牌中1张 batwinsmod:桃牌 技能牌。"
+	},
+	"BATwinsMod:RepeatOperation":{
+		"NAME":"重复操作",
+		"DESCRIPTION":"选择至多 !M! 张手牌，将其 batwinsmod:交换 后的复制加入手牌。那些牌获得 虚无 。"
+	},
+	"BATwinsMod:ConvenientConnectivity":{
+		"NAME":"便捷连携",
+		"DESCRIPTION":"选择 !M! 张手牌打出。 batwinsmod:连携 ：随机打出抽牌堆1张牌。",
+		"UPGRADE_DESCRIPTION":"选择 !M! 张手牌打出。 batwinsmod:连携 ：选择抽牌堆1张牌打出。"
+	},
+	"BATwinsMod:EndCombo":{
+		"NAME":"终结连击",
+		"DESCRIPTION":"造成 !D! 伤害。 NL batwinsmod:连携 ：造成 !B! 伤害。 NL batwinsmod:超连携 ：造成 !M! 伤害。"
 	}
 }

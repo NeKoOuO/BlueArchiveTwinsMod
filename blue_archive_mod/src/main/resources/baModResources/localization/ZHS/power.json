@@ -123,5 +123,12 @@
 		"DESCRIPTIONS":[
 			"平A流将打击牌加入手牌时，若抽牌堆打击牌数量不足，则进行1次洗牌。"
 		]
+	},
+	"BATwinsMod:SeeYouHaveASharenPower":{
+		"NAME":"见者有份！",
+		"DESCRIPTIONS":[
+			"本回合打出的下",
+			"张单体攻击牌对所有敌人打出1次。"
+		]
 	}
 }

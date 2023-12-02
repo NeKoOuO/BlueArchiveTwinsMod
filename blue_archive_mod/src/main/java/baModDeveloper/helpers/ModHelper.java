@@ -58,4 +58,5 @@ public class ModHelper {
         }
         return list.get(AbstractDungeon.cardRandomRng.random(list.size()-1));
     }
+
 }

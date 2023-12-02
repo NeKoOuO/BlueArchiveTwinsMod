@@ -40,7 +40,7 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         for(AbstractCard c: abstractPlayer.hand.group){
             if(c.hasTag(CardTags.STRIKE)){
-                addToBot(new BATwinsPlayHandCardAction(c,abstractMonster));
+                addToBot(new BATwinsPlayHandCardAction(c,abstractMonster,this.numberOfConnections+1));
             }
         }
     }

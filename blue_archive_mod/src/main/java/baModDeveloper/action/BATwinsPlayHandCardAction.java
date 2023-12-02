@@ -17,18 +17,26 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
     public AbstractCard card;
     private AbstractPlayer p;
     private boolean ignoreDeath;
-    public BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target,boolean randomTarget,boolean ignoreDeath){
+    private int numberOfConnections;
+    public BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target,boolean randomTarget,boolean ignoreDeath,int numberOfConnections){
         this.card=card;
         this.p= AbstractDungeon.player;
         this.target=target;
         this.ignoreDeath=ignoreDeath;
+        this.numberOfConnections=numberOfConnections;
         this.duration= Settings.ACTION_DUR_FAST;
+    }
+    BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target,boolean randomTarget,boolean ignoreDeath){
+        this(card,target,randomTarget,ignoreDeath,0);
     }
     public BATwinsPlayHandCardAction(AbstractCard card,AbstractCreature target){
         this(card,target,false,true);
     }
     public BATwinsPlayHandCardAction(AbstractCard card,AbstractCreature target,boolean ignoreDeath){
         this(card,target,false,ignoreDeath);
+    }
+    public BATwinsPlayHandCardAction(AbstractCard card,AbstractCreature target,int numberOfConnections){
+        this(card,target,false,true,1);
     }
     @Override
     public void update() {
@@ -37,6 +45,9 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
             this.card.calculateCardDamage((AbstractMonster) this.target);
 //            this.p.hand.removeCard(this.card);
             AbstractDungeon.getCurrRoom().souls.remove(this.card);
+            if(card instanceof BATwinsModCustomCard){
+                ((BATwinsModCustomCard) card).numberOfConnections=this.numberOfConnections;
+            }
 //            this.card.isInAutoplay=true;
 //            addToTop(new ShowCardAction(this.card));
 //            this.p.limbo.ad

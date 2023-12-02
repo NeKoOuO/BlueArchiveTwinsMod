@@ -1,6 +1,6 @@
 package baModDeveloper.cards;
 
-import baModDeveloper.action.BATwinsAlternatingAttackAction;
+import baModDeveloper.action.BATwinsSelectHandCardToPlayAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
@@ -34,13 +34,13 @@ public class BATwinsAlternatingAttack extends BATwinsModCustomCard{
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new BATwinsAlternatingAttackAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,abstractMonster));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,abstractMonster,CardType.ATTACK,this.numberOfConnections+1));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new BATwinsAlternatingAttackAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,abstractMonster));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,abstractMonster,CardType.ATTACK,this.numberOfConnections+1));
     }
 
     @Override

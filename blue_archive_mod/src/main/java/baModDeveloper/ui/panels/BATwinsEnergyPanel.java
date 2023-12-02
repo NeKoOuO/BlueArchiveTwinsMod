@@ -326,4 +326,13 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             return 0;
         return MidoriCount;
     }
+
+    public static EnergyType getOtherEnergyType(EnergyType type){
+        if(type==EnergyType.MOMOI){
+            return EnergyType.MIDORI;
+        } else if (type==EnergyType.MIDORI) {
+            return EnergyType.MOMOI;
+        }
+        return type;
+    }
 }
