@@ -64,14 +64,14 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard{
 
     @Override
     protected void renderTitle(SpriteBatch sb) {
-        ArrayList<CardColor> colors=new ArrayList<>();
-        for(AbstractCard c: AbstractDungeon.player.hand.group){
-            if(!colors.contains(c.color)){
-                colors.add(c.color);
-            }
-        }
-        this.baseMagicNumber=colors.size();
-        this.magicNumber=this.baseMagicNumber;
+//        ArrayList<CardColor> colors=new ArrayList<>();
+//        for(AbstractCard c: AbstractDungeon.player.hand.group){
+//            if(!colors.contains(c.color)){
+//                colors.add(c.color);
+//            }
+//        }
+//        this.baseMagicNumber=colors.size();
+//        this.magicNumber=this.baseMagicNumber;
         super.renderTitle(sb);
     }
 }

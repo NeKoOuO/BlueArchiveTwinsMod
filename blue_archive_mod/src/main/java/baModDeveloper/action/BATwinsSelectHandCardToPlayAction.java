@@ -19,24 +19,32 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
     private boolean isRandomTarget;
     private boolean isAllColor;
     private boolean isAllType;
+    private int amount;
     private int numberOfConnections;
-    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type,int numberOfConnections){
+    private boolean blockTheOriginalEffect;
+    public BATwinsSelectHandCardToPlayAction(boolean isAllColor,AbstractCard.CardColor color, AbstractMonster target,boolean isAllType, AbstractCard.CardType type,int amount,int numberOfConnections,boolean blockTheOriginalEffect){
         this.color=color;
         this.p= AbstractDungeon.player;
         this.target=target;
         this.type=type;
         this.duration= Settings.ACTION_DUR_FAST;
-        this.isAllColor=false;
-        this.isAllType=false;
+        this.isAllColor=isAllColor;
+        this.isAllType=isAllType;
+        this.amount=amount;
         this.numberOfConnections=numberOfConnections;
+        this.blockTheOriginalEffect=blockTheOriginalEffect;
     }
+    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type,int amount,int numberOfConnections){
+        this(false,color,target,false,type,amount,numberOfConnections,false);
+    }
+
     public BATwinsSelectHandCardToPlayAction(boolean isAllColor,boolean isAllType){
         this(null,null,null);
         this.isAllColor=isAllColor;
         this.isAllType=isAllType;
     }
     public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type){
-        this(color,target,type,1);
+        this(color,target,type,1,1);
     }
     @Override
     public void update() {
@@ -53,8 +61,9 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
                 return;
             }
             this.p.hand.group.removeAll(this.canNotSelectCards);
+            this.amount= Math.min(this.amount, this.p.hand.size());
             if(!this.p.hand.group.isEmpty()){
-                AbstractDungeon.handCardSelectScreen.open("",1,false,false,false);
+                AbstractDungeon.handCardSelectScreen.open("",this.amount,false,false,false);
                 tickDuration();
                 return;
             }
@@ -80,7 +89,7 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
         if(this.target==null){
             this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
         }
-        addToTop(new BATwinsPlayHandCardAction(card,this.target,this.numberOfConnections));
+        addToTop(new BATwinsPlayHandCardAction(card,this.target,this.numberOfConnections,this.blockTheOriginalEffect));
 //        card.applyPowers();
 //        card.calculateCardDamage((AbstractMonster) this.target);
 //        addToTop((AbstractGameAction)new NewQueueCardAction(card, this.target, false, true));

@@ -204,7 +204,7 @@
 	"BATwinsMod:MutualUnderstanding":{
 		"NAME":"双胞胎默契",
 		"DESCRIPTION":"抽 !M! 张牌，若是 batwinsmod:桃牌 ，将其打出。",
-		"UPGRADE_DESCRIPTION":" 预见 2。抽 !M! 张牌，若是 batwinsmod:桃牌 ，将其打出。"
+		"UPGRADE_DESCRIPTION":" 预见 1。抽 !M! 张牌，若是 batwinsmod:桃牌 ，将其打出。"
 	},
 	"BATwinsMod:MysteriousChest":{
 		"NAME":"神秘宝箱",
@@ -222,7 +222,7 @@
 	},
 	"BATwinsMod:FundOverdraft":{
 		"NAME":"资金透支",
-		"DESCRIPTION":"抽 !M! 张牌。每次打出后抽牌数-1. NL batwinsmod:连携 ：重置为抽2张牌。"
+		"DESCRIPTION":"抽 !M! 张牌。每次打出后抽牌数-1. NL batwinsmod:连携 ：抽牌数重置。"
 	},
 	"BATwinsMod:TakeActionsSeparately":{
 		"NAME":"分头行动",
@@ -240,5 +240,29 @@
 	"BATwinsMod:EndCombo":{
 		"NAME":"终结连击",
 		"DESCRIPTION":"造成 !D! 伤害。 NL batwinsmod:连携 ：造成 !B! 伤害。 NL batwinsmod:超连携 ：造成 !M! 伤害。"
+	},
+	"BATwinsMod:ReadingDocuments":{
+		"NAME":"即时存档",
+		"DESCRIPTION":"本场战斗效果打出的牌会回到抽牌堆。"
+	},
+	"BATwinsMod:MandatoryInstruction":{
+		"NAME":"强制指令",
+		"DESCRIPTION":"选择手牌 !M! 张牌打出，但只会使用其 batwinsmod:连携 和 batwinsmod:超连携 效果。",
+		"UPGRADE_DESCRIPTION":" 保留 NL 选择手牌 !M! 张牌打出，但只会使用其 batwinsmod:连携 和 batwinsmod:超连携 效果。"
+	},
+	"BATwinsMod:TwoStageAttack":{
+		"NAME":"二段击",
+		"DESCRIPTION":" batwinsmod:只能被连携 NL batwinsmod:连携 ：对全体敌人造成 !D! 点伤害2次。",
+		"EXTENDED_DESCRIPTION":[
+			"这张牌只能被效果打出。"
+		]
+	},
+	"BATwinsMod:TakeABreak":{
+		"NAME":"暂且休整",
+		"DESCRIPTION":"抽 !M! 张牌，这些牌获得 保留 。 NL batwinsmod:连携 ：打出其中1张牌。"
+	},
+	"BATwinsMod:AttackWithAllMight":{
+		"NAME":"力尽一击",
+		"DESCRIPTION":"造成 !D! 点伤害，这张牌本场战斗伤害降低 !M! %。 NL batwinsmod:连携 ：伤害恢复为100%。"
 	}
 }

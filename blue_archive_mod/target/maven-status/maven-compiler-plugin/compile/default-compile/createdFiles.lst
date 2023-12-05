@@ -12,6 +12,7 @@ baModDeveloper\cards\BATwisSeeYouHaveASharen.class
 baModDeveloper\action\BATwinsInterpretiveErrorAction.class
 baModDeveloper\cards\BATwinsSinglePlayerGame.class
 baModDeveloper\power\BATwinsExperiencePower.class
+baModDeveloper\cards\BATwinsTakeABreak.class
 baModDeveloper\cards\BATwinsKeepItToTheEnd.class
 baModDeveloper\helpers\TextureLoader.class
 baModDeveloper\cards\BATwinsAdventureOpening.class
@@ -88,12 +89,14 @@ baModDeveloper\patch\BATwinsOverlayMenuRenderFix.class
 baModDeveloper\cards\BATwinsSwitchStrike.class
 baModDeveloper\cards\BATwinsInterpretiveError.class
 baModDeveloper\ui\panels\energyorb\BATwinsEnergyMomoiOrb.class
+baModDeveloper\cards\BATwinsMandatoryInstruction.class
 baModDeveloper\power\BATwinsBurnPower.class
 baModDeveloper\patch\BATwinsCardTrailEffectFix.class
 baModDeveloper\action\BATwinsCoverChargeAction.class
 baModDeveloper\cards\BATwinsAdventureRewards.class
 baModDeveloper\action\BATwinsPaintingArtAction.class
 baModDeveloper\character\BATwinsCharacter$Enums.class
+baModDeveloper\cards\BATwinsTakeABreak$2.class
 baModDeveloper\cards\BATwinsAbstractSchool.class
 baModDeveloper\action\BATwinsBugFixAction.class
 baModDeveloper\power\BATwinsBugFixPower.class
@@ -104,6 +107,7 @@ baModDeveloper\power\BATwinsArtPolishingExchangePower$1.class
 baModDeveloper\patch\BATwinsRenderDescriptionEnergy.class
 baModDeveloper\cards\BATwinsMomoiDefend.class
 baModDeveloper\power\BATwinsDoubleExperiencePower.class
+baModDeveloper\cards\BATwinsTakeABreak$1.class
 baModDeveloper\power\BATwinsOnceMorePower.class
 baModDeveloper\cards\BATwinsDeveloperCollaboration.class
 baModDeveloper\animation\AbstractGIFCard.class
@@ -115,6 +119,8 @@ baModDeveloper\action\BATwinsPlayHandCardAction.class
 baModDeveloper\power\BATwinsGainLENextTurnPower.class
 baModDeveloper\cards\BATwinsPassageInForce.class
 baModDeveloper\action\BATwinsBugCardAction.class
+baModDeveloper\cards\BATwinsAttackWithAllMight.class
+baModDeveloper\cards\BATwinsReadingDocuments.class
 baModDeveloper\animation\AnimationPatch.class
 baModDeveloper\action\BATwinsNormalAttackMethodsAction.class
 baModDeveloper\animation\GifDecoder.class
@@ -124,6 +130,7 @@ baModDeveloper\action\BATwinsDefensiveCounterattackAction.class
 baModDeveloper\cards\BATwinsTakeActionsSeparately.class
 baModDeveloper\power\BATwinsGainTENextTurnPower.class
 baModDeveloper\action\BATwinsExchangeAction.class
+baModDeveloper\patch\BATwinsAbstractCardPatch.class
 baModDeveloper\animation\GifAnimation.class
 baModDeveloper\animation\AbstractAnimation.class
 baModDeveloper\ui\panels\BATwinsEnergyPanel$EnergyType.class
@@ -131,6 +138,7 @@ baModDeveloper\power\BATwinsDeveloperCollaborationPower.class
 baModDeveloper\cards\BATwinsConvenientConnectivity.class
 baModDeveloper\cards\BATwinsExchange.class
 baModDeveloper\patch\BATwinsRenderDescriptionEnergy$FixEForChinese.class
+baModDeveloper\power\BATwinsReadingDocumentsPower.class
 baModDeveloper\patch\BATwinsOverlayMenuUpdateFix.class
 baModDeveloper\cards\BATwinsMomoiStrick.class
 baModDeveloper\cards\BATwinsModCustomCard$1.class
@@ -138,6 +146,7 @@ baModDeveloper\patch\BATwinsRenderDescriptionEnergy$InitializeDescriptionPatches
 baModDeveloper\cards\BATwinsEndCombo.class
 baModDeveloper\patch\BATwinsRenderDescriptionEnergy$FixEForChinese$Locator.class
 baModDeveloper\cards\BATwinsBugCard.class
+baModDeveloper\cards\BATwinsTwoStageAttack.class
 baModDeveloper\power\BATwinsDefensiveCounterattackPower.class
 baModDeveloper\action\BATwinsDrawCardByColor.class
 baModDeveloper\cards\BATwinsAccurateBlocking.class

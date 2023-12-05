@@ -1,5 +1,6 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.power.BATwinsDoubleExperiencePower;
 import baModDeveloper.power.BATwinsExperiencePower;
@@ -29,15 +30,17 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     public boolean playBackOriginalColor=false;
     public ArrayList<Color> GradientColor=new ArrayList<>();
     private int startColor=0;
-    public boolean gradient=false;
     private float gradientDuration=0.0F;
 
     public int numberOfConnections=0;
+    public boolean blockTheOriginalEffect=false;
 //    public boolean playedByOtherCard=false;
     public BATwinsModCustomCard(String ID, String NAME, String IMG_PATH, int COST, String DESCRIPTION, CardType TYPE, CardColor COLOR, CardRarity RARITY, CardTarget TARGET, BATwinsEnergyPanel.EnergyType ENERGYTYPE) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.OriginalColor= COLOR;
         this.modifyEnergyType=ENERGYTYPE;
+        this.GradientColor.add(BATwinsMod.MOMOIColor);
+        this.GradientColor.add(BATwinsMod.MIDORIColor);
     }
 
     @Override
@@ -160,7 +163,6 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         temp.OriginalColor=this.OriginalColor;
         temp.playBackOriginalColor=this.playBackOriginalColor;
         temp.GradientColor.addAll(this.GradientColor);
-        temp.gradient=this.gradient;
         return temp;
     }
 
@@ -174,12 +176,18 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if (this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
-            useMOMOI(abstractPlayer,abstractMonster);
-        } else if (this.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
-            useMIDORI(abstractPlayer,abstractMonster);
+        if(!this.blockTheOriginalEffect){
+            if (this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
+                useMOMOI(abstractPlayer,abstractMonster);
+            } else if (this.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
+                useMIDORI(abstractPlayer,abstractMonster);
+            }
         }
+
         if(this.isInAutoplay){
+            if(this.numberOfConnections<1){
+                this.numberOfConnections=1;
+            }
             triggerOnConnectePlayed(abstractPlayer,abstractMonster);
             if(this.numberOfConnections>1){
                 triggerOnSuperConnectPlayed(abstractPlayer,abstractMonster);
@@ -187,6 +195,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 //            this.playedByOtherCard=false;
         }
         this.numberOfConnections=0;
+        this.blockTheOriginalEffect=false;
         if(!this.freeToPlay()&&!this.freeToPlayOnce){
             if(this.costForTurn>0) {
                 if(AbstractDungeon.player.hasPower(BATwinsDoubleExperiencePower.POWER_ID)){
@@ -244,7 +253,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 
     @Override
     public void render(SpriteBatch sb) {
-        if(gradient){
+        if(this.modifyEnergyType== BATwinsEnergyPanel.EnergyType.SHARE){
             if(gradientDuration>Settings.MAX_FPS){
                 startColor=(startColor+1)%GradientColor.size();
                 this.gradientDuration=0.0F;

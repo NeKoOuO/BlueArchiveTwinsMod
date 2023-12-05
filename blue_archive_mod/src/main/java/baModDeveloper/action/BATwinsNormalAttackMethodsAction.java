@@ -46,9 +46,6 @@ public class BATwinsNormalAttackMethodsAction extends AbstractGameAction {
             AbstractCard selectedCard=strickCards.getRandomCard(AbstractDungeon.cardRandomRng);
             if(selectedCard instanceof BATwinsModCustomCard){
                 ((BATwinsModCustomCard) selectedCard).modifyEnergyType= BATwinsEnergyPanel.EnergyType.SHARE;
-                ((BATwinsModCustomCard) selectedCard).GradientColor.add(BATwinsMod.MOMOIColor);
-                ((BATwinsModCustomCard) selectedCard).GradientColor.add(BATwinsMod.MIDORIColor);
-                ((BATwinsModCustomCard) selectedCard).gradient=true;
             }
             this.p.drawPile.moveToHand(selectedCard);
             strickCards.removeCard(selectedCard);

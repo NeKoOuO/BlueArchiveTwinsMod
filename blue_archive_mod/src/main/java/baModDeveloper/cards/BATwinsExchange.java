@@ -24,7 +24,7 @@ public class BATwinsExchange extends BATwinsModCustomCard{
 
     public BATwinsExchange() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber=1;
+        this.baseMagicNumber=2;
         this.magicNumber=this.baseMagicNumber;
         this.selfRetain=true;
     }
@@ -33,7 +33,7 @@ public class BATwinsExchange extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(1);
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

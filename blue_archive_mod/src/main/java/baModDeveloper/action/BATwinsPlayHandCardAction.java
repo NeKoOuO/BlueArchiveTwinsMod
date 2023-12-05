@@ -1,6 +1,7 @@
 package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.ShowCardAction;
@@ -18,16 +19,18 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
     private AbstractPlayer p;
     private boolean ignoreDeath;
     private int numberOfConnections;
-    public BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target,boolean randomTarget,boolean ignoreDeath,int numberOfConnections){
+    private boolean blockTheOriginalEffect;
+    public BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target,boolean randomTarget,boolean ignoreDeath,int numberOfConnections,boolean blockTheOriginalEffect){
         this.card=card;
         this.p= AbstractDungeon.player;
         this.target=target;
         this.ignoreDeath=ignoreDeath;
         this.numberOfConnections=numberOfConnections;
+        this.blockTheOriginalEffect=blockTheOriginalEffect;
         this.duration= Settings.ACTION_DUR_FAST;
     }
     BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target,boolean randomTarget,boolean ignoreDeath){
-        this(card,target,randomTarget,ignoreDeath,0);
+        this(card,target,randomTarget,ignoreDeath,0,false);
     }
     public BATwinsPlayHandCardAction(AbstractCard card,AbstractCreature target){
         this(card,target,false,true);
@@ -36,10 +39,17 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
         this(card,target,false,ignoreDeath);
     }
     public BATwinsPlayHandCardAction(AbstractCard card,AbstractCreature target,int numberOfConnections){
-        this(card,target,false,true,1);
+        this(card,target,false,true,1,false);
     }
+    public BATwinsPlayHandCardAction(AbstractCard card,AbstractCreature target,int numberOfConnections,boolean blockTheOriginalEffect){
+        this(card,target,false,true,1,blockTheOriginalEffect);
+    }
+
     @Override
     public void update() {
+        if(this.target==null){
+            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+        }
         if(this.p.hand.contains(card)&&!this.target.isDead){
             this.card.applyPowers();
             this.card.calculateCardDamage((AbstractMonster) this.target);
@@ -47,6 +57,9 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
             AbstractDungeon.getCurrRoom().souls.remove(this.card);
             if(card instanceof BATwinsModCustomCard){
                 ((BATwinsModCustomCard) card).numberOfConnections=this.numberOfConnections;
+                ((BATwinsModCustomCard) card).blockTheOriginalEffect=this.blockTheOriginalEffect;
+            }else{
+                BATwinsAbstractCardPatch.blockTheOriginalEffect.set(card,true);
             }
 //            this.card.isInAutoplay=true;
 //            addToTop(new ShowCardAction(this.card));

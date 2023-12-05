@@ -8,6 +8,7 @@ import baModDeveloper.animation.AbstractAnimation;
 import baModDeveloper.animation.GifAnimation;
 import baModDeveloper.cards.*;
 import baModDeveloper.helpers.ImageHelper;
+import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.relic.BATwinsMomoisGameConsole;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomEnergyOrb;
@@ -309,8 +310,13 @@ public class BATwinsCharacter extends CustomPlayer {
         if (c.cost == -1 && c.isInAutoplay) {
             c.freeToPlayOnce = true;
         }
-
-        c.use(this, monster);
+        if(!(c instanceof BATwinsModCustomCard)){
+            if(!BATwinsAbstractCardPatch.blockTheOriginalEffect.get(c)){
+                c.use(this, monster);
+            }
+        }else{
+            c.use(this, monster);
+        }
         AbstractDungeon.actionManager.addToBottom(new UseCardAction(c, monster));
         if (!c.dontTriggerOnUseCard) {
             this.hand.triggerOnOtherCardPlayed(c);

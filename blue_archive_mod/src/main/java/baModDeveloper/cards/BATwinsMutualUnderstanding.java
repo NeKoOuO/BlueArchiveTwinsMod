@@ -33,7 +33,7 @@ public class BATwinsMutualUnderstanding extends BATwinsModCustomCard{
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         if(this.upgraded){
-            addToBot(new ScryAction(2));
+            addToBot(new ScryAction(1));
         }
         addToBot(new DrawCardAction(this.magicNumber,new BATwinsMutualUnderstandingAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,this.numberOfConnections+1)));
     }
@@ -41,7 +41,7 @@ public class BATwinsMutualUnderstanding extends BATwinsModCustomCard{
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         if(this.upgraded){
-            addToBot(new ScryAction(2));
+            addToBot(new ScryAction(1));
         }
         addToBot(new DrawCardAction(this.magicNumber,new BATwinsMutualUnderstandingAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,this.numberOfConnections+1)));
     }

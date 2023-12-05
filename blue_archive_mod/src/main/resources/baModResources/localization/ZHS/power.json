@@ -130,5 +130,11 @@
 			"本回合打出的下",
 			"张单体攻击牌对所有敌人打出1次。"
 		]
+	},
+	"BATwinsMod:ReadingDocumentsPower":{
+		"NAME":"即时存档",
+		"DESCRIPTIONS":[
+			"本场战斗效果打出的牌会回到抽牌堆。"
+		]
 	}
 }
