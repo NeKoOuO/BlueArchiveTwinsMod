@@ -25,7 +25,7 @@ public class BATwinsInspirationEmergence extends BATwinsModCustomCard{
 
     public BATwinsInspirationEmergence() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber=3;
+        this.baseMagicNumber=2;
         this.magicNumber=this.baseMagicNumber;
     }
 
@@ -36,14 +36,14 @@ public class BATwinsInspirationEmergence extends BATwinsModCustomCard{
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DrawCardAction(2,new BATwinsInspirationEmergenceAction(this.magicNumber)));
+        addToBot(new DrawCardAction(this.magicNumber,new BATwinsInspirationEmergenceAction(1)));
     }
 
     @Override
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(1);
         }
     }
 }

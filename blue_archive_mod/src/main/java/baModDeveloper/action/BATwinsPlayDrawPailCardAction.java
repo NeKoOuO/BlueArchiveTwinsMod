@@ -48,6 +48,7 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
 
                 card.applyPowers();
                 card.calculateCardDamage((AbstractMonster) this.target);
+                card.isInAutoplay=true;
                 addToTop(new NewQueueCardAction(card,this.target,false,true));
                 addToTop(new UnlimboAction(card));
                 if(Settings.FAST_MODE){

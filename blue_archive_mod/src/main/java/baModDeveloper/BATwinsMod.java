@@ -2,12 +2,18 @@ package baModDeveloper;
 
 import baModDeveloper.cards.*;
 import baModDeveloper.power.BATwinsSeeYouHaveASharenPower;
+import baModDeveloper.relic.BATwinsMidorisGameConsole;
 import baModDeveloper.relic.BATwinsMomoisGameConsole;
+import baModDeveloper.ui.panels.button.BATwinsCamfireExchangeButton;
+import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
+import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.compression.lzma.Base;
+import com.evacipated.cardcrawl.mod.stslib.icons.AbstractCustomIcon;
+import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,13 +25,14 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.helpers.ModHelper;
 import basemod.BaseMod;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.nio.charset.StandardCharsets;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber, EditKeywordsSubscriber , EditRelicsSubscriber {
+public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber, EditKeywordsSubscriber , EditRelicsSubscriber ,AddAudioSubscriber{
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -55,7 +62,6 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.subscribe(this);
         BaseMod.addColor(Enums.BATWINS_MOMOI_CARD, BATwinsColor, BATwinsColor, BATwinsColor, BATwinsColor, BATwinsColor, BATwinsColor, BATwinsColor, BATWINS_MOMOI_ATTACK_512, BATWINS_MOMOI_SKILL_512, BATWINS_MOMOI_POWER_512, MOMOI_BIG_ORB, BATWINS_MOMOI_ATTACK_1024, BATWINS_MOMOI_SKILL_1024, BATWINS_MOMOI_POWER_1024, MOMOI_ENERGY_ORB, MOMOI_SMALL_ORB);
         BaseMod.addColor(Enums.BATWINS_MIDORI_CARD, BATwinsColor, BATwinsColor, BATwinsColor, BATwinsColor, BATwinsColor, BATwinsColor, BATwinsColor, BATWINS_MIDORI_ATTACK_512, BATWINS_MIDORI_SKILL_512, BATWINS_MIDORI_POWER_512, MIDORI_BIG_ORB, BATWINS_MIDORI_ATTACK_1024, BATWINS_MIDORI_SKILL_1024, BATWINS_MIDORI_POWER_1024, MIDORI_ENERGY_ORB, MIDORI_SMALL_ORB);
-
     }
 
     public static void initialize() {
@@ -64,6 +70,9 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
 
     @Override
     public void receiveEditCards() {
+        CustomIconHelper.addCustomIcon(BATwinsMomoiEnergyOrbSmall.get());
+        CustomIconHelper.addCustomIcon(BATwinsMidoriEnergyOrbSmall.get());
+
         BaseMod.addCard(new BATwinsMomoiStrick());
         BaseMod.addCard(new BATwinsMidoriStrick());
         BaseMod.addCard(new BATwinsMomoiDefend());
@@ -126,6 +135,12 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsTwoStageAttack());
         BaseMod.addCard(new BATwinsTakeABreak());
         BaseMod.addCard(new BATwinsAttackWithAllMight());
+        BaseMod.addCard(new BATwinsDualProtection());
+        BaseMod.addCard(new BATwinsOperateFreely());
+        BaseMod.addCard(new BATwinsExperienceGiftPackage());
+        BaseMod.addCard(new BATwinsSelfConnectivity());
+        BaseMod.addCard(new BATwinsSkillCombination());
+        BaseMod.addCard(new BATwinsIntegratingAndIntegrating());
     }
 
     @Override
@@ -167,5 +182,12 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new BATwinsMomoisGameConsole(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelicToCustomPool(new BATwinsMidorisGameConsole(),Enums.BATWINS_MOMOI_CARD);
+    }
+
+    @Override
+    public void receiveAddAudio() {
+        BaseMod.addAudio(ModHelper.makePath("campfire_momoi"),ModHelper.makeAudioPath("campfire_momoi"));
+        BaseMod.addAudio(ModHelper.makePath("campfire_midori"),ModHelper.makeAudioPath("campfire_midori"));
     }
 }

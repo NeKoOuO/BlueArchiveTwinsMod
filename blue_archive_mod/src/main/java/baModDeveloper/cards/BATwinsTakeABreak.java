@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard{
     private static final CardTarget TARGET=CardTarget.NONE;
     private static final CardRarity RARITY=CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MIDORI;
+    private static final UIStrings UISTRING=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
 
     public BATwinsTakeABreak() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
@@ -64,7 +66,7 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard{
     }
 
     @Override
-    public void triggerOnConnectePlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DrawCardAction(this.magicNumber, new AbstractGameAction() {
             ArrayList<AbstractCard> canNotSelect=new ArrayList<>();
             {
@@ -83,7 +85,7 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard{
                         }
                     }
                     AbstractDungeon.player.hand.group.removeAll(canNotSelect);
-                    AbstractDungeon.handCardSelectScreen.open("",1,false,false,false,false);
+                    AbstractDungeon.handCardSelectScreen.open(String.format(UISTRING.TEXT[0],1),1,false,false,false,false);
                     tickDuration();
                     return;
                 }

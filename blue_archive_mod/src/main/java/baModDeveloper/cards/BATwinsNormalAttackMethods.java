@@ -48,6 +48,7 @@ public class BATwinsNormalAttackMethods extends BATwinsModCustomCard{
         if(!upgraded){
             this.upgradeName();
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

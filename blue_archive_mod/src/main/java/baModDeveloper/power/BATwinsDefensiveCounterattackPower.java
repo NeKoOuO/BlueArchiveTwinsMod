@@ -67,7 +67,8 @@ public class BATwinsDefensiveCounterattackPower extends AbstractPower {
         this.flash();
         for(DamageInfo info:damageInfos){
             for(int i=0;i<this.amount;i++){
-                addToBot(new BATwinsDefensiveCounterattackAction((AbstractMonster) info.owner,this.exchange));
+                if(info.owner instanceof AbstractMonster)
+                    addToBot(new BATwinsDefensiveCounterattackAction((AbstractMonster) info.owner,this.exchange));
             }
         }
         addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,this.ID));

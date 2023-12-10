@@ -4,15 +4,21 @@ import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import basemod.BaseMod;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+
+import java.util.Iterator;
 
 import static baModDeveloper.character.BATwinsCharacter.Enums.BATwins;
 
@@ -24,7 +30,11 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     private static final String[] DESCRIPTIONS=powerStrings.DESCRIPTIONS;
     private static final String IMG_84=ModHelper.makeImgPath("power","DeveloperCollaboration84");
     private static final String IMG_32=ModHelper.makeImgPath("power","DeveloperCollaboration32");
-
+    private static final String IMG_MOMOI_84=ModHelper.makeImgPath("power","DeveloperCollaboration_momoi84");
+    private static final String IMG_MOMOI_32=ModHelper.makeImgPath("power","DeveloperCollaboration_momoi32");
+    private static final String IMG_MIDORI_84=ModHelper.makeImgPath("power","DeveloperCollaboration_midori84");
+    private static final String IMG_MIDORI_32=ModHelper.makeImgPath("power","DeveloperCollaboration_midori32");
+    private TextureAtlas.AtlasRegion momoi128,momoi48,midori128,midori48;
     private AbstractCard.CardColor lastColor;
     public BATwinsDeveloperCollaborationPower(AbstractCreature owner,int amount){
         this.name=NAME;
@@ -34,6 +44,10 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
         this.amount=amount;
         this.region128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84),0,0,84,84);
         this.region48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32),0,0,32,32);
+        this.momoi128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MOMOI_84),0,0,84,84);
+        this.momoi48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MOMOI_32),0,0,32,32);
+        this.midori128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MIDORI_84),0,0,84,84);
+        this.midori48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MIDORI_32),0,0,32,32);
         this.updateDescription();
 
     }
@@ -76,5 +90,41 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     public void atStartOfTurn() {
         this.lastColor=null;
         this.updateDescription();
+    }
+
+    @Override
+    public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
+        super.renderIcons(sb,x,y,c);
+        if(this.img!=null){
+            return;
+        }else {
+            sb.setColor(c);
+            if(Settings.isMobile){
+                sb.draw(this.getIconImage(false), x - (float)this.region48.packedWidth / 2.0F, y - (float)this.region48.packedHeight / 2.0F, (float)this.region48.packedWidth / 2.0F, (float)this.region48.packedHeight / 2.0F, (float)this.region48.packedWidth, (float)this.region48.packedHeight, Settings.scale * 1.17F, Settings.scale * 1.17F, 0.0F);
+            }else {
+                sb.draw(this.getIconImage(false), x - (float)this.region48.packedWidth / 2.0F, y - (float)this.region48.packedHeight / 2.0F, (float)this.region48.packedWidth / 2.0F, (float)this.region48.packedHeight / 2.0F, (float)this.region48.packedWidth, (float)this.region48.packedHeight, Settings.scale, Settings.scale, 0.0F);
+            }
+        }
+
+    }
+    private TextureAtlas.AtlasRegion getIconImage(boolean bigImage){
+        if(this.lastColor==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
+            if(bigImage){
+                return this.momoi128;
+            }else{
+                return this.momoi48;
+            }
+        } else if (this.lastColor==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
+            if(bigImage){
+                return this.midori128;
+            }else {
+                return this.midori48;
+            }
+        }
+        if(bigImage){
+            return this.region128;
+        }else {
+            return this.region48;
+        }
     }
 }

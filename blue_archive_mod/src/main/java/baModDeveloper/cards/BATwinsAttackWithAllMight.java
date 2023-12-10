@@ -46,13 +46,14 @@ public class BATwinsAttackWithAllMight extends BATwinsModCustomCard{
 
     @Override
     public void upgrade() {
-        if(!upgraded){
+        if(!this.upgraded){
+            this.upgradeName();
             this.upgradeMagicNumber(20);
         }
     }
 
     @Override
-    public void triggerOnConnectePlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         this.decline=false;
     }
 

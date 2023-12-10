@@ -28,7 +28,7 @@ public class BATwinsBattleCommandAction extends AbstractGameAction {
     public void update() {
         if(this.duration==Settings.ACTION_DUR_FAST){
             for(AbstractCard c: p.hand.group){
-                if(!(c instanceof BATwinsModCustomCard)){
+                if(!(c instanceof BATwinsModCustomCard)||c.isInAutoplay){
                     cannotSelect.add(c);
                 }
             }

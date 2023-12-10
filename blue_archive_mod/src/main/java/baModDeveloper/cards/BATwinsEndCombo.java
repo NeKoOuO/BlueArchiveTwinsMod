@@ -42,7 +42,7 @@ public class BATwinsEndCombo extends BATwinsModCustomCard{
     }
 
     @Override
-    public void triggerOnConnectePlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.block), AbstractGameAction.AttackEffect.LIGHTNING));
     }
 

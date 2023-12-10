@@ -28,5 +28,38 @@
 		"TEXT":[
 			"选择1张冒险牌"
 		]
+	},
+	"BATwinsMod:ExchangeButton":{
+		"TEXT":[
+			"交换1张牌"
+		]
+	},
+	"BATwinsMod:ExchangeEffect":{
+		"TEXT":[
+			"选1张牌交换"
+		]
+	},
+	"BATwinsMod:Exchange_Option":{
+		"TEXT":[
+			"#b交换 %s"
+		]
+	},
+	"BATwinsMod:GridSelectTitle":{
+		"TEXT":[
+			"打出",
+			"消耗",
+			"复制",
+			"下回合加入手牌"
+		]
+	},
+	"BATwinsMod:CancelButton":{
+		"TEXT":[
+			"取消"
+		]
+	},
+	"BATwinsMod:TipMsg":{
+		"TEXT":[
+			"选择1张牌交换"
+		]
 	}
 }

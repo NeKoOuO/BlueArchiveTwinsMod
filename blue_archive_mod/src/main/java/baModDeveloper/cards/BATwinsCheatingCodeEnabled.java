@@ -3,7 +3,9 @@ package baModDeveloper.cards;
 import baModDeveloper.action.BATwinsCheatingCodeEnabledAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.power.BATwinsShufflePower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -31,12 +33,18 @@ public class BATwinsCheatingCodeEnabled extends BATwinsModCustomCard{
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsCheatingCodeEnabledAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,this.upgraded));
+        addToBot(new BATwinsCheatingCodeEnabledAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,true));
+        if(upgraded){
+            addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsShufflePower(abstractPlayer)));
+        }
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsCheatingCodeEnabledAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,this.upgraded));
+        addToBot(new BATwinsCheatingCodeEnabledAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,true));
+        if(upgraded){
+            addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsShufflePower(abstractPlayer)));
+        }
     }
 
     @Override

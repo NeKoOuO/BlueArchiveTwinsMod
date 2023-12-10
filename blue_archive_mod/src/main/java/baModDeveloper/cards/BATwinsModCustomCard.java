@@ -1,6 +1,7 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.BATwinsMod;
+import baModDeveloper.action.BATwinsPlayTempCardAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.power.BATwinsDoubleExperiencePower;
 import baModDeveloper.power.BATwinsExperiencePower;
@@ -34,6 +35,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 
     public int numberOfConnections=0;
     public boolean blockTheOriginalEffect=false;
+    public boolean justHovered=false;
+    private boolean bringOutCard=false;
+    private AbstractCard cardToBringOut;
 //    public boolean playedByOtherCard=false;
     public BATwinsModCustomCard(String ID, String NAME, String IMG_PATH, int COST, String DESCRIPTION, CardType TYPE, CardColor COLOR, CardRarity RARITY, CardTarget TARGET, BATwinsEnergyPanel.EnergyType ENERGYTYPE) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
@@ -41,6 +45,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         this.modifyEnergyType=ENERGYTYPE;
         this.GradientColor.add(BATwinsMod.MOMOIColor);
         this.GradientColor.add(BATwinsMod.MIDORIColor);
+
     }
 
     @Override
@@ -133,7 +138,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     public CardColor getCardColor(){
         return this.color;
     }
-    public void conversionColor(){
+    public void conversionColor(boolean flash){
         if(this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
             this.color=BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
             if(this.modifyEnergyType!= BATwinsEnergyPanel.EnergyType.SHARE)
@@ -143,8 +148,13 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             if(this.modifyEnergyType!= BATwinsEnergyPanel.EnergyType.SHARE)
                 this.modifyEnergyType= BATwinsEnergyPanel.EnergyType.MOMOI;
         }
+        if(flash)
+            this.superFlash(BATwinsCharacter.getColorWithCardColor(this.color));
         this.rawDescription=replaceDescription(this.rawDescription);
         super.initializeDescription();
+    }
+    public void conversionColor(){
+        this.conversionColor(true);
     }
 
     @Override
@@ -158,11 +168,19 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     @Override
     public AbstractCard makeStatEquivalentCopy() {
         BATwinsModCustomCard temp= (BATwinsModCustomCard) super.makeStatEquivalentCopy();
-        temp.color=this.color;
-        temp.modifyEnergyType=this.modifyEnergyType;
         temp.OriginalColor=this.OriginalColor;
-        temp.playBackOriginalColor=this.playBackOriginalColor;
-        temp.GradientColor.addAll(this.GradientColor);
+        if(this.exchanged()){
+            temp.conversionColor(false);
+        }
+//        temp.color=this.color;
+//        temp.modifyEnergyType=this.modifyEnergyType;
+//        temp.GradientColor.addAll(this.GradientColor);
+//        if(this.bringOutCard){
+//            temp.addBringOutCard(this.cardToBringOut);
+////        }
+//        if(temp.exchanged()){
+//            initializeDescription();
+//        }
         return temp;
     }
 
@@ -188,11 +206,14 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             if(this.numberOfConnections<1){
                 this.numberOfConnections=1;
             }
-            triggerOnConnectePlayed(abstractPlayer,abstractMonster);
+            triggerOnConnectPlayed(abstractPlayer,abstractMonster);
             if(this.numberOfConnections>1){
                 triggerOnSuperConnectPlayed(abstractPlayer,abstractMonster);
             }
 //            this.playedByOtherCard=false;
+        }
+        if(this.bringOutCard){
+            this.bringOutCard();
         }
         this.numberOfConnections=0;
         this.blockTheOriginalEffect=false;
@@ -229,7 +250,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     abstract public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
     public String replaceDescription(String description){
         description=exchangeStr(description,"中毒","batwinsmod:灼伤");
-        description=exchangeStr(description,"[TE]","[LE]");
+        description=exchangeStr(description,"[batwinsmod:midoriorbicon]","[batwinsmod:momoiorbicon]");
         description=exchangeStr(description,"batwinsmod:桃牌","batwinsmod:绿牌");
         return description;
     }
@@ -261,7 +282,11 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             this.glowColor=this.GradientColor.get(startColor);
             this.gradientDuration+=Settings.ACTION_DUR_MED;
         }
+
         super.render(sb);
+    }
+
+    public void triggerOnHovered(){return;
     }
 
     public void triggerOnEnergyUse(int amount, BATwinsEnergyPanel.EnergyType energyType){
@@ -271,11 +296,28 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         return;
     }
 
-    public void triggerOnConnectePlayed(AbstractPlayer abstractPlayer,AbstractMonster abstractMonster){
+    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster){
         return;
     }
     public void triggerOnSuperConnectPlayed(AbstractPlayer abstractPlayer,AbstractMonster abstractMonster){return;}
     public boolean exchanged(){
         return this.color!=this.OriginalColor;
+    }
+
+    public void addBringOutCard(AbstractCard card){
+        this.bringOutCard=true;
+        this.cardToBringOut=card.makeStatEquivalentCopy();
+        this.cardsToPreview=card.makeCopy();
+        if(this.modifyEnergyType== BATwinsEnergyPanel.EnergyType.SHARE){
+            this.GradientColor.add(Color.ORANGE);
+        }else {
+            this.glowColor=Color.ORANGE;
+        }
+
+    }
+    public void bringOutCard(){
+        if(this.bringOutCard){
+            addToBot(new BATwinsPlayTempCardAction(this.cardToBringOut,this.numberOfConnections+1));
+        }
     }
 }

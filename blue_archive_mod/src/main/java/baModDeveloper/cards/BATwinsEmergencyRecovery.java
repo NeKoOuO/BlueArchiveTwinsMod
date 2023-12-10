@@ -50,6 +50,8 @@ public class BATwinsEmergencyRecovery extends BATwinsModCustomCard{
         if(!upgraded){
             this.upgradeName();
             this.upgradeMagicNumber(1);
+            this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

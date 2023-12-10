@@ -3,18 +3,22 @@ package baModDeveloper.action;
 import baModDeveloper.cards.BATwinsCoolingTime;
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.power.BATwinsCoolingTimePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import com.megacrit.cardcrawl.vfx.combat.PowerBuffEffect;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -23,6 +27,7 @@ public class BATwinsCoolingTimeAction extends AbstractGameAction {
     private int amount;
     private AbstractPlayer p;
     private boolean exchange;
+    private UIStrings UISTRINGS= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
     public BATwinsCoolingTimeAction(int amount,boolean exchange){
         this.amount=amount;
         this.p= AbstractDungeon.player;
@@ -56,7 +61,7 @@ public class BATwinsCoolingTimeAction extends AbstractGameAction {
                 this.isDone=true;
                 return;
             }
-            AbstractDungeon.gridSelectScreen.open(temp,this.amount,false,"");
+            AbstractDungeon.gridSelectScreen.open(temp,this.amount,false,UISTRINGS.TEXT[3]);
             tickDuration();
             return;
         }

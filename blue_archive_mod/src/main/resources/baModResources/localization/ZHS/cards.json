@@ -23,10 +23,10 @@
     },
     "BATwinsMod:PaintingConception":{
         "NAME":"画面构思",
-        "DESCRIPTION":"获得 !B! 点格挡，获得 [TE] 。"
+        "DESCRIPTION":"获得 !B! 点格挡，获得 [batwinsmod:momoiorbicon] 。"
     },
     "BATwinsMod:ParoxysmalPain":{
-        "NAME":"阵痛",
+        "NAME":"创作的痛苦",
         "DESCRIPTION":"对全体敌人造成 !D! 点伤害，给予 !M! 层 batwinsmod:灼伤 。"
     },
     "BATwinsMod:PaintingArt":{
@@ -39,8 +39,8 @@
     },
     "BATwinsMod:Exchange":{
         "NAME":"交换",
-        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 1张手牌。",
-        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 1至3张手牌。"
+        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多2张手牌。",
+        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。"
     },
     "BATwinsMod:KeepItToTheEnd":{
         "NAME":"严守到底",
@@ -60,8 +60,8 @@
     },
     "BATwinsMod:NotReconciled":{
         "NAME":"我不甘心！",
-        "DESCRIPTION":"造成 !D! 点伤害。下回合获得 [TE] 。",
-        "UPGRADE_DESCRIPTION":"造成 !D! 点伤害。下回合获得 [TE] 和 [LE] 。"
+        "DESCRIPTION":"造成 !D! 点伤害。下回合获得 [batwinsmod:momoiorbicon] 。",
+        "UPGRADE_DESCRIPTION":"造成 !D! 点伤害。下回合获得 [batwinsmod:momoiorbicon] 和 [batwinsmod:midoriorbicon] 。"
     },
     "BATwinsMod:AdditionalAttacks":{
         "NAME":"附加攻击",
@@ -78,7 +78,7 @@
     },
     "BATwinsMod:InspirationEmergence":{
         "NAME":"灵感涌现",
-        "DESCRIPTION":" batwinsmod:共有 。 NL 抽2张牌，若抽到的牌的颜色相同，则 预见 !M! 然后抽1张牌。"
+        "DESCRIPTION":" batwinsmod:共有 。 NL 抽 !M! 张牌， 预见 X 然后抽1张牌。(X为抽到的牌的颜色数）"
     },
     "BATwinsMod:PassageInForce":{
         "NAME":"强行通过",
@@ -104,7 +104,7 @@
     },
     "BATwinsMod:BadDesigner":{
         "NAME":"糟糕设计师",
-        "DESCRIPTION":"手牌只有这张牌时才能打出。 NL 这张牌在手牌时，打出其他牌时弃置1张牌。再累计打出 !M! 次的话会发生蜕变。"
+        "DESCRIPTION":"手牌只有这张牌时才能打出。 NL 这张牌在手牌时，打出其他牌时弃置1张牌。再累计打出 !M! 次的话会发生蜕变。 消耗 "
     },
     "BATwinsMod:BugCard":{
         "NAME":"漏洞",
@@ -155,7 +155,8 @@
 	},
 	"BATwinsMod:EmergencyRecovery":{
 		"NAME":"紧急恢复",
-		"DESCRIPTION":"获得 [LE] 。若桃能量为0，获得 [TE] [TE] 。"
+		"DESCRIPTION":"获得 [batwinsmod:midoriorbicon] 。若桃能量为0，获得 [batwinsmod:momoiorbicon] 。",
+		"UPGRADE_DESCRIPTION":"获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。若桃能量为0，获得 [batwinsmod:momoiorbicon] 。"
 	},
 	"BATwinsMod:AbstractSchool":{
 		"NAME":"抽象派艺术",
@@ -167,8 +168,8 @@
 	},
 	"BATwinsMod:AdventureRewards":{
 		"NAME":"冒险-奖励",
-		"DESCRIPTION":"随机获得以下1项： NL 获得5 batwinsmod:经验值 NL 回复3生命 NL 获得 [TE] [LE] ,抽2张牌 NL 消耗 。若上张牌是冒险牌，改为随机选择2项。",
-		"UPGRADE_DESCRIPTION":"随机获得以下1项： NL 获得5 batwinsmod:经验值 NL 回复3生命 NL 获得 [TE] [LE] ,抽2张牌 NL 获得1随机药水 NL 消耗 。若上张牌是冒险牌，改为随机选择2项。"
+		"DESCRIPTION":"随机获得以下1项： NL 获得5 batwinsmod:经验值 NL 回复3生命 NL 获得 [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,抽2张牌 NL 消耗 。若上张牌是冒险牌，改为随机选择2项。",
+		"UPGRADE_DESCRIPTION":"随机获得以下1项： NL 获得5 batwinsmod:经验值 NL 回复3生命 NL 获得 [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,抽2张牌 NL 获得1随机药水 NL 消耗 。若上张牌是冒险牌，改为随机选择2项。"
 	},
 	"BATwinsMod:AccumulatedStrike":{
 		"NAME":"蓄力打击",
@@ -177,7 +178,7 @@
 	"BATwinsMod:NormalAttackMethods":{
 		"NAME":"平A流",
 		"DESCRIPTION":"每回合开始时，将抽牌堆随机1张打击牌加入手牌。那张牌变为 batwinsmod:共有 。",
-		"UPGRADE_DESCRIPTION":"打击牌变为共有。每回合开始时，将抽牌堆随机1张打击牌加入手牌。那张牌变为 batwinsmod:共有 。 NL 抽牌堆打击牌不足时，将弃牌堆洗入抽牌堆。"
+		"UPGRADE_DESCRIPTION":"每回合开始时，将抽牌堆随机1张打击牌加入手牌。那张牌变为 batwinsmod:共有 。 NL 抽牌堆打击牌不足时，将弃牌堆洗入抽牌堆。"
 	},
 	"BATwinsMod:AlternatingAttack":{
 		"NAME":"交替攻击",
@@ -190,8 +191,8 @@
 	},
 	"BATwinsMod:AdventureExperience":{
 		"NAME":"冒险-历练",
-		"DESCRIPTION":"获得 [TE] [TE] ,抽 !M! 张牌。本回合打出的上一张牌是冒险牌时，获得 [LE] [LE] 。",
-		"UPGRADE_DESCRIPTION":"获得 [TE] [TE] [TE] ,抽 !M! 张牌。本回合打出的上一张牌是冒险牌时，获得 [LE] [LE] 。"
+		"DESCRIPTION":"获得 [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,抽 !M! 张牌。本回合打出的上一张牌是冒险牌时，获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。",
+		"UPGRADE_DESCRIPTION":"获得 [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,抽 !M! 张牌。本回合打出的上一张牌是冒险牌时，获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。"
 	},
 	"BATwinsMod:SwitchStrike":{
 		"NAME":"切换打击",
@@ -217,8 +218,8 @@
 	},
 	"BATwinsMod:CheatingCodeEnabled":{
 		"NAME":"作弊码开启",
-		"DESCRIPTION":"弃置手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。",
-		"UPGRADE_DESCRIPTION":"弃置手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。将所有 [LE] 转化为 [TE] 。"
+		"DESCRIPTION":"弃置手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。",
+		"UPGRADE_DESCRIPTION":"弃置手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。本回合结束时将弃牌堆洗入抽牌堆。"
 	},
 	"BATwinsMod:FundOverdraft":{
 		"NAME":"资金透支",
@@ -230,7 +231,7 @@
 	},
 	"BATwinsMod:RepeatOperation":{
 		"NAME":"重复操作",
-		"DESCRIPTION":"选择至多 !M! 张手牌，将其 batwinsmod:交换 后的复制加入手牌。那些牌获得 虚无 。"
+		"DESCRIPTION":"选择至多 !M! 张手牌，将其 batwinsmod:交换 后的复制加入手牌。"
 	},
 	"BATwinsMod:ConvenientConnectivity":{
 		"NAME":"便捷连携",
@@ -264,5 +265,34 @@
 	"BATwinsMod:AttackWithAllMight":{
 		"NAME":"力尽一击",
 		"DESCRIPTION":"造成 !D! 点伤害，这张牌本场战斗伤害降低 !M! %。 NL batwinsmod:连携 ：伤害恢复为100%。"
+	},
+	"BATwinsMod:DualProtection":{
+		"NAME":"双重防护",
+		"DESCRIPTION":"获得 !B! 点格挡，抽 !M! 张牌。 batwinsmod:连携 ：获得 !B! 点格挡。"
+	},
+	"BATwinsMod:EquipmentUpgrade":{
+		"NAME":"装备升级",
+		"DESCRIPTION":"获得 !B! 点格挡。 batwinsmod:连携 ：此牌在本场游戏中格挡值永久上升 !M! 。"
+	},
+	"BATwinsMod:OperateFreely":{
+		"NAME":"随意操作",
+		"DESCRIPTION":"随机打出抽牌堆1张 batwinsmod:桃牌 。 batwinsmod:连携 ：改为选择抽牌堆1张 batwinsmod:桃牌 打出。"
+	},
+	"BATwinsMod:ExperienceGiftPackage":{
+		"NAME":"经验大礼包",
+		"DESCRIPTION":" batwinsmod:共有 NL 获得等同于这张牌耗能的经验值。 NL batwinsmod:连携 ：抽1张牌，这张牌的耗能在本场战斗中减少1."
+	},
+	"BATwinsMod:SelfConnectivity":{
+		"NAME":"自我连携",
+		"DESCRIPTION":"这张牌的效果变为本场战斗打出的上一张牌的基础效果。 NL batwinsmod:连携 ：打出本场战斗打出的上一张牌（仅当其在弃牌堆时）。",
+		"UPGRADE_DESCRIPTION":"这张牌的效果变为本场战斗打出的上一张牌的效果。 NL batwinsmod:连携 ：打出本场战斗打出的上一张牌（仅当其在弃牌堆时）。"
+	},
+	"BATwinsMod:SkillCombination":{
+		"NAME":"技能合体",
+		"DESCRIPTION":"选择抽牌堆1张技能牌 消耗 。将 !M! 张打击加入抽牌堆，打出这张打击时，打出1次选择的那张牌。 NL 消耗 "
+	},
+	"BATwinsMod:IntegratingAndIntegrating":{
+		"NAME":"融会贯通",
+		"DESCRIPTION":" batwinsmod:共有 NL 打出 batwinsmod:交换 后的牌后将1张原本颜色的牌加入手牌，那张牌获得 虚无 ， 消耗 。"
 	}
 }

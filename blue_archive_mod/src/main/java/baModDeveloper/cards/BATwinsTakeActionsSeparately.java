@@ -5,8 +5,10 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -15,7 +17,7 @@ public class BATwinsTakeActionsSeparately extends BATwinsModCustomCard{
     private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME=CARD_STRINGS.NAME;
     private static final String IMG_PATH=ModHelper.makeImgPath("cards","defaultSkill");
-    private static final int COST=1;
+    private static final int COST=2;
     private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE=CardType.SKILL;
     private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
@@ -47,5 +49,17 @@ public class BATwinsTakeActionsSeparately extends BATwinsModCustomCard{
             this.upgradeName();
             this.upgradeBlock(4);
         }
+    }
+
+    @Override
+    public void triggerOnHovered() {
+        if(AbstractDungeon.player!=null){
+            for(AbstractCard c: AbstractDungeon.player.hand.group){
+                if(c instanceof BATwinsModCustomCard&&c.color==BATwinsCharacter.getOtherColor(this.color)&&c.type==CardType.SKILL){
+                    c.flash(BATwinsCharacter.getColorWithCardColor(c.color));
+                }
+            }
+        }
+
     }
 }

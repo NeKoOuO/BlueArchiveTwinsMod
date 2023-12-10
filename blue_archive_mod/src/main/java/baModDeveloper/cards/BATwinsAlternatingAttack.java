@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -48,6 +49,13 @@ public class BATwinsAlternatingAttack extends BATwinsModCustomCard{
         if(!upgraded){
             this.upgradeName();
             this.upgradeDamage(4);
+        }
+    }
+
+    @Override
+    public void triggerOnHovered() {
+        if(AbstractDungeon.player!=null){
+            AbstractDungeon.player.hand.group.stream().filter(card -> card instanceof BATwinsModCustomCard&&card.color==BATwinsCharacter.getOtherColor(this.color)&&card.type==CardType.ATTACK).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
         }
     }
 }

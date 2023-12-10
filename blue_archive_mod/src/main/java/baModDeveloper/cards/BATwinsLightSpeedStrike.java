@@ -58,4 +58,11 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
             this.upgradeDamage(3);
         }
     }
+
+    @Override
+    public void triggerOnHovered() {
+        if(AbstractDungeon.player!=null){
+            AbstractDungeon.player.hand.group.stream().filter(card -> card.hasTag(CardTags.STRIKE)&&card!=this).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
+        }
+    }
 }

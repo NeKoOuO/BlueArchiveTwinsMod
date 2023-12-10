@@ -16,10 +16,14 @@ public class BATwinsDrawCardByColor extends AbstractGameAction {
     private AbstractCard.CardColor color;
     private int amount;
     private boolean shuffleCheck=false;
-    public BATwinsDrawCardByColor(AbstractCard.CardColor color,int amount){
+    public BATwinsDrawCardByColor(AbstractCard.CardColor color,int amount,boolean shuffleCheck){
         this.color=color;
         this.amount=amount;
+        this.shuffleCheck=shuffleCheck;
         this.duration= Settings.ACTION_DUR_XFAST;
+    }
+    public BATwinsDrawCardByColor(AbstractCard.CardColor color,int amount){
+        this(color,amount,false);
     }
     @Override
     public void update() {
@@ -53,14 +57,14 @@ public class BATwinsDrawCardByColor extends AbstractGameAction {
         }
         if(!this.shuffleCheck){
             if(this.amount+AbstractDungeon.player.hand.size()>10){
-                int handSizeAndDraw=10-this.amount+AbstractDungeon.player.hand.size();
+                int handSizeAndDraw=10-this.amount-AbstractDungeon.player.hand.size();
                 this.amount+=handSizeAndDraw;
                 AbstractDungeon.player.createHandIsFullDialog();
 
             }
             if(this.amount>deckColorSize){
                 int tmp=this.amount-deckColorSize;
-                addToTop(new BATwinsDrawCardByColor(this.color,tmp));
+                addToTop(new BATwinsDrawCardByColor(this.color,tmp,true));
                 addToTop(new EmptyDeckShuffleAction());
                 if(deckColorSize!=0){
                     addToTop(new BATwinsDrawCardByColor(this.color,deckColorSize));

@@ -70,5 +70,19 @@
 			"只能被连携"
 		],
 		"DESCRIPTION":"不能被打出，但能被效果打出。"
+	},
+	{
+		"PROPER_NAME":"[batwinsmod:momoiorbicon]",
+		"NAMES":[
+			"momoiorbicon"
+		],
+		"DESCRIPTION":"[batwinsmod:momoiorbicon] 桃牌所消耗的能量槽。"
+	},
+	{
+		"PROPER_NAME":"[batwinsmod:midoriorbicon]",
+		"NAMES":[
+			"midoriorbicon"
+		],
+		"DESCRIPTION":"[batwinsmod:midoriorbicon] 绿牌所消耗的能量槽。"
 	}
 ]

@@ -50,17 +50,19 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
         if(this.target==null){
             this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
         }
-        if(this.p.hand.contains(card)&&!this.target.isDead){
+        if(!this.target.isDead&&!card.isInAutoplay){
             this.card.applyPowers();
             this.card.calculateCardDamage((AbstractMonster) this.target);
 //            this.p.hand.removeCard(this.card);
             AbstractDungeon.getCurrRoom().souls.remove(this.card);
+            AbstractDungeon.player.limbo.group.add(this.card);
             if(card instanceof BATwinsModCustomCard){
                 ((BATwinsModCustomCard) card).numberOfConnections=this.numberOfConnections;
                 ((BATwinsModCustomCard) card).blockTheOriginalEffect=this.blockTheOriginalEffect;
             }else{
-                BATwinsAbstractCardPatch.blockTheOriginalEffect.set(card,true);
+                BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(card,true);
             }
+            card.isInAutoplay=true;
 //            this.card.isInAutoplay=true;
 //            addToTop(new ShowCardAction(this.card));
 //            this.p.limbo.ad
@@ -68,7 +70,6 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //                ((BATwinsModCustomCard) card).playedByOtherCard=true;
 //            }
             addToTop((AbstractGameAction)new NewQueueCardAction(card, this.target, false, true));
-
 //            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(this.card, (AbstractMonster) this.target,card.energyOnUse,true,true),true);
         }
         this.isDone=true;

@@ -59,4 +59,10 @@ public class ModHelper {
         return list.get(AbstractDungeon.cardRandomRng.random(list.size()-1));
     }
 
+    public static String makeAudioPath(String filename,String fileType){
+        return "baModResources/sound/"+filename+"."+fileType;
+    }
+    public static String makeAudioPath(String filename){
+        return makeAudioPath(filename,"ogg");
+    }
 }

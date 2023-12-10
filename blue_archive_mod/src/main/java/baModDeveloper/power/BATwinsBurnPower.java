@@ -4,6 +4,7 @@ import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -45,16 +46,24 @@ public class BATwinsBurnPower extends AbstractPower{
     @Override
     public void atEndOfTurn(boolean isPlayer) {
 //        addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
-        ArrayList<AbstractMonster> ms=AbstractDungeon.getCurrRoom().monsters.monsters;
-        for (AbstractMonster m : ms) {
-            if (m != this.owner)
-                addToBot(new DamageAction(m, new DamageInfo(this.owner, this.amount / 3, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
-        }
+//        ArrayList<AbstractMonster> ms=AbstractDungeon.getCurrRoom().monsters.monsters;
+//        for (AbstractMonster m : ms) {
+//            if (m != this.owner)
+//                addToBot(new DamageAction(m, new DamageInfo(this.owner, this.amount / 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
+//        }
         addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
 
     }
 
-//    @Override
+    @Override
+    public void onDeath() {
+        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() &&
+            this.owner.currentHealth <= 0) {
+            addToTop((AbstractGameAction)new DamageAllEnemiesAction(null,
+            DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+        }
+    }
+    //    @Override
 //    public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {
 //        if(damageType== DamageInfo.DamageType.NORMAL){
 //            this.amount++;

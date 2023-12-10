@@ -311,7 +311,7 @@ public class BATwinsCharacter extends CustomPlayer {
             c.freeToPlayOnce = true;
         }
         if(!(c instanceof BATwinsModCustomCard)){
-            if(!BATwinsAbstractCardPatch.blockTheOriginalEffect.get(c)){
+            if(!BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.get(c)){
                 c.use(this, monster);
             }
         }else{
@@ -355,6 +355,15 @@ public class BATwinsCharacter extends CustomPlayer {
             return Enums.BATWINS_MOMOI_CARD;
         }
         return color;
+    }
+
+    public static Color getColorWithCardColor(CardColor color){
+        if(color==Enums.BATWINS_MOMOI_CARD){
+            return BATwinsMod.MOMOIColor;
+        }else if(color==Enums.BATWINS_MIDORI_CARD){
+            return BATwinsMod.MIDORIColor;
+        }
+        return BATwinsMod.MOMOIColor;
     }
 //    @Override
 //    public void render(SpriteBatch sb){

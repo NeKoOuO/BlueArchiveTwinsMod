@@ -63,7 +63,7 @@ public class BATwinsFundOverdraft extends BATwinsModCustomCard{
     }
 
     @Override
-    public void triggerOnConnectePlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         this.playedCount=0;
         this.applyPowers();
     }

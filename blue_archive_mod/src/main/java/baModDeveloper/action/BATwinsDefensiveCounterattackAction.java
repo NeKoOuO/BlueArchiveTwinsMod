@@ -34,27 +34,8 @@ public class BATwinsDefensiveCounterattackAction extends AbstractGameAction {
             } else {
                 cardToPlay = new BATwinsMidoriStrick();
             }
-            cardToPlay.exhaustOnUseOnce = true;
-            AbstractDungeon.player.limbo.group.add(cardToPlay);
-            cardToPlay.current_y = 0.0F * Settings.scale;
-            cardToPlay.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale;
-            cardToPlay.target_y = (float) Settings.HEIGHT / 2.0F;
-            cardToPlay.targetAngle = 0.0F;
-            cardToPlay.lighten(false);
-            cardToPlay.drawScale = 0.12F;
-            cardToPlay.targetDrawScale = 0.75F;
-            cardToPlay.applyPowers();
-//            addToTop(new NewQueueCardAction(cardToPlay, this.target, false, true));
-            cardToPlay.purgeOnUse=true;
-            cardToPlay.numberOfConnections=1;
-//            cardToPlay.playedByOtherCard = true;
-            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, (AbstractMonster) this.target,cardToPlay.energyOnUse,true,true),true);
-//            addToTop(new UnlimboAction(cardToPlay));
-            if (!Settings.FAST_MODE) {
-                addToTop(new WaitAction(Settings.ACTION_DUR_MED));
-            } else {
-                addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
-            }
+            addToTop(new BATwinsPlayTempCardAction(cardToPlay,1));
+
         }
         this.isDone=true;
     }

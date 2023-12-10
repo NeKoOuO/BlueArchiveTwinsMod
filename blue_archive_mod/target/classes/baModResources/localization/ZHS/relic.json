@@ -3,7 +3,14 @@
 		"NAME":"小桃的游戏机",
 		"FLAVOR":"幸好我紧紧抓着，社团的经费可支撑不了买新游戏机了。\n --小桃",
 		"DESCRIPTIONS":[
-			"每场战斗开始时，获得 [TE] 。抽牌堆随机 #ybatwinsmod:桃牌 加入手牌。"
+			"每场战斗开始时，获得 [batwinsmod:momoiorbicon] 。抽牌堆随机 #ybatwinsmod:桃牌 加入手牌。"
+		]
+	},
+	"BATwinsMod:MidorisGameConsole":{
+		"NAME":"小绿的游戏机",
+		"FLAVOR":"找到了真是太好了，要赶快检查下游戏存档。\n --小绿",
+		"DESCRIPTIONS":[
+			"每场战斗开始时，获得 [batwinsmod:midoriorbicon] 。抽牌堆随机 #ybatwinsmod:绿牌 加入手牌。"
 		]
 	}
 }

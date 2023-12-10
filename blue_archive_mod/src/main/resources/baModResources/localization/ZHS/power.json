@@ -2,7 +2,7 @@
     "BATwinsMod:BurnPower":{
         "NAME":"灼伤",
         "DESCRIPTIONS":[
-            "回合结束时，造成","点伤害。对其他敌人造成1/3的伤害。"
+            "回合结束时，造成","点伤害。死亡时对其他敌人造成等同于层数的伤害。"
         ]
     },
     "BATwinsMod:DeveloperCollaborationPower":{
@@ -135,6 +135,18 @@
 		"NAME":"即时存档",
 		"DESCRIPTIONS":[
 			"本场战斗效果打出的牌会回到抽牌堆。"
+		]
+	},
+	"BATwinsMod:ShufflePower":{
+		"NAME":"结束洗牌",
+		"DESCRIPTIONS":[
+			"本回合结束时将弃牌堆洗入抽牌堆。"
+		]
+	},
+	"BATwinsMod:IntegratingAndIntegratingPower":{
+		"NAME":"融会贯通",
+		"DESCRIPTIONS":[
+			"交换后的牌在本场战斗耗能降低%s"
 		]
 	}
 }

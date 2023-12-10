@@ -35,7 +35,7 @@ public class BATwinsMandatoryInstruction extends BATwinsModCustomCard{
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsSelectHandCardToPlayAction(true,null,abstractMonster,false,CardType.ATTACK,2,this.numberOfConnections+1,true));
+        addToBot(new BATwinsSelectHandCardToPlayAction(true,null,abstractMonster,true,CardType.ATTACK,2,this.numberOfConnections+1,true));
     }
 
     @Override

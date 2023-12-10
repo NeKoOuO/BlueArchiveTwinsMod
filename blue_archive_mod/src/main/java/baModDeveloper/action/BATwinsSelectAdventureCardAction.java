@@ -31,7 +31,7 @@ public class BATwinsSelectAdventureCardAction extends AbstractGameAction {
     public void update() {
         if(this.duration==Settings.ACTION_DUR_FAST){
             for(AbstractCard c:this.p.hand.group){
-                if(!c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventure)){
+                if(!c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventure)||c.isInAutoplay){
                     this.isNotAdvCards.add(c);
                 }
             }

@@ -4,6 +4,7 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -31,6 +32,8 @@ public class BATwinsBadDesigner extends BATwinsModCustomCard{
         this.misc=5;
         this.baseMagicNumber=this.misc;
         this.magicNumber=this.baseMagicNumber;
+        this.exhaust=true;
+        this.cardsToPreview=new BATwinsExcellentDesigner();
     }
 
     @Override
@@ -40,6 +43,8 @@ public class BATwinsBadDesigner extends BATwinsModCustomCard{
             for(AbstractCard c:abstractPlayer.masterDeck.group) {
                 if (c.uuid == this.uuid) {
                     abstractPlayer.masterDeck.removeCard(c);
+                    addToBot(new MakeTempCardInHandAction(new BATwinsExcellentDesigner()));
+                    break;
                 }
             }
         }else{
@@ -77,6 +82,7 @@ public class BATwinsBadDesigner extends BATwinsModCustomCard{
                 this.misc=1;
             }
             this.magicNumber=this.misc;
+            this.isMagicNumberModified=true;
             this.initializeDescription();
         }
     }
@@ -94,5 +100,13 @@ public class BATwinsBadDesigner extends BATwinsModCustomCard{
             return false;
         }
         return p.hand.size() == 1 && p.hand.getTopCard() == this;
+    }
+
+    @Override
+    public AbstractCard makeSameInstanceOf() {
+        AbstractCard temp=super.makeSameInstanceOf();
+        temp.misc=this.misc;
+        temp.magicNumber=temp.misc;
+        return temp;
     }
 }

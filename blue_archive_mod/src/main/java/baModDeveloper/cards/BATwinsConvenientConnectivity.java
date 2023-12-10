@@ -40,7 +40,7 @@ public class BATwinsConvenientConnectivity extends BATwinsModCustomCard{
     }
 
     @Override
-    public void triggerOnConnectePlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         if(this.upgraded){
             addToBot(new BATwinsSelectDrawPileCardToPlayAction(false,this.numberOfConnections+1));
         }else{

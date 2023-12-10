@@ -35,6 +35,8 @@ public class BATwinsInterpretiveErrorAction extends AbstractGameAction {
             for(AbstractCard c:this.p.hand.group){
                 if(c.color!= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD&&c.color!=BATwinsCharacter.Enums.BATWINS_MIDORI_CARD){
                     this.cannotexchange.add(c);
+                } else if (c.isInAutoplay) {
+                    this.cannotexchange.add(c);
                 }
             }
             if(this.cannotexchange.size()==this.p.hand.group.size()){

@@ -4,7 +4,10 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import java.util.ArrayList;
 
 public class BATwinsInspirationEmergenceAction extends AbstractGameAction {
     private int amount;
@@ -16,18 +19,9 @@ public class BATwinsInspirationEmergenceAction extends AbstractGameAction {
         AbstractDungeon.actionManager.addToTop(new WaitAction(0.5F));
         tickDuration();
         if(this.isDone){
-            boolean same=true;
-            if(DrawCardAction.drawnCards.size()>=2){
-                for(int i=1;i< DrawCardAction.drawnCards.size();i++){
-                    if(DrawCardAction.drawnCards.get(i).color!=DrawCardAction.drawnCards.get(i-1).color){
-                        same=false;
-                    }
-                }
-            }
-            if(same){
-                addToTop(new DrawCardAction(1));
-                addToTop(new ScryAction(this.amount));
-            }
+            int colorNum= (int) DrawCardAction.drawnCards.stream().map(card -> card.color).distinct().count();
+            addToTop(new DrawCardAction(1));
+            addToTop(new ScryAction(colorNum));
 
         }
     }
