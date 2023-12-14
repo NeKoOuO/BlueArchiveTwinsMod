@@ -12,5 +12,12 @@
 		"DESCRIPTIONS":[
 			"每场战斗开始时，获得 [batwinsmod:midoriorbicon] 。抽牌堆随机 #ybatwinsmod:绿牌 加入手牌。"
 		]
+	},
+	"BATwinsMod:AncientGameCartridges":{
+		"NAME":"古老的游戏卡带",
+		"FLAVOR":"一块破旧的游戏卡带，已经无法读取了，勉强能看到上面写了《杀 ■ ■ 塔》。",
+		"DESCRIPTIONS":[
+			"每场战斗开始时，打出抽牌堆随机1张能力牌。"
+		]
 	}
 }

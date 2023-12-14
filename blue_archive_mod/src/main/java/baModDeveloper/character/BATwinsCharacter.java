@@ -12,6 +12,7 @@ import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.relic.BATwinsMomoisGameConsole;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomEnergyOrb;
+import com.badlogic.gdx.assets.loaders.ModelLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -104,6 +105,9 @@ public class BATwinsCharacter extends CustomPlayer {
         this.initializeClass(stand_Img, BATWINS_CHARACTER_SHOULDER_2,
                 BATWINS_CHARACTER_SHOULDER_1, BATWINS_CHARACTER_CORPSE, getLoadout(), 0.0F, 0.0F, 200.0F, 200.0F,
                 new BATwinsEnergyManager(2));
+
+
+
 
     }
 
@@ -373,4 +377,9 @@ public class BATwinsCharacter extends CustomPlayer {
 //        }
 //    }
 
+
+    @Override
+    public void renderPlayerImage(SpriteBatch sb) {
+
+    }
 }

@@ -14,7 +14,7 @@ public class BATwinsCancelButtonPatch {
                 AbstractDungeon.gridSelectScreen.forUpgrade=true;
             }
         }
-        @SpireInsertPatch(rloc = 55)
+        @SpireInsertPatch(rloc = 46)
         public static void updatePatch2(CancelButton __instance){
             if(BATwinsGridCardSelectScreenPatch.FiledPatch.forExchange.get(AbstractDungeon.gridSelectScreen)){
                 AbstractDungeon.gridSelectScreen.forUpgrade=false;

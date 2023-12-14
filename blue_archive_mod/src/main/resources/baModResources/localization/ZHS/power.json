@@ -146,7 +146,7 @@
 	"BATwinsMod:IntegratingAndIntegratingPower":{
 		"NAME":"融会贯通",
 		"DESCRIPTIONS":[
-			"交换后的牌在本场战斗耗能降低%s"
+			"打出 batwinsmod:交换 后的牌后将%d张原本颜色的牌加入手牌，那张牌获得 虚无 ， 消耗 。"
 		]
 	}
 }

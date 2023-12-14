@@ -2,6 +2,7 @@ package baModDeveloper;
 
 import baModDeveloper.cards.*;
 import baModDeveloper.power.BATwinsSeeYouHaveASharenPower;
+import baModDeveloper.relic.BATwinsAncientGameCartridges;
 import baModDeveloper.relic.BATwinsMidorisGameConsole;
 import baModDeveloper.relic.BATwinsMomoisGameConsole;
 import baModDeveloper.ui.panels.button.BATwinsCamfireExchangeButton;
@@ -183,6 +184,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new BATwinsMomoisGameConsole(), Enums.BATWINS_MOMOI_CARD);
         BaseMod.addRelicToCustomPool(new BATwinsMidorisGameConsole(),Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelic(new BATwinsAncientGameCartridges(),RelicType.SHARED);
     }
 
     @Override

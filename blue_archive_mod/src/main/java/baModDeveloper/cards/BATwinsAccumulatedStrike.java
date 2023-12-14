@@ -25,7 +25,7 @@ public class BATwinsAccumulatedStrike extends BATwinsModCustomCard{
     private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET=CardTarget.ENEMY;
     private static final CardRarity RARITY=CardRarity.UNCOMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MIDORI;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
     private int realBaseDamage;
 
     public BATwinsAccumulatedStrike() {
