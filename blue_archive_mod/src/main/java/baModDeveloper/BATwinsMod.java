@@ -142,6 +142,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsSelfConnectivity());
         BaseMod.addCard(new BATwinsSkillCombination());
         BaseMod.addCard(new BATwinsIntegratingAndIntegrating());
+        BaseMod.addCard(new BATwinsPlotPrediction());
     }
 
     @Override

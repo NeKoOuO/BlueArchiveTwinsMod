@@ -19,7 +19,7 @@ public class GifAnimation{
     }
 
     public void create(String filePath) {
-        animation = GifDecoder.loadGIFAnimation(Animation.PlayMode.LOOP, Gdx.files.internal(filePath).read(), this);
+        animation = GifDecoder.loadGIFAnimation(Animation.PlayMode.NORMAL, Gdx.files.internal(filePath).read(), this);
     }
 
     public void render(SpriteBatch sb, final float x, final float y, final float width, final float height) {

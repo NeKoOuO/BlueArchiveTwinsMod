@@ -33,6 +33,7 @@ baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$cancelUpgradePatch.class
 baModDeveloper\power\BATwinsCoolingTimePower.class
 baModDeveloper\cards\BATwinsLightSpeedStrike.class
 baModDeveloper\cards\BATwinsModCustomCard.class
+baModDeveloper\cards\BATwinsPlotPrediction.class
 baModDeveloper\power\BATwinsShufflePower.class
 baModDeveloper\action\BATwinsSelectHandCardToPlayAction.class
 baModDeveloper\action\BATwinsMutualUnderstandingAction.class
@@ -54,11 +55,13 @@ baModDeveloper\action\BATwinsCoversionColorAction.class
 baModDeveloper\cards\BATwinsIntegratingAndIntegrating.class
 baModDeveloper\relic\BATwinsMomoisGameConsole.class
 baModDeveloper\cards\BATwinsBubFix.class
+baModDeveloper\character\BATwinsCharacter$1.class
 baModDeveloper\action\BATwinsAdventureOpeningAction.class
 baModDeveloper\action\BATwinsBDStudyAction.class
 baModDeveloper\cards\BATwinsExcellentDesigner.class
 baModDeveloper\cards\BATwinsPlotRepair.class
 baModDeveloper\cards\BATwinsMutualUnderstanding.class
+baModDeveloper\character\BATwinsCharacter$AnimationChar.class
 baModDeveloper\cards\BATwinsRepeatOperation.class
 baModDeveloper\cards\BATwinsInspirationEmergence.class
 baModDeveloper\action\BATwinsDrawOrDisCardToHandAction.class
@@ -121,6 +124,7 @@ baModDeveloper\action\BATwinsPaintingArtAction.class
 baModDeveloper\cards\BATwinsExperienceGiftPackage.class
 baModDeveloper\action\BATwinsSkillCombinationAction.class
 baModDeveloper\character\BATwinsCharacter$Enums.class
+baModDeveloper\power\BATwinsPlotPredictionExchangePower.class
 baModDeveloper\cards\BATwinsTakeABreak$2.class
 baModDeveloper\cards\BATwinsAbstractSchool.class
 baModDeveloper\action\BATwinsBugFixAction.class
@@ -131,6 +135,7 @@ baModDeveloper\power\BATwinsArtPolishingPower.class
 baModDeveloper\ui\panels\energyorb\BATwinsEnergyMidoriOrb.class
 baModDeveloper\power\BATwinsArtPolishingExchangePower$1.class
 baModDeveloper\cards\BATwinsMomoiDefend.class
+baModDeveloper\character\BATwinsCharacter$Animation.class
 baModDeveloper\power\BATwinsDoubleExperiencePower.class
 baModDeveloper\cards\BATwinsTakeABreak$1.class
 baModDeveloper\power\BATwinsOnceMorePower.class
@@ -147,6 +152,7 @@ baModDeveloper\power\BATwinsGainLENextTurnPower.class
 baModDeveloper\ui\panels\icons\BATwinsMidoriEnergyOrbSmall.class
 baModDeveloper\cards\BATwinsPassageInForce.class
 baModDeveloper\action\BATwinsBugCardAction.class
+baModDeveloper\cards\BATwinsEndlessCombo.class
 baModDeveloper\cards\BATwinsAttackWithAllMight.class
 baModDeveloper\cards\BATwinsReadingDocuments.class
 baModDeveloper\animation\AnimationPatch.class
@@ -177,6 +183,7 @@ baModDeveloper\cards\BATwinsBugCard.class
 baModDeveloper\patch\BATwinsAbstractCardPatch$FieldPatch.class
 baModDeveloper\cards\BATwinsTwoStageAttack.class
 baModDeveloper\power\BATwinsDefensiveCounterattackPower.class
+baModDeveloper\power\BATwinsPlotPredictionPower.class
 baModDeveloper\action\BATwinsDrawCardByColor.class
 baModDeveloper\cards\BATwinsAccurateBlocking.class
 baModDeveloper\patch\BATwinsSoulFix.class

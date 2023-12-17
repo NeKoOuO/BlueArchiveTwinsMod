@@ -91,7 +91,7 @@ public class AbstractAnimation {
         this.hb = new Hitbox(hb_w * hbScale, hb_h * hbScale);
         this.tint = new TintEffect();
         setPosition(positionX, positionY);
-        addAnimation(this);
+//        addAnimation(this);
     }
 
     public AbstractAnimation(String atlasUrl, String skeletonUrl, float scale, float positionX, float positionY, float hb_x, float hb_y, float hb_w, float hb_h) {
@@ -111,7 +111,7 @@ public class AbstractAnimation {
         }
         this.hb = new Hitbox(hb_w * hbScale, hb_h * hbScale);
         setPosition(positionX, positionY);
-        addAnimation(this);
+//        addAnimation(this);
     }
 
     public static void addAnimation(AbstractAnimation abstractAnimation) {

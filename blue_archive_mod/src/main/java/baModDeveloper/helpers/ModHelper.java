@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ModHelper {
+    public static String MOMOI_FLODER="momoi";
+    public static String MIDORI_FLODER="midori";
     public static String makePath(String id){
         return "BATwinsMod:"+id;
     }
@@ -16,8 +18,8 @@ public class ModHelper {
         return "baModResources/img/"+floder+"/"+imgName+".png";
     }
 
-    public static String makeGifPath(String floder,String imgName){
-        return "baModResources/img/"+floder+"/"+imgName+".gif";
+    public static String makeGifPath(String floder,String character,String imgName){
+        return String.format("baModResources/img/%s/%s/%s.gif",floder,character,imgName);
     }
 
     public static <T> T checkBATwinPlayer(T player){

@@ -294,5 +294,13 @@
 	"BATwinsMod:IntegratingAndIntegrating":{
 		"NAME":"融会贯通",
 		"DESCRIPTION":" batwinsmod:共有 NL 打出 batwinsmod:交换 后的牌后将1张原本颜色的牌加入手牌，那张牌获得 虚无 ， 消耗 。"
+	},
+	"BATwinsMod:EndlessCombo": {
+		"NAME": "无尽连击",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。这张牌的伤害翻倍打出这张牌时的连携层数的次数。"
+	},
+	"BATwinsMod:PlotPrediction":{
+		"NAME":"剧情编排",
+		"DESCRIPTION":"回合开始时，失去 [batwinsmod:momoiorbicon] ,每回合结束时打出 !M! 张 batwinsmod:桃牌。"
 	}
 }
