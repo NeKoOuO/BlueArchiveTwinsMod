@@ -302,5 +302,27 @@
 	"BATwinsMod:PlotPrediction":{
 		"NAME":"剧情编排",
 		"DESCRIPTION":"回合开始时，失去 [batwinsmod:momoiorbicon] ,每回合结束时打出 !M! 张 batwinsmod:桃牌。"
+	},
+	"BATwinsMod:MasterCraftsmanship":{
+		"NAME":"技艺大师",
+		"DESCRIPTION":" batwinsmod:交换 后，本场战斗将 batwinsmod:交换 的牌 升级 。",
+		"UPGRADE_DESCRIPTION":" 固有 NL batwinsmod:交换 后，本场战斗将 batwinsmod:交换 的牌 升级 。"
+	},
+	"BATwinsMod:PoisonGasBomb":{
+		"NAME":"毒气弹",
+		"DESCRIPTION":"给予 !M! 层 中毒 !M! 层 batwinsmod:灼伤 。触发该敌人的 中毒 。"
+	},
+	"BATwinsMod:AdventureBegins":{
+		"NAME":"冒险开始",
+		"DESCRIPTION":"打出这张牌存储的牌。选择一张和这张牌所有存储的牌类型不同的手牌存储。",
+		"UPGRADE_DESCRIPTION":"打出这张牌存储的牌。可以选择一张和这张牌所有存储的牌类型不同的手牌存储。",
+		"EXTENDED_DESCRIPTION":[
+			"攻击",
+			"技能",
+			"能力",
+			"状态",
+			"诅咒"
+		],
+		"FLAVOR":"lll"
 	}
 }

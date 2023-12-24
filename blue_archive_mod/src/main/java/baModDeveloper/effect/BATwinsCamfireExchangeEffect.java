@@ -50,7 +50,7 @@ public class BATwinsCamfireExchangeEffect extends AbstractGameEffect {
                 BATwinsMetricDataPatch.FiledPatch.campfire_exchange.set(CardCrawlGame.metricData,BATwinsMetricDataPatch.FiledPatch.campfire_exchange.get(CardCrawlGame.metricData)+1);
                 CardCrawlGame.metricData.addCampfireChoiceData(ModHelper.makePath("EXCHANGE"), c.getMetricID());
                 if(c instanceof BATwinsModCustomCard){
-                    ((BATwinsModCustomCard) c).conversionColor();
+                    ((BATwinsModCustomCard) c).conversionColor(false);
                 }
                 if(c.color== BATwinsCharacter.Enums.BATWINS_MOMOI_CARD&&!momoiSound){
                     CardCrawlGame.sound.play(ModHelper.makePath("campfire_momoi"));

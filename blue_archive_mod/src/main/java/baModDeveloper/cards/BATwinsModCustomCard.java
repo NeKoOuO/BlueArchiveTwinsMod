@@ -5,6 +5,7 @@ import baModDeveloper.action.BATwinsPlayTempCardAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.power.BATwinsDoubleExperiencePower;
 import baModDeveloper.power.BATwinsExperiencePower;
+import baModDeveloper.power.BATwinsMasterCraftsmanshipPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
@@ -38,9 +39,11 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     public boolean justHovered=false;
     private boolean bringOutCard=false;
     private AbstractCard cardToBringOut;
+    protected String originRawDescription;
 //    public boolean playedByOtherCard=false;
     public BATwinsModCustomCard(String ID, String NAME, String IMG_PATH, int COST, String DESCRIPTION, CardType TYPE, CardColor COLOR, CardRarity RARITY, CardTarget TARGET, BATwinsEnergyPanel.EnergyType ENERGYTYPE) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        this.originRawDescription=DESCRIPTION;
         this.OriginalColor= COLOR;
         this.modifyEnergyType=ENERGYTYPE;
         this.GradientColor.add(BATwinsMod.MOMOIColor);
@@ -150,8 +153,13 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         }
         if(flash)
             this.superFlash(BATwinsCharacter.getColorWithCardColor(this.color));
-        this.rawDescription=replaceDescription(this.rawDescription);
-        super.initializeDescription();
+
+        //如果有技艺大师buff则升级
+        if(AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)){
+            this.upgrade();
+            AbstractDungeon.player.getPower(BATwinsMasterCraftsmanshipPower.POWER_ID).flash();
+        }
+        this.initializeDescription();
     }
     public void conversionColor(){
         this.conversionColor(true);
@@ -159,19 +167,19 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 
     @Override
     public AbstractCard makeCopy(){
-        BATwinsModCustomCard _instance= (BATwinsModCustomCard) super.makeCopy();
-        _instance.modifyEnergyType=this.modifyEnergyType;
-        _instance.OriginalColor=this.OriginalColor;
-        return _instance;
+        BATwinsModCustomCard temp= (BATwinsModCustomCard) super.makeCopy();
+        temp.OriginalColor=this.OriginalColor;
+        if(this.exchanged()){
+            temp.conversionColor(false);
+        }
+//        temp.initializeDescription();
+        return temp;
     }
 
     @Override
     public AbstractCard makeStatEquivalentCopy() {
         BATwinsModCustomCard temp= (BATwinsModCustomCard) super.makeStatEquivalentCopy();
-        temp.OriginalColor=this.OriginalColor;
-        if(this.exchanged()){
-            temp.conversionColor(false);
-        }
+
 //        temp.color=this.color;
 //        temp.modifyEnergyType=this.modifyEnergyType;
 //        temp.GradientColor.addAll(this.GradientColor);
@@ -186,6 +194,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 
     @Override
     public void initializeDescription() {
+        if(this.originRawDescription!=null){
+            this.rawDescription=this.originRawDescription;
+        }
         if(this.OriginalColor!=null&&this.OriginalColor!=this.color){
             this.rawDescription=replaceDescription(this.rawDescription);
         }

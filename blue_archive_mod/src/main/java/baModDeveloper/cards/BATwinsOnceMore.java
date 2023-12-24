@@ -44,6 +44,7 @@ public class BATwinsOnceMore extends BATwinsModCustomCard{
             this.upgradeName();
             this.isInnate=true;
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

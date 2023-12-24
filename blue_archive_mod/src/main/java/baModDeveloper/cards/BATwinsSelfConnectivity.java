@@ -113,6 +113,8 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard{
         if(!this.upgraded){
             this.upgradeName();
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+
             initializeDescription();
         }
     }

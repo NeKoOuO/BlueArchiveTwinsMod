@@ -111,7 +111,7 @@ public class BATwinsGridCardSelectScreenPatch {
         @SpireInsertPatch(rloc = 16)
         public static void openPatch(GridCardSelectScreen __instance,CardGroup group,int numCards,String tipMsg,boolean forUpgrade, boolean forTransform, boolean canCancel, boolean forPurge){
             if(FiledPatch.forExchange.get(__instance)){
-                AbstractDungeon.overlayMenu.cancelButton.show("6677");
+                AbstractDungeon.overlayMenu.cancelButton.show("取消");
             }
         }
     }

@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.ArrayList;
+
 public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("LightSpeedStrike");
     private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
@@ -38,11 +40,14 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        ArrayList<AbstractCard> strikeCards=new ArrayList<>();
         for(AbstractCard c: abstractPlayer.hand.group){
-            if(c.hasTag(CardTags.STRIKE)){
+            if(c.hasTag(CardTags.STRIKE)&&c!=this){
+                strikeCards.add(c);
                 addToBot(new BATwinsPlayHandCardAction(c,abstractMonster,this.numberOfConnections+1));
             }
         }
+        abstractPlayer.hand.group.removeAll(strikeCards);
     }
 
     @Override

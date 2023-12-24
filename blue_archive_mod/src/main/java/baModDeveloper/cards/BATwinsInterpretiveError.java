@@ -46,6 +46,7 @@ public class BATwinsInterpretiveError extends BATwinsModCustomCard{
         if(!upgraded){
             this.upgradeName();
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

@@ -37,6 +37,7 @@ public class BATwinsGameLaunch extends BATwinsModCustomCard{
             this.upgradeName();
             this.upgradeMagicNumber(1);
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

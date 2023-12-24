@@ -5,6 +5,7 @@ import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.ShowCardAction;
+import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
@@ -55,7 +56,11 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
             this.card.calculateCardDamage((AbstractMonster) this.target);
 //            this.p.hand.removeCard(this.card);
             AbstractDungeon.getCurrRoom().souls.remove(this.card);
-            AbstractDungeon.player.limbo.group.add(this.card);
+//            card.current_x = Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
+//            card.current_y = 0.0F * Settings.scale;
+//            card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale;
+//            card.target_y = (float) Settings.HEIGHT / 2.0F;
+//            AbstractDungeon.player.limbo.group.add(this.card);
             if(card instanceof BATwinsModCustomCard){
                 ((BATwinsModCustomCard) card).numberOfConnections=this.numberOfConnections;
                 ((BATwinsModCustomCard) card).blockTheOriginalEffect=this.blockTheOriginalEffect;
@@ -69,6 +74,7 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //            if(card instanceof BATwinsModCustomCard){
 //                ((BATwinsModCustomCard) card).playedByOtherCard=true;
 //            }
+//            addToTop(new UnlimboAction(this.card));
             addToTop((AbstractGameAction)new NewQueueCardAction(card, this.target, false, true));
 //            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(this.card, (AbstractMonster) this.target,card.energyOnUse,true,true),true);
         }

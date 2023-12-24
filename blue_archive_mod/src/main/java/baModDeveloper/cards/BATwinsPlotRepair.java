@@ -49,6 +49,8 @@ public class BATwinsPlotRepair extends BATwinsModCustomCard{
             upgradeName();
             upgradeDamage(2);
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+
             this.initializeDescription();
         }
     }

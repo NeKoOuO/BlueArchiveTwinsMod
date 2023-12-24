@@ -1,5 +1,6 @@
 package baModDeveloper.power;
 
+import baModDeveloper.action.BATwinsOneMoreAction;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -38,13 +39,9 @@ public class BATwinsOnceMorePower extends AbstractPower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.flash();
         if(isPlayer){
-            for(AbstractMonster m: AbstractDungeon.getCurrRoom().monsters.monsters){
-                if(m.hasPower(BATwinsBurnPower.POWER_ID)){
-                    m.getPower(BATwinsBurnPower.POWER_ID).atEndOfTurn(false);
-                }
-            }
+            this.flash();
+            addToBot(new BATwinsOneMoreAction(BATwinsBurnPower.POWER_ID,true));
         }
     }
 }

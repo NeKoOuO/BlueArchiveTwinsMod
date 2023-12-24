@@ -60,6 +60,8 @@ public class BATwinsAdventureRewards extends BATwinsModCustomCard{
             this.upgradeName();
             this.upgradeMagicNumber(1);
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     private void useCardEffect(int choice){

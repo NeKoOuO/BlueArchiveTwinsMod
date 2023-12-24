@@ -2,13 +2,12 @@ package baModDeveloper.character;
 
 import java.awt.*;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 import baModDeveloper.animation.AbstractAnimation;
 import baModDeveloper.animation.GifAnimation;
 import baModDeveloper.cards.*;
+import baModDeveloper.helpers.ColorComparer;
 import baModDeveloper.helpers.ImageHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.relic.BATwinsMomoisGameConsole;
@@ -56,6 +55,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.Vajra;
 import com.megacrit.cardcrawl.rooms.RestRoom;
+import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
@@ -125,7 +125,12 @@ public class BATwinsCharacter extends CustomPlayer {
     };
     private ArrayList<AbstractAnimation> anima_momoi;
     private ArrayList<AbstractAnimation> anima_midori;
-    private int animation_sacle=0;
+    private int anim_time_momoi=0;
+    private int anim_len_momoi=0;
+    private int anim_time_midori=0;
+    private int anim_len_midori=0;
+    private AbstractAnimation rendered_anima_momoi;
+    private AbstractAnimation rendered_anima_midori;
     //3D相关
 //    Rectangle bucket;
 //    OrthographicCamera camera;
@@ -136,6 +141,8 @@ public class BATwinsCharacter extends CustomPlayer {
 //    CameraInputController cameraInputController;
 //    FitViewport viewport;
 
+    //排序手牌
+    ColorComparer colorComparer;
 
     private static final String stand_Img=ModHelper.makeImgPath("char","standup");
 //    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
@@ -181,13 +188,23 @@ public class BATwinsCharacter extends CustomPlayer {
         //gif相关
         this.anima_momoi=new ArrayList<>();
         for(String s:GIFPATH_MOMOI){
-            this.anima_momoi.add(new AbstractAnimation(s,this.drawX,this.drawY,200,200,0.5F));
+            AbstractAnimation temp=new AbstractAnimation(s,this.drawX,this.drawY,200,200,0.5F);
+            temp.setMovable(false);
+            this.anima_momoi.add(temp);
         }
 
         this.anima_midori=new ArrayList<>();
         for(String s:GIFPATH_MIDORI){
-            this.anima_midori.add(new AbstractAnimation(s,this.drawX,this.drawY,200,200,0.5F));
+            AbstractAnimation temp=new AbstractAnimation(s,this.drawX,this.drawY,200,200,0.5F);
+            temp.setMovable(false);
+            this.anima_midori.add(temp);
         }
+
+        AbstractAnimation.addAnimation(null);
+        AbstractAnimation.addAnimation(null);
+
+
+        colorComparer=new ColorComparer();
     }
 
     @Override
@@ -440,6 +457,44 @@ public class BATwinsCharacter extends CustomPlayer {
         return color;
     }
 
+    @Override
+    public void update() {
+        super.update();
+        if(this.rendered_anima_momoi!=null){
+            if(this.anim_time_momoi<this.anim_len_momoi){
+                this.anim_time_momoi+=2;
+            }else{
+                this.anim_time_momoi=0;
+                this.rendered_anima_momoi=null;
+            }
+            if(this.rendered_anima_momoi!=null){
+                if(this.rendered_anima_momoi==anima_momoi.get(Animation.RUN.index)){
+                    this.rendered_anima_momoi.setPosition(this.rendered_anima_momoi.drawX+1,this.rendered_anima_momoi.drawY);
+                }
+                this.rendered_anima_momoi.update();
+            }
+
+        }
+        if(this.rendered_anima_midori!=null){
+            if(this.anim_time_midori<this.anim_len_midori){
+                this.anim_time_midori+=2;
+            }else{
+                this.anim_time_midori=0;
+                this.rendered_anima_midori=null;
+            }
+            if(this.rendered_anima_midori!=null){
+                if(this.rendered_anima_midori==anima_midori.get(Animation.RUN.index)){
+                    this.rendered_anima_midori.setPosition(this.rendered_anima_midori.drawX+1,this.rendered_anima_midori.drawY);
+                }
+                this.rendered_anima_midori.update();
+            }
+
+        }
+
+        //排序手牌
+        this.hand.group.sort(colorComparer);
+    }
+
     public static Color getColorWithCardColor(CardColor color){
         if(color==Enums.BATWINS_MOMOI_CARD){
             return BATwinsMod.MOMOIColor;
@@ -452,8 +507,14 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public void render(SpriteBatch sb) {
-        super.render(sb);
+        if(this.rendered_anima_midori!=null){
+            this.rendered_anima_midori.render(sb);
+        }
+        if(this.rendered_anima_momoi!=null){
+            this.rendered_anima_momoi.render(sb);
+        }
 
+        super.render(sb);
 
         //3D相关
 //        sb.end();
@@ -476,6 +537,7 @@ public class BATwinsCharacter extends CustomPlayer {
         private int len;
         private Animation(int index,int len){
             this.index=index;
+            this.len=len;
         }
         public int getIndex(){
             return index;
@@ -487,15 +549,31 @@ public class BATwinsCharacter extends CustomPlayer {
     public void setAnimation(AnimationChar character,Animation anima){
         switch (character){
             case MOMOI:
-                AbstractAnimation.animations.set(1,this.anima_momoi.get(anima.getIndex()));
+                this.rendered_anima_momoi=this.anima_momoi.get(anima.getIndex());
+                this.anim_len_momoi=anima.getLen();
+                if(anima==Animation.RUN){
+                    this.rendered_anima_momoi.setPosition(this.rendered_anima_momoi.drawX-200,this.rendered_anima_momoi.drawY);
+                }
                 break;
             case MIDORI:
-                AbstractAnimation.animations.set(0,this.anima_midori.get(anima.getIndex()));
+                this.rendered_anima_midori=this.anima_midori.get(anima.getIndex());
+                this.anim_len_midori=anima.getLen();
+                if(anima==Animation.RUN){
+                    this.rendered_anima_midori.setPosition(this.rendered_anima_midori.drawX-200,this.rendered_anima_momoi.drawY);
+                }
                 break;
             default:
                 return;
         }
     }
 
+    public void onEnterRoom(){
+        this.setAnimation(AnimationChar.MOMOI,Animation.RUN);
+        this.setAnimation(AnimationChar.MIDORI,Animation.RUN);
+    }
 
+    @Override
+    public boolean saveFileExists() {
+        return super.saveFileExists();
+    }
 }

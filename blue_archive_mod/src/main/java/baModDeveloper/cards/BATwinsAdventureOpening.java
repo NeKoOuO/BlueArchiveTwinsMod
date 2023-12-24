@@ -53,6 +53,8 @@ public class BATwinsAdventureOpening extends BATwinsModCustomCard{
             this.upgradeName();
             this.modifyEnergyType= BATwinsEnergyPanel.EnergyType.SHARE;
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

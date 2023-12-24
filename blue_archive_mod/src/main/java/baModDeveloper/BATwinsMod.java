@@ -105,7 +105,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
 //        BaseMod.addCard(new BATwinsPlotRepair());
 //        BaseMod.addCard(new BATwinsBubFix());
         BaseMod.addCard(new BATwinsAdventureOpening());
-        BaseMod.addCard(new BATwinsAdventureBattle());
+//        BaseMod.addCard(new BATwinsAdventureBattle());
         BaseMod.addCard(new BATwinsLightSpeedStrike());
         BaseMod.addCard(new BATwinsSinglePlayerGame());
         BaseMod.addCard(new BATwinsCoolingTime());
@@ -114,12 +114,12 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsEmergencyRecovery());
         BaseMod.addCard(new BATwinsAbstractSchool());
         BaseMod.addCard(new BATwinsDefensiveCounterattack());
-        BaseMod.addCard(new BATwinsAdventureRewards());
+//        BaseMod.addCard(new BATwinsAdventureRewards());
         BaseMod.addCard(new BATwinsAccumulatedStrike());
         BaseMod.addCard(new BATwinsNormalAttackMethods());
         BaseMod.addCard(new BATwinsAlternatingAttack());
         BaseMod.addCard(new BATwinsTemporaryAssistance());
-        BaseMod.addCard(new BATwinsAdventureExperience());
+//        BaseMod.addCard(new BATwinsAdventureExperience());
         BaseMod.addCard(new BATwinsSwitchStrike());
         BaseMod.addCard(new BATwinsCoverCharge());
         BaseMod.addCard(new BATwinsMutualUnderstanding());
@@ -142,7 +142,10 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsSelfConnectivity());
         BaseMod.addCard(new BATwinsSkillCombination());
         BaseMod.addCard(new BATwinsIntegratingAndIntegrating());
-        BaseMod.addCard(new BATwinsPlotPrediction());
+//        BaseMod.addCard(new BATwinsPlotPrediction());
+        BaseMod.addCard(new BATwinsMasterCraftsmanship());
+        BaseMod.addCard(new BATwinsPoisonGasBomb());
+        BaseMod.addCard(new BATwinsAdventureBegins());
     }
 
     @Override

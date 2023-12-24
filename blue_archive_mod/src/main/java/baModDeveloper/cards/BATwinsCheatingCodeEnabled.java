@@ -52,6 +52,8 @@ public class BATwinsCheatingCodeEnabled extends BATwinsModCustomCard{
         if(!upgraded){
             this.upgradeName();
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+
             initializeDescription();
         }
     }

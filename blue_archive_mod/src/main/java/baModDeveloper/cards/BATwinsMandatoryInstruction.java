@@ -44,6 +44,8 @@ public class BATwinsMandatoryInstruction extends BATwinsModCustomCard{
             this.upgradeName();
             this.selfRetain=true;
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+
             initializeDescription();
         }
     }

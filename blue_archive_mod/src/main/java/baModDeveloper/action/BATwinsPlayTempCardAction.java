@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,12 +13,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class BATwinsPlayTempCardAction extends AbstractGameAction {
     private AbstractCard cardToPlay;
     private int numberOfConnections;
-    public BATwinsPlayTempCardAction(AbstractCard card,int numberOfConnections){
+    public BATwinsPlayTempCardAction(AbstractCard card, int numberOfConnections, AbstractCreature target){
         this.cardToPlay=card;
         this.numberOfConnections=numberOfConnections;
+        this.target=target;
         this.duration= Settings.ACTION_DUR_FAST;
     }
-    @Override
+    public BATwinsPlayTempCardAction(AbstractCard card,int numberOfConnections) {
+        this(card,numberOfConnections,null);
+    }
+        @Override
     public void update() {
         AbstractDungeon.player.limbo.group.add(cardToPlay);
         cardToPlay.current_y = 0.0F * Settings.scale;
@@ -34,7 +39,9 @@ public class BATwinsPlayTempCardAction extends AbstractGameAction {
         if(cardToPlay instanceof BATwinsModCustomCard){
             ((BATwinsModCustomCard) cardToPlay).numberOfConnections=this.numberOfConnections;
         }
-
+        if(this.target==null){
+            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+        }
         AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, (AbstractMonster) this.target,cardToPlay.energyOnUse,true,true),true);
 //            addToTop(new UnlimboAction(cardToPlay));
         if (!Settings.FAST_MODE) {
