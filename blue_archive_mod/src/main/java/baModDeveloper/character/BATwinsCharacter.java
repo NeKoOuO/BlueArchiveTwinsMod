@@ -339,6 +339,7 @@ public class BATwinsCharacter extends CustomPlayer {
         public static CardLibrary.LibraryType BATWINS_MOMOI_LIBRARY;
         @SpireEnum(name = "BATWINSMIDORICARD")
         public static CardLibrary.LibraryType BATWINS_MIDORI_LIBRARY;
+
     }
 
     @Override

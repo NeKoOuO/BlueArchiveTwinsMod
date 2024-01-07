@@ -1,5 +1,6 @@
 package baModDeveloper.action;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -40,11 +41,18 @@ public class BATwinsDrawOrDisCardToHandAction extends AbstractGameAction {
                 if(randomCard){
                     this.card=this.p.drawPile.getRandomCard(AbstractDungeon.cardRandomRng);
                 }
-                card.unhover();
-                card.lighten(true);
-                this.p.drawPile.addToHand(card);
-                this.p.hand.refreshHandLayout();
-                this.p.hand.applyPowers();
+
+                if(this.p.hand.size()<=10){
+                    this.card.current_x=CardGroup.DRAW_PILE_X;
+                    this.card.current_y=CardGroup.DRAW_PILE_Y;
+                    this.p.hand.addToHand(card);
+                    this.p.drawPile.removeCard(card);
+                    card.unhover();
+                    card.lighten(true);
+                    this.p.hand.refreshHandLayout();
+                    this.p.hand.applyPowers();
+                }
+
             } else if (this.pile==Pile.DiscardPile) {
                 if(this.p.discardPile.isEmpty()){
                     this.isDone=true;
@@ -53,11 +61,18 @@ public class BATwinsDrawOrDisCardToHandAction extends AbstractGameAction {
                 if(randomCard){
                     this.card=this.p.discardPile.getRandomCard(AbstractDungeon.cardRandomRng);
                 }
-                card.unhover();
-                card.lighten(true);
-                this.p.discardPile.addToHand(card);
-                this.p.hand.refreshHandLayout();
-                this.p.hand.applyPowers();
+                if(this.p.hand.size()<=10){
+                    this.card.current_x=CardGroup.DISCARD_PILE_X;
+                    this.card.current_y=CardGroup.DISCARD_PILE_Y;
+                    this.p.hand.addToHand(card);
+                    this.p.discardPile.removeCard(card);
+                    card.unhover();
+                    card.lighten(true);
+                    this.p.hand.refreshHandLayout();
+                    this.p.hand.applyPowers();
+
+                }
+
             } else if (this.pile==Pile.ALL) {
                 if(this.card==null){
                     this.isDone=true;

@@ -60,7 +60,7 @@ public class BATwinsBurnPower extends AbstractPower{
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() &&
             this.owner.currentHealth <= 0) {
             addToTop((AbstractGameAction)new DamageAllEnemiesAction(null,
-            DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+            DamageInfo.createDamageMatrix(this.amount*2, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         }
     }
     //    @Override

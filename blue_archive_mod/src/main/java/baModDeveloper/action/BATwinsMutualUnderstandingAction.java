@@ -16,6 +16,9 @@ public class BATwinsMutualUnderstandingAction extends AbstractGameAction {
     }
     @Override
     public void update() {
+        if(DrawCardAction.drawnCards.isEmpty()){
+            return;
+        }
         AbstractCard c=DrawCardAction.drawnCards.get(0);
         if(c.color.equals(this.color)){
             AbstractMonster m= AbstractDungeon.getRandomMonster();

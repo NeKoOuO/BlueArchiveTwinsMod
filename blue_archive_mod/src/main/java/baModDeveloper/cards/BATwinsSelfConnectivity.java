@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class BATwinsSelfConnectivity extends BATwinsModCustomCard{
@@ -39,7 +40,9 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard{
             return;
         }
         if(cardToCopy instanceof BATwinsModCustomCard){
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections=this.numberOfConnections;
             ((BATwinsModCustomCard) cardToCopy).useMOMOI(abstractPlayer,abstractMonster);
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections=0;
         }else{
             cardToCopy.use(abstractPlayer,abstractMonster);
         }
@@ -52,8 +55,9 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard{
             return;
         }
         if(cardToCopy instanceof BATwinsModCustomCard){
-            abstractMonster=AbstractDungeon.getRandomMonster();
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections=this.numberOfConnections;
             ((BATwinsModCustomCard) cardToCopy).useMIDORI(abstractPlayer,abstractMonster);
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections=0;
         }else{
             cardToCopy.use(abstractPlayer,abstractMonster);
         }
@@ -89,7 +93,9 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard{
             }
             updateCardPreview();
             if(this.cardToCopy instanceof BATwinsModCustomCard){
+                ((BATwinsModCustomCard) this.cardToCopy).numberOfConnections=this.numberOfConnections;
                 ((BATwinsModCustomCard) this.cardToCopy).triggerOnConnectPlayed(abstractPlayer,abstractMonster);
+                ((BATwinsModCustomCard) this.cardToCopy).numberOfConnections=0;
             }
         }
         addToBot(new BATwinsPlayDisPileCardAction(this.cardToCopy,abstractMonster,false,this.numberOfConnections+1));
@@ -103,7 +109,9 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard{
             }
             updateCardPreview();
             if(this.cardToCopy instanceof BATwinsModCustomCard){
+                ((BATwinsModCustomCard) this.cardToCopy).numberOfConnections=this.numberOfConnections;
                 ((BATwinsModCustomCard) this.cardToCopy).triggerOnSuperConnectPlayed(abstractPlayer,abstractMonster);
+                ((BATwinsModCustomCard) this.cardToCopy).numberOfConnections=0;
             }
         }
     }
@@ -121,7 +129,7 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard{
 
     private void updateCardPreview(){
         if(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()){
-            Optional<AbstractCard> preCard= AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> card.cardID!=this.cardID).reduce((first, second)->second);
+            Optional<AbstractCard> preCard= AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> !Objects.equals(card.cardID, this.cardID) &&card.color==this.color).reduce((first, second)->second);
             if(preCard.isPresent()){
                 this.cardsToPreview=preCard.get().makeCopy();
                 this.cardToCopy=preCard.get();

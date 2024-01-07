@@ -155,7 +155,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             this.superFlash(BATwinsCharacter.getColorWithCardColor(this.color));
 
         //如果有技艺大师buff则升级
-        if(AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)){
+        if(AbstractDungeon.player!=null&&AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)){
             this.upgrade();
             AbstractDungeon.player.getPower(BATwinsMasterCraftsmanshipPower.POWER_ID).flash();
         }
@@ -263,6 +263,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         description=exchangeStr(description,"中毒","batwinsmod:灼伤");
         description=exchangeStr(description,"[batwinsmod:midoriorbicon]","[batwinsmod:momoiorbicon]");
         description=exchangeStr(description,"batwinsmod:桃牌","batwinsmod:绿牌");
+        description=exchangeStr(description,"虚弱","易伤");
         return description;
     }
     private String exchangeStr(String description,String str1,String str2){

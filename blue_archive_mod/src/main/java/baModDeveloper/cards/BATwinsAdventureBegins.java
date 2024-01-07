@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class BATwinsAdventureBegins extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("AdventureBegins");
@@ -75,10 +76,12 @@ public class BATwinsAdventureBegins extends BATwinsModCustomCard{
             int finalI = i;
             if(this.cardsToBringOut!=null&&this.cardsToBringOut.stream().anyMatch(c->BATwinsAdventureBegins.TYPES[finalI]==c.type)){
                 stringBuilder.append(" #r");
+                Optional<AbstractCard> card=this.cardsToBringOut.stream().filter(c->c.type==BATwinsAdventureBegins.TYPES[finalI]).findFirst();
+                card.ifPresent(abstractCard -> stringBuilder.append(abstractCard.name));
             }else{
                 stringBuilder.append(" #g");
+                stringBuilder.append(CARD_STRINGS.EXTENDED_DESCRIPTION[i]);
             }
-            stringBuilder.append(CARD_STRINGS.EXTENDED_DESCRIPTION[i]);
             if(i!=CARD_STRINGS.EXTENDED_DESCRIPTION.length-1){
                 stringBuilder.append(",");
             }

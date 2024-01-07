@@ -270,10 +270,6 @@
 		"NAME":"双重防护",
 		"DESCRIPTION":"获得 !B! 点格挡，抽 !M! 张牌。 batwinsmod:连携 ：获得 !B! 点格挡。"
 	},
-	"BATwinsMod:EquipmentUpgrade":{
-		"NAME":"装备升级",
-		"DESCRIPTION":"获得 !B! 点格挡。 batwinsmod:连携 ：此牌在本场游戏中格挡值永久上升 !M! 。"
-	},
 	"BATwinsMod:OperateFreely":{
 		"NAME":"随意操作",
 		"DESCRIPTION":"随机打出抽牌堆1张 batwinsmod:桃牌 。 batwinsmod:连携 ：改为选择抽牌堆1张 batwinsmod:桃牌 打出。"
@@ -284,8 +280,8 @@
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",
-		"DESCRIPTION":"这张牌的效果变为本场战斗打出的上一张牌的基础效果。 NL batwinsmod:连携 ：打出本场战斗打出的上一张牌（仅当其在弃牌堆时）。",
-		"UPGRADE_DESCRIPTION":"这张牌的效果变为本场战斗打出的上一张牌的效果。 NL batwinsmod:连携 ：打出本场战斗打出的上一张牌（仅当其在弃牌堆时）。"
+		"DESCRIPTION":"这张牌的效果变为本场战斗打出的上一张 batwinsmod:桃牌 的基础效果。 NL batwinsmod:连携 ：打出本场战斗打出的上一张牌（仅当其在弃牌堆时）。",
+		"UPGRADE_DESCRIPTION":"这张牌的效果变为本场战斗打出的上一张 batwinsmod:桃牌 的效果。 NL batwinsmod:连携 ：打出本场战斗打出的上一张牌（仅当其在弃牌堆时）。"
 	},
 	"BATwinsMod:SkillCombination":{
 		"NAME":"技能合体",
@@ -310,7 +306,7 @@
 	},
 	"BATwinsMod:PoisonGasBomb":{
 		"NAME":"毒气弹",
-		"DESCRIPTION":"给予 !M! 层 中毒 !M! 层 batwinsmod:灼烧 。触发该敌人的 中毒 。"
+		"DESCRIPTION":"给予 !M! 层 中毒 !M! 层 batwinsmod:灼伤 。触发该敌人的 中毒 。"
 	},
 	"BATwinsMod:AdventureBegins":{
 		"NAME":"冒险开始",
@@ -324,5 +320,21 @@
 			"诅咒"
 		],
 		"FLAVOR":"lll"
+	},
+	"BATwinsMod:PropCollection":{
+		"NAME":"道具收集",
+		"DESCRIPTION":"从抽牌堆与弃牌堆选择 !M! 张牌加入手牌。此回合不能再抽牌。"
+	},
+	"BATwinsMod:EquipmentUpgrade":{
+		"NAME":"装备升级",
+		"DESCRIPTION":"选择手牌 !M! 张牌 升级 ，获得 batwinsmod:共有 ， 保留 且不 消耗 。"
+	},
+	"BATwinsMod:AutomaticDefense":{
+		"NAME":"自动防御",
+		"DESCRIPTION":"获得 !B! 点 格挡 。 NL 这张牌在手牌打出其他攻击牌时，获得 !B! 点 格挡 。"
+	},
+	"BATwinsMod:BenefitReducingMagic":{
+		"NAME":"减益魔法",
+		"DESCRIPTION":"给予所有敌人 !M! 层 虚弱 。去除所有敌人的 格挡 。"
 	}
 }

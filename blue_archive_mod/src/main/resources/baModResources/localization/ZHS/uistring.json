@@ -50,7 +50,9 @@
 			"消耗",
 			"复制",
 			"下回合加入手牌",
-			"存储"
+			"存储",
+			"加入手牌",
+			"升级"
 		]
 	},
 	"BATwinsMod:CancelButton":{
@@ -61,6 +63,11 @@
 	"BATwinsMod:TipMsg":{
 		"TEXT":[
 			"选择1张牌交换"
+		]
+	},
+	"BATwinsMod:CardViewBtn":{
+		"TEXT":[
+			"看交换后"
 		]
 	}
 }
