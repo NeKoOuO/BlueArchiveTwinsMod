@@ -2,7 +2,7 @@
     "BATwinsMod:BurnPower":{
         "NAME":"灼伤",
         "DESCRIPTIONS":[
-            "回合结束时，造成","点伤害。死亡时对其他敌人造成等同于层数的伤害。"
+            "回合结束时，造成","点伤害。死亡时对其他敌人造成等同于层数2倍的伤害。"
         ]
     },
     "BATwinsMod:DeveloperCollaborationPower":{
