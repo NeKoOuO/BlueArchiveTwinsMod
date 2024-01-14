@@ -14,7 +14,7 @@ public class BATwinsDeveloperCollaboration extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("DeveloperCollaboration");
     private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME=CARD_STRINGS.NAME;
-    private static final String IMG_PATH=ModHelper.makeImgPath("cards","defaultPower");
+    private static final String IMG_PATH=ModHelper.makeImgPath("cards","DeveloperCollaboration");
     private static final int COST=3;
     private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE=CardType.POWER;

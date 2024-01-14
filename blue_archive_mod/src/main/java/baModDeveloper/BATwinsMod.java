@@ -152,6 +152,8 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsEquipmentUpgrade());
         BaseMod.addCard(new BATwinsAutomaticDefense());
         BaseMod.addCard(new BATwinsBenefitReducingMagic());
+        BaseMod.addCard(new BATwinsBorrowMe());
+        BaseMod.addCard(new BATwinsMaidForm());
     }
 
     @Override

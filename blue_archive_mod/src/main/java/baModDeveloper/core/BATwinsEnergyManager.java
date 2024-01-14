@@ -55,11 +55,11 @@ public class BATwinsEnergyManager extends EnergyManager{
     }
 
     public void use(int e,EnergyType energyType){
-        int priviousMOMOICount=BATwinsEnergyPanel.getMomoiEnergy();
+        int priviousMOMOICount=BATwinsEnergyPanel.getMomoiCount();
         int priviousMIDORICount=BATwinsEnergyPanel.getMidoriCount();
         BATwinsEnergyPanel.useEnergy(e,energyType);
 //        triggerEnengyUseEffect(e,energyType);
-        if(BATwinsEnergyPanel.getMomoiEnergy()==0&&priviousMOMOICount!=0){
+        if(BATwinsEnergyPanel.getMomoiCount()==0&&priviousMOMOICount!=0){
             triggerOnEnengyExhausted(EnergyType.MOMOI);
         } else if (BATwinsEnergyPanel.getMidoriCount()==0&&priviousMIDORICount!=0) {
             triggerOnEnengyExhausted(EnergyType.MIDORI);

@@ -3,6 +3,7 @@ package baModDeveloper.cards;
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.action.BATwinsPlayTempCardAction;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.power.BATwinsBorrowMePower;
 import baModDeveloper.power.BATwinsDoubleExperiencePower;
 import baModDeveloper.power.BATwinsExperiencePower;
 import baModDeveloper.power.BATwinsMasterCraftsmanshipPower;
@@ -86,7 +87,13 @@ public abstract class BATwinsModCustomCard extends CustomCard {
                                                     return true;
                                                 }
                                                 boolean hasEnoughEnergy=true;
-                                                if(this.modifyEnergyType== BATwinsEnergyPanel.EnergyType.MOMOI){
+                                                if (this.modifyEnergyType== BATwinsEnergyPanel.EnergyType.SHARE||AbstractDungeon.player.hasPower(BATwinsBorrowMePower.POWER_ID)) {
+                                                    if(BATwinsEnergyPanel.MomoiCount+BATwinsEnergyPanel.MidoriCount<this.costForTurn){
+                                                        this.cantUseMessage=TEXT[11];
+                                                        return false;
+                                                    }
+
+                                                } else if(this.modifyEnergyType== BATwinsEnergyPanel.EnergyType.MOMOI){
                                                     if(BATwinsEnergyPanel.MomoiCount+BATwinsEnergyPanel.MidoriCount/2<this.costForTurn){
                                                         this.cantUseMessage=TEXT[11];
                                                         return false;
@@ -96,12 +103,6 @@ public abstract class BATwinsModCustomCard extends CustomCard {
                                                         this.cantUseMessage=TEXT[11];
                                                         return false;
                                                     }
-                                                } else if (this.modifyEnergyType== BATwinsEnergyPanel.EnergyType.SHARE) {
-                                                    if(BATwinsEnergyPanel.MomoiCount+BATwinsEnergyPanel.MidoriCount<this.costForTurn){
-                                                        this.cantUseMessage=TEXT[11];
-                                                        return false;
-                                                    }
-
                                                 }
                                             }else{
                                                 if (EnergyPanel.totalCount < this.costForTurn && !this.freeToPlay() && !this.isInAutoplay) {
@@ -332,4 +333,5 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             addToBot(new BATwinsPlayTempCardAction(this.cardToBringOut,this.numberOfConnections+1));
         }
     }
+
 }

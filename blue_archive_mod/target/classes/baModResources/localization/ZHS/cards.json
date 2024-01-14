@@ -19,7 +19,7 @@
     },
     "BATwinsMod:AlreadyAngry":{
         "NAME":"我生气了！！",
-        "DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 batwinsmod:灼伤 。"
+        "DESCRIPTION":"给予 !M! 层 batwinsmod:灼伤 ,造成 !D! 点伤害。"
     },
     "BATwinsMod:PaintingConception":{
         "NAME":"画面构思",
@@ -43,7 +43,7 @@
         "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。"
     },
     "BATwinsMod:KeepItToTheEnd":{
-        "NAME":"严守到底",
+        "NAME":"严守截稿日",
         "DESCRIPTION":"弃置手牌中所有 batwinsmod:桃牌 ，每弃置一张获得 !B! 点格挡。"
     },
     "BATwinsMod:ArtPolishing":{
@@ -264,7 +264,7 @@
 	},
 	"BATwinsMod:AttackWithAllMight":{
 		"NAME":"力尽一击",
-		"DESCRIPTION":"造成 !D! 点伤害，这张牌本场战斗伤害降低 !M! %。 NL batwinsmod:连携 ：伤害恢复为100%。"
+		"DESCRIPTION":"造成 !D! 点伤害，这张牌本场战斗伤害降低为 !M! %。 NL batwinsmod:连携 ：伤害恢复为100%。"
 	},
 	"BATwinsMod:DualProtection":{
 		"NAME":"双重防护",
@@ -336,5 +336,9 @@
 	"BATwinsMod:BenefitReducingMagic":{
 		"NAME":"减益魔法",
 		"DESCRIPTION":"给予所有敌人 !M! 层 虚弱 。去除所有敌人的 格挡 。"
+	},
+	"BATwinsMod:BorrowMe":{
+		"NAME":"借用一下",
+		"DESCRIPTION":"本回合所有牌视为 batwinsmod:共有 。"
 	}
 }

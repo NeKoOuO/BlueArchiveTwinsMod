@@ -315,7 +315,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         return totalCount;
     }
 
-    public static int getMomoiEnergy() {
+    public static int getMomoiCount() {
         if (AbstractDungeon.player == null)
             return 0;
         return MomoiCount;

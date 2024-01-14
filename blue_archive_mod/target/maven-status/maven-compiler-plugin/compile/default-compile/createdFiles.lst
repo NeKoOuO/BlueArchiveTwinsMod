@@ -147,6 +147,7 @@ baModDeveloper\cards\BATwinsDoubleExperience.class
 baModDeveloper\action\BATwinsEquipmentUpgradeAction.class
 baModDeveloper\action\BATwinsDisAllColorCards.class
 baModDeveloper\power\BATwinsArtPolishingPower$1.class
+baModDeveloper\cards\BATwinsBorrowMe.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$cancelUpgradePatch.class
 baModDeveloper\power\BATwinsCoolingTimePower.class
 baModDeveloper\cards\BATwinsLightSpeedStrike.class
@@ -164,6 +165,7 @@ baModDeveloper\cards\BATwinsPlotRepair.class
 baModDeveloper\cards\BATwinsMutualUnderstanding.class
 baModDeveloper\character\BATwinsCharacter$AnimationChar.class
 baModDeveloper\relic\BATwinsByProving$1.class
+baModDeveloper\power\BATwinsBorrowMePower.class
 baModDeveloper\cards\BATwinsInspirationEmergence.class
 baModDeveloper\patch\BATwinsCardCrawlGamePatch$loadPlayerSavePatch.class
 baModDeveloper\action\BATwinsDrawOrDisCardToHandAction.class
@@ -182,6 +184,7 @@ baModDeveloper\cards\BATwinsAdditionalAttacks.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$openPatch.class
 baModDeveloper\cards\BATwinsPaintingArt.class
 baModDeveloper\patch\BATwinsCardGroupPatch.class
+baModDeveloper\cards\BATwinsMaidForm.class
 baModDeveloper\cards\BATwinsEnchantedBullet.class
 baModDeveloper\patch\BATwinsAbstractCardPatch$unhoverPatch.class
 baModDeveloper\action\BATwinsSelectAdventureCardAction.class

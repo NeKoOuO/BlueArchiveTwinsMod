@@ -54,5 +54,11 @@
             <scope>system</scope>
             <systemPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\646570\1609158507\StSLib.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>nl.weeaboo.gdx-video</groupId>
+            <artifactId>gdx-video-desktop</artifactId>
+            <version>1.0.0-anonl</version>
+        </dependency>
+
     </dependencies>
 </project>

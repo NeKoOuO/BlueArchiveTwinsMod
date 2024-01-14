@@ -154,5 +154,11 @@
 		"DESCRIPTIONS":[
 			"本场战斗交换牌时将牌升级。"
 		]
+	},
+	"BATwinsMod:BorrowMePower":{
+		"NAME":"借用一下",
+		DESCRIPTIONS:[
+			"本回合所有牌视为 batwinsmod:共有 。"
+		]
 	}
 }

@@ -10,6 +10,7 @@ import baModDeveloper.cards.*;
 import baModDeveloper.helpers.ColorComparer;
 import baModDeveloper.helpers.ImageHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
+import baModDeveloper.power.BATwinsBorrowMePower;
 import baModDeveloper.relic.BATwinsMomoisGameConsole;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomEnergyOrb;
@@ -429,7 +430,11 @@ public class BATwinsCharacter extends CustomPlayer {
         c.target_y = (float)(Settings.HEIGHT / 2);
         if (c.costForTurn > 0 && !c.freeToPlay() && !c.isInAutoplay && (!this.hasPower("Corruption") || c.type != AbstractCard.CardType.SKILL)) {
             if(c instanceof BATwinsModCustomCard&&this.energy instanceof BATwinsEnergyManager){
-                ((BATwinsEnergyManager)this.energy).use(c.costForTurn,((BATwinsModCustomCard) c).modifyEnergyType);
+                if(AbstractDungeon.player.hasPower(BATwinsBorrowMePower.POWER_ID)){
+                    ((BATwinsEnergyManager)this.energy).use(c.costForTurn, BATwinsEnergyPanel.EnergyType.SHARE);
+                }else{
+                    ((BATwinsEnergyManager)this.energy).use(c.costForTurn,((BATwinsModCustomCard) c).modifyEnergyType);
+                }
             }else{
                 this.energy.use(c.costForTurn);
             }
@@ -569,8 +574,9 @@ public class BATwinsCharacter extends CustomPlayer {
     }
 
     public void onEnterRoom(){
-        this.setAnimation(AnimationChar.MOMOI,Animation.RUN);
-        this.setAnimation(AnimationChar.MIDORI,Animation.RUN);
+        //设置进入房间时的动画
+//        this.setAnimation(AnimationChar.MOMOI,Animation.RUN);
+//        this.setAnimation(AnimationChar.MIDORI,Animation.RUN);
     }
 
     @Override

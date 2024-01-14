@@ -40,7 +40,7 @@ public class BATwinsEmergencyRecovery extends BATwinsModCustomCard{
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsGainEnergyAction(this.magicNumber, BATwinsEnergyPanel.EnergyType.MIDORI));
-        if(BATwinsEnergyPanel.getMomoiEnergy()==0){
+        if(BATwinsEnergyPanel.getMomoiCount()==0){
             addToBot(new BATwinsGainEnergyAction(2, BATwinsEnergyPanel.EnergyType.MOMOI));
         }
     }

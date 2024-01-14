@@ -27,7 +27,7 @@ public class BATwinsCoverChargeAction extends AbstractGameAction {
         int MOMOICount= 0;
         int MIDORICount=0;
         if(this.p.energy instanceof BATwinsEnergyManager){
-            MOMOICount=BATwinsEnergyPanel.getMomoiEnergy();
+            MOMOICount=BATwinsEnergyPanel.getMomoiCount();
             MIDORICount=BATwinsEnergyPanel.getMidoriCount();
         }else{
             int effect=EnergyPanel.totalCount;
