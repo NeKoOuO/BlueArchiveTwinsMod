@@ -31,7 +31,7 @@ public class BATwinsConvenientConnectivity extends BATwinsModCustomCard{
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsSelectHandCardToPlayAction(true,true));
+        addToBot(new BATwinsSelectHandCardToPlayAction(null,null));
     }
 
     @Override

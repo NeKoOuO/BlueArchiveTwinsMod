@@ -2,7 +2,9 @@ package baModDeveloper.cards;
 
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.power.BATwinsMaidFormPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -23,22 +25,25 @@ public class BATwinsMaidForm extends BATwinsModCustomCard{
 
     public BATwinsMaidForm() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
+        this.baseMagicNumber=50;
+        this.magicNumber=this.baseMagicNumber;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
+        useMIDORI(abstractPlayer,abstractMonster);
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
+        addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsMaidFormPower(abstractPlayer,this.magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
+            this.upgradeMagicNumber(10);
         }
     }
 }

@@ -20,44 +20,38 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
     private final AbstractCard.CardType type;
     private boolean isRandom;
     private boolean isRandomTarget;
-    private boolean isAllColor;
-    private boolean isAllType;
     private int amount;
     private int numberOfConnections;
     private boolean blockTheOriginalEffect;
     private UIStrings UISTRINGS= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
 
-    public BATwinsSelectHandCardToPlayAction(boolean isAllColor,AbstractCard.CardColor color, AbstractMonster target,boolean isAllType, AbstractCard.CardType type,int amount,int numberOfConnections,boolean blockTheOriginalEffect){
+    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type,int amount,int numberOfConnections,boolean blockTheOriginalEffect){
         this.color=color;
         this.p= AbstractDungeon.player;
         this.target=target;
         this.type=type;
         this.duration= Settings.ACTION_DUR_FAST;
-        this.isAllColor=isAllColor;
-        this.isAllType=isAllType;
         this.amount=amount;
         this.numberOfConnections=numberOfConnections;
         this.blockTheOriginalEffect=blockTheOriginalEffect;
     }
     public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type,int amount,int numberOfConnections){
-        this(false,color,target,false,type,amount,numberOfConnections,false);
+        this(color,target,type,amount,numberOfConnections,false);
     }
 
-    public BATwinsSelectHandCardToPlayAction(boolean isAllColor,boolean isAllType){
-        this(null,null,null);
-        this.isAllColor=isAllColor;
-        this.isAllType=isAllType;
-    }
     public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type){
         this(color,target,type,1,1);
+    }
+    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractCard.CardType type){
+        this(color,null,type);
     }
     @Override
     public void update() {
         if(this.duration==Settings.ACTION_DUR_FAST){
             for(AbstractCard c:this.p.hand.group){
-                if(!this.isAllColor&&c.color!=this.color){
+                if(this.color!=null&&c.color!=this.color){
                     this.canNotSelectCards.add(c);
-                } else if (!this.isAllType&&c.type!=this.type) {
+                } else if (this.type!=null&&c.type!=this.type) {
                     this.canNotSelectCards.add(c);
                 }else if(c.isInAutoplay){
                     this.canNotSelectCards.add(c);
@@ -94,7 +88,7 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
     private void wantToUseCard(AbstractCard card){
 //        this.p.hand.addToTop(card);
         if(this.target==null){
-            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
         }
         addToTop(new BATwinsPlayHandCardAction(card,this.target,this.numberOfConnections,this.blockTheOriginalEffect));
 //        card.applyPowers();

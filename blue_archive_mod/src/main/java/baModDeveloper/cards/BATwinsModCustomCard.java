@@ -173,6 +173,11 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         if(this.exchanged()){
             temp.conversionColor(false);
         }
+        if(this.bringOutCard){
+            temp.bringOutCard=true;
+            temp.cardToBringOut=this.cardToBringOut;
+            temp.cardsToPreview=this.cardsToPreview;
+        }
 //        temp.initializeDescription();
         return temp;
     }
@@ -330,7 +335,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     }
     public void bringOutCard(){
         if(this.bringOutCard){
-            addToBot(new BATwinsPlayTempCardAction(this.cardToBringOut,this.numberOfConnections+1));
+            addToBot(new BATwinsPlayTempCardAction(this.cardToBringOut.makeStatEquivalentCopy(),this.numberOfConnections+1));
         }
     }
 

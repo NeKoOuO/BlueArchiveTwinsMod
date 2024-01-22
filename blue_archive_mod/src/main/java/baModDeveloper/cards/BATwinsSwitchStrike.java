@@ -17,7 +17,7 @@ public class BATwinsSwitchStrike extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("SwitchStrike");
     private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME=CARD_STRINGS.NAME;
-    private static final String IMG_PATH=ModHelper.makeImgPath("cards","defaultAttack");
+    private static final String IMG_PATH=ModHelper.makeImgPath("cards","SwitchStrike");
     private static final int COST=1;
     private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE=CardType.ATTACK;
@@ -36,9 +36,9 @@ public class BATwinsSwitchStrike extends BATwinsModCustomCard{
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        BATwinsSwitchStrike temp= (BATwinsSwitchStrike) this.makeStatEquivalentCopy();
-        temp.conversionColor();
-        addToBot(new BATwinsMakeTempCardInHandAction(temp));
+//        BATwinsSwitchStrike temp= (BATwinsSwitchStrike) this.makeStatEquivalentCopy();
+//        temp.conversionColor();
+//        addToBot(new BATwinsMakeTempCardInHandAction(temp));
 //        addToBot(new Co);
     }
 

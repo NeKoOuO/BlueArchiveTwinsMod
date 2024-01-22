@@ -2,9 +2,9 @@ baModDeveloper\patch\BATwinsRunPathElementPatch.class
 baModDeveloper\cards\BATwinsIgniteTheUpperBody.class
 baModDeveloper\patch\BATwinsMetricDataPatch.class
 baModDeveloper\patch\BATwinsAbstractCardPatch$hoverPatch.class
-baModDeveloper\cards\BATwisSeeYouHaveASharen.class
 baModDeveloper\action\BATwinsInterpretiveErrorAction.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$FieldPatch.class
+baModDeveloper\relic\BATwinsGameMagazine.class
 baModDeveloper\helpers\TextureLoader.class
 baModDeveloper\cards\BATwinsAdventureOpening.class
 baModDeveloper\animation\GifDecoder$DixieMap.class
@@ -18,6 +18,7 @@ baModDeveloper\action\BATwinsPlayTempCardAction.class
 baModDeveloper\cards\BATwinsCoverCharge.class
 baModDeveloper\cards\BATwinsModCustomCard$BATwinsAttackEffect.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$updateInputPatch.class
+baModDeveloper\cards\BATwinsSeeYouHaveASharen.class
 baModDeveloper\action\BATwinsPlayDisPileCardAction.class
 baModDeveloper\effect\BATwinsCamfireExchangeEffect.class
 baModDeveloper\patch\BATwinsCardCrawlGamePatch.class
@@ -29,6 +30,7 @@ baModDeveloper\cards\BATwinsIntegratingAndIntegrating.class
 baModDeveloper\relic\BATwinsMomoisGameConsole.class
 baModDeveloper\action\BATwinsAdventureBeginsAction.class
 baModDeveloper\cards\BATwinsBubFix.class
+baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$openPatch2.class
 baModDeveloper\action\BATwinsBDStudyAction.class
 baModDeveloper\cards\BATwinsExcellentDesigner.class
 baModDeveloper\cards\BATwinsRepeatOperation.class
@@ -60,6 +62,7 @@ baModDeveloper\power\BATwinsSeeYouHaveASharenPower.class
 baModDeveloper\cards\BATwinsBadDesigner.class
 baModDeveloper\action\BATwinsClearBlockAction.class
 baModDeveloper\action\BATwinsSwitchStrikeAction.class
+baModDeveloper\cards\BATwinsCollaboration.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$constructorPatch.class
 baModDeveloper\cards\BATwinsSiteAdaptation.class
 baModDeveloper\action\BATwinsPropCollectionAction.class
@@ -72,6 +75,9 @@ baModDeveloper\patch\BATwinsCardTrailEffectFix.class
 baModDeveloper\action\BATwinsCoverChargeAction.class
 baModDeveloper\cards\BATwinsAdventureRewards.class
 baModDeveloper\cards\BATwinsOperateFreely.class
+baModDeveloper\patch\BATwinsDamageActionPatch.class
+baModDeveloper\cards\BATwinsPenetrationDamage$1.class
+baModDeveloper\cards\BATwinsPenetrationDamage.class
 baModDeveloper\character\BATwinsCharacter$Enums.class
 baModDeveloper\power\BATwinsPlotPredictionExchangePower.class
 baModDeveloper\action\BATwinsBugFixAction.class
@@ -79,9 +85,11 @@ baModDeveloper\power\BATwinsBugFixPower.class
 baModDeveloper\action\BATwinsSelectDrawPileCardToPlayAction.class
 baModDeveloper\power\BATwinsArtPolishingPower.class
 baModDeveloper\ui\panels\energyorb\BATwinsEnergyMidoriOrb.class
+baModDeveloper\cards\BATwinsLeaveItToMe.class
 baModDeveloper\character\BATwinsCharacter$Animation.class
 baModDeveloper\cards\BATwinsBenefitReducingMagic.class
 baModDeveloper\cards\BATwinsDeveloperCollaboration.class
+baModDeveloper\patch\BATwinsDamageActionPatch$updatePatch.class
 baModDeveloper\animation\AbstractGIFCard.class
 baModDeveloper\patch\BATwinsCampfireUIPatch.class
 baModDeveloper\action\BATwinsPlayHandCardAction.class
@@ -95,14 +103,17 @@ baModDeveloper\patch\BATwinsCardSavePatch$FiledPatch.class
 baModDeveloper\action\BATwinsNormalAttackMethodsAction.class
 baModDeveloper\animation\GifDecoder.class
 baModDeveloper\power\BATwinsNoramlAttackAuxiliary.class
+baModDeveloper\cards\BATwinsItsSoPainful.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$renderPatch.class
 baModDeveloper\power\BATwinsArtPolishingExchangePower.class
 baModDeveloper\cards\BATwinsTakeActionsSeparately.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch.class
 baModDeveloper\power\BATwinsGainTENextTurnPower.class
 baModDeveloper\action\BATwinsExchangeAction.class
+baModDeveloper\cards\BATwinsAssault.class
 baModDeveloper\patch\BATwinsAbstractCardPatch.class
 baModDeveloper\animation\GifAnimation.class
+baModDeveloper\patch\BATwinsGainBlockActionPatch.class
 baModDeveloper\ui\panels\BATwinsEnergyPanel$EnergyType.class
 baModDeveloper\power\BATwinsDeveloperCollaborationPower.class
 baModDeveloper\event\BATwinsTrainingCamp.class
@@ -112,6 +123,7 @@ baModDeveloper\patch\BATwinsOverlayMenuUpdateFix.class
 baModDeveloper\cards\BATwinsMomoiStrick.class
 baModDeveloper\cards\BATwinsEndCombo.class
 baModDeveloper\power\BATwinsMasterCraftsmanshipPower.class
+baModDeveloper\power\BATwinsMaidFormPower.class
 baModDeveloper\cards\BATwinsTwoStageAttack.class
 baModDeveloper\power\BATwinsDefensiveCounterattackPower.class
 baModDeveloper\power\BATwinsPlotPredictionPower.class
@@ -141,6 +153,7 @@ baModDeveloper\cards\BATwinsSinglePlayerGame.class
 baModDeveloper\power\BATwinsExperiencePower.class
 baModDeveloper\cards\BATwinsTakeABreak.class
 baModDeveloper\cards\BATwinsKeepItToTheEnd.class
+baModDeveloper\cards\BATwinsDontSayIt.class
 baModDeveloper\cards\BATwinsMidoriDefend.class
 baModDeveloper\patch\BATwinsCancelButtonPatch$updatePatch.class
 baModDeveloper\cards\BATwinsDoubleExperience.class
@@ -159,6 +172,7 @@ baModDeveloper\cards\BATwinsCheatingCodeEnabled.class
 baModDeveloper\ui\panels\icons\BATwinsMomoiEnergyOrbSmall.class
 baModDeveloper\patch\BATwinsLoadLayerSaveFix.class
 baModDeveloper\action\BATwinsCoversionColorAction.class
+baModDeveloper\cards\BATwinsShiftingAndGhosting.class
 baModDeveloper\character\BATwinsCharacter$1.class
 baModDeveloper\action\BATwinsAdventureOpeningAction.class
 baModDeveloper\cards\BATwinsPlotRepair.class
@@ -217,6 +231,8 @@ baModDeveloper\cards\BATwinsPoisonGasBomb.class
 baModDeveloper\cards\BATwinsReadingDocuments.class
 baModDeveloper\cards\BATwinsPropCollection.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch.class
+baModDeveloper\cards\BATwinsLeaveItToMe$1.class
+baModDeveloper\action\BATwinsExchangeDrawPailAction.class
 baModDeveloper\action\BATwinsDefensiveCounterattackAction.class
 baModDeveloper\patch\BATwinsRunPathElementPatch$getTipHeaderWithRoomTypeTextPatch.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$renderPatch.class
@@ -226,6 +242,7 @@ baModDeveloper\cards\BATwinsExchange.class
 baModDeveloper\cards\BATwinsModCustomCard$1.class
 baModDeveloper\cards\BATwinsBugCard.class
 baModDeveloper\patch\BATwinsAbstractCardPatch$FieldPatch.class
+baModDeveloper\patch\BATwinsGainBlockActionPatch$updatePatch.class
 baModDeveloper\action\BATwinsDrawCardByColor.class
 baModDeveloper\cards\BATwinsAccurateBlocking.class
 baModDeveloper\patch\BATwinsCampfireUIPatch$initializeButtonsPatch.class

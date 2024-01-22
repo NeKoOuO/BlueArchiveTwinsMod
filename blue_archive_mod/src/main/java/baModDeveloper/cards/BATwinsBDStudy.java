@@ -24,8 +24,9 @@ public class BATwinsBDStudy extends BATwinsModCustomCard{
 
     public BATwinsBDStudy() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber=1;
+        this.baseMagicNumber=2;
         this.magicNumber=this.baseMagicNumber;
+        this.exhaust=true;
     }
 
     @Override
@@ -35,14 +36,14 @@ public class BATwinsBDStudy extends BATwinsModCustomCard{
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsBDStudyAction(this.magicNumber));
+        addToBot(new BATwinsBDStudyAction(this.magicNumber,BATwinsCharacter.getOtherColor(this.color)));
     }
 
     @Override
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.updateCost(-1);
+            this.upgradeMagicNumber(1);
         }
     }
 }

@@ -49,9 +49,9 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
     @Override
     public void update() {
         if(this.target==null){
-            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
         }
-        if(!this.target.isDead&&!card.isInAutoplay){
+        if(!card.isInAutoplay){
             this.card.applyPowers();
             this.card.calculateCardDamage((AbstractMonster) this.target);
 //            this.p.hand.removeCard(this.card);

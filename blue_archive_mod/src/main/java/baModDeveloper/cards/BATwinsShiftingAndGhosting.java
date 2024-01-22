@@ -1,30 +1,32 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.action.BATwinsExchangeDrawPailAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
-import baModDeveloper.power.BATwinsSeeYouHaveASharenPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BATwisSeeYouHaveASharen extends BATwinsModCustomCard{
-    public static final String ID= ModHelper.makePath("SeeYouHaveAShare");
+public class BATwinsShiftingAndGhosting extends BATwinsModCustomCard{
+    public static final String ID= ModHelper.makePath("ShiftingAndGhosting");
     private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME=CARD_STRINGS.NAME;
     private static final String IMG_PATH=ModHelper.makeImgPath("cards","defaultSkill");
-    private static final int COST=1;
+    private static final int COST=2;
     private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE=CardType.SKILL;
     private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET=CardTarget.SELF;
-    private static final CardRarity RARITY=CardRarity.RARE;
+    private static final CardRarity RARITY=CardRarity.COMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MIDORI;
 
-    public BATwisSeeYouHaveASharen() {
+    public BATwinsShiftingAndGhosting() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
+        this.baseBlock=10;
+        this.block=this.baseBlock;
         this.baseMagicNumber=1;
         this.magicNumber=this.baseMagicNumber;
     }
@@ -36,14 +38,17 @@ public class BATwisSeeYouHaveASharen extends BATwinsModCustomCard{
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsSeeYouHaveASharenPower(abstractPlayer,this.magicNumber)));
+        addToBot(new GainBlockAction(abstractPlayer,this.block));
+        addToBot(new BATwinsExchangeDrawPailAction(this.magicNumber));
+
     }
 
     @Override
     public void upgrade() {
         if(!upgraded){
-            upgradeName();
-            upgradeMagicNumber(1);
+            this.upgradeName();
+            this.upgradeBlock(4);
+//            this.upgradeMagicNumber(1);
         }
     }
 }

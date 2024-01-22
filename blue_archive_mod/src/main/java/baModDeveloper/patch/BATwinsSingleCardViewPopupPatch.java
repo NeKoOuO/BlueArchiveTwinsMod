@@ -44,6 +44,17 @@ public class BATwinsSingleCardViewPopupPatch {
             }
         }
     }
+    @SpirePatch(clz = SingleCardViewPopup.class,method = "open",paramtypez = {AbstractCard.class})
+    public static class openPatch2{
+        @SpirePostfixPatch
+        public static void openPatch(SingleCardViewPopup _instance, AbstractCard card){
+            if(card instanceof BATwinsModCustomCard){
+                FieldPatch.exchangeHb.get(_instance).move(Settings.WIDTH / 2.0F - 400.0F * Settings.scale, 150.0F * Settings.scale);
+            }else{
+                FieldPatch.exchangeHb.get(_instance).move(-1000.0F * Settings.scale, -1000.0F * Settings.scale);
+            }
+        }
+    }
     @SpirePatch(clz = SingleCardViewPopup.class,method = "update")
     public static class updatePatch{
         @SpirePostfixPatch

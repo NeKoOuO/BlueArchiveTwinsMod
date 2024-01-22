@@ -2,25 +2,17 @@ package baModDeveloper;
 
 import baModDeveloper.cards.*;
 import baModDeveloper.event.BATwinsTrainingCamp;
-import baModDeveloper.power.BATwinsSeeYouHaveASharenPower;
-import baModDeveloper.relic.BATwinsAncientGameCartridges;
-import baModDeveloper.relic.BATwinsByProving;
-import baModDeveloper.relic.BATwinsMidorisGameConsole;
-import baModDeveloper.relic.BATwinsMomoisGameConsole;
-import baModDeveloper.ui.panels.button.BATwinsCamfireExchangeButton;
+import baModDeveloper.relic.*;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
 import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.utils.compression.lzma.Base;
-import com.evacipated.cardcrawl.mod.stslib.icons.AbstractCustomIcon;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.localization.*;
 
@@ -28,7 +20,6 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.helpers.ModHelper;
 import basemod.BaseMod;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.nio.charset.StandardCharsets;
 
@@ -96,7 +87,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsGameLaunch());
         BaseMod.addCard(new BATwinsInspirationEmergence());
         BaseMod.addCard(new BATwinsEnchantedBullet());
-        BaseMod.addCard(new BATwinsPassageInForce());
+//        BaseMod.addCard(new BATwinsPassageInForce());
         BaseMod.addCard(new BATwinsSiteAdaptation());
         BaseMod.addCard(new BATwinsOnceMore());
         BaseMod.addCard(new BATwinsBadDesigner());
@@ -126,7 +117,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsCoverCharge());
         BaseMod.addCard(new BATwinsMutualUnderstanding());
         BaseMod.addCard(new BATwinsMysteriousChest());
-        BaseMod.addCard(new BATwisSeeYouHaveASharen());
+        BaseMod.addCard(new BATwinsSeeYouHaveASharen());
         BaseMod.addCard(new BATwinsCheatingCodeEnabled());
         BaseMod.addCard(new BATwinsFundOverdraft());
         BaseMod.addCard(new BATwinsTakeActionsSeparately());
@@ -154,6 +145,13 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsBenefitReducingMagic());
         BaseMod.addCard(new BATwinsBorrowMe());
         BaseMod.addCard(new BATwinsMaidForm());
+        BaseMod.addCard(new BATwinsShiftingAndGhosting());
+        BaseMod.addCard(new BATwinsLeaveItToMe());
+        BaseMod.addCard(new BATwinsAssault());
+        BaseMod.addCard(new BATwinsDontSayIt());
+        BaseMod.addCard(new BATwinsItsSoPainful());
+        BaseMod.addCard(new BATwinsCollaboration());
+        BaseMod.addCard(new BATwinsPenetrationDamage());
     }
 
     @Override
@@ -199,6 +197,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addRelicToCustomPool(new BATwinsMidorisGameConsole(),Enums.BATWINS_MOMOI_CARD);
         BaseMod.addRelic(new BATwinsAncientGameCartridges(),RelicType.SHARED);
         BaseMod.addRelic(new BATwinsByProving(),RelicType.SHARED);
+        BaseMod.addRelicToCustomPool(new BATwinsGameMagazine(),Enums.BATWINS_MOMOI_CARD);
     }
 
     @Override

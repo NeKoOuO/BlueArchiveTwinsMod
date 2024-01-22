@@ -64,7 +64,7 @@ public class BATwinsGridCardSelectScreenPatch {
         @SpireInsertPatch(rloc = 18)
         public static void cancelUpgradePatch(GridCardSelectScreen __instance){
             if(FiledPatch.forExchange.get(__instance)){
-                AbstractDungeon.overlayMenu.cancelButton.show("334");
+                AbstractDungeon.overlayMenu.cancelButton.show("取消");
             }
         }
     }

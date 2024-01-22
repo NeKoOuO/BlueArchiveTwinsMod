@@ -25,7 +25,7 @@ public class BATwinsDualProtection extends BATwinsModCustomCard{
 
     public BATwinsDualProtection() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock=8;
+        this.baseBlock=10;
         this.block=this.baseBlock;
         this.baseMagicNumber=1;
         this.magicNumber=this.baseMagicNumber;
@@ -51,7 +51,7 @@ public class BATwinsDualProtection extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.upgradeBlock(3);
+//            this.upgradeBlock(3);
             this.upgradeMagicNumber(1);
         }
     }

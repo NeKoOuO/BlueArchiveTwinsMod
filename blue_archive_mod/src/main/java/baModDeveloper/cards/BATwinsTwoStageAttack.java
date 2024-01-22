@@ -30,6 +30,7 @@ public class BATwinsTwoStageAttack extends BATwinsModCustomCard{
         this.isMultiDamage=true;
         this.baseMagicNumber=2;
         this.magicNumber=this.baseMagicNumber;
+        this.tags.add(CardTags.STRIKE);
     }
 
     @Override

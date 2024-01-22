@@ -39,7 +39,7 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard{
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
+        useMIDORI(abstractPlayer,abstractMonster);
     }
 
     @Override

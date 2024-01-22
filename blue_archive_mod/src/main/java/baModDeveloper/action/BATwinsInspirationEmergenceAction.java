@@ -21,7 +21,7 @@ public class BATwinsInspirationEmergenceAction extends AbstractGameAction {
         if(this.isDone){
             int colorNum= (int) DrawCardAction.drawnCards.stream().map(card -> card.color).distinct().count();
             addToTop(new DrawCardAction(1));
-            addToTop(new ScryAction(colorNum));
+            addToTop(new ScryAction(2*colorNum));
 
         }
     }

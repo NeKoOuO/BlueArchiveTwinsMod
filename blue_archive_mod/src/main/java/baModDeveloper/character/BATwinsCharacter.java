@@ -11,6 +11,7 @@ import baModDeveloper.helpers.ColorComparer;
 import baModDeveloper.helpers.ImageHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.power.BATwinsBorrowMePower;
+import baModDeveloper.relic.BATwinsGameMagazine;
 import baModDeveloper.relic.BATwinsMomoisGameConsole;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomEnergyOrb;
@@ -302,7 +303,7 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(BATwinsMomoisGameConsole.ID);
+        retVal.add(BATwinsGameMagazine.ID);
         return retVal;
     }
 

@@ -32,7 +32,7 @@ public class BATwinsRepeatOperationAction extends AbstractGameAction {
                 return;
             }
             for(AbstractCard card:this.p.hand.group){
-                if(!(card instanceof BATwinsModCustomCard)||card.isInAutoplay){
+                if(!(card instanceof BATwinsModCustomCard)||card.isInAutoplay||card.type== AbstractCard.CardType.POWER){
                     canNotSelect.add(card);
                 }
             }
@@ -53,9 +53,12 @@ public class BATwinsRepeatOperationAction extends AbstractGameAction {
                 if(c instanceof BATwinsModCustomCard){
                     BATwinsModCustomCard temp= (BATwinsModCustomCard) c.makeSameInstanceOf();
                     temp.conversionColor();
-                    addToTop(new BATwinsMakeTempCardInHandAction(temp,true,false,false,false,false));
+                    addToTop(new BATwinsMakeTempCardInHandAction(temp,true,temp.exhaust,false,temp.isEthereal,temp.selfRetain));
                     this.p.hand.addToTop(c);
                 }
+            }
+            if(!this.canNotSelect.isEmpty()){
+                this.p.hand.group.addAll(this.canNotSelect);
             }
             AbstractDungeon.handCardSelectScreen.selectedCards.clear();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved=true;

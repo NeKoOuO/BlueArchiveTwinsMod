@@ -26,7 +26,7 @@ public class BATwinsSwitchStrikeAction extends AbstractGameAction {
         if(!g.isEmpty()){
             AbstractCard temp=g.getRandomCard(AbstractDungeon.cardRandomRng);
             if(this.target==null||this.target.isDead){
-                this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+                this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
             }
             addToTop(new BATwinsPlayDrawPailCardAction(temp,target,false,this.numberOfConnections));
         }

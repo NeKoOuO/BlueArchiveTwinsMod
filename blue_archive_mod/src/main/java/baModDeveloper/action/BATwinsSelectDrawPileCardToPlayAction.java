@@ -55,13 +55,15 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
                 this.p.drawPile.group.stream().filter(card->card.color!=BATwinsSelectDrawPileCardToPlayAction.this.color).forEach(card->BATwinsSelectDrawPileCardToPlayAction.this.canNotSelect.add(card));
             }
             this.p.drawPile.group.removeAll(this.canNotSelect);
-            WhatTheCardDo(this.p.drawPile.getRandomCard(AbstractDungeon.cardRandomRng));
+            if(!this.p.drawPile.group.isEmpty()){
+                WhatTheCardDo(this.p.drawPile.getRandomCard(AbstractDungeon.cardRandomRng));
+            }
             this.isDone=true;
             tickDuration();
             return;
         }else if (this.duration==Settings.ACTION_DUR_FAST){
             if(this.color!=null){
-                this.p.drawPile.group.stream().filter(card->card.color!=BATwinsSelectDrawPileCardToPlayAction.this.color&&card.isInAutoplay).forEach(card->BATwinsSelectDrawPileCardToPlayAction.this.canNotSelect.add(card));
+                this.p.drawPile.group.stream().filter(card->card.color!=BATwinsSelectDrawPileCardToPlayAction.this.color||card.isInAutoplay).forEach(card->BATwinsSelectDrawPileCardToPlayAction.this.canNotSelect.add(card));
             }
             this.p.drawPile.group.removeAll(this.canNotSelect);
             AbstractDungeon.gridSelectScreen.open(this.p.drawPile,1,false,UISTRINGS.TEXT[0]);
@@ -79,7 +81,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
 
     private void WhatTheCardDo(AbstractCard c){
         if(this.target==null){
-            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
         }
         addToTop(new BATwinsPlayDrawPailCardAction(c,this.target,false,this.numberOfConnections));
         if(!this.canNotSelect.isEmpty()){

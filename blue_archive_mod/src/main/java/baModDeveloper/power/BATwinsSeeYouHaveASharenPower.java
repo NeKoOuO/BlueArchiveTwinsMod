@@ -52,7 +52,7 @@ public class BATwinsSeeYouHaveASharenPower extends AbstractPower {
             }
 
             for(AbstractMonster mo:AbstractDungeon.getCurrRoom().monsters.monsters){
-                if(mo!=m){
+                if(mo!=m&&!mo.isDeadOrEscaped()){
                     AbstractCard temp=card.makeSameInstanceOf();
                     AbstractDungeon.player.limbo.addToBottom(temp);
                     temp.current_x=card.current_x;

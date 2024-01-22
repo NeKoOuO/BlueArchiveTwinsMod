@@ -40,7 +40,7 @@ public class BATwinsPlayTempCardAction extends AbstractGameAction {
             ((BATwinsModCustomCard) cardToPlay).numberOfConnections=this.numberOfConnections;
         }
         if(this.target==null){
-            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
         }
         AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, (AbstractMonster) this.target,cardToPlay.energyOnUse,true,true),true);
 //            addToTop(new UnlimboAction(cardToPlay));

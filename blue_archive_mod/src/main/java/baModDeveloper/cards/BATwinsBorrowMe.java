@@ -17,8 +17,8 @@ public class BATwinsBorrowMe extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("BorrowMe");
     private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME=CARD_STRINGS.NAME;
-    private static final String IMG_PATH=ModHelper.makeImgPath("cards","defaultSkill");
-    private static final int COST=1;
+    private static final String IMG_PATH=ModHelper.makeImgPath("cards","BorrowMe");
+    private static final int COST=0;
     private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE=CardType.SKILL;
     private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
@@ -28,6 +28,7 @@ public class BATwinsBorrowMe extends BATwinsModCustomCard{
 
     public BATwinsBorrowMe() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
+        this.exhaust=true;
     }
 
     @Override
@@ -44,7 +45,10 @@ public class BATwinsBorrowMe extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.updateCost(-1);
+            this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
+            this.selfRetain=true;
         }
     }
 }

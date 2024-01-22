@@ -27,13 +27,14 @@ public class BATwinsEmergencyRecovery extends BATwinsModCustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseMagicNumber=1;
         this.magicNumber=this.baseMagicNumber;
+        this.exhaust=true;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsGainEnergyAction(this.magicNumber, BATwinsEnergyPanel.EnergyType.MOMOI));
         if(BATwinsEnergyPanel.getMidoriCount()==0){
-            addToBot(new BATwinsGainEnergyAction(2, BATwinsEnergyPanel.EnergyType.MIDORI));
+            addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MIDORI));
         }
     }
 
@@ -41,7 +42,7 @@ public class BATwinsEmergencyRecovery extends BATwinsModCustomCard{
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsGainEnergyAction(this.magicNumber, BATwinsEnergyPanel.EnergyType.MIDORI));
         if(BATwinsEnergyPanel.getMomoiCount()==0){
-            addToBot(new BATwinsGainEnergyAction(2, BATwinsEnergyPanel.EnergyType.MOMOI));
+            addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MOMOI));
         }
     }
 

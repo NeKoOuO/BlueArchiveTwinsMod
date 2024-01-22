@@ -17,7 +17,7 @@ public class BATwinsMomoisGameConsole extends CustomRelic {
     public static final String ID= ModHelper.makePath("MomoisGameConsole");
     private static final Texture texture=TextureLoader.getTexture(ModHelper.makeImgPath("relic","MomoisGameConsole"));
     private static final Texture outline=TextureLoader.getTexture(ModHelper.makeImgPath("relic","MomoisGameConsole_p"));
-    private static final RelicTier type=RelicTier.STARTER;
+    private static final RelicTier type=RelicTier.COMMON;
     public BATwinsMomoisGameConsole() {
         super(ID, texture, outline, type,LandingSound.MAGICAL);
     }

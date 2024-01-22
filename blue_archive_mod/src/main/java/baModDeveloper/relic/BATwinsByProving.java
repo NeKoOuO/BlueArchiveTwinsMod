@@ -93,7 +93,7 @@ public class BATwinsByProving extends CustomRelic implements CustomSavable<Strin
             this.flash();
             switch (c.type){
                 case ATTACK:
-                    AbstractMonster monster= AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+                    AbstractMonster monster= AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
                     int damage=c.damage;
 
                     addToBot(new DamageAction(monster,new DamageInfo(AbstractDungeon.player,damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));

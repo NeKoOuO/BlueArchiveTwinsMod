@@ -62,8 +62,11 @@ public class BATwinsCamfireExchangeEffect extends AbstractGameEffect {
                 AbstractDungeon.effectsQueue.add(new BATwinsShowCardAndFlashEffect(c.makeStatEquivalentCopy()));
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            BATwinsGridCardSelectScreenPatch.FiledPatch.forExchange.set(AbstractDungeon.gridSelectScreen,false);
+//            BATwinsGridCardSelectScreenPatch.FiledPatch.forExchange.set(AbstractDungeon.gridSelectScreen,false);
             ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();
+        }
+        if(!AbstractDungeon.isScreenUp&&BATwinsGridCardSelectScreenPatch.FiledPatch.forExchange.get(AbstractDungeon.gridSelectScreen)){
+            BATwinsGridCardSelectScreenPatch.FiledPatch.forExchange.set(AbstractDungeon.gridSelectScreen,false);
         }
         if(this.duration<1.0F&&!this.openedScreen){
             this.openedScreen=true;

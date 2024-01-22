@@ -21,7 +21,7 @@ public class BATwinsMasterCraftsmanship extends BATwinsModCustomCard{
     private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET=CardTarget.SELF;
     private static final CardRarity RARITY=CardRarity.UNCOMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.SHARE;
 
     public BATwinsMasterCraftsmanship() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
@@ -43,6 +43,7 @@ public class BATwinsMasterCraftsmanship extends BATwinsModCustomCard{
         if(!upgraded){
             this.upgradeName();
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
