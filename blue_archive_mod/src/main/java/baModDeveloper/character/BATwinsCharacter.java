@@ -1,43 +1,27 @@
 package baModDeveloper.character;
 
-import java.awt.*;
-import java.lang.reflect.Field;
-import java.util.*;
-
+import baModDeveloper.BATwinsMod;
 import baModDeveloper.animation.AbstractAnimation;
-import baModDeveloper.animation.GifAnimation;
 import baModDeveloper.cards.*;
+import baModDeveloper.core.BATwinsEnergyManager;
+import baModDeveloper.helpers.Character3DHelper;
 import baModDeveloper.helpers.ColorComparer;
 import baModDeveloper.helpers.ImageHelper;
+import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.power.BATwinsBorrowMePower;
 import baModDeveloper.relic.BATwinsGameMagazine;
-import baModDeveloper.relic.BATwinsMomoisGameConsole;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import baModDeveloper.ui.panels.BATwinsExperencePanel;
+import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMidoriOrb;
+import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMomoiOrb;
 import basemod.abstracts.CustomEnergyOrb;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.loaders.ModelLoader;
-import com.badlogic.gdx.graphics.*;
+import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.g3d.Environment;
-import com.badlogic.gdx.graphics.g3d.Model;
-import com.badlogic.gdx.graphics.g3d.ModelBatch;
-import com.badlogic.gdx.graphics.g3d.ModelInstance;
-import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
-import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
-import com.badlogic.gdx.graphics.g3d.loader.G3dModelLoader;
-import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
-import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
-import com.badlogic.gdx.math.Matrix4;
-import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.utils.JsonReader;
-import com.badlogic.gdx.utils.ScreenUtils;
-import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
@@ -55,22 +39,15 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.Vajra;
-import com.megacrit.cardcrawl.rooms.RestRoom;
-import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
-
-import baModDeveloper.BATwinsMod;
-import baModDeveloper.core.BATwinsEnergyManager;
-import baModDeveloper.helpers.ModHelper;
-import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMidoriOrb;
-import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMomoiOrb;
-import basemod.abstracts.CustomPlayer;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import org.lwjgl.util.vector.Matrix;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 public class BATwinsCharacter extends CustomPlayer {
     private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder");
@@ -116,15 +93,15 @@ public class BATwinsCharacter extends CustomPlayer {
 
 
     //GIF相关
-    private static final String[] GIFPATH_MOMOI=new String[]{
-            ModHelper.makeGifPath("char",ModHelper.MOMOI_FLODER,"shooting_stand"),
-            ModHelper.makeGifPath("char",ModHelper.MOMOI_FLODER,"run")
-    };
-    private static final String[] GIFPATH_MIDORI=new String[]{
-            ModHelper.makeGifPath("char",ModHelper.MIDORI_FLODER,"shooting_stand"),
-            ModHelper.makeGifPath("char",ModHelper.MIDORI_FLODER,"run")
-
-    };
+//    private static final String[] GIFPATH_MOMOI=new String[]{
+//            ModHelper.makeGifPath("char",ModHelper.MOMOI_FLODER,"shooting_stand"),
+//            ModHelper.makeGifPath("char",ModHelper.MOMOI_FLODER,"run")
+//    };
+//    private static final String[] GIFPATH_MIDORI=new String[]{
+//            ModHelper.makeGifPath("char",ModHelper.MIDORI_FLODER,"shooting_stand"),
+//            ModHelper.makeGifPath("char",ModHelper.MIDORI_FLODER,"run")
+//
+//    };
     private ArrayList<AbstractAnimation> anima_momoi;
     private ArrayList<AbstractAnimation> anima_midori;
     private int anim_time_momoi=0;
@@ -134,18 +111,13 @@ public class BATwinsCharacter extends CustomPlayer {
     private AbstractAnimation rendered_anima_momoi;
     private AbstractAnimation rendered_anima_midori;
     //3D相关
-//    Rectangle bucket;
-//    OrthographicCamera camera;
-//    G3dModelLoader loader;
-//    Model model;
-//    ModelInstance instance;
-//    ModelBatch modelBatch;
-//    CameraInputController cameraInputController;
-//    FitViewport viewport;
+    Character3DHelper character3DHelper;
+
+    BATwinsExperencePanel expPanel;
 
     //排序手牌
     ColorComparer colorComparer;
-
+    //角色立绘，先暂时使用图片代替，之后使用3d模型替换
     private static final String stand_Img=ModHelper.makeImgPath("char","standup");
 //    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
     public BATwinsCharacter(String name) {
@@ -161,24 +133,8 @@ public class BATwinsCharacter extends CustomPlayer {
                 new BATwinsEnergyManager(2));
 
         //3D相关
-//        if(CardCrawlGamePatch.camera!=null){
-////            this.camera=CardCrawlGamePatch.camera;
-//            this.camera=new OrthographicCamera();
-//            this.camera.position.set(Settings.WIDTH/2.0F,Settings.HEIGHT/2.0F,0.0F);
-//            camera.update();
-//            viewport = new FitViewport(Settings.WIDTH, (Settings.M_H - Settings.HEIGHT / 2), (Camera)this.camera);
-//            viewport.apply();
-//        }
-//        loader=new G3dModelLoader(new JsonReader());
-//        model=loader.loadModel(Gdx.files.internal("baModResources/img/char/model/aue.g3dj"));
-//        instance=new ModelInstance(model);
-//
-//        modelBatch = new ModelBatch();
-//        cameraInputController=new CameraInputController(camera);
-//        instance.transform.setTranslation(Settings.WIDTH/2.0F,Settings.HEIGHT/2.0F,2.0F);
-//        instance.transform.rotate(Vector3.Y,90);
-//        instance.transform.scale(0.5F,0.5F,0.5F);
-//        Gdx.input.setInputProcessor(cameraInputController);
+//        character3DHelper=new Character3DHelper();
+//        character3DHelper.init();
 
 
     }
@@ -188,25 +144,27 @@ public class BATwinsCharacter extends CustomPlayer {
         super.initializeClass(imgUrl, shoulder2ImgUrl, shouldImgUrl, corpseImgUrl, info, hb_x, hb_y, hb_w, hb_h, energy);
 
         //gif相关
-        this.anima_momoi=new ArrayList<>();
-        for(String s:GIFPATH_MOMOI){
-            AbstractAnimation temp=new AbstractAnimation(s,this.drawX,this.drawY,200,200,0.5F);
-            temp.setMovable(false);
-            this.anima_momoi.add(temp);
-        }
-
-        this.anima_midori=new ArrayList<>();
-        for(String s:GIFPATH_MIDORI){
-            AbstractAnimation temp=new AbstractAnimation(s,this.drawX,this.drawY,200,200,0.5F);
-            temp.setMovable(false);
-            this.anima_midori.add(temp);
-        }
-
-        AbstractAnimation.addAnimation(null);
-        AbstractAnimation.addAnimation(null);
+//        this.anima_momoi=new ArrayList<>();
+//        for(String s:GIFPATH_MOMOI){
+//            AbstractAnimation temp=new AbstractAnimation(s,this.drawX,this.drawY,200,200,0.5F);
+//            temp.setMovable(false);
+//            this.anima_momoi.add(temp);
+//        }
+//
+//        this.anima_midori=new ArrayList<>();
+//        for(String s:GIFPATH_MIDORI){
+//            AbstractAnimation temp=new AbstractAnimation(s,this.drawX,this.drawY,200,200,0.5F);
+//            temp.setMovable(false);
+//            this.anima_midori.add(temp);
+//        }
+//
+//        AbstractAnimation.addAnimation(null);
+//        AbstractAnimation.addAnimation(null);
 
 
         colorComparer=new ColorComparer();
+
+        expPanel=new BATwinsExperencePanel(this.drawX,this.drawY);
     }
 
     @Override
@@ -416,6 +374,8 @@ public class BATwinsCharacter extends CustomPlayer {
         if(!(c instanceof BATwinsModCustomCard)){
             if(!BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.get(c)){
                 c.use(this, monster);
+            }else{
+                BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(c,false);
             }
         }else{
             c.use(this, monster);
@@ -467,118 +427,87 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public void update() {
         super.update();
-        if(this.rendered_anima_momoi!=null){
-            if(this.anim_time_momoi<this.anim_len_momoi){
-                this.anim_time_momoi+=2;
-            }else{
-                this.anim_time_momoi=0;
-                this.rendered_anima_momoi=null;
-            }
-            if(this.rendered_anima_momoi!=null){
-                if(this.rendered_anima_momoi==anima_momoi.get(Animation.RUN.index)){
-                    this.rendered_anima_momoi.setPosition(this.rendered_anima_momoi.drawX+1,this.rendered_anima_momoi.drawY);
-                }
-                this.rendered_anima_momoi.update();
-            }
-
-        }
-        if(this.rendered_anima_midori!=null){
-            if(this.anim_time_midori<this.anim_len_midori){
-                this.anim_time_midori+=2;
-            }else{
-                this.anim_time_midori=0;
-                this.rendered_anima_midori=null;
-            }
-            if(this.rendered_anima_midori!=null){
-                if(this.rendered_anima_midori==anima_midori.get(Animation.RUN.index)){
-                    this.rendered_anima_midori.setPosition(this.rendered_anima_midori.drawX+1,this.rendered_anima_midori.drawY);
-                }
-                this.rendered_anima_midori.update();
-            }
-
-        }
+//        this.character3DHelper.update();
 
         //排序手牌
-        this.hand.group.sort(colorComparer);
+        if(AbstractDungeon.getCurrRoom().phase== AbstractRoom.RoomPhase.COMBAT)
+            this.hand.group.sort(colorComparer);
     }
+    private static final Color BLUE_BORDER_GLOW_COLOR = new Color(0.2F, 0.9F, 1.0F, 0.25F);
 
     public static Color getColorWithCardColor(CardColor color){
         if(color==Enums.BATWINS_MOMOI_CARD){
-            return BATwinsMod.MOMOIColor;
+            return BATwinsMod.MOMOIColor.cpy();
         }else if(color==Enums.BATWINS_MIDORI_CARD){
-            return BATwinsMod.MIDORIColor;
+            return BATwinsMod.MIDORIColor.cpy();
         }
-        return BATwinsMod.MOMOIColor;
+        return BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
 
     @Override
     public void render(SpriteBatch sb) {
-        if(this.rendered_anima_midori!=null){
-            this.rendered_anima_midori.render(sb);
-        }
-        if(this.rendered_anima_momoi!=null){
-            this.rendered_anima_momoi.render(sb);
-        }
-
+//        if(this.rendered_anima_midori!=null){
+//            this.rendered_anima_midori.render(sb);
+//        }
+//        if(this.rendered_anima_momoi!=null){
+//            this.rendered_anima_momoi.render(sb);
+//        }
         super.render(sb);
 
-        //3D相关
-//        sb.end();
-//        cameraInputController.update();
-//        instance.transform.translate(x,y,z);
-//        modelBatch.begin(camera);
-//        modelBatch.render(instance);
-//        modelBatch.end();
-//        sb.begin();
-    }
-    public enum AnimationChar{
-        MOMOI,
-        MIDORI
-    }
-    public enum Animation{
-        SHOOTING_STAND(0,100),
-        RUN(1,100);
 
-        private int index;
-        private int len;
-        private Animation(int index,int len){
-            this.index=index;
-            this.len=len;
-        }
-        public int getIndex(){
-            return index;
-        }
-        public int getLen(){
-            return len;
-        }
+//        this.expPanel.render(sb);
+//        character3DHelper.render(sb,this.drawX,this.drawY);
     }
-    public void setAnimation(AnimationChar character,Animation anima){
-        switch (character){
-            case MOMOI:
-                this.rendered_anima_momoi=this.anima_momoi.get(anima.getIndex());
-                this.anim_len_momoi=anima.getLen();
-                if(anima==Animation.RUN){
-                    this.rendered_anima_momoi.setPosition(this.rendered_anima_momoi.drawX-200,this.rendered_anima_momoi.drawY);
-                }
-                break;
-            case MIDORI:
-                this.rendered_anima_midori=this.anima_midori.get(anima.getIndex());
-                this.anim_len_midori=anima.getLen();
-                if(anima==Animation.RUN){
-                    this.rendered_anima_midori.setPosition(this.rendered_anima_midori.drawX-200,this.rendered_anima_momoi.drawY);
-                }
-                break;
-            default:
-                return;
-        }
-    }
+//    public enum AnimationChar{
+//        MOMOI,
+//        MIDORI
+//    }
+//    public enum Animation{
+//        SHOOTING_STAND(0,100),
+//        RUN(1,100);
+//
+//        private int index;
+//        private int len;
+//        private Animation(int index,int len){
+//            this.index=index;
+//            this.len=len;
+//        }
+//        public int getIndex(){
+//            return index;
+//        }
+//        public int getLen(){
+//            return len;
+//        }
+//    }
+//    public void setAnimation(AnimationChar character,Animation anima){
+//        switch (character){
+//            case MOMOI:
+//                this.rendered_anima_momoi=this.anima_momoi.get(anima.getIndex());
+//                this.anim_len_momoi=anima.getLen();
+//                if(anima==Animation.RUN){
+//                    this.rendered_anima_momoi.setPosition(this.rendered_anima_momoi.drawX-200,this.rendered_anima_momoi.drawY);
+//                }
+//                break;
+//            case MIDORI:
+//                this.rendered_anima_midori=this.anima_midori.get(anima.getIndex());
+//                this.anim_len_midori=anima.getLen();
+//                if(anima==Animation.RUN){
+//                    this.rendered_anima_midori.setPosition(this.rendered_anima_midori.drawX-200,this.rendered_anima_momoi.drawY);
+//                }
+//                break;
+//            default:
+//                return;
+//        }
+//    }
 
     public void onEnterRoom(){
         //设置进入房间时的动画
 //        this.setAnimation(AnimationChar.MOMOI,Animation.RUN);
 //        this.setAnimation(AnimationChar.MIDORI,Animation.RUN);
     }
+
+
 
     @Override
     public boolean saveFileExists() {

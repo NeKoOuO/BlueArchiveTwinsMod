@@ -1,12 +1,13 @@
 {
-    "modid":"Blue_Archive_Mod",
-    "name":"Blue archive mod",
+    "modid":"BlueArchive_SaibaSisters_Mod",
+    "name":"Blue archive Saiba Sisters mod",
     "author_list":[
-        "maming"
+        "0v0"
     ],
-    "description":"Blue archive mod",
+    "description":"Blue archive Saiba Sisters mod.Testing.....",
     "dependencies":[
-        "basemod"
+        "basemod",
+        "stslib"
     ],
     "version":"1.0",
     "sts_version":"9-21-2023"

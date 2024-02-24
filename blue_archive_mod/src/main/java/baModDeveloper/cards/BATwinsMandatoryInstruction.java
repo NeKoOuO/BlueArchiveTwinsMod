@@ -1,5 +1,6 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.action.BATwinsSelectDrawPileCardToPlayAction;
 import baModDeveloper.action.BATwinsSelectHandCardToPlayAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
@@ -17,10 +18,10 @@ public class BATwinsMandatoryInstruction extends BATwinsModCustomCard{
     private static final int COST=1;
     private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE=CardType.SKILL;
-    private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
+    private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET=CardTarget.ENEMY;
     private static final CardRarity RARITY=CardRarity.UNCOMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MIDORI;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
 
     public BATwinsMandatoryInstruction() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
@@ -35,7 +36,8 @@ public class BATwinsMandatoryInstruction extends BATwinsModCustomCard{
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsSelectHandCardToPlayAction(null,abstractMonster,CardType.ATTACK,2,this.numberOfConnections+1,true));
+//        addToBot(new BATwinsSelectHandCardToPlayAction(null,abstractMonster,CardType.ATTACK,2,this.numberOfConnections+1,true));
+        addToBot(new BATwinsSelectDrawPileCardToPlayAction(false,abstractMonster,this.magicNumber,this.numberOfConnections+1,true,true));
     }
 
     @Override

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class BATwinsExchangeAction extends AbstractGameAction {
     private int amount;
-    private static final UIStrings uiStrings=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("Exchange"));
+    private static final UIStrings uiStrings=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
     public static final String[] TEXT=uiStrings.TEXT;
     public static final String[] EXTRETEXT=uiStrings.EXTRA_TEXT;
     private AbstractPlayer p;
@@ -46,36 +46,40 @@ public class BATwinsExchangeAction extends AbstractGameAction {
                 this.isDone=true;
                 return;
             }
-            if(this.p.hand.group.size()-this.cannotexchange.size()==1){
-                for(AbstractCard c:this.p.hand.group){
-                    if(c.color== BATwinsCharacter.Enums.BATWINS_MOMOI_CARD||c.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD){
-                        ((BATwinsModCustomCard)c).conversionColor();
-                        ((BATwinsModCustomCard) c).playBackOriginalColor=this.playBackOriginColor;
-                        c.applyPowers();
-                        this.isDone=true;
-                        return;
-                    }
-                }
-            }
+//            if(this.p.hand.group.size()-this.cannotexchange.size()==1){
+//                for(AbstractCard c:this.p.hand.group){
+//                    if(c.color== BATwinsCharacter.Enums.BATWINS_MOMOI_CARD||c.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD){
+//                        ((BATwinsModCustomCard)c).conversionColor();
+//                        ((BATwinsModCustomCard) c).playBackOriginalColor=this.playBackOriginColor;
+//                        c.applyPowers();
+//                        this.isDone=true;
+//                        return;
+//                    }
+//                }
+//            }
             this.p.hand.group.removeAll(this.cannotexchange);
-            if(this.p.hand.group.size()>1){
-                String title=TEXT[0];
-                if(this.amount==1){
-                    title+=EXTRETEXT[0];
-                }else {
-                    title+=EXTRETEXT[1];
-                }
-                title+=TEXT[1];
-                AbstractDungeon.handCardSelectScreen.open(title,this.amount,true,true,false,false);
+            if(!this.p.hand.group.isEmpty()){
+//                String title=TEXT[0];
+//                if(this.amount==1){
+//                    title+=EXTRETEXT[0];
+//                }else {
+//                    title+=EXTRETEXT[1];
+//                }
+//                title+=TEXT[1];
+                AbstractDungeon.handCardSelectScreen.open(uiStrings.TEXT[7],this.amount,true,true,false,false);
                 tickDuration();
                 return;
-            }
-            if(this.p.hand.group.size()==1){
-                ((BATwinsModCustomCard)this.p.hand.getTopCard()).conversionColor();
-                ((BATwinsModCustomCard)this.p.hand.getTopCard()).playBackOriginalColor=this.playBackOriginColor;
-                this.p.hand.getTopCard().applyPowers();
+            }else{
+                this.p.hand.group.addAll(this.cannotexchange);
                 this.isDone=true;
+                return;
             }
+//            if(this.p.hand.group.size()==1){
+//                ((BATwinsModCustomCard)this.p.hand.getTopCard()).conversionColor();
+//                ((BATwinsModCustomCard)this.p.hand.getTopCard()).playBackOriginalColor=this.playBackOriginColor;
+//                this.p.hand.getTopCard().applyPowers();
+//                this.isDone=true;
+//            }
         }
 
         if(!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved){

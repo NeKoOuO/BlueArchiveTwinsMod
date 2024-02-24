@@ -17,6 +17,7 @@ public class BATwinsMutualUnderstandingAction extends AbstractGameAction {
     @Override
     public void update() {
         if(DrawCardAction.drawnCards.isEmpty()){
+            this.isDone=true;
             return;
         }
         AbstractCard c=DrawCardAction.drawnCards.get(0);

@@ -1,6 +1,7 @@
 package baModDeveloper.ui.panels;
 
 import baModDeveloper.effect.BATwinsRefreshEnergyEffect;
+import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.RefreshEnergyEffect;
@@ -36,6 +38,8 @@ public class BATwinsEnergyPanel extends EnergyPanel {
     private Color energyVfxColor = Color.WHITE.cpy();
     private static final float VFX_ROTATE_SPEED = -30.0F;
     private static EnergyType energyVfxType=EnergyType.ALL;
+    private static UIStrings orbLabel=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbLabel"));
+    private static UIStrings orbMsg=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbMsg"));
     public static int MomoiCount = 0;
     public static int MidoriCount = 0;
 
@@ -257,7 +261,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
     public void render(SpriteBatch sb) {
 
         this.tipHitbox_MOMOI.move(this.current_x, this.current_y);
-        this.tipHitbox_MIDORI.move(this.current_x-64.0F,this.current_y+64.0F);
+        this.tipHitbox_MIDORI.move(this.current_x-100.0F*Settings.scale,this.current_y+100.0F*Settings.scale);
         renderOrb(sb);
         renderVfx(sb);
         AbstractPlayer player = AbstractDungeon.player;
@@ -268,16 +272,16 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             AbstractDungeon.player.getEnergyNumFont().getData().setScale(fontScale);
             FontHelper.renderFontCentered(sb, BAplayer.getEnergyNumFont(), energyMsgMomoi, current_x, current_y,
                     ENERGY_TEXT_COLOR);
-            FontHelper.renderFontCentered(sb, BAplayer.getEnergyNumFont(), energyMsgMidori, current_x - 64,
-                    current_y + 64, ENERGY_TEXT_COLOR);
+            FontHelper.renderFontCentered(sb, BAplayer.getEnergyNumFont(), energyMsgMidori, current_x - 100.0F*Settings.scale,
+                    current_y + 100.0F*Settings.scale, ENERGY_TEXT_COLOR);
             this.tipHitbox_MOMOI.render(sb);
             this.tipHitbox_MIDORI.render(sb);
             if (this.tipHitbox_MOMOI.hovered && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT
                     && !AbstractDungeon.isScreenUp)
-                TipHelper.renderGenericTip(50.0F * Settings.scale, 380.0F * Settings.scale, LABEL[0], MSG[0]);
+                TipHelper.renderGenericTip(50.0F * Settings.scale, 380.0F * Settings.scale, orbLabel.TEXT[0], orbMsg.TEXT[0]);
             if (this.tipHitbox_MIDORI.hovered && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT
                     && !AbstractDungeon.isScreenUp)
-                TipHelper.renderGenericTip(-14.0F * Settings.scale, 444.0F * Settings.scale, LABEL[0], MSG[0]);
+                TipHelper.renderGenericTip(-14.0F * Settings.scale, 444.0F * Settings.scale, orbLabel.TEXT[1], orbMsg.TEXT[1]);
         }
     }
 
@@ -302,7 +306,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
                     256.0F, this.energyVfxScale, this.energyVfxScale, -this.energyVfxAngle + 50.0F, 0, 0, 256, 256,
                     true, false);
             if(energyVfxType==EnergyType.MIDORI||energyVfxType==EnergyType.ALL)
-                sb.draw(this.gainEnergyImgs[1], this.current_x -192.0F, this.current_y -64.0F, 128.0F, 128.0F, 256.0F,
+                sb.draw(this.gainEnergyImgs[1], this.current_x -128.0F-100.0F*Settings.scale, this.current_y -128.0F+100.0F*Settings.scale, 128.0F, 128.0F, 256.0F,
                     256.0F, this.energyVfxScale, this.energyVfxScale, this.energyVfxAngle, 0, 0, 256, 256, false,
                     false);
             sb.setBlendFunction(770, 771);

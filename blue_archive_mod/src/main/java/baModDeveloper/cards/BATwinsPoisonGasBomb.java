@@ -22,7 +22,7 @@ public class BATwinsPoisonGasBomb extends BATwinsModCustomCard{
     private static final CardType TYPE=CardType.SKILL;
     private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET=CardTarget.ENEMY;
-    private static final CardRarity RARITY=CardRarity.UNCOMMON;
+    private static final CardRarity RARITY=CardRarity.COMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MIDORI;
 
     public BATwinsPoisonGasBomb() {

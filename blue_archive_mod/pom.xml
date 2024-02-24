@@ -8,7 +8,7 @@
     <artifactId>blue_archive_mod</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
-        <finalName>blue_archive_mod</finalName>
+        <finalName>BlueArchive_SaibaSisters_Mod</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

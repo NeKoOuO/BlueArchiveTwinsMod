@@ -1,13 +1,16 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsDisCardByColorAction;
+import baModDeveloper.action.BATwinsDisOtherCardByColorAction;
 import baModDeveloper.action.BATwinsLevelUpAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -33,7 +36,7 @@ public class BATwinsDontSayIt extends BATwinsModCustomCard{
 
     public BATwinsDontSayIt() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock=9;
+        this.baseBlock=6;
         this.block=this.baseBlock;
         this.baseMagicNumber=1;
         this.magicNumber=this.baseMagicNumber;
@@ -42,14 +45,16 @@ public class BATwinsDontSayIt extends BATwinsModCustomCard{
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer,this.block));
-        addToBot(new BATwinsDisCardByColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,this.callback));
+        addToBot(new GainBlockAction(abstractPlayer,this.block));
+        addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,this.callback));
 
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer,this.block));
-        addToBot(new BATwinsDisCardByColorAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,this.callback));
+        addToBot(new GainBlockAction(abstractPlayer,this.block));
+        addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,this.callback));
 
 
     }
@@ -58,7 +63,7 @@ public class BATwinsDontSayIt extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.upgradeBlock(5);
+            this.upgradeBlock(3);
         }
     }
 
@@ -77,5 +82,17 @@ public class BATwinsDontSayIt extends BATwinsModCustomCard{
     public void conversionColor(boolean flash) {
         super.conversionColor(flash);
         this.exchangeName();
+    }
+
+    @Override
+    public void triggerOnHovered() {
+        if(AbstractDungeon.player!=null){
+            for(AbstractCard c: AbstractDungeon.player.hand.group){
+                if(c.color!=this.color){
+                    c.flash(BATwinsCharacter.getColorWithCardColor(c.color));
+                }
+            }
+        }
+
     }
 }

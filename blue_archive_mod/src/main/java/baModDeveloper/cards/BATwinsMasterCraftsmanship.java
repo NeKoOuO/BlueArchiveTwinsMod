@@ -25,12 +25,12 @@ public class BATwinsMasterCraftsmanship extends BATwinsModCustomCard{
 
     public BATwinsMasterCraftsmanship() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-
+        this.baseMagicNumber=this.magicNumber=1;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsMasterCraftsmanshipPower(abstractPlayer)));
+        addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsMasterCraftsmanshipPower(abstractPlayer,this.magicNumber)));
     }
 
     @Override
@@ -42,6 +42,7 @@ public class BATwinsMasterCraftsmanship extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
+            this.isInnate=true;
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();

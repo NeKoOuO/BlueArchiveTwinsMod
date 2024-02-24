@@ -1,15 +1,19 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsDisCardByColorAction;
+import baModDeveloper.action.BATwinsDisOtherCardByColorAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.power.BATwinsExperiencePower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -31,7 +35,7 @@ public class BATwinsItsSoPainful extends BATwinsModCustomCard{
 
     public BATwinsItsSoPainful() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage=9;
+        this.baseDamage=10;
         this.damage=this.baseDamage;
         this.baseMagicNumber=2;
         this.magicNumber=this.baseMagicNumber;
@@ -41,32 +45,49 @@ public class BATwinsItsSoPainful extends BATwinsModCustomCard{
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         Consumer<Integer> callback=integer -> {
             if(integer==0){
-                BATwinsItsSoPainful.this.addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new WeakPower(abstractMonster,BATwinsItsSoPainful.this.magicNumber,false)));
+                if(AbstractDungeon.player.hasPower(BATwinsExperiencePower.POWER_ID)){
+                    BATwinsExperiencePower power = (BATwinsExperiencePower) AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID);
+                    BATwinsItsSoPainful.this.baseDamage+=power.LEVEL;
+                }
             }
         };
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new BATwinsDisCardByColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,callback));
+        addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,callback));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         Consumer<Integer> callback=integer -> {
             if(integer==0){
-                BATwinsItsSoPainful.this.addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new WeakPower(abstractMonster,BATwinsItsSoPainful.this.magicNumber,false)));
+                if(AbstractDungeon.player.hasPower(BATwinsExperiencePower.POWER_ID)){
+                    BATwinsExperiencePower power = (BATwinsExperiencePower) AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID);
+                    BATwinsItsSoPainful.this.baseDamage+=power.LEVEL;
+                }
             }
         };
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new BATwinsDisCardByColorAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,callback));
+        addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,callback));
     }
 
     @Override
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.upgradeDamage(2);
+            this.upgradeDamage(3);
             this.upgradeMagicNumber(1);
+        }
+    }
+
+    @Override
+    public void triggerOnHovered() {
+        if(AbstractDungeon.player!=null){
+            for(AbstractCard c:AbstractDungeon.player.hand.group){
+                if(c.color!=this.color){
+                    c.flash(BATwinsCharacter.getColorWithCardColor(c.color));
+                }
+            }
         }
     }
 }

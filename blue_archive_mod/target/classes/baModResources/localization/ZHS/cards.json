@@ -52,7 +52,7 @@
     },
     "BATwinsMod:BattleCommand":{
         "NAME":"战斗指导",
-        "DESCRIPTION":"选择1张牌返回抽牌堆，从抽牌堆中选择1张不同颜色的卡牌加入手卡。"
+        "DESCRIPTION":"选择1张牌返回抽牌堆，从抽牌堆中选择1张不同颜色的卡牌加入手牌。"
     },
     "BATwinsMod:IgniteTheUpperBody":{
         "NAME":"引火上身",
@@ -69,7 +69,7 @@
     },
     "BATwinsMod:AccurateBlocking":{
         "NAME":"精准格挡",
-        "DESCRIPTION":"获得 !B! 点格挡。若当前格挡小于选择敌人的攻击伤害，获得 !B! 点格挡。小于这张牌在手牌没有其他 batwinsmod:绿牌 时才能打出。"
+        "DESCRIPTION":"获得 !B! 点 格挡 。 NL 若当前 格挡 小于选择敌人的攻击伤害，获得 !B! 点 格挡 。 NL 这张牌在手牌没有其他 batwinsmod:绿牌 时才能打出。"
     },
     "BATwinsMod:GameLaunch":{
         "NAME":"游戏启动",
@@ -78,7 +78,7 @@
     },
     "BATwinsMod:InspirationEmergence":{
         "NAME":"灵感涌现",
-        "DESCRIPTION":" batwinsmod:共有 。 NL 抽 !M! 张牌， 预见 2X 然后抽1张牌。(X为抽牌的颜色数）"
+        "DESCRIPTION":" batwinsmod:共有 。 NL 抽 !M! 张牌， 预见 2X 然后抽1张牌。(X为抽到牌的颜色数）"
     },
     "BATwinsMod:PassageInForce":{
         "NAME":"强行通过",
@@ -159,12 +159,12 @@
 		"UPGRADE_DESCRIPTION":"获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。若桃能量为0，获得 [batwinsmod:momoiorbicon] 。 消耗 "
 	},
 	"BATwinsMod:AbstractSchool":{
-		"NAME":"抽象派艺术",
-		"DESCRIPTION":"造成 !D! 点伤害X次。X为手牌的颜色数。"
+		"NAME":"像素艺术",
+		"DESCRIPTION":"你的手牌每有1种颜色，造成 !D! 点伤害，抽 !M! 张牌。"
 	},
 	"BATwinsMod:DefensiveCounterattack":{
 		"NAME":"防守与打击",
-		"DESCRIPTION":"获得 !B! 点格挡。本回合受到攻击时对攻击的怪物打出一张打击。"
+		"DESCRIPTION":"获得 !B! 点格挡。受到攻击后在下个回合开始时对攻击的怪物打出一张打击。"
 	},
 	"BATwinsMod:AdventureRewards":{
 		"NAME":"冒险-奖励",
@@ -200,7 +200,7 @@
 	},
 	"BATwinsMod:CoverCharge":{
 		"NAME":"掩护冲锋",
-		"DESCRIPTION":"造成 !D! 点伤害X次，获得 !B! 点格挡Y次。（X为消耗的桃能量数量，Y为消耗的绿能量数量）"
+		"DESCRIPTION":"造成 !D! 点伤害 [batwinsmod:momoiorbicon] 次，获得 !B! 点格挡 [batwinsmod:midoriorbicon] 次。"
 	},
 	"BATwinsMod:MutualUnderstanding":{
 		"NAME":"双胞胎默契",
@@ -209,8 +209,8 @@
 	},
 	"BATwinsMod:MysteriousChest":{
 		"NAME":"神秘宝箱",
-		"DESCRIPTION":"将1张随机 batwinsmod:绿牌 加入手牌，那张牌获得 虚无 ， 消耗 。 NL batwinsmod:交换 这张牌。",
-		"UPGRADE_DESCRIPTION":"将1张随机 batwinsmod:绿牌 加入手牌，那张牌获得 保留 ， 消耗 。 NL batwinsmod:交换 这张牌。"
+		"DESCRIPTION":"将1张随机 batwinsmod:绿牌 加入手牌，那张牌获得 虚无 ， 消耗 ,打出前耗能为0。 NL batwinsmod:交换 这张牌。",
+		"UPGRADE_DESCRIPTION":"将1张随机 batwinsmod:绿牌 加入手牌，那张牌获得 保留 ， 消耗 ，打出前耗能为0。 NL batwinsmod:交换 这张牌。"
 	},
 	"BATwinsMod:SeeYouHaveAShare":{
 		"NAME":"见者有份！",
@@ -240,20 +240,20 @@
 	},
 	"BATwinsMod:EndCombo":{
 		"NAME":"终结连击",
-		"DESCRIPTION":"造成 !D! 伤害。 NL batwinsmod:连携 ：造成 !B! 伤害。 NL batwinsmod:超连携 ：造成 !M! 伤害。"
+		"DESCRIPTION":"造成 !D! 点伤害。 NL batwinsmod:连携 ：造成 !B! 点伤害。 NL batwinsmod:超连携 ：造成 !M! 点伤害。"
 	},
 	"BATwinsMod:ReadingDocuments":{
 		"NAME":"即时存档",
-		"DESCRIPTION":"本场战斗效果打出的牌会回到抽牌堆。"
+		"DESCRIPTION":"本场战斗被效果打出的牌会回到抽牌堆。"
 	},
 	"BATwinsMod:MandatoryInstruction":{
 		"NAME":"强制指令",
-		"DESCRIPTION":"选择手牌 !M! 张牌打出，但只会使用其 batwinsmod:连携 和 batwinsmod:超连携 效果。",
-		"UPGRADE_DESCRIPTION":" 保留 NL 选择手牌 !M! 张牌打出，但只会使用其 batwinsmod:连携 和 batwinsmod:超连携 效果。"
+		"DESCRIPTION":"选择抽牌堆 !M! 张非能力牌打出，但只会使用其 batwinsmod:连携 和 batwinsmod:超连携 效果。",
+		"UPGRADE_DESCRIPTION":" 保留 NL 选择抽牌堆 !M! 张非能力牌打出，但只会使用其 batwinsmod:连携 和 batwinsmod:超连携 效果。"
 	},
 	"BATwinsMod:TwoStageAttack":{
 		"NAME":"二段打击",
-		"DESCRIPTION":" batwinsmod:只能被连携 NL batwinsmod:连携 ：对全体敌人造成 !D! 点伤害2次。",
+		"DESCRIPTION":" batwinsmod:只能被连携 NL batwinsmod:连携 ， batwinsmod:超连携 ：对全体敌人造成 !D! 点伤害2次。",
 		"EXTENDED_DESCRIPTION":[
 			"这张牌只能被效果打出。"
 		]
@@ -268,7 +268,7 @@
 	},
 	"BATwinsMod:DualProtection":{
 		"NAME":"双重防护",
-		"DESCRIPTION":"获得 !B! 点格挡，抽 !M! 张牌。 batwinsmod:连携 ：获得 !B! 点格挡。"
+		"DESCRIPTION":"获得 !B! 点格挡，抽 !M! 张牌。 NL batwinsmod:连携 ：获得 !B! 点格挡,抽 !M! 张牌。"
 	},
 	"BATwinsMod:OperateFreely":{
 		"NAME":"随意操作",
@@ -276,7 +276,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"经验大礼包",
-		"DESCRIPTION":" batwinsmod:共有 NL 获得等同于这张牌耗能的经验值。 NL batwinsmod:连携 ：抽1张牌，这张牌的耗能在本场战斗中减少1."
+		"DESCRIPTION":" batwinsmod:共有 NL 这张牌在手牌时，若拥有的 batwinsmod:经验值 和这张牌的耗能相同，打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",
@@ -285,11 +285,11 @@
 	},
 	"BATwinsMod:SkillCombination":{
 		"NAME":"技能合体",
-		"DESCRIPTION":"选择抽牌堆1张技能牌 消耗 。将 !M! 张打击加入抽牌堆，打出这张打击时，打出1次选择的那张牌。 NL 消耗 "
+		"DESCRIPTION":"选择抽牌堆1张技能牌 消耗 。将 !M! 张打击加入抽牌堆，且这些打击 batwinsmod:存储 选择的那张牌。 NL 消耗 "
 	},
 	"BATwinsMod:IntegratingAndIntegrating":{
 		"NAME":"融会贯通",
-		"DESCRIPTION":" batwinsmod:共有 NL 打出 batwinsmod:交换 后的牌后将1张原本颜色的牌加入手牌，那张牌获得 虚无 ， 消耗 。"
+		"DESCRIPTION":" batwinsmod:共有 NL 打出 batwinsmod:交换 后的非能力牌时将1张原本颜色的此牌加入手牌，那张牌获得 虚无 ， 消耗 。"
 	},
 	"BATwinsMod:EndlessCombo": {
 		"NAME": "无尽连击",
@@ -301,17 +301,17 @@
 	},
 	"BATwinsMod:MasterCraftsmanship":{
 		"NAME":"技艺大师",
-		"DESCRIPTION":" batwinsmod:共有 NL batwinsmod:交换 后，那些牌 升级 。",
-		"UPGRADE_DESCRIPTION":" 固有 ， batwinsmod:共有 NL batwinsmod:交换 后，那些牌 升级 。"
+		"DESCRIPTION":" batwinsmod:共有 NL 每回合开始时 batwinsmod:交换 至多1张牌。 NL 且本场战斗进行 batwinsmod:交换 的牌 升级 。",
+		"UPGRADE_DESCRIPTION":" 固有 ， batwinsmod:共有 NL 每回合开始时 batwinsmod:交换 至多1张牌。 NL 且本场战斗进行 batwinsmod:交换 的牌 升级 。"
 	},
 	"BATwinsMod:PoisonGasBomb":{
 		"NAME":"毒气弹",
 		"DESCRIPTION":"给予 !M! 层 中毒 !M! 层 batwinsmod:灼伤 。触发该敌人的 中毒 。"
 	},
 	"BATwinsMod:AdventureBegins":{
-		"NAME":"冒险开始",
-		"DESCRIPTION":"打出这张牌存储的牌。选择一张和这张牌所有存储的牌类型不同的手牌存储。",
-		"UPGRADE_DESCRIPTION":"打出这张牌存储的牌。可以选择一张和这张牌所有存储的牌类型不同的手牌存储。",
+		"NAME":"冒险小队",
+		"DESCRIPTION":"选择一张和这张牌所有 batwinsmod:存储 的牌类型不同的手牌  消耗 并 batwinsmod:存储 。",
+		"UPGRADE_DESCRIPTION":"可以 选择一张和这张牌所有 batwinsmod:存储 的牌类型不同的手牌 消耗 并 batwinsmod:存储 。",
 		"EXTENDED_DESCRIPTION":[
 			"攻击",
 			"技能",
@@ -323,11 +323,11 @@
 	},
 	"BATwinsMod:PropCollection":{
 		"NAME":"道具收集",
-		"DESCRIPTION":"从抽牌堆与弃牌堆选择 !M! 张牌加入手牌。此回合不能再抽牌。"
+		"DESCRIPTION":"从抽牌堆与弃牌堆选择 !M! 张牌加入手牌。 NL 本回合不能再抽牌。"
 	},
 	"BATwinsMod:EquipmentUpgrade":{
 		"NAME":"装备升级",
-		"DESCRIPTION":"选择手牌 !M! 张牌 升级 ，获得 batwinsmod:共有 ， 保留 且不 消耗 。"
+		"DESCRIPTION":"选择手牌 !M! 张牌 升级 ，获得 batwinsmod:共有 ， 保留 且去除 消耗 ， 虚无 。"
 	},
 	"BATwinsMod:AutomaticDefense":{
 		"NAME":"自动防御",
@@ -348,7 +348,7 @@
 	},
 	"BATwinsMod:Collaboration":{
 		"NAME":"协力",
-		"DESCRIPTION":"对随机敌人造成 !D! 点伤害X次，X为手牌中的 batwinsmod:桃牌 数量。",
+		"DESCRIPTION":"手牌每有1张 batwinsmod:桃牌 ，对随机敌人造成 !D! 点伤害。",
 		"EXTENDED_DESCRIPTION":[
 			"(当前为%s)"
 		]
@@ -358,8 +358,9 @@
 		"DESCRIPTION":"获得 !B! 点格挡， batwinsmod:交换 抽牌堆 !M! 张牌。"
 	},
 	"BATwinsMod:CheckTheStrategy":{
-		"NAME":"查攻略",
-		"DESCRIPTION":""
+		"NAME":"查询攻略书",
+		"DESCRIPTION":"抽 !M! 张牌，弃置所有非 batwinsmod:绿牌 抽等量牌。 NL 若此牌没有弃置牌则从抽牌堆选择1张牌加入手牌。",
+		"UPGRADE_DESCRIPTION":"抽 !M! 张牌，弃置所有非 batwinsmod:绿牌 抽等量牌。 NL 若此牌没有弃置牌则从抽牌堆选择1张牌加入手牌。"
 	},
 	"BATwinsMod:LeaveItToMe":{
 		"NAME":"交给我吧",
@@ -371,21 +372,35 @@
 	},
 	"BATwinsMod:DontSayIt":{
 		"NAME":"要对姐姐保密哦",
-		"DESCRIPTION":"获得 !B! 点 格挡 ，弃置手牌中所有 batwinsmod:桃牌 。若此牌没有弃置牌则 batwinsmod:提升等级 !M! 。",
+		"DESCRIPTION":"获得 !B! 点 格挡 2次，弃置手牌中所有非 batwinsmod:绿牌 。若此牌没有弃置牌则 batwinsmod:提升等级 !M! 。",
 		"EXTENDED_DESCRIPTION":[
 			"要对妹妹保密哦"
 		]
 	},
 	"BATwinsMod:ItsSoPainful":{
 		"NAME":"苦呀西。苦呀西",
-		"DESCRIPTION":"给予 !D! 点伤害2次，弃置手牌中所有 batwinsmod:绿牌 。若此牌没有弃置牌则给予 !M! 层 虚弱 。"
+		"DESCRIPTION":"给予 !D! 点伤害2次，弃置手牌中所有非 batwinsmod:桃牌 。若此牌没有弃置牌则本场战斗此牌伤害增加当前 batwinsmod:经验值 的等级数。"
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"贯通伤害",
 		"DESCRIPTION":"给予所有敌人 !D! 点伤害，所有没有格挡的敌人失去 !M! 点 力量 。 NL 消耗 "
 	},
 	"BATwinsMod:LoginRewards":{
-		"NAME":"登录奖励",
-		"DESCRIPTION":""
+		"NAME":"登入奖励",
+		"DESCRIPTION":"获得 !M! batwinsmod:经验值 。 NL batwinsmod:连携 ：手牌随机1张 batwinsmod:绿牌 batwinsmod:存储 1张 登入奖励 （不会重复存储）。 消耗 ",
+		"UPGRADE_DESCRIPTION":"获得 !M! batwinsmod:经验值 。 NL batwinsmod:连携 ：手牌随机1张 batwinsmod:绿牌 batwinsmod:存储 1张 登入奖励+ （不会重复存储）。 消耗 "
+	},
+	"BATwinsMod:Learned":{
+		"NAME":"完全内化",
+		"DESCRIPTION":"这张牌抽到时选择1张非能力手牌 消耗 并 batwinsmod:存储 。（这个效果只会触发1次） NL 造成 !D! 点伤害， 斩杀 时这张牌 batwinsmod:存储 的那张牌永久 batwinsmod:交换 为 batwinsmod:桃牌 。"
+	},
+	"BATwinsMod:ForceDetonation":{
+		"NAME":"强行引爆",
+		"DESCRIPTION":"触发所有敌人的 batwinsmod:灼伤 和 中毒 !M! 次。之后所有敌人的 batwinsmod:灼伤 和 中毒 层数减半。"
+	},
+	"BATwinsMod:ScriptRewriting":{
+		"NAME":"剧本改写",
+		"DESCRIPTION":"将1个敌人的 batwinsmod:灼伤 和 中毒 的层数互换,获得其差值的 格挡 。 NL 消耗 ",
+		"UPGRADE_DESCRIPTION":" 保留 NL 将1个敌人的 batwinsmod:灼伤 和 中毒 的层数互换，获得其差值的 格挡 。 NL 消耗 "
 	}
 }

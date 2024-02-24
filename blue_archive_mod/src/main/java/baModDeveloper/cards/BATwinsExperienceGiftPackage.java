@@ -1,5 +1,6 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.action.BATwinsPlayHandCardAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.power.BATwinsExperiencePower;
@@ -8,8 +9,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import jdk.internal.foreign.abi.ABIDescriptor;
 
 public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard{
     public static final String ID= ModHelper.makePath("ExperienceGiftPackage");
@@ -26,6 +29,8 @@ public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard{
 
     public BATwinsExperienceGiftPackage() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
+        this.baseMagicNumber=1;
+        this.magicNumber=this.baseMagicNumber;
     }
 
     @Override
@@ -35,12 +40,23 @@ public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard{
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsExperiencePower(abstractPlayer,this.costForTurn)));
+//        addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsExperiencePower(abstractPlayer,this.costForTurn)));
+        addToBot(new DrawCardAction(this.magicNumber));
     }
 
     @Override
-    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DrawCardAction(1));
+    public void applyPowers() {
+        super.applyPowers();
+        if(AbstractDungeon.player.hand.contains(this)&&AbstractDungeon.player.hasPower(BATwinsExperiencePower.POWER_ID)){
+            if(this.costForTurn==AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID).amount){
+                addToBot(new BATwinsPlayHandCardAction(this,null));
+            }
+        }
+    }
+
+    @Override
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        super.use(abstractPlayer, abstractMonster);
         this.modifyCostForCombat(-1);
     }
 
@@ -49,6 +65,7 @@ public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard{
         if(!this.upgraded){
             this.upgradeName();
             this.updateCost(1);
+            this.upgradeMagicNumber(1);
         }
     }
 }

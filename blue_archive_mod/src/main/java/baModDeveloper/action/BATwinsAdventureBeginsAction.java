@@ -72,6 +72,6 @@ public class BATwinsAdventureBeginsAction extends AbstractGameAction {
     }
 
     private void cardToDo(AbstractCard card){
-        this.card.addToBringOutCards(card);
+        this.card.addBringOutCard(card);
     }
 }

@@ -28,6 +28,7 @@ public class BATwinsEquipmentUpgradeAction extends SelectCardsInHandAction {
           }
           card.selfRetain=true;
           card.exhaust=false;
+          card.isEthereal=false;
       }
     };
 

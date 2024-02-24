@@ -27,7 +27,7 @@ public class BATwinsTakeActionsSeparately extends BATwinsModCustomCard{
 
     public BATwinsTakeActionsSeparately() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock=5;
+        this.baseBlock=7;
         this.block=this.baseBlock;
     }
 

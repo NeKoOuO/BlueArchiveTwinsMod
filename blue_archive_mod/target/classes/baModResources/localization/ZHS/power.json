@@ -2,7 +2,7 @@
     "BATwinsMod:BurnPower":{
         "NAME":"灼伤",
         "DESCRIPTIONS":[
-            "回合结束时，造成","点伤害。死亡时对其他敌人造成等同于层数2倍的伤害。"
+            "回合结束时，造成","点伤害，然后层数减1。死亡时对其他敌人造成等同于层数2倍的伤害。"
         ]
     },
     "BATwinsMod:DeveloperCollaborationPower":{
@@ -152,7 +152,7 @@
 	"BATwinsMod:MasterCraftsmanshipPower":{
 		"NAME":"技艺大师",
 		"DESCRIPTIONS":[
-			"本场战斗交换牌时将牌升级。"
+			"每回合开始时至多交换%d张手牌。且本场战斗交换牌时将牌升级。"
 		]
 	},
 	"BATwinsMod:BorrowMePower":{

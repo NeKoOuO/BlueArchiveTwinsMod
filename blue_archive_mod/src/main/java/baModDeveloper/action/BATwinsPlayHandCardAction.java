@@ -61,12 +61,8 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //            card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale;
 //            card.target_y = (float) Settings.HEIGHT / 2.0F;
 //            AbstractDungeon.player.limbo.group.add(this.card);
-            if(card instanceof BATwinsModCustomCard){
-                ((BATwinsModCustomCard) card).numberOfConnections=this.numberOfConnections;
-                ((BATwinsModCustomCard) card).blockTheOriginalEffect=this.blockTheOriginalEffect;
-            }else{
-                BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(card,true);
-            }
+
+            BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(card,this.blockTheOriginalEffect);
             card.isInAutoplay=true;
 //            this.card.isInAutoplay=true;
 //            addToTop(new ShowCardAction(this.card));

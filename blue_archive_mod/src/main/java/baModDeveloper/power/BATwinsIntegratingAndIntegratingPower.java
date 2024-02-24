@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class BATwinsIntegratingAndIntegratingPower extends AbstractPower {
@@ -37,17 +38,30 @@ public class BATwinsIntegratingAndIntegratingPower extends AbstractPower {
         this.description=String.format(DESCRIPTIONS[0],this.amount);
     }
 
+//    @Override
+//    public void onAfterCardPlayed(AbstractCard usedCard) {
+//        if(usedCard instanceof BATwinsModCustomCard){
+//            if(((BATwinsModCustomCard) usedCard).exchanged()){
+//                this.flash();
+//                for(int i=0;i<this.amount;i++){
+//                    BATwinsModCustomCard card= (BATwinsModCustomCard) usedCard.makeSameInstanceOf();
+//                    card.conversionColor();
+//                    addToBot(new BATwinsMakeTempCardInHandAction(card,true,true,true,true,false));
+//                }
+//            }
+//        }
+//    }
+
     @Override
-    public void onAfterCardPlayed(AbstractCard usedCard) {
-        if(usedCard instanceof BATwinsModCustomCard){
-            if(((BATwinsModCustomCard) usedCard).exchanged()){
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+        if(card.type!= AbstractCard.CardType.POWER&&card instanceof BATwinsModCustomCard){
+            if(((BATwinsModCustomCard) card).exchanged()){
                 this.flash();
                 for(int i=0;i<this.amount;i++){
-                    BATwinsModCustomCard card= (BATwinsModCustomCard) usedCard.makeSameInstanceOf();
-                    card.conversionColor();
-                    addToBot(new BATwinsMakeTempCardInHandAction(card,true,true,true,true,false));
+                    BATwinsModCustomCard c= (BATwinsModCustomCard) card.makeStatEquivalentCopy();
+                    c.conversionColor();
+                    addToBot(new BATwinsMakeTempCardInHandAction(c,true,true,true,true,false));
                 }
             }
-        }
-    }
+        }    }
 }

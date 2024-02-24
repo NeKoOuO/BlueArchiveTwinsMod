@@ -26,9 +26,9 @@ public class BATwinsEndCombo extends BATwinsModCustomCard{
 
     public BATwinsEndCombo() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage=8;
-        this.baseBlock=14;
-        this.baseMagicNumber=20;
+        this.baseDamage=10;
+        this.baseBlock=16;
+        this.baseMagicNumber=24;
     }
 
     @Override

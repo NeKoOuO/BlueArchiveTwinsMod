@@ -1,6 +1,7 @@
 package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
@@ -15,6 +16,7 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
     private AbstractCard card;
     private boolean exhaust;
     private int numberOfConnections;
+    private boolean isBlockOrigin=false;
     public BATwinsPlayDrawPailCardAction(AbstractCard card,AbstractCreature target,boolean exhaust,int numberOfConnections){
         this.card=card;
         this.exhaust=exhaust;
@@ -25,6 +27,10 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
     }
     public BATwinsPlayDrawPailCardAction(AbstractCard card,AbstractCreature target,boolean exhaust){
         this(card,target,exhaust,1);
+    }
+    public BATwinsPlayDrawPailCardAction(AbstractCard card,AbstractCreature target,boolean exhaust,int numberOfConnections,boolean isBlockOrigin){
+        this(card,target,exhaust,numberOfConnections);
+        this.isBlockOrigin=isBlockOrigin;
     }
 
     @Override
@@ -46,6 +52,7 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
                 card.drawScale=0.12F;
                 card.targetDrawScale=0.75F;
 
+                BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(card,this.isBlockOrigin);
                 card.applyPowers();
                 card.calculateCardDamage((AbstractMonster) this.target);
                 card.isInAutoplay=true;

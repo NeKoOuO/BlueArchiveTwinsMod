@@ -32,7 +32,7 @@ public class BATwinsAssault extends BATwinsModCustomCard{
 
     public BATwinsAssault() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage=8;
+        this.baseDamage=4;
         this.damage=this.baseDamage;
         this.baseMagicNumber=1;
         this.magicNumber=this.baseMagicNumber;
@@ -60,7 +60,7 @@ public class BATwinsAssault extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.upgradeDamage(3);
+            this.upgradeDamage(2);
             this.upgradeMagicNumber(1);
         }
     }
@@ -76,5 +76,16 @@ public class BATwinsAssault extends BATwinsModCustomCard{
 
     private boolean isFirstCard(){
         return AbstractDungeon.actionManager.cardsPlayedThisTurn.size()==1&&AbstractDungeon.actionManager.cardsPlayedThisTurn.get(0)==this;
+    }
+
+    @Override
+    public void triggerOnHovered() {
+        if(this.glowColor.equals(AbstractCard.GOLD_BORDER_GLOW_COLOR)){
+            for(AbstractCard c:AbstractDungeon.player.hand.group){
+                if(c.type==CardType.SKILL){
+                    c.flash(BATwinsCharacter.getColorWithCardColor(c.color));
+                }
+            }
+        }
     }
 }

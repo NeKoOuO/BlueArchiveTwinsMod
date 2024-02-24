@@ -4,9 +4,8 @@ import baModDeveloper.cards.BATwinsModCustomCard;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class BATwinsAbstractCardPatch{
     @SpirePatch(clz = AbstractCard.class,method = SpirePatch.CLASS)
@@ -18,7 +17,9 @@ public class BATwinsAbstractCardPatch{
         @SpireInsertPatch(loc = 3)
         public static void hoverPatch(AbstractCard __instance,boolean ___hovered){
             if(__instance instanceof BATwinsModCustomCard&&___hovered&&!((BATwinsModCustomCard) __instance).justHovered){
-                ((BATwinsModCustomCard) __instance).triggerOnHovered();
+                if(AbstractDungeon.player!=null){
+                    ((BATwinsModCustomCard) __instance).triggerOnHovered();
+                }
                 ((BATwinsModCustomCard) __instance).justHovered= true;
             }
         }

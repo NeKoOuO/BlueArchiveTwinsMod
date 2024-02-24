@@ -1,5 +1,6 @@
 package baModDeveloper.power;
 
+import baModDeveloper.action.BATwinsExchangeAction;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,20 +18,27 @@ public class BATwinsMasterCraftsmanshipPower extends AbstractPower {
     private static final String IMG_84=ModHelper.makeImgPath("power","MasterCraftsmanship84");
     private static final String IMG_32=ModHelper.makeImgPath("power","MasterCraftsmanship32");
 
-    public BATwinsMasterCraftsmanshipPower(AbstractCreature owner){
+    public BATwinsMasterCraftsmanshipPower(AbstractCreature owner,int amount){
         this.name=NAME;
         this.ID=POWER_ID;
         this.type=TYPE;
         this.owner=owner;
         this.region128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84),0,0,84,84);
         this.region48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32),0,0,32,32);
-        this.amount=-1;
+        this.amount=amount;
 
         updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        this.description=DESCRIPTIONS[0];
+        this.description=String.format(DESCRIPTIONS[0],this.amount);
+    }
+
+
+    @Override
+    public void atStartOfTurnPostDraw() {
+        this.flash();
+        addToBot(new BATwinsExchangeAction(this.amount));
     }
 }

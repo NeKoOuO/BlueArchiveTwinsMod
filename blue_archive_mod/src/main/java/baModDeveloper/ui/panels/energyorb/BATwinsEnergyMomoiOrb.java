@@ -14,6 +14,8 @@ public class BATwinsEnergyMomoiOrb extends CustomEnergyOrb{
     private Texture orbMark;
     private static final int ORB_W = 128;
 	private static final float ORB_IMG_SCALE = 1.15f * Settings.scale;
+	private static float JEWELRY_DEV_X=20.0F;
+	private static float JEWELRY_DEV_Y=-90.0F;
     
     public BATwinsEnergyMomoiOrb(String[] orbTexturePaths, String orbVfxPath, float[] layerSpeeds) {
         super(orbTexturePaths,orbVfxPath,layerSpeeds);
@@ -31,7 +33,7 @@ public class BATwinsEnergyMomoiOrb extends CustomEnergyOrb{
     public void renderOrb(SpriteBatch sb, boolean enabled, float current_x, float current_y){
         sb.setColor(Color.WHITE);
 		if(BATwinsEnergyPanel.selectedEnergySlot== BATwinsEnergyPanel.EnergyType.MOMOI){
-			sb.draw(this.orbMark,current_x+20.0F,current_y-45.0F,70.0F/2,115.0F/2);
+			sb.draw(this.orbMark,current_x+JEWELRY_DEV_X*Settings.scale,current_y+JEWELRY_DEV_Y*Settings.scale,70.0F*Settings.scale,115.0F*Settings.scale);
 		}
         if(enabled){
             for(int i=0;i<energyLayers.length;++i){

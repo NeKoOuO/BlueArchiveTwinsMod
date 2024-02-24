@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -51,8 +52,12 @@ public class BATwinsBurnPower extends AbstractPower{
 //            if (m != this.owner)
 //                addToBot(new DamageAction(m, new DamageInfo(this.owner, this.amount / 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
 //        }
+        this.flashWithoutSound();
         addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
-
+        this.amount--;
+        if(this.amount==0){
+            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,this));
+        }
     }
 
     @Override

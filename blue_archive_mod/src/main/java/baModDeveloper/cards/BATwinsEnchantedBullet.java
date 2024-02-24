@@ -26,7 +26,7 @@ public class BATwinsEnchantedBullet extends BATwinsModCustomCard{
 
     public BATwinsEnchantedBullet() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber=8;
+        this.baseMagicNumber=6;
         this.magicNumber=this.baseMagicNumber;
     }
 
@@ -44,7 +44,7 @@ public class BATwinsEnchantedBullet extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.upgradeMagicNumber(4);
+            this.upgradeMagicNumber(2);
         }
     }
 }

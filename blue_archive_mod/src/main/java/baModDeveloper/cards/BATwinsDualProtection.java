@@ -51,8 +51,8 @@ public class BATwinsDualProtection extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-//            this.upgradeBlock(3);
-            this.upgradeMagicNumber(1);
+            this.upgradeBlock(3);
+//            this.upgradeMagicNumber(1);
         }
     }
 }

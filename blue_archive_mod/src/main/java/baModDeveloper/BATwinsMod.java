@@ -88,7 +88,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsInspirationEmergence());
         BaseMod.addCard(new BATwinsEnchantedBullet());
 //        BaseMod.addCard(new BATwinsPassageInForce());
-        BaseMod.addCard(new BATwinsSiteAdaptation());
+//        BaseMod.addCard(new BATwinsSiteAdaptation());
         BaseMod.addCard(new BATwinsOnceMore());
         BaseMod.addCard(new BATwinsBadDesigner());
         BaseMod.addCard(new BATwinsExcellentDesigner());
@@ -104,7 +104,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsCoolingTime());
         BaseMod.addCard(new BATwinsDoubleExperience());
         BaseMod.addCard(new BATwinsBDStudy());
-        BaseMod.addCard(new BATwinsEmergencyRecovery());
+//        BaseMod.addCard(new BATwinsEmergencyRecovery());
         BaseMod.addCard(new BATwinsAbstractSchool());
         BaseMod.addCard(new BATwinsDefensiveCounterattack());
 //        BaseMod.addCard(new BATwinsAdventureRewards());
@@ -152,6 +152,11 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsItsSoPainful());
         BaseMod.addCard(new BATwinsCollaboration());
         BaseMod.addCard(new BATwinsPenetrationDamage());
+        BaseMod.addCard(new BATwinsCheckTheStrategy());
+        BaseMod.addCard(new BATwinsLoginRewards());
+        BaseMod.addCard(new BATwinsLearned());
+        BaseMod.addCard(new BATwinsForceDetonation());
+        BaseMod.addCard(new BATwinsScriptRewriting());
     }
 
     @Override
@@ -198,6 +203,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addRelic(new BATwinsAncientGameCartridges(),RelicType.SHARED);
         BaseMod.addRelic(new BATwinsByProving(),RelicType.SHARED);
         BaseMod.addRelicToCustomPool(new BATwinsGameMagazine(),Enums.BATWINS_MOMOI_CARD);
+
     }
 
     @Override

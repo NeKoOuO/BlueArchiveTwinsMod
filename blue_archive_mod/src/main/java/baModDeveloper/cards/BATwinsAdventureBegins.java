@@ -27,23 +27,23 @@ public class BATwinsAdventureBegins extends BATwinsModCustomCard{
     private static final CardTarget TARGET=CardTarget.SELF_AND_ENEMY;
     private static final CardRarity RARITY=CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
-    private ArrayList<AbstractCard> cardsToBringOut;
+//    private ArrayList<AbstractCard> cardsToBringOut;
     public static CardType[] TYPES={CardType.ATTACK,CardType.SKILL,CardType.POWER,CardType.STATUS,CardType.CURSE};
 
     public BATwinsAdventureBegins() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        cardsToBringOut=new ArrayList<>();
+//        cardsToBringOut=new ArrayList<>();
         initializeDescription();
         initializationFlavor();
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        for(AbstractCard card:cardsToBringOut){
-            addToBot(new BATwinsPlayTempCardAction(card,this.numberOfConnections+1));
-        }
+//        for(AbstractCard card:cardsToBringOut){
+//            addToBot(new BATwinsPlayTempCardAction(card,this.numberOfConnections+1));
+//        }
         ArrayList<CardType> types=new ArrayList<>();
-        for(AbstractCard c:this.cardsToBringOut){
+        for(AbstractCard c:this.cardToBringOut){
             types.add(c.type);
         }
         addToBot(new BATwinsAdventureBeginsAction(types,1,this.upgraded,this));
@@ -65,18 +65,21 @@ public class BATwinsAdventureBegins extends BATwinsModCustomCard{
         }
     }
 
-    public void addToBringOutCards(AbstractCard card){
-        this.cardsToBringOut.add(card);
+
+    @Override
+    public void addBringOutCard(AbstractCard card) {
+        super.addBringOutCard(card);
         initializationFlavor();
+
     }
 
     public void initializationFlavor(){
         StringBuilder stringBuilder=new StringBuilder();
         for(int i=0;i<CARD_STRINGS.EXTENDED_DESCRIPTION.length;i++){
             int finalI = i;
-            if(this.cardsToBringOut!=null&&this.cardsToBringOut.stream().anyMatch(c->BATwinsAdventureBegins.TYPES[finalI]==c.type)){
+            if(this.cardToBringOut!=null&&this.cardToBringOut.stream().anyMatch(c->BATwinsAdventureBegins.TYPES[finalI]==c.type)){
                 stringBuilder.append(" #r");
-                Optional<AbstractCard> card=this.cardsToBringOut.stream().filter(c->c.type==BATwinsAdventureBegins.TYPES[finalI]).findFirst();
+                Optional<AbstractCard> card=this.cardToBringOut.stream().filter(c->c.type==BATwinsAdventureBegins.TYPES[finalI]).findFirst();
                 card.ifPresent(abstractCard -> stringBuilder.append(abstractCard.name));
             }else{
                 stringBuilder.append(" #g");

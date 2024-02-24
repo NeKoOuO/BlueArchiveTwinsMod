@@ -18,10 +18,10 @@ public class BATwinsConvenientConnectivity extends BATwinsModCustomCard{
     private static final int COST=1;
     private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE=CardType.SKILL;
-    private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
+    private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET=CardTarget.NONE;
     private static final CardRarity RARITY=CardRarity.RARE;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MIDORI;
 
     public BATwinsConvenientConnectivity() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);

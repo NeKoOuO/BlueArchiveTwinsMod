@@ -31,9 +31,9 @@ public class BATwinsParoxysmalPain extends BATwinsModCustomCard{
 
     public BATwinsParoxysmalPain() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage=6;
+        this.baseDamage=4;
         this.isMultiDamage=true;
-        this.baseMagicNumber=6;
+        this.baseMagicNumber=4;
         this.magicNumber=this.baseMagicNumber;
     }
 
@@ -41,7 +41,7 @@ public class BATwinsParoxysmalPain extends BATwinsModCustomCard{
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();
-            this.upgradeDamage(3);
+            this.upgradeDamage(2);
             this.upgradeMagicNumber(2);
         }
     }

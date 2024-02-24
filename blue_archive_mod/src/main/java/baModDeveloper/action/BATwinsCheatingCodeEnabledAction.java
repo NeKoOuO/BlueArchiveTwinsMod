@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import javax.smartcardio.Card;
 import java.util.ArrayList;
 
 public class BATwinsCheatingCodeEnabledAction extends AbstractGameAction {

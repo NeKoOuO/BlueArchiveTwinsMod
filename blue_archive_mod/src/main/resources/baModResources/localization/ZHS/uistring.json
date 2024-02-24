@@ -53,7 +53,8 @@
 			"存储",
 			"加入手牌",
 			"升级",
-			"交换"
+			"交换",
+			"放入%s"
 		]
 	},
 	"BATwinsMod:CancelButton":{
@@ -69,6 +70,18 @@
 	"BATwinsMod:CardViewBtn":{
 		"TEXT":[
 			"看交换后"
+		]
+	},
+	"BATwinsMod:EnergyOrbLabel":{
+		"TEXT":[
+			"小桃能量",
+			"小绿能量"
+		]
+	},
+	"BATwinsMod:EnergyOrbMsg":{
+		"TEXT":[
+			"你当前的小桃能量，打出桃牌时优先消耗这个能量。不足时消耗两倍小绿能量代替。",
+			"你当前的小绿能量，打出绿牌时优先消耗这个能量。不足时消耗两倍小桃能量代替。"
 		]
 	}
 }

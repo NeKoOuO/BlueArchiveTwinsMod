@@ -50,6 +50,11 @@ public class BATwinsTwoStageAttack extends BATwinsModCustomCard{
     }
 
     @Override
+    public void triggerOnSuperConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        this.triggerOnConnectPlayed(abstractPlayer,abstractMonster);
+    }
+
+    @Override
     public void upgrade() {
         if(!upgraded){
             this.upgradeName();

@@ -29,7 +29,7 @@ public class BATwinsAlreadyAngry extends BATwinsModCustomCard{
 
     public BATwinsAlreadyAngry() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage=9;
+        this.baseDamage=8;
         this.damage=this.baseDamage;
         this.baseMagicNumber=5;
         this.magicNumber=this.baseMagicNumber;
@@ -40,7 +40,7 @@ public class BATwinsAlreadyAngry extends BATwinsModCustomCard{
         if(!upgraded){
             this.upgradeName();
             this.upgradeDamage(4);
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(1);
         }
     }
 

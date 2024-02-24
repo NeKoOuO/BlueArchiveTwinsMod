@@ -3,6 +3,7 @@ package baModDeveloper.cards;
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.action.BATwinsPlayTempCardAction;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.power.BATwinsBorrowMePower;
 import baModDeveloper.power.BATwinsDoubleExperiencePower;
 import baModDeveloper.power.BATwinsExperiencePower;
@@ -36,10 +37,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     private float gradientDuration=0.0F;
 
     public int numberOfConnections=0;
-    public boolean blockTheOriginalEffect=false;
     public boolean justHovered=false;
-    private boolean bringOutCard=false;
-    private AbstractCard cardToBringOut;
+    protected boolean bringOutCard=false;
+    protected ArrayList<AbstractCard> cardToBringOut=new ArrayList<>();
     protected String originRawDescription;
 //    public boolean playedByOtherCard=false;
     public BATwinsModCustomCard(String ID, String NAME, String IMG_PATH, int COST, String DESCRIPTION, CardType TYPE, CardColor COLOR, CardRarity RARITY, CardTarget TARGET, BATwinsEnergyPanel.EnergyType ENERGYTYPE) {
@@ -175,6 +175,8 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         }
         if(this.bringOutCard){
             temp.bringOutCard=true;
+            temp.GradientColor=this.GradientColor;
+            temp.glowColor=this.glowColor;
             temp.cardToBringOut=this.cardToBringOut;
             temp.cardsToPreview=this.cardsToPreview;
         }
@@ -211,7 +213,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if(!this.blockTheOriginalEffect){
+        if(!BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.get(this)){
             if (this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
                 useMOMOI(abstractPlayer,abstractMonster);
             } else if (this.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
@@ -233,8 +235,8 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             this.bringOutCard();
         }
         this.numberOfConnections=0;
-        this.blockTheOriginalEffect=false;
-        if(!this.freeToPlay()&&!this.freeToPlayOnce){
+        BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(this,false);
+        if(AbstractDungeon.player instanceof BATwinsCharacter&&!this.freeToPlay()&&!this.freeToPlayOnce){
             if(this.costForTurn>0) {
                 if(AbstractDungeon.player.hasPower(BATwinsDoubleExperiencePower.POWER_ID)){
                     addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsExperiencePower(abstractPlayer, this.costForTurn*2)));
@@ -324,8 +326,11 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 
     public void addBringOutCard(AbstractCard card){
         this.bringOutCard=true;
-        this.cardToBringOut=card.makeStatEquivalentCopy();
-        this.cardsToPreview=card.makeCopy();
+        this.cardToBringOut.add(card.makeSameInstanceOf());
+        if(this.cardsToPreview==null){
+            this.cardsToPreview=this.cardToBringOut.get(0);
+        }
+//        this.cardsToPreview=card.makeCopy();
         if(this.modifyEnergyType== BATwinsEnergyPanel.EnergyType.SHARE){
             this.GradientColor.add(Color.ORANGE);
         }else {
@@ -333,10 +338,53 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         }
 
     }
+    public boolean hasCardInBringOutCards(AbstractCard card){
+        if(this.bringOutCard){
+            if(this.cardToBringOut.stream().anyMatch(card1 -> card1.cardID.equals(card.cardID))){
+                return true;
+            }
+        }
+        return false;
+    }
     public void bringOutCard(){
         if(this.bringOutCard){
-            addToBot(new BATwinsPlayTempCardAction(this.cardToBringOut.makeStatEquivalentCopy(),this.numberOfConnections+1));
+            for(AbstractCard c:this.cardToBringOut)
+                addToBot(new BATwinsPlayTempCardAction(c.makeStatEquivalentCopy(),this.numberOfConnections+1));
         }
     }
 
+    @Override
+    public void renderCardPreview(SpriteBatch sb) {
+        super.renderCardPreview(sb);
+        int count=2;
+        if(this.bringOutCard){
+            for(AbstractCard c:this.cardToBringOut){
+                if(this.cardsToPreview!=c){
+                    float tmpScale=this.drawScale*0.8F;
+                    if (this.current_x > (float)Settings.WIDTH * 0.75F) {
+                        c.current_x = this.current_x + ((IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * 0.8F + 12.0F) * this.drawScale)*count;
+                    } else {
+                        c.current_x = this.current_x - ((IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * 0.8F + 12.0F) * this.drawScale)*count;
+                    }
+                    c.current_y = this.current_y + (IMG_HEIGHT / 2.0F - IMG_HEIGHT / 2.0F * 0.8F) * this.drawScale;
+//                    c.current_y=c.current_y-IMG_HEIGHT*0.15F*count;
+                    c.drawScale=tmpScale;
+                    c.render(sb);
+                    count++;
+                }
+
+            }
+        }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+
+        if(this.bringOutCard){
+            for(AbstractCard c:this.cardToBringOut){
+                c.applyPowers();
+            }
+        }
+    }
 }

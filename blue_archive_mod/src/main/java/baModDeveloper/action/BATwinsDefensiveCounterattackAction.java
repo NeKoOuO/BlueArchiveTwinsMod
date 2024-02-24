@@ -34,7 +34,7 @@ public class BATwinsDefensiveCounterattackAction extends AbstractGameAction {
             } else {
                 cardToPlay = new BATwinsMidoriStrick();
             }
-            addToTop(new BATwinsPlayTempCardAction(cardToPlay,1));
+            addToTop(new BATwinsPlayTempCardAction(cardToPlay,1,target));
 
         }
         this.isDone=true;

@@ -6,6 +6,7 @@ import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,6 +34,8 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseDamage=5;
         this.damage=this.baseDamage;
+        this.baseMagicNumber=1;
+        this.magicNumber=this.baseMagicNumber;
     }
 
     @Override
@@ -44,13 +47,15 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard{
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         ArrayList<CardColor> colors=new ArrayList<>();
         for(AbstractCard c: AbstractDungeon.player.hand.group){
-            if(!colors.contains(c.color)){
+            if(!colors.contains(c.color)&&c!=this){
                 colors.add(c.color);
             }
         }
         for(int i=0;i<colors.size();i++){
             addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         }
+        if(!colors.isEmpty())
+            addToBot(new DrawCardAction(colors.size()));
     }
 
     @Override
