@@ -26,7 +26,7 @@ public class BATwinsArtPolishing extends BATwinsModCustomCard{
 
     public BATwinsArtPolishing() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber=2;
+        this.baseMagicNumber=1;
         this.magicNumber=this.baseMagicNumber;
     }
 

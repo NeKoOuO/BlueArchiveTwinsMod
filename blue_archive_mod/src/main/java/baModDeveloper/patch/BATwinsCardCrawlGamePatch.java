@@ -1,5 +1,6 @@
 package baModDeveloper.patch;
 
+import baModDeveloper.cards.BATwinsColorEgg;
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.character.BATwinsCharacter;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -24,6 +25,13 @@ public class BATwinsCardCrawlGamePatch {
                     if(___p.masterDeck.group.get(i) instanceof BATwinsModCustomCard){
                         ((BATwinsModCustomCard) ___p.masterDeck.group.get(i)).conversionColor(false);
                     }
+                }
+                if(cards.get(i).id.equals(BATwinsColorEgg.ID)){
+                    BATwinsColorEgg c=new BATwinsColorEgg();
+                    if(cards.get(i).upgrades>0){
+                        c.upgrade();
+                    }
+                    ___p.masterDeck.group.set(i,new BATwinsColorEgg());
                 }
             }
 

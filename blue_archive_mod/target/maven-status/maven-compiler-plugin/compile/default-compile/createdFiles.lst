@@ -1,3 +1,4 @@
+baModDeveloper\patch\BATwinsGameTipPatch.class
 baModDeveloper\patch\BATwinsRunPathElementPatch.class
 baModDeveloper\cards\BATwinsIgniteTheUpperBody.class
 baModDeveloper\patch\BATwinsMetricDataPatch.class
@@ -38,6 +39,7 @@ baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$openPatch2.class
 baModDeveloper\action\BATwinsBDStudyAction.class
 baModDeveloper\cards\BATwinsExcellentDesigner.class
 baModDeveloper\cards\BATwinsRepeatOperation.class
+baModDeveloper\patch\BATwinsCharacterOptionPatch$updateHitboxPatch.class
 baModDeveloper\cards\BATwinsAdventureBattle.class
 baModDeveloper\cards\BATwinsNotReconciled.class
 baModDeveloper\action\BATwinsDrawOrDisCardToHandAction$Pile.class
@@ -72,6 +74,7 @@ baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$constructorPatch.class
 baModDeveloper\cards\BATwinsSiteAdaptation.class
 baModDeveloper\action\BATwinsPropCollectionAction.class
 baModDeveloper\cards\BATwinsSelfConnectivity.class
+baModDeveloper\patch\BATwinsGameTipPatch$initializePatch.class
 baModDeveloper\effect\BATwinsExchangeCardEffect.class
 baModDeveloper\cards\BATwinsInterpretiveError.class
 baModDeveloper\cards\BATwinsMandatoryInstruction.class
@@ -182,6 +185,7 @@ baModDeveloper\cards\BATwinsCheatingCodeEnabled.class
 baModDeveloper\ui\panels\icons\BATwinsMomoiEnergyOrbSmall.class
 baModDeveloper\patch\BATwinsLoadLayerSaveFix.class
 baModDeveloper\action\BATwinsCoversionColorAction.class
+baModDeveloper\patch\BATwinsCharacterOptionPatch.class
 baModDeveloper\cards\BATwinsShiftingAndGhosting.class
 baModDeveloper\action\BATwinsAdventureOpeningAction.class
 baModDeveloper\cards\BATwinsPlotRepair.class
@@ -207,6 +211,7 @@ baModDeveloper\cards\BATwinsParoxysmalPain.class
 baModDeveloper\cards\BATwinsAdditionalAttacks.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$openPatch.class
 baModDeveloper\cards\BATwinsPaintingArt.class
+baModDeveloper\cards\BATwinsColorEgg.class
 baModDeveloper\patch\BATwinsCardGroupPatch.class
 baModDeveloper\cards\BATwinsMaidForm.class
 baModDeveloper\cards\BATwinsEnchantedBullet.class

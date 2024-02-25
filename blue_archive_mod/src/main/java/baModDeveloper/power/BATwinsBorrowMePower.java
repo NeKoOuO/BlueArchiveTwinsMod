@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class BATwinsBorrowMePower extends AbstractPower {
     public static final String POWER_ID= ModHelper.makePath("BorrowMePower");
-    private static final AbstractPower.PowerType TYPE=PowerType.DEBUFF;
+    private static final AbstractPower.PowerType TYPE=PowerType.BUFF;
     private static final PowerStrings powerStrings= CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME=powerStrings.NAME;
     private static final String[] DESCRIPTIONS=powerStrings.DESCRIPTIONS;

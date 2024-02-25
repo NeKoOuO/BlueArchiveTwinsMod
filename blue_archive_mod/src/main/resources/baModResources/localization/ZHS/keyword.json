@@ -57,7 +57,7 @@
 		"NAMES":[
 			"连携"
 		],
-		"DESCRIPTION":"被其他卡的效果打出时触发。"
+		"DESCRIPTION":"被其他卡或能力的效果打出时触发。"
 	},
 	{
 		"NAMES":[

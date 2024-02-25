@@ -9,6 +9,7 @@ import baModDeveloper.helpers.ColorComparer;
 import baModDeveloper.helpers.ImageHelper;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
+import baModDeveloper.patch.BATwinsCharacterOptionPatch;
 import baModDeveloper.power.BATwinsBorrowMePower;
 import baModDeveloper.relic.BATwinsGameMagazine;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
@@ -256,6 +257,11 @@ public class BATwinsCharacter extends CustomPlayer {
         retVal.add(BATwinsMidoriDefend.ID);
         retVal.add(BATwinsAlreadyAngry.ID);
         retVal.add(BATwinsPaintingConception.ID);
+
+        if(BATwinsCharacterOptionPatch.updateHitboxPatch.FindColorEgg){
+            this.masterDeck.addToBottom(new BATwinsColorEgg());
+            BATwinsCharacterOptionPatch.updateHitboxPatch.FindColorEgg=false;
+        }
         return retVal;
     }
 
