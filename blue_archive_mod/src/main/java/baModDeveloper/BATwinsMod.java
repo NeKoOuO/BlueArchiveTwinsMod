@@ -5,15 +5,22 @@ import baModDeveloper.event.BATwinsTrainingCamp;
 import baModDeveloper.relic.*;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
 import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.Settings.GameLanguage;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 
 import baModDeveloper.character.BATwinsCharacter;
@@ -21,6 +28,7 @@ import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.helpers.ModHelper;
 import basemod.BaseMod;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -51,6 +59,12 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
     private static final String MIDORI_BIG_ORB = ModHelper.makeImgPath("512", "card_orb_2");
     private static final String MOMOI_ENERGY_ORB = ModHelper.makeImgPath("1024", "cost_orb");
     private static final String MIDORI_ENERGY_ORB = ModHelper.makeImgPath("1024", "cost_orb_2");
+
+
+
+    //模组选项
+    public static boolean AutoSort=true;
+    public static boolean ShowExpBar=true;
 
     public BATwinsMod() {
         BaseMod.subscribe(this);
@@ -214,6 +228,45 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
 
     @Override
     public void receivePostInitialize() {
+        try {
+            CreateConfig();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         BaseMod.addEvent(BATwinsTrainingCamp.ID,BATwinsTrainingCamp.class);
+    }
+
+    private void CreateConfig() throws IOException {
+        SpireConfig spireConfig=new SpireConfig("BATwinsMod","Common");
+        ModPanel settingPanel=new ModPanel();
+        ModLabeledToggleButton autoSort=new ModLabeledToggleButton("AutoSort",500.0F,600.0F, Settings.CREAM_COLOR, FontHelper.charDescFont,AutoSort,settingPanel,modLabel -> {
+
+        },modToggleButton -> {
+            spireConfig.setBool("AutoSort",AutoSort=modToggleButton.enabled);
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+            try{
+                spireConfig.save();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        });
+
+        settingPanel.addUIElement(autoSort);
+
+        ModLabeledToggleButton showExpBar=new ModLabeledToggleButton("ShowExpBar",500.0F,400.0F, Settings.CREAM_COLOR, FontHelper.charDescFont,ShowExpBar,settingPanel,modLabel -> {
+
+        },modToggleButton -> {
+            spireConfig.setBool("ShowExpBar",ShowExpBar=modToggleButton.enabled);
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+            try{
+                spireConfig.save();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        });
+
+        settingPanel.addUIElement(showExpBar);
+        Texture badgeTexture = ImageMaster.loadImage(ModHelper.makeImgPath("UI","configButton"));
+        BaseMod.registerModBadge(badgeTexture,"BATwinsMod","0v0","config",settingPanel);
     }
 }

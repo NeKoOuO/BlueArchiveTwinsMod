@@ -164,7 +164,8 @@ public class BATwinsCharacter extends CustomPlayer {
 
         colorComparer=new ColorComparer();
 
-        expPanel=new BATwinsExperencePanel(this.drawX,this.drawY);
+        expPanel=new BATwinsExperencePanel(this.drawX-230*Settings.scale,this.drawY);
+        expPanel.show();
     }
 
     @Override
@@ -428,10 +429,14 @@ public class BATwinsCharacter extends CustomPlayer {
     public void update() {
         super.update();
 //        this.character3DHelper.update();
-
         //排序手牌
-        if(AbstractDungeon.getCurrRoom().phase== AbstractRoom.RoomPhase.COMBAT)
-            this.hand.group.sort(colorComparer);
+        if(AbstractDungeon.getCurrRoom().phase== AbstractRoom.RoomPhase.COMBAT) {
+            if(BATwinsMod.AutoSort)
+                this.hand.group.sort(colorComparer);
+            if(BATwinsMod.ShowExpBar)
+                this.expPanel.update();
+
+        }
     }
     private static final Color BLUE_BORDER_GLOW_COLOR = new Color(0.2F, 0.9F, 1.0F, 0.25F);
 
@@ -455,8 +460,8 @@ public class BATwinsCharacter extends CustomPlayer {
 //        }
         super.render(sb);
 
-
-//        this.expPanel.render(sb);
+        if(BATwinsMod.ShowExpBar&&AbstractDungeon.getCurrRoom().phase==AbstractRoom.RoomPhase.COMBAT)
+            this.expPanel.render(sb);
 //        character3DHelper.render(sb,this.drawX,this.drawY);
     }
 //    public enum AnimationChar{
@@ -506,7 +511,6 @@ public class BATwinsCharacter extends CustomPlayer {
 //        this.setAnimation(AnimationChar.MOMOI,Animation.RUN);
 //        this.setAnimation(AnimationChar.MIDORI,Animation.RUN);
     }
-
 
 
     @Override

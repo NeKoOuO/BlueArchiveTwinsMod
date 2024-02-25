@@ -1,12 +1,15 @@
 package baModDeveloper.power;
 
+import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.ui.panels.BATwinsExperencePanel;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -48,6 +51,9 @@ public class BATwinsExperiencePower extends AbstractPower {
                 this.amount=this.amount-MAX;
                 LEVEL++;
                 addToTop(new TextAboveCreatureAction(this.owner,DESCRIPTIONS[4]));
+                if(AbstractDungeon.player instanceof BATwinsCharacter){
+                    BATwinsExperencePanel.LevelUp();
+                }
             }else{
                 break;
             }
@@ -75,6 +81,11 @@ public class BATwinsExperiencePower extends AbstractPower {
         if(clearExp){
             this.amount=0;
         }
+        addToTop(new TextAboveCreatureAction(this.owner,DESCRIPTIONS[4]));
+
         updateDescription();
+        if(AbstractDungeon.player instanceof BATwinsCharacter){
+            BATwinsExperencePanel.LevelUp();
+        }
     }
 }

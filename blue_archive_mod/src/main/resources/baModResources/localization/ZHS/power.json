@@ -157,7 +157,7 @@
 	},
 	"BATwinsMod:BorrowMePower":{
 		"NAME":"借用一下",
-		DESCRIPTIONS:[
+		"DESCRIPTIONS":[
 			"本回合所有牌视为 batwinsmod:共有 。"
 		]
 	},
