@@ -1,10 +1,13 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsPlayHandCardAction;
+import baModDeveloper.action.BATwinsSelectHandCardToPlayAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.power.BATwinsFlatFallPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,6 +16,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.EntanglePower;
 
 import java.util.ArrayList;
 
@@ -40,14 +44,12 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        ArrayList<AbstractCard> strikeCards=new ArrayList<>();
-        for(AbstractCard c: abstractPlayer.hand.group){
-            if(c.hasTag(CardTags.STRIKE)&&c!=this){
-                strikeCards.add(c);
-                addToBot(new BATwinsPlayHandCardAction(c,abstractMonster,this.numberOfConnections+1));
-            }
+        if(playedAttack(true)){
+            addToBot(new BATwinsSelectHandCardToPlayAction(null,abstractMonster,CardType.ATTACK));
+            addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsFlatFallPower(abstractPlayer)));
         }
-        abstractPlayer.hand.group.removeAll(strikeCards);
+
+//        abstractPlayer.hand.group.removeAll(strikeCards);
     }
 
     @Override
@@ -66,8 +68,30 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
 
     @Override
     public void triggerOnHovered() {
-        if(AbstractDungeon.player!=null){
-            AbstractDungeon.player.hand.group.stream().filter(card -> card.hasTag(CardTags.STRIKE)&&card!=this).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
+        if(playedAttack(false)){
+            AbstractDungeon.player.hand.group.stream().filter(card -> card.type==CardType.ATTACK&&card!=this).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
+        }
+    }
+
+    private boolean playedAttack(boolean playing){
+        int a=0;
+        if(playing){
+            a=1;
+        }
+        for(int i=0;i<AbstractDungeon.actionManager.cardsPlayedThisTurn.size()-a;i++){
+            if(AbstractDungeon.actionManager.cardsPlayedThisTurn.get(i).type==CardType.ATTACK){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if(playedAttack(false)){
+            this.glowColor=AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }else{
+            this.glowColor=AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 }

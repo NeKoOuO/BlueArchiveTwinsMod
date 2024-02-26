@@ -166,5 +166,11 @@
 		"DESCRIPTIONS":[
 			"卡牌造成的伤害和获得的格挡有%d的几率数值翻倍。"
 		]
+	},
+	"BATwinsMod:FlatFallPower":{
+		"NAME":"平地摔",
+		"DESCRIPTIONS":[
+			"本回合只能再打出%d张攻击牌。"
+		]
 	}
 }

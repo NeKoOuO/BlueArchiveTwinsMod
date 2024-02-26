@@ -1,9 +1,11 @@
 package baModDeveloper.patch;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.power.BATwinsFlatFallPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -31,6 +33,20 @@ public class BATwinsAbstractCardPatch{
             if(__instance instanceof BATwinsModCustomCard){
                 ((BATwinsModCustomCard) __instance).justHovered=false;
             }
+        }
+    }
+
+    @SpirePatch(clz = AbstractCard.class,method = "hasEnoughEnergy")
+    public static class hasEnoughEnergyPatch{
+        @SpireInsertPatch(rloc = 16)
+        public static SpireReturn<Boolean> hasEnoughEnergyPatch(AbstractCard _instance){
+            if(AbstractDungeon.player.hasPower(BATwinsFlatFallPower.POWER_ID)&&_instance.type== AbstractCard.CardType.ATTACK){
+                if(AbstractDungeon.player.getPower(BATwinsFlatFallPower.POWER_ID).amount==0){
+                    _instance.cantUseMessage=BATwinsModCustomCard.flatFallMsg.TEXT[0];
+                    return SpireReturn.Return(false);
+                }
+            }
+            return SpireReturn.Continue();
         }
     }
 }

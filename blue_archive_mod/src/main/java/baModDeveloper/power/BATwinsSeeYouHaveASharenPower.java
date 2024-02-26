@@ -52,7 +52,7 @@ public class BATwinsSeeYouHaveASharenPower extends AbstractPower {
             }
 
             for(AbstractMonster mo:AbstractDungeon.getCurrRoom().monsters.monsters){
-                if(mo!=m&&!mo.isDeadOrEscaped()){
+                if(!mo.isDeadOrEscaped()){
                     AbstractCard temp=card.makeSameInstanceOf();
                     AbstractDungeon.player.limbo.addToBottom(temp);
                     temp.current_x=card.current_x;
@@ -60,9 +60,7 @@ public class BATwinsSeeYouHaveASharenPower extends AbstractPower {
                     temp.target_x= Settings.WIDTH/2.0F-300.0F*Settings.scale;
                     temp.target_y=Settings.HEIGHT/2.0F;
 
-                    if(mo!=null){
-                        temp.calculateCardDamage(mo);
-                    }
+                    temp.calculateCardDamage(mo);
                     temp.purgeOnUse=true;
                     if(temp instanceof BATwinsModCustomCard){
                         ((BATwinsModCustomCard) temp).numberOfConnections=1;

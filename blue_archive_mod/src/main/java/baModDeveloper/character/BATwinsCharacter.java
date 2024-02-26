@@ -258,9 +258,10 @@ public class BATwinsCharacter extends CustomPlayer {
         retVal.add(BATwinsAlreadyAngry.ID);
         retVal.add(BATwinsPaintingConception.ID);
 
-        if(BATwinsCharacterOptionPatch.updateHitboxPatch.FindColorEgg){
-            this.masterDeck.addToBottom(new BATwinsColorEgg());
-            BATwinsCharacterOptionPatch.updateHitboxPatch.FindColorEgg=false;
+        if(BATwinsCharacterOptionPatch.updateHitboxPatch.FindEasterEgg){
+            this.masterDeck.addToBottom(new BATwinsEasterEgg());
+            BATwinsCharacterOptionPatch.updateHitboxPatch.PressCount=0;
+            BATwinsCharacterOptionPatch.updateHitboxPatch.FindEasterEgg=false;
         }
         return retVal;
     }

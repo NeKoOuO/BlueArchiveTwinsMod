@@ -9,6 +9,7 @@ baModDeveloper\helpers\Character3DHelper.class
 baModDeveloper\action\BATwinsForceDetonationAction.class
 baModDeveloper\relic\BATwinsGameMagazine.class
 baModDeveloper\helpers\TextureLoader.class
+baModDeveloper\power\BATwinsFlatFallPower.class
 baModDeveloper\cards\BATwinsAdventureOpening.class
 baModDeveloper\animation\GifDecoder$DixieMap.class
 baModDeveloper\cards\BATwinsPaintingConception.class
@@ -75,6 +76,7 @@ baModDeveloper\cards\BATwinsSiteAdaptation.class
 baModDeveloper\action\BATwinsPropCollectionAction.class
 baModDeveloper\cards\BATwinsSelfConnectivity.class
 baModDeveloper\patch\BATwinsGameTipPatch$initializePatch.class
+baModDeveloper\patch\BATwinsAbstractCardPatch$hasEnoughEnergyPatch.class
 baModDeveloper\effect\BATwinsExchangeCardEffect.class
 baModDeveloper\cards\BATwinsInterpretiveError.class
 baModDeveloper\cards\BATwinsMandatoryInstruction.class
@@ -168,6 +170,7 @@ baModDeveloper\cards\BATwinsDontSayIt.class
 baModDeveloper\action\BATwinsLoginRewardsAction.class
 baModDeveloper\cards\BATwinsMidoriDefend.class
 baModDeveloper\patch\BATwinsCancelButtonPatch$updatePatch.class
+baModDeveloper\cards\BATwinsEasterEgg.class
 baModDeveloper\cards\BATwinsDoubleExperience.class
 baModDeveloper\action\BATwinsEquipmentUpgradeAction.class
 baModDeveloper\action\BATwinsDisAllColorCards.class
@@ -211,7 +214,6 @@ baModDeveloper\cards\BATwinsParoxysmalPain.class
 baModDeveloper\cards\BATwinsAdditionalAttacks.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$openPatch.class
 baModDeveloper\cards\BATwinsPaintingArt.class
-baModDeveloper\cards\BATwinsColorEgg.class
 baModDeveloper\patch\BATwinsCardGroupPatch.class
 baModDeveloper\cards\BATwinsMaidForm.class
 baModDeveloper\cards\BATwinsEnchantedBullet.class

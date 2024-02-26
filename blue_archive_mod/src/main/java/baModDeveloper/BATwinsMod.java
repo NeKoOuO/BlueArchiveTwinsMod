@@ -15,6 +15,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -27,9 +28,11 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.helpers.ModHelper;
 import basemod.BaseMod;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Properties;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
 
@@ -74,6 +77,16 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
 
     public static void initialize() {
         new BATwinsMod();
+        try {
+            Properties defaults=new Properties();
+            defaults.setProperty(ModHelper.makePath("AutoSort"),"true");
+            defaults.setProperty(ModHelper.makePath("ShowExpBar"),"true");
+            SpireConfig config=new SpireConfig(ModHelper.getModID(),"Common",defaults);
+            AutoSort=config.getBool(ModHelper.makePath("AutoSort"));
+            ShowExpBar=config.getBool(ModHelper.makePath("ShowExpBar"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -224,6 +237,9 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
     public void receiveAddAudio() {
         BaseMod.addAudio(ModHelper.makePath("campfire_momoi"),ModHelper.makeAudioPath("campfire_momoi"));
         BaseMod.addAudio(ModHelper.makePath("campfire_midori"),ModHelper.makeAudioPath("campfire_midori"));
+        BaseMod.addAudio(ModHelper.makePath("colorEgg1"),ModHelper.makeAudioPath("colorEgg1"));
+        BaseMod.addAudio(ModHelper.makePath("colorEgg2"),ModHelper.makeAudioPath("colorEgg2"));
+
     }
 
     @Override
@@ -242,7 +258,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         ModLabeledToggleButton autoSort=new ModLabeledToggleButton("AutoSort",500.0F,600.0F, Settings.CREAM_COLOR, FontHelper.charDescFont,AutoSort,settingPanel,modLabel -> {
 
         },modToggleButton -> {
-            spireConfig.setBool("AutoSort",AutoSort=modToggleButton.enabled);
+            spireConfig.setBool(ModHelper.makePath("AutoSort"),AutoSort=modToggleButton.enabled);
             CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
             try{
                 spireConfig.save();
@@ -256,7 +272,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         ModLabeledToggleButton showExpBar=new ModLabeledToggleButton("ShowExpBar",500.0F,400.0F, Settings.CREAM_COLOR, FontHelper.charDescFont,ShowExpBar,settingPanel,modLabel -> {
 
         },modToggleButton -> {
-            spireConfig.setBool("ShowExpBar",ShowExpBar=modToggleButton.enabled);
+            spireConfig.setBool(ModHelper.makePath("ShowExpBar"),ShowExpBar=modToggleButton.enabled);
             CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
             try{
                 spireConfig.save();

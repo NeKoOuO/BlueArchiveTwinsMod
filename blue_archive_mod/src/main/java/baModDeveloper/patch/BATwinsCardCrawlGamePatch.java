@@ -1,10 +1,8 @@
 package baModDeveloper.patch;
 
-import baModDeveloper.cards.BATwinsColorEgg;
+import baModDeveloper.cards.BATwinsEasterEgg;
 import baModDeveloper.cards.BATwinsModCustomCard;
-import baModDeveloper.character.BATwinsCharacter;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
@@ -26,12 +24,12 @@ public class BATwinsCardCrawlGamePatch {
                         ((BATwinsModCustomCard) ___p.masterDeck.group.get(i)).conversionColor(false);
                     }
                 }
-                if(cards.get(i).id.equals(BATwinsColorEgg.ID)){
-                    BATwinsColorEgg c=new BATwinsColorEgg();
+                if(cards.get(i).id.equals(BATwinsEasterEgg.ID)){
+                    BATwinsEasterEgg c=new BATwinsEasterEgg();
                     if(cards.get(i).upgrades>0){
                         c.upgrade();
                     }
-                    ___p.masterDeck.group.set(i,new BATwinsColorEgg());
+                    ___p.masterDeck.group.set(i,new BATwinsEasterEgg());
                 }
             }
 

@@ -3,6 +3,7 @@ package baModDeveloper.cards;
 import baModDeveloper.action.BATwinsPlayHandCardAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -33,7 +34,7 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard{
 
     public BATwinsTakeABreak() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber=4;
+        this.baseMagicNumber=3;
         this.magicNumber=this.baseMagicNumber;
     }
 
@@ -49,7 +50,8 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard{
                 @Override
                 public void update() {
                     for(AbstractCard c:DrawCardAction.drawnCards){
-                        c.retain=true;
+                        if(!c.isEthereal)
+                            c.retain=true;
                     }
                     this.isDone=true;
                 }
@@ -67,7 +69,13 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard{
 
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DrawCardAction(this.magicNumber, new AbstractGameAction() {
+        int drawCards=this.magicNumber;
+        if(BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.get(this)){
+            drawCards=1;
+        }else{
+            drawCards+=1;
+        }
+        addToBot(new DrawCardAction(drawCards, new AbstractGameAction() {
             ArrayList<AbstractCard> canNotSelect=new ArrayList<>();
             {
                 this.duration= Settings.ACTION_DUR_FAST;
@@ -91,7 +99,7 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard{
                 }
                 if(!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved){
                     for(AbstractCard c:AbstractDungeon.handCardSelectScreen.selectedCards.group){
-                        AbstractDungeon.player.hand.addToTop(c);
+//                        AbstractDungeon.player.hand.addToTop(c);
                         addToTop(new BATwinsPlayHandCardAction(c,null,BATwinsTakeABreak.this.numberOfConnections+1));
                     }
                     AbstractDungeon.player.hand.group.addAll(canNotSelect);

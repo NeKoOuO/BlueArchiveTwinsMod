@@ -1,28 +1,36 @@
 package baModDeveloper.patch;
 
-import baModDeveloper.cards.BATwinsColorEgg;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.helpers.ModHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
-import org.lwjgl.Sys;
+
+import java.util.Random;
 
 public class BATwinsCharacterOptionPatch {
     @SpirePatch(clz = CharacterOption.class,method = "updateHitbox")
     public static class updateHitboxPatch{
-        private static int PressCount=0;
-        public static boolean FindColorEgg=false;
+        public static int PressCount=0;
+        public static boolean FindEasterEgg=false;
+        private static Random random=new Random();
         @SpireInsertPatch(rloc = 35)
         public static void updateHitboxPatch(CharacterOption _instance){
             if(_instance.c instanceof BATwinsCharacter){
                 PressCount++;
-                if(PressCount>9){
-                    FindColorEgg=true;
+                if(PressCount>9&&!FindEasterEgg){
+                    FindEasterEgg=true;
+                    if(random.nextBoolean()){
+                        CardCrawlGame.sound.playV(ModHelper.makePath("colorEgg1"),2.0F);
+                    }else{
+                        CardCrawlGame.sound.playV(ModHelper.makePath("colorEgg2"),2.0F);
+
+                    }
                 }
             }else{
                 PressCount=0;
-                FindColorEgg=false;
+                FindEasterEgg=false;
             }
             System.out.println("pressCount:"+PressCount);
         }

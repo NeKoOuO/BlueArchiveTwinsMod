@@ -3,11 +3,9 @@ package baModDeveloper.cards;
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.action.BATwinsPlayTempCardAction;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
-import baModDeveloper.power.BATwinsBorrowMePower;
-import baModDeveloper.power.BATwinsDoubleExperiencePower;
-import baModDeveloper.power.BATwinsExperiencePower;
-import baModDeveloper.power.BATwinsMasterCraftsmanshipPower;
+import baModDeveloper.power.*;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
@@ -18,8 +16,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.blights.AbstractBlight;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -41,6 +41,8 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     protected boolean bringOutCard=false;
     protected ArrayList<AbstractCard> cardToBringOut=new ArrayList<>();
     protected String originRawDescription;
+
+    public static UIStrings flatFallMsg= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("FlatFall"));
 //    public boolean playedByOtherCard=false;
     public BATwinsModCustomCard(String ID, String NAME, String IMG_PATH, int COST, String DESCRIPTION, CardType TYPE, CardColor COLOR, CardRarity RARITY, CardTarget TARGET, BATwinsEnergyPanel.EnergyType ENERGYTYPE) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
@@ -65,6 +67,12 @@ public abstract class BATwinsModCustomCard extends CustomCard {
                     if (AbstractDungeon.player.hasPower("Entangled") && this.type == AbstractCard.CardType.ATTACK) {
                         this.cantUseMessage = TEXT[10];
                         return false;
+                    }
+                    if(AbstractDungeon.player.hasPower(BATwinsFlatFallPower.POWER_ID)&&this.type== CardType.ATTACK){
+                        if(AbstractDungeon.player.getPower(BATwinsFlatFallPower.POWER_ID).amount==0){
+                            this.cantUseMessage=flatFallMsg.TEXT[0];
+                            return false;
+                        }
                     }
 
                     var1 = AbstractDungeon.player.relics.iterator();

@@ -48,7 +48,7 @@ public class BATwinsBorrowMe extends BATwinsModCustomCard{
             this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
-            this.selfRetain=true;
+            this.exhaust=false;
         }
     }
 }

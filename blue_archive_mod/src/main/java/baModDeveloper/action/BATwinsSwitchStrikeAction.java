@@ -18,17 +18,17 @@ public class BATwinsSwitchStrikeAction extends AbstractGameAction {
     @Override
     public void update() {
         CardGroup g=new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        for(AbstractCard c: AbstractDungeon.player.drawPile.group){
+        for(AbstractCard c: AbstractDungeon.player.hand.group){
             if(c.cardID.equals(BATwinsSwitchStrike.ID) &&c.color==this.color){
                 g.addToTop(c);
             }
         }
         if(!g.isEmpty()){
             AbstractCard temp=g.getRandomCard(AbstractDungeon.cardRandomRng);
-            if(this.target==null||this.target.isDead){
+            if(this.target.isDeadOrEscaped()){
                 this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
             }
-            addToTop(new BATwinsPlayDrawPailCardAction(temp,target,false,this.numberOfConnections));
+            addToTop(new BATwinsPlayHandCardAction(temp,target,this.numberOfConnections));
         }
         this.isDone=true;
     }

@@ -30,6 +30,10 @@ public class ModHelper {
         }
     }
 
+    public static String getModID(){
+        return "BATwinsMod";
+    }
+
     public static AbstractCard returnTrulyRandomCardInCombatByColor(AbstractCard.CardColor color){
         ArrayList<AbstractCard> list=new ArrayList<>();
         Iterator var1= AbstractDungeon.srcCommonCardPool.group.iterator();
