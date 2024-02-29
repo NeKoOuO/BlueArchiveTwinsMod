@@ -3,6 +3,7 @@ package baModDeveloper.cards;
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.action.BATwinsPlayTempCardAction;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.helpers.ImageHelper;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.power.*;
@@ -354,6 +355,17 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         }
         return false;
     }
+    public void clearBringOutCards(){
+        if (this.cardToBringOut.isEmpty()){
+            return;
+        }
+        if(this.cardsToPreview==this.cardToBringOut.get(0)){
+            this.cardsToPreview=null;
+        }
+        this.cardToBringOut.clear();
+        this.bringOutCard=false;
+        this.glowColor=AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+    }
     public void bringOutCard(){
         if(this.bringOutCard){
             for(AbstractCard c:this.cardToBringOut)
@@ -380,9 +392,15 @@ public abstract class BATwinsModCustomCard extends CustomCard {
                     c.render(sb);
                     count++;
                 }
+                this.renderCardChain(sb,c);
 
             }
         }
+    }
+    private void renderCardChain(SpriteBatch sb,AbstractCard card){
+//        card.current_x=108.0F;
+        sb.setColor(1.0F,1.0F,1.0F,1.0F);
+        sb.draw(ImageHelper.CHAIN, card.current_x,card.current_y, (float) (ImageHelper.CHAIN.getWidth()*card.drawScale*Settings.scale), (float) (ImageHelper.CHAIN.getHeight()*card.drawScale*Settings.scale));
     }
 
     @Override

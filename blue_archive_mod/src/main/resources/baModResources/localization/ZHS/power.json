@@ -8,8 +8,8 @@
     "BATwinsMod:DeveloperCollaborationPower":{
         "NAME":"开发者协同",
         "DESCRIPTIONS":[
-            "交替打出桃牌与绿牌后抽",
-            "张牌。",
+            "交替打出桃牌与绿牌后，卡牌的伤害和格挡上升",
+            "%。",
             "(打出的上张牌是：",
             ")",
             "桃牌",
@@ -17,8 +17,9 @@
             "无色牌",
             "诅咒牌",
             "其他牌",
-            "没有牌"
-        ]
+            "没有牌",
+			"当前上升"
+		]
     },
     "BATwinsMod:ArtPolishingPower":{
         "NAME":"艺术打磨",

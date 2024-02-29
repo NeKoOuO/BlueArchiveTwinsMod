@@ -20,6 +20,7 @@ baModDeveloper\cards\BATwinsModCustomCard.class
 baModDeveloper\cards\BATwinsPlotPrediction.class
 baModDeveloper\power\BATwinsShufflePower.class
 baModDeveloper\action\BATwinsSelectHandCardToPlayAction.class
+baModDeveloper\cards\BATwinsContinuousShooting.class
 baModDeveloper\action\BATwinsPlayTempCardAction.class
 baModDeveloper\cards\BATwinsCoverCharge.class
 baModDeveloper\cards\BATwinsModCustomCard$BATwinsAttackEffect.class
@@ -97,10 +98,12 @@ baModDeveloper\action\BATwinsSelectDrawPileCardToPlayAction.class
 baModDeveloper\power\BATwinsArtPolishingPower.class
 baModDeveloper\ui\panels\energyorb\BATwinsEnergyMidoriOrb.class
 baModDeveloper\cards\BATwinsLeaveItToMe.class
+baModDeveloper\effect\BATwinsEasterEggEffect.class
 baModDeveloper\cards\BATwinsBenefitReducingMagic.class
 baModDeveloper\cards\BATwinsDeveloperCollaboration.class
 baModDeveloper\patch\BATwinsDamageActionPatch$updatePatch.class
 baModDeveloper\animation\AbstractGIFCard.class
+baModDeveloper\cards\BATwinsBullet.class
 baModDeveloper\patch\BATwinsCampfireUIPatch.class
 baModDeveloper\action\BATwinsPlayHandCardAction.class
 baModDeveloper\power\BATwinsGainLENextTurnPower.class
@@ -119,6 +122,7 @@ baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$renderPatch.class
 baModDeveloper\power\BATwinsArtPolishingExchangePower.class
 baModDeveloper\cards\BATwinsTakeActionsSeparately.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch.class
+baModDeveloper\action\BATwinsClearBringOutCardAction.class
 baModDeveloper\power\BATwinsGainTENextTurnPower.class
 baModDeveloper\action\BATwinsExchangeAction.class
 baModDeveloper\cards\BATwinsAssault.class

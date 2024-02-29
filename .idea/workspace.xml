@@ -4,55 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="增加小彩蛋">
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsFlatFallPower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/power/FlatFall32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/power/FlatFall84.png" afterDir="false" />
+    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="卡牌效果修改：光速打击，切换打击，见着有份，强制连锁，暂且休整，借用一下">
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsClearBringOutCardAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsBullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsContinuousShooting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/effect/BATwinsEasterEggEffect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/Chain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/EasterEgg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/scence/Batwins1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/scence/Batwins2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/scence/Batwins3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/test.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/BATwinsMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/BATwinsMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsSwitchStrikeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsSwitchStrikeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsBorrowMe.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsBorrowMe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsColorEgg.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsEasterEgg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsDeveloperCollaboration.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsDeveloperCollaboration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsDualProtection.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsDualProtection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsEasterEgg.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsEasterEgg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsEnchantedBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsEnchantedBullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLightSpeedStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLightSpeedStrike.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsTakeABreak.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsTakeABreak.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/character/BATwinsCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/character/BATwinsCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/helpers/ModHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/helpers/ModHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsAbstractCardPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsAbstractCardPatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsCardCrawlGamePatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsCardCrawlGamePatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsPoisonGasBomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsPoisonGasBomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsSelfConnectivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsSelfConnectivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/helpers/ImageHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/helpers/ImageHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsCharacterOptionPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsCharacterOptionPatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsSeeYouHaveASharenPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsSeeYouHaveASharenPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsDeveloperCollaborationPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsDeveloperCollaborationPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/EnchantedBullet.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/EnchantedBullet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/EnchantedBullet_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/EnchantedBullet_p.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/cards.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/cards.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/keyword.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/keyword.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/power.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/power.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/uistring.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/uistring.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/BATwinsMod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/action/BATwinsSwitchStrikeAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/action/BATwinsSwitchStrikeAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsBorrowMe.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsBorrowMe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsColorEgg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/BATwinsMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/BATwinsMod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsDeveloperCollaboration.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsDeveloperCollaboration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsDualProtection.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsDualProtection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsEasterEgg.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsEasterEgg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsEnchantedBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsEnchantedBullet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsLightSpeedStrike.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsLightSpeedStrike.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$BATwinsAttackEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$BATwinsAttackEffect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$BATwinsCardTags.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$BATwinsCardTags.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsTakeABreak$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsTakeABreak$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsTakeABreak$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsTakeABreak$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsTakeABreak.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsTakeABreak.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter$Enums.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/helpers/ModHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/helpers/ModHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsAbstractCardPatch$FieldPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsAbstractCardPatch$FieldPatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsAbstractCardPatch$hoverPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsAbstractCardPatch$hoverPatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsAbstractCardPatch$unhoverPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsAbstractCardPatch$unhoverPatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsAbstractCardPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsAbstractCardPatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCardCrawlGamePatch$createPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCardCrawlGamePatch$createPatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCardCrawlGamePatch$loadPlayerSavePatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCardCrawlGamePatch$loadPlayerSavePatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCardCrawlGamePatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCardCrawlGamePatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch$updateHitboxPatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/power/BATwinsSeeYouHaveASharenPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/power/BATwinsSeeYouHaveASharenPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsPoisonGasBomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsPoisonGasBomb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsSelfConnectivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsSelfConnectivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter$Enums.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter$Enums.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/helpers/ImageHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/helpers/ImageHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch$updateHitboxPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch$updateHitboxPatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/power/BATwinsDeveloperCollaborationPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/power/BATwinsDeveloperCollaborationPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/img/cards/EnchantedBullet.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/img/cards/EnchantedBullet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/img/cards/EnchantedBullet_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/img/cards/EnchantedBullet_p.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/cards.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/cards.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/keyword.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/keyword.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/power.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/power.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/uistring.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/uistring.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +225,10 @@
       <workItem from="1708514362111" duration="2847000" />
       <workItem from="1708611447678" duration="3690000" />
       <workItem from="1708697384097" duration="50398000" />
-      <workItem from="1708950692469" duration="8011000" />
+      <workItem from="1708950692469" duration="8222000" />
+      <workItem from="1709030140582" duration="7386000" />
+      <workItem from="1709121944751" duration="3925000" />
+      <workItem from="1709208145506" duration="10002000" />
     </task>
     <task id="LOCAL-00001" summary="部分图片重新制作，万恶的idea！！！">
       <option name="closed" value="true" />
@@ -520,7 +526,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708867965204</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="卡牌效果修改：光速打击，切换打击，见着有份，强制连锁，暂且休整，借用一下">
+      <option name="closed" value="true" />
+      <created>1708958929008</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1708958929008</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +600,8 @@
     <MESSAGE value="增加经验条，增加选项" />
     <MESSAGE value="增加模型" />
     <MESSAGE value="增加小彩蛋" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加小彩蛋" />
+    <MESSAGE value="卡牌效果修改：光速打击，切换打击，见着有份，强制连锁，暂且休整，借用一下" />
+    <option name="LAST_COMMIT_MESSAGE" value="卡牌效果修改：光速打击，切换打击，见着有份，强制连锁，暂且休整，借用一下" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -620,7 +635,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java</url>
-          <line>222</line>
+          <line>223</line>
           <properties class="baModDeveloper.cards.BATwinsModCustomCard" method="use">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -709,15 +724,6 @@
           <option name="timeStamp" value="263" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/ui/panels/BATwinsExperencePanel.java</url>
-          <line>91</line>
-          <properties class="baModDeveloper.ui.panels.BATwinsExperencePanel" method="LevelUp">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="277" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar!/com/megacrit/cardcrawl/helpers/GameTips.class</url>
           <line>32</line>
           <properties class="com.megacrit.cardcrawl.helpers.GameTips" method="getTip">
@@ -734,6 +740,24 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="291" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsDeveloperCollaborationPower.java</url>
+          <line>141</line>
+          <properties class="baModDeveloper.power.BATwinsDeveloperCollaborationPower" method="atDamageFinalGive">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="298" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java</url>
+          <line>399</line>
+          <properties class="baModDeveloper.cards.BATwinsModCustomCard" method="renderCardChain">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="299" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsMysteriousChest.java</url>
@@ -844,6 +868,16 @@
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLightSpeedStrike.java</url>
           <line>45</line>
           <option name="timeStamp" value="292" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/effect/BATwinsEasterEggEffect.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="294" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java</url>
+          <line>364</line>
+          <option name="timeStamp" value="300" />
         </line-breakpoint>
         <breakpoint type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />

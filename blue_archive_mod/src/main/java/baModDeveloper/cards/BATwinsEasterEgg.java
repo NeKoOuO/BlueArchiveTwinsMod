@@ -1,11 +1,14 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.effect.BATwinsEasterEggEffect;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.patch.BATwinsCharacterOptionPatch;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -37,6 +40,7 @@ public class BATwinsEasterEgg extends CustomCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        AbstractDungeon.effectList.add(new BATwinsEasterEggEffect(BATwinsCharacterOptionPatch.updateHitboxPatch.random.nextBoolean(),this.upgraded));
         addToBot(new DrawCardAction(this.magicNumber));
     }
 

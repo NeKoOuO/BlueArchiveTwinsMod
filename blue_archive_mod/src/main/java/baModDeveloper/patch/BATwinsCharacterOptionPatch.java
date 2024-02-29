@@ -14,7 +14,7 @@ public class BATwinsCharacterOptionPatch {
     public static class updateHitboxPatch{
         public static int PressCount=0;
         public static boolean FindEasterEgg=false;
-        private static Random random=new Random();
+        public static Random random=new Random();
         @SpireInsertPatch(rloc = 35)
         public static void updateHitboxPatch(CharacterOption _instance){
             if(_instance.c instanceof BATwinsCharacter){

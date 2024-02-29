@@ -26,7 +26,7 @@
         "DESCRIPTION":"获得 !B! 点格挡，获得 [batwinsmod:momoiorbicon] 。"
     },
     "BATwinsMod:ParoxysmalPain":{
-        "NAME":"创作的痛苦",
+        "NAME":"创作之痛",
         "DESCRIPTION":"对全体敌人造成 !D! 点伤害，给予 !M! 层 batwinsmod:灼伤 。"
     },
     "BATwinsMod:PaintingArt":{
@@ -35,7 +35,7 @@
     },
     "BATwinsMod:DeveloperCollaboration":{
         "NAME":"开发者协同",
-        "DESCRIPTION":" batwinsmod:共有 。 NL 回合内交替打出 batwinsmod:桃牌 与 batwinsmod:绿牌 后抽 !M! 张牌。"
+        "DESCRIPTION":" batwinsmod:共有 。 NL 回合内交替打出 batwinsmod:桃牌 与 batwinsmod:绿牌 后，卡牌造成的伤害和获得的 格挡 增加 !M! %。"
     },
     "BATwinsMod:Exchange":{
         "NAME":"交换",
@@ -95,7 +95,7 @@
     },
     "BATwinsMod:EnchantedBullet":{
         "NAME":"附魔子弹",
-        "DESCRIPTION":"给予 !M! 层 batwinsmod:灼伤 。"
+        "DESCRIPTION":"造成 !D! 点伤害 。 NL 给予 !M! 层 batwinsmod:灼伤 。 NL 存储到手牌的射击中。"
     },
     "BATwinsMod:ExcellentDesigner":{
         "NAME":"最棒的开发者们",
@@ -252,7 +252,7 @@
 		"UPGRADE_DESCRIPTION":" 保留 NL 选择抽牌堆 !M! 张非能力牌打出，但只会使用其 batwinsmod:连携 和 batwinsmod:超连携 效果。"
 	},
 	"BATwinsMod:TwoStageAttack":{
-		"NAME":"二段打击",
+		"NAME":"连续打击",
 		"DESCRIPTION":" batwinsmod:只能被连携 NL batwinsmod:连携 ， batwinsmod:超连携 ：对全体敌人造成 !D! 点伤害2次。",
 		"EXTENDED_DESCRIPTION":[
 			"这张牌只能被效果打出。"
@@ -280,8 +280,8 @@
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",
-		"DESCRIPTION":"这张牌的效果变为本场战斗打出的上一张 batwinsmod:桃牌 的基础效果。 NL batwinsmod:连携 ：打出本场战斗打出的上一张牌（仅当其在弃牌堆时）。",
-		"UPGRADE_DESCRIPTION":"这张牌的效果变为本场战斗打出的上一张 batwinsmod:桃牌 的效果。 NL batwinsmod:连携 ：打出本场战斗打出的上一张牌（仅当其在弃牌堆时）。"
+		"DESCRIPTION":"复制本场战斗打出的上一张 batwinsmod:桃牌 的基础效果。 NL batwinsmod:连携 , batwinsmod:超连携 ：复制本场战斗打出的上一张 batwinsmod:桃牌 的 batwinsmod:连携 效果或 batwinsmod:超连携 效果。",
+		"UPGRADE_DESCRIPTION":"复制本场战斗打出的上一张牌的基础效果。 NL batwinsmod:连携 , batwinsmod:超连携 ：复制本场战斗打出的上一张牌的 batwinsmod:连携 效果或 batwinsmod:超连携 效果。"
 	},
 	"BATwinsMod:SkillCombination":{
 		"NAME":"技能合体",
@@ -407,5 +407,37 @@
 		"NAME":"彩蛋",
 		"DESCRIPTION":"抽 !M! 张牌。 NL 恭喜你发现了彩蛋。",
 		"UPGRADE_DESCRIPTION":"抽 !M! 张牌。 NL 你居然还升级了这个彩蛋。"
+	},
+	"BATwinsMod:HeavyBullets":{
+		"NAME":"重型子弹",
+		"DESCRIPTION":"造成 !D! 点伤害。 NL 存储到手牌的射击中。"
+	},
+	"BATwinsMod:ArmorPiercingBullet":{
+		"NAME":"破甲子弹",
+		"DESCRIPTION":"造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。 NL 存储到手牌的射击中。"
+	},
+	"BATwinsMod:Shooting":{
+		"NAME":"射击",
+		"DESCRIPTION":" 保留  NL 造成 !D! 点伤害。"
+	},
+	"BATwinsMod:Bullet":{
+		"NAME":"子弹",
+		"DESCRIPTION":"造成 !D! 点伤害。"
+	},
+	"BATwinsMod:ContinuousShooting":{
+		"NAME":"连续射击",
+		"DESCRIPTION":"保留 ，能被多次 升级 NL 保留 时存储一张 batwinsmod:子弹 。 打出时清空这张牌存储的 batwinsmod:子弹 。 NL 这张牌最多存储 !M! 张牌。"
+	},
+	"BATwinsMod:BreechLoading":{
+		"NAME":"上膛",
+		"DESCRIPTION":"手牌1张连续射击 batwinsmod:存储 !M! 张 batwinsmod:子弹 。"
+	},
+	"BATwinsMod:ExpansionMagazine":{
+		"NAME":"扩容弹夹",
+		"DESCRIPTION":""
+	},
+	"BATwinsMod:BulletWarehouse":{
+		"NAME":"子弹仓库",
+		"DESCRIPTION":"打出 batwinsmod:子弹 后，随机给予目标敌人 !M! 层 中毒 或 虚弱 。"
 	}
 }

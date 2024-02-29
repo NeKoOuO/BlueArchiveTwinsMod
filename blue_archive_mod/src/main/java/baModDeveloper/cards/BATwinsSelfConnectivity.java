@@ -90,32 +90,25 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard{
 
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if(this.upgraded){
-            if(this.cardToCopy==null){
-                return;
-            }
-            updateCardPreview();
-            if(this.cardToCopy instanceof BATwinsModCustomCard){
-                ((BATwinsModCustomCard) this.cardToCopy).numberOfConnections=this.numberOfConnections;
-                ((BATwinsModCustomCard) this.cardToCopy).triggerOnConnectPlayed(abstractPlayer,abstractMonster);
-                ((BATwinsModCustomCard) this.cardToCopy).numberOfConnections=0;
-            }
+        if(this.cardToCopy==null){
+            return;
         }
-        addToBot(new BATwinsPlayDisPileCardAction(this.cardToCopy,abstractMonster,false,this.numberOfConnections+1));
+        if(cardToCopy instanceof BATwinsModCustomCard){
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections=this.numberOfConnections;
+            ((BATwinsModCustomCard) cardToCopy).triggerOnConnectPlayed(abstractPlayer,abstractMonster);
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections=0;
+        }
     }
 
     @Override
     public void triggerOnSuperConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if(this.upgraded){
-            if(this.cardToCopy==null){
-                return;
-            }
-            updateCardPreview();
-            if(this.cardToCopy instanceof BATwinsModCustomCard){
-                ((BATwinsModCustomCard) this.cardToCopy).numberOfConnections=this.numberOfConnections;
-                ((BATwinsModCustomCard) this.cardToCopy).triggerOnSuperConnectPlayed(abstractPlayer,abstractMonster);
-                ((BATwinsModCustomCard) this.cardToCopy).numberOfConnections=0;
-            }
+        if(this.cardToCopy==null){
+            return;
+        }
+        if(cardToCopy instanceof BATwinsModCustomCard){
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections=this.numberOfConnections;
+            ((BATwinsModCustomCard) cardToCopy).triggerOnSuperConnectPlayed(abstractPlayer,abstractMonster);
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections=0;
         }
     }
 

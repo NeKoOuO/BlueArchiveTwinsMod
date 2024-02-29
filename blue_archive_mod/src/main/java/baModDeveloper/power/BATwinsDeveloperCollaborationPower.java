@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -34,8 +35,10 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     private static final String IMG_MOMOI_32=ModHelper.makeImgPath("power","DeveloperCollaboration_momoi32");
     private static final String IMG_MIDORI_84=ModHelper.makeImgPath("power","DeveloperCollaboration_midori84");
     private static final String IMG_MIDORI_32=ModHelper.makeImgPath("power","DeveloperCollaboration_midori32");
-    private TextureAtlas.AtlasRegion momoi128,momoi48,midori128,midori48;
+    private final TextureAtlas.AtlasRegion momoi128,momoi48,midori128,midori48;
     private AbstractCard.CardColor lastColor;
+
+    private int count;
     public BATwinsDeveloperCollaborationPower(AbstractCreature owner,int amount){
         this.name=NAME;
         this.ID=POWER_ID;
@@ -48,6 +51,8 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
         this.momoi48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MOMOI_32),0,0,32,32);
         this.midori128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MIDORI_84),0,0,84,84);
         this.midori48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MIDORI_32),0,0,32,32);
+
+        this.count=0;
         this.updateDescription();
 
     }
@@ -68,27 +73,32 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
         }else{
             lastcard=DESCRIPTIONS[8];
         }
-        this.description=DESCRIPTIONS[0]+this.amount+DESCRIPTIONS[1]+DESCRIPTIONS[2]+lastcard+DESCRIPTIONS[3];
+        this.description=DESCRIPTIONS[0]+this.amount+DESCRIPTIONS[1]+DESCRIPTIONS[2]+lastcard+DESCRIPTIONS[3]+DESCRIPTIONS[10]+Integer.toString(this.count*this.amount)+DESCRIPTIONS[1];
     }
 
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
-        if(this.lastColor==null){
-            this.lastColor=usedCard.color;
-        }
-        else if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size()>=2){
-            if((this.lastColor== BATwinsCharacter.Enums.BATWINS_MOMOI_CARD&&usedCard.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD)||(this.lastColor==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD&&usedCard.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD)){
-                addToBot(new DrawCardAction(this.amount));
+        if(this.lastColor!=null) {
+            if (this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
                 this.flash();
-                this.lastColor=usedCard.color;
+                this.count++;
             }
         }
+        this.lastColor=usedCard.color;
+//        else if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size()>=2){
+//            if((this.lastColor== BATwinsCharacter.Enums.BATWINS_MOMOI_CARD&&usedCard.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD)||(this.lastColor==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD&&usedCard.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD)){
+//                addToBot(new DrawCardAction(this.amount));
+//                this.flash();
+//                this.lastColor=usedCard.color;
+//            }
+//        }
         this.updateDescription();
     }
 
     @Override
     public void atStartOfTurn() {
         this.lastColor=null;
+        this.count=0;
         this.updateDescription();
     }
 
@@ -126,5 +136,18 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
         }else {
             return this.region48;
         }
+    }
+
+    @Override
+    public float atDamageFinalGive(float damage, DamageInfo.DamageType type) {
+        if(type== DamageInfo.DamageType.NORMAL){
+            return damage*(1.0F+ (float) this.count*this.amount /100);
+        }
+        return damage;
+    }
+
+    @Override
+    public float modifyBlockLast(float blockAmount) {
+        return blockAmount*(1.0F+ (float) this.count*this.amount /100);
     }
 }

@@ -35,7 +35,7 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
 
     public BATwinsLightSpeedStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage=6;
+        this.baseDamage=8;
         this.damage=this.baseDamage;
         this.tags.add(CardTags.STRIKE);
 
