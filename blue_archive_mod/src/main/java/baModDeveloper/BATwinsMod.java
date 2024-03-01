@@ -107,7 +107,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsKeepItToTheEnd());
         BaseMod.addCard(new BATwinsArtPolishing());
         BaseMod.addCard(new BATwinsBattleCommand());
-        BaseMod.addCard(new BATwinsIgniteTheUpperBody());
+//        BaseMod.addCard(new BATwinsIgniteTheUpperBody());
         BaseMod.addCard(new BATwinsNotReconciled());
         BaseMod.addCard(new BATwinsAdditionalAttacks());
         BaseMod.addCard(new BATwinsAccurateBlocking());
@@ -135,8 +135,8 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsAbstractSchool());
         BaseMod.addCard(new BATwinsDefensiveCounterattack());
 //        BaseMod.addCard(new BATwinsAdventureRewards());
-        BaseMod.addCard(new BATwinsAccumulatedStrike());
-        BaseMod.addCard(new BATwinsNormalAttackMethods());
+//        BaseMod.addCard(new BATwinsAccumulatedStrike());
+//        BaseMod.addCard(new BATwinsNormalAttackMethods());
         BaseMod.addCard(new BATwinsAlternatingAttack());
         BaseMod.addCard(new BATwinsTemporaryAssistance());
 //        BaseMod.addCard(new BATwinsAdventureExperience());
@@ -180,7 +180,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsCollaboration());
         BaseMod.addCard(new BATwinsPenetrationDamage());
         BaseMod.addCard(new BATwinsCheckTheStrategy());
-        BaseMod.addCard(new BATwinsLoginRewards());
+//        BaseMod.addCard(new BATwinsLoginRewards());
         BaseMod.addCard(new BATwinsLearned());
         BaseMod.addCard(new BATwinsForceDetonation());
         BaseMod.addCard(new BATwinsScriptRewriting());

@@ -327,7 +327,7 @@
 	},
 	"BATwinsMod:EquipmentUpgrade":{
 		"NAME":"装备升级",
-		"DESCRIPTION":"选择手牌 !M! 张牌 升级 ，获得 batwinsmod:共有 ， 保留 且去除 消耗 ， 虚无 。"
+		"DESCRIPTION":"选择手牌 !M! 张牌 升级 ，获得 batwinsmod:共有 ， 保留 且去除 消耗 ， 虚无 。 NL 消耗 "
 	},
 	"BATwinsMod:AutomaticDefense":{
 		"NAME":"自动防御",
@@ -426,11 +426,11 @@
 	},
 	"BATwinsMod:ContinuousShooting":{
 		"NAME":"连续射击",
-		"DESCRIPTION":"保留 ，能被多次 升级 NL 保留 时存储一张 batwinsmod:子弹 。 打出时清空这张牌存储的 batwinsmod:子弹 。 NL 这张牌最多存储 !M! 张牌。"
+		"DESCRIPTION":"保留 ，能被多次 升级 NL 保留 时存储 !M! 张 batwinsmod:子弹 。 打出时清空这张牌存储的 batwinsmod:子弹 。"
 	},
 	"BATwinsMod:BreechLoading":{
 		"NAME":"上膛",
-		"DESCRIPTION":"手牌1张连续射击 batwinsmod:存储 !M! 张 batwinsmod:子弹 。"
+		"DESCRIPTION":"手牌1张连续射击 batwinsmod:存储 !M! 张 随机 batwinsmod:子弹 。"
 	},
 	"BATwinsMod:ExpansionMagazine":{
 		"NAME":"扩容弹夹",

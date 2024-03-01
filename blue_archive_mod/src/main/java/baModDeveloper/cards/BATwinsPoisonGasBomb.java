@@ -27,7 +27,7 @@ public class BATwinsPoisonGasBomb extends BATwinsModCustomCard{
 
     public BATwinsPoisonGasBomb() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber=4;
+        this.baseMagicNumber=3;
         this.magicNumber=this.baseMagicNumber;
     }
 

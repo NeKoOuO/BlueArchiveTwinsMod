@@ -26,6 +26,7 @@ public class BATwinsEquipmentUpgrade extends BATwinsModCustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseMagicNumber=1;
         this.magicNumber=this.baseMagicNumber;
+        this.exhaust=true;
     }
 
     @Override
@@ -36,6 +37,7 @@ public class BATwinsEquipmentUpgrade extends BATwinsModCustomCard{
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsEquipmentUpgradeAction(this.magicNumber));
+
     }
 
     @Override

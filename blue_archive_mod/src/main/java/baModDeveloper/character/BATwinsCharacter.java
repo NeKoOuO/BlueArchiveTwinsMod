@@ -331,7 +331,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public void gainEnergy(int e){
-        BATwinsEnergyPanel.addEnergy(e, BATwinsEnergyPanel.EnergyType.ALL);
+        BATwinsEnergyPanel.addEnergy(e, BATwinsEnergyPanel.EnergyType.SPEIFY);
         this.hand.glowCheck();
     }
     public void gainEnergy(int e, BATwinsEnergyPanel.EnergyType type){

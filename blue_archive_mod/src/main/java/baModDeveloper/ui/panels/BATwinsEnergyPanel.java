@@ -54,10 +54,6 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         this.show_y = 190.0F * Settings.yScale;
         this.hide_x = -480.0F * Settings.scale;
         this.hide_y = 200.0F * Settings.yScale;
-        if (img != null) {
-            this.img_width = img.getWidth() * Settings.scale;
-            this.img_height = img.getHeight() * Settings.scale;
-        }
         // if (true) {
         this.current_x = hide_x;
         this.current_y = hide_y;

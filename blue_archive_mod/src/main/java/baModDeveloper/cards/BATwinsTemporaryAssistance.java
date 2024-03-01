@@ -59,7 +59,7 @@ public class BATwinsTemporaryAssistance extends BATwinsModCustomCard{
         } else if (this.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD&&energyType== BATwinsEnergyPanel.EnergyType.MIDORI) {
             trigger=true;
         }
-        if(!trigger){
+        if(!trigger||AbstractDungeon.player.discardPile.contains(this)&&!this.upgraded){
             return;
         }
         addToBot(new BATwinsDrawOrDisCardToHandAction(this));
