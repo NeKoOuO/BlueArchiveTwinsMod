@@ -10,18 +10,20 @@ import java.util.ArrayList;
 
 public class BATwinsCoolingTimePowerAction extends AbstractGameAction {
     private ArrayList<AbstractCard> strogedCards;
-    public BATwinsCoolingTimePowerAction(ArrayList<AbstractCard> strogedCards){
-        this.strogedCards=strogedCards;
-        this.duration= Settings.ACTION_DUR_FAST;
+
+    public BATwinsCoolingTimePowerAction(ArrayList<AbstractCard> strogedCards) {
+        this.strogedCards = strogedCards;
+        this.duration = Settings.ACTION_DUR_FAST;
     }
+
     @Override
     public void update() {
-        for(AbstractCard c:this.strogedCards){
-            if(AbstractDungeon.player.hand.size()==10){
+        for (AbstractCard c : this.strogedCards) {
+            if (AbstractDungeon.player.hand.size() == 10) {
                 AbstractDungeon.player.createHandIsFullDialog();
                 continue;
             }
-            if(AbstractDungeon.player.drawPile.contains(c)){
+            if (AbstractDungeon.player.drawPile.contains(c)) {
                 AbstractDungeon.player.drawPile.moveToHand(c);
                 c.lighten(false);
 //                c.unhover();
@@ -35,7 +37,7 @@ public class BATwinsCoolingTimePowerAction extends AbstractGameAction {
                 c.applyPowers();
             }
         }
-        this.isDone=true;
+        this.isDone = true;
 
     }
 }

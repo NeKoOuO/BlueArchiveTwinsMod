@@ -14,12 +14,13 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import java.util.ArrayList;
 
 public class BATwinsAncientGameCartridges extends CustomRelic {
-    public static final String ID= ModHelper.makePath("AncientGameCartridges");
-    private static final Texture texture= TextureLoader.getTexture(ModHelper.makeImgPath("relic","AncientGameCartridges"));
-    private static final Texture outline=TextureLoader.getTexture(ModHelper.makeImgPath("relic","AncientGameCartridges"));
-    private static final RelicTier type=RelicTier.RARE;
+    public static final String ID = ModHelper.makePath("AncientGameCartridges");
+    private static final Texture texture = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "AncientGameCartridges"));
+    private static final Texture outline = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "AncientGameCartridges"));
+    private static final RelicTier type = RelicTier.RARE;
+
     public BATwinsAncientGameCartridges() {
-        super(ID, texture,outline,type, LandingSound.MAGICAL);
+        super(ID, texture, outline, type, LandingSound.MAGICAL);
     }
 
     @Override
@@ -38,18 +39,17 @@ public class BATwinsAncientGameCartridges extends CustomRelic {
     }
 
 
-
     @Override
     public void atTurnStartPostDraw() {
-        if(!this.grayscale){
+        if (!this.grayscale) {
             this.flash();
-            CardGroup powerCards=new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-            AbstractDungeon.player.drawPile.group.stream().filter(card -> card.type== AbstractCard.CardType.POWER).forEach(powerCards::addToBottom);
-            if(!powerCards.isEmpty()){
-                AbstractCard card=powerCards.getRandomCard(AbstractDungeon.cardRandomRng);
-                addToBot(new BATwinsPlayDrawPailCardAction(card,null,false));
+            CardGroup powerCards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+            AbstractDungeon.player.drawPile.group.stream().filter(card -> card.type == AbstractCard.CardType.POWER).forEach(powerCards::addToBottom);
+            if (!powerCards.isEmpty()) {
+                AbstractCard card = powerCards.getRandomCard(AbstractDungeon.cardRandomRng);
+                addToBot(new BATwinsPlayDrawPailCardAction(card, null, false));
             }
-            this.grayscale=true;
+            this.grayscale = true;
 
         }
 
@@ -57,7 +57,7 @@ public class BATwinsAncientGameCartridges extends CustomRelic {
 
     @Override
     public void justEnteredRoom(AbstractRoom room) {
-        this.grayscale=false;
+        this.grayscale = false;
     }
 
     @Override

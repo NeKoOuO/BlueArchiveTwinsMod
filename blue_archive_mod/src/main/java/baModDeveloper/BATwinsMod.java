@@ -36,7 +36,7 @@ import java.util.Properties;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber, EditKeywordsSubscriber , EditRelicsSubscriber ,AddAudioSubscriber,PostInitializeSubscriber{
+public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber {
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -63,10 +63,9 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
     private static final String MIDORI_ENERGY_ORB = ModHelper.makeImgPath("1024", "cost_orb_2");
 
 
-
     //模组选项
-    public static boolean AutoSort=true;
-    public static boolean ShowExpBar=true;
+    public static boolean AutoSort = true;
+    public static boolean ShowExpBar = true;
 
     public BATwinsMod() {
         BaseMod.subscribe(this);
@@ -77,12 +76,12 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
     public static void initialize() {
         new BATwinsMod();
         try {
-            Properties defaults=new Properties();
-            defaults.setProperty(ModHelper.makePath("AutoSort"),"true");
-            defaults.setProperty(ModHelper.makePath("ShowExpBar"),"true");
-            SpireConfig config=new SpireConfig(ModHelper.getModID(),"Common",defaults);
-            AutoSort=config.getBool(ModHelper.makePath("AutoSort"));
-            ShowExpBar=config.getBool(ModHelper.makePath("ShowExpBar"));
+            Properties defaults = new Properties();
+            defaults.setProperty(ModHelper.makePath("AutoSort"), "true");
+            defaults.setProperty(ModHelper.makePath("ShowExpBar"), "true");
+            SpireConfig config = new SpireConfig(ModHelper.getModID(), "Common", defaults);
+            AutoSort = config.getBool(ModHelper.makePath("AutoSort"));
+            ShowExpBar = config.getBool(ModHelper.makePath("ShowExpBar"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -209,8 +208,8 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "baModResources/localization/" + lang + "/power.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, "baModResources/localization/" + lang + "/uistring.json");
-        BaseMod.loadCustomStringsFile(RelicStrings.class,"baModResources/localization/"+lang+"/relic.json");
-        BaseMod.loadCustomStringsFile(EventStrings.class,"baModResources/localization/"+lang+"/event.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/" + lang + "/relic.json");
+        BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
     }
 
     @Override
@@ -237,19 +236,19 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new BATwinsMomoisGameConsole(), Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelicToCustomPool(new BATwinsMidorisGameConsole(),Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelic(new BATwinsAncientGameCartridges(),RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsByProving(),RelicType.SHARED);
-        BaseMod.addRelicToCustomPool(new BATwinsGameMagazine(),Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelicToCustomPool(new BATwinsMidorisGameConsole(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelic(new BATwinsAncientGameCartridges(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsByProving(), RelicType.SHARED);
+        BaseMod.addRelicToCustomPool(new BATwinsGameMagazine(), Enums.BATWINS_MOMOI_CARD);
 
     }
 
     @Override
     public void receiveAddAudio() {
-        BaseMod.addAudio(ModHelper.makePath("campfire_momoi"),ModHelper.makeAudioPath("campfire_momoi"));
-        BaseMod.addAudio(ModHelper.makePath("campfire_midori"),ModHelper.makeAudioPath("campfire_midori"));
-        BaseMod.addAudio(ModHelper.makePath("colorEgg1"),ModHelper.makeAudioPath("colorEgg1"));
-        BaseMod.addAudio(ModHelper.makePath("colorEgg2"),ModHelper.makeAudioPath("colorEgg2"));
+        BaseMod.addAudio(ModHelper.makePath("campfire_momoi"), ModHelper.makeAudioPath("campfire_momoi"));
+        BaseMod.addAudio(ModHelper.makePath("campfire_midori"), ModHelper.makeAudioPath("campfire_midori"));
+        BaseMod.addAudio(ModHelper.makePath("colorEgg1"), ModHelper.makeAudioPath("colorEgg1"));
+        BaseMod.addAudio(ModHelper.makePath("colorEgg2"), ModHelper.makeAudioPath("colorEgg2"));
 
     }
 
@@ -260,40 +259,40 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        BaseMod.addEvent(BATwinsTrainingCamp.ID,BATwinsTrainingCamp.class);
+        BaseMod.addEvent(BATwinsTrainingCamp.ID, BATwinsTrainingCamp.class);
     }
 
     private void CreateConfig() throws IOException {
-        SpireConfig spireConfig=new SpireConfig("BATwinsMod","Common");
-        ModPanel settingPanel=new ModPanel();
-        ModLabeledToggleButton autoSort=new ModLabeledToggleButton("AutoSort",500.0F,600.0F, Settings.CREAM_COLOR, FontHelper.charDescFont,AutoSort,settingPanel,modLabel -> {
+        SpireConfig spireConfig = new SpireConfig("BATwinsMod", "Common");
+        ModPanel settingPanel = new ModPanel();
+        ModLabeledToggleButton autoSort = new ModLabeledToggleButton("AutoSort", 500.0F, 600.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, AutoSort, settingPanel, modLabel -> {
 
-        },modToggleButton -> {
-            spireConfig.setBool(ModHelper.makePath("AutoSort"),AutoSort=modToggleButton.enabled);
+        }, modToggleButton -> {
+            spireConfig.setBool(ModHelper.makePath("AutoSort"), AutoSort = modToggleButton.enabled);
             CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
-            try{
+            try {
                 spireConfig.save();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });
 
         settingPanel.addUIElement(autoSort);
 
-        ModLabeledToggleButton showExpBar=new ModLabeledToggleButton("ShowExpBar",500.0F,400.0F, Settings.CREAM_COLOR, FontHelper.charDescFont,ShowExpBar,settingPanel,modLabel -> {
+        ModLabeledToggleButton showExpBar = new ModLabeledToggleButton("ShowExpBar", 500.0F, 400.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, ShowExpBar, settingPanel, modLabel -> {
 
-        },modToggleButton -> {
-            spireConfig.setBool(ModHelper.makePath("ShowExpBar"),ShowExpBar=modToggleButton.enabled);
+        }, modToggleButton -> {
+            spireConfig.setBool(ModHelper.makePath("ShowExpBar"), ShowExpBar = modToggleButton.enabled);
             CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
-            try{
+            try {
                 spireConfig.save();
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });
 
         settingPanel.addUIElement(showExpBar);
-        Texture badgeTexture = ImageMaster.loadImage(ModHelper.makeImgPath("UI","configButton"));
-        BaseMod.registerModBadge(badgeTexture,"BATwinsMod","0v0","config",settingPanel);
+        Texture badgeTexture = ImageMaster.loadImage(ModHelper.makeImgPath("UI", "configButton"));
+        BaseMod.registerModBadge(badgeTexture, "BATwinsMod", "0v0", "config", settingPanel);
     }
 }

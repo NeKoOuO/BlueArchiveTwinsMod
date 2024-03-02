@@ -16,20 +16,20 @@ public class BATwinsEquipmentUpgradeAction extends SelectCardsInHandAction {
     private static final Predicate<AbstractCard> cardFilter = card -> {
         return true;
     };
-    private static final UIStrings uiStrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
-    private static final Consumer<List<AbstractCard>> callback = cardList->{
-      for(AbstractCard card:cardList){
-          card.upgrade();
-          if(!card.name.contains("◆")){
-              card.name+="◆";
-          }
-          if(card instanceof BATwinsModCustomCard){
-              ((BATwinsModCustomCard) card).modifyEnergyType= BATwinsEnergyPanel.EnergyType.SHARE;
-          }
-          card.selfRetain=true;
-          card.exhaust=false;
-          card.isEthereal=false;
-      }
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
+    private static final Consumer<List<AbstractCard>> callback = cardList -> {
+        for (AbstractCard card : cardList) {
+            card.upgrade();
+            if (!card.name.contains("◆")) {
+                card.name += "◆";
+            }
+            if (card instanceof BATwinsModCustomCard) {
+                ((BATwinsModCustomCard) card).modifyEnergyType = BATwinsEnergyPanel.EnergyType.SHARE;
+            }
+            card.selfRetain = true;
+            card.exhaust = false;
+            card.isEthereal = false;
+        }
     };
 
     public BATwinsEquipmentUpgradeAction(int amount) {

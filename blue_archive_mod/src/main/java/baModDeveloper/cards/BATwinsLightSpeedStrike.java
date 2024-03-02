@@ -20,33 +20,33 @@ import com.megacrit.cardcrawl.powers.EntanglePower;
 
 import java.util.ArrayList;
 
-public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
-    public static final String ID= ModHelper.makePath("LightSpeedStrike");
-    private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String NAME=CARD_STRINGS.NAME;
-    private static final String IMG_PATH=ModHelper.makeImgPath("cards","LightSpeedStrike");
-    private static final int COST=2;
-    private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
-    private static final CardType TYPE=CardType.ATTACK;
-    private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
-    private static final CardTarget TARGET=CardTarget.ENEMY;
-    private static final CardRarity RARITY=CardRarity.COMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
+public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
+    public static final String ID = ModHelper.makePath("LightSpeedStrike");
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String NAME = CARD_STRINGS.NAME;
+    private static final String IMG_PATH = ModHelper.makeImgPath("cards", "LightSpeedStrike");
+    private static final int COST = 2;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
+    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
 
     public BATwinsLightSpeedStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage=8;
-        this.damage=this.baseDamage;
+        this.baseDamage = 8;
+        this.damage = this.baseDamage;
         this.tags.add(CardTags.STRIKE);
 
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        if(playedAttack(true)){
-            addToBot(new BATwinsSelectHandCardToPlayAction(null,abstractMonster,CardType.ATTACK));
-            addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsFlatFallPower(abstractPlayer)));
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        if (playedAttack(true)) {
+            addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK));
+            addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsFlatFallPower(abstractPlayer)));
         }
 
 //        abstractPlayer.hand.group.removeAll(strikeCards);
@@ -54,13 +54,13 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        useMOMOI(abstractPlayer,abstractMonster);
+        useMOMOI(abstractPlayer, abstractMonster);
 
     }
 
     @Override
     public void upgrade() {
-        if(!upgraded){
+        if (!upgraded) {
             this.upgradeName();
             this.upgradeDamage(3);
         }
@@ -68,18 +68,18 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
 
     @Override
     public void triggerOnHovered() {
-        if(playedAttack(false)){
-            AbstractDungeon.player.hand.group.stream().filter(card -> card.type==CardType.ATTACK&&card!=this).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
+        if (playedAttack(false)) {
+            AbstractDungeon.player.hand.group.stream().filter(card -> card.type == CardType.ATTACK && card != this).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
         }
     }
 
-    private boolean playedAttack(boolean playing){
-        int a=0;
-        if(playing){
-            a=1;
+    private boolean playedAttack(boolean playing) {
+        int a = 0;
+        if (playing) {
+            a = 1;
         }
-        for(int i=0;i<AbstractDungeon.actionManager.cardsPlayedThisTurn.size()-a;i++){
-            if(AbstractDungeon.actionManager.cardsPlayedThisTurn.get(i).type==CardType.ATTACK){
+        for (int i = 0; i < AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - a; i++) {
+            if (AbstractDungeon.actionManager.cardsPlayedThisTurn.get(i).type == CardType.ATTACK) {
                 return false;
             }
         }
@@ -88,10 +88,10 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard{
 
     @Override
     public void triggerOnGlowCheck() {
-        if(playedAttack(false)){
-            this.glowColor=AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        }else{
-            this.glowColor=AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (playedAttack(false)) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 }

@@ -12,15 +12,15 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class BATwinsCardGroupPatch {
-    @SpirePatch(clz = CardGroup.class,method = "getCardDeck")
-    public static class getCardDeckPatch{
-        @SpireInsertPatch(rloc = 4,localvars = {"retVal"})
-        public static void getCardGroupPatch(CardGroup _instance, @ByRef ArrayList<CardSave>[] retVal){
-            for(int i=0;i<_instance.group.size();i++){
-                AbstractCard card=_instance.group.get(i);
-                if(card instanceof BATwinsModCustomCard){
-                    if(((BATwinsModCustomCard) card).exchanged()){
-                        BATwinsCardSavePatch.FiledPatch.isExchange.set(retVal[0].get(i),true);
+    @SpirePatch(clz = CardGroup.class, method = "getCardDeck")
+    public static class getCardDeckPatch {
+        @SpireInsertPatch(rloc = 4, localvars = {"retVal"})
+        public static void getCardGroupPatch(CardGroup _instance, @ByRef ArrayList<CardSave>[] retVal) {
+            for (int i = 0; i < _instance.group.size(); i++) {
+                AbstractCard card = _instance.group.get(i);
+                if (card instanceof BATwinsModCustomCard) {
+                    if (((BATwinsModCustomCard) card).exchanged()) {
+                        BATwinsCardSavePatch.FiledPatch.isExchange.set(retVal[0].get(i), true);
                     }
                 }
             }

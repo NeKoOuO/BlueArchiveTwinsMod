@@ -16,32 +16,35 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
     private AbstractCard card;
     private boolean exhaust;
     private int numberOfConnections;
-    private boolean isBlockOrigin=false;
-    public BATwinsPlayDrawPailCardAction(AbstractCard card,AbstractCreature target,boolean exhaust,int numberOfConnections){
-        this.card=card;
-        this.exhaust=exhaust;
-        this.target=target;
-        this.duration= Settings.ACTION_DUR_FAST;
-        this.actionType= ActionType.WAIT;
-        this.numberOfConnections=numberOfConnections;
+    private boolean isBlockOrigin = false;
+
+    public BATwinsPlayDrawPailCardAction(AbstractCard card, AbstractCreature target, boolean exhaust, int numberOfConnections) {
+        this.card = card;
+        this.exhaust = exhaust;
+        this.target = target;
+        this.duration = Settings.ACTION_DUR_FAST;
+        this.actionType = ActionType.WAIT;
+        this.numberOfConnections = numberOfConnections;
     }
-    public BATwinsPlayDrawPailCardAction(AbstractCard card,AbstractCreature target,boolean exhaust){
-        this(card,target,exhaust,1);
+
+    public BATwinsPlayDrawPailCardAction(AbstractCard card, AbstractCreature target, boolean exhaust) {
+        this(card, target, exhaust, 1);
     }
-    public BATwinsPlayDrawPailCardAction(AbstractCard card,AbstractCreature target,boolean exhaust,int numberOfConnections,boolean isBlockOrigin){
-        this(card,target,exhaust,numberOfConnections);
-        this.isBlockOrigin=isBlockOrigin;
+
+    public BATwinsPlayDrawPailCardAction(AbstractCard card, AbstractCreature target, boolean exhaust, int numberOfConnections, boolean isBlockOrigin) {
+        this(card, target, exhaust, numberOfConnections);
+        this.isBlockOrigin = isBlockOrigin;
     }
 
     @Override
     public void update() {
-        if(this.duration==Settings.ACTION_DUR_FAST){
-            if(AbstractDungeon.player.drawPile.contains(card)){
+        if (this.duration == Settings.ACTION_DUR_FAST) {
+            if (AbstractDungeon.player.drawPile.contains(card)) {
                 AbstractDungeon.player.drawPile.group.remove(this.card);
                 AbstractDungeon.getCurrRoom().souls.remove(this.card);
-                card.exhaust=this.exhaust;
-                if(card instanceof BATwinsModCustomCard){
-                    ((BATwinsModCustomCard) card).numberOfConnections=this.numberOfConnections;
+                card.exhaust = this.exhaust;
+                if (card instanceof BATwinsModCustomCard) {
+                    ((BATwinsModCustomCard) card).numberOfConnections = this.numberOfConnections;
                 }
                 AbstractDungeon.player.limbo.group.add(this.card);
                 card.current_y = -200.0F * Settings.scale;
@@ -49,22 +52,22 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
                 card.target_y = Settings.HEIGHT / 2.0F;
                 card.targetAngle = 0.0F;
                 card.lighten(false);
-                card.drawScale=0.12F;
-                card.targetDrawScale=0.75F;
+                card.drawScale = 0.12F;
+                card.targetDrawScale = 0.75F;
 
-                BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(card,this.isBlockOrigin);
+                BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(card, this.isBlockOrigin);
                 card.applyPowers();
                 card.calculateCardDamage((AbstractMonster) this.target);
-                card.isInAutoplay=true;
-                addToTop(new NewQueueCardAction(card,this.target,false,true));
+                card.isInAutoplay = true;
+                addToTop(new NewQueueCardAction(card, this.target, false, true));
                 addToTop(new UnlimboAction(card));
-                if(Settings.FAST_MODE){
+                if (Settings.FAST_MODE) {
                     addToTop(new WaitAction(Settings.ACTION_DUR_MED));
-                }else{
+                } else {
                     addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
                 }
             }
         }
-        this.isDone=true;
+        this.isDone = true;
     }
 }

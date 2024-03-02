@@ -14,13 +14,14 @@ public class BATwinsGainEnergyAction extends AbstractGameAction {
     private int energyGain;
     private BATwinsEnergyPanel.EnergyType type;
 
-    public BATwinsGainEnergyAction(int amount, BATwinsEnergyPanel.EnergyType type){
+    public BATwinsGainEnergyAction(int amount, BATwinsEnergyPanel.EnergyType type) {
         this.setValues(AbstractDungeon.player, AbstractDungeon.player, 0);
-        this.energyGain=amount;
-        this.type=type;
+        this.energyGain = amount;
+        this.type = type;
         this.duration = Settings.ACTION_DUR_FAST;
 
     }
+
     @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {

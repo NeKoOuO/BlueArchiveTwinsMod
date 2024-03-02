@@ -14,16 +14,17 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class BATwinsExchangeDrawPailAction extends SelectCardsAction {
-    private static final Predicate<AbstractCard> cardFilter= card -> {
+    private static final Predicate<AbstractCard> cardFilter = card -> {
         return card instanceof BATwinsModCustomCard;
     };
-    private static final Consumer<List<AbstractCard>> callback= cardList->{
-        for(AbstractCard c:cardList){
-            AbstractDungeon.actionManager.addToBottom(new BATwinsCoversionColorAction((BATwinsModCustomCard) c,false));
+    private static final Consumer<List<AbstractCard>> callback = cardList -> {
+        for (AbstractCard c : cardList) {
+            AbstractDungeon.actionManager.addToBottom(new BATwinsCoversionColorAction((BATwinsModCustomCard) c, false));
         }
     };
-    private static final UIStrings uistrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
+    private static final UIStrings uistrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
+
     public BATwinsExchangeDrawPailAction(int amount) {
-        super(AbstractDungeon.player.drawPile.group, amount,uistrings.TEXT[7],false, cardFilter, callback);
+        super(AbstractDungeon.player.drawPile.group, amount, uistrings.TEXT[7], false, cardFilter, callback);
     }
 }

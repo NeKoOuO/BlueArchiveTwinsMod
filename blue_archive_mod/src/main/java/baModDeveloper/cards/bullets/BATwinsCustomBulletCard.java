@@ -9,24 +9,24 @@ public abstract class BATwinsCustomBulletCard extends CustomCard {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
     }
 
-    private static BATwinsCustomBulletCard[] BULLETS=null;
+    private static BATwinsCustomBulletCard[] BULLETS = null;
 
-    private static void initializationBullets(){
-        if(BULLETS==null){
-            BULLETS=new BATwinsCustomBulletCard[5];
-            BULLETS[0]=new BATwinsPoisonBullet();
-            BULLETS[1]=new BATwinsArmorPiercingBullet();
-            BULLETS[2]=new BATwinsSniperBullet();
-            BULLETS[3]=new BATwinsIncendiaryBullet();
-            BULLETS[4]=new BATwinsHeavyBullets();
+    private static void initializationBullets() {
+        if (BULLETS == null) {
+            BULLETS = new BATwinsCustomBulletCard[5];
+            BULLETS[0] = new BATwinsPoisonBullet();
+            BULLETS[1] = new BATwinsArmorPiercingBullet();
+            BULLETS[2] = new BATwinsSniperBullet();
+            BULLETS[3] = new BATwinsIncendiaryBullet();
+            BULLETS[4] = new BATwinsHeavyBullets();
         }
 
     }
 
-    public static BATwinsCustomBulletCard getRandomBullet(){
+    public static BATwinsCustomBulletCard getRandomBullet() {
         initializationBullets();
-        BATwinsCustomBulletCard c=BULLETS[AbstractDungeon.cardRandomRng.random(BULLETS.length-1)];
-        if(!UnlockTracker.isCardSeen(c.cardID)){
+        BATwinsCustomBulletCard c = BULLETS[AbstractDungeon.cardRandomRng.random(BULLETS.length - 1)];
+        if (!UnlockTracker.isCardSeen(c.cardID)) {
             UnlockTracker.markCardAsSeen(c.cardID);
         }
         return c;

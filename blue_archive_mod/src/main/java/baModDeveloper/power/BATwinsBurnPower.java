@@ -22,31 +22,33 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.ArrayList;
 
 public class BATwinsBurnPower extends AbstractPower implements HealthBarRenderPower {
-    public static final String POWER_ID= ModHelper.makePath("BurnPower");
-    private static final AbstractPower.PowerType TYPE=PowerType.DEBUFF;
-    private static final PowerStrings powerStrings= CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    private static final String NAME=powerStrings.NAME;
-    private static final String[] DESCRIPTIONS=powerStrings.DESCRIPTIONS;
-    private static final String IMG_84=ModHelper.makeImgPath("power","Burn84");
-    private static final String IMG_32=ModHelper.makeImgPath("power","Burn32");
-    private static final Color HEALTHBARCOLOR= new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
+    public static final String POWER_ID = ModHelper.makePath("BurnPower");
+    private static final AbstractPower.PowerType TYPE = PowerType.DEBUFF;
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    private static final String NAME = powerStrings.NAME;
+    private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private static final String IMG_84 = ModHelper.makeImgPath("power", "Burn84");
+    private static final String IMG_32 = ModHelper.makeImgPath("power", "Burn32");
+    private static final Color HEALTHBARCOLOR = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
 
     private AbstractCreature source;
-    public BATwinsBurnPower(AbstractCreature owner,AbstractCreature source,int Amount){
-        this.name=NAME;
-        this.ID=POWER_ID;
-        this.owner=owner;
-        this.type=TYPE;
-        this.source=source;
-        this.amount=Amount;
-        this.region128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84),0,0,84,84);
-        this.region48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32),0,0,32,32);
+
+    public BATwinsBurnPower(AbstractCreature owner, AbstractCreature source, int Amount) {
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.owner = owner;
+        this.type = TYPE;
+        this.source = source;
+        this.amount = Amount;
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
 
         this.updateDescription();
     }
+
     @Override
-    public void updateDescription(){
-        this.description=DESCRIPTIONS[0]+this.amount+DESCRIPTIONS[1];
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override
@@ -60,17 +62,17 @@ public class BATwinsBurnPower extends AbstractPower implements HealthBarRenderPo
         this.flashWithoutSound();
         addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
         this.amount--;
-        if(this.amount==0){
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,this));
+        if (this.amount == 0) {
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
 
     @Override
     public void onDeath() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() &&
-            this.owner.currentHealth <= 0) {
-            addToTop((AbstractGameAction)new DamageAllEnemiesAction(null,
-            DamageInfo.createDamageMatrix(this.amount*2, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+                this.owner.currentHealth <= 0) {
+            addToTop((AbstractGameAction) new DamageAllEnemiesAction(null,
+                    DamageInfo.createDamageMatrix(this.amount * 2, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         }
     }
 

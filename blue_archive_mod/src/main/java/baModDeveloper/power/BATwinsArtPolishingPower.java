@@ -15,14 +15,14 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class BATwinsArtPolishingPower extends AbstractPower {
-    public static final String POWER_ID= ModHelper.makePath("ArtPolishingPower");
-    private static final AbstractPower.PowerType TYPE=PowerType.BUFF;
-    private static final PowerStrings powerStrings= CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    private static final String NAME=powerStrings.NAME;
-    private static final String[] DESCRIPTIONS=powerStrings.DESCRIPTIONS;
-    private static final String IMG_84=ModHelper.makeImgPath("power","ArtPolishing84");
-    private static final String IMG_32=ModHelper.makeImgPath("power","ArtPolishing32");
-    private static final AbstractCreature sourcePower=new AbstractCreature() {
+    public static final String POWER_ID = ModHelper.makePath("ArtPolishingPower");
+    private static final AbstractPower.PowerType TYPE = PowerType.BUFF;
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    private static final String NAME = powerStrings.NAME;
+    private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private static final String IMG_84 = ModHelper.makeImgPath("power", "ArtPolishing84");
+    private static final String IMG_32 = ModHelper.makeImgPath("power", "ArtPolishing32");
+    private static final AbstractCreature sourcePower = new AbstractCreature() {
 
         @Override
         public void damage(DamageInfo damageInfo) {
@@ -35,27 +35,27 @@ public class BATwinsArtPolishingPower extends AbstractPower {
         }
     };
 
-    public BATwinsArtPolishingPower(AbstractCreature owner,int amount){
-        this.name=NAME;
-        this.ID=POWER_ID;
-        this.type=TYPE;
-        this.owner=owner;
-        this.region128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84),0,0,84,84);
-        this.region48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32),0,0,32,32);
-        this.amount=amount;
+    public BATwinsArtPolishingPower(AbstractCreature owner, int amount) {
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.type = TYPE;
+        this.owner = owner;
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
+        this.amount = amount;
 
         this.updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        this.description=DESCRIPTIONS[0]+this.amount+DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if(source== AbstractDungeon.player&&power.type==PowerType.DEBUFF){
-            addToBot(new ApplyPowerAction(target,sourcePower,new PoisonPower(target,sourcePower,this.amount)));
+        if (source == AbstractDungeon.player && power.type == PowerType.DEBUFF) {
+            addToBot(new ApplyPowerAction(target, sourcePower, new PoisonPower(target, sourcePower, this.amount)));
         }
     }
 }

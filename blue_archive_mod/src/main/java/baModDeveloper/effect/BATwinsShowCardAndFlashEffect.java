@@ -7,19 +7,20 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 public class BATwinsShowCardAndFlashEffect extends ShowCardBrieflyEffect {
-    private boolean flashed=false;
+    private boolean flashed = false;
     private AbstractCard card;
+
     public BATwinsShowCardAndFlashEffect(AbstractCard card) {
         super(card);
-        this.card=card;
+        this.card = card;
     }
 
     @Override
     public void render(SpriteBatch sb) {
-        if(!flashed){
+        if (!flashed) {
             card.superFlash(BATwinsCharacter.getColorWithCardColor(card.color));
 
-            this.flashed=true;
+            this.flashed = true;
         }
         super.render(sb);
     }

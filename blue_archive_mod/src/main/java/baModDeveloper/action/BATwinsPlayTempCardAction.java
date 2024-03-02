@@ -13,16 +13,19 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class BATwinsPlayTempCardAction extends AbstractGameAction {
     private AbstractCard cardToPlay;
     private int numberOfConnections;
-    public BATwinsPlayTempCardAction(AbstractCard card, int numberOfConnections, AbstractCreature target){
-        this.cardToPlay=card;
-        this.numberOfConnections=numberOfConnections;
-        this.target=target;
-        this.duration= Settings.ACTION_DUR_FAST;
+
+    public BATwinsPlayTempCardAction(AbstractCard card, int numberOfConnections, AbstractCreature target) {
+        this.cardToPlay = card;
+        this.numberOfConnections = numberOfConnections;
+        this.target = target;
+        this.duration = Settings.ACTION_DUR_FAST;
     }
-    public BATwinsPlayTempCardAction(AbstractCard card,int numberOfConnections) {
-        this(card,numberOfConnections,null);
+
+    public BATwinsPlayTempCardAction(AbstractCard card, int numberOfConnections) {
+        this(card, numberOfConnections, null);
     }
-        @Override
+
+    @Override
     public void update() {
         AbstractDungeon.player.limbo.group.add(cardToPlay);
         cardToPlay.current_y = 0.0F * Settings.scale;
@@ -32,24 +35,24 @@ public class BATwinsPlayTempCardAction extends AbstractGameAction {
         cardToPlay.lighten(false);
         cardToPlay.drawScale = 0.12F;
         cardToPlay.targetDrawScale = 0.75F;
-        cardToPlay.purgeOnUse=true;
+        cardToPlay.purgeOnUse = true;
         cardToPlay.exhaustOnUseOnce = true;
 
         cardToPlay.applyPowers();
-        if(cardToPlay instanceof BATwinsModCustomCard){
-            ((BATwinsModCustomCard) cardToPlay).numberOfConnections=this.numberOfConnections;
+        if (cardToPlay instanceof BATwinsModCustomCard) {
+            ((BATwinsModCustomCard) cardToPlay).numberOfConnections = this.numberOfConnections;
         }
-        if(this.target==null){
-            this.target=AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+        if (this.target == null) {
+            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
         }
-        AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, (AbstractMonster) this.target,cardToPlay.energyOnUse,true,true),true);
+        AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, (AbstractMonster) this.target, cardToPlay.energyOnUse, true, true), true);
 //            addToTop(new UnlimboAction(cardToPlay));
         if (!Settings.FAST_MODE) {
             addToTop(new WaitAction(Settings.ACTION_DUR_MED));
         } else {
             addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
         }
-        this.isDone=true;
+        this.isDone = true;
         return;
     }
 }

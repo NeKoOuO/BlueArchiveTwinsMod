@@ -9,24 +9,24 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BATwinsFundOverdraft extends BATwinsModCustomCard{
-    public static final String ID= ModHelper.makePath("FundOverdraft");
-    private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String NAME=CARD_STRINGS.NAME;
-    private static final String IMG_PATH=ModHelper.makeImgPath("cards","FundOverdraft");
-    private static final int COST=1;
-    private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
-    private static final CardType TYPE=CardType.SKILL;
-    private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
-    private static final CardTarget TARGET=CardTarget.NONE;
-    private static final CardRarity RARITY=CardRarity.UNCOMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
-    private int playedCount=0;
+public class BATwinsFundOverdraft extends BATwinsModCustomCard {
+    public static final String ID = ModHelper.makePath("FundOverdraft");
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String NAME = CARD_STRINGS.NAME;
+    private static final String IMG_PATH = ModHelper.makeImgPath("cards", "FundOverdraft");
+    private static final int COST = 1;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
+    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
+    private int playedCount = 0;
 
     public BATwinsFundOverdraft() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber=4;
-        this.magicNumber=this.baseMagicNumber-playedCount;
+        this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber - playedCount;
 
     }
 
@@ -39,24 +39,24 @@ public class BATwinsFundOverdraft extends BATwinsModCustomCard{
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        useMOMOI(abstractPlayer,abstractMonster);
+        useMOMOI(abstractPlayer, abstractMonster);
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.magicNumber=this.baseMagicNumber-this.playedCount;
-        this.magicNumber= Math.max(this.magicNumber, 0);
-        if(this.magicNumber!=this.baseMagicNumber){
-            this.isMagicNumberModified=true;
-        }else {
-            this.isMagicNumberModified=false;
+        this.magicNumber = this.baseMagicNumber - this.playedCount;
+        this.magicNumber = Math.max(this.magicNumber, 0);
+        if (this.magicNumber != this.baseMagicNumber) {
+            this.isMagicNumberModified = true;
+        } else {
+            this.isMagicNumberModified = false;
         }
     }
 
     @Override
     public void upgrade() {
-        if(!this.upgraded){
+        if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
         }
@@ -64,7 +64,7 @@ public class BATwinsFundOverdraft extends BATwinsModCustomCard{
 
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        this.playedCount=0;
+        this.playedCount = 0;
         this.applyPowers();
     }
 

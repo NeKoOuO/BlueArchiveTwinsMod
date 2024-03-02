@@ -30,22 +30,23 @@ public class BATwinsEnergyPanel extends EnergyPanel {
     private static final int RAW_W = 256;
     private static final Color ENERGY_TEXT_COLOR = new Color(1.0F, 1.0F, 0.86F, 1.0F);
     private Hitbox tipHitbox_MOMOI = new Hitbox(0.0F, 0.0F, 120.0F * Settings.scale, 120.0F * Settings.scale);
-    private Hitbox tipHitbox_MIDORI=new Hitbox(-128.0F,64.0F,120.0F*Settings.scale,120.0F*Settings.scale);
+    private Hitbox tipHitbox_MIDORI = new Hitbox(-128.0F, 64.0F, 120.0F * Settings.scale, 120.0F * Settings.scale);
     private Texture gainEnergyImg;
     private Texture[] gainEnergyImgs;
     private float energyVfxAngle = 0.0F;
     private float energyVfxScale = Settings.scale;
     private Color energyVfxColor = Color.WHITE.cpy();
     private static final float VFX_ROTATE_SPEED = -30.0F;
-    private static EnergyType energyVfxType=EnergyType.ALL;
-    private static UIStrings orbLabel=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbLabel"));
-    private static UIStrings orbMsg=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbMsg"));
+    private static EnergyType energyVfxType = EnergyType.ALL;
+    private static UIStrings orbLabel = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbLabel"));
+    private static UIStrings orbMsg = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbMsg"));
     public static int MomoiCount = 0;
     public static int MidoriCount = 0;
 
-    public static EnergyType selectedEnergySlot=EnergyType.MOMOI;
+    public static EnergyType selectedEnergySlot = EnergyType.MOMOI;
+
     public enum EnergyType {
-        MOMOI, MIDORI, ALL,SPEIFY,SHARE
+        MOMOI, MIDORI, ALL, SPEIFY, SHARE
     }
 
     public BATwinsEnergyPanel() {
@@ -68,8 +69,8 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         // this.target_y = show_y;
         // this.isHidden = false;
         // }
-        if(AbstractDungeon.player instanceof BATwinsCharacter){
-            this.gainEnergyImgs=((BATwinsCharacter)AbstractDungeon.player).getEnergyImages();
+        if (AbstractDungeon.player instanceof BATwinsCharacter) {
+            this.gainEnergyImgs = ((BATwinsCharacter) AbstractDungeon.player).getEnergyImages();
         }
         this.gainEnergyImg = AbstractDungeon.player.getEnergyImage();
     }
@@ -91,14 +92,16 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         AbstractDungeon.effectsQueue.add(new BATwinsRefreshEnergyEffect(type));
         energyVfxTimer = 2.0F;
         fontScale = 2.0F;
-        energyVfxType=type;
+        energyVfxType = type;
     }
-    public static void addEnergy(int e){
-        addEnergy(e,EnergyType.SPEIFY);
+
+    public static void addEnergy(int e) {
+        addEnergy(e, EnergyType.SPEIFY);
     }
+
     public static void addEnergy(int e, EnergyType type) {
-        if(type==EnergyType.SPEIFY){
-            type=BATwinsEnergyPanel.selectedEnergySlot;
+        if (type == EnergyType.SPEIFY) {
+            type = BATwinsEnergyPanel.selectedEnergySlot;
         }
         switch (type) {
             case MOMOI:
@@ -122,72 +125,72 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         AbstractDungeon.effectsQueue.add(new BATwinsRefreshEnergyEffect(type));
         energyVfxTimer = 2.0F;
         fontScale = 2.0F;
-        energyVfxType=type;
+        energyVfxType = type;
     }
-    public static void useEnergy(int e){
-        useEnergy(e,EnergyType.ALL);
+
+    public static void useEnergy(int e) {
+        useEnergy(e, EnergyType.ALL);
     }
+
     public static void useEnergy(int e, EnergyType type) {
         switch (type) {
             case MOMOI:
-                if(e<=MomoiCount){
+                if (e <= MomoiCount) {
                     MomoiCount -= e;
-                }else {
-                    e=e-MomoiCount;
-                    MomoiCount=0;
-                    MidoriCount-=2*e;
+                } else {
+                    e = e - MomoiCount;
+                    MomoiCount = 0;
+                    MidoriCount -= 2 * e;
                 }
                 break;
             case MIDORI:
-                if(e<=MidoriCount){
+                if (e <= MidoriCount) {
                     MidoriCount -= e;
-                }else {
-                    e=e-MidoriCount;
-                    MidoriCount=0;
-                    MomoiCount-=2*e;
+                } else {
+                    e = e - MidoriCount;
+                    MidoriCount = 0;
+                    MomoiCount -= 2 * e;
                 }
                 break;
             case ALL:
-                MomoiCount-=e;
-                MidoriCount-=e;
+                MomoiCount -= e;
+                MidoriCount -= e;
                 break;
             case SPEIFY:
-                if (selectedEnergySlot==EnergyType.MOMOI){
-                    if(e<=MomoiCount){
+                if (selectedEnergySlot == EnergyType.MOMOI) {
+                    if (e <= MomoiCount) {
                         MomoiCount -= e;
-                    }else {
-                        e=e-MomoiCount;
-                        MomoiCount=0;
-                        MidoriCount-=2*e;
+                    } else {
+                        e = e - MomoiCount;
+                        MomoiCount = 0;
+                        MidoriCount -= 2 * e;
                     }
-                }
-                else{
-                    if(e<=MidoriCount){
+                } else {
+                    if (e <= MidoriCount) {
                         MidoriCount -= e;
-                    }else {
-                        e=e-MidoriCount;
-                        MidoriCount=0;
-                        MomoiCount-=2*e;
+                    } else {
+                        e = e - MidoriCount;
+                        MidoriCount = 0;
+                        MomoiCount -= 2 * e;
                     }
                 }
                 break;
             case SHARE:
-                if (selectedEnergySlot==EnergyType.MOMOI){
-                    if(e<=MomoiCount){
+                if (selectedEnergySlot == EnergyType.MOMOI) {
+                    if (e <= MomoiCount) {
                         MomoiCount -= e;
-                    }else {
-                        e=e-MomoiCount;
-                        MomoiCount=0;
-                        MidoriCount-=e;
-                    }
-                }
-                else{
-                    if(e<=MidoriCount){
+                    } else {
+                        e = e - MomoiCount;
+                        MomoiCount = 0;
                         MidoriCount -= e;
-                    }else {
-                        e=e-MidoriCount;
-                        MidoriCount=0;
-                        MomoiCount-=e;
+                    }
+                } else {
+                    if (e <= MidoriCount) {
+                        MidoriCount -= e;
+                    } else {
+                        e = e - MidoriCount;
+                        MidoriCount = 0;
+                        MomoiCount -= e;
                     }
                 }
                 break;
@@ -218,30 +221,30 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             fontScale = MathHelper.scaleLerpSnap(fontScale, 1.0F);
         this.tipHitbox_MOMOI.update();
         this.tipHitbox_MIDORI.update();
-        if(!Settings.USE_LONG_PRESS&&InputHelper.justClickedLeft&&this.tipHitbox_MOMOI.hovered&&!AbstractDungeon.isScreenUp){
-            this.tipHitbox_MOMOI.clickStarted=true;
+        if (!Settings.USE_LONG_PRESS && InputHelper.justClickedLeft && this.tipHitbox_MOMOI.hovered && !AbstractDungeon.isScreenUp) {
+            this.tipHitbox_MOMOI.clickStarted = true;
         }
-        if(!Settings.USE_LONG_PRESS&&InputHelper.justClickedLeft&&this.tipHitbox_MIDORI.hovered&&!AbstractDungeon.isScreenUp){
-            this.tipHitbox_MIDORI.clickStarted=true;
+        if (!Settings.USE_LONG_PRESS && InputHelper.justClickedLeft && this.tipHitbox_MIDORI.hovered && !AbstractDungeon.isScreenUp) {
+            this.tipHitbox_MIDORI.clickStarted = true;
         }
         if (this.tipHitbox_MOMOI.hovered && !AbstractDungeon.isScreenUp)
             AbstractDungeon.overlayMenu.hoveredTip = true;
         if (this.tipHitbox_MIDORI.hovered && !AbstractDungeon.isScreenUp)
             AbstractDungeon.overlayMenu.hoveredTip = true;
-        if(this.tipHitbox_MOMOI.clicked){
-            this.tipHitbox_MOMOI.clicked=false;
-            this.tipHitbox_MOMOI.clickStarted=false;
-            if(BATwinsEnergyPanel.selectedEnergySlot!=EnergyType.MOMOI){
-                BATwinsEnergyPanel.selectedEnergySlot=EnergyType.MOMOI;
+        if (this.tipHitbox_MOMOI.clicked) {
+            this.tipHitbox_MOMOI.clicked = false;
+            this.tipHitbox_MOMOI.clickStarted = false;
+            if (BATwinsEnergyPanel.selectedEnergySlot != EnergyType.MOMOI) {
+                BATwinsEnergyPanel.selectedEnergySlot = EnergyType.MOMOI;
                 updateSelectedEnergyIcon();
             }
 //            updateSelectedEnergyIcon();
-        }else if(this.tipHitbox_MIDORI.clicked){
+        } else if (this.tipHitbox_MIDORI.clicked) {
 
-            this.tipHitbox_MIDORI.clicked=false;
-            this.tipHitbox_MIDORI.clickStarted=false;
-            if(BATwinsEnergyPanel.selectedEnergySlot!=EnergyType.MIDORI){
-                BATwinsEnergyPanel.selectedEnergySlot=EnergyType.MIDORI;
+            this.tipHitbox_MIDORI.clicked = false;
+            this.tipHitbox_MIDORI.clickStarted = false;
+            if (BATwinsEnergyPanel.selectedEnergySlot != EnergyType.MIDORI) {
+                BATwinsEnergyPanel.selectedEnergySlot = EnergyType.MIDORI;
                 updateSelectedEnergyIcon();
 
             }
@@ -275,7 +278,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
     public void render(SpriteBatch sb) {
 
         this.tipHitbox_MOMOI.move(this.current_x, this.current_y);
-        this.tipHitbox_MIDORI.move(this.current_x-100.0F*Settings.scale,this.current_y+100.0F*Settings.scale);
+        this.tipHitbox_MIDORI.move(this.current_x - 100.0F * Settings.scale, this.current_y + 100.0F * Settings.scale);
         renderOrb(sb);
         renderVfx(sb);
         AbstractPlayer player = AbstractDungeon.player;
@@ -286,8 +289,8 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             AbstractDungeon.player.getEnergyNumFont().getData().setScale(fontScale);
             FontHelper.renderFontCentered(sb, BAplayer.getEnergyNumFont(), energyMsgMomoi, current_x, current_y,
                     ENERGY_TEXT_COLOR);
-            FontHelper.renderFontCentered(sb, BAplayer.getEnergyNumFont(), energyMsgMidori, current_x - 100.0F*Settings.scale,
-                    current_y + 100.0F*Settings.scale, ENERGY_TEXT_COLOR);
+            FontHelper.renderFontCentered(sb, BAplayer.getEnergyNumFont(), energyMsgMidori, current_x - 100.0F * Settings.scale,
+                    current_y + 100.0F * Settings.scale, ENERGY_TEXT_COLOR);
             this.tipHitbox_MOMOI.render(sb);
             this.tipHitbox_MIDORI.render(sb);
             if (this.tipHitbox_MOMOI.hovered && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT
@@ -315,14 +318,14 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         if (energyVfxTimer != 0.0F) {
             sb.setBlendFunction(770, 1);
             sb.setColor(this.energyVfxColor);
-            if(energyVfxType==EnergyType.MOMOI||energyVfxType==EnergyType.ALL)
+            if (energyVfxType == EnergyType.MOMOI || energyVfxType == EnergyType.ALL)
                 sb.draw(this.gainEnergyImgs[0], this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F,
-                    256.0F, this.energyVfxScale, this.energyVfxScale, -this.energyVfxAngle + 50.0F, 0, 0, 256, 256,
-                    true, false);
-            if(energyVfxType==EnergyType.MIDORI||energyVfxType==EnergyType.ALL)
-                sb.draw(this.gainEnergyImgs[1], this.current_x -128.0F-100.0F*Settings.scale, this.current_y -128.0F+100.0F*Settings.scale, 128.0F, 128.0F, 256.0F,
-                    256.0F, this.energyVfxScale, this.energyVfxScale, this.energyVfxAngle, 0, 0, 256, 256, false,
-                    false);
+                        256.0F, this.energyVfxScale, this.energyVfxScale, -this.energyVfxAngle + 50.0F, 0, 0, 256, 256,
+                        true, false);
+            if (energyVfxType == EnergyType.MIDORI || energyVfxType == EnergyType.ALL)
+                sb.draw(this.gainEnergyImgs[1], this.current_x - 128.0F - 100.0F * Settings.scale, this.current_y - 128.0F + 100.0F * Settings.scale, 128.0F, 128.0F, 256.0F,
+                        256.0F, this.energyVfxScale, this.energyVfxScale, this.energyVfxAngle, 0, 0, 256, 256, false,
+                        false);
             sb.setBlendFunction(770, 771);
         }
     }
@@ -345,17 +348,17 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         return MidoriCount;
     }
 
-    public static EnergyType getOtherEnergyType(EnergyType type){
-        if(type==EnergyType.MOMOI){
+    public static EnergyType getOtherEnergyType(EnergyType type) {
+        if (type == EnergyType.MOMOI) {
             return EnergyType.MIDORI;
-        } else if (type==EnergyType.MIDORI) {
+        } else if (type == EnergyType.MIDORI) {
             return EnergyType.MOMOI;
         }
         return type;
     }
 
-    private void updateSelectedEnergyIcon(){
-        if(AbstractDungeon.player!=null){
+    private void updateSelectedEnergyIcon() {
+        if (AbstractDungeon.player != null) {
             AbstractDungeon.player.relics.forEach(abstractRelic -> abstractRelic.updateDescription(AbstractDungeon.player.chosenClass));
         }
     }

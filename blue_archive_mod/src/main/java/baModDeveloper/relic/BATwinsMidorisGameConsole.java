@@ -14,12 +14,13 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class BATwinsMidorisGameConsole extends CustomRelic {
-    public static final String ID= ModHelper.makePath("MidorisGameConsole");
-    private static final Texture texture=TextureLoader.getTexture(ModHelper.makeImgPath("relic","MidorisGameConsole"));
-    private static final Texture outline=TextureLoader.getTexture(ModHelper.makeImgPath("relic","MidorisGameConsole_p"));
-    private static final RelicTier type=RelicTier.COMMON;
+    public static final String ID = ModHelper.makePath("MidorisGameConsole");
+    private static final Texture texture = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "MidorisGameConsole"));
+    private static final Texture outline = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "MidorisGameConsole_p"));
+    private static final RelicTier type = RelicTier.COMMON;
+
     public BATwinsMidorisGameConsole() {
-        super(ID, texture, outline, type,LandingSound.MAGICAL);
+        super(ID, texture, outline, type, LandingSound.MAGICAL);
     }
 
     @Override
@@ -31,13 +32,13 @@ public class BATwinsMidorisGameConsole extends CustomRelic {
     public void atBattleStart() {
         this.flash();
         this.addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MIDORI));
-        addToBot(new BATwinsAddHandAccordColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD,true,false));
-        this.grayscale=true;
+        addToBot(new BATwinsAddHandAccordColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, true, false));
+        this.grayscale = true;
     }
 
     @Override
     public void justEnteredRoom(AbstractRoom room) {
-        this.grayscale=false;
+        this.grayscale = false;
     }
 
     @Override

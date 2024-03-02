@@ -17,31 +17,31 @@ import java.util.Map;
 import java.util.Set;
 
 public class BATwinsSaveAndContinuePatch {
-    @SpirePatch(clz = SaveAndContinue.class,method = "loadSaveFile",paramtypez = {String.class})
-    public static class loadSaveFilePatch{
-        @SpireInsertPatch(rloc = 20,localvars = {"saveFile","savestr"})
-        public static void loadSaveFilePatch(String filePath, @ByRef SaveFile[] saveFile,@ByRef String[] savestr){
-            Gson gson=new Gson();
-            JsonObject jsonObject=gson.fromJson(savestr[0],JsonObject.class);
-            JsonArray jsonArray=jsonObject.getAsJsonArray("cards");
-            int i=0;
-            String keyName="";
-            JsonObject obj=jsonArray.get(0).getAsJsonObject();
+    @SpirePatch(clz = SaveAndContinue.class, method = "loadSaveFile", paramtypez = {String.class})
+    public static class loadSaveFilePatch {
+        @SpireInsertPatch(rloc = 20, localvars = {"saveFile", "savestr"})
+        public static void loadSaveFilePatch(String filePath, @ByRef SaveFile[] saveFile, @ByRef String[] savestr) {
+            Gson gson = new Gson();
+            JsonObject jsonObject = gson.fromJson(savestr[0], JsonObject.class);
+            JsonArray jsonArray = jsonObject.getAsJsonArray("cards");
+            int i = 0;
+            String keyName = "";
+            JsonObject obj = jsonArray.get(0).getAsJsonObject();
             Set<Map.Entry<String, JsonElement>> entrySet = obj.entrySet();
-            for(Map.Entry<String, JsonElement> map:entrySet){
-                if(map.getKey().contains("isExchange")){
-                    keyName=map.getKey();
+            for (Map.Entry<String, JsonElement> map : entrySet) {
+                if (map.getKey().contains("isExchange")) {
+                    keyName = map.getKey();
                     break;
                 }
             }
-            if(keyName.isEmpty()){
+            if (keyName.isEmpty()) {
                 System.out.println("can not read BATwins saveFile isExchange!");
                 return;
             }
             for (JsonElement cardElement : jsonArray) {
                 JsonObject cardObject = cardElement.getAsJsonObject();
                 boolean isExchange = cardObject.get(keyName).getAsBoolean();
-                BATwinsCardSavePatch.FiledPatch.isExchange.set(saveFile[0].cards.get(i),isExchange);
+                BATwinsCardSavePatch.FiledPatch.isExchange.set(saveFile[0].cards.get(i), isExchange);
                 i++;
                 System.out.println(keyName + isExchange);
             }

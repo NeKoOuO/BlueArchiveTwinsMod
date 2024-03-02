@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 /**
  * Created by Keeper on 2019/3/16.
  */
-public class GifAnimation{
+public class GifAnimation {
     Animation<TextureRegion> animation;
     float elapsed;
 
@@ -29,7 +29,7 @@ public class GifAnimation{
         sb.draw(animation.getKeyFrame(elapsed), x, y, width, height);
     }
 
-    public void render(SpriteBatch sb,  float x, float y, float originX, float originY, float width, float height, float scaleX, float scaleY, float rotation, int srcX, int srcY, int srcWidth, int srcHeight, boolean flipX, boolean flipY) {
+    public void render(SpriteBatch sb, float x, float y, float originX, float originY, float width, float height, float scaleX, float scaleY, float rotation, int srcX, int srcY, int srcWidth, int srcHeight, boolean flipX, boolean flipY) {
         elapsed += Gdx.graphics.getDeltaTime();
         sb.draw(animation.getKeyFrame(elapsed), x, y, originX, originY, width, height, scaleX, scaleY, rotation);
     }

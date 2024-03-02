@@ -12,18 +12,18 @@ import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import java.util.ArrayList;
 
 public class BATwinsCampfireUIPatch {
-    @SpirePatch(clz = CampfireUI.class,method = "initializeButtons")
-    public static class initializeButtonsPatch{
-        @SpireInsertPatch(rloc= 4)
-        public static void initializeButtonsPatch(CampfireUI __instance, ArrayList<AbstractCampfireOption> ___buttons){
-            boolean hasBATwinsCard=false;
-            for(AbstractCard c:AbstractDungeon.player.masterDeck.group){
-                if(c instanceof BATwinsModCustomCard){
-                    hasBATwinsCard=true;
+    @SpirePatch(clz = CampfireUI.class, method = "initializeButtons")
+    public static class initializeButtonsPatch {
+        @SpireInsertPatch(rloc = 4)
+        public static void initializeButtonsPatch(CampfireUI __instance, ArrayList<AbstractCampfireOption> ___buttons) {
+            boolean hasBATwinsCard = false;
+            for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+                if (c instanceof BATwinsModCustomCard) {
+                    hasBATwinsCard = true;
                     break;
                 }
             }
-            if(hasBATwinsCard){
+            if (hasBATwinsCard) {
                 ___buttons.add(new BATwinsCamfireExchangeButton());
             }
         }
