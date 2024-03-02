@@ -410,7 +410,7 @@
 	},
 	"BATwinsMod:HeavyBullets":{
 		"NAME":"重型子弹",
-		"DESCRIPTION":"造成 !D! 点伤害。 NL 存储到手牌的射击中。"
+		"DESCRIPTION":"造成 !D! 点伤害。"
 	},
 	"BATwinsMod:ArmorPiercingBullet":{
 		"NAME":"破甲子弹",
@@ -426,19 +426,20 @@
 	},
 	"BATwinsMod:ContinuousShooting":{
 		"NAME":"连续射击",
-		"DESCRIPTION":"保留 ，能被多次 升级 NL 保留 时存储 !M! 张随机 batwinsmod:子弹 。 打出时清空这张牌存储的 batwinsmod:子弹 。"
+		"DESCRIPTION":"保留 ，能被多次 升级 NL 保留 时 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 打出后清空这张牌 batwinsmod:存储 的 batwinsmod:子弹 。"
 	},
 	"BATwinsMod:BreechLoading":{
 		"NAME":"上膛",
-		"DESCRIPTION":"手牌1张连续射击 batwinsmod:存储 !M! 张 随机 batwinsmod:子弹 。"
+		"DESCRIPTION":"手牌所有 batwinsmod:射击 牌 batwinsmod:存储 !M! 张 随机 batwinsmod:子弹 。"
 	},
 	"BATwinsMod:ExpansionMagazine":{
 		"NAME":"扩容弹夹",
 		"DESCRIPTION":""
 	},
 	"BATwinsMod:BulletWarehouse":{
-		"NAME":"子弹仓库",
-		"DESCRIPTION":"打出 batwinsmod:子弹 后，随机给予目标敌人 !M! 层 中毒 或 虚弱 。"
+		"NAME":"武器库",
+		"DESCRIPTION":"从4张 batwinsmod:射击 牌中选择1张加入手牌。 NL 消耗 ",
+		"UPGRADE_DESCRIPTION":"从4张 升级 的 batwinsmod:射击 牌中选择1张加入手牌。 NL 消耗 "
 	},
 	"BATwinsMod:PoisonBullet":{
 		"NAME":"淬毒子弹",
@@ -451,5 +452,17 @@
 	"BATwinsMod:SniperBullet":{
 		"NAME":"狙击子弹",
 		"DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 虚弱 。"
+	},
+	"BATwinsMod:StableShooting":{
+		"NAME":"稳定射击",
+		"DESCRIPTION":"造成 !D! 点伤害。"
+	},
+	"BATwinsMod:RandomShooting":{
+		"NAME":"胡乱射击",
+		"DESCRIPTION":"对随机敌人打出 !M! 张随机 batwinsmod:子弹 。将这张牌打出的 batwinsmod:子弹 牌 batwinsmod:存储 在手牌随机 batwinsmod:射击 牌中。"
+	},
+	"BATwinsMod:FocusShooting":{
+		"NAME":"集中射击",
+		"DESCRIPTION":"造成等同于这张牌 batwinsmod:存储 的牌数量的 !M! 倍的伤害（ !D! 点伤害） NL 这张牌 batwinsmod:存储 batwinsmod:子弹 时再 batwinsmod:存储 同样的 batwinsmod:子弹 牌。打出后清空这张牌 batwinsmod:存储 的 batwinsmod:子弹 。"
 	}
 }

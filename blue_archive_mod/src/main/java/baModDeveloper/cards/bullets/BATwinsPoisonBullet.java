@@ -25,8 +25,8 @@ public class BATwinsPoisonBullet extends BATwinsCustomBulletCard {
     private static final CardRarity RARITY=CardRarity.SPECIAL;
     public BATwinsPoisonBullet() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage=this.damage=1;
-        this.baseMagicNumber=this.magicNumber=2;
+        this.baseDamage=this.damage=3;
+        this.baseMagicNumber=this.magicNumber=1;
     }
 
     @Override

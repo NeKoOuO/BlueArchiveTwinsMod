@@ -298,6 +298,8 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     public static class BATwinsCardTags{
         @SpireEnum
         public static CardTags Adventure;
+        @SpireEnum
+        public static CardTags Shooting;
     }
 
 
@@ -354,6 +356,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             }
         }
         return false;
+    }
+    public ArrayList<AbstractCard> getBringOutCards(){
+        return this.cardToBringOut;
     }
     public void clearBringOutCards(){
         if (this.cardToBringOut.isEmpty()){

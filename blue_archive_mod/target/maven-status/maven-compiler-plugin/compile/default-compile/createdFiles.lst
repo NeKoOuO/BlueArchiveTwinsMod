@@ -1,6 +1,7 @@
 baModDeveloper\patch\BATwinsGameTipPatch.class
 baModDeveloper\patch\BATwinsRunPathElementPatch.class
 baModDeveloper\cards\BATwinsIgniteTheUpperBody.class
+baModDeveloper\cards\BATwinsRandomShooting.class
 baModDeveloper\patch\BATwinsMetricDataPatch.class
 baModDeveloper\patch\BATwinsAbstractCardPatch$hoverPatch.class
 baModDeveloper\action\BATwinsInterpretiveErrorAction.class
@@ -56,6 +57,7 @@ baModDeveloper\ui\panels\BATwinsEnergyPanel$1.class
 baModDeveloper\action\BATwinsCoolingTimeAction.class
 baModDeveloper\patch\BATwinsCardSavePatch.class
 baModDeveloper\cards\BATwinsAdventureExperience.class
+baModDeveloper\cards\BATwinsBulletWarehouse.class
 baModDeveloper\helpers\Character3DHelper$MomoiAnimationList.class
 baModDeveloper\power\BATwinsIntegratingAndIntegratingPower.class
 baModDeveloper\cards\BATwinsMasterCraftsmanship.class
@@ -92,6 +94,7 @@ baModDeveloper\cards\BATwinsPenetrationDamage$1.class
 baModDeveloper\cards\BATwinsPenetrationDamage.class
 baModDeveloper\character\BATwinsCharacter$Enums.class
 baModDeveloper\power\BATwinsPlotPredictionExchangePower.class
+baModDeveloper\action\BATwinsBulletWarehouseAction.class
 baModDeveloper\cards\bullets\BATwinsSniperBullet.class
 baModDeveloper\action\BATwinsBugFixAction.class
 baModDeveloper\power\BATwinsBugFixPower.class
@@ -173,6 +176,7 @@ baModDeveloper\cards\BATwinsTakeABreak.class
 baModDeveloper\cards\BATwinsKeepItToTheEnd.class
 baModDeveloper\cards\BATwinsDontSayIt.class
 baModDeveloper\action\BATwinsLoginRewardsAction.class
+baModDeveloper\action\BATwinsRandomShootingAction.class
 baModDeveloper\cards\BATwinsMidoriDefend.class
 baModDeveloper\patch\BATwinsCancelButtonPatch$updatePatch.class
 baModDeveloper\cards\BATwinsEasterEgg.class
@@ -192,6 +196,7 @@ baModDeveloper\patch\BATwinsSaveAndContinuePatch.class
 baModDeveloper\cards\BATwinsCheatingCodeEnabled.class
 baModDeveloper\ui\panels\icons\BATwinsMomoiEnergyOrbSmall.class
 baModDeveloper\patch\BATwinsLoadLayerSaveFix.class
+baModDeveloper\cards\BATwinsStableShooting.class
 baModDeveloper\action\BATwinsCoversionColorAction.class
 baModDeveloper\patch\BATwinsCharacterOptionPatch.class
 baModDeveloper\cards\BATwinsShiftingAndGhosting.class
@@ -211,9 +216,12 @@ baModDeveloper\cards\BATwinsRushToDraft.class
 baModDeveloper\cards\BATwinsTemporaryAssistance.class
 baModDeveloper\cards\BATwinsCheckTheStrategy.class
 baModDeveloper\action\BATwinsDisOtherCardByColorAction.class
+baModDeveloper\action\BATwinsCopyBulletsAction.class
 baModDeveloper\patch\BATwinsAbstractDungeonPatch$nextRoomTransitionPatch.class
+baModDeveloper\cards\BATwinsFocusShooting.class
 baModDeveloper\ui\panels\button\BATwinsCamfireExchangeButton.class
 baModDeveloper\cards\BATwinsAlternatingAttack.class
+baModDeveloper\cards\BATwinsBreechLoading.class
 baModDeveloper\helpers\ModHelper.class
 baModDeveloper\cards\bullets\BATwinsArmorPiercingBullet.class
 baModDeveloper\cards\bullets\BATwinsPoisonBullet.class
@@ -241,6 +249,7 @@ baModDeveloper\cards\BATwinsExperienceGiftPackage.class
 baModDeveloper\action\BATwinsSkillCombinationAction.class
 baModDeveloper\cards\BATwinsTakeABreak$2.class
 baModDeveloper\cards\BATwinsAbstractSchool.class
+baModDeveloper\cards\bullets\BATwinsHeavyBullets.class
 baModDeveloper\patch\BATwinsCancelButtonPatch.class
 baModDeveloper\power\BATwinsArtPolishingExchangePower$1.class
 baModDeveloper\cards\BATwinsMomoiDefend.class

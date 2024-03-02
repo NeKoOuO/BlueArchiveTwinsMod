@@ -25,7 +25,7 @@ public class BATwinsArmorPiercingBullet extends BATwinsCustomBulletCard {
     private static final CardRarity RARITY=CardRarity.SPECIAL;
     public BATwinsArmorPiercingBullet() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage=this.damage=1;
+        this.baseDamage=this.damage=3;
         this.baseMagicNumber=this.magicNumber=1;
     }
 

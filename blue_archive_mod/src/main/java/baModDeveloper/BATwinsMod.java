@@ -116,8 +116,8 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
 //        BaseMod.addCard(new BATwinsPassageInForce());
 //        BaseMod.addCard(new BATwinsSiteAdaptation());
         BaseMod.addCard(new BATwinsOnceMore());
-        BaseMod.addCard(new BATwinsBadDesigner());
-        BaseMod.addCard(new BATwinsExcellentDesigner());
+//        BaseMod.addCard(new BATwinsBadDesigner());
+//        BaseMod.addCard(new BATwinsExcellentDesigner());
 //        BaseMod.addCard(new BATwinsBugCard());
 //        BaseMod.addCard(new BATwinsPlotRepair());
 //        BaseMod.addCard(new BATwinsRushToDraft());
@@ -132,7 +132,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsBDStudy());
 //        BaseMod.addCard(new BATwinsEmergencyRecovery());
         BaseMod.addCard(new BATwinsAbstractSchool());
-        BaseMod.addCard(new BATwinsDefensiveCounterattack());
+//        BaseMod.addCard(new BATwinsDefensiveCounterattack());
 //        BaseMod.addCard(new BATwinsAdventureRewards());
 //        BaseMod.addCard(new BATwinsAccumulatedStrike());
 //        BaseMod.addCard(new BATwinsNormalAttackMethods());
@@ -189,6 +189,12 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsPoisonBullet());
         BaseMod.addCard(new BATwinsSniperBullet());
         BaseMod.addCard(new BATwinsArmorPiercingBullet());
+        BaseMod.addCard(new BATwinsBreechLoading());
+        BaseMod.addCard(new BATwinsStableShooting());
+        BaseMod.addCard(new BATwinsRandomShooting());
+        BaseMod.addCard(new BATwinsFocusShooting());
+        BaseMod.addCard(new BATwinsHeavyBullets());
+        BaseMod.addCard(new BATwinsBulletWarehouse());
     }
 
     @Override

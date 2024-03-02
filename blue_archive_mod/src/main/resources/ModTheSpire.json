@@ -4,7 +4,7 @@
     "author_list":[
         "0v0"
     ],
-    "description":"Blue archive Saiba Sisters mod.Testing.....",
+    "description":"Blue archive Saiba Sisters mod.Testing.....\n本模组有特别的系统，在此讲解一下：\n角色拥有两个充能槽，同时也有两种颜色的牌。红色牌将使用红色能量，绿色牌使用绿色能量。同时若本颜色的能量不足时也可以消耗两倍另一个能量来打出牌。原版中获得能量上限的遗物将同时提升两个能量的上限。而获得临时能量的遗物只能获得指定能量槽的能量。\n指定能量槽是指在能量槽右下有小挂件表示的能量槽，在战斗中可以随时点击能量槽来切换指定能量槽。",
     "dependencies":[
         "basemod",
         "stslib"
