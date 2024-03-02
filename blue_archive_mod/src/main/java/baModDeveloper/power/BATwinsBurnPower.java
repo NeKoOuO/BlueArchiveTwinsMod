@@ -1,7 +1,10 @@
 package baModDeveloper.power;
 
+import baModDeveloper.BATwinsMod;
 import baModDeveloper.helpers.ModHelper;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -18,7 +21,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 
-public class BATwinsBurnPower extends AbstractPower{
+public class BATwinsBurnPower extends AbstractPower implements HealthBarRenderPower {
     public static final String POWER_ID= ModHelper.makePath("BurnPower");
     private static final AbstractPower.PowerType TYPE=PowerType.DEBUFF;
     private static final PowerStrings powerStrings= CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -26,6 +29,8 @@ public class BATwinsBurnPower extends AbstractPower{
     private static final String[] DESCRIPTIONS=powerStrings.DESCRIPTIONS;
     private static final String IMG_84=ModHelper.makeImgPath("power","Burn84");
     private static final String IMG_32=ModHelper.makeImgPath("power","Burn32");
+    private static final Color HEALTHBARCOLOR= new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
+
     private AbstractCreature source;
     public BATwinsBurnPower(AbstractCreature owner,AbstractCreature source,int Amount){
         this.name=NAME;
@@ -67,6 +72,16 @@ public class BATwinsBurnPower extends AbstractPower{
             addToTop((AbstractGameAction)new DamageAllEnemiesAction(null,
             DamageInfo.createDamageMatrix(this.amount*2, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         }
+    }
+
+    @Override
+    public int getHealthBarAmount() {
+        return this.amount;
+    }
+
+    @Override
+    public Color getColor() {
+        return HEALTHBARCOLOR;
     }
     //    @Override
 //    public float atDamageReceive(float damage, DamageInfo.DamageType damageType, AbstractCard card) {

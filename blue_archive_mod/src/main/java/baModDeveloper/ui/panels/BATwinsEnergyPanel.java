@@ -93,8 +93,13 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         fontScale = 2.0F;
         energyVfxType=type;
     }
-
+    public static void addEnergy(int e){
+        addEnergy(e,EnergyType.SPEIFY);
+    }
     public static void addEnergy(int e, EnergyType type) {
+        if(type==EnergyType.SPEIFY){
+            type=BATwinsEnergyPanel.selectedEnergySlot;
+        }
         switch (type) {
             case MOMOI:
                 MomoiCount += e;
@@ -119,7 +124,9 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         fontScale = 2.0F;
         energyVfxType=type;
     }
-
+    public static void useEnergy(int e){
+        useEnergy(e,EnergyType.ALL);
+    }
     public static void useEnergy(int e, EnergyType type) {
         switch (type) {
             case MOMOI:
@@ -224,12 +231,23 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         if(this.tipHitbox_MOMOI.clicked){
             this.tipHitbox_MOMOI.clicked=false;
             this.tipHitbox_MOMOI.clickStarted=false;
-            BATwinsEnergyPanel.selectedEnergySlot=EnergyType.MOMOI;
+            if(BATwinsEnergyPanel.selectedEnergySlot!=EnergyType.MOMOI){
+                BATwinsEnergyPanel.selectedEnergySlot=EnergyType.MOMOI;
+                updateSelectedEnergyIcon();
+            }
+//            updateSelectedEnergyIcon();
         }else if(this.tipHitbox_MIDORI.clicked){
+
             this.tipHitbox_MIDORI.clicked=false;
             this.tipHitbox_MIDORI.clickStarted=false;
-            BATwinsEnergyPanel.selectedEnergySlot=EnergyType.MIDORI;
+            if(BATwinsEnergyPanel.selectedEnergySlot!=EnergyType.MIDORI){
+                BATwinsEnergyPanel.selectedEnergySlot=EnergyType.MIDORI;
+                updateSelectedEnergyIcon();
+
+            }
+//            updateSelectedEnergyIcon();
         }
+
         if (Settings.isDebug) {
             if (InputHelper.scrolledDown) {
                 addEnergy(1, EnergyType.ALL);
@@ -334,5 +352,11 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             return EnergyType.MOMOI;
         }
         return type;
+    }
+
+    private void updateSelectedEnergyIcon(){
+        if(AbstractDungeon.player!=null){
+            AbstractDungeon.player.relics.forEach(abstractRelic -> abstractRelic.updateDescription(AbstractDungeon.player.chosenClass));
+        }
     }
 }

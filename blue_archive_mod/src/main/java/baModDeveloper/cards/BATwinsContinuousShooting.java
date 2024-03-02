@@ -1,6 +1,8 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsClearBringOutCardAction;
+import baModDeveloper.cards.bullets.BATwinsBullet;
+import baModDeveloper.cards.bullets.BATwinsCustomBulletCard;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
@@ -55,12 +57,9 @@ public class BATwinsContinuousShooting extends BATwinsModCustomCard{
 
     @Override
     public void onRetained() {
-        if(this.cardToBringOut.size()<this.magicNumber){
-            this.flash(BATwinsCharacter.getColorWithCardColor(this.color));
-            AbstractCard bullet=new BATwinsBullet();
-            for(int i=0;i<this.magicNumber;i++){
-                this.addBringOutCard(bullet);
-            }
+        this.flash(BATwinsCharacter.getColorWithCardColor(this.color));
+        for(int i=0;i<this.magicNumber;i++){
+            this.addBringOutCard(BATwinsCustomBulletCard.getRandomBullet());
         }
     }
 }

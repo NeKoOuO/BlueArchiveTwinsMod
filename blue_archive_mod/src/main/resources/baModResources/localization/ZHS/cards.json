@@ -414,7 +414,7 @@
 	},
 	"BATwinsMod:ArmorPiercingBullet":{
 		"NAME":"破甲子弹",
-		"DESCRIPTION":"造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。 NL 存储到手牌的射击中。"
+		"DESCRIPTION":"造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
 	},
 	"BATwinsMod:Shooting":{
 		"NAME":"射击",
@@ -426,7 +426,7 @@
 	},
 	"BATwinsMod:ContinuousShooting":{
 		"NAME":"连续射击",
-		"DESCRIPTION":"保留 ，能被多次 升级 NL 保留 时存储 !M! 张 batwinsmod:子弹 。 打出时清空这张牌存储的 batwinsmod:子弹 。"
+		"DESCRIPTION":"保留 ，能被多次 升级 NL 保留 时存储 !M! 张随机 batwinsmod:子弹 。 打出时清空这张牌存储的 batwinsmod:子弹 。"
 	},
 	"BATwinsMod:BreechLoading":{
 		"NAME":"上膛",
@@ -439,5 +439,17 @@
 	"BATwinsMod:BulletWarehouse":{
 		"NAME":"子弹仓库",
 		"DESCRIPTION":"打出 batwinsmod:子弹 后，随机给予目标敌人 !M! 层 中毒 或 虚弱 。"
+	},
+	"BATwinsMod:PoisonBullet":{
+		"NAME":"淬毒子弹",
+		"DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 中毒 。"
+	},
+	"BATwinsMod:IncendiaryBullet":{
+		"NAME":"燃烧子弹",
+		"DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 batwinsmod:灼伤 。"
+	},
+	"BATwinsMod:SniperBullet":{
+		"NAME":"狙击子弹",
+		"DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 虚弱 。"
 	}
 }

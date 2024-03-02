@@ -16,6 +16,8 @@ import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import baModDeveloper.ui.panels.BATwinsExperencePanel;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMidoriOrb;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMomoiOrb;
+import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
+import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -29,6 +31,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -49,6 +52,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 
 public class BATwinsCharacter extends CustomPlayer {
     private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder");
@@ -312,7 +316,10 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public Texture getEnergyImage() {
-        return super.getEnergyImage();
+        if (Objects.requireNonNull(BATwinsEnergyPanel.selectedEnergySlot) == BATwinsEnergyPanel.EnergyType.MIDORI) {
+            return BATwinsMidoriEnergyOrbSmall.getTEXTRUE();
+        }
+        return BATwinsMomoiEnergyOrbSmall.getTEXTRUE();
     }
 
     public Texture[] getEnergyImages(){
@@ -337,6 +344,11 @@ public class BATwinsCharacter extends CustomPlayer {
     public void gainEnergy(int e, BATwinsEnergyPanel.EnergyType type){
         BATwinsEnergyPanel.addEnergy(e,type);
         this.hand.glowCheck();
+    }
+
+    @Override
+    public void loseEnergy(int e) {
+        BATwinsEnergyPanel.useEnergy(e);
     }
 
     @Override
@@ -523,5 +535,13 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public boolean saveFileExists() {
         return super.saveFileExists();
+    }
+
+    @Override
+    public void damage(DamageInfo info) {
+        super.damage(info);
+//        if(this.currentBlock==0&&info.output>0&&this.currentHealth>0){
+//            CardCrawlGame.sound.play(ModHelper.makeAudioPath("affected_momoi"));
+//        }
     }
 }

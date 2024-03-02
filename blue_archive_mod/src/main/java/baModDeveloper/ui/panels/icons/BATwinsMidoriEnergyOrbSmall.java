@@ -19,4 +19,7 @@ public class BATwinsMidoriEnergyOrbSmall extends AbstractCustomIcon {
         }
         return smallorb;
     }
+    public static Texture getTEXTRUE(){
+        return TEXTRUE;
+    }
 }

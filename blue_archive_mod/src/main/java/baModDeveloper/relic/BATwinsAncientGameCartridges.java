@@ -37,17 +37,22 @@ public class BATwinsAncientGameCartridges extends CustomRelic {
 //        this.grayscale=true;
     }
 
+
+
     @Override
-    public void atBattleStart() {
-        this.flash();
-        CardGroup powerCards=new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        AbstractDungeon.player.drawPile.group.stream().filter(card -> card.type== AbstractCard.CardType.POWER).forEach(powerCards::addToBottom);
-        if(!powerCards.isEmpty()){
-            AbstractCard card=powerCards.getRandomCard(AbstractDungeon.cardRandomRng);
-            addToBot(new BATwinsPlayDrawPailCardAction(card,null,false));
+    public void atTurnStartPostDraw() {
+        if(!this.grayscale){
+            this.flash();
+            CardGroup powerCards=new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+            AbstractDungeon.player.drawPile.group.stream().filter(card -> card.type== AbstractCard.CardType.POWER).forEach(powerCards::addToBottom);
+            if(!powerCards.isEmpty()){
+                AbstractCard card=powerCards.getRandomCard(AbstractDungeon.cardRandomRng);
+                addToBot(new BATwinsPlayDrawPailCardAction(card,null,false));
+            }
+            this.grayscale=true;
+
         }
 
-        this.grayscale=true;
     }
 
     @Override

@@ -32,7 +32,7 @@ public class BATwinsCharacterOptionPatch {
                 PressCount=0;
                 FindEasterEgg=false;
             }
-            System.out.println("pressCount:"+PressCount);
+//            System.out.println("pressCount:"+PressCount);
         }
     }
 }

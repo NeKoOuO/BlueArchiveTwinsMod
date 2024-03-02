@@ -20,4 +20,8 @@ public class BATwinsMomoiEnergyOrbSmall extends AbstractCustomIcon {
         }
         return smallorb;
     }
+
+    public static Texture getTEXTRUE(){
+        return TEXTRUE;
+    }
 }

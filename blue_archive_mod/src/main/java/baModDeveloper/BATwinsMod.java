@@ -1,6 +1,7 @@
 package baModDeveloper;
 
 import baModDeveloper.cards.*;
+import baModDeveloper.cards.bullets.*;
 import baModDeveloper.event.BATwinsTrainingCamp;
 import baModDeveloper.relic.*;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
@@ -15,7 +16,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -28,7 +28,6 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.helpers.ModHelper;
 import basemod.BaseMod;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -50,7 +49,7 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
     private static final String BATWINS_MIDORI_ATTACK_512 = ModHelper.makeImgPath("512", "bg_attack_512_2");
     private static final String BATWINS_MIDORI_POWER_512 = ModHelper.makeImgPath("512", "bg_power_512_2");
     private static final String BATWINS_MIDORI_SKILL_512 = ModHelper.makeImgPath("512", "bg_skill_512_2");
-    private static final String MOMOI_SMALL_ORB = ModHelper.makeImgPath("512", "small_orb");
+    private static final String MOMOI_SMALL_ORB = ModHelper.makeImgPath("512", "small_orb_double");
     private static final String MIDORI_SMALL_ORB = ModHelper.makeImgPath("512", "small_orb_2");
     private static final String BATWINS_MOMOI_ATTACK_1024 = ModHelper.makeImgPath("1024", "bg_attack_1024");
     private static final String BATWINS_MOMOI_POWER_1024 = ModHelper.makeImgPath("1024", "bg_power_1024");
@@ -186,6 +185,10 @@ public class BATwinsMod implements EditCardsSubscriber,EditStringsSubscriber,Edi
         BaseMod.addCard(new BATwinsScriptRewriting());
         BaseMod.addCard(new BATwinsBullet());
         BaseMod.addCard(new BATwinsContinuousShooting());
+        BaseMod.addCard(new BATwinsIncendiaryBullet());
+        BaseMod.addCard(new BATwinsPoisonBullet());
+        BaseMod.addCard(new BATwinsSniperBullet());
+        BaseMod.addCard(new BATwinsArmorPiercingBullet());
     }
 
     @Override

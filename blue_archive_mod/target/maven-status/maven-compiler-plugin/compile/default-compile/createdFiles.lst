@@ -92,6 +92,7 @@ baModDeveloper\cards\BATwinsPenetrationDamage$1.class
 baModDeveloper\cards\BATwinsPenetrationDamage.class
 baModDeveloper\character\BATwinsCharacter$Enums.class
 baModDeveloper\power\BATwinsPlotPredictionExchangePower.class
+baModDeveloper\cards\bullets\BATwinsSniperBullet.class
 baModDeveloper\action\BATwinsBugFixAction.class
 baModDeveloper\power\BATwinsBugFixPower.class
 baModDeveloper\action\BATwinsSelectDrawPileCardToPlayAction.class
@@ -103,7 +104,6 @@ baModDeveloper\cards\BATwinsBenefitReducingMagic.class
 baModDeveloper\cards\BATwinsDeveloperCollaboration.class
 baModDeveloper\patch\BATwinsDamageActionPatch$updatePatch.class
 baModDeveloper\animation\AbstractGIFCard.class
-baModDeveloper\cards\BATwinsBullet.class
 baModDeveloper\patch\BATwinsCampfireUIPatch.class
 baModDeveloper\action\BATwinsPlayHandCardAction.class
 baModDeveloper\power\BATwinsGainLENextTurnPower.class
@@ -129,6 +129,7 @@ baModDeveloper\cards\BATwinsAssault.class
 baModDeveloper\patch\BATwinsAbstractCardPatch.class
 baModDeveloper\animation\GifAnimation.class
 baModDeveloper\patch\BATwinsGainBlockActionPatch.class
+baModDeveloper\cards\bullets\BATwinsIncendiaryBullet.class
 baModDeveloper\ui\panels\BATwinsEnergyPanel$EnergyType.class
 baModDeveloper\power\BATwinsDeveloperCollaborationPower.class
 baModDeveloper\event\BATwinsTrainingCamp.class
@@ -201,6 +202,7 @@ baModDeveloper\relic\BATwinsByProving$1.class
 baModDeveloper\power\BATwinsBorrowMePower.class
 baModDeveloper\cards\BATwinsInspirationEmergence.class
 baModDeveloper\patch\BATwinsCardCrawlGamePatch$loadPlayerSavePatch.class
+baModDeveloper\cards\bullets\BATwinsCustomBulletCard.class
 baModDeveloper\action\BATwinsDrawOrDisCardToHandAction.class
 baModDeveloper\action\BATwinsMakeTempCardInHandAction.class
 baModDeveloper\ui\panels\button\BATwinsSwitchOrbButton.class
@@ -213,13 +215,17 @@ baModDeveloper\patch\BATwinsAbstractDungeonPatch$nextRoomTransitionPatch.class
 baModDeveloper\ui\panels\button\BATwinsCamfireExchangeButton.class
 baModDeveloper\cards\BATwinsAlternatingAttack.class
 baModDeveloper\helpers\ModHelper.class
+baModDeveloper\cards\bullets\BATwinsArmorPiercingBullet.class
+baModDeveloper\cards\bullets\BATwinsPoisonBullet.class
 baModDeveloper\action\BATwinsAddHandAccordColorAction.class
 baModDeveloper\cards\BATwinsParoxysmalPain.class
+baModDeveloper\patch\BATwinsGainEnergyAndEnableControlsActionPatch.class
 baModDeveloper\cards\BATwinsAdditionalAttacks.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$openPatch.class
 baModDeveloper\cards\BATwinsPaintingArt.class
 baModDeveloper\patch\BATwinsCardGroupPatch.class
 baModDeveloper\cards\BATwinsMaidForm.class
+baModDeveloper\cards\bullets\BATwinsBullet.class
 baModDeveloper\cards\BATwinsEnchantedBullet.class
 baModDeveloper\patch\BATwinsAbstractCardPatch$unhoverPatch.class
 baModDeveloper\action\BATwinsSelectAdventureCardAction.class
@@ -241,6 +247,7 @@ baModDeveloper\cards\BATwinsMomoiDefend.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$updatePatch.class
 baModDeveloper\power\BATwinsDoubleExperiencePower.class
 baModDeveloper\cards\BATwinsTakeABreak$1.class
+baModDeveloper\patch\BATwinsGainEnergyAndEnableControlsActionPatch$updatePatch.class
 baModDeveloper\power\BATwinsOnceMorePower.class
 baModDeveloper\animation\AnimationPatch$UpdatePatch.class
 baModDeveloper\effect\BATwinsRefreshEnergyEffect.class

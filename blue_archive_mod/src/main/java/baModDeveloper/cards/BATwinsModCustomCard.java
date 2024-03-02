@@ -241,7 +241,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 //            this.playedByOtherCard=false;
         }
         if(this.bringOutCard){
-            this.bringOutCard();
+            this.bringOutCard(abstractMonster);
         }
         this.numberOfConnections=0;
         BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(this,false);
@@ -366,10 +366,10 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         this.bringOutCard=false;
         this.glowColor=AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
-    public void bringOutCard(){
+    public void bringOutCard(AbstractMonster m){
         if(this.bringOutCard){
             for(AbstractCard c:this.cardToBringOut)
-                addToBot(new BATwinsPlayTempCardAction(c.makeStatEquivalentCopy(),this.numberOfConnections+1));
+                addToBot(new BATwinsPlayTempCardAction(c.makeStatEquivalentCopy(),this.numberOfConnections+1,m));
         }
     }
 
