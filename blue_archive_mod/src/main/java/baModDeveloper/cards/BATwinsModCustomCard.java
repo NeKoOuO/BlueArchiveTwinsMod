@@ -2,6 +2,7 @@ package baModDeveloper.cards;
 
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.action.BATwinsPlayTempCardAction;
+import baModDeveloper.cards.bullets.BATwinsCustomBulletCard;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ImageHelper;
 import baModDeveloper.helpers.ModHelper;
@@ -348,6 +349,10 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     }
 
     public void addBringOutCard(AbstractCard card) {
+        if(AbstractDungeon.player!=null&&AbstractDungeon.player.hasPower(BATwinsExpansionMagazinePower.POWER_ID)&&card instanceof BATwinsCustomBulletCard){
+            AbstractDungeon.player.getPower(BATwinsExpansionMagazinePower.POWER_ID).flash();
+            card.upgrade();
+        }
         this.bringOutCard = true;
         this.cardToBringOut.add(card.makeSameInstanceOf());
         if (this.cardsToPreview == null) {

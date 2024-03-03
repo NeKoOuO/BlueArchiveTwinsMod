@@ -1,5 +1,6 @@
 package baModDeveloper.power;
 
+import baModDeveloper.action.BATwinsPropCollectionAction;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -23,7 +24,7 @@ public class BATwinsMaidFormPower extends AbstractPower {
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final String IMG_84 = ModHelper.makeImgPath("power", "MaidForm84");
     private static final String IMG_32 = ModHelper.makeImgPath("power", "MaidForm32");
-    private static final Random rng = new Random();
+//    private static final Random rng = new Random();
 
     public BATwinsMaidFormPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -42,26 +43,8 @@ public class BATwinsMaidFormPower extends AbstractPower {
         this.description = String.format(DESCRIPTIONS[0], amount);
     }
 
-    public void douleDamage(DamageInfo info) {
-        if (info.owner == AbstractDungeon.player) {
-            int r = rng.nextInt(100);
-            if (r < this.amount) {
-                this.flash();
-                info.base *= 2;
-                info.output = info.base;
-            }
-        }
+    @Override
+    public void atStartOfTurnPostDraw() {
+        addToBot(new BATwinsPropCollectionAction(this.amount));
     }
-
-    public int doubleBlock(AbstractCreature target, int amount) {
-        if (target == AbstractDungeon.player) {
-            int r = rng.nextInt(100);
-            if (r < this.amount) {
-                this.flash();
-                amount *= 2;
-            }
-        }
-        return amount;
-    }
-
 }

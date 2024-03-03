@@ -28,7 +28,7 @@ public class BATwinsFocusShooting extends BATwinsModCustomCard {
 
     public BATwinsFocusShooting() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = this.damage = 0;
+        this.baseDamage = this.damage = 9;
         this.baseMagicNumber = this.magicNumber = 1;
         this.tags.add(BATwinsCardTags.Shooting);
     }
@@ -52,23 +52,23 @@ public class BATwinsFocusShooting extends BATwinsModCustomCard {
         }
     }
 
-    @Override
-    public void applyPowers() {
-        int BaseBaseDamage = this.baseDamage;
-        this.baseDamage += this.cardToBringOut.size() * this.magicNumber;
-        super.applyPowers();
-        this.isDamageModified = this.damage != BaseBaseDamage;
-        this.baseDamage = BaseBaseDamage;
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        int BaseBaseDamage = this.baseDamage;
-        this.baseDamage += this.cardToBringOut.size() * this.magicNumber;
-        super.calculateCardDamage(mo);
-        this.isDamageModified = this.damage != BaseBaseDamage;
-        this.baseDamage = BaseBaseDamage;
-    }
+//    @Override
+//    public void applyPowers() {
+//        int BaseBaseDamage = this.baseDamage;
+//        this.baseDamage += this.cardToBringOut.size() * this.magicNumber;
+//        super.applyPowers();
+//        this.isDamageModified = this.damage != BaseBaseDamage;
+//        this.baseDamage = BaseBaseDamage;
+//    }
+//
+//    @Override
+//    public void calculateCardDamage(AbstractMonster mo) {
+//        int BaseBaseDamage = this.baseDamage;
+//        this.baseDamage += this.cardToBringOut.size() * this.magicNumber;
+//        super.calculateCardDamage(mo);
+//        this.isDamageModified = this.damage != BaseBaseDamage;
+//        this.baseDamage = BaseBaseDamage;
+//    }
 
     @Override
     public void addBringOutCard(AbstractCard card) {

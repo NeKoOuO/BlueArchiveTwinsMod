@@ -27,7 +27,7 @@ public class BATwinsBreechLoading extends BATwinsModCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
     private static final UIStrings SELECTTEXT = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
     private final Predicate<AbstractCard> filter = card -> {

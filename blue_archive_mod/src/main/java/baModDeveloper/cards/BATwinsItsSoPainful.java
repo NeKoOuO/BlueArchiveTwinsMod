@@ -32,10 +32,14 @@ public class BATwinsItsSoPainful extends BATwinsModCustomCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
-
+    private final Consumer<Integer> callback = integer -> {
+        if (integer == 0) {
+            BATwinsItsSoPainful.this.upgradeMagicNumber(1);
+        }
+    };
     public BATwinsItsSoPainful() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 10;
+        this.baseDamage = 6;
         this.damage = this.baseDamage;
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
@@ -43,14 +47,6 @@ public class BATwinsItsSoPainful extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        Consumer<Integer> callback = integer -> {
-            if (integer == 0) {
-                if (AbstractDungeon.player.hasPower(BATwinsExperiencePower.POWER_ID)) {
-                    BATwinsExperiencePower power = (BATwinsExperiencePower) AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID);
-                    BATwinsItsSoPainful.this.baseDamage += power.LEVEL;
-                }
-            }
-        };
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, callback));
@@ -58,14 +54,6 @@ public class BATwinsItsSoPainful extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        Consumer<Integer> callback = integer -> {
-            if (integer == 0) {
-                if (AbstractDungeon.player.hasPower(BATwinsExperiencePower.POWER_ID)) {
-                    BATwinsExperiencePower power = (BATwinsExperiencePower) AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID);
-                    BATwinsItsSoPainful.this.baseDamage += power.LEVEL;
-                }
-            }
-        };
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, callback));
@@ -75,8 +63,8 @@ public class BATwinsItsSoPainful extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeDamage(3);
-            this.upgradeMagicNumber(1);
+            this.upgradeDamage(2);
+//            this.upgradeMagicNumber(1);
         }
     }
 

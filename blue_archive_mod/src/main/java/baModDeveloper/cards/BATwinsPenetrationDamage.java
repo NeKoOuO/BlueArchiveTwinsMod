@@ -69,4 +69,9 @@ public class BATwinsPenetrationDamage extends BATwinsModCustomCard {
             this.upgradeMagicNumber(1);
         }
     }
+
+    @Override
+    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        this.exhaust=false;
+    }
 }

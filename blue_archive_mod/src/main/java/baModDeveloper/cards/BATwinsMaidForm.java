@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawPower;
 
 public class BATwinsMaidForm extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("MaidForm");
@@ -25,7 +26,7 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
 
     public BATwinsMaidForm() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber = 50;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }
 
@@ -36,6 +37,7 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        addToBot(new ApplyPowerAction(abstractPlayer,abstractMonster,new DrawPower(abstractPlayer,-1)));
         addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsMaidFormPower(abstractPlayer, this.magicNumber)));
     }
 
@@ -43,7 +45,7 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(10);
+            this.upgradeMagicNumber(1);
         }
     }
 }
