@@ -1,12 +1,11 @@
 package baModDeveloper.ui.panels.energyorb;
 
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import basemod.abstracts.CustomEnergyOrb;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.Settings;
-
-import basemod.abstracts.CustomEnergyOrb;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class BATwinsEnergyMidoriOrb extends CustomEnergyOrb {

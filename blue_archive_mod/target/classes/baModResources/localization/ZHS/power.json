@@ -8,7 +8,7 @@
     "BATwinsMod:DeveloperCollaborationPower":{
         "NAME":"开发者协同",
         "DESCRIPTIONS":[
-            "交替打出桃牌与绿牌后，卡牌的伤害和格挡上升",
+            "战斗中交替打出桃牌与绿牌后，本回合卡牌的伤害和格挡上升",
             "%。",
             "(打出的上张牌是：",
             ")",

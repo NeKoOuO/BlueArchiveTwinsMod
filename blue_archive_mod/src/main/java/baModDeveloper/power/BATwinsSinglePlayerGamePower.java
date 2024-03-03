@@ -1,6 +1,5 @@
 package baModDeveloper.power;
 
-import baModDeveloper.cards.BATwinsSinglePlayerGame;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

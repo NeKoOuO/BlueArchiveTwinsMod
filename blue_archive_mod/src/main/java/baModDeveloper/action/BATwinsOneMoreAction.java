@@ -1,7 +1,5 @@
 package baModDeveloper.action;
 
-import baModDeveloper.power.BATwinsBurnPower;
-import baModDeveloper.power.BATwinsOnceMorePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

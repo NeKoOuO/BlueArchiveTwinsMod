@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import javax.swing.*;
 import java.util.Iterator;
 
 public class BATwinsGainEnergyAction extends AbstractGameAction {

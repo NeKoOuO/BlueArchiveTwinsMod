@@ -1,7 +1,6 @@
 package baModDeveloper.patch;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
-import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.Soul;

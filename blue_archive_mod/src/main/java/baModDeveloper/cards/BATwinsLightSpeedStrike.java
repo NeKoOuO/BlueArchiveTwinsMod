@@ -1,6 +1,5 @@
 package baModDeveloper.cards;
 
-import baModDeveloper.action.BATwinsPlayHandCardAction;
 import baModDeveloper.action.BATwinsSelectHandCardToPlayAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
@@ -16,9 +15,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EntanglePower;
-
-import java.util.ArrayList;
 
 public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("LightSpeedStrike");

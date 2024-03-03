@@ -1,27 +1,18 @@
 package baModDeveloper.power;
 
-import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
-import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
-import java.util.Iterator;
-
-import static baModDeveloper.character.BATwinsCharacter.Enums.BATwins;
 
 public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     public static final String POWER_ID = ModHelper.makePath("DeveloperCollaborationPower");
@@ -98,7 +89,7 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        this.lastColor = null;
+//        this.lastColor = null;
         this.count = 0;
         this.updateDescription();
     }

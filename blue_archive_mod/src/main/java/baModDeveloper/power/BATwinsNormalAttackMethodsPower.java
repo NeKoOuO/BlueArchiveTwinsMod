@@ -1,18 +1,11 @@
 package baModDeveloper.power;
 
 import baModDeveloper.action.BATwinsNormalAttackMethodsAction;
-import baModDeveloper.cards.BATwinsModCustomCard;
-import baModDeveloper.cards.BATwinsNormalAttackMethods;
 import baModDeveloper.helpers.ModHelper;
-import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;

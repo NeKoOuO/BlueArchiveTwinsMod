@@ -3,13 +3,11 @@ package baModDeveloper.cards;
 import baModDeveloper.action.BATwinsPaintingArtAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
-import baModDeveloper.power.BATwinsBurnPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class BATwinsPaintingArt extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("PaintingArt");

@@ -1,6 +1,8 @@
 package baModDeveloper.core;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import baModDeveloper.ui.panels.BATwinsEnergyPanel.EnergyType;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -9,11 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster.EnemyType;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-
-import baModDeveloper.ui.panels.BATwinsEnergyPanel;
-import baModDeveloper.ui.panels.BATwinsEnergyPanel.EnergyType;
 
 public class BATwinsEnergyManager extends EnergyManager {
 

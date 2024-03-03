@@ -2,7 +2,6 @@ package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class BATwinsCoversionColorAction extends AbstractGameAction {
     private BATwinsModCustomCard card;

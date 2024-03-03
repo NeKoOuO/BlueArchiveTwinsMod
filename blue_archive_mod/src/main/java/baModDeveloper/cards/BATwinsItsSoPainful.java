@@ -1,13 +1,10 @@
 package baModDeveloper.cards;
 
-import baModDeveloper.action.BATwinsDisCardByColorAction;
 import baModDeveloper.action.BATwinsDisOtherCardByColorAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
-import baModDeveloper.power.BATwinsExperiencePower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -16,7 +13,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import java.util.function.Consumer;
 
@@ -37,6 +33,7 @@ public class BATwinsItsSoPainful extends BATwinsModCustomCard {
             BATwinsItsSoPainful.this.upgradeMagicNumber(1);
         }
     };
+
     public BATwinsItsSoPainful() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseDamage = 6;

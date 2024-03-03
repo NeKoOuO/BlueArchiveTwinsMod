@@ -1,14 +1,12 @@
 package baModDeveloper.relic;
 
 import baModDeveloper.action.BATwinsAddHandAccordColorAction;
-import baModDeveloper.action.BATwinsDrawOrDisCardToHandAction;
 import baModDeveloper.action.BATwinsGainEnergyAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomRelic;
-import basemod.helpers.RelicType;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;

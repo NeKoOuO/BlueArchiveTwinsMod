@@ -1,12 +1,10 @@
 package baModDeveloper.helpers;
 
-import baModDeveloper.BATwinsMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
-import static com.megacrit.cardcrawl.helpers.ImageMaster.loadImage;
 import static com.megacrit.cardcrawl.helpers.ImageMaster.vfxAtlas;
 
 public class ImageHelper {

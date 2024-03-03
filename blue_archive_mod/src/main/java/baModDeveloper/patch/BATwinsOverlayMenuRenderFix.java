@@ -1,13 +1,12 @@
 package baModDeveloper.patch;
 
+import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.core.OverlayMenu;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
-import baModDeveloper.character.BATwinsCharacter;
-import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 
 @SpirePatch(clz = OverlayMenu.class, method = "render")
 public class BATwinsOverlayMenuRenderFix {

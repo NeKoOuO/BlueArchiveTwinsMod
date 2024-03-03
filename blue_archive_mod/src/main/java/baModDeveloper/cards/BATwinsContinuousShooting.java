@@ -1,12 +1,10 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsClearBringOutCardAction;
-import baModDeveloper.cards.bullets.BATwinsBullet;
 import baModDeveloper.cards.bullets.BATwinsCustomBulletCard;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;

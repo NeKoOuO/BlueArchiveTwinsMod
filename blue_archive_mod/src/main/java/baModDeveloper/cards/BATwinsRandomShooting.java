@@ -1,6 +1,5 @@
 package baModDeveloper.cards;
 
-import baModDeveloper.action.BATwinsPlayTempCardAction;
 import baModDeveloper.action.BATwinsRandomShootingAction;
 import baModDeveloper.cards.bullets.BATwinsCustomBulletCard;
 import baModDeveloper.character.BATwinsCharacter;

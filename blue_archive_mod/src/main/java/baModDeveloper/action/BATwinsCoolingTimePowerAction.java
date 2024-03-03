@@ -1,6 +1,5 @@
 package baModDeveloper.action;
 
-import baModDeveloper.power.BATwinsCoolingTimePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;

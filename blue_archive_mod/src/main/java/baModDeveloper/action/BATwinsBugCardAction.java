@@ -1,6 +1,5 @@
 package baModDeveloper.action;
 
-import baModDeveloper.cards.BATwinsBugCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

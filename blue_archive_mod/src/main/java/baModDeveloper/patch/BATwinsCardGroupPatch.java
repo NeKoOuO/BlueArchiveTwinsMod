@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardSave;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class BATwinsCardGroupPatch {
     @SpirePatch(clz = CardGroup.class, method = "getCardDeck")

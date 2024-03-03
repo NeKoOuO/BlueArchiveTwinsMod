@@ -3,7 +3,6 @@ package baModDeveloper.ui.panels.button;
 import baModDeveloper.effect.BATwinsCamfireExchangeEffect;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
-import basemod.interfaces.PostCampfireSubscriber;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;

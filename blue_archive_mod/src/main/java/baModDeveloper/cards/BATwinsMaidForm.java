@@ -37,7 +37,7 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(abstractPlayer,abstractMonster,new DrawPower(abstractPlayer,-1)));
+        addToBot(new ApplyPowerAction(abstractPlayer, abstractMonster, new DrawPower(abstractPlayer, -1)));
         addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsMaidFormPower(abstractPlayer, this.magicNumber)));
     }
 

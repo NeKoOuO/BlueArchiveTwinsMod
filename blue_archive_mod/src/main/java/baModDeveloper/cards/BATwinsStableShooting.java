@@ -27,7 +27,7 @@ public class BATwinsStableShooting extends BATwinsModCustomCard {
     public BATwinsStableShooting() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseDamage = this.damage = 12;
-        this.baseMagicNumber=this.magicNumber=1;
+        this.baseMagicNumber = this.magicNumber = 1;
         this.tags.add(BATwinsCardTags.Shooting);
     }
 
@@ -43,20 +43,20 @@ public class BATwinsStableShooting extends BATwinsModCustomCard {
 
     @Override
     public void applyPowers() {
-        int BaseBaseDamage=this.baseDamage;
-        this.baseDamage+=this.cardToBringOut.size()*this.magicNumber;
+        int BaseBaseDamage = this.baseDamage;
+        this.baseDamage += this.cardToBringOut.size() * this.magicNumber;
         super.applyPowers();
-        this.isDamageModified=this.damage!=BaseBaseDamage;
-        this.baseDamage=BaseBaseDamage;
+        this.isDamageModified = this.damage != BaseBaseDamage;
+        this.baseDamage = BaseBaseDamage;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int BaseBaseDamage=this.baseDamage;
-        this.baseDamage+=this.cardToBringOut.size()*this.magicNumber;
+        int BaseBaseDamage = this.baseDamage;
+        this.baseDamage += this.cardToBringOut.size() * this.magicNumber;
         super.calculateCardDamage(mo);
-        this.isDamageModified=this.damage!=BaseBaseDamage;
-        this.baseDamage=BaseBaseDamage;
+        this.isDamageModified = this.damage != BaseBaseDamage;
+        this.baseDamage = BaseBaseDamage;
     }
 
     @Override

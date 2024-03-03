@@ -1,5 +1,6 @@
 package baModDeveloper.ui.panels;
 
+import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.effect.BATwinsRefreshEnergyEffect;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.Gdx;
@@ -20,9 +21,6 @@ import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import com.megacrit.cardcrawl.vfx.RefreshEnergyEffect;
-
-import baModDeveloper.character.BATwinsCharacter;
 
 public class BATwinsEnergyPanel extends EnergyPanel {
     private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack

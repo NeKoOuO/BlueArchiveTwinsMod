@@ -35,7 +35,7 @@
     },
     "BATwinsMod:DeveloperCollaboration":{
         "NAME":"开发者协同",
-        "DESCRIPTION":" batwinsmod:共有 。 NL 回合内交替打出 batwinsmod:桃牌 与 batwinsmod:绿牌 后，卡牌造成的伤害和获得的 格挡 增加 !M! %。"
+        "DESCRIPTION":" batwinsmod:共有 。 NL 战斗中交替打出 batwinsmod:桃牌 与 batwinsmod:绿牌 后，本回合卡牌造成的伤害和获得的 格挡 增加 !M! %。"
     },
     "BATwinsMod:Exchange":{
         "NAME":"交换",
@@ -65,11 +65,11 @@
     },
     "BATwinsMod:AdditionalAttacks":{
         "NAME":"附加攻击",
-        "DESCRIPTION":"造成 !D! 点伤害。 NL 这张牌在手牌打出其他攻击牌时，对随机敌人造成 !D! 点伤害。"
+        "DESCRIPTION":"造成 !D! 点伤害。 NL 在手牌时打出其他攻击牌时，对随机敌人造成 !D! 点伤害。"
     },
     "BATwinsMod:AccurateBlocking":{
         "NAME":"精准格挡",
-        "DESCRIPTION":"获得 !B! 点 格挡 。 NL 若当前 格挡 小于选择敌人的攻击伤害，获得 !B! 点 格挡 。 NL 这张牌在手牌没有其他 batwinsmod:绿牌 时才能打出。"
+        "DESCRIPTION":"获得 !B! 点 格挡 。 NL 若当前 格挡 小于选择敌人的攻击伤害，获得 !B! 点 格挡 。 NL 在手牌没有其他 batwinsmod:绿牌 时才能打出。"
     },
     "BATwinsMod:GameLaunch":{
         "NAME":"游戏启动",
@@ -99,12 +99,12 @@
     },
     "BATwinsMod:ExcellentDesigner":{
         "NAME":"最棒的开发者们",
-        "DESCRIPTION":" 虚无 。 NL 抽到时抽 !M! 张牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。这张牌在手牌时打出其他牌，这张牌在打出前上升那张牌基础伤害值和基础格挡值。",
-        "UPGRADE_DESCRIPTION":"抽到时抽 !M! 张牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。这张牌在手牌时打出其他牌，这张牌在打出前上升那张牌基础伤害值和基础格挡值。"
+        "DESCRIPTION":" 虚无 。 NL 抽到时抽 !M! 张牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。在手牌时打出其他牌，在打出前上升那张牌基础伤害值和基础格挡值。",
+        "UPGRADE_DESCRIPTION":"抽到时抽 !M! 张牌。 NL 造成 !D! 点伤害，获得 !B! 点格挡。在手牌时打出其他牌，在打出前上升那张牌基础伤害值和基础格挡值。"
     },
     "BATwinsMod:BadDesigner":{
         "NAME":"糟糕设计师",
-        "DESCRIPTION":"手牌只有这张牌时才能打出。 NL 这张牌在手牌时，打出其他牌时弃置1张牌。再累计打出 !M! 次的话会发生蜕变。 消耗 "
+        "DESCRIPTION":"手牌只有时才能打出。 NL 在手牌时，打出其他牌时弃置1张牌。再累计打出 !M! 次的话会发生蜕变。 消耗 "
     },
     "BATwinsMod:BugCard":{
         "NAME":"漏洞",
@@ -125,8 +125,8 @@
     },
 	"BATwinsMod:AdventureOpening":{
 		"NAME":"冒险-开幕",
-		"DESCRIPTION":" 保留 NL 打出这张牌消耗的牌。从手牌选择一张冒险牌消耗。",
-		"UPGRADE_DESCRIPTION":" 保留 batwinsmod:共有 NL 打出这张牌消耗的牌。从手牌选择一张冒险牌消耗。"
+		"DESCRIPTION":" 保留 NL 打出消耗的牌。从手牌选择一张冒险牌消耗。",
+		"UPGRADE_DESCRIPTION":" 保留 batwinsmod:共有 NL 打出消耗的牌。从手牌选择一张冒险牌消耗。"
 	},
 	"BATwinsMod:AdventureBattle":{
 		"NAME":"冒险-战斗",
@@ -276,7 +276,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"经验大礼包",
-		"DESCRIPTION":" batwinsmod:共有 NL 这张牌在手牌时，若拥有的 batwinsmod:经验值 和这张牌的耗能相同，打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
+		"DESCRIPTION":" batwinsmod:共有 NL 在手牌时，若拥有的 batwinsmod:经验值 和这张牌的耗能相同，打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",
@@ -310,8 +310,8 @@
 	},
 	"BATwinsMod:AdventureBegins":{
 		"NAME":"冒险小队",
-		"DESCRIPTION":"选择一张和这张牌所有 batwinsmod:存储 的牌类型不同的手牌  消耗 并 batwinsmod:存储 。",
-		"UPGRADE_DESCRIPTION":"可以 选择一张和这张牌所有 batwinsmod:存储 的牌类型不同的手牌 消耗 并 batwinsmod:存储 。",
+		"DESCRIPTION":"选择一张和所有 batwinsmod:存储 的牌类型不同的手牌  消耗 并 batwinsmod:存储 。",
+		"UPGRADE_DESCRIPTION":"可以 选择一张和所有 batwinsmod:存储 的牌类型不同的手牌 消耗 并 batwinsmod:存储 。",
 		"EXTENDED_DESCRIPTION":[
 			"攻击",
 			"技能",
@@ -331,7 +331,7 @@
 	},
 	"BATwinsMod:AutomaticDefense":{
 		"NAME":"自动防御",
-		"DESCRIPTION":"获得 !B! 点 格挡 。 NL 这张牌在手牌打出其他攻击牌时，获得 !B! 点 格挡 。"
+		"DESCRIPTION":"获得 !B! 点 格挡 。 NL 在手牌打出其他攻击牌时，获得 !B! 点 格挡 。"
 	},
 	"BATwinsMod:BenefitReducingMagic":{
 		"NAME":"减益魔法",
@@ -383,7 +383,7 @@
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"贯通伤害",
-		"DESCRIPTION":"给予所有敌人 !D! 点伤害，所有没有格挡的敌人失去 !M! 点 力量 。 NL 消耗 NL batwinsmod:连携：本场战斗这张牌不 消耗 。"
+		"DESCRIPTION":"给予所有敌人 !D! 点伤害，所有没有格挡的敌人失去 !M! 点 力量 。 NL 消耗 NL batwinsmod:连携：本场战斗不 消耗 。"
 	},
 	"BATwinsMod:LoginRewards":{
 		"NAME":"登入奖励",
@@ -392,7 +392,7 @@
 	},
 	"BATwinsMod:Learned":{
 		"NAME":"完全内化",
-		"DESCRIPTION":"这张牌抽到时选择1张非能力手牌 消耗 并 batwinsmod:存储 。（这个效果只会触发1次） NL 造成 !D! 点伤害， 斩杀 时这张牌 batwinsmod:存储 的那张牌永久 batwinsmod:交换 为 batwinsmod:桃牌 。"
+		"DESCRIPTION":"抽到时选择1张非能力手牌 消耗 并 batwinsmod:存储 。（这个效果只会触发1次） NL 造成 !D! 点伤害， 斩杀 时 batwinsmod:存储 的那张牌永久 batwinsmod:交换 为 batwinsmod:桃牌 。"
 	},
 	"BATwinsMod:ForceDetonation":{
 		"NAME":"强行引爆",
@@ -426,7 +426,7 @@
 	},
 	"BATwinsMod:ContinuousShooting":{
 		"NAME":"连续射击",
-		"DESCRIPTION":"保留 ，能被多次 升级 NL 保留 时 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 打出后清空这张牌 batwinsmod:存储 的 batwinsmod:子弹 。"
+		"DESCRIPTION":"保留 ，能被多次 升级 NL 保留 时 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 打出后清空 batwinsmod:存储 的 batwinsmod:子弹 。"
 	},
 	"BATwinsMod:BreechLoading":{
 		"NAME":"上膛",
@@ -455,14 +455,14 @@
 	},
 	"BATwinsMod:StableShooting":{
 		"NAME":"稳定射击",
-		"DESCRIPTION":"造成 !D! 点伤害。 NL 这张牌每 batwinsmod:存储 了一张牌伤害提升 !M! 。"
+		"DESCRIPTION":"造成 !D! 点伤害。 NL 每 batwinsmod:存储 了一张牌伤害提升 !M! 。"
 	},
 	"BATwinsMod:RandomShooting":{
 		"NAME":"胡乱射击",
-		"DESCRIPTION":"随机 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。将这张牌打出的 batwinsmod:子弹 牌 batwinsmod:存储 在手牌随机 batwinsmod:射击 牌中后清空。"
+		"DESCRIPTION":"随机 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。将打出的 batwinsmod:子弹 牌 batwinsmod:存储 在手牌随机 batwinsmod:射击 牌中后清空。"
 	},
 	"BATwinsMod:FocusShooting":{
 		"NAME":"集中射击",
-		"DESCRIPTION":"造成 !D! 点伤害。 NL 这张牌 batwinsmod:存储 batwinsmod:子弹 时再 batwinsmod:存储 同样的 batwinsmod:子弹 牌。打出后清空这张牌 batwinsmod:存储 的 batwinsmod:子弹 。"
+		"DESCRIPTION":"造成 !D! 点伤害。 NL  batwinsmod:存储 batwinsmod:子弹 时再 batwinsmod:存储 同样的 batwinsmod:子弹 牌。打出后清空 batwinsmod:存储 的 batwinsmod:子弹 。"
 	}
 }

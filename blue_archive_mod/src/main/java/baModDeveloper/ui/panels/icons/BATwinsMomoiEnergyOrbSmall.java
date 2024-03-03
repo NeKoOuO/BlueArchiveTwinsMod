@@ -3,7 +3,6 @@ package baModDeveloper.ui.panels.icons;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.icons.AbstractCustomIcon;
 
 public class BATwinsMomoiEnergyOrbSmall extends AbstractCustomIcon {

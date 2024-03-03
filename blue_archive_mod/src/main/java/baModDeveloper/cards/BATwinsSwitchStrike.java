@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import baModDeveloper.action.BATwinsMakeTempCardInHandAction;
 
 public class BATwinsSwitchStrike extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("SwitchStrike");

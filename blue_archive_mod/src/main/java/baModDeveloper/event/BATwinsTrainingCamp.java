@@ -11,9 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import org.lwjgl.Sys;
 
-import java.util.Random;
 import java.util.function.Consumer;
 
 public class BATwinsTrainingCamp extends PhasedEvent {

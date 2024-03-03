@@ -25,7 +25,7 @@ public class BATwinsDeveloperCollaboration extends BATwinsModCustomCard {
 
     public BATwinsDeveloperCollaboration() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber = 25;
+        this.baseMagicNumber = 50;
         this.magicNumber = this.baseMagicNumber;
     }
 

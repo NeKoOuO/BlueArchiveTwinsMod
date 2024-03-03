@@ -2,10 +2,14 @@ package baModDeveloper;
 
 import baModDeveloper.cards.*;
 import baModDeveloper.cards.bullets.*;
+import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.event.BATwinsTrainingCamp;
+import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.relic.*;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
 import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
+import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.helpers.RelicType;
@@ -23,11 +27,6 @@ import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
-
-import baModDeveloper.character.BATwinsCharacter;
-import baModDeveloper.character.BATwinsCharacter.Enums;
-import baModDeveloper.helpers.ModHelper;
-import basemod.BaseMod;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

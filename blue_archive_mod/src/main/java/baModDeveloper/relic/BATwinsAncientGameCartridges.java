@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import java.util.ArrayList;
-
 public class BATwinsAncientGameCartridges extends CustomRelic {
     public static final String ID = ModHelper.makePath("AncientGameCartridges");
     private static final Texture texture = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "AncientGameCartridges"));

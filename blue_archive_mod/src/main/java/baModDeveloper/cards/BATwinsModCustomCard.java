@@ -349,7 +349,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     }
 
     public void addBringOutCard(AbstractCard card) {
-        if(AbstractDungeon.player!=null&&AbstractDungeon.player.hasPower(BATwinsExpansionMagazinePower.POWER_ID)&&card instanceof BATwinsCustomBulletCard){
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(BATwinsExpansionMagazinePower.POWER_ID) && card instanceof BATwinsCustomBulletCard) {
             AbstractDungeon.player.getPower(BATwinsExpansionMagazinePower.POWER_ID).flash();
             card.upgrade();
         }

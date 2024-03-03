@@ -1,6 +1,5 @@
 package baModDeveloper.cards;
 
-import baModDeveloper.action.BATwinsDisCardByColorAction;
 import baModDeveloper.action.BATwinsDisOtherCardByColorAction;
 import baModDeveloper.action.BATwinsLevelUpAction;
 import baModDeveloper.character.BATwinsCharacter;
