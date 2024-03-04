@@ -44,7 +44,7 @@ public class BATwinsDrawOrDisCardToHandAction extends AbstractGameAction {
                     this.card = this.p.drawPile.getRandomCard(AbstractDungeon.cardRandomRng);
                 }
 
-                if (this.p.hand.size() <= 10) {
+                if (this.p.hand.size() < 10) {
                     this.card.current_x = CardGroup.DRAW_PILE_X;
                     this.card.current_y = CardGroup.DRAW_PILE_Y;
                     this.p.hand.addToHand(card);
@@ -63,7 +63,7 @@ public class BATwinsDrawOrDisCardToHandAction extends AbstractGameAction {
                 if (randomCard) {
                     this.card = this.p.discardPile.getRandomCard(AbstractDungeon.cardRandomRng);
                 }
-                if (this.p.hand.size() <= 10) {
+                if (this.p.hand.size() < 10) {
                     this.card.current_x = CardGroup.DISCARD_PILE_X;
                     this.card.current_y = CardGroup.DISCARD_PILE_Y;
                     this.p.hand.addToHand(card);

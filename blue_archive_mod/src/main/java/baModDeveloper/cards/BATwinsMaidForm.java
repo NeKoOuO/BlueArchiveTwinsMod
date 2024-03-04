@@ -45,7 +45,11 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+//            this.upgradeMagicNumber(1);
+            this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.modifyEnergyType= BATwinsEnergyPanel.EnergyType.SHARE;
+            this.initializeDescription();
         }
     }
 }

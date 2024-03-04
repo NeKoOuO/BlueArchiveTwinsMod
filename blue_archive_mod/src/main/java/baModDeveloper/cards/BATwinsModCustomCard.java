@@ -69,11 +69,13 @@ public abstract class BATwinsModCustomCard extends CustomCard {
                 if (!var1.hasNext()) {
                     if (AbstractDungeon.player.hasPower("Entangled") && this.type == AbstractCard.CardType.ATTACK) {
                         this.cantUseMessage = TEXT[10];
+                        BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(this, false);
                         return false;
                     }
                     if (AbstractDungeon.player.hasPower(BATwinsFlatFallPower.POWER_ID) && this.type == CardType.ATTACK) {
                         if (AbstractDungeon.player.getPower(BATwinsFlatFallPower.POWER_ID).amount == 0) {
                             this.cantUseMessage = flatFallMsg.TEXT[0];
+                            BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(this, false);
                             return false;
                         }
                     }

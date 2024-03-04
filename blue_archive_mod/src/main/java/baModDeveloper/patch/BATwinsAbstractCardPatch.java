@@ -45,10 +45,16 @@ public class BATwinsAbstractCardPatch {
             if (AbstractDungeon.player.hasPower(BATwinsFlatFallPower.POWER_ID) && _instance.type == AbstractCard.CardType.ATTACK) {
                 if (AbstractDungeon.player.getPower(BATwinsFlatFallPower.POWER_ID).amount == 0) {
                     _instance.cantUseMessage = BATwinsModCustomCard.flatFallMsg.TEXT[0];
+                    BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(_instance, false);
                     return SpireReturn.Return(false);
                 }
             }
             return SpireReturn.Continue();
+        }
+
+        @SpireInsertPatch(rloc = 13)
+        public static void hasEnoughEnergyPatch2(AbstractCard _instance){
+            BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(_instance, false);
         }
     }
 }

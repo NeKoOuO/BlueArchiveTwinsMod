@@ -5,6 +5,7 @@ import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -23,35 +24,24 @@ public class BATwinsLeaveItToMe extends BATwinsModCustomCard {
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
 
     public BATwinsLeaveItToMe() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 14;
+        this.baseDamage = 10;
         this.damage = this.baseDamage;
-        this.baseBlock = 10;
+        this.isMultiDamage=true;
+        this.baseBlock = 8;
         this.block = this.baseBlock;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new AbstractGameAction() {
-            {
-                CardColor color = BATwinsLeaveItToMe.this.color;
-                amount = BATwinsLeaveItToMe.this.block;
-            }
-
-            @Override
-            public void update() {
-                if (AbstractDungeon.player.hand.group.stream().allMatch(card -> card.color == color)) {
-                    addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
-                }
-                this.isDone = true;
-            }
-        });
+//        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new DamageAllEnemiesAction(abstractPlayer,this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL,true));
+        triggerSpecialEffects();
     }
 
     @Override
@@ -64,7 +54,7 @@ public class BATwinsLeaveItToMe extends BATwinsModCustomCard {
         if (!upgraded) {
             this.upgradeName();
             this.upgradeDamage(4);
-            this.upgradeBlock(5);
+            this.upgradeBlock(2);
         }
     }
 
@@ -75,5 +65,36 @@ public class BATwinsLeaveItToMe extends BATwinsModCustomCard {
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
+    }
+
+    private void triggerSpecialEffects(){
+        addToBot(new AbstractGameAction() {
+            private final CardColor color;
+            private final int numOfConnections;
+            {
+                color = BATwinsLeaveItToMe.this.color;
+                amount = BATwinsLeaveItToMe.this.block;
+                numOfConnections=BATwinsLeaveItToMe.this.numberOfConnections;
+            }
+
+            @Override
+            public void update() {
+                if (numOfConnections>0||AbstractDungeon.player.hand.group.stream().allMatch(card -> card.color == color)) {
+                    int count=0;
+                    for(AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters){
+                        if(!m.isDeadOrEscaped()){
+                            count++;
+                        }
+                    }
+                    addToBot(new GainBlockAction(AbstractDungeon.player, this.amount*count));
+                }
+                this.isDone = true;
+            }
+        });
+    }
+
+    @Override
+    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        triggerSpecialEffects();
     }
 }

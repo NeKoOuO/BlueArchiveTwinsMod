@@ -26,7 +26,7 @@ public class BATwinsStableShooting extends BATwinsModCustomCard {
 
     public BATwinsStableShooting() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = this.damage = 12;
+        this.baseDamage = this.damage = 9;
         this.baseMagicNumber = this.magicNumber = 1;
         this.tags.add(BATwinsCardTags.Shooting);
     }

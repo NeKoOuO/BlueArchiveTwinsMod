@@ -276,7 +276,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"经验大礼包",
-		"DESCRIPTION":" batwinsmod:共有 NL 在手牌时，若拥有的 batwinsmod:经验值 和这张牌的耗能相同，打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
+		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 和这张牌的耗能相同，打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",
@@ -305,12 +305,12 @@
 		"UPGRADE_DESCRIPTION":" 固有 ， batwinsmod:共有 NL 每回合开始时 batwinsmod:交换 至多1张牌。 NL 且本场战斗进行 batwinsmod:交换 的牌 升级 。"
 	},
 	"BATwinsMod:PoisonGasBomb":{
-		"NAME":"毒气弹",
+		"NAME":"毒气炸弹",
 		"DESCRIPTION":"给予 !M! 层 中毒 !M! 层 batwinsmod:灼伤 。触发该敌人的 中毒 。"
 	},
 	"BATwinsMod:AdventureBegins":{
 		"NAME":"冒险小队",
-		"DESCRIPTION":"选择一张和所有 batwinsmod:存储 的牌类型不同的手牌  消耗 并 batwinsmod:存储 。",
+		"DESCRIPTION":"选择一张和所有 batwinsmod:存储 的牌类型不同的手牌 消耗 并 batwinsmod:存储 。",
 		"UPGRADE_DESCRIPTION":"可以 选择一张和所有 batwinsmod:存储 的牌类型不同的手牌 消耗 并 batwinsmod:存储 。",
 		"EXTENDED_DESCRIPTION":[
 			"攻击",
@@ -344,7 +344,8 @@
 	},
 	"BATwinsMod:MaidForm":{
 		"NAME":"女仆形态",
-		"DESCRIPTION":"每回合开始时少抽1张牌，从抽牌堆或弃牌堆选择 !M! 张牌加入手牌。"
+		"DESCRIPTION":"每回合开始时少抽1张牌，从抽牌堆或弃牌堆选择 !M! 张牌加入手牌。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:共有 NL 每回合开始时少抽1张牌，从抽牌堆或弃牌堆选择 !M! 张牌加入手牌。"
 	},
 	"BATwinsMod:Collaboration":{
 		"NAME":"协力",
@@ -364,7 +365,7 @@
 	},
 	"BATwinsMod:LeaveItToMe":{
 		"NAME":"交给我吧",
-		"DESCRIPTION":"造成 !D! 点伤害。 NL 若手牌全是 batwinsmod:桃牌 ，获得 !B! 点 格挡 。"
+		"DESCRIPTION":"对全体敌人造成 !D! 点伤害。 NL 手牌全是 batwinsmod:桃牌 或 batwinsmod:连携 ：每有1个敌人获得 !B! 点 格挡 。"
 	},
 	"BATwinsMod:Assault":{
 		"NAME":"突袭",
