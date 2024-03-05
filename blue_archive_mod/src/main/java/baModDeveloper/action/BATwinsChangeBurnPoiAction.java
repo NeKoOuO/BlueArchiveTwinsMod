@@ -56,7 +56,6 @@ public class BATwinsChangeBurnPoiAction extends AbstractGameAction {
                 poiPower.updateDescription();
             }
 
-
         }
         this.isDone = true;
 

@@ -107,16 +107,16 @@ public class BATwinsCharacter extends CustomPlayer {
 //            ModHelper.makeGifPath("char",ModHelper.MIDORI_FLODER,"run")
 //
 //    };
-    private ArrayList<AbstractAnimation> anima_momoi;
-    private ArrayList<AbstractAnimation> anima_midori;
-    private int anim_time_momoi = 0;
-    private int anim_len_momoi = 0;
-    private int anim_time_midori = 0;
-    private int anim_len_midori = 0;
-    private AbstractAnimation rendered_anima_momoi;
-    private AbstractAnimation rendered_anima_midori;
+//    private ArrayList<AbstractAnimation> anima_momoi;
+//    private ArrayList<AbstractAnimation> anima_midori;
+//    private int anim_time_momoi = 0;
+//    private int anim_len_momoi = 0;
+//    private int anim_time_midori = 0;
+//    private int anim_len_midori = 0;
+//    private AbstractAnimation rendered_anima_momoi;
+//    private AbstractAnimation rendered_anima_midori;
     //3D相关
-    Character3DHelper character3DHelper;
+    private static final Character3DHelper character3DHelper=new Character3DHelper();
 
     BATwinsExperencePanel expPanel;
 
@@ -139,9 +139,13 @@ public class BATwinsCharacter extends CustomPlayer {
                 new BATwinsEnergyManager(2));
 
         //3D相关
-//        character3DHelper=new Character3DHelper();
 //        character3DHelper.init();
-
+        if(BATwinsMod.Enable3D){
+            if(!character3DHelper.inited()){
+                character3DHelper.init();
+            }
+            character3DHelper.setPosition(this.drawX,this.drawY);
+        }
 
     }
 
@@ -452,7 +456,8 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public void update() {
         super.update();
-//        this.character3DHelper.update();
+        if(BATwinsMod.Enable3D)
+            character3DHelper.update();
         //排序手牌
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             if (BATwinsMod.AutoSort)
@@ -487,7 +492,8 @@ public class BATwinsCharacter extends CustomPlayer {
 
         if (BATwinsMod.ShowExpBar && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
             this.expPanel.render(sb);
-//        character3DHelper.render(sb,this.drawX,this.drawY);
+        if(BATwinsMod.Enable3D)
+            character3DHelper.render(sb);
     }
 //    public enum AnimationChar{
 //        MOMOI,
@@ -533,8 +539,8 @@ public class BATwinsCharacter extends CustomPlayer {
 
     public void onEnterRoom() {
         //设置进入房间时的动画
-//        this.setAnimation(AnimationChar.MOMOI,Animation.RUN);
-//        this.setAnimation(AnimationChar.MIDORI,Animation.RUN);
+        if(BATwinsMod.Enable3D)
+            character3DHelper.setAnimation(Character3DHelper.MomoiActionList.MOVING);
     }
 
 

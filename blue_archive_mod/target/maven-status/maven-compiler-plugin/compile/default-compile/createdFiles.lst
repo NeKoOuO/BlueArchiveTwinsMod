@@ -273,6 +273,7 @@ baModDeveloper\action\BATwinsDefensiveCounterattackAction.class
 baModDeveloper\patch\BATwinsRunPathElementPatch$getTipHeaderWithRoomTypeTextPatch.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$renderPatch.class
 baModDeveloper\action\BATwinsOneMoreAction.class
+baModDeveloper\helpers\Character3DHelper$1.class
 baModDeveloper\ui\panels\BATwinsExperencePanel.class
 baModDeveloper\animation\AbstractAnimation.class
 baModDeveloper\cards\BATwinsExchange.class

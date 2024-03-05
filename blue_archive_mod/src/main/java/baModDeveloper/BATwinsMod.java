@@ -65,6 +65,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     //模组选项
     public static boolean AutoSort = true;
     public static boolean ShowExpBar = true;
+    public static boolean Enable3D=false;
 
     public BATwinsMod() {
         BaseMod.subscribe(this);
@@ -292,6 +293,21 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         });
 
         settingPanel.addUIElement(showExpBar);
+
+        ModLabeledToggleButton enable3D=new ModLabeledToggleButton("Enable3D",500.0F,200.0F,Settings.CREAM_COLOR,FontHelper.charDescFont,Enable3D,settingPanel,modLabel -> {
+
+        },modToggleButton -> {
+            spireConfig.setBool(ModHelper.makePath("Enable3D"),Enable3D=modToggleButton.enabled);
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+            try {
+                spireConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        settingPanel.addUIElement(enable3D);
+
         Texture badgeTexture = ImageMaster.loadImage(ModHelper.makeImgPath("UI", "configButton"));
         BaseMod.registerModBadge(badgeTexture, "BATwinsMod", "0v0", "config", settingPanel);
     }
