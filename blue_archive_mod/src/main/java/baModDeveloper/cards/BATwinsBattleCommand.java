@@ -32,7 +32,7 @@ public class BATwinsBattleCommand extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            updateCost(-1);
+            this.upgradeBaseCost(0);
         }
     }
 

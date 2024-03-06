@@ -51,7 +51,7 @@ public class BATwinsOperateFreely extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.updateCost(-1);
+            this.upgradeBaseCost(1);
         }
     }
 }

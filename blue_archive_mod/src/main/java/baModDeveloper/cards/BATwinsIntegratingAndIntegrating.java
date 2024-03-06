@@ -43,7 +43,7 @@ public class BATwinsIntegratingAndIntegrating extends BATwinsModCustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.updateCost(-1);
+            this.upgradeBaseCost(1);
         }
     }
 }

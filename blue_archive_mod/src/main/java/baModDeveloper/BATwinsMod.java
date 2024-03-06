@@ -27,6 +27,7 @@ import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -40,7 +41,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MIDORIColor = new Color(85.0F / 255.0F, 171.0F / 255.0F, 72.0F / 255.0F, 1.0F);
-    private static final String BATWINS_CHARACTE_BUTTON = ModHelper.makeImgPath("char", "Character_Button");
+    private static final String BATWINS_CHARACTER_BUTTON = ModHelper.makeImgPath("char", "Character_Button");
     private static final String BATWINS_CHARACTER_PORTRAIT = ModHelper.makeImgPath("char", "Character_Portrait");
     private static final String BATWINS_MOMOI_ATTACK_512 = ModHelper.makeImgPath("512", "bg_attack_512");
     private static final String BATWINS_MOMOI_POWER_512 = ModHelper.makeImgPath("512", "bg_power_512");
@@ -82,6 +83,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             SpireConfig config = new SpireConfig(ModHelper.getModID(), "Common", defaults);
             AutoSort = config.getBool(ModHelper.makePath("AutoSort"));
             ShowExpBar = config.getBool(ModHelper.makePath("ShowExpBar"));
+            Enable3D=config.getBool(ModHelper.makePath("Enable3D"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -215,7 +217,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter(new BATwinsCharacter(CardCrawlGame.playerName), BATWINS_CHARACTE_BUTTON, BATWINS_CHARACTER_PORTRAIT, Enums.BATwins);
+        BaseMod.addCharacter(new BATwinsCharacter(CardCrawlGame.playerName), BATWINS_CHARACTER_BUTTON, BATWINS_CHARACTER_PORTRAIT, Enums.BATwins);
     }
 
     @Override
@@ -250,6 +252,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("campfire_midori"), ModHelper.makeAudioPath("campfire_midori"));
         BaseMod.addAudio(ModHelper.makePath("colorEgg1"), ModHelper.makeAudioPath("colorEgg1"));
         BaseMod.addAudio(ModHelper.makePath("colorEgg2"), ModHelper.makeAudioPath("colorEgg2"));
+        BaseMod.addAudio(ModHelper.makePath("charSelect_momoi"),ModHelper.makeAudioPath("charSelect_momoi"));
+        BaseMod.addAudio(ModHelper.makePath("charSelect_midori"),ModHelper.makeAudioPath("charSelect_midori"));
 
     }
 

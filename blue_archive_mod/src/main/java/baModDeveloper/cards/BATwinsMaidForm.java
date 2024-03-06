@@ -26,7 +26,7 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
 
     public BATwinsMaidForm() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber = 2;
+        this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }
 

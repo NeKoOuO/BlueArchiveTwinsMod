@@ -21,7 +21,7 @@ public class BATwinsSinglePlayerGame extends BATwinsModCustomCard {
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.SHARE;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
 
     public BATwinsSinglePlayerGame() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);

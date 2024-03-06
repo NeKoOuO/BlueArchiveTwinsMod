@@ -62,7 +62,7 @@ public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.updateCost(1);
+            this.upgradeBaseCost(6);
             this.upgradeMagicNumber(1);
         }
     }

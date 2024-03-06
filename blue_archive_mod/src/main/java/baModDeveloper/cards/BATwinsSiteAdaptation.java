@@ -47,7 +47,7 @@ public class BATwinsSiteAdaptation extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            updateCost(-1);
+            this.upgradeBaseCost(1);
         }
     }
 }

@@ -42,6 +42,7 @@ baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$openPatch2.class
 baModDeveloper\action\BATwinsBDStudyAction.class
 baModDeveloper\cards\BATwinsExcellentDesigner.class
 baModDeveloper\cards\BATwinsRepeatOperation.class
+baModDeveloper\helpers\Character3DHelper$MomoiActionList$1.class
 baModDeveloper\patch\BATwinsCharacterOptionPatch$updateHitboxPatch.class
 baModDeveloper\cards\BATwinsAdventureBattle.class
 baModDeveloper\cards\BATwinsNotReconciled.class
@@ -153,6 +154,7 @@ baModDeveloper\cards\BATwinsEmergencyRecovery.class
 baModDeveloper\power\BATwinsSinglePlayerGamePower$1.class
 baModDeveloper\relic\BATwinsAncientGameCartridges.class
 baModDeveloper\cards\BATwinsFundOverdraft.class
+baModDeveloper\effect\BATwinsTestEffect.class
 baModDeveloper\action\BATwinsDisCardByColorAction.class
 baModDeveloper\cards\BATwinsDualProtection.class
 baModDeveloper\cards\BATwinsModCustomCard$BATwinsCardTags.class

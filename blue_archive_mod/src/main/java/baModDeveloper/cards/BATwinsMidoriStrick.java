@@ -1,6 +1,7 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.effect.BATwinsTestEffect;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -51,6 +52,6 @@ public class BATwinsMidoriStrick extends BATwinsModCustomCard {
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
+        AbstractDungeon.effectsQueue.add(new BATwinsTestEffect());
     }
 }

@@ -25,6 +25,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
@@ -123,7 +124,7 @@ public class BATwinsCharacter extends CustomPlayer {
     //排序手牌
     ColorComparer colorComparer;
     //角色立绘，先暂时使用图片代替，之后使用3d模型替换
-    private static final String stand_Img = ModHelper.makeImgPath("char", "standup");
+    private static final String stand_Img = ModHelper.makeImgPath("char", "p");
 
     //    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
     public BATwinsCharacter(String name) {
@@ -181,6 +182,11 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
+        if(MathUtils.randomBoolean()){
+            CardCrawlGame.sound.play(ModHelper.makePath("charSelect_momoi"));
+        }else {
+            CardCrawlGame.sound.play(ModHelper.makePath("charSelect_midori"));
+        }
     }
 
     @Override
@@ -456,14 +462,15 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public void update() {
         super.update();
-        if(BATwinsMod.Enable3D)
-            character3DHelper.update();
+
         //排序手牌
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             if (BATwinsMod.AutoSort)
                 this.hand.group.sort(colorComparer);
             if (BATwinsMod.ShowExpBar)
                 this.expPanel.update();
+            if(BATwinsMod.Enable3D)
+                character3DHelper.update();
 
         }
     }
@@ -492,7 +499,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
         if (BATwinsMod.ShowExpBar && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
             this.expPanel.render(sb);
-        if(BATwinsMod.Enable3D)
+        if(BATwinsMod.Enable3D&&AbstractDungeon.getCurrRoom().phase==AbstractRoom.RoomPhase.COMBAT)
             character3DHelper.render(sb);
     }
 //    public enum AnimationChar{
@@ -543,7 +550,11 @@ public class BATwinsCharacter extends CustomPlayer {
             character3DHelper.setAnimation(Character3DHelper.MomoiActionList.MOVING);
     }
 
-
+    public void setCharAnimation(Character3DHelper.MomoiActionList anima){
+        if(BATwinsMod.Enable3D){
+            character3DHelper.setAnimation(anima);
+        }
+    }
     @Override
     public boolean saveFileExists() {
         return super.saveFileExists();

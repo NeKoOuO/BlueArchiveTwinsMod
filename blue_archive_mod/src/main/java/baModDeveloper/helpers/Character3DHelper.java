@@ -44,7 +44,7 @@ public class Character3DHelper {
     private static final float SCALE = 300.0F;
 //    private static float X = 0.0F, Y = 0.0F, Z = 0.0F;
     private float current_x=0,current_y=0,target_x=0,target_y=0;
-    private static float MOVESCALE=Settings.scale*2;
+    private static final float MOVESCALE=Settings.scale*4;
 
     public Character3DHelper() {
         if(BATwinsMod.Enable3D)
@@ -178,12 +178,24 @@ public class Character3DHelper {
             System.out.println("STAND_NORMAL");
             character3DHelper.animationController.queue(MomoiAnimationList.STAND_ATTACK_DELAY.getName(), -1,1,null,0.5F);
         }),
-        ATTACK(animationController->{
+        ATTACK(character3DHelper->{
             System.out.println("ATTACK");
+            character3DHelper.animationController.queue(MomoiAnimationList.ATTACK_START.getName(), 1,1,null,0.2F);
+            character3DHelper.animationController.queue(MomoiAnimationList.ATTACK_ING.getName(), 1, 1, new AnimationController.AnimationListener() {
+                @Override
+                public void onEnd(AnimationController.AnimationDesc animationDesc) {
+                    character3DHelper.animationController.queue(MomoiAnimationList.ATTACK_END.getName(),1,1,null,0.2F);
+                }
+
+                @Override
+                public void onLoop(AnimationController.AnimationDesc animationDesc) {
+
+                }
+            }, 0.2F);
         }),
         MOVING(character3DHelper->{
             System.out.println("MOVING");
-            character3DHelper.animationController.queue(MomoiAnimationList.MOVING.getName(),5,1,null, 0.5F);
+            character3DHelper.animationController.queue(MomoiAnimationList.MOVING.getName(),4,1.8F,null, 0.5F);
             character3DHelper.animationController.queue(MomoiAnimationList.MOVING_END_NORMAL.getName(),1,1.0F,null ,0.2F);
 //            character3DHelper.animationController.queue(MomoiAnimationList.STAND_ATTACK_DELAY.getName(), -1,1,null,1.0F);
 
@@ -201,6 +213,7 @@ public class Character3DHelper {
 
     public void setAnimation(MomoiActionList action) {
         this.clearQueue(this.animationController);
+        setPosition(this.target_x,this.target_y);
         switch (action){
             case MOVING:
                 this.current_x-=300.0F;
