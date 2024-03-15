@@ -19,7 +19,7 @@ public class BATwinsTestEffect extends AbstractGameEffect {
     @Override
     public void render(SpriteBatch spriteBatch) {
         if(AbstractDungeon.player instanceof BATwinsCharacter){
-            ((BATwinsCharacter) AbstractDungeon.player).setCharAnimation(Character3DHelper.MomoiActionList.ATTACK);
+            ((BATwinsCharacter) AbstractDungeon.player).setMidoriAnimation(Character3DHelper.MidoriActionList.ATTACK);
         }
         this.isDone=true;
     }

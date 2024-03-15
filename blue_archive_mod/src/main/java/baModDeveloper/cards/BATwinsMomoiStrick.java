@@ -1,6 +1,7 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.effect.BATwinsCharAttackEffect;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -46,7 +47,7 @@ public class BATwinsMomoiStrick extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, damage, DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
+        AbstractDungeon.effectsQueue.add(new BATwinsCharAttackEffect(this.color));
     }
 
     @Override
