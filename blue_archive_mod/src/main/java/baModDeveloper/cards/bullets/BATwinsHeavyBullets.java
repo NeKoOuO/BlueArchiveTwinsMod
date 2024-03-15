@@ -28,14 +28,20 @@ public class BATwinsHeavyBullets extends BATwinsCustomBulletCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(2);
-        }
+        this.upgradeName();
+        this.upgradeDamage(5);
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+    }
+
+    @Override
+    protected void upgradeName() {
+        ++this.timesUpgraded;
+        this.upgraded = true;
+        this.name = this.timesUpgraded+1+"X"+NAME;
+        this.initializeTitle();
     }
 }

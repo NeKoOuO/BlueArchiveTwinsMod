@@ -4,6 +4,7 @@ import baModDeveloper.cards.*;
 import baModDeveloper.cards.bullets.*;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
+import baModDeveloper.event.BATwinsDirtShowdown;
 import baModDeveloper.event.BATwinsTrainingCamp;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.relic.*;
@@ -243,6 +244,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsAncientGameCartridges(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsByProving(), RelicType.SHARED);
         BaseMod.addRelicToCustomPool(new BATwinsGameMagazine(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelicToCustomPool(new BATwinsGameGuide(),Enums.BATWINS_MOMOI_CARD);
 
     }
 
@@ -265,6 +267,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             throw new RuntimeException(e);
         }
         BaseMod.addEvent(BATwinsTrainingCamp.ID, BATwinsTrainingCamp.class);
+        BaseMod.addEvent(BATwinsDirtShowdown.ID,BATwinsDirtShowdown.class);
     }
 
     private void CreateConfig() throws IOException {

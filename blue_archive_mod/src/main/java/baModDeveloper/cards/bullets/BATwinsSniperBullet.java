@@ -31,15 +31,22 @@ public class BATwinsSniperBullet extends BATwinsCustomBulletCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(1);
-        }
+        this.upgradeName();
+        this.upgradeDamage(3);
+        this.upgradeMagicNumber(1);
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new WeakPower(abstractMonster, this.magicNumber, false)));
+    }
+
+    @Override
+    protected void upgradeName() {
+        ++this.timesUpgraded;
+        this.upgraded = true;
+        this.name = this.timesUpgraded+1+"X"+NAME;
+        this.initializeTitle();
     }
 }

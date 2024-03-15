@@ -28,7 +28,7 @@ public class BATwinsLoginRewardsAction extends AbstractGameAction {
         CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.color == this.color && c instanceof BATwinsModCustomCard) {
-                if (!((BATwinsModCustomCard) c).hasCardInBringOutCards(this.card)) {
+                if (!((BATwinsModCustomCard) c).hasCardInBringOutCards(this.card).isPresent()) {
                     tmp.addToTop(c);
                 }
             }

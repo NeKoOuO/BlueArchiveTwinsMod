@@ -29,6 +29,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Optional;
 
 public abstract class BATwinsModCustomCard extends CustomCard {
     public BATwinsEnergyPanel.EnergyType modifyEnergyType;
@@ -356,6 +357,14 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             card.upgrade();
         }
         this.bringOutCard = true;
+
+        if(card instanceof BATwinsCustomBulletCard){
+            Optional<AbstractCard> c=this.hasCardInBringOutCards(card);
+            if(c.isPresent()){
+                c.get().upgrade();
+                return;
+            }
+        }
         this.cardToBringOut.add(card.makeSameInstanceOf());
         if (this.cardsToPreview == null) {
             this.cardsToPreview = this.cardToBringOut.get(0);
@@ -369,13 +378,12 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 
     }
 
-    public boolean hasCardInBringOutCards(AbstractCard card) {
+    public Optional<AbstractCard> hasCardInBringOutCards(AbstractCard card) {
         if (this.bringOutCard) {
-            if (this.cardToBringOut.stream().anyMatch(card1 -> card1.cardID.equals(card.cardID))) {
-                return true;
-            }
+            return this.cardToBringOut.stream().filter(card1 -> card1.cardID.equals(card.cardID)).findFirst();
+        }else{
+            return Optional.empty();
         }
-        return false;
     }
 
     public ArrayList<AbstractCard> getBringOutCards() {

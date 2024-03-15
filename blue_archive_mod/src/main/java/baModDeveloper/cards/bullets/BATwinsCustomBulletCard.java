@@ -31,4 +31,10 @@ public abstract class BATwinsCustomBulletCard extends CustomCard {
         }
         return c;
     }
+
+    @Override
+    public boolean canUpgrade() {
+        return true;
+    }
+
 }

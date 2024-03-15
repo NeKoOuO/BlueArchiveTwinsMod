@@ -36,7 +36,7 @@ public class BATwinsItsSoPainful extends BATwinsModCustomCard {
 
     public BATwinsItsSoPainful() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 6;
+        this.baseDamage = 8;
         this.damage = this.baseDamage;
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;

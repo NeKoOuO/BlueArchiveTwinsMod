@@ -59,7 +59,6 @@ baModDeveloper\action\BATwinsCoolingTimeAction.class
 baModDeveloper\patch\BATwinsCardSavePatch.class
 baModDeveloper\cards\BATwinsAdventureExperience.class
 baModDeveloper\cards\BATwinsBulletWarehouse.class
-baModDeveloper\helpers\Character3DHelper$MomoiAnimationList.class
 baModDeveloper\power\BATwinsIntegratingAndIntegratingPower.class
 baModDeveloper\cards\BATwinsMasterCraftsmanship.class
 baModDeveloper\action\BATwinsCheatingCodeEnabledAction.class
@@ -121,6 +120,7 @@ baModDeveloper\action\BATwinsNormalAttackMethodsAction.class
 baModDeveloper\animation\GifDecoder.class
 baModDeveloper\power\BATwinsNoramlAttackAuxiliary.class
 baModDeveloper\cards\BATwinsItsSoPainful.class
+baModDeveloper\effect\BATwinsCharAttackEffect.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$renderPatch.class
 baModDeveloper\power\BATwinsArtPolishingExchangePower.class
 baModDeveloper\cards\BATwinsTakeActionsSeparately.class
@@ -143,6 +143,7 @@ baModDeveloper\cards\BATwinsEndCombo.class
 baModDeveloper\power\BATwinsMasterCraftsmanshipPower.class
 baModDeveloper\power\BATwinsMaidFormPower.class
 baModDeveloper\cards\BATwinsTwoStageAttack.class
+baModDeveloper\helpers\Character3DHelper$MidoriActionList.class
 baModDeveloper\power\BATwinsDefensiveCounterattackPower.class
 baModDeveloper\power\BATwinsPlotPredictionPower.class
 baModDeveloper\patch\BATwinsSoulFix.class
@@ -154,6 +155,7 @@ baModDeveloper\cards\BATwinsEmergencyRecovery.class
 baModDeveloper\power\BATwinsSinglePlayerGamePower$1.class
 baModDeveloper\relic\BATwinsAncientGameCartridges.class
 baModDeveloper\cards\BATwinsFundOverdraft.class
+baModDeveloper\event\BATwinsDirtShowdown.class
 baModDeveloper\effect\BATwinsTestEffect.class
 baModDeveloper\action\BATwinsDisCardByColorAction.class
 baModDeveloper\cards\BATwinsDualProtection.class
@@ -254,6 +256,8 @@ baModDeveloper\cards\bullets\BATwinsHeavyBullets.class
 baModDeveloper\patch\BATwinsCancelButtonPatch.class
 baModDeveloper\power\BATwinsArtPolishingExchangePower$1.class
 baModDeveloper\cards\BATwinsMomoiDefend.class
+baModDeveloper\helpers\Character3DHelper$AnimationName.class
+baModDeveloper\helpers\ModelController.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$updatePatch.class
 baModDeveloper\power\BATwinsDoubleExperiencePower.class
 baModDeveloper\cards\BATwinsTakeABreak$1.class
@@ -282,8 +286,10 @@ baModDeveloper\cards\BATwinsExchange.class
 baModDeveloper\cards\BATwinsModCustomCard$1.class
 baModDeveloper\cards\BATwinsBugCard.class
 baModDeveloper\patch\BATwinsAbstractCardPatch$FieldPatch.class
+baModDeveloper\helpers\Character3DHelper$MidoriActionList$1.class
 baModDeveloper\action\BATwinsDrawCardByColor.class
 baModDeveloper\cards\BATwinsAccurateBlocking.class
+baModDeveloper\relic\BATwinsGameGuide.class
 baModDeveloper\patch\BATwinsCampfireUIPatch$initializeButtonsPatch.class
 baModDeveloper\helpers\Character3DHelper$MomoiActionList.class
 baModDeveloper\animation\GifDecoder$GifFrame.class

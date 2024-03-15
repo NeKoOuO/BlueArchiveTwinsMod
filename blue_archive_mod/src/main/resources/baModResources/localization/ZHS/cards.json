@@ -44,7 +44,7 @@
     },
     "BATwinsMod:KeepItToTheEnd":{
         "NAME":"严守截稿日",
-        "DESCRIPTION":"弃置手牌中所有 batwinsmod:桃牌 ，每弃置一张获得 !B! 点格挡。"
+        "DESCRIPTION":"丢弃手牌中所有 batwinsmod:桃牌 ，每丢弃一张获得 !B! 点格挡。"
     },
     "BATwinsMod:ArtPolishing":{
         "NAME":"艺术打磨",
@@ -82,14 +82,14 @@
     },
     "BATwinsMod:PassageInForce":{
         "NAME":"强行通过",
-        "DESCRIPTION":"对全体敌人造成 !D! 点伤害，获得 !B! 点格挡，弃置2张牌。"
+        "DESCRIPTION":"对全体敌人造成 !D! 点伤害，获得 !B! 点格挡，丢弃2张牌。"
     },
     "BATwinsMod:SiteAdaptation":{
         "NAME":"场地适应",
         "DESCRIPTION":"获得 !M! 力量 ， !M! 敏捷 ， !M! 金属化 。"
     },
     "BATwinsMod:OnceMore":{
-        "NAME":"再来一次",
+        "NAME":"火焰扩散",
         "DESCRIPTION":"我方回合结束时，触发所有敌人的 batwinsmod:灼伤 。",
         "UPGRADE_DESCRIPTION":" 固有 。 NL 我方回合结束时，触发所有敌人的 batwinsmod:灼伤 。"
     },
@@ -104,7 +104,7 @@
     },
     "BATwinsMod:BadDesigner":{
         "NAME":"糟糕设计师",
-        "DESCRIPTION":"手牌只有时才能打出。 NL 在手牌时，打出其他牌时弃置1张牌。再累计打出 !M! 次的话会发生蜕变。 消耗 "
+        "DESCRIPTION":"手牌只有时才能打出。 NL 在手牌时，打出其他牌时丢弃1张牌。再累计打出 !M! 次的话会发生蜕变。 消耗 "
     },
     "BATwinsMod:BugCard":{
         "NAME":"漏洞",
@@ -218,8 +218,8 @@
 	},
 	"BATwinsMod:CheatingCodeEnabled":{
 		"NAME":"作弊码开启",
-		"DESCRIPTION":"弃置手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。 消耗 ",
-		"UPGRADE_DESCRIPTION":"弃置手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。本回合结束时将弃牌堆洗入抽牌堆。 消耗 "
+		"DESCRIPTION":"丢弃手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。 消耗 ",
+		"UPGRADE_DESCRIPTION":"丢弃手牌所有 batwinsmod:绿牌 ，抽 batwinsmod:桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。本回合结束时将弃牌堆洗入抽牌堆。 消耗 "
 	},
 	"BATwinsMod:FundOverdraft":{
 		"NAME":"资金透支",
@@ -284,7 +284,7 @@
 		"UPGRADE_DESCRIPTION":"复制本场战斗打出的上一张牌的基础效果。 NL batwinsmod:连携 , batwinsmod:超连携 ：复制本场战斗打出的上一张牌的 batwinsmod:连携 效果或 batwinsmod:超连携 效果。"
 	},
 	"BATwinsMod:SkillCombination":{
-		"NAME":"技能合体",
+		"NAME":"技能融合",
 		"DESCRIPTION":"选择抽牌堆1张技能牌 消耗 。将 !M! 张打击加入抽牌堆，且这些打击 batwinsmod:存储 选择的那张牌。 NL 消耗 "
 	},
 	"BATwinsMod:IntegratingAndIntegrating":{
@@ -360,8 +360,8 @@
 	},
 	"BATwinsMod:CheckTheStrategy":{
 		"NAME":"查询攻略书",
-		"DESCRIPTION":"抽 !M! 张牌，弃置所有非 batwinsmod:绿牌 抽等量牌。 NL 若此牌没有弃置牌则从抽牌堆选择1张牌加入手牌。",
-		"UPGRADE_DESCRIPTION":"抽 !M! 张牌，弃置所有非 batwinsmod:绿牌 抽等量牌。 NL 若此牌没有弃置牌则从抽牌堆选择1张牌加入手牌。"
+		"DESCRIPTION":"抽 !M! 张牌，丢弃所有非 batwinsmod:绿牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆选择1张牌加入手牌。",
+		"UPGRADE_DESCRIPTION":"抽 !M! 张牌，丢弃所有非 batwinsmod:绿牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆选择1张牌加入手牌。"
 	},
 	"BATwinsMod:LeaveItToMe":{
 		"NAME":"交给我吧",
@@ -373,14 +373,14 @@
 	},
 	"BATwinsMod:DontSayIt":{
 		"NAME":"要对姐姐保密哦",
-		"DESCRIPTION":"获得 !B! 点 格挡 2次，弃置手牌中所有非 batwinsmod:绿牌 。若此牌没有弃置牌则 batwinsmod:提升等级 !M! 。",
+		"DESCRIPTION":"获得 !B! 点 格挡 2次，丢弃手牌中所有非 batwinsmod:绿牌 。 NL 若此牌没有丢弃牌则 batwinsmod:提升等级 !M! 。",
 		"EXTENDED_DESCRIPTION":[
 			"要对妹妹保密哦"
 		]
 	},
 	"BATwinsMod:ItsSoPainful":{
 		"NAME":"苦呀西·苦呀西",
-		"DESCRIPTION":"给予 !D! 点伤害 !M! 次，弃置手牌中所有非 batwinsmod:桃牌 。若此牌没有弃置牌则本场战斗此牌伤害次数增加1。"
+		"DESCRIPTION":"给予 !D! 点伤害 !M! 次，丢弃手牌中所有非 batwinsmod:桃牌 。若此牌没有丢弃牌则本场战斗此牌伤害次数增加1。"
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"贯通伤害",

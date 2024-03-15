@@ -22,7 +22,7 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("TakeABreak");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
-    private static final String IMG_PATH = ModHelper.makeImgPath("cards", "defaultSkill");
+    private static final String IMG_PATH = ModHelper.makeImgPath("cards", "TakeABreak");
     private static final int COST = 2;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;

@@ -45,6 +45,8 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
@@ -124,7 +126,7 @@ public class BATwinsCharacter extends CustomPlayer {
     //排序手牌
     ColorComparer colorComparer;
     //角色立绘，先暂时使用图片代替，之后使用3d模型替换
-    private static final String stand_Img = ModHelper.makeImgPath("char", "p");
+    private static final String stand_Img = BATwinsMod.Enable3D?ModHelper.makeImgPath("char","p"):ModHelper.makeImgPath("char", "standup");
 
     //    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
     public BATwinsCharacter(String name) {
@@ -145,7 +147,7 @@ public class BATwinsCharacter extends CustomPlayer {
             if(!character3DHelper.inited()){
                 character3DHelper.init();
             }
-            character3DHelper.setPosition(this.drawX,this.drawY);
+            character3DHelper.setPosition(Settings.WIDTH*0.04F,Settings.HEIGHT*0.07F);
         }
 
     }
@@ -469,8 +471,12 @@ public class BATwinsCharacter extends CustomPlayer {
                 this.hand.group.sort(colorComparer);
             if (BATwinsMod.ShowExpBar)
                 this.expPanel.update();
-            if(BATwinsMod.Enable3D)
-                character3DHelper.update();
+//            if(BATwinsMod.Enable3D)
+//                character3DHelper.update();
+
+        }
+        if(BATwinsMod.Enable3D&&!(AbstractDungeon.getCurrRoom() instanceof RestRoom)){
+            character3DHelper.update();
 
         }
     }
@@ -499,8 +505,9 @@ public class BATwinsCharacter extends CustomPlayer {
 
         if (BATwinsMod.ShowExpBar && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
             this.expPanel.render(sb);
-        if(BATwinsMod.Enable3D&&AbstractDungeon.getCurrRoom().phase==AbstractRoom.RoomPhase.COMBAT)
+        if(BATwinsMod.Enable3D&& !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
             character3DHelper.render(sb);
+        }
     }
 //    public enum AnimationChar{
 //        MOMOI,
@@ -546,15 +553,23 @@ public class BATwinsCharacter extends CustomPlayer {
 
     public void onEnterRoom() {
         //设置进入房间时的动画
-        if(BATwinsMod.Enable3D)
-            character3DHelper.setAnimation(Character3DHelper.MomoiActionList.MOVING);
-    }
-
-    public void setCharAnimation(Character3DHelper.MomoiActionList anima){
         if(BATwinsMod.Enable3D){
-            character3DHelper.setAnimation(anima);
+            character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.MOVING);
+            character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.MOVING);
         }
     }
+
+    public void setMomoiAnimation(Character3DHelper.MomoiActionList anima){
+        if(BATwinsMod.Enable3D){
+            character3DHelper.setMomoiAnimation(anima);
+        }
+    }
+    public void setMidoriAnimation(Character3DHelper.MidoriActionList anima){
+        if(BATwinsMod.Enable3D){
+            character3DHelper.setMidoriAnimation(anima);
+        }
+    }
+
     @Override
     public boolean saveFileExists() {
         return super.saveFileExists();

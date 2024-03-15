@@ -36,5 +36,12 @@
 		"DESCRIPTIONS":[
 			"每场战斗开始时，将1张 #y交换 加入手牌。"
 		]
+	},
+	"BATwinsMod:GameGuide":{
+		"NAME":"游戏攻略书",
+		"FLAVOR":"上面说只要拖动手牌就可以将其打出！",
+		"DESCRIPTIONS":[
+			"每回合开始时将 #b1 张附带 #y虚无消耗 的 #y交换 加入手牌。"
+		]
 	}
 }
