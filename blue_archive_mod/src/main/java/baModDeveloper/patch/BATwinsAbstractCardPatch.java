@@ -2,10 +2,7 @@ package baModDeveloper.patch;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.power.BATwinsFlatFallPower;
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -13,6 +10,7 @@ public class BATwinsAbstractCardPatch {
     @SpirePatch(clz = AbstractCard.class, method = SpirePatch.CLASS)
     public static class FieldPatch {
         public static SpireField<Boolean> blockTheOriginalEffect = new SpireField<>(() -> false);
+        public static SpireField<Integer> numberOfConnections=new SpireField<>(()->0);
     }
 
     @SpirePatch(clz = AbstractCard.class, method = "hover")
@@ -57,4 +55,12 @@ public class BATwinsAbstractCardPatch {
             BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(_instance, false);
         }
     }
+
+//    @SpirePatch(clz = AbstractCard.class,method = "use")
+//    public static class usePatch{
+//        @SpirePostfixPatch
+//        public static void usePatch(AbstractCard _instance){
+//            FieldPatch.numberOfConnections.set(_instance,0);
+//        }
+//    }
 }

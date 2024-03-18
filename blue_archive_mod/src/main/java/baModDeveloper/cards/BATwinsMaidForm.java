@@ -1,5 +1,6 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.cards.colorless.BATwinsAccelerate;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.power.BATwinsMaidFormPower;
@@ -28,6 +29,7 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
+        this.cardsToPreview=new BATwinsAccelerate();
     }
 
     @Override
@@ -37,7 +39,7 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(abstractPlayer, abstractMonster, new DrawPower(abstractPlayer, -1)));
+//        addToBot(new ApplyPowerAction(abstractPlayer, abstractMonster, new DrawPower(abstractPlayer, -1)));
         addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsMaidFormPower(abstractPlayer, this.magicNumber)));
     }
 

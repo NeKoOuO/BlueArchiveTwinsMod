@@ -3,9 +3,6 @@ package baModDeveloper.helpers;
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.assets.loaders.ModelLoader;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Pixmap;
@@ -13,23 +10,13 @@ import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g3d.Environment;
-import com.badlogic.gdx.graphics.g3d.Model;
-import com.badlogic.gdx.graphics.g3d.ModelBatch;
-import com.badlogic.gdx.graphics.g3d.ModelInstance;
-import com.badlogic.gdx.graphics.g3d.attributes.BlendingAttribute;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
-import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
-import com.badlogic.gdx.graphics.g3d.loader.G3dModelLoader;
 import com.badlogic.gdx.graphics.g3d.utils.AnimationController;
-import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.utils.JsonReader;
-import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 
-import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -119,14 +106,18 @@ public class Character3DHelper {
     }
 
 
-enum AnimationName{
+public enum AnimationName{
         NORMAL_IDLE,
         STAND_ATTACK_DELAY,
         MOVING,
         MOVING_END,
         ATTACK_START,
         ATTACKING,
-        ATTACK_END
+        ATTACK_END,
+        MOVE_JUMP,
+        DEATH,
+        DYING,
+        RELOAD
     }
     private static final Map<AnimationName,String[]> AnimationNames=new HashMap<>();
     static {
@@ -137,6 +128,17 @@ enum AnimationName{
         AnimationNames.put(ATTACK_START,new String[]{"Armature|Momoi_Original_Normal_Attack_Start","Armature|Midori_Original_Normal_Attack_Start"});
         AnimationNames.put(ATTACKING,new String[]{"Armature|Momoi_Original_Normal_Attack_Ing","Armature|Midori_Original_Normal_Attack_Ing"});
         AnimationNames.put(ATTACK_END,new String[]{"Armature|Momoi_Original_Normal_Attack_End","Armature|Midori_Original_Normal_Attack_End"});
+        AnimationNames.put(MOVE_JUMP,new String[]{"Armature|Momoi_Original_Move_Jump","Armature|Midori_Original_Move_Jump"});
+        AnimationNames.put(DEATH,new String[]{"Armature|Momoi_Original_Vital_Death","Armature|Midori_Original_Vital_Death"});
+        AnimationNames.put(DYING,new String[]{"Armature|Momoi_Original_Vital_Dying_ing","Armature|Midori_Original_Vital_Dying_ing"});
+        AnimationNames.put(RELOAD,new String[]{"Armature|Momoi_Original_Normal_Reload","Armature|Midori_Original_Normal_Reload"});
+    }
+
+    public static String getAnimationString(AnimationName name, AbstractCard.CardColor color){
+        if(color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD)
+            return AnimationNames.get(name)[0];
+        else
+            return AnimationNames.get(name)[1];
     }
     public enum MomoiActionList {
         STAND_NORMAL(animationController->{
@@ -162,8 +164,23 @@ enum AnimationName{
             System.out.println("MOVING");
             animationController.queue(AnimationNames.get(AnimationName.MOVING)[0],4,1.8F,null, 0.5F);
             animationController.queue(AnimationNames.get(MOVING_END)[0],1,1.0F,null ,0.2F);
+        }),
+        JUMP(animationController->{
+            System.out.println("JUMP");
+            animationController.queue(AnimationNames.get(MOVE_JUMP)[0],1,1,null,0.5F);
+        }),
+        DEATH(animationController->{
+           System.out.println("DEATH");
+           animationController.queue(AnimationNames.get(AnimationName.DEATH)[0],1,1,null,0.5F);
+        }),
+        DYING(animationController->{
+            System.out.println("DYING");
+            animationController.queue(AnimationNames.get(AnimationName.DYING)[0],-1,1,null,0.5F);
+        }),
+        RELOAD(animationController->{
+            System.out.println("RELOAD");
+            animationController.queue(AnimationNames.get(AnimationName.RELOAD)[0],1,1,null,0.5F);
         });
-
         private final Consumer<AnimationController> operation;
         private MomoiActionList(Consumer<AnimationController> operation) {
             this.operation=operation;
@@ -197,6 +214,22 @@ enum AnimationName{
             System.out.println("MOVING");
             animationController.queue(AnimationNames.get(AnimationName.MOVING)[1],4,1.8F,null, 0.5F);
             animationController.queue(AnimationNames.get(MOVING_END)[1],1,1.0F,null ,0.2F);
+        }),
+        JUMP(animationController->{
+            System.out.println("JUMP");
+            animationController.queue(AnimationNames.get(MOVE_JUMP)[1],1,1,null,0.5F);
+        }),
+        DEATH(animationController->{
+            System.out.println("DEATH");
+            animationController.queue(AnimationNames.get(AnimationName.DEATH)[1],1,1,null,0.5F);
+        }),
+        DYING(animationController->{
+            System.out.println("DYING");
+            animationController.queue(AnimationNames.get(AnimationName.DYING)[1],-1,1,null,0.5F);
+        }),
+        RELOAD(animationController->{
+            System.out.println("RELOAD");
+            animationController.queue(AnimationNames.get(AnimationName.RELOAD)[1],1,1,null,0.5F);
         });
 
         private final Consumer<AnimationController> operation;
@@ -242,5 +275,29 @@ enum AnimationName{
     }
     public boolean inited(){
         return this.inited;
+    }
+
+    public void setStandAnima(AnimationName anima, AbstractCard.CardColor color){
+        if(color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
+            this.momoiController.setStandAnima(AnimationNames.get(anima)[0]);
+        }else{
+            this.midoriController.setStandAnima(AnimationNames.get(anima)[1]);
+        }
+    }
+
+    public String getCurrentAnima(AbstractCard.CardColor color){
+        if(color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
+            return this.momoiController.getCurrentAnima();
+        }else{
+            return this.midoriController.getCurrentAnima();
+        }
+    }
+
+    public void resetDefaultAnima(AbstractCard.CardColor color){
+        if(color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
+            this.momoiController.resetDefaultAnima();
+        }else{
+            this.midoriController.resetDefaultAnima();
+        }
     }
 }

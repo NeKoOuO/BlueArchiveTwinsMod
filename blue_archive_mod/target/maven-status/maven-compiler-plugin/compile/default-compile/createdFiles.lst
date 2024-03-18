@@ -69,6 +69,7 @@ baModDeveloper\cards\BATwinsGameLaunch.class
 baModDeveloper\BATwinsMod.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$openPatch.class
 baModDeveloper\effect\BATwinsShowCardAndFlashEffect.class
+baModDeveloper\action\BATwinsAccelerateAction.class
 baModDeveloper\power\BATwinsSeeYouHaveASharenPower.class
 baModDeveloper\cards\BATwinsBadDesigner.class
 baModDeveloper\action\BATwinsClearBlockAction.class
@@ -125,6 +126,7 @@ baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$renderPatch.class
 baModDeveloper\power\BATwinsArtPolishingExchangePower.class
 baModDeveloper\cards\BATwinsTakeActionsSeparately.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch.class
+baModDeveloper\cards\colorless\BATwinsAccelerate.class
 baModDeveloper\action\BATwinsClearBringOutCardAction.class
 baModDeveloper\power\BATwinsGainTENextTurnPower.class
 baModDeveloper\action\BATwinsExchangeAction.class
@@ -157,6 +159,7 @@ baModDeveloper\relic\BATwinsAncientGameCartridges.class
 baModDeveloper\cards\BATwinsFundOverdraft.class
 baModDeveloper\event\BATwinsDirtShowdown.class
 baModDeveloper\effect\BATwinsTestEffect.class
+baModDeveloper\event\BATwinsHurdleGame$CurrentScreen.class
 baModDeveloper\action\BATwinsDisCardByColorAction.class
 baModDeveloper\cards\BATwinsDualProtection.class
 baModDeveloper\cards\BATwinsModCustomCard$BATwinsCardTags.class
@@ -164,6 +167,7 @@ baModDeveloper\cards\BATwinsAutomaticDefense.class
 baModDeveloper\cards\BATwinsForceDetonation.class
 baModDeveloper\character\BATwinsCharacter.class
 baModDeveloper\helpers\ColorComparer.class
+baModDeveloper\event\BATwinsHurdleGame$1.class
 baModDeveloper\cards\BATwinsMidoriStrick.class
 baModDeveloper\action\BATwinsPlotRepairAction.class
 baModDeveloper\relic\BATwinsByProving.class
@@ -217,6 +221,7 @@ baModDeveloper\action\BATwinsPlayDrawPailCardAction.class
 baModDeveloper\cards\BATwinsRushToDraft.class
 baModDeveloper\cards\BATwinsTemporaryAssistance.class
 baModDeveloper\cards\BATwinsCheckTheStrategy.class
+baModDeveloper\event\BATwinsHurdleGame.class
 baModDeveloper\action\BATwinsDisOtherCardByColorAction.class
 baModDeveloper\action\BATwinsCopyBulletsAction.class
 baModDeveloper\patch\BATwinsAbstractDungeonPatch$nextRoomTransitionPatch.class

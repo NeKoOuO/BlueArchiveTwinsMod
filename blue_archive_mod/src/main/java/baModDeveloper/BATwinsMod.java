@@ -2,9 +2,11 @@ package baModDeveloper;
 
 import baModDeveloper.cards.*;
 import baModDeveloper.cards.bullets.*;
+import baModDeveloper.cards.colorless.BATwinsAccelerate;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.event.BATwinsDirtShowdown;
+import baModDeveloper.event.BATwinsHurdleGame;
 import baModDeveloper.event.BATwinsTrainingCamp;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.relic.*;
@@ -68,6 +70,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public static boolean AutoSort = true;
     public static boolean ShowExpBar = true;
     public static boolean Enable3D=false;
+    public static boolean Tutorial=true;
 
     public BATwinsMod() {
         BaseMod.subscribe(this);
@@ -85,6 +88,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             AutoSort = config.getBool(ModHelper.makePath("AutoSort"));
             ShowExpBar = config.getBool(ModHelper.makePath("ShowExpBar"));
             Enable3D=config.getBool(ModHelper.makePath("Enable3D"));
+            Tutorial=config.getBool(ModHelper.makePath("Tutorial"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -185,7 +189,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new BATwinsLearned());
         BaseMod.addCard(new BATwinsForceDetonation());
         BaseMod.addCard(new BATwinsScriptRewriting());
-        BaseMod.addCard(new BATwinsBullet());
+//        BaseMod.addCard(new BATwinsBullet());
         BaseMod.addCard(new BATwinsContinuousShooting());
         BaseMod.addCard(new BATwinsIncendiaryBullet());
         BaseMod.addCard(new BATwinsPoisonBullet());
@@ -197,7 +201,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new BATwinsFocusShooting());
         BaseMod.addCard(new BATwinsHeavyBullets());
         BaseMod.addCard(new BATwinsBulletWarehouse());
-        BaseMod.addCard(new BATwinsExpansionMagazine());
+//        BaseMod.addCard(new BATwinsExpansionMagazine());
+        BaseMod.addCard(new BATwinsAccelerate());
     }
 
     @Override
@@ -268,6 +273,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         }
         BaseMod.addEvent(BATwinsTrainingCamp.ID, BATwinsTrainingCamp.class);
         BaseMod.addEvent(BATwinsDirtShowdown.ID,BATwinsDirtShowdown.class);
+        BaseMod.addEvent(BATwinsHurdleGame.ID,BATwinsHurdleGame.class);
     }
 
     private void CreateConfig() throws IOException {

@@ -1,12 +1,21 @@
 package baModDeveloper.power;
 
+import baModDeveloper.action.BATwinsPlayTempCardAction;
 import baModDeveloper.action.BATwinsPropCollectionAction;
+import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.cards.colorless.BATwinsAccelerate;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class BATwinsMaidFormPower extends AbstractPower {
@@ -18,6 +27,7 @@ public class BATwinsMaidFormPower extends AbstractPower {
     private static final String IMG_84 = ModHelper.makeImgPath("power", "MaidForm84");
     private static final String IMG_32 = ModHelper.makeImgPath("power", "MaidForm32");
 //    private static final Random rng = new Random();
+    private int cardsToPlayThisTurn=0;
 
     public BATwinsMaidFormPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -38,6 +48,39 @@ public class BATwinsMaidFormPower extends AbstractPower {
 
     @Override
     public void atStartOfTurnPostDraw() {
-        addToBot(new BATwinsPropCollectionAction(this.amount));
+//        addToBot(new BATwinsPropCollectionAction(this.amount));
+
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        this.cardsToPlayThisTurn=0;
+    }
+
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if(!card.purgeOnUse&&this.amount>0&& AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - this.cardsToPlayThisTurn <= this.amount){
+            this.cardsToPlayThisTurn++;
+            flash();
+            AbstractMonster m= (AbstractMonster) action.target;
+
+            BATwinsAccelerate temp=new BATwinsAccelerate();
+            temp.purgeOnUse=true;
+            temp.freeToPlayOnce=true;
+            temp.energyOnUse=card.cost;
+            temp.connectionCost=card.cost;
+
+            AbstractDungeon.player.limbo.addToBottom(temp);
+            temp.current_x = card.current_x;
+            temp.current_y = card.current_y;
+            temp.target_x = Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+            temp.target_y = Settings.HEIGHT / 2.0F;
+
+            if(m!=null){
+                temp.calculateCardDamage(m);
+            }
+
+            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(temp,m,card.energyOnUse,true,true),true);
+        }
     }
 }

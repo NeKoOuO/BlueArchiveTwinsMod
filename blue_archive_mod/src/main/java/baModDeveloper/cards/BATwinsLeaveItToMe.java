@@ -24,7 +24,7 @@ public class BATwinsLeaveItToMe extends BATwinsModCustomCard {
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
-    private static final CardTarget TARGET = CardTarget.ALL;
+    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
 
@@ -32,15 +32,15 @@ public class BATwinsLeaveItToMe extends BATwinsModCustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseDamage = 10;
         this.damage = this.baseDamage;
-        this.isMultiDamage=true;
+//        this.isMultiDamage=true;
         this.baseBlock = 8;
         this.block = this.baseBlock;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-//        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new DamageAllEnemiesAction(abstractPlayer,this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL,true));
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+//        addToBot(new DamageAllEnemiesAction(abstractPlayer,this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL,true));
         triggerSpecialEffects();
     }
 

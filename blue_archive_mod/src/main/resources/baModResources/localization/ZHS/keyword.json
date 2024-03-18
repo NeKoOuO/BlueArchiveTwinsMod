@@ -95,7 +95,7 @@
 		"NAMES":[
 			"子弹"
 		],
-		"DESCRIPTION":"造成伤害的无色牌。"
+		"DESCRIPTION":"造成伤害的无色牌。被存储时会自动合并。"
 	},
 	{
 		"NAMES":[

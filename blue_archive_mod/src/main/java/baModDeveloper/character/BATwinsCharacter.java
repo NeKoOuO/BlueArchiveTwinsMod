@@ -1,7 +1,6 @@
 package baModDeveloper.character;
 
 import baModDeveloper.BATwinsMod;
-import baModDeveloper.animation.AbstractAnimation;
 import baModDeveloper.cards.*;
 import baModDeveloper.core.BATwinsEnergyManager;
 import baModDeveloper.helpers.Character3DHelper;
@@ -19,6 +18,7 @@ import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMomoiOrb;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
 import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
 import basemod.abstracts.CustomEnergyOrb;
+import basemod.abstracts.CustomMultiPageFtue;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -26,6 +26,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
@@ -41,17 +42,18 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
@@ -60,7 +62,7 @@ import java.util.Objects;
 public class BATwinsCharacter extends CustomPlayer {
     private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder");
     private static final String BATWINS_CHARACTER_SHOULDER_2 = ModHelper.makeImgPath("char", "shoulder2");
-    private static final String BATWINS_CHARACTER_CORPSE = ModHelper.makeImgPath("char", "corpse");
+    private static final String BATWINS_CHARACTER_CORPSE = BATwinsMod.Enable3D?ModHelper.makeImgPath("char","p"):ModHelper.makeImgPath("char", "corpse");
     private static final String[] MOMOI_ORB_TEXTURES = new String[]{
             ModHelper.makeImgPath("UI/orb", "layer1_momoi"),
             ModHelper.makeImgPath("UI/orb", "layer2_momoi"),
@@ -148,6 +150,8 @@ public class BATwinsCharacter extends CustomPlayer {
                 character3DHelper.init();
             }
             character3DHelper.setPosition(Settings.WIDTH*0.04F,Settings.HEIGHT*0.07F);
+            character3DHelper.resetDefaultAnima(Enums.BATWINS_MOMOI_CARD);
+            character3DHelper.resetDefaultAnima(Enums.BATWINS_MIDORI_CARD);
         }
 
     }
@@ -506,6 +510,9 @@ public class BATwinsCharacter extends CustomPlayer {
         if (BATwinsMod.ShowExpBar && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
             this.expPanel.render(sb);
         if(BATwinsMod.Enable3D&& !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+            if(this.currentHealth==0){
+                character3DHelper.update();
+            }
             character3DHelper.render(sb);
         }
     }
@@ -581,5 +588,54 @@ public class BATwinsCharacter extends CustomPlayer {
 //        if(this.currentBlock==0&&info.output>0&&this.currentHealth>0){
 //            CardCrawlGame.sound.play(ModHelper.makeAudioPath("affected_momoi"));
 //        }
+    }
+
+    public static Character3DHelper get3DHelper(){
+        return character3DHelper;
+    }
+
+
+    @Override
+    public void playDeathAnimation() {
+        if(BATwinsMod.Enable3D){
+            character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.DYING);
+            character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.DYING);
+        }
+
+    }
+
+    @Override
+    public void applyPreCombatLogic() {
+        if(BATwinsMod.Tutorial){
+            AbstractDungeon.ftue=new CustomMultiPageFtue(new Texture[]{
+                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial","Tutorial1")),
+                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial","Tutorial2")),
+                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial","Tutorial3")),
+
+            },CardCrawlGame.languagePack.getUIString(ModHelper.makePath("Tutorial")).TEXT);
+
+            BATwinsMod.Tutorial=false;
+            try {
+                SpireConfig spireConfig = new SpireConfig("BATwinsMod", "Common");
+                spireConfig.setBool(ModHelper.makePath("Enable3D"),BATwinsMod.Tutorial);
+                spireConfig.save();
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
+        super.applyPreCombatLogic();
+    }
+
+    @Override
+    public void applyStartOfTurnPreDrawCards() {
+        if(BATwinsMod.Enable3D){
+            character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.RELOAD);
+            character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.RELOAD);
+        }
+
+        super.applyStartOfTurnPreDrawCards();
     }
 }

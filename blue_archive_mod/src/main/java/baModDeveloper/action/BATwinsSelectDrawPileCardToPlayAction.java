@@ -17,7 +17,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
     private AbstractPlayer p;
     private int numberOfConnections;
     private AbstractCard.CardColor color;
-    private ArrayList<AbstractCard> canNotSelect;
+    protected ArrayList<AbstractCard> canNotSelect;
     private boolean isBlockOrigin = false;
     private boolean removePower = false;
     private UIStrings UISTRINGS = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));

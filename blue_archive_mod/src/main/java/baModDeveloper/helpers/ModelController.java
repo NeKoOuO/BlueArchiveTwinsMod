@@ -36,7 +36,7 @@ public class ModelController {
     private float current_x=0,current_y=0,target_x=0,target_y=0;
     private static final float MOVESCALE=Settings.scale*4;
 
-    private final String StandAnima;
+    private String StandAnima;
 
     public ModelController(String modelPath,float x,float y,float z,String StandAnima){
         loader=new G3dModelLoader(new JsonReader());
@@ -109,5 +109,23 @@ public class ModelController {
         this.clearQueue(animationController);
         resetPosition(this.target_x,this.target_y);
         animation.accept(this.animationController);
+    }
+
+    public void setStandAnima(String anima){
+        if(this.animationController.current.animation.id.equals(this.StandAnima)){
+            this.clearQueue(this.animationController);
+        }
+        this.StandAnima=anima;
+    }
+
+    public String getCurrentAnima(){
+        if(this.animationController.current==null){
+            return "";
+        }
+        return this.animationController.current.animation.id;
+    }
+
+    public void resetDefaultAnima(){
+        this.clearQueue(this.animationController);
     }
 }
