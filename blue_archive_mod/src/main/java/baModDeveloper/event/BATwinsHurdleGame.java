@@ -183,8 +183,10 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
                     this.imageEventText.clearAllDialogs();
                     if (this.sorce == 10) {
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                    } else {
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[4]);
+                    } else if(this.sorce==0){
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[5]);
+                    }else{
+                        this.imageEventText.updateBodyText(String.format(DESCRIPTIONS[4],this.sorce));
                     }
                     this.imageEventText.setDialogOption(OPTIONS[3]);
                     getRewardWithGaming();
