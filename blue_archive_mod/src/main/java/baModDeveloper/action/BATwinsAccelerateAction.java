@@ -1,7 +1,5 @@
 package baModDeveloper.action;
 
-import baModDeveloper.cards.colorless.BATwinsAccelerate;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -9,45 +7,45 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import java.util.ArrayList;
-
 public class BATwinsAccelerateAction extends BATwinsSelectDrawPileCardToPlayAction {
-//    private ArrayList<AbstractCard> canNotSelected;
+    //    private ArrayList<AbstractCard> canNotSelected;
     private boolean freeToPlay;
-    private int enegyOnUse=-1;
+    private int enegyOnUse = -1;
     AbstractPlayer p;
-    public BATwinsAccelerateAction(int numOfConnection,int energyOnUse,boolean freeToPlay){
-        super(false, (AbstractMonster) null,numOfConnection);
+
+    public BATwinsAccelerateAction(int numOfConnection, int energyOnUse, boolean freeToPlay) {
+        super(false, (AbstractMonster) null, numOfConnection);
 //        canNotSelected=new ArrayList<>();
-        this.freeToPlay=freeToPlay;
-        this.enegyOnUse=energyOnUse;
-        this.p=AbstractDungeon.player;
+        this.freeToPlay = freeToPlay;
+        this.enegyOnUse = energyOnUse;
+        this.p = AbstractDungeon.player;
     }
+
     @Override
     public void update() {
-        if(this.duration== Settings.ACTION_DUR_FAST){
-            int energy= EnergyPanel.totalCount;
-            if(this.enegyOnUse!=-1){
-                energy=this.enegyOnUse;
+        if (this.duration == Settings.ACTION_DUR_FAST) {
+            int energy = EnergyPanel.totalCount;
+            if (this.enegyOnUse != -1) {
+                energy = this.enegyOnUse;
             }
-            if(this.p.hasRelic("Chemical X")){
-                energy+=2;
+            if (this.p.hasRelic("Chemical X")) {
+                energy += 2;
                 this.p.getRelic("Chemical X").flash();
             }
-            if(energy<=0){
-                this.isDone=true;
+            if (energy <= 0) {
+                this.isDone = true;
                 return;
             }
-            for(AbstractCard c: this.p.drawPile.group){
-                if(c.cost>energy){
+            for (AbstractCard c : this.p.drawPile.group) {
+                if (c.cost > energy) {
                     this.canNotSelect.add(c);
                 }
             }
-            if(!this.canNotSelect.isEmpty()){
+            if (!this.canNotSelect.isEmpty()) {
                 this.p.drawPile.group.removeAll(this.canNotSelect);
             }
 
-            if(!this.freeToPlay){
+            if (!this.freeToPlay) {
                 this.p.energy.use(EnergyPanel.totalCount);
             }
         }

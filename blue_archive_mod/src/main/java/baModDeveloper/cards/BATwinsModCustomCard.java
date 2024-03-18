@@ -358,9 +358,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         }
         this.bringOutCard = true;
 
-        if(card instanceof BATwinsCustomBulletCard){
-            Optional<AbstractCard> c=this.hasCardInBringOutCards(card);
-            if(c.isPresent()){
+        if (card instanceof BATwinsCustomBulletCard) {
+            Optional<AbstractCard> c = this.hasCardInBringOutCards(card);
+            if (c.isPresent()) {
                 c.get().upgrade();
                 return;
             }
@@ -381,7 +381,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     public Optional<AbstractCard> hasCardInBringOutCards(AbstractCard card) {
         if (this.bringOutCard) {
             return this.cardToBringOut.stream().filter(card1 -> card1.cardID.equals(card.cardID)).findFirst();
-        }else{
+        } else {
             return Optional.empty();
         }
     }

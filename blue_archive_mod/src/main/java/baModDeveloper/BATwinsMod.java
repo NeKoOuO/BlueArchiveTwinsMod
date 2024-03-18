@@ -30,7 +30,6 @@ import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -69,8 +68,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     //模组选项
     public static boolean AutoSort = true;
     public static boolean ShowExpBar = true;
-    public static boolean Enable3D=false;
-    public static boolean Tutorial=true;
+    public static boolean Enable3D = false;
+    public static boolean Tutorial = true;
 
     public BATwinsMod() {
         BaseMod.subscribe(this);
@@ -87,8 +86,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             SpireConfig config = new SpireConfig(ModHelper.getModID(), "Common", defaults);
             AutoSort = config.getBool(ModHelper.makePath("AutoSort"));
             ShowExpBar = config.getBool(ModHelper.makePath("ShowExpBar"));
-            Enable3D=config.getBool(ModHelper.makePath("Enable3D"));
-            Tutorial=config.getBool(ModHelper.makePath("Tutorial"));
+            Enable3D = config.getBool(ModHelper.makePath("Enable3D"));
+            Tutorial = config.getBool(ModHelper.makePath("Tutorial"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -249,7 +248,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsAncientGameCartridges(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsByProving(), RelicType.SHARED);
         BaseMod.addRelicToCustomPool(new BATwinsGameMagazine(), Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelicToCustomPool(new BATwinsGameGuide(),Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelicToCustomPool(new BATwinsGameGuide(), Enums.BATWINS_MOMOI_CARD);
 
     }
 
@@ -259,8 +258,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("campfire_midori"), ModHelper.makeAudioPath("campfire_midori"));
         BaseMod.addAudio(ModHelper.makePath("colorEgg1"), ModHelper.makeAudioPath("colorEgg1"));
         BaseMod.addAudio(ModHelper.makePath("colorEgg2"), ModHelper.makeAudioPath("colorEgg2"));
-        BaseMod.addAudio(ModHelper.makePath("charSelect_momoi"),ModHelper.makeAudioPath("charSelect_momoi"));
-        BaseMod.addAudio(ModHelper.makePath("charSelect_midori"),ModHelper.makeAudioPath("charSelect_midori"));
+        BaseMod.addAudio(ModHelper.makePath("charSelect_momoi"), ModHelper.makeAudioPath("charSelect_momoi"));
+        BaseMod.addAudio(ModHelper.makePath("charSelect_midori"), ModHelper.makeAudioPath("charSelect_midori"));
 
     }
 
@@ -272,8 +271,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             throw new RuntimeException(e);
         }
         BaseMod.addEvent(BATwinsTrainingCamp.ID, BATwinsTrainingCamp.class);
-        BaseMod.addEvent(BATwinsDirtShowdown.ID,BATwinsDirtShowdown.class);
-        BaseMod.addEvent(BATwinsHurdleGame.ID,BATwinsHurdleGame.class);
+        BaseMod.addEvent(BATwinsDirtShowdown.ID, BATwinsDirtShowdown.class);
+        BaseMod.addEvent(BATwinsHurdleGame.ID, BATwinsHurdleGame.class);
     }
 
     private void CreateConfig() throws IOException {
@@ -307,10 +306,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         settingPanel.addUIElement(showExpBar);
 
-        ModLabeledToggleButton enable3D=new ModLabeledToggleButton("Enable3D",500.0F,200.0F,Settings.CREAM_COLOR,FontHelper.charDescFont,Enable3D,settingPanel,modLabel -> {
+        ModLabeledToggleButton enable3D = new ModLabeledToggleButton("Enable3D", 500.0F, 200.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, Enable3D, settingPanel, modLabel -> {
 
-        },modToggleButton -> {
-            spireConfig.setBool(ModHelper.makePath("Enable3D"),Enable3D=modToggleButton.enabled);
+        }, modToggleButton -> {
+            spireConfig.setBool(ModHelper.makePath("Enable3D"), Enable3D = modToggleButton.enabled);
             CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
             try {
                 spireConfig.save();

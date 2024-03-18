@@ -45,8 +45,8 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
                 card.exhaust = this.exhaust;
                 if (card instanceof BATwinsModCustomCard) {
                     ((BATwinsModCustomCard) card).numberOfConnections = this.numberOfConnections;
-                }else {
-                    BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(card,this.numberOfConnections);
+                } else {
+                    BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(card, this.numberOfConnections);
                 }
                 AbstractDungeon.player.limbo.group.add(this.card);
                 card.current_y = -200.0F * Settings.scale;

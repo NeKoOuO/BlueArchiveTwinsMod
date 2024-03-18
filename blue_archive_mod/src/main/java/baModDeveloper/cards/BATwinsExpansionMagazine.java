@@ -35,12 +35,12 @@ public class BATwinsExpansionMagazine extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        useMOMOI(abstractPlayer,abstractMonster);
+        useMOMOI(abstractPlayer, abstractMonster);
     }
 
     @Override
     public void upgrade() {
-        if(!upgraded){
+        if (!upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(1);
         }

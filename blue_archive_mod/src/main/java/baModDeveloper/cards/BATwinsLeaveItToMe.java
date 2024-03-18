@@ -5,7 +5,6 @@ import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -67,26 +66,27 @@ public class BATwinsLeaveItToMe extends BATwinsModCustomCard {
         }
     }
 
-    private void triggerSpecialEffects(){
+    private void triggerSpecialEffects() {
         addToBot(new AbstractGameAction() {
             private final CardColor color;
             private final int numOfConnections;
+
             {
                 color = BATwinsLeaveItToMe.this.color;
                 amount = BATwinsLeaveItToMe.this.block;
-                numOfConnections=BATwinsLeaveItToMe.this.numberOfConnections;
+                numOfConnections = BATwinsLeaveItToMe.this.numberOfConnections;
             }
 
             @Override
             public void update() {
-                if (numOfConnections>0||AbstractDungeon.player.hand.group.stream().allMatch(card -> card.color == color)) {
-                    int count=0;
-                    for(AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters){
-                        if(!m.isDeadOrEscaped()){
+                if (numOfConnections > 0 || AbstractDungeon.player.hand.group.stream().allMatch(card -> card.color == color)) {
+                    int count = 0;
+                    for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                        if (!m.isDeadOrEscaped()) {
                             count++;
                         }
                     }
-                    addToBot(new GainBlockAction(AbstractDungeon.player, this.amount*count));
+                    addToBot(new GainBlockAction(AbstractDungeon.player, this.amount * count));
                 }
                 this.isDone = true;
             }

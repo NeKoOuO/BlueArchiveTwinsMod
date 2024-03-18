@@ -2,7 +2,6 @@ package baModDeveloper.cards;
 
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.effect.BATwinsCharAttackEffect;
-import baModDeveloper.effect.BATwinsTestEffect;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

@@ -62,9 +62,9 @@ public class BATwinsBreechLoading extends BATwinsModCustomCard {
         if (!upgraded) {
             this.upgradeName();
 //            this.upgradeMagicNumber(1);
-            this.selfRetain=true;
-            this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.selfRetain = true;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

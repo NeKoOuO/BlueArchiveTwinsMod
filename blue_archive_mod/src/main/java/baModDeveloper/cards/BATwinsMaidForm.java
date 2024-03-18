@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawPower;
 
 public class BATwinsMaidForm extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("MaidForm");
@@ -29,7 +28,7 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
-        this.cardsToPreview=new BATwinsAccelerate();
+        this.cardsToPreview = new BATwinsAccelerate();
     }
 
     @Override
@@ -48,9 +47,9 @@ public class BATwinsMaidForm extends BATwinsModCustomCard {
         if (!upgraded) {
             this.upgradeName();
 //            this.upgradeMagicNumber(1);
-            this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.modifyEnergyType= BATwinsEnergyPanel.EnergyType.SHARE;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.modifyEnergyType = BATwinsEnergyPanel.EnergyType.SHARE;
             this.initializeDescription();
         }
     }

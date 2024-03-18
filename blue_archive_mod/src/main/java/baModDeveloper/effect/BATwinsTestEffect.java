@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class BATwinsTestEffect extends AbstractGameEffect {
-    public BATwinsTestEffect(){
+    public BATwinsTestEffect() {
 
     }
 
@@ -18,10 +18,10 @@ public class BATwinsTestEffect extends AbstractGameEffect {
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        if(AbstractDungeon.player instanceof BATwinsCharacter){
+        if (AbstractDungeon.player instanceof BATwinsCharacter) {
             ((BATwinsCharacter) AbstractDungeon.player).setMidoriAnimation(Character3DHelper.MidoriActionList.ATTACK);
         }
-        this.isDone=true;
+        this.isDone = true;
     }
 
     @Override

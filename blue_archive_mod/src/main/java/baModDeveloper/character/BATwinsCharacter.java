@@ -62,7 +62,7 @@ import java.util.Objects;
 public class BATwinsCharacter extends CustomPlayer {
     private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder");
     private static final String BATWINS_CHARACTER_SHOULDER_2 = ModHelper.makeImgPath("char", "shoulder2");
-    private static final String BATWINS_CHARACTER_CORPSE = BATwinsMod.Enable3D?ModHelper.makeImgPath("char","p"):ModHelper.makeImgPath("char", "corpse");
+    private static final String BATWINS_CHARACTER_CORPSE = BATwinsMod.Enable3D ? ModHelper.makeImgPath("char", "p") : ModHelper.makeImgPath("char", "corpse");
     private static final String[] MOMOI_ORB_TEXTURES = new String[]{
             ModHelper.makeImgPath("UI/orb", "layer1_momoi"),
             ModHelper.makeImgPath("UI/orb", "layer2_momoi"),
@@ -121,14 +121,14 @@ public class BATwinsCharacter extends CustomPlayer {
 //    private AbstractAnimation rendered_anima_momoi;
 //    private AbstractAnimation rendered_anima_midori;
     //3D相关
-    private static final Character3DHelper character3DHelper=new Character3DHelper();
+    private static final Character3DHelper character3DHelper = new Character3DHelper();
 
     BATwinsExperencePanel expPanel;
 
     //排序手牌
     ColorComparer colorComparer;
     //角色立绘，先暂时使用图片代替，之后使用3d模型替换
-    private static final String stand_Img = BATwinsMod.Enable3D?ModHelper.makeImgPath("char","p"):ModHelper.makeImgPath("char", "standup");
+    private static final String stand_Img = BATwinsMod.Enable3D ? ModHelper.makeImgPath("char", "p") : ModHelper.makeImgPath("char", "standup");
 
     //    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
     public BATwinsCharacter(String name) {
@@ -145,11 +145,11 @@ public class BATwinsCharacter extends CustomPlayer {
 
         //3D相关
 //        character3DHelper.init();
-        if(BATwinsMod.Enable3D){
-            if(!character3DHelper.inited()){
+        if (BATwinsMod.Enable3D) {
+            if (!character3DHelper.inited()) {
                 character3DHelper.init();
             }
-            character3DHelper.setPosition(Settings.WIDTH*0.04F,Settings.HEIGHT*0.07F);
+            character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
             character3DHelper.resetDefaultAnima(Enums.BATWINS_MOMOI_CARD);
             character3DHelper.resetDefaultAnima(Enums.BATWINS_MIDORI_CARD);
         }
@@ -188,9 +188,9 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
-        if(MathUtils.randomBoolean()){
+        if (MathUtils.randomBoolean()) {
             CardCrawlGame.sound.play(ModHelper.makePath("charSelect_momoi"));
-        }else {
+        } else {
             CardCrawlGame.sound.play(ModHelper.makePath("charSelect_midori"));
         }
     }
@@ -479,7 +479,7 @@ public class BATwinsCharacter extends CustomPlayer {
 //                character3DHelper.update();
 
         }
-        if(BATwinsMod.Enable3D&&!(AbstractDungeon.getCurrRoom() instanceof RestRoom)){
+        if (BATwinsMod.Enable3D && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
             character3DHelper.update();
 
         }
@@ -509,8 +509,8 @@ public class BATwinsCharacter extends CustomPlayer {
 
         if (BATwinsMod.ShowExpBar && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
             this.expPanel.render(sb);
-        if(BATwinsMod.Enable3D&& !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
-            if(this.currentHealth==0){
+        if (BATwinsMod.Enable3D && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+            if (this.currentHealth == 0) {
                 character3DHelper.update();
             }
             character3DHelper.render(sb);
@@ -560,19 +560,20 @@ public class BATwinsCharacter extends CustomPlayer {
 
     public void onEnterRoom() {
         //设置进入房间时的动画
-        if(BATwinsMod.Enable3D){
+        if (BATwinsMod.Enable3D) {
             character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.MOVING);
             character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.MOVING);
         }
     }
 
-    public void setMomoiAnimation(Character3DHelper.MomoiActionList anima){
-        if(BATwinsMod.Enable3D){
+    public void setMomoiAnimation(Character3DHelper.MomoiActionList anima) {
+        if (BATwinsMod.Enable3D) {
             character3DHelper.setMomoiAnimation(anima);
         }
     }
-    public void setMidoriAnimation(Character3DHelper.MidoriActionList anima){
-        if(BATwinsMod.Enable3D){
+
+    public void setMidoriAnimation(Character3DHelper.MidoriActionList anima) {
+        if (BATwinsMod.Enable3D) {
             character3DHelper.setMidoriAnimation(anima);
         }
     }
@@ -590,14 +591,14 @@ public class BATwinsCharacter extends CustomPlayer {
 //        }
     }
 
-    public static Character3DHelper get3DHelper(){
+    public static Character3DHelper get3DHelper() {
         return character3DHelper;
     }
 
 
     @Override
     public void playDeathAnimation() {
-        if(BATwinsMod.Enable3D){
+        if (BATwinsMod.Enable3D) {
             character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.DYING);
             character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.DYING);
         }
@@ -606,18 +607,18 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public void applyPreCombatLogic() {
-        if(BATwinsMod.Tutorial){
-            AbstractDungeon.ftue=new CustomMultiPageFtue(new Texture[]{
-                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial","Tutorial1")),
-                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial","Tutorial2")),
-                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial","Tutorial3")),
+        if (BATwinsMod.Tutorial) {
+            AbstractDungeon.ftue = new CustomMultiPageFtue(new Texture[]{
+                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial", "Tutorial1")),
+                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial", "Tutorial2")),
+                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial", "Tutorial3")),
 
-            },CardCrawlGame.languagePack.getUIString(ModHelper.makePath("Tutorial")).TEXT);
+            }, CardCrawlGame.languagePack.getUIString(ModHelper.makePath("Tutorial")).TEXT);
 
-            BATwinsMod.Tutorial=false;
+            BATwinsMod.Tutorial = false;
             try {
                 SpireConfig spireConfig = new SpireConfig("BATwinsMod", "Common");
-                spireConfig.setBool(ModHelper.makePath("Enable3D"),BATwinsMod.Tutorial);
+                spireConfig.setBool(ModHelper.makePath("Enable3D"), BATwinsMod.Tutorial);
                 spireConfig.save();
 
             } catch (IOException e) {
@@ -631,7 +632,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public void applyStartOfTurnPreDrawCards() {
-        if(BATwinsMod.Enable3D){
+        if (BATwinsMod.Enable3D) {
             character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.RELOAD);
             character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.RELOAD);
         }

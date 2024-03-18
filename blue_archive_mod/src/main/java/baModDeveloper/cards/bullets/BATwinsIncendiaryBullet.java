@@ -46,7 +46,7 @@ public class BATwinsIncendiaryBullet extends BATwinsCustomBulletCard {
     protected void upgradeName() {
         ++this.timesUpgraded;
         this.upgraded = true;
-        this.name = this.timesUpgraded+1+"X"+NAME;
+        this.name = this.timesUpgraded + 1 + "X" + NAME;
         this.initializeTitle();
     }
 }

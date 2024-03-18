@@ -6,12 +6,9 @@ import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-
-import java.util.Objects;
 
 public class BATwinsGameGuide extends CustomRelic {
     public static final String ID = ModHelper.makePath("GameGuide");
@@ -19,6 +16,7 @@ public class BATwinsGameGuide extends CustomRelic {
     private static final Texture outline = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "GameGuide_p"));
     private static final RelicTier type = RelicTier.BOSS;
     private AbstractCard card;
+
     public BATwinsGameGuide() {
         super(ID, texture, type, LandingSound.CLINK);
     }
@@ -26,7 +24,7 @@ public class BATwinsGameGuide extends CustomRelic {
     @Override
     public void atTurnStart() {
         this.flash();
-        addToBot(new BATwinsMakeTempCardInHandAction(new BATwinsExchange(),true,true,true,true,false));
+        addToBot(new BATwinsMakeTempCardInHandAction(new BATwinsExchange(), true, true, true, true, false));
 //        addToBot(new DrawCardAction(1));
     }
 
@@ -47,14 +45,14 @@ public class BATwinsGameGuide extends CustomRelic {
 
     @Override
     public void obtain() {
-        if(AbstractDungeon.player.hasRelic(BATwinsGameMagazine.ID)){
-            for(int i=0;i<AbstractDungeon.player.relics.size();i++){
-                if(AbstractDungeon.player.relics.get(i).relicId.equals(BATwinsGameMagazine.ID)){
-                    instantObtain(AbstractDungeon.player,i,true);
+        if (AbstractDungeon.player.hasRelic(BATwinsGameMagazine.ID)) {
+            for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
+                if (AbstractDungeon.player.relics.get(i).relicId.equals(BATwinsGameMagazine.ID)) {
+                    instantObtain(AbstractDungeon.player, i, true);
                     return;
                 }
             }
-        }else{
+        } else {
             super.obtain();
         }
     }
