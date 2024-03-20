@@ -54,11 +54,12 @@ public class BATwinsIntegratingAndIntegratingPower extends AbstractPower {
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card.type != AbstractCard.CardType.POWER && card instanceof BATwinsModCustomCard) {
+        if (card instanceof BATwinsModCustomCard&&card.costForTurn>0) {
             if (((BATwinsModCustomCard) card).exchanged()) {
                 this.flash();
                 for (int i = 0; i < this.amount; i++) {
                     BATwinsModCustomCard c = (BATwinsModCustomCard) card.makeStatEquivalentCopy();
+
                     c.conversionColor();
                     addToBot(new BATwinsMakeTempCardInHandAction(c, true, true, true, true, false));
                 }
