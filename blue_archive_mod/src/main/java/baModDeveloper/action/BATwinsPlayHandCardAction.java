@@ -72,7 +72,11 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //                ((BATwinsModCustomCard) card).playedByOtherCard=true;
 //            }
 //            addToTop(new UnlimboAction(this.card));
-            addToTop((AbstractGameAction) new NewQueueCardAction(card, this.target, false, true));
+            if(this.target==null){
+                addToTop((AbstractGameAction) new NewQueueCardAction(card, true, false, true));
+            }else{
+                addToTop((AbstractGameAction) new NewQueueCardAction(card, this.target, false, true));
+            }
 //            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(this.card, (AbstractMonster) this.target,card.energyOnUse,true,true),true);
         }
         this.isDone = true;

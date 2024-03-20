@@ -9,21 +9,27 @@ import baModDeveloper.event.BATwinsDirtShowdown;
 import baModDeveloper.event.BATwinsHurdleGame;
 import baModDeveloper.event.BATwinsTrainingCamp;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.potion.BATwinsAcceleratePotion;
+import baModDeveloper.potion.BATwinsBurnPotion;
+import baModDeveloper.potion.BATwinsConnectPotion;
 import baModDeveloper.relic.*;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
 import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.Settings.GameLanguage;
@@ -33,6 +39,7 @@ import com.megacrit.cardcrawl.localization.*;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Properties;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -212,13 +219,28 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         } else {
             lang = "ENG";
         }
-        BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
-        BaseMod.loadCustomStringsFile(PowerStrings.class, "baModResources/localization/" + lang + "/power.json");
-        BaseMod.loadCustomStringsFile(UIStrings.class, "baModResources/localization/" + lang + "/uistring.json");
-        BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/" + lang + "/relic.json");
-        BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
-    }
+        try{
+            BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
+            BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
+            BaseMod.loadCustomStringsFile(PowerStrings.class, "baModResources/localization/" + lang + "/power.json");
+            BaseMod.loadCustomStringsFile(UIStrings.class, "baModResources/localization/" + lang + "/uistring.json");
+            BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/" + lang + "/relic.json");
+            BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
+            BaseMod.loadCustomStringsFile(PotionStrings.class,"baModResources/localization/" + lang + "/potion.json");
+
+        }catch (GdxRuntimeException e){
+            System.out.println("BATwinsMod:该语言选项没有文本。");
+            BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/ZHS/cards.json");
+            BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/ZHS/character.json");
+            BaseMod.loadCustomStringsFile(PowerStrings.class, "baModResources/localization/ZHS/power.json");
+            BaseMod.loadCustomStringsFile(UIStrings.class, "baModResources/localization/ZHS/uistring.json");
+            BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/ZHS/relic.json");
+            BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/ZHS/event.json");
+            BaseMod.loadCustomStringsFile(PotionStrings.class,"baModResources/localization/ZHS/potion.json");
+
+
+        }
+  }
 
     @Override
     public void receiveEditCharacters() {
@@ -232,13 +254,25 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
         }
-        String json = Gdx.files.internal("baModResources/localization/" + lang + "/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
-        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
-        if (keywords != null) {
-            for (Keyword keyword : keywords) {
-                BaseMod.addKeyword("batwinsmod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
+        try{
+            String json = Gdx.files.internal("baModResources/localization/" + lang + "/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
+            Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+            if (keywords != null) {
+                for (Keyword keyword : keywords) {
+                    BaseMod.addKeyword("batwinsmod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
+                }
+            }
+        }catch (GdxRuntimeException e){
+            System.out.println("BATwinsMod:该语言选项没有文本。");
+            String json = Gdx.files.internal("baModResources/localization/ZHS/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
+            Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+            if (keywords != null) {
+                for (Keyword keyword : keywords) {
+                    BaseMod.addKeyword("batwinsmod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
+                }
             }
         }
+
     }
 
     @Override
@@ -271,8 +305,12 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             throw new RuntimeException(e);
         }
         BaseMod.addEvent(BATwinsTrainingCamp.ID, BATwinsTrainingCamp.class);
-        BaseMod.addEvent(BATwinsDirtShowdown.ID, BATwinsDirtShowdown.class);
+        BaseMod.addEvent(new AddEventParams.Builder(BATwinsDirtShowdown.ID,BATwinsDirtShowdown.class).playerClass(Enums.BATwins).create());
         BaseMod.addEvent(BATwinsHurdleGame.ID, BATwinsHurdleGame.class);
+
+        BaseMod.addPotion(BATwinsAcceleratePotion.class,BATwinsAcceleratePotion.liquidColor,BATwinsAcceleratePotion.hybridColor,BATwinsAcceleratePotion.spotsColor,BATwinsAcceleratePotion.ID);
+        BaseMod.addPotion(BATwinsConnectPotion.class,BATwinsConnectPotion.liquidColor,BATwinsConnectPotion.hybridColor,BATwinsConnectPotion.spotsColor,BATwinsConnectPotion.ID);
+        BaseMod.addPotion(BATwinsBurnPotion.class,BATwinsBurnPotion.liquidColor,BATwinsBurnPotion.hybridColor,BATwinsBurnPotion.spotsColor,BATwinsBurnPotion.ID);
     }
 
     private void CreateConfig() throws IOException {

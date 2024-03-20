@@ -65,7 +65,7 @@
     },
     "BATwinsMod:AdditionalAttacks":{
         "NAME":"附加攻击",
-        "DESCRIPTION":"造成 !D! 点伤害。 NL 在手牌并打出其他攻击牌时，对随机敌人造成 !D! 点伤害。"
+        "DESCRIPTION":" 不能被打出 。 NL 在手牌并打出其他攻击牌时，对随机敌人造成 !D! 点伤害。"
     },
     "BATwinsMod:AccurateBlocking":{
         "NAME":"精准格挡",
@@ -331,7 +331,7 @@
 	},
 	"BATwinsMod:AutomaticDefense":{
 		"NAME":"自动防御",
-		"DESCRIPTION":"获得 !B! 点 格挡 。 NL 在手牌并打出其他攻击牌时，获得 !B! 点 格挡 。"
+		"DESCRIPTION":" 不能被打出 。 NL 在手牌并打出其他攻击牌时，获得 !B! 点 格挡 。"
 	},
 	"BATwinsMod:BenefitReducingMagic":{
 		"NAME":"大头照",

@@ -14,7 +14,7 @@ public class BATwinsAccelerate extends CustomCard {
     public static final String ID = ModHelper.makePath("Accelerate");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
-    private static final String IMG_PATH = ModHelper.makeImgPath("cards", "defaultSkill");
+    private static final String IMG_PATH = ModHelper.makeImgPath("cards", "Accelerate");
     private static final int COST = -1;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
@@ -22,7 +22,7 @@ public class BATwinsAccelerate extends CustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardRarity RARITY = CardRarity.RARE;
 
-    public int connectionCost = -0;
+    public int connectionCost = -1;
 //    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
 
     public BATwinsAccelerate() {
@@ -45,8 +45,8 @@ public class BATwinsAccelerate extends CustomCard {
             this.energyOnUse = this.connectionCost;
             this.connectionCost = -1;
         }
-        addToBot(new BATwinsAccelerateAction(BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.get(this), this.energyOnUse, this.freeToPlayOnce));
-        AbstractDungeon.player.energy.use(AbstractDungeon.player.energy.energy);
+        addToBot(new BATwinsAccelerateAction(BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.get(this)+1, this.energyOnUse, this.freeToPlayOnce,this.upgraded));
+//        AbstractDungeon.player.energy.use(AbstractDungeon.player.energy.energy);
         BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(this, 0);
     }
 }

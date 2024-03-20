@@ -34,7 +34,7 @@ public class BATwinsDirtShowdown extends PhasedEvent {
         };
 
         registerPhase("start", new TextPhase(DESCRIPTIONS[0]).addOption(OPTIONS[1], integer -> transitionKey("gaming")).addOption(OPTIONS[0], integer -> transitionKey("leave")));
-        registerPhase("level", new TextPhase(DESCRIPTIONS[5]).addOption(OPTIONS[7], integer -> openMap()));
+        registerPhase("leave", new TextPhase(DESCRIPTIONS[5]).addOption(OPTIONS[7], integer -> openMap()));
         registerPhase("gaming", new TextPhase(DESCRIPTIONS[1]).addOption(OPTIONS[2], integer -> transitionKey("gameover1")).addOption(OPTIONS[3], integer -> transitionKey("gameover2")));
         registerPhase("gameover1", new TextPhase(DESCRIPTIONS[2]).addOption(OPTIONS[4] + OPTIONS[5], getReward1));
         registerPhase("gameover2", new TextPhase(DESCRIPTIONS[3]).addOption(OPTIONS[4] + OPTIONS[6], getReward2));

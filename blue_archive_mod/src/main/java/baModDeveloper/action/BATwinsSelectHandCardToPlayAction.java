@@ -89,9 +89,9 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
 
     private void wantToUseCard(AbstractCard card) {
 //        this.p.hand.addToTop(card);
-        if (this.target == null) {
-            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
-        }
+//        if (this.target == null) {
+//            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+//        }
         addToTop(new BATwinsPlayHandCardAction(card, this.target, this.numberOfConnections, this.blockTheOriginalEffect));
 //        card.applyPowers();
 //        card.calculateCardDamage((AbstractMonster) this.target);

@@ -473,8 +473,13 @@ public class BATwinsCharacter extends CustomPlayer {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             if (BATwinsMod.AutoSort)
                 this.hand.group.sort(colorComparer);
-            if (BATwinsMod.ShowExpBar)
+            if (BATwinsMod.ShowExpBar){
+                if(this.drawX==Settings.WIDTH/2.0F){
+                    this.expPanel.updatePosition(this.drawX - 230 * Settings.scale, this.drawY);
+                }
                 this.expPanel.update();
+
+            }
 //            if(BATwinsMod.Enable3D)
 //                character3DHelper.update();
 
@@ -513,7 +518,8 @@ public class BATwinsCharacter extends CustomPlayer {
             if (this.currentHealth == 0) {
                 character3DHelper.update();
             }
-            character3DHelper.render(sb);
+
+            character3DHelper.render(sb,this.flipHorizontal);
         }
     }
 //    public enum AnimationChar{
@@ -561,6 +567,7 @@ public class BATwinsCharacter extends CustomPlayer {
     public void onEnterRoom() {
         //设置进入房间时的动画
         if (BATwinsMod.Enable3D) {
+            character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
             character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.MOVING);
             character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.MOVING);
         }
@@ -626,7 +633,12 @@ public class BATwinsCharacter extends CustomPlayer {
             }
 
         }
+        if(this.drawX==Settings.WIDTH/2.0F){
+            character3DHelper.setPosition(Settings.WIDTH * 0.28F, Settings.HEIGHT * 0.07F);
 
+        }else{
+            character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+        }
         super.applyPreCombatLogic();
     }
 

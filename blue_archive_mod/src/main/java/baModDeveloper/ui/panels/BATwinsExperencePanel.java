@@ -88,4 +88,9 @@ public class BATwinsExperencePanel extends AbstractPanel {
         LEVELUP = true;
         FontScale = 2.0F;
     }
+
+    public void updatePosition(float x,float y){
+        this.target_x=x;
+        this.target_y=y;
+    }
 }

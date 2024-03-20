@@ -123,10 +123,16 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
 
     private void updateCardPreview() {
         if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
-            Optional<AbstractCard> preCard = AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> !Objects.equals(card.cardID, this.cardID) && card.color == this.color).reduce((first, second) -> second);
+            Optional<AbstractCard> preCard;
+            if(this.upgraded){
+                preCard=AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> !Objects.equals(card.cardID, this.cardID)).reduce((first, second) -> second);
+            }else {
+                preCard=AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> !Objects.equals(card.cardID, this.cardID) && card.color == this.color).reduce((first, second) -> second);
+            }
             if (preCard.isPresent()) {
-                this.cardsToPreview = preCard.get().makeCopy();
+                this.cardsToPreview = preCard.get().makeStatEquivalentCopy();
                 this.cardToCopy = preCard.get();
+                this.cardToCopy.applyPowers();
             }
         }
         if (this.cardsToPreview == null) {

@@ -23,9 +23,31 @@ public class BATwinsTrainingCamp extends PhasedEvent {
     private static final String imgUrl = ModHelper.makeImgPath("event", "TrainingCamp");
     private boolean pickCard = false;
 
+    private boolean hasCard=false;
+    private boolean hasAttackCard=false;
+    private boolean hasSkillCard=false;
+    private boolean hasPowerCard=false;
+
     public BATwinsTrainingCamp() {
         super(ID, title, imgUrl);
         int loseHp = AbstractDungeon.player.currentHealth / 2;
+        if(!AbstractDungeon.player.masterDeck.isEmpty()){
+            this.hasCard=true;
+            for(AbstractCard c:AbstractDungeon.player.masterDeck.group){
+                switch (c.type){
+                    case ATTACK:
+                        this.hasAttackCard=true;
+                        break;
+                    case SKILL:
+                        this.hasSkillCard=true;
+                        break;
+                    case POWER:
+                        this.hasPowerCard=true;
+                        break;
+                }
+            }
+        }
+
         Consumer<Integer> battle = integer -> {
             int ran = AbstractDungeon.miscRng.random(10);
             if (ran > 7) {
@@ -35,7 +57,12 @@ public class BATwinsTrainingCamp extends PhasedEvent {
                 transitionKey("AfterTheBattleWithDamage");
             }
         };
-        registerPhase("Start", new TextPhase(DESCRIPTIONS[0]).addOption(String.format(OPTIONS[0], Integer.toString(loseHp)), battle).addOption(OPTIONS[1], integer -> transitionKey("Leave")));
+        TextPhase.OptionInfo opinfo1=new TextPhase.OptionInfo(String.format(this.hasCard?OPTIONS[0]:OPTIONS[9],Integer.toString(loseHp)));
+        opinfo1.enabledCondition(()->{
+           return hasCard;
+        });
+        opinfo1.setOptionResult(battle);
+        registerPhase("Start", new TextPhase(DESCRIPTIONS[0]).addOption(opinfo1).addOption(OPTIONS[1], integer -> transitionKey("Leave")));
 
         //        CardGroup temp=new CardGroup(CardGroup.CardGroupType.CARD_POOL);
         //        for(AbstractCard card: AbstractDungeon.player.masterDeck.group){
@@ -69,8 +96,23 @@ public class BATwinsTrainingCamp extends PhasedEvent {
 
 
         };
-        registerPhase("AfterTheBattle", new TextPhase(DESCRIPTIONS[2]).addOption(OPTIONS[2], getReward).addOption(OPTIONS[3], getReward).addOption(OPTIONS[4], getReward));
-        registerPhase("AfterTheBattleWithDamage", new TextPhase(DESCRIPTIONS[1]).addOption(OPTIONS[2], getReward).addOption(OPTIONS[3], getReward));
+        TextPhase.OptionInfo choose1=new TextPhase.OptionInfo(this.hasAttackCard?OPTIONS[2]:OPTIONS[6]);
+        choose1.enabledCondition(()->{
+            return hasAttackCard;
+        });
+        choose1.setOptionResult(getReward);
+        TextPhase.OptionInfo choose2=new TextPhase.OptionInfo(this.hasSkillCard?OPTIONS[3]:OPTIONS[7]);
+        choose2.enabledCondition(()->{
+            return hasSkillCard;
+        });
+        choose2.setOptionResult(getReward);
+        TextPhase.OptionInfo choose3=new TextPhase.OptionInfo(this.hasPowerCard?OPTIONS[4]:OPTIONS[8]);
+        choose3.enabledCondition(()->{
+            return hasPowerCard;
+        });
+        choose3.setOptionResult(getReward);
+        registerPhase("AfterTheBattle", new TextPhase(DESCRIPTIONS[2]).addOption(choose1).addOption(choose2).addOption(choose3));
+        registerPhase("AfterTheBattleWithDamage", new TextPhase(DESCRIPTIONS[1]).addOption(choose1).addOption(choose2));
         registerPhase("Leave", new TextPhase(DESCRIPTIONS[3]).addOption(OPTIONS[5], integer -> openMap()));
         registerPhase("AfterRewards", new TextPhase(DESCRIPTIONS[4]).addOption(OPTIONS[1], integer -> openMap()));
 

@@ -105,9 +105,9 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
     }
 
     private void WhatTheCardDo(AbstractCard c) {
-        if (this.target == null) {
-            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
-        }
+//        if (this.target == null) {
+//            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+//        }
         addToTop(new BATwinsPlayDrawPailCardAction(c, this.target, false, this.numberOfConnections, this.isBlockOrigin));
         if (!this.canNotSelect.isEmpty()) {
             this.p.drawPile.group.addAll(this.canNotSelect);

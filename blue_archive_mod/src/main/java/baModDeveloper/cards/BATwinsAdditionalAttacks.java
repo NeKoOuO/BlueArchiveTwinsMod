@@ -19,7 +19,7 @@ public class BATwinsAdditionalAttacks extends BATwinsModCustomCard {
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "AdditionalAttacks");
-    private static final int COST = 0;
+    private static final int COST = -2;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
@@ -65,5 +65,10 @@ public class BATwinsAdditionalAttacks extends BATwinsModCustomCard {
     @Override
     public void triggerOnGainEnergy(int e, boolean dueToCard) {
         super.triggerOnGainEnergy(e, dueToCard);
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return false;
     }
 }

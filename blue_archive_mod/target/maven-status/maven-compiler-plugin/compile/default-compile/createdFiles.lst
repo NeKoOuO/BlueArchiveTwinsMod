@@ -45,6 +45,7 @@ baModDeveloper\cards\BATwinsRepeatOperation.class
 baModDeveloper\helpers\Character3DHelper$MomoiActionList$1.class
 baModDeveloper\patch\BATwinsCharacterOptionPatch$updateHitboxPatch.class
 baModDeveloper\cards\BATwinsAdventureBattle.class
+baModDeveloper\potion\BATwinsAcceleratePotion.class
 baModDeveloper\cards\BATwinsNotReconciled.class
 baModDeveloper\action\BATwinsDrawOrDisCardToHandAction$Pile.class
 baModDeveloper\power\BATwinsSinglePlayerGamePower.class
@@ -63,10 +64,12 @@ baModDeveloper\power\BATwinsIntegratingAndIntegratingPower.class
 baModDeveloper\cards\BATwinsMasterCraftsmanship.class
 baModDeveloper\action\BATwinsCheatingCodeEnabledAction.class
 baModDeveloper\action\BATwinsLevelUpAction.class
+baModDeveloper\potion\BATwinsConnectPotion.class
 baModDeveloper\cards\BATwinsOnceMore.class
 baModDeveloper\cards\BATwinsAccumulatedStrike.class
 baModDeveloper\cards\BATwinsGameLaunch.class
 baModDeveloper\BATwinsMod.class
+baModDeveloper\event\BATwinsTrainingCamp$1.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$openPatch.class
 baModDeveloper\effect\BATwinsShowCardAndFlashEffect.class
 baModDeveloper\action\BATwinsAccelerateAction.class
@@ -149,6 +152,7 @@ baModDeveloper\helpers\Character3DHelper$MidoriActionList.class
 baModDeveloper\power\BATwinsDefensiveCounterattackPower.class
 baModDeveloper\power\BATwinsPlotPredictionPower.class
 baModDeveloper\patch\BATwinsSoulFix.class
+baModDeveloper\potion\BATwinsBurnPotion.class
 baModDeveloper\action\BATwinsInspirationEmergenceAction.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$updatePatch.class
 baModDeveloper\relic\BATwinsMidorisGameConsole.class
@@ -292,6 +296,7 @@ baModDeveloper\cards\BATwinsModCustomCard$1.class
 baModDeveloper\cards\BATwinsBugCard.class
 baModDeveloper\patch\BATwinsAbstractCardPatch$FieldPatch.class
 baModDeveloper\helpers\Character3DHelper$MidoriActionList$1.class
+baModDeveloper\relic\BATwinsAncientGameCartridges$1.class
 baModDeveloper\action\BATwinsDrawCardByColor.class
 baModDeveloper\cards\BATwinsAccurateBlocking.class
 baModDeveloper\relic\BATwinsGameGuide.class

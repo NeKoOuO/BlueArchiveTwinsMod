@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -35,7 +36,7 @@ public class BATwinsByProving extends CustomRelic implements CustomSavable<Strin
         super(ID, texture, outline, type, LandingSound.MAGICAL);
         this.card = card.makeCopy();
         this.description = getUpdatedDescription();
-        this.flavorText = String.format("一块崭新的奖章，上面写着\n新手关卡通过证明！--%s。", getCurrentDate());
+        this.flavorText = String.format(DESCRIPTIONS[4], getCurrentDate());
     }
 
     @Override
@@ -103,7 +104,7 @@ public class BATwinsByProving extends CustomRelic implements CustomSavable<Strin
                     addToBot(new DrawCardAction(2));
                     return;
                 case POWER:
-                    addToBot(new MakeTempCardInDrawPileAction(c.makeSameInstanceOf(), 1, true, true));
+                    addToBot(new MakeTempCardInDiscardAction(c.makeSameInstanceOf(), 1));
                     return;
                 default:
                     return;

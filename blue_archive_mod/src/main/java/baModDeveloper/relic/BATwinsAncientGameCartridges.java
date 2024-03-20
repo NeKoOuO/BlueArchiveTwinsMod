@@ -5,6 +5,7 @@ import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -41,12 +42,19 @@ public class BATwinsAncientGameCartridges extends CustomRelic {
     public void atTurnStartPostDraw() {
         if (!this.grayscale) {
             this.flash();
-            CardGroup powerCards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-            AbstractDungeon.player.drawPile.group.stream().filter(card -> card.type == AbstractCard.CardType.POWER).forEach(powerCards::addToBottom);
-            if (!powerCards.isEmpty()) {
-                AbstractCard card = powerCards.getRandomCard(AbstractDungeon.cardRandomRng);
-                addToBot(new BATwinsPlayDrawPailCardAction(card, null, false));
-            }
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    CardGroup powerCards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+                    AbstractDungeon.player.drawPile.group.stream().filter(card -> card.type == AbstractCard.CardType.POWER).forEach(powerCards::addToBottom);
+                    if (!powerCards.isEmpty()) {
+                        AbstractCard card = powerCards.getRandomCard(AbstractDungeon.cardRandomRng);
+                        addToTop(new BATwinsPlayDrawPailCardAction(card, null, false));
+                    }
+                    this.isDone=true;
+                }
+            });
+
             this.grayscale = true;
 
         }

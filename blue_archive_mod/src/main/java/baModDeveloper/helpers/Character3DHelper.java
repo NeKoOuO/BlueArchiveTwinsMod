@@ -30,7 +30,7 @@ public class Character3DHelper {
     TextureRegion region;
     Environment environment;
     PolygonSpriteBatch psb;
-    private float current_x = 0, current_y = 0;
+    public float current_x = 0, current_y = 0;
 
     private boolean inited = false;
 
@@ -72,8 +72,10 @@ public class Character3DHelper {
         midoriController.update();
     }
 
-
-    public void render(SpriteBatch sb) {
+    public void render(SpriteBatch sb){
+        render(sb,false);
+    }
+    public void render(SpriteBatch sb,boolean flipHorizontal) {
         //3D相关
         sb.end();
 
@@ -91,14 +93,22 @@ public class Character3DHelper {
 
         frameBuffer.end();
         region = new TextureRegion(frameBuffer.getColorBufferTexture());
-        region.flip(false, true);
+        region.flip(flipHorizontal, true);
         frameBuffer.getColorBufferTexture().bind(0);
         psb.begin();
 
-        psb.draw(region, this.current_x, this.current_y,
-                Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),
-                Gdx.graphics.getWidth() / 2.0F, Gdx.graphics.getHeight() / 2.0F,
-                1.0F, 1.0F, 0.0F);
+        if(flipHorizontal){
+            psb.draw(region, this.current_x-125.0F*Settings.scale, this.current_y,
+                    Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),
+                    Gdx.graphics.getWidth() / 2.0F, Gdx.graphics.getHeight() / 2.0F,
+                    1.0F, 1.0F, 0.0F);
+        }else{
+            psb.draw(region, this.current_x, this.current_y,
+                    Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),
+                    Gdx.graphics.getWidth() / 2.0F, Gdx.graphics.getHeight() / 2.0F,
+                    1.0F, 1.0F, 0.0F);
+        }
+
         psb.setShader(null);
         psb.setBlendFunction(770, 771);
         psb.end();

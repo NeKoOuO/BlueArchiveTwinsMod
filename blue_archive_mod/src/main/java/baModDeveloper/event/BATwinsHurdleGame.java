@@ -214,7 +214,7 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
         for (Float aFloat : this.ObstacleLocation) {
             sb.draw(obstacleImg, this.imgX + aFloat, this.imgY, this.obstacleImg.getWidth() * Settings.scale * 1.2F, this.obstacleImg.getHeight() * Settings.scale * 1.2F);
         }
-        this.character3DHelper.render(sb);
+        this.character3DHelper.render(sb,false);
 
 //        sb.draw(this.pressButton,Settings.WIDTH/2.0F,Settings.HEIGHT/5.0F);
 
