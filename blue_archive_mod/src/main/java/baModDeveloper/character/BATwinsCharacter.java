@@ -133,8 +133,7 @@ public class BATwinsCharacter extends CustomPlayer {
     //    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
     public BATwinsCharacter(String name) {
         super(name, Enums.BATwins, MOMOI_ORB_TEXTURES, MOMOI_ORB_VFX, LAYER_SPEED, null, null);
-        this.dialogX = (this.drawX + 0.0F * Settings.scale);
-        this.dialogY = (this.drawY + 0.0F * Settings.scale);
+
 
         this.energyOrbMomoi = new BATwinsEnergyMomoiOrb(MOMOI_ORB_TEXTURES, MOMOI_ORB_VFX, LAYER_SPEED, MOMOI_ORB_MARK);
         this.energyOrbMidori = new BATwinsEnergyMidoriOrb(MIDORI_ORB_TEXTURES, MIDORI_ORB_VFX, LAYER_SPEED, MIDORI_ORB_MARK);
@@ -183,6 +182,8 @@ public class BATwinsCharacter extends CustomPlayer {
 
         expPanel = new BATwinsExperencePanel(this.drawX - 230 * Settings.scale, this.drawY);
         expPanel.show();
+        this.dialogX = (this.drawX + 0.0F * Settings.scale);
+        this.dialogY = this.drawY + 170.0F * Settings.scale;
     }
 
     @Override
@@ -474,9 +475,9 @@ public class BATwinsCharacter extends CustomPlayer {
             if (BATwinsMod.AutoSort)
                 this.hand.group.sort(colorComparer);
             if (BATwinsMod.ShowExpBar){
-                if(this.drawX==Settings.WIDTH/2.0F){
-                    this.expPanel.updatePosition(this.drawX - 230 * Settings.scale, this.drawY);
-                }
+                this.expPanel.updatePosition(this.drawX - 230 * Settings.scale, this.drawY);
+                this.dialogX = (this.drawX + 0.0F * Settings.scale);
+                this.dialogY = this.drawY + 170.0F * Settings.scale;
                 this.expPanel.update();
 
             }

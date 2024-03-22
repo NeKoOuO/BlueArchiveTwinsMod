@@ -40,8 +40,9 @@ public class BATwinsEasterEgg extends CustomCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractDungeon.effectList.add(new BATwinsEasterEggEffect(BATwinsCharacterOptionPatch.updateHitboxPatch.random.nextBoolean(), this.upgraded));
+//        AbstractDungeon.effectList.add(new BATwinsEasterEggEffect(BATwinsCharacterOptionPatch.updateHitboxPatch.random.nextBoolean(), this.upgraded));
         addToBot(new DrawCardAction(this.magicNumber));
+        CardCrawlGame.music.changeBGM(ModHelper.makePath("pixelTime"));
     }
 
     @Override

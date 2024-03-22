@@ -84,6 +84,10 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
 
             @Override
             public void update() {
+                if(DrawCardAction.drawnCards.isEmpty()){
+                    this.isDone=true;
+                    return;
+                }
                 if (this.duration == Settings.ACTION_DUR_FAST) {
                     for (AbstractCard c : DrawCardAction.drawnCards) {
                         c.retain = true;

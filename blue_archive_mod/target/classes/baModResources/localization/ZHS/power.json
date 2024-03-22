@@ -147,7 +147,7 @@
 	"BATwinsMod:IntegratingAndIntegratingPower":{
 		"NAME":"融会贯通",
 		"DESCRIPTIONS":[
-			"打出交换后的牌后将%d张原本颜色的牌加入手牌，那张牌获得 虚无 ， 消耗 。"
+			"打出交换后的耗能1以上的牌时将%d张原本颜色的牌加入手牌，并附加 虚无 ， 消耗 。"
 		]
 	},
 	"BATwinsMod:MasterCraftsmanshipPower":{

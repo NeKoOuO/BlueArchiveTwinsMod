@@ -5,6 +5,7 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -44,11 +45,13 @@ public class BATwinsBreechLoading extends BATwinsModCustomCard {
 
     public BATwinsBreechLoading() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
+        this.baseBlock=this.block=5;
         this.baseMagicNumber = this.magicNumber = 3;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        addToBot(new GainBlockAction(abstractPlayer,this.block));
         addToBot(new SelectCardsInHandAction(99, SELECTTEXT.TEXT[9], false, false, filter, callback));
     }
 

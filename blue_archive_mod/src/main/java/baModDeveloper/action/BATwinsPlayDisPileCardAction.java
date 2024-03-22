@@ -1,20 +1,25 @@
 package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BATwinsPlayDisPileCardAction extends AbstractGameAction {
     private AbstractCard card;
     private boolean exhaust;
     private int numberOfConnections;
+    private static UIStrings uiStrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
 
     public BATwinsPlayDisPileCardAction(AbstractCard card, AbstractCreature target, boolean exhaust, int numberOfConnections) {
         this.card = card;
@@ -26,6 +31,13 @@ public class BATwinsPlayDisPileCardAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        if(this.numberOfConnections>10){
+            for(int i=uiStrings.TEXT.length-1;i>=0;i--){
+                addToTop(new TalkAction(true,uiStrings.TEXT[i],3.0F,3.0F));
+            }
+            this.isDone=true;
+            return;
+        }
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (AbstractDungeon.player.discardPile.contains(card)) {
                 AbstractDungeon.player.discardPile.group.remove(this.card);

@@ -190,6 +190,7 @@ baModDeveloper\action\BATwinsRandomShootingAction.class
 baModDeveloper\cards\BATwinsMidoriDefend.class
 baModDeveloper\patch\BATwinsCancelButtonPatch$updatePatch.class
 baModDeveloper\cards\BATwinsEasterEgg.class
+baModDeveloper\patch\BATwinsMainMusicPatch.class
 baModDeveloper\cards\BATwinsDoubleExperience.class
 baModDeveloper\action\BATwinsEquipmentUpgradeAction.class
 baModDeveloper\action\BATwinsDisAllColorCards.class
@@ -303,5 +304,6 @@ baModDeveloper\relic\BATwinsGameGuide.class
 baModDeveloper\patch\BATwinsCampfireUIPatch$initializeButtonsPatch.class
 baModDeveloper\helpers\Character3DHelper$MomoiActionList.class
 baModDeveloper\animation\GifDecoder$GifFrame.class
+baModDeveloper\patch\BATwinsMainMusicPatch$getSongPatch.class
 baModDeveloper\cards\BATwinsAlreadyAngry.class
 baModDeveloper\cards\BATwinsBattleCommand.class

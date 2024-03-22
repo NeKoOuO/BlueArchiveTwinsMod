@@ -1,13 +1,18 @@
 package baModDeveloper.action;
 
+import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BATwinsPlayHandCardAction extends AbstractGameAction {
@@ -16,6 +21,7 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
     private boolean ignoreDeath;
     private int numberOfConnections;
     private boolean blockTheOriginalEffect;
+    private static UIStrings uiStrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
 
     public BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target, boolean randomTarget, boolean ignoreDeath, int numberOfConnections, boolean blockTheOriginalEffect) {
         this.card = card;
@@ -40,15 +46,22 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
     }
 
     public BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target, int numberOfConnections) {
-        this(card, target, false, true, 1, false);
+        this(card, target, false, true, numberOfConnections, false);
     }
 
     public BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target, int numberOfConnections, boolean blockTheOriginalEffect) {
-        this(card, target, false, true, 1, blockTheOriginalEffect);
+        this(card, target, false, true, numberOfConnections, blockTheOriginalEffect);
     }
 
     @Override
     public void update() {
+        if(this.numberOfConnections>10){
+            for(int i=uiStrings.TEXT.length-1;i>=0;i--){
+                addToTop(new TalkAction(true,uiStrings.TEXT[i],3.0F,3.0F));
+            }
+            this.isDone=true;
+            return;
+        }
         if (this.target == null) {
             this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
         }
@@ -65,6 +78,11 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 
             BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(card, this.blockTheOriginalEffect);
             card.isInAutoplay = true;
+            if(card instanceof BATwinsModCustomCard){
+                ((BATwinsModCustomCard) card).numberOfConnections=this.numberOfConnections;
+            }else{
+                BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(card,this.numberOfConnections);
+            }
 //            this.card.isInAutoplay=true;
 //            addToTop(new ShowCardAction(this.card));
 //            this.p.limbo.ad
