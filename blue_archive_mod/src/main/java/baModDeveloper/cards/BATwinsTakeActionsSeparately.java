@@ -34,13 +34,13 @@ public class BATwinsTakeActionsSeparately extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, abstractMonster, CardType.SKILL, 1, this.numberOfConnections + 1));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, abstractMonster, CardType.SKILL, 1, this.numberOfConnections + 1));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1));
     }
 
     @Override
@@ -55,7 +55,7 @@ public class BATwinsTakeActionsSeparately extends BATwinsModCustomCard {
     public void triggerOnHovered() {
         if (AbstractDungeon.player != null) {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c instanceof BATwinsModCustomCard && c.color == BATwinsCharacter.getOtherColor(this.color) && c.type == CardType.SKILL) {
+                if (c instanceof BATwinsModCustomCard && c.color == BATwinsCharacter.getOtherColor(this.color)) {
                     c.flash(BATwinsCharacter.getColorWithCardColor(c.color));
                 }
             }

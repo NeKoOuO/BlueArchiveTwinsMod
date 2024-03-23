@@ -35,13 +35,13 @@ public class BATwinsAlternatingAttack extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, abstractMonster, CardType.ATTACK, 1, this.numberOfConnections + 1));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, abstractMonster, CardType.ATTACK, 1, this.numberOfConnections + 1));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1));
     }
 
     @Override
@@ -55,7 +55,7 @@ public class BATwinsAlternatingAttack extends BATwinsModCustomCard {
     @Override
     public void triggerOnHovered() {
         if (AbstractDungeon.player != null) {
-            AbstractDungeon.player.hand.group.stream().filter(card -> card instanceof BATwinsModCustomCard && card.color == BATwinsCharacter.getOtherColor(this.color) && card.type == CardType.ATTACK).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
+            AbstractDungeon.player.hand.group.stream().filter(card -> card instanceof BATwinsModCustomCard && card.color == BATwinsCharacter.getOtherColor(this.color)).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
         }
     }
 }

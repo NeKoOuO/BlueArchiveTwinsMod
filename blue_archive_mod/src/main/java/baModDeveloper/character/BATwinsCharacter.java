@@ -472,7 +472,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
         //排序手牌
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            if (BATwinsMod.AutoSort)
+            if (BATwinsMod.AutoSort&&AbstractDungeon.actionManager.actions.isEmpty())
                 this.hand.group.sort(colorComparer);
             if (BATwinsMod.ShowExpBar){
                 this.expPanel.updatePosition(this.drawX - 230 * Settings.scale, this.drawY);

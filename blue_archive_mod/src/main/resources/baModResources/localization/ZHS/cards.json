@@ -182,7 +182,7 @@
 	},
 	"BATwinsMod:AlternatingAttack":{
 		"NAME":"交替攻击",
-		"DESCRIPTION":"造成 !D! 点伤害。从手牌选择1张 batwinsmod:绿牌 攻击牌打出。"
+		"DESCRIPTION":"造成 !D! 点伤害。从手牌选择1张 batwinsmod:绿牌 打出。"
 	},
 	"BATwinsMod:TemporaryAssistance":{
 		"NAME":"暂时援助",
@@ -227,7 +227,7 @@
 	},
 	"BATwinsMod:TakeActionsSeparately":{
 		"NAME":"分头行动",
-		"DESCRIPTION":"获得 !B! 点格挡。打出手牌中1张 batwinsmod:桃牌 技能牌。"
+		"DESCRIPTION":"获得 !B! 点格挡。选择手牌1张 batwinsmod:桃牌 打出。"
 	},
 	"BATwinsMod:RepeatOperation":{
 		"NAME":"重复操作",
