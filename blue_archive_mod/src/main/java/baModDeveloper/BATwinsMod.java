@@ -290,11 +290,11 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public void receiveAddAudio() {
         BaseMod.addAudio(ModHelper.makePath("campfire_momoi"), ModHelper.makeAudioPath("campfire_momoi"));
         BaseMod.addAudio(ModHelper.makePath("campfire_midori"), ModHelper.makeAudioPath("campfire_midori"));
-        BaseMod.addAudio(ModHelper.makePath("colorEgg1"), ModHelper.makeAudioPath("colorEgg1"));
-        BaseMod.addAudio(ModHelper.makePath("colorEgg2"), ModHelper.makeAudioPath("colorEgg2"));
+        BaseMod.addAudio(ModHelper.makePath("eateregg1"), ModHelper.makeAudioPath("eateregg1"));
+        BaseMod.addAudio(ModHelper.makePath("eateregg2"), ModHelper.makeAudioPath("eateregg2"));
         BaseMod.addAudio(ModHelper.makePath("charSelect_momoi"), ModHelper.makeAudioPath("charSelect_momoi"));
         BaseMod.addAudio(ModHelper.makePath("charSelect_midori"), ModHelper.makeAudioPath("charSelect_midori"));
-        BaseMod.addAudio(ModHelper.makePath("pixelTime"),"baModResources/sound/PixelTime.mp3");
+        BaseMod.addAudio(ModHelper.makePath("pixelTime"),ModHelper.makeAudioPath("PixelTime"));
     }
 
     @Override

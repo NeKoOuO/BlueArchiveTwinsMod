@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.Objects;
+
 public class BATwinsEasterEgg extends CustomCard {
     public static final String ID = ModHelper.makePath("EasterEgg");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -23,7 +25,7 @@ public class BATwinsEasterEgg extends CustomCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardRarity RARITY = CardRarity.RARE;
-
+    private static String dungeon;
     public BATwinsEasterEgg() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 1;
@@ -42,7 +44,12 @@ public class BATwinsEasterEgg extends CustomCard {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 //        AbstractDungeon.effectList.add(new BATwinsEasterEggEffect(BATwinsCharacterOptionPatch.updateHitboxPatch.random.nextBoolean(), this.upgraded));
         addToBot(new DrawCardAction(this.magicNumber));
-        CardCrawlGame.music.changeBGM(ModHelper.makePath("pixelTime"));
+        if(dungeon==null|| !Objects.equals(AbstractDungeon.id, dungeon)){
+            dungeon=AbstractDungeon.id;
+            CardCrawlGame.music.dispose();
+            CardCrawlGame.music.changeBGM(ModHelper.makePath("pixelTime"));
+        }
+
     }
 
     @Override

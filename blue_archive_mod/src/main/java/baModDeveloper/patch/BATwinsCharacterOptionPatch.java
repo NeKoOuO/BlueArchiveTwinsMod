@@ -23,9 +23,9 @@ public class BATwinsCharacterOptionPatch {
                 if (PressCount > 9 && !FindEasterEgg) {
                     FindEasterEgg = true;
                     if (random.nextBoolean()) {
-                        CardCrawlGame.sound.playV(ModHelper.makePath("colorEgg1"), 2.0F);
+                        CardCrawlGame.sound.playV(ModHelper.makePath("eateregg1"), 2.0F);
                     } else {
-                        CardCrawlGame.sound.playV(ModHelper.makePath("colorEgg2"), 2.0F);
+                        CardCrawlGame.sound.playV(ModHelper.makePath("eateregg2"), 2.0F);
 
                     }
                 }
