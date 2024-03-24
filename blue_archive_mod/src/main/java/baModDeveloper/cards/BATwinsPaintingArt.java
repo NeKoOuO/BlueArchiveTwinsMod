@@ -24,7 +24,7 @@ public class BATwinsPaintingArt extends BATwinsModCustomCard {
 
     public BATwinsPaintingArt() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 3;
+        this.baseDamage = 2;
         this.damage = this.baseDamage;
         this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;

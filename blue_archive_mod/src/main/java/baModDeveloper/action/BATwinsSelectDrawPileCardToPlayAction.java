@@ -64,6 +64,9 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.p.drawPile.isEmpty()) {
+            if(!this.canNotSelect.isEmpty()){
+                this.p.drawPile.group.addAll(canNotSelect);
+            }
             this.isDone = true;
             return;
         }

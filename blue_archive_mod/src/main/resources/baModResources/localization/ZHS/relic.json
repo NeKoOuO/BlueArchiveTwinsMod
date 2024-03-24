@@ -44,5 +44,61 @@
 		"DESCRIPTIONS":[
 			"每回合开始时将 #b1 张附带 #y虚无消耗 的 #y交换 加入手牌。"
 		]
+	},
+	"BATwinsMod:FoldingShield":{
+		"NAME":"偏折护盾",
+		"FLAVOR":"优香经常使用的护盾",
+		"DESCRIPTIONS":[
+			"回合结束时获得手牌数 #b%d 倍的格挡。"
+		]
+	},
+	"BATwinsMod:Headband":{
+		"NAME":"女仆发箍",
+		"FLAVOR":"这么奇怪的地方以前也会有女仆吗？",
+		"DESCRIPTIONS":[
+			"每回合开始时获得 [batwinsmod:momoiorbicon] 或 [batwinsmod:midoriorbicon] 。在拾取时选择。"
+		]
+	},
+	"BATwinsMod:SpecialAmmunition":{
+		"NAME":"特制弹药",
+		"FLAVOR":"这可是工程部最新产品。",
+		"DESCRIPTIONS":[
+			"子弹牌的伤害提高 #b3 点。"
+		]
+	},
+	"BATwinsMod:SwordOfLight":{
+		"NAME":"光之剑",
+		"FLAVOR":"拿都很难拿得动，这给我们要怎么用嘛。",
+		"DESCRIPTIONS":[
+			"每场战斗打出 #b%d 张牌后对所有敌人造成 #b%d 点伤害。"
+		]
+	},
+	"BATwinsMod:NekoHowitzer":{
+		"NAME":"喵冲",
+		"FLAVOR":"柚子的武器，可以从远处发射榴弹炮",
+		"DESCRIPTIONS":[
+			"每回合开始时给予随机敌人 #b%d 层灼伤，有 #b1%% 的几率使该敌人的灼伤翻倍。"
+		]
+	},
+	"BATwinsMod:FitnessRing":{
+		"NAME":"健身环",
+		"FLAVOR":"总是三分钟热度。",
+		"DESCRIPTIONS":[
+			"第一回合抽到的牌在本场战斗中升级。"
+		]
+	},
+	"BATwinsMod:Broom":{
+		"NAME":"女仆扫把",
+		"FLAVOR":"打扫时间到！",
+		"DESCRIPTIONS":[
+			"每过 #b3 回合从弃牌堆中选择 #b1 张牌加入手牌。"
+		]
+	},
+	"BATwinsMod:MaidAttire":{
+		"NAME":"女仆装",
+		"FLAVOR":"谁都有点小癖好不是吗？ --店主",
+		"DESCRIPTIONS":[
+			"若本回合打出过包含耗能为0，1，2，3的牌，获得1层无实体。"
+		]
 	}
 }

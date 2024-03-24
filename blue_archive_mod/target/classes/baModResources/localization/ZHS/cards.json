@@ -431,8 +431,8 @@
 	},
 	"BATwinsMod:BreechLoading":{
 		"NAME":"上膛",
-		"DESCRIPTION":"获得 !D! 点 格挡 。 NL 手牌所有 batwinsmod:射击 牌 batwinsmod:存储 !M! 张 随机 batwinsmod:子弹 。",
-		"UPGRADE_DESCRIPTION":" 保留 NL 获得 !D! 点 格挡 。 NL 手牌所有 batwinsmod:射击 牌 batwinsmod:存储 !M! 张 随机 batwinsmod:子弹 。"
+		"DESCRIPTION":"获得 !B! 点 格挡 。 NL 手牌所有 batwinsmod:射击 牌 batwinsmod:存储 !M! 张 随机 batwinsmod:子弹 。",
+		"UPGRADE_DESCRIPTION":" 保留 NL 获得 !B! 点 格挡 。 NL 手牌所有 batwinsmod:射击 牌 batwinsmod:存储 !M! 张 随机 batwinsmod:子弹 。"
 	},
 	"BATwinsMod:ExpansionMagazine":{
 		"NAME":"扩容弹夹",
@@ -471,5 +471,12 @@
 		"NAME":"加速",
 		"DESCRIPTION":"选择抽牌堆 !M! 张耗能低于X的牌打出。",
 		"UPGRADE_DESCRIPTION":"选择抽牌堆 !M! 张耗能低于X+1的牌打出。"
+	},
+	"BATwinsMod:HeadbandChice":{
+		"NAME":"给小桃戴上",
+		"DESCRIPTION":"每回合开始时获得 [batwinsmod:momoiorbicon] 。",
+		"EXTENDED_DESCRIPTION":[
+			"给小绿戴上"
+		]
 	}
 }

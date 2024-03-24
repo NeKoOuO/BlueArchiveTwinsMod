@@ -41,6 +41,7 @@ baModDeveloper\cards\BATwinsBubFix.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch$openPatch2.class
 baModDeveloper\action\BATwinsBDStudyAction.class
 baModDeveloper\cards\BATwinsExcellentDesigner.class
+baModDeveloper\relic\BATwinsMaidAttire.class
 baModDeveloper\cards\BATwinsRepeatOperation.class
 baModDeveloper\helpers\Character3DHelper$MomoiActionList$1.class
 baModDeveloper\patch\BATwinsCharacterOptionPatch$updateHitboxPatch.class
@@ -92,7 +93,9 @@ baModDeveloper\patch\BATwinsCardTrailEffectFix.class
 baModDeveloper\action\BATwinsCoverChargeAction.class
 baModDeveloper\cards\BATwinsAdventureRewards.class
 baModDeveloper\cards\BATwinsOperateFreely.class
+baModDeveloper\relic\BATwinsBroom.class
 baModDeveloper\cards\BATwinsLearned.class
+baModDeveloper\relic\BATwinsNekoHowitzer$1.class
 baModDeveloper\cards\BATwinsPenetrationDamage$1.class
 baModDeveloper\cards\BATwinsPenetrationDamage.class
 baModDeveloper\character\BATwinsCharacter$Enums.class
@@ -123,6 +126,7 @@ baModDeveloper\patch\BATwinsCardSavePatch$FiledPatch.class
 baModDeveloper\action\BATwinsNormalAttackMethodsAction.class
 baModDeveloper\animation\GifDecoder.class
 baModDeveloper\power\BATwinsNoramlAttackAuxiliary.class
+baModDeveloper\relic\BATwinsFoldingShield.class
 baModDeveloper\cards\BATwinsItsSoPainful.class
 baModDeveloper\effect\BATwinsCharAttackEffect.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$renderPatch.class
@@ -141,6 +145,8 @@ baModDeveloper\ui\panels\BATwinsEnergyPanel$EnergyType.class
 baModDeveloper\power\BATwinsDeveloperCollaborationPower.class
 baModDeveloper\event\BATwinsTrainingCamp.class
 baModDeveloper\cards\BATwinsConvenientConnectivity.class
+baModDeveloper\event\BATwinsCommunication.class
+baModDeveloper\relic\BATwinsSwordOfLight.class
 baModDeveloper\power\BATwinsReadingDocumentsPower.class
 baModDeveloper\patch\BATwinsOverlayMenuUpdateFix.class
 baModDeveloper\cards\BATwinsMomoiStrick.class
@@ -186,6 +192,7 @@ baModDeveloper\cards\BATwinsTakeABreak.class
 baModDeveloper\cards\BATwinsKeepItToTheEnd.class
 baModDeveloper\cards\BATwinsDontSayIt.class
 baModDeveloper\action\BATwinsLoginRewardsAction.class
+baModDeveloper\relic\BATwinsHeadband.class
 baModDeveloper\action\BATwinsRandomShootingAction.class
 baModDeveloper\cards\BATwinsMidoriDefend.class
 baModDeveloper\patch\BATwinsCancelButtonPatch$updatePatch.class
@@ -204,6 +211,7 @@ baModDeveloper\action\BATwinsMutualUnderstandingAction.class
 baModDeveloper\cards\BATwinsNormalAttackMethods.class
 baModDeveloper\action\BATwinsGameLaunchAction.class
 baModDeveloper\patch\BATwinsSaveAndContinuePatch.class
+baModDeveloper\relic\BATwinsFitnessRing.class
 baModDeveloper\cards\BATwinsCheatingCodeEnabled.class
 baModDeveloper\ui\panels\icons\BATwinsMomoiEnergyOrbSmall.class
 baModDeveloper\patch\BATwinsLoadLayerSaveFix.class
@@ -255,10 +263,12 @@ baModDeveloper\helpers\ImageHelper.class
 baModDeveloper\patch\BATwinsOverlayMenuRenderFix.class
 baModDeveloper\cards\BATwinsSwitchStrike.class
 baModDeveloper\ui\panels\energyorb\BATwinsEnergyMomoiOrb.class
+baModDeveloper\relic\BATwinsSpecialAmmunition.class
 baModDeveloper\patch\BATwinsAbstractDungeonPatch.class
 baModDeveloper\action\BATwinsPaintingArtAction.class
 baModDeveloper\cards\BATwinsExpansionMagazine.class
 baModDeveloper\cards\BATwinsExperienceGiftPackage.class
+baModDeveloper\cards\BATwinsHeadbandChice.class
 baModDeveloper\action\BATwinsSkillCombinationAction.class
 baModDeveloper\cards\BATwinsTakeABreak$2.class
 baModDeveloper\cards\BATwinsAbstractSchool.class
@@ -278,11 +288,13 @@ baModDeveloper\effect\BATwinsRefreshEnergyEffect.class
 baModDeveloper\power\BATwinsNormalAttackMethodsPower.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$FiledPatch.class
 baModDeveloper\cards\BATwinsMysteriousChest.class
+baModDeveloper\action\BATwinsDoublePowerAction.class
 baModDeveloper\cards\BATwinsAttackWithAllMight.class
 baModDeveloper\cards\BATwinsPoisonGasBomb.class
 baModDeveloper\cards\BATwinsReadingDocuments.class
 baModDeveloper\cards\BATwinsPropCollection.class
 baModDeveloper\patch\BATwinsSingleCardViewPopupPatch.class
+baModDeveloper\relic\BATwinsNekoHowitzer.class
 baModDeveloper\cards\BATwinsLeaveItToMe$1.class
 baModDeveloper\action\BATwinsExchangeDrawPailAction.class
 baModDeveloper\action\BATwinsDefensiveCounterattackAction.class

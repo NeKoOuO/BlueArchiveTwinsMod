@@ -2,6 +2,7 @@ package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.power.BATwinsMasterCraftsmanshipPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -55,6 +56,11 @@ public class BATwinsRepeatOperationAction extends AbstractGameAction {
                 if (c instanceof BATwinsModCustomCard) {
                     BATwinsModCustomCard temp = (BATwinsModCustomCard) c.makeSameInstanceOf();
                     temp.conversionColor();
+                    //如果有技艺大师buff则升级
+                    if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)) {
+                        temp.upgrade();
+                        AbstractDungeon.player.getPower(BATwinsMasterCraftsmanshipPower.POWER_ID).flash();
+                    }
                     addToTop(new BATwinsMakeTempCardInHandAction(temp, true, temp.exhaust, false, temp.isEthereal, temp.selfRetain));
                     this.p.hand.addToTop(c);
                 }

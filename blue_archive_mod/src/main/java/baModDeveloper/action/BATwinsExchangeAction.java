@@ -3,6 +3,7 @@ package baModDeveloper.action;
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.power.BATwinsMasterCraftsmanshipPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -87,6 +88,11 @@ public class BATwinsExchangeAction extends AbstractGameAction {
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 ((BATwinsModCustomCard) c).conversionColor();
+                //如果有技艺大师buff则升级
+                if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)) {
+                    c.upgrade();
+                    AbstractDungeon.player.getPower(BATwinsMasterCraftsmanshipPower.POWER_ID).flash();
+                }
                 ((BATwinsModCustomCard) c).playBackOriginalColor = this.playBackOriginColor;
                 c.applyPowers();
                 this.p.hand.addToTop(c);

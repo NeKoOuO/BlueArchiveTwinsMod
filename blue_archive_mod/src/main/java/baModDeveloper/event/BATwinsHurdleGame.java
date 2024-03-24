@@ -173,7 +173,11 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
                     this.currentScreen = CurrentScreen.DONE;
                     GenericEventDialog.show();
                     this.imageEventText.clearAllDialogs();
-                    this.imageEventText.updateBodyText(DESCRIPTIONS[4]);
+                    if(this.sorce==0){
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[5]);
+                    }else{
+                        this.imageEventText.updateBodyText(String.format(DESCRIPTIONS[4],this.sorce));
+                    }
                     this.imageEventText.setDialogOption(OPTIONS[3]);
                     getRewardWithGaming();
                 }
@@ -254,11 +258,11 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
         AbstractDungeon.getCurrRoom().rewards.clear();
         if (this.sorce == 0) {
             return;
-        } else if (this.sorce > 0 && this.sorce < 3) {
+        } else if (this.sorce > 0 && this.sorce < 5) {
             AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
-        } else if (this.sorce >= 3 && this.sorce < 6) {
+        } else if (this.sorce >= 5 && this.sorce < 10) {
             AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
-        } else if (this.sorce >= 6 && this.sorce <= 10) {
+        } else if (this.sorce == 10) {
             AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.RARE);
         }
         AbstractDungeon.combatRewardScreen.open();

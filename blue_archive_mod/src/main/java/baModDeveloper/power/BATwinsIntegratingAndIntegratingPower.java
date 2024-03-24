@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -61,6 +62,10 @@ public class BATwinsIntegratingAndIntegratingPower extends AbstractPower {
                     BATwinsModCustomCard c = (BATwinsModCustomCard) card.makeStatEquivalentCopy();
 
                     c.conversionColor();
+                    //如果有技艺大师buff则升级
+                    if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)) {
+                        c.upgrade();
+                    }
                     addToBot(new BATwinsMakeTempCardInHandAction(c, true, true, true, true, false));
                 }
             }

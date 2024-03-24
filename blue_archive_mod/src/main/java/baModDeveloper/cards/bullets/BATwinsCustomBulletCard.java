@@ -1,5 +1,6 @@
 package baModDeveloper.cards.bullets;
 
+import baModDeveloper.relic.BATwinsSpecialAmmunition;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -20,6 +21,19 @@ public abstract class BATwinsCustomBulletCard extends CustomCard {
             BULLETS[3] = new BATwinsIncendiaryBullet();
             BULLETS[4] = new BATwinsHeavyBullets();
         }
+
+    }
+
+    @Override
+    public void applyPowers() {
+        int baseBaseDamage=this.baseDamage;
+        if(AbstractDungeon.player.hasRelic(BATwinsSpecialAmmunition.ID)){
+            this.baseDamage+=3;
+            this.baseDamage+=this.timesUpgraded*3;
+        }
+        super.applyPowers();
+        this.isDamageModified= this.damage != baseBaseDamage;
+        this.baseDamage=baseBaseDamage;
 
     }
 
