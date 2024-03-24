@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.SoulGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.Optional;
 
@@ -91,6 +93,12 @@ public class BATwinsDrawCardByColor extends AbstractGameAction {
                 if (card.isPresent()) {
                     AbstractCard c = card.get();
                     AbstractDungeon.player.drawPile.moveToHand(c);
+                    for (AbstractPower p : AbstractDungeon.player.powers) {
+                        p.onCardDraw(c);
+                    }
+                    for (AbstractRelic r : AbstractDungeon.player.relics) {
+                        r.onCardDraw(c);
+                    }
                     AbstractDungeon.player.hand.refreshHandLayout();
                 }
             } else {
