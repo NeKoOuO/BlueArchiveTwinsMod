@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="增加了多个遗物，1个事件。削弱‘绘画艺术’的伤害">
+    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="让‘作弊码开启’能触发抽牌时的效果">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsDrawCardByColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsDrawCardByColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/relic/BATwinsMaidAttire.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/relic/BATwinsMaidAttire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/relic/BATwinsMaidAttire.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/relic/BATwinsMaidAttire.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,15 +199,7 @@
       <workItem from="1710772530232" duration="1429000" />
       <workItem from="1710775403829" duration="185000" />
       <workItem from="1710845043240" duration="9141000" />
-      <workItem from="1710930036913" duration="60066000" />
-    </task>
-    <task id="LOCAL-00013" summary="增加卡牌&#10;增加卡图&#10;增加火堆交换事件">
-      <option name="closed" value="true" />
-      <created>1702204223499</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1702204223499</updated>
+      <workItem from="1710930036913" duration="62856000" />
     </task>
     <task id="LOCAL-00014" summary="增加卡牌">
       <option name="closed" value="true" />
@@ -592,7 +585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711272123528</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="让‘作弊码开启’能触发抽牌时的效果">
+      <option name="closed" value="true" />
+      <created>1711275118513</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1711275118513</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,7 +657,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="增加mod选项，增加经验值条" />
     <MESSAGE value="增加经验条，增加选项" />
     <MESSAGE value="增加模型" />
     <MESSAGE value="增加小彩蛋" />
@@ -681,7 +681,8 @@
     <MESSAGE value="加回了彩蛋音乐" />
     <MESSAGE value="修改‘分头行动’‘交替攻击’" />
     <MESSAGE value="增加了多个遗物，1个事件。削弱‘绘画艺术’的伤害" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了多个遗物，1个事件。削弱‘绘画艺术’的伤害" />
+    <MESSAGE value="让‘作弊码开启’能触发抽牌时的效果" />
+    <option name="LAST_COMMIT_MESSAGE" value="让‘作弊码开启’能触发抽牌时的效果" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -940,7 +941,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/relic/BATwinsMaidAttire.java</url>
-          <line>49</line>
+          <line>53</line>
           <properties class="baModDeveloper.relic.BATwinsMaidAttire" method="atTurnStart">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

@@ -34,6 +34,9 @@ public class BATwinsMaidAttire extends CustomRelic {
 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        if(triggered){
+            return;
+        }
         if(targetCard.costForTurn<4&&targetCard.costForTurn>=0){
             this.costs[targetCard.costForTurn]=true;
         }
@@ -43,11 +46,13 @@ public class BATwinsMaidAttire extends CustomRelic {
             }
         }
         flash();
+        triggered=true;
         addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new IntangiblePlayerPower(AbstractDungeon.player,1)));
     }
 
     @Override
     public void atTurnStart() {
         Arrays.fill(costs, false);
+        triggered=false;
     }
 }
