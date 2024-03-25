@@ -34,7 +34,7 @@ public class BATwinsBulletWarehouse extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
+        useMOMOI(abstractPlayer,abstractMonster);
     }
 
     @Override

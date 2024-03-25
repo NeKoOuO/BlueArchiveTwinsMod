@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="让‘作弊码开启’能触发抽牌时的效果">
+    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="修复‘女仆装’效果问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/relic/BATwinsMaidAttire.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/relic/BATwinsMaidAttire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/relic/BATwinsMaidAttire.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/relic/BATwinsMaidAttire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsBulletWarehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsBulletWarehouse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,15 +198,7 @@
       <workItem from="1710772530232" duration="1429000" />
       <workItem from="1710775403829" duration="185000" />
       <workItem from="1710845043240" duration="9141000" />
-      <workItem from="1710930036913" duration="62856000" />
-    </task>
-    <task id="LOCAL-00014" summary="增加卡牌">
-      <option name="closed" value="true" />
-      <created>1702569693740</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1702569693740</updated>
+      <workItem from="1710930036913" duration="64740000" />
     </task>
     <task id="LOCAL-00015" summary="增加卡牌">
       <option name="closed" value="true" />
@@ -593,7 +584,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711275118513</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="修复‘女仆装’效果问题">
+      <option name="closed" value="true" />
+      <created>1711283003931</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1711283003931</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,7 +656,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="增加经验条，增加选项" />
     <MESSAGE value="增加模型" />
     <MESSAGE value="增加小彩蛋" />
     <MESSAGE value="卡牌效果修改：光速打击，切换打击，见着有份，强制连锁，暂且休整，借用一下" />
@@ -682,7 +680,8 @@
     <MESSAGE value="修改‘分头行动’‘交替攻击’" />
     <MESSAGE value="增加了多个遗物，1个事件。削弱‘绘画艺术’的伤害" />
     <MESSAGE value="让‘作弊码开启’能触发抽牌时的效果" />
-    <option name="LAST_COMMIT_MESSAGE" value="让‘作弊码开启’能触发抽牌时的效果" />
+    <MESSAGE value="修复‘女仆装’效果问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复‘女仆装’效果问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
