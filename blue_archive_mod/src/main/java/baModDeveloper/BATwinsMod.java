@@ -10,6 +10,7 @@ import baModDeveloper.event.BATwinsDirtShowdown;
 import baModDeveloper.event.BATwinsHurdleGame;
 import baModDeveloper.event.BATwinsTrainingCamp;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.monster.BATwinsAkane;
 import baModDeveloper.potion.BATwinsAcceleratePotion;
 import baModDeveloper.potion.BATwinsBurnPotion;
 import baModDeveloper.potion.BATwinsConnectPotion;
@@ -38,6 +39,7 @@ import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -97,6 +99,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             ShowExpBar = config.getBool(ModHelper.makePath("ShowExpBar"));
             Enable3D = config.getBool(ModHelper.makePath("Enable3D"));
             Tutorial = config.getBool(ModHelper.makePath("Tutorial"));
+
+//            Settings.isDebug=true;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -229,6 +233,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/" + lang + "/relic.json");
             BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
             BaseMod.loadCustomStringsFile(PotionStrings.class,"baModResources/localization/" + lang + "/potion.json");
+            BaseMod.loadCustomStringsFile(MonsterStrings.class,"baModResources/localization/" + lang + "/monster.json");
+
 
         }catch (GdxRuntimeException e){
             System.out.println("BATwinsMod:该语言选项没有文本。");
@@ -239,7 +245,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/ZHS/relic.json");
             BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/ZHS/event.json");
             BaseMod.loadCustomStringsFile(PotionStrings.class,"baModResources/localization/ZHS/potion.json");
-
+            BaseMod.loadCustomStringsFile(MonsterStrings.class,"baModResources/localization/ZHS/monster.json");
 
         }
   }
@@ -313,14 +319,19 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        //添加事件
         BaseMod.addEvent(BATwinsTrainingCamp.ID, BATwinsTrainingCamp.class);
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsDirtShowdown.ID,BATwinsDirtShowdown.class).playerClass(Enums.BATwins).create());
         BaseMod.addEvent(BATwinsHurdleGame.ID, BATwinsHurdleGame.class);
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsCommunication.ID,BATwinsCommunication.class).playerClass(Enums.BATwins).dungeonID(Exordium.ID).create());
-
+        //添加药水
         BaseMod.addPotion(BATwinsAcceleratePotion.class,BATwinsAcceleratePotion.liquidColor,BATwinsAcceleratePotion.hybridColor,BATwinsAcceleratePotion.spotsColor,BATwinsAcceleratePotion.ID);
         BaseMod.addPotion(BATwinsConnectPotion.class,BATwinsConnectPotion.liquidColor,BATwinsConnectPotion.hybridColor,BATwinsConnectPotion.spotsColor,BATwinsConnectPotion.ID);
         BaseMod.addPotion(BATwinsBurnPotion.class,BATwinsBurnPotion.liquidColor,BATwinsBurnPotion.hybridColor,BATwinsBurnPotion.spotsColor,BATwinsBurnPotion.ID);
+        //添加怪物
+//        BaseMod.addMonster(BATwinsAkane.ID, BATwinsAkane::new);
+//        BaseMod.addStrongMonsterEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));
+//        BaseMod.addEliteEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));
     }
 
     private void CreateConfig() throws IOException {

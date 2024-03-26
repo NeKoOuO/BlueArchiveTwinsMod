@@ -358,6 +358,12 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             Optional<AbstractCard> c = this.hasCardInBringOutCards(card);
             if (c.isPresent()) {
                 c.get().upgrade();
+                if(card.upgraded){
+                    //修复了存储升级后子弹却没升级的bug
+                    for(int i=0;i<card.timesUpgraded;i++){
+                        c.get().upgrade();
+                    }
+                }
                 return;
             }
         }
