@@ -10,10 +10,10 @@ import baModDeveloper.event.BATwinsDirtShowdown;
 import baModDeveloper.event.BATwinsHurdleGame;
 import baModDeveloper.event.BATwinsTrainingCamp;
 import baModDeveloper.helpers.ModHelper;
-import baModDeveloper.monster.BATwinsAkane;
 import baModDeveloper.potion.BATwinsAcceleratePotion;
 import baModDeveloper.potion.BATwinsBurnPotion;
 import baModDeveloper.potion.BATwinsConnectPotion;
+import baModDeveloper.potion.BATwinsStaminaPotion;
 import baModDeveloper.relic.*;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
 import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
@@ -306,6 +306,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addPotion(BATwinsAcceleratePotion.class,BATwinsAcceleratePotion.liquidColor,BATwinsAcceleratePotion.hybridColor,BATwinsAcceleratePotion.spotsColor,BATwinsAcceleratePotion.ID);
         BaseMod.addPotion(BATwinsConnectPotion.class,BATwinsConnectPotion.liquidColor,BATwinsConnectPotion.hybridColor,BATwinsConnectPotion.spotsColor,BATwinsConnectPotion.ID);
         BaseMod.addPotion(BATwinsBurnPotion.class,BATwinsBurnPotion.liquidColor,BATwinsBurnPotion.hybridColor,BATwinsBurnPotion.spotsColor,BATwinsBurnPotion.ID);
+        BaseMod.addPotion(BATwinsStaminaPotion.class,BATwinsStaminaPotion.liquidColor,BATwinsStaminaPotion.hybridColor,BATwinsStaminaPotion.spotsColor,BATwinsStaminaPotion.ID);
         //添加怪物
 //        BaseMod.addMonster(BATwinsAkane.ID, BATwinsAkane::new);
 //        BaseMod.addStrongMonsterEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));
