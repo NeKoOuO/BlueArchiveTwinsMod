@@ -202,6 +202,7 @@ baModDeveloper\patch\BATwinsMainMusicPatch.class
 baModDeveloper\cards\BATwinsDoubleExperience.class
 baModDeveloper\action\BATwinsEquipmentUpgradeAction.class
 baModDeveloper\action\BATwinsDisAllColorCards.class
+baModDeveloper\effect\BATwinsCampfireReopenEffect.class
 baModDeveloper\power\BATwinsArtPolishingPower$1.class
 baModDeveloper\cards\BATwinsBorrowMe.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$cancelUpgradePatch.class
@@ -214,6 +215,7 @@ baModDeveloper\action\BATwinsGameLaunchAction.class
 baModDeveloper\patch\BATwinsSaveAndContinuePatch.class
 baModDeveloper\relic\BATwinsFitnessRing.class
 baModDeveloper\cards\BATwinsCheatingCodeEnabled.class
+baModDeveloper\potion\BATwinsStaminaPotion.class
 baModDeveloper\ui\panels\icons\BATwinsMomoiEnergyOrbSmall.class
 baModDeveloper\patch\BATwinsLoadLayerSaveFix.class
 baModDeveloper\cards\BATwinsStableShooting.class
