@@ -40,7 +40,7 @@ public class BATwinsSaveAndContinuePatch {
                 boolean isExchange = cardObject.get(keyName).getAsBoolean();
                 BATwinsCardSavePatch.FiledPatch.isExchange.set(saveFile[0].cards.get(i), isExchange);
                 i++;
-                System.out.println(keyName + isExchange);
+//                System.out.println(keyName + isExchange);
             }
         }
     }

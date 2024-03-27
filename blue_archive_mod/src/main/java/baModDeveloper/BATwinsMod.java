@@ -222,32 +222,20 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         String lang;
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
-        } else {
-            lang = "ENG";
+//        } else if(language==GameLanguage.ENG){
+//            lang = "ENG";
+        }else{
+            lang="ZHS";
         }
-        try{
-            BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
-            BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
-            BaseMod.loadCustomStringsFile(PowerStrings.class, "baModResources/localization/" + lang + "/power.json");
-            BaseMod.loadCustomStringsFile(UIStrings.class, "baModResources/localization/" + lang + "/uistring.json");
-            BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/" + lang + "/relic.json");
-            BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
-            BaseMod.loadCustomStringsFile(PotionStrings.class,"baModResources/localization/" + lang + "/potion.json");
-            BaseMod.loadCustomStringsFile(MonsterStrings.class,"baModResources/localization/" + lang + "/monster.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, "baModResources/localization/" + lang + "/power.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, "baModResources/localization/" + lang + "/uistring.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/" + lang + "/relic.json");
+        BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class,"baModResources/localization/" + lang + "/potion.json");
+        BaseMod.loadCustomStringsFile(MonsterStrings.class,"baModResources/localization/" + lang + "/monster.json");
 
-
-        }catch (GdxRuntimeException e){
-            System.out.println("BATwinsMod:该语言选项没有文本。");
-            BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/ZHS/cards.json");
-            BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/ZHS/character.json");
-            BaseMod.loadCustomStringsFile(PowerStrings.class, "baModResources/localization/ZHS/power.json");
-            BaseMod.loadCustomStringsFile(UIStrings.class, "baModResources/localization/ZHS/uistring.json");
-            BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/ZHS/relic.json");
-            BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/ZHS/event.json");
-            BaseMod.loadCustomStringsFile(PotionStrings.class,"baModResources/localization/ZHS/potion.json");
-            BaseMod.loadCustomStringsFile(MonsterStrings.class,"baModResources/localization/ZHS/monster.json");
-
-        }
   }
 
     @Override
@@ -262,24 +250,14 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
         }
-        try{
-            String json = Gdx.files.internal("baModResources/localization/" + lang + "/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
-            Keyword[] keywords = gson.fromJson(json, Keyword[].class);
-            if (keywords != null) {
-                for (Keyword keyword : keywords) {
-                    BaseMod.addKeyword("batwinsmod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
-                }
-            }
-        }catch (GdxRuntimeException e){
-            System.out.println("BATwinsMod:该语言选项没有文本。");
-            String json = Gdx.files.internal("baModResources/localization/ZHS/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
-            Keyword[] keywords = gson.fromJson(json, Keyword[].class);
-            if (keywords != null) {
-                for (Keyword keyword : keywords) {
-                    BaseMod.addKeyword("batwinsmod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
-                }
+        String json = Gdx.files.internal("baModResources/localization/" + lang + "/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+        if (keywords != null) {
+            for (Keyword keyword : keywords) {
+                BaseMod.addKeyword("batwinsmod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+
 
     }
 

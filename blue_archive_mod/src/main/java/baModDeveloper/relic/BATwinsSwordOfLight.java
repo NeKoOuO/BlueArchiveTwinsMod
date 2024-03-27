@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -36,8 +37,20 @@ public class BATwinsSwordOfLight extends CustomRelic {
         this.counter=0;
     }
 
+//    @Override
+//    public void onPlayCard(AbstractCard c, AbstractMonster m) {
+//        this.counter++;
+//        if(this.counter>=count){
+//            flash();
+//            addToBot((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature) AbstractDungeon.player, this));
+//            addToBot((AbstractGameAction)new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+//            stopPulse();
+//            this.grayscale=true;
+//       }
+//    }
+
     @Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         this.counter++;
         if(this.counter>=count){
             flash();
@@ -45,8 +58,7 @@ public class BATwinsSwordOfLight extends CustomRelic {
             addToBot((AbstractGameAction)new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             stopPulse();
             this.grayscale=true;
-       }
-    }
+        }    }
 
     @Override
     public void justEnteredRoom(AbstractRoom room) {

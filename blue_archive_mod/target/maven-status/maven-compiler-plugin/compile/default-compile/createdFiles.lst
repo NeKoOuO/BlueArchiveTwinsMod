@@ -159,6 +159,7 @@ baModDeveloper\power\BATwinsDefensiveCounterattackPower.class
 baModDeveloper\power\BATwinsPlotPredictionPower.class
 baModDeveloper\patch\BATwinsSoulFix.class
 baModDeveloper\potion\BATwinsBurnPotion.class
+baModDeveloper\monster\BATwinsAkane.class
 baModDeveloper\action\BATwinsInspirationEmergenceAction.class
 baModDeveloper\patch\BATwinsGridCardSelectScreenPatch$updatePatch.class
 baModDeveloper\relic\BATwinsMidorisGameConsole.class

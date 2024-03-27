@@ -1,4 +1,5 @@
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsCardCrawlGamePatch.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\potion\BATwinsAcceleratePotion.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsDualProtection.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\ui\panels\BATwinsEnergyPanel.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsBugFixAction.java
@@ -11,6 +12,7 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsAdventureOpeningAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsOnceMore.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsCoverChargeAction.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\potion\BATwinsBurnPotion.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsExchangeAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsSelectDrawPileCardToPlayAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsAdditionalAttacks.java
@@ -32,6 +34,7 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsOneMoreAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsAdventureExperience.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsGainEnergyAndEnableControlsActionPatch.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\event\BATwinsCommunication.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsPlotRepairAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\BATwinsMod.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\power\BATwinsExperiencePower.java
@@ -44,9 +47,11 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsAdventureOpening.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\power\BATwinsDoubleExperiencePower.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsPassageInForce.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsHeadbandChice.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\power\BATwinsReadingDocumentsPower.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\animation\GifAnimation.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\ui\panels\icons\BATwinsMomoiEnergyOrbSmall.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsDoublePowerAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsMomoisGameConsole.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsDontSayIt.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\animation\AbstractGIFCard.java
@@ -56,6 +61,7 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsRepeatOperationAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsNormalAttackMethodsAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsSaveAndContinuePatch.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsHeadband.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\effect\BATwinsEasterEggEffect.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\effect\BATwinsExchangeCardEffect.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsOverlayMenuRenderFix.java
@@ -65,12 +71,14 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsCharacterSelectScreenPatch.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsBulletWarehouse.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\power\BATwinsBugFixPower.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsMainMusicPatch.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\power\BATwinsDeveloperCollaborationPower.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\power\BATwinsPlotPredictionPower.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsBattleCommandAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsBugCardAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsInterpretiveErrorAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsForceDetonation.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsBroom.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\power\BATwinsGainLENextTurnPower.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsBugCard.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsPaintingArtAction.java
@@ -182,6 +190,7 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsBDStudyAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsDisOtherCardByColorAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\helpers\ImageHelper.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\monster\BATwinsAkane.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\power\BATwinsOnceMorePower.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsLightSpeedStrike.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsEasterEgg.java
@@ -192,6 +201,8 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsParoxysmalPain.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsBDStudy.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\bullets\BATwinsArmorPiercingBullet.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsFoldingShield.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsSpecialAmmunition.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsRandomShootingAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsIgniteTheUpperBody.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsLoginRewards.java
@@ -202,6 +213,7 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\bullets\BATwinsSniperBullet.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\helpers\TextureLoader.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsAncientGameCartridges.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsFitnessRing.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsGameMagazine.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsRepeatOperation.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsAttackWithAllMight.java
@@ -235,6 +247,7 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\helpers\Character3DHelper.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsOverlayMenuUpdateFix.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\ui\panels\energyorb\BATwinsEnergyMomoiOrb.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsSwordOfLight.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsEndCombo.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsCampfireUIPatch.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsBattleCommand.java
@@ -243,10 +256,13 @@ C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsPropCollectionAction.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\effect\BATwinsShowCardAndFlashEffect.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsCoversionColorAction.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsMaidAttire.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsSelfConnectivity.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\effect\BATwinsCharAttackEffect.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsGameGuide.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\event\BATwinsDirtShowdown.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\relic\BATwinsNekoHowitzer.java
+C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\potion\BATwinsConnectPotion.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\patch\BATwinsIdentifyOrbFix.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\cards\BATwinsConvenientConnectivity.java
 C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\java\baModDeveloper\action\BATwinsDefensiveCounterattackAction.java
