@@ -4,9 +4,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+
 /**
  * Created by Keeper on 2019/3/16.
- *
+ * <p>
  * 和CustomCard一样 用法完全一样，只要把img换成gif就行了
  */
 public abstract class AbstractGIFCard extends AbstractCard {

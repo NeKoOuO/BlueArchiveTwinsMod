@@ -1,6 +1,5 @@
 package baModDeveloper.action;
 
-import baModDeveloper.cards.BATwinsBDStudy;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.power.BATwinsExperiencePower;
@@ -11,7 +10,6 @@ import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -24,13 +22,14 @@ public class BATwinsBDStudyAction extends AbstractGameAction {
     private AbstractPlayer p;
     private ArrayList<AbstractCard> canNotSelect;
     private AbstractCard.CardColor color;
-    private UIStrings UISTRING= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
-    public BATwinsBDStudyAction(int amount, AbstractCard.CardColor color){
-        this.p= AbstractDungeon.player;
-        this.canNotSelect=new ArrayList<>();
-        this.amount=amount;
-        this.color=color;
-        this.duration= Settings.ACTION_DUR_FAST;
+    private UIStrings UISTRING = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
+
+    public BATwinsBDStudyAction(int amount, AbstractCard.CardColor color) {
+        this.p = AbstractDungeon.player;
+        this.canNotSelect = new ArrayList<>();
+        this.amount = amount;
+        this.color = color;
+        this.duration = Settings.ACTION_DUR_FAST;
     }
 //    @Override
 //    public void update() {
@@ -73,23 +72,23 @@ public class BATwinsBDStudyAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        int count=0;
-        for(AbstractCard card:this.p.hand.group){
-            if(card.color==this.color){
-                if(card.cost==-1){
-                    if(this.p instanceof BATwinsCharacter){
-                        count+= BATwinsEnergyPanel.getCurrentEnergy();
-                    }else{
-                        count+= EnergyPanel.getCurrentEnergy();
+        int count = 0;
+        for (AbstractCard card : this.p.hand.group) {
+            if (card.color == this.color) {
+                if (card.cost == -1) {
+                    if (this.p instanceof BATwinsCharacter) {
+                        count += BATwinsEnergyPanel.getCurrentEnergy();
+                    } else {
+                        count += EnergyPanel.getCurrentEnergy();
                     }
-                }else if(card.costForTurn>0){
-                    count+=card.costForTurn;
+                } else if (card.costForTurn > 0) {
+                    count += card.costForTurn;
                 }
-                addToBot(new ExhaustSpecificCardAction(card,this.p.hand));
+                addToBot(new ExhaustSpecificCardAction(card, this.p.hand));
             }
         }
-        addToBot(new ApplyPowerAction(this.p,this.p,new BATwinsExperiencePower(this.p,count*this.amount)));
-        this.isDone=true;
+        addToBot(new ApplyPowerAction(this.p, this.p, new BATwinsExperiencePower(this.p, count * this.amount)));
+        this.isDone = true;
 
     }
 }

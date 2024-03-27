@@ -8,7 +8,7 @@
     "BATwinsMod:DeveloperCollaborationPower":{
         "NAME":"开发者协同",
         "DESCRIPTIONS":[
-            "交替打出桃牌与绿牌后，卡牌的伤害和格挡上升",
+            "战斗中交替打出桃牌与绿牌后，本回合卡牌的伤害和格挡上升",
             "%。",
             "(打出的上张牌是：",
             ")",
@@ -147,7 +147,7 @@
 	"BATwinsMod:IntegratingAndIntegratingPower":{
 		"NAME":"融会贯通",
 		"DESCRIPTIONS":[
-			"打出 batwinsmod:交换 后的牌后将%d张原本颜色的牌加入手牌，那张牌获得 虚无 ， 消耗 。"
+			"打出交换后的耗能1以上的牌时将%d张原本颜色的牌加入手牌，并附加 虚无 ， 消耗 。"
 		]
 	},
 	"BATwinsMod:MasterCraftsmanshipPower":{
@@ -165,13 +165,19 @@
 	"BATwinsMod:MaidFormPower":{
 		"NAME":"女仆形态",
 		"DESCRIPTIONS":[
-			"卡牌造成的伤害和获得的格挡有%d的几率数值翻倍。"
+			"每回合打出第%d张牌后打出1张视为相同耗能的加速。"
 		]
 	},
 	"BATwinsMod:FlatFallPower":{
 		"NAME":"平地摔",
 		"DESCRIPTIONS":[
 			"本回合只能再打出%d张攻击牌。"
+		]
+	},
+	"BATwinsMod:ExpansionMagazinePower":{
+		"NAME":"扩容弹夹",
+		"DESCRIPTIONS":[
+			"本场战斗存储的子弹升级。"
 		]
 	}
 }

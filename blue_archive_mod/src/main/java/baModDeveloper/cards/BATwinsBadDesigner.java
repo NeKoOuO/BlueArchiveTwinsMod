@@ -14,48 +14,48 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BATwinsBadDesigner extends BATwinsModCustomCard{
-    public static final String ID= ModHelper.makePath("BadDesigner");
-    private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String NAME=CARD_STRINGS.NAME;
-    private static final String IMG_PATH=ModHelper.makeImgPath("cards","defaultSkill");
-    private static final int COST=1;
-    private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
-    private static final CardType TYPE=CardType.SKILL;
-    private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
-    private static final CardTarget TARGET=CardTarget.NONE;
-    private static final CardRarity RARITY=CardRarity.RARE;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.SHARE;
+public class BATwinsBadDesigner extends BATwinsModCustomCard {
+    public static final String ID = ModHelper.makePath("BadDesigner");
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String NAME = CARD_STRINGS.NAME;
+    private static final String IMG_PATH = ModHelper.makeImgPath("cards", "defaultSkill");
+    private static final int COST = 1;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
+    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.SHARE;
 
     public BATwinsBadDesigner() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.misc=5;
-        this.baseMagicNumber=this.misc;
-        this.magicNumber=this.baseMagicNumber;
-        this.exhaust=true;
-        this.cardsToPreview=new BATwinsExcellentDesigner();
+        this.misc = 5;
+        this.baseMagicNumber = this.misc;
+        this.magicNumber = this.baseMagicNumber;
+        this.exhaust = true;
+        this.cardsToPreview = new BATwinsExcellentDesigner();
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if(this.magicNumber<=1){
-            this.exhaust=true;
-            for(AbstractCard c:abstractPlayer.masterDeck.group) {
+        if (this.magicNumber <= 1) {
+            this.exhaust = true;
+            for (AbstractCard c : abstractPlayer.masterDeck.group) {
                 if (c.uuid == this.uuid) {
                     abstractPlayer.masterDeck.removeCard(c);
                     addToBot(new MakeTempCardInHandAction(new BATwinsExcellentDesigner()));
                     break;
                 }
             }
-        }else{
-            addToBot(new IncreaseMiscAction(this.uuid,this.misc,-1));
+        } else {
+            addToBot(new IncreaseMiscAction(this.uuid, this.misc, -1));
             this.upgradeMagicNumber(-1);
         }
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        useMOMOI(abstractPlayer,abstractMonster);
+        useMOMOI(abstractPlayer, abstractMonster);
     }
 
     @Override
@@ -70,33 +70,34 @@ public class BATwinsBadDesigner extends BATwinsModCustomCard{
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        addToBot(new DiscardAction(AbstractDungeon.player,AbstractDungeon.player,1,false));
+        addToBot(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player, 1, false));
     }
 
     @Override
     public void upgrade() {
-        if(!upgraded){
+        if (!upgraded) {
             this.upgradeName();
-            this.misc-=2;
-            if(this.misc<=1){
-                this.misc=1;
+            this.misc -= 2;
+            if (this.misc <= 1) {
+                this.misc = 1;
             }
-            this.magicNumber=this.misc;
-            this.isMagicNumberModified=true;
+            this.magicNumber = this.misc;
+            this.isMagicNumberModified = true;
             this.initializeDescription();
         }
     }
+
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.baseMagicNumber=this.misc;
-        this.magicNumber=this.misc;
+        this.baseMagicNumber = this.misc;
+        this.magicNumber = this.misc;
         this.initializeDescription();
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(!super.canUse(p,m)){
+        if (!super.canUse(p, m)) {
             return false;
         }
         return p.hand.size() == 1 && p.hand.getTopCard() == this;
@@ -104,9 +105,9 @@ public class BATwinsBadDesigner extends BATwinsModCustomCard{
 
     @Override
     public AbstractCard makeSameInstanceOf() {
-        AbstractCard temp=super.makeSameInstanceOf();
-        temp.misc=this.misc;
-        temp.magicNumber=temp.misc;
+        AbstractCard temp = super.makeSameInstanceOf();
+        temp.misc = this.misc;
+        temp.magicNumber = temp.misc;
         return temp;
     }
 }

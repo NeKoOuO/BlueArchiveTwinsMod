@@ -1,7 +1,6 @@
 package baModDeveloper.character;
 
 import baModDeveloper.BATwinsMod;
-import baModDeveloper.animation.AbstractAnimation;
 import baModDeveloper.cards.*;
 import baModDeveloper.core.BATwinsEnergyManager;
 import baModDeveloper.helpers.Character3DHelper;
@@ -16,19 +15,25 @@ import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import baModDeveloper.ui.panels.BATwinsExperencePanel;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMidoriOrb;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMomoiOrb;
+import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
+import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
 import basemod.abstracts.CustomEnergyOrb;
+import basemod.abstracts.CustomMultiPageFtue;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -37,24 +42,28 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 
 public class BATwinsCharacter extends CustomPlayer {
     private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder");
     private static final String BATWINS_CHARACTER_SHOULDER_2 = ModHelper.makeImgPath("char", "shoulder2");
-    private static final String BATWINS_CHARACTER_CORPSE = ModHelper.makeImgPath("char", "corpse");
-    private static final String[] MOMOI_ORB_TEXTURES = new String[] {
+    private static final String BATWINS_CHARACTER_CORPSE = BATwinsMod.Enable3D ? ModHelper.makeImgPath("char", "p") : ModHelper.makeImgPath("char", "corpse");
+    private static final String[] MOMOI_ORB_TEXTURES = new String[]{
             ModHelper.makeImgPath("UI/orb", "layer1_momoi"),
             ModHelper.makeImgPath("UI/orb", "layer2_momoi"),
             ModHelper.makeImgPath("UI/orb", "layer3_momoi"),
@@ -67,7 +76,7 @@ public class BATwinsCharacter extends CustomPlayer {
             ModHelper.makeImgPath("UI/orb", "layer4d_momoi"),
             ModHelper.makeImgPath("UI/orb", "layer5d_momoi")
     };
-    private static final String[] MIDORI_ORB_TEXTURES = new String[] {
+    private static final String[] MIDORI_ORB_TEXTURES = new String[]{
             ModHelper.makeImgPath("UI/orb", "layer1_midori"),
             ModHelper.makeImgPath("UI/orb", "layer2_midori"),
             ModHelper.makeImgPath("UI/orb", "layer3_midori"),
@@ -81,11 +90,11 @@ public class BATwinsCharacter extends CustomPlayer {
             ModHelper.makeImgPath("UI/orb", "layer5d_midori")
     };
     private static final String MOMOI_ORB_VFX = ModHelper.makeImgPath("UI/orb", "vfx_momoi");
-    private static final String MIDORI_ORB_VFX=ModHelper.makeImgPath("UI/orb","vfx_midori");
-    private static final String MOMOI_ORB_MARK=ModHelper.makeImgPath("UI/orb","orbMark_momoi");
-    private static final String MIDORI_ORB_MARK=ModHelper.makeImgPath("UI/orb","orbMark_midori");
-    private static final float[] LAYER_SPEED = new float[] { -40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F,
-            -5.0F, 0.0F };
+    private static final String MIDORI_ORB_VFX = ModHelper.makeImgPath("UI/orb", "vfx_midori");
+    private static final String MOMOI_ORB_MARK = ModHelper.makeImgPath("UI/orb", "orbMark_momoi");
+    private static final String MIDORI_ORB_MARK = ModHelper.makeImgPath("UI/orb", "orbMark_midori");
+    private static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F,
+            -5.0F, 0.0F};
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack
             .getCharacterString(ModHelper.makePath("Twins"));
 
@@ -103,40 +112,46 @@ public class BATwinsCharacter extends CustomPlayer {
 //            ModHelper.makeGifPath("char",ModHelper.MIDORI_FLODER,"run")
 //
 //    };
-    private ArrayList<AbstractAnimation> anima_momoi;
-    private ArrayList<AbstractAnimation> anima_midori;
-    private int anim_time_momoi=0;
-    private int anim_len_momoi=0;
-    private int anim_time_midori=0;
-    private int anim_len_midori=0;
-    private AbstractAnimation rendered_anima_momoi;
-    private AbstractAnimation rendered_anima_midori;
+//    private ArrayList<AbstractAnimation> anima_momoi;
+//    private ArrayList<AbstractAnimation> anima_midori;
+//    private int anim_time_momoi = 0;
+//    private int anim_len_momoi = 0;
+//    private int anim_time_midori = 0;
+//    private int anim_len_midori = 0;
+//    private AbstractAnimation rendered_anima_momoi;
+//    private AbstractAnimation rendered_anima_midori;
     //3D相关
-    Character3DHelper character3DHelper;
+    private static final Character3DHelper character3DHelper = new Character3DHelper();
 
     BATwinsExperencePanel expPanel;
 
     //排序手牌
     ColorComparer colorComparer;
     //角色立绘，先暂时使用图片代替，之后使用3d模型替换
-    private static final String stand_Img=ModHelper.makeImgPath("char","standup");
-//    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
+    private static final String stand_Img = BATwinsMod.Enable3D ? ModHelper.makeImgPath("char", "p") : ModHelper.makeImgPath("char", "standup");
+
+    //    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
     public BATwinsCharacter(String name) {
         super(name, Enums.BATwins, MOMOI_ORB_TEXTURES, MOMOI_ORB_VFX, LAYER_SPEED, null, null);
-        this.dialogX = (this.drawX + 0.0F * Settings.scale);
-        this.dialogY = (this.drawY + 0.0F * Settings.scale);
 
-        this.energyOrbMomoi = new BATwinsEnergyMomoiOrb(MOMOI_ORB_TEXTURES, MOMOI_ORB_VFX, LAYER_SPEED,MOMOI_ORB_MARK);
-        this.energyOrbMidori = new BATwinsEnergyMidoriOrb(MIDORI_ORB_TEXTURES, MIDORI_ORB_VFX, LAYER_SPEED,MIDORI_ORB_MARK);
+
+        this.energyOrbMomoi = new BATwinsEnergyMomoiOrb(MOMOI_ORB_TEXTURES, MOMOI_ORB_VFX, LAYER_SPEED, MOMOI_ORB_MARK);
+        this.energyOrbMidori = new BATwinsEnergyMidoriOrb(MIDORI_ORB_TEXTURES, MIDORI_ORB_VFX, LAYER_SPEED, MIDORI_ORB_MARK);
 
         this.initializeClass(stand_Img, BATWINS_CHARACTER_SHOULDER_2,
                 BATWINS_CHARACTER_SHOULDER_1, BATWINS_CHARACTER_CORPSE, getLoadout(), 0.0F, 0.0F, 200.0F, 200.0F,
                 new BATwinsEnergyManager(2));
 
         //3D相关
-//        character3DHelper=new Character3DHelper();
 //        character3DHelper.init();
-
+        if (BATwinsMod.Enable3D) {
+            if (!character3DHelper.inited()) {
+                character3DHelper.init();
+            }
+            character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+            character3DHelper.resetDefaultAnima(Enums.BATWINS_MOMOI_CARD);
+            character3DHelper.resetDefaultAnima(Enums.BATWINS_MIDORI_CARD);
+        }
 
     }
 
@@ -163,15 +178,22 @@ public class BATwinsCharacter extends CustomPlayer {
 //        AbstractAnimation.addAnimation(null);
 
 
-        colorComparer=new ColorComparer();
+        colorComparer = new ColorComparer();
 
-        expPanel=new BATwinsExperencePanel(this.drawX-230*Settings.scale,this.drawY);
+        expPanel = new BATwinsExperencePanel(this.drawX - 230 * Settings.scale, this.drawY);
         expPanel.show();
+        this.dialogX = (this.drawX + 0.0F * Settings.scale);
+        this.dialogY = this.drawY + 170.0F * Settings.scale;
     }
 
     @Override
     public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
+        if (MathUtils.randomBoolean()) {
+            CardCrawlGame.sound.play(ModHelper.makePath("charSelect_momoi"));
+        } else {
+            CardCrawlGame.sound.play(ModHelper.makePath("charSelect_midori"));
+        }
     }
 
     @Override
@@ -193,13 +215,15 @@ public class BATwinsCharacter extends CustomPlayer {
     public Color getCardTrailColor() {
         return BATwinsMod.BATwinsColor;
     }
-    public Color getCardTrailColor(BATwinsEnergyPanel.EnergyType cardType){
-        if (cardType== BATwinsEnergyPanel.EnergyType.MOMOI){
+
+    public Color getCardTrailColor(BATwinsEnergyPanel.EnergyType cardType) {
+        if (cardType == BATwinsEnergyPanel.EnergyType.MOMOI) {
             return BATwinsMod.MOMOIColor;
-        }else{
+        } else {
             return BATwinsMod.MIDORIColor;
         }
     }
+
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
         return "ATTACK_HEAVY";
@@ -228,10 +252,10 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public AttackEffect[] getSpireHeartSlashEffect() {
-        return new AbstractGameAction.AttackEffect[] { AbstractGameAction.AttackEffect.SLASH_HEAVY,
+        return new AbstractGameAction.AttackEffect[]{AbstractGameAction.AttackEffect.SLASH_HEAVY,
                 AbstractGameAction.AttackEffect.FIRE, AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
                 AbstractGameAction.AttackEffect.SLASH_HEAVY, AbstractGameAction.AttackEffect.FIRE,
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL };
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL};
     }
 
     @Override
@@ -258,10 +282,10 @@ public class BATwinsCharacter extends CustomPlayer {
         retVal.add(BATwinsAlreadyAngry.ID);
         retVal.add(BATwinsPaintingConception.ID);
 
-        if(BATwinsCharacterOptionPatch.updateHitboxPatch.FindEasterEgg){
+        if (BATwinsCharacterOptionPatch.updateHitboxPatch.FindEasterEgg) {
             this.masterDeck.addToBottom(new BATwinsEasterEgg());
-            BATwinsCharacterOptionPatch.updateHitboxPatch.PressCount=0;
-            BATwinsCharacterOptionPatch.updateHitboxPatch.FindEasterEgg=false;
+            BATwinsCharacterOptionPatch.updateHitboxPatch.PressCount = 0;
+            BATwinsCharacterOptionPatch.updateHitboxPatch.FindEasterEgg = false;
         }
         return retVal;
     }
@@ -312,12 +336,16 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public Texture getEnergyImage() {
-        return super.getEnergyImage();
+        if (Objects.requireNonNull(BATwinsEnergyPanel.selectedEnergySlot) == BATwinsEnergyPanel.EnergyType.MIDORI) {
+            return BATwinsMidoriEnergyOrbSmall.getTEXTRUE();
+        }
+        return BATwinsMomoiEnergyOrbSmall.getTEXTRUE();
     }
 
-    public Texture[] getEnergyImages(){
-        return new Texture[]{((CustomEnergyOrb)this.energyOrbMomoi).getEnergyImage(),((CustomEnergyOrb)energyOrbMidori).getEnergyImage()};
+    public Texture[] getEnergyImages() {
+        return new Texture[]{((CustomEnergyOrb) this.energyOrbMomoi).getEnergyImage(), ((CustomEnergyOrb) energyOrbMidori).getEnergyImage()};
     }
+
     @Override
     public void updateOrb(int totalCount) {
         this.energyOrbMomoi.updateOrb(totalCount);
@@ -330,22 +358,28 @@ public class BATwinsCharacter extends CustomPlayer {
     }
 
     @Override
-    public void gainEnergy(int e){
-        BATwinsEnergyPanel.addEnergy(e, BATwinsEnergyPanel.EnergyType.ALL);
+    public void gainEnergy(int e) {
+        BATwinsEnergyPanel.addEnergy(e, BATwinsEnergyPanel.EnergyType.SPEIFY);
         this.hand.glowCheck();
     }
-    public void gainEnergy(int e, BATwinsEnergyPanel.EnergyType type){
-        BATwinsEnergyPanel.addEnergy(e,type);
+
+    public void gainEnergy(int e, BATwinsEnergyPanel.EnergyType type) {
+        BATwinsEnergyPanel.addEnergy(e, type);
         this.hand.glowCheck();
     }
 
     @Override
-    public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool){
+    public void loseEnergy(int e) {
+        BATwinsEnergyPanel.useEnergy(e);
+    }
+
+    @Override
+    public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool) {
         AbstractCard.CardColor MomoiColor = Enums.BATWINS_MOMOI_CARD;
-        AbstractCard.CardColor MidoriColor=Enums.BATWINS_MIDORI_CARD;
+        AbstractCard.CardColor MidoriColor = Enums.BATWINS_MIDORI_CARD;
         Iterator var3 = CardLibrary.cards.entrySet().iterator();
 
-        while(true) {
+        while (true) {
             Map.Entry c;
             AbstractCard card;
             do {
@@ -355,11 +389,11 @@ public class BATwinsCharacter extends CustomPlayer {
                             return tmpPool;
                         }
 
-                        c = (Map.Entry)var3.next();
-                        card = (AbstractCard)c.getValue();
-                    } while(!card.color.equals(MomoiColor)&&!card.color.equals(MidoriColor));
-                } while(card.rarity == AbstractCard.CardRarity.BASIC);
-            } while(UnlockTracker.isCardLocked((String)c.getKey()) && !Settings.isDailyRun);
+                        c = (Map.Entry) var3.next();
+                        card = (AbstractCard) c.getValue();
+                    } while (!card.color.equals(MomoiColor) && !card.color.equals(MidoriColor));
+                } while (card.rarity == AbstractCard.CardRarity.BASIC);
+            } while (UnlockTracker.isCardLocked((String) c.getKey()) && !Settings.isDailyRun);
 
             tmpPool.add(card);
         }
@@ -379,13 +413,13 @@ public class BATwinsCharacter extends CustomPlayer {
         if (c.cost == -1 && c.isInAutoplay) {
             c.freeToPlayOnce = true;
         }
-        if(!(c instanceof BATwinsModCustomCard)){
-            if(!BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.get(c)){
+        if (!(c instanceof BATwinsModCustomCard)) {
+            if (!BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.get(c)) {
                 c.use(this, monster);
-            }else{
-                BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(c,false);
+            } else {
+                BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(c, false);
             }
-        }else{
+        } else {
             c.use(this, monster);
         }
         AbstractDungeon.actionManager.addToBottom(new UseCardAction(c, monster));
@@ -395,16 +429,16 @@ public class BATwinsCharacter extends CustomPlayer {
 
         this.hand.removeCard(c);
         this.cardInUse = c;
-        c.target_x = (float)(Settings.WIDTH / 2);
-        c.target_y = (float)(Settings.HEIGHT / 2);
+        c.target_x = (float) (Settings.WIDTH / 2);
+        c.target_y = (float) (Settings.HEIGHT / 2);
         if (c.costForTurn > 0 && !c.freeToPlay() && !c.isInAutoplay && (!this.hasPower("Corruption") || c.type != AbstractCard.CardType.SKILL)) {
-            if(c instanceof BATwinsModCustomCard&&this.energy instanceof BATwinsEnergyManager){
-                if(AbstractDungeon.player.hasPower(BATwinsBorrowMePower.POWER_ID)){
-                    ((BATwinsEnergyManager)this.energy).use(c.costForTurn, BATwinsEnergyPanel.EnergyType.SHARE);
-                }else{
-                    ((BATwinsEnergyManager)this.energy).use(c.costForTurn,((BATwinsModCustomCard) c).modifyEnergyType);
+            if (c instanceof BATwinsModCustomCard && this.energy instanceof BATwinsEnergyManager) {
+                if (AbstractDungeon.player.hasPower(BATwinsBorrowMePower.POWER_ID)) {
+                    ((BATwinsEnergyManager) this.energy).use(c.costForTurn, BATwinsEnergyPanel.EnergyType.SHARE);
+                } else {
+                    ((BATwinsEnergyManager) this.energy).use(c.costForTurn, ((BATwinsModCustomCard) c).modifyEnergyType);
                 }
-            }else{
+            } else {
                 this.energy.use(c.costForTurn);
             }
         }
@@ -415,18 +449,18 @@ public class BATwinsCharacter extends CustomPlayer {
 
     }
 
-    public TextureAtlas.AtlasRegion getOrb(String word){
-        if(word.equals("[TE]")){
+    public TextureAtlas.AtlasRegion getOrb(String word) {
+        if (word.equals("[TE]")) {
             return ImageHelper.MOMOISMALLORB;
-        }else{
+        } else {
             return ImageHelper.MIDORISMALLORB;
         }
     }
 
-    public static CardColor getOtherColor(CardColor color){
-        if(color==Enums.BATWINS_MOMOI_CARD){
+    public static CardColor getOtherColor(CardColor color) {
+        if (color == Enums.BATWINS_MOMOI_CARD) {
             return Enums.BATWINS_MIDORI_CARD;
-        }else if(color==Enums.BATWINS_MIDORI_CARD){
+        } else if (color == Enums.BATWINS_MIDORI_CARD) {
             return Enums.BATWINS_MOMOI_CARD;
         }
         return color;
@@ -435,22 +469,34 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public void update() {
         super.update();
-//        this.character3DHelper.update();
+
         //排序手牌
-        if(AbstractDungeon.getCurrRoom().phase== AbstractRoom.RoomPhase.COMBAT) {
-            if(BATwinsMod.AutoSort)
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            if (BATwinsMod.AutoSort&&AbstractDungeon.actionManager.actions.isEmpty())
                 this.hand.group.sort(colorComparer);
-            if(BATwinsMod.ShowExpBar)
+            if (BATwinsMod.ShowExpBar){
+                this.expPanel.updatePosition(this.drawX - 230 * Settings.scale, this.drawY);
+                this.dialogX = (this.drawX + 0.0F * Settings.scale);
+                this.dialogY = this.drawY + 170.0F * Settings.scale;
                 this.expPanel.update();
+
+            }
+//            if(BATwinsMod.Enable3D)
+//                character3DHelper.update();
+
+        }
+        if (BATwinsMod.Enable3D && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+            character3DHelper.update();
 
         }
     }
+
     private static final Color BLUE_BORDER_GLOW_COLOR = new Color(0.2F, 0.9F, 1.0F, 0.25F);
 
-    public static Color getColorWithCardColor(CardColor color){
-        if(color==Enums.BATWINS_MOMOI_CARD){
+    public static Color getColorWithCardColor(CardColor color) {
+        if (color == Enums.BATWINS_MOMOI_CARD) {
             return BATwinsMod.MOMOIColor.cpy();
-        }else if(color==Enums.BATWINS_MIDORI_CARD){
+        } else if (color == Enums.BATWINS_MIDORI_CARD) {
             return BATwinsMod.MIDORIColor.cpy();
         }
         return BLUE_BORDER_GLOW_COLOR.cpy();
@@ -467,9 +513,15 @@ public class BATwinsCharacter extends CustomPlayer {
 //        }
         super.render(sb);
 
-        if(BATwinsMod.ShowExpBar&&AbstractDungeon.getCurrRoom().phase==AbstractRoom.RoomPhase.COMBAT)
+        if (BATwinsMod.ShowExpBar && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
             this.expPanel.render(sb);
-//        character3DHelper.render(sb,this.drawX,this.drawY);
+        if (BATwinsMod.Enable3D && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+            if (this.currentHealth == 0) {
+                character3DHelper.update();
+            }
+
+            character3DHelper.render(sb,this.flipHorizontal);
+        }
     }
 //    public enum AnimationChar{
 //        MOMOI,
@@ -513,15 +565,91 @@ public class BATwinsCharacter extends CustomPlayer {
 //        }
 //    }
 
-    public void onEnterRoom(){
+    public void onEnterRoom() {
         //设置进入房间时的动画
-//        this.setAnimation(AnimationChar.MOMOI,Animation.RUN);
-//        this.setAnimation(AnimationChar.MIDORI,Animation.RUN);
+        if (BATwinsMod.Enable3D) {
+            character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+            character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.MOVING);
+            character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.MOVING);
+        }
     }
 
+    public void setMomoiAnimation(Character3DHelper.MomoiActionList anima) {
+        if (BATwinsMod.Enable3D) {
+            character3DHelper.setMomoiAnimation(anima);
+        }
+    }
+
+    public void setMidoriAnimation(Character3DHelper.MidoriActionList anima) {
+        if (BATwinsMod.Enable3D) {
+            character3DHelper.setMidoriAnimation(anima);
+        }
+    }
 
     @Override
     public boolean saveFileExists() {
         return super.saveFileExists();
+    }
+
+    @Override
+    public void damage(DamageInfo info) {
+        super.damage(info);
+//        if(this.currentBlock==0&&info.output>0&&this.currentHealth>0){
+//            CardCrawlGame.sound.play(ModHelper.makeAudioPath("affected_momoi"));
+//        }
+    }
+
+    public static Character3DHelper get3DHelper() {
+        return character3DHelper;
+    }
+
+
+    @Override
+    public void playDeathAnimation() {
+        if (BATwinsMod.Enable3D) {
+            character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.DYING);
+            character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.DYING);
+        }
+
+    }
+
+    @Override
+    public void applyPreCombatLogic() {
+        if (BATwinsMod.Tutorial) {
+            AbstractDungeon.ftue = new CustomMultiPageFtue(new Texture[]{
+                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial", "Tutorial1")),
+                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial", "Tutorial2")),
+                    ImageMaster.loadImage(ModHelper.makeImgPath("UI/Tutorial", "Tutorial3")),
+
+            }, CardCrawlGame.languagePack.getUIString(ModHelper.makePath("Tutorial")).TEXT);
+
+            BATwinsMod.Tutorial = false;
+            try {
+                SpireConfig spireConfig = new SpireConfig("BATwinsMod", "Common");
+                spireConfig.setBool(ModHelper.makePath("Enable3D"), BATwinsMod.Tutorial);
+                spireConfig.save();
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+        if(this.drawX==Settings.WIDTH/2.0F){
+            character3DHelper.setPosition(Settings.WIDTH * 0.28F, Settings.HEIGHT * 0.07F);
+
+        }else{
+            character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+        }
+        super.applyPreCombatLogic();
+    }
+
+    @Override
+    public void applyStartOfTurnPreDrawCards() {
+        if (BATwinsMod.Enable3D) {
+            character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.RELOAD);
+            character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.RELOAD);
+        }
+
+        super.applyStartOfTurnPreDrawCards();
     }
 }

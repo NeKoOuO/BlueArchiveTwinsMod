@@ -12,42 +12,42 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
-public class BATwinsPoisonGasBomb extends BATwinsModCustomCard{
-    public static final String ID= ModHelper.makePath("PoisonGasBomb");
-    private static final CardStrings CARD_STRINGS= CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String NAME=CARD_STRINGS.NAME;
-    private static final String IMG_PATH=ModHelper.makeImgPath("cards","defaultSkill");
-    private static final int COST=2;
-    private static final String DESCRIPTION=CARD_STRINGS.DESCRIPTION;
-    private static final CardType TYPE=CardType.SKILL;
-    private static final CardColor COLOR= BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
-    private static final CardTarget TARGET=CardTarget.ENEMY;
-    private static final CardRarity RARITY=CardRarity.COMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MIDORI;
+public class BATwinsPoisonGasBomb extends BATwinsModCustomCard {
+    public static final String ID = ModHelper.makePath("PoisonGasBomb");
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String NAME = CARD_STRINGS.NAME;
+    private static final String IMG_PATH = ModHelper.makeImgPath("cards", "PoisonGasBomb");
+    private static final int COST = 2;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MIDORI;
 
     public BATwinsPoisonGasBomb() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber=4;
-        this.magicNumber=this.baseMagicNumber;
+        this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new BATwinsBurnPower(abstractMonster,abstractPlayer,this.magicNumber)));
-        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new PoisonPower(abstractMonster,abstractPlayer,this.magicNumber)));
-        addToBot(new BATwinsOneMoreAction(BATwinsBurnPower.POWER_ID,abstractMonster));
+        addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new BATwinsBurnPower(abstractMonster, abstractPlayer, this.magicNumber)));
+        addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new PoisonPower(abstractMonster, abstractPlayer, this.magicNumber)));
+        addToBot(new BATwinsOneMoreAction(BATwinsBurnPower.POWER_ID, abstractMonster));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new PoisonPower(abstractMonster,abstractPlayer,this.magicNumber)));
-        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new BATwinsBurnPower(abstractMonster,abstractPlayer,this.magicNumber)));
-        addToBot(new BATwinsOneMoreAction(PoisonPower.POWER_ID,abstractMonster));
+        addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new PoisonPower(abstractMonster, abstractPlayer, this.magicNumber)));
+        addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new BATwinsBurnPower(abstractMonster, abstractPlayer, this.magicNumber)));
+        addToBot(new BATwinsOneMoreAction(PoisonPower.POWER_ID, abstractMonster));
     }
 
     @Override
     public void upgrade() {
-        if(!this.upgraded){
+        if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
 

@@ -4,59 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="卡牌效果修改：光速打击，切换打击，见着有份，强制连锁，暂且休整，借用一下">
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsClearBringOutCardAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsBullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsContinuousShooting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/effect/BATwinsEasterEggEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/Chain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/EasterEgg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/scence/Batwins1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/scence/Batwins2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/scence/Batwins3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/UI/test.png" afterDir="false" />
+    <list default="true" id="77b87023-3620-4d84-96c3-9b60100e36e6" name="Changes" comment="修复‘女仆装’效果问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/BATwinsMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/BATwinsMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsDeveloperCollaboration.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsDeveloperCollaboration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsDualProtection.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsDualProtection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsEasterEgg.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsEasterEgg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsEnchantedBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsEnchantedBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLightSpeedStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLightSpeedStrike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsPoisonGasBomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsPoisonGasBomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsSelfConnectivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsSelfConnectivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/helpers/ImageHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/helpers/ImageHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsCharacterOptionPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsCharacterOptionPatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsDeveloperCollaborationPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsDeveloperCollaborationPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/EnchantedBullet.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/EnchantedBullet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/EnchantedBullet_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/img/cards/EnchantedBullet_p.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/cards.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/cards.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/keyword.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/keyword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/power.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/resources/baModResources/localization/ZHS/power.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/BATwinsMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/BATwinsMod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsDeveloperCollaboration.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsDeveloperCollaboration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsDualProtection.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsDualProtection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsEasterEgg.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsEasterEgg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsEnchantedBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsEnchantedBullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsLightSpeedStrike.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsLightSpeedStrike.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$BATwinsAttackEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$BATwinsAttackEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$BATwinsCardTags.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard$BATwinsCardTags.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsModCustomCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsPoisonGasBomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsPoisonGasBomb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsSelfConnectivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/cards/BATwinsSelfConnectivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter$Enums.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter$Enums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/character/BATwinsCharacter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/helpers/ImageHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/helpers/ImageHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch$updateHitboxPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch$updateHitboxPatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/patch/BATwinsCharacterOptionPatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/power/BATwinsDeveloperCollaborationPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModDeveloper/power/BATwinsDeveloperCollaborationPower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/img/cards/EnchantedBullet.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/img/cards/EnchantedBullet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/img/cards/EnchantedBullet_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/img/cards/EnchantedBullet_p.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/cards.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/cards.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/keyword.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/keyword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/power.json" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/classes/baModResources/localization/ZHS/power.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue_archive_mod/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsBulletWarehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsBulletWarehouse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -102,30 +57,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/22308/Documents/JavaProjects/smileMod&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "C:/Users/22308/Documents/JavaProjects/blue_archive_mod/blue_archive_mod/src/main/resources/baModResources/sound",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="baModDeveloper.action" />
       <recent name="baModDeveloper.power" />
+      <recent name="baModDeveloper.action" />
       <recent name="baModDeveloper.effect" />
       <recent name="baModDeveloper.cards" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\22308\Documents\JavaProjects\blue_archive_mod\blue_archive_mod\src\main\resources\baModResources\sound" />
     </key>
   </component>
   <component name="RunManager">
@@ -228,119 +187,18 @@
       <workItem from="1708950692469" duration="8222000" />
       <workItem from="1709030140582" duration="7386000" />
       <workItem from="1709121944751" duration="3925000" />
-      <workItem from="1709208145506" duration="10002000" />
-    </task>
-    <task id="LOCAL-00001" summary="部分图片重新制作，万恶的idea！！！">
-      <option name="closed" value="true" />
-      <created>1697470238247</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1697470238247</updated>
-    </task>
-    <task id="LOCAL-00002" summary="增加animation模块。&#10;增加readme。">
-      <option name="closed" value="true" />
-      <created>1697470949581</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1697470949581</updated>
-    </task>
-    <task id="LOCAL-00003" summary="基本功能制作完毕，接下来基本上制作卡牌就行。">
-      <option name="closed" value="true" />
-      <created>1697555887238</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1697555887238</updated>
-    </task>
-    <task id="LOCAL-00004" summary="基本功能制作完毕，接下来基本上制作卡牌就行。">
-      <option name="closed" value="true" />
-      <created>1697555923792</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1697555923792</updated>
-    </task>
-    <task id="LOCAL-00005" summary="基本功能制作完毕，接下来基本上制作卡牌就行。">
-      <option name="closed" value="true" />
-      <created>1697555951566</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1697555951566</updated>
-    </task>
-    <task id="LOCAL-00006" summary="增加卡牌：&#10;我生气了；画面构思；阵痛；绘画艺术；开发者协同；交换">
-      <option name="closed" value="true" />
-      <created>1697904465533</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1697904465533</updated>
-    </task>
-    <task id="LOCAL-00007" summary="增加卡牌，现在卡牌效果分为两种了">
-      <option name="closed" value="true" />
-      <created>1698073947568</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1698073947568</updated>
-    </task>
-    <task id="LOCAL-00008" summary="增加卡牌">
-      <option name="closed" value="true" />
-      <created>1698418509056</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1698418509056</updated>
-    </task>
-    <task id="LOCAL-00009" summary="增加卡牌">
-      <option name="closed" value="true" />
-      <created>1699971173976</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1699971173976</updated>
-    </task>
-    <task id="LOCAL-00010" summary="增加卡牌">
-      <option name="closed" value="true" />
-      <created>1700409398594</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1700409398594</updated>
-    </task>
-    <task id="LOCAL-00011" summary="增加卡牌&#10;增加初始遗物">
-      <option name="closed" value="true" />
-      <created>1701476717428</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1701476717428</updated>
-    </task>
-    <task id="LOCAL-00012" summary="增加卡牌&#10;增加卡图">
-      <option name="closed" value="true" />
-      <created>1701789732950</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1701789732950</updated>
-    </task>
-    <task id="LOCAL-00013" summary="增加卡牌&#10;增加卡图&#10;增加火堆交换事件">
-      <option name="closed" value="true" />
-      <created>1702204223499</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1702204223499</updated>
-    </task>
-    <task id="LOCAL-00014" summary="增加卡牌">
-      <option name="closed" value="true" />
-      <created>1702569693740</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1702569693740</updated>
+      <workItem from="1709208145506" duration="10972000" />
+      <workItem from="1709303797837" duration="6576000" />
+      <workItem from="1709347086897" duration="52621000" />
+      <workItem from="1709636722752" duration="71216000" />
+      <workItem from="1710418378741" duration="7685000" />
+      <workItem from="1710509629831" duration="43658000" />
+      <workItem from="1710665184536" duration="14374000" />
+      <workItem from="1710772251755" duration="94000" />
+      <workItem from="1710772530232" duration="1429000" />
+      <workItem from="1710775403829" duration="185000" />
+      <workItem from="1710845043240" duration="9141000" />
+      <workItem from="1710930036913" duration="64740000" />
     </task>
     <task id="LOCAL-00015" summary="增加卡牌">
       <option name="closed" value="true" />
@@ -534,13 +392,218 @@
       <option name="project" value="LOCAL" />
       <updated>1708958929008</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="增加存储牌锁链效果。增加连续射击">
+      <option name="closed" value="true" />
+      <created>1709223163115</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1709223163115</updated>
+    </task>
+    <task id="LOCAL-00040" summary="删除几张牌。改了获得临时能量为指定能量槽而不是全获得。">
+      <option name="closed" value="true" />
+      <created>1709305430941</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1709305430941</updated>
+    </task>
+    <task id="LOCAL-00041" summary="修改了能量获取，现在获得临时能量的效果只会获得指定能量。增加了灼伤的血量表示。">
+      <option name="closed" value="true" />
+      <created>1709360052726</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1709360052726</updated>
+    </task>
+    <task id="LOCAL-00042" summary="删除：糟糕设计师，防守打击，引火上身，蓄力打击，登入奖励&#10;更改：开发者协同，光速打击，切换打击，见着有份，自我连携，装备升级&#10;增加：重型子弹，破甲子弹，淬毒子弹，燃烧子弹，狙击子弹，连续射击，稳定射击，胡乱射击，集中射击，武器库，上膛">
+      <option name="closed" value="true" />
+      <created>1709392676770</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1709392676770</updated>
+    </task>
+    <task id="LOCAL-00043" summary="删除：糟糕设计师，防守打击，引火上身，蓄力打击，登入奖励&#10;更改：开发者协同，光速打击，切换打击，见着有份，自我连携，装备升级&#10;增加：重型子弹，破甲子弹，淬毒子弹，燃烧子弹，狙击子弹，连续射击，稳定射击，胡乱射击，集中射击，武器库，上膛">
+      <option name="closed" value="true" />
+      <created>1709392778635</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1709392778635</updated>
+    </task>
+    <task id="LOCAL-00044" summary="格式化文件，去除了无用的include">
+      <option name="closed" value="true" />
+      <created>1709392858296</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1709392858296</updated>
+    </task>
+    <task id="LOCAL-00045" summary="修改：连续射击，扩容弹夹，稳定射击，胡乱射击，集中射击，女仆形态，贯通伤害，苦呀西，">
+      <option name="closed" value="true" />
+      <created>1709450397777</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1709450397777</updated>
+    </task>
+    <task id="LOCAL-00046" summary="一点修改以及代码格式化">
+      <option name="closed" value="true" />
+      <created>1709461435727</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1709461435727</updated>
+    </task>
+    <task id="LOCAL-00047" summary="增加卡图，部分卡片数值更改">
+      <option name="closed" value="true" />
+      <created>1709562462192</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1709562462192</updated>
+    </task>
+    <task id="LOCAL-00048" summary="增加卡图，增加模型控制开关">
+      <option name="closed" value="true" />
+      <created>1709641240397</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1709641240398</updated>
+    </task>
+    <task id="LOCAL-00049" summary="调整模型位置，修改卡牌数值">
+      <option name="closed" value="true" />
+      <created>1709737401922</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1709737401922</updated>
+    </task>
+    <task id="LOCAL-00050" summary="修改3D结构，同时渲染两个模型，增加卡图，增加模型。">
+      <option name="closed" value="true" />
+      <created>1710519839213</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1710519839213</updated>
+    </task>
+    <task id="LOCAL-00051" summary="修改3D结构，同时渲染两个模型，增加卡图，增加模型。">
+      <option name="closed" value="true" />
+      <created>1710519980475</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1710519980475</updated>
+    </task>
+    <task id="LOCAL-00052" summary="增加卡图">
+      <option name="closed" value="true" />
+      <created>1710769334181</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1710769334181</updated>
+    </task>
+    <task id="LOCAL-00053" summary="代码规范">
+      <option name="closed" value="true" />
+      <created>1710769520722</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1710769520722</updated>
+    </task>
+    <task id="LOCAL-00054" summary="最后一点修改！">
+      <option name="closed" value="true" />
+      <created>1710770562704</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1710770562704</updated>
+    </task>
+    <task id="LOCAL-00055" summary="修改bug，增加3个药水">
+      <option name="closed" value="true" />
+      <created>1710943790672</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1710943790672</updated>
+    </task>
+    <task id="LOCAL-00056" summary="增加灼伤药水，修改融会贯通效果">
+      <option name="closed" value="true" />
+      <created>1710950945696</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1710950945697</updated>
+    </task>
+    <task id="LOCAL-00057" summary="增加灼伤药水，修改融会贯通效果">
+      <option name="closed" value="true" />
+      <created>1710950964909</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1710950964909</updated>
+    </task>
+    <task id="LOCAL-00058" summary="一些bug修改">
+      <option name="closed" value="true" />
+      <created>1711122750718</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1711122750718</updated>
+    </task>
+    <task id="LOCAL-00059" summary="加回了彩蛋音乐">
+      <option name="closed" value="true" />
+      <created>1711167802398</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1711167802398</updated>
+    </task>
+    <task id="LOCAL-00060" summary="修改‘分头行动’‘交替攻击’">
+      <option name="closed" value="true" />
+      <created>1711169274130</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1711169274131</updated>
+    </task>
+    <task id="LOCAL-00061" summary="增加了多个遗物，1个事件。削弱‘绘画艺术’的伤害">
+      <option name="closed" value="true" />
+      <created>1711272123528</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1711272123528</updated>
+    </task>
+    <task id="LOCAL-00062" summary="让‘作弊码开启’能触发抽牌时的效果">
+      <option name="closed" value="true" />
+      <created>1711275118513</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1711275118513</updated>
+    </task>
+    <task id="LOCAL-00063" summary="修复‘女仆装’效果问题">
+      <option name="closed" value="true" />
+      <created>1711283003931</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1711283003931</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="daed7c1c-8b79-467f-95e8-c315d3c5e1ca" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -560,18 +623,31 @@
       <map>
         <entry key="MAIN">
           <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="daed7c1c-8b79-467f-95e8-c315d3c5e1ca">
+          <value>
             <State>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/22308/Documents/JavaProjects/blue_archive_mod/blue_archive_mod/src/main/resources/baModResources/sound" />
                       </list>
                     </value>
                   </entry>
                 </map>
               </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
             </State>
           </value>
         </entry>
@@ -580,35 +656,39 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="部分图片重新制作，万恶的idea！！！" />
-    <MESSAGE value="增加animation模块。&#10;增加readme。" />
-    <MESSAGE value="基本功能制作完毕，接下来基本上制作卡牌就行。" />
-    <MESSAGE value="增加卡牌：&#10;我生气了；画面构思；阵痛；绘画艺术；开发者协同；交换" />
-    <MESSAGE value="增加卡牌，现在卡牌效果分为两种了" />
-    <MESSAGE value="增加卡牌&#10;增加初始遗物" />
-    <MESSAGE value="增加卡牌&#10;增加卡图" />
-    <MESSAGE value="增加卡牌&#10;增加卡图&#10;增加火堆交换事件" />
-    <MESSAGE value="增加卡牌" />
-    <MESSAGE value="增加卡牌&#10;增加了手牌排序" />
-    <MESSAGE value="增加了卡牌展示时交换按钮" />
-    <MESSAGE value="增加卡牌，增加卡图" />
-    <MESSAGE value="增加3d模型" />
-    <MESSAGE value="修改了卡图背景" />
-    <MESSAGE value="修改了卡图背景,暂时关闭3D模型，增加卡牌，修复问题" />
-    <MESSAGE value="增加模型文件" />
-    <MESSAGE value="增加mod选项，增加经验值条" />
-    <MESSAGE value="增加经验条，增加选项" />
     <MESSAGE value="增加模型" />
     <MESSAGE value="增加小彩蛋" />
     <MESSAGE value="卡牌效果修改：光速打击，切换打击，见着有份，强制连锁，暂且休整，借用一下" />
-    <option name="LAST_COMMIT_MESSAGE" value="卡牌效果修改：光速打击，切换打击，见着有份，强制连锁，暂且休整，借用一下" />
+    <MESSAGE value="增加存储牌锁链效果。增加连续射击" />
+    <MESSAGE value="删除几张牌。改了获得临时能量为指定能量槽而不是全获得。" />
+    <MESSAGE value="修改了能量获取，现在获得临时能量的效果只会获得指定能量。增加了灼伤的血量表示。" />
+    <MESSAGE value="删除：糟糕设计师，防守打击，引火上身，蓄力打击，登入奖励&#10;更改：开发者协同，光速打击，切换打击，见着有份，自我连携，装备升级&#10;增加：重型子弹，破甲子弹，淬毒子弹，燃烧子弹，狙击子弹，连续射击，稳定射击，胡乱射击，集中射击，武器库，上膛" />
+    <MESSAGE value="格式化文件，去除了无用的include" />
+    <MESSAGE value="修改：连续射击，扩容弹夹，稳定射击，胡乱射击，集中射击，女仆形态，贯通伤害，苦呀西，" />
+    <MESSAGE value="一点修改以及代码格式化" />
+    <MESSAGE value="增加卡图，部分卡片数值更改" />
+    <MESSAGE value="增加卡图，增加模型控制开关" />
+    <MESSAGE value="调整模型位置，修改卡牌数值" />
+    <MESSAGE value="修改3D结构，同时渲染两个模型，增加卡图，增加模型。" />
+    <MESSAGE value="增加卡图" />
+    <MESSAGE value="代码规范" />
+    <MESSAGE value="最后一点修改！" />
+    <MESSAGE value="修改bug，增加3个药水" />
+    <MESSAGE value="增加灼伤药水，修改融会贯通效果" />
+    <MESSAGE value="一些bug修改" />
+    <MESSAGE value="加回了彩蛋音乐" />
+    <MESSAGE value="修改‘分头行动’‘交替攻击’" />
+    <MESSAGE value="增加了多个遗物，1个事件。削弱‘绘画艺术’的伤害" />
+    <MESSAGE value="让‘作弊码开启’能触发抽牌时的效果" />
+    <MESSAGE value="修复‘女仆装’效果问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复‘女仆装’效果问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsMakeTempCardInHandAction.java</url>
-          <line>76</line>
+          <line>78</line>
           <properties class="baModDeveloper.action.BATwinsMakeTempCardInHandAction" method="update">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -617,7 +697,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsCheatingCodeEnabledAction.java</url>
-          <line>31</line>
+          <line>25</line>
           <properties class="baModDeveloper.action.BATwinsCheatingCodeEnabledAction" method="update">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -635,7 +715,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java</url>
-          <line>223</line>
+          <line>226</line>
           <properties class="baModDeveloper.cards.BATwinsModCustomCard" method="use">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -652,15 +732,6 @@
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
-          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsPlayHandCardAction.java</url>
-          <line>49</line>
-          <properties class="baModDeveloper.action.BATwinsPlayHandCardAction" method="update">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint type="java-method">
           <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar!/com/megacrit/cardcrawl/actions/utility/NewQueueCardAction.class</url>
           <line>58</line>
           <properties class="com.megacrit.cardcrawl.actions.utility.NewQueueCardAction" method="update">
@@ -671,16 +742,16 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/patch/BATwinsSingleCardViewPopupPatch.java</url>
-          <line>63</line>
+          <line>65</line>
           <properties class="baModDeveloper.patch.BATwinsSingleCardViewPopupPatch.updatePatch" method="updateExchangePreview">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="249" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsDontSayIt.java</url>
-          <line>81</line>
+          <line>80</line>
           <properties class="baModDeveloper.cards.BATwinsDontSayIt" method="conversionColor">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -689,14 +760,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsMakeTempCardInHandAction.java</url>
-          <line>177</line>
+          <line>179</line>
           <properties class="baModDeveloper.action.BATwinsMakeTempCardInHandAction" method="makeNewCard">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="260" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLearned.java</url>
           <line>55</line>
           <properties class="baModDeveloper.cards.BATwinsLearned" method="useMOMOI">
@@ -705,7 +776,7 @@
           </properties>
           <option name="timeStamp" value="261" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLearned.java</url>
           <line>60</line>
           <properties class="baModDeveloper.cards.BATwinsLearned" method="useMIDORI">
@@ -714,16 +785,16 @@
           </properties>
           <option name="timeStamp" value="262" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsLearnedAction.java</url>
-          <line>26</line>
+          <line>28</line>
           <properties class="baModDeveloper.action.BATwinsLearnedAction" method="update">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="263" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar!/com/megacrit/cardcrawl/helpers/GameTips.class</url>
           <line>32</line>
           <properties class="com.megacrit.cardcrawl.helpers.GameTips" method="getTip">
@@ -732,7 +803,7 @@
           </properties>
           <option name="timeStamp" value="280" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsTakeABreak.java</url>
           <line>70</line>
           <properties class="baModDeveloper.cards.BATwinsTakeABreak" method="triggerOnConnectPlayed">
@@ -741,23 +812,140 @@
           </properties>
           <option name="timeStamp" value="291" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsDeveloperCollaborationPower.java</url>
-          <line>141</line>
+          <line>134</line>
           <properties class="baModDeveloper.power.BATwinsDeveloperCollaborationPower" method="atDamageFinalGive">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="298" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java</url>
-          <line>399</line>
-          <properties class="baModDeveloper.cards.BATwinsModCustomCard" method="renderCardChain">
+        <line-breakpoint type="java-method">
+          <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar!/com/megacrit/cardcrawl/relics/AbstractRelic.class</url>
+          <line>921</line>
+          <properties class="com.megacrit.cardcrawl.relics.AbstractRelic" method="renderTip">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="299" />
+          <option name="timeStamp" value="308" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/ui/panels/BATwinsEnergyPanel.java</url>
+          <line>95</line>
+          <properties class="baModDeveloper.ui.panels.BATwinsEnergyPanel" method="addEnergy">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="310" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/ui/panels/BATwinsEnergyPanel.java</url>
+          <line>99</line>
+          <properties class="baModDeveloper.ui.panels.BATwinsEnergyPanel" method="addEnergy">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsFocusShooting.java</url>
+          <line>55</line>
+          <properties class="baModDeveloper.cards.BATwinsFocusShooting">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLeaveItToMe.java</url>
+          <line>96</line>
+          <properties class="baModDeveloper.cards.BATwinsLeaveItToMe" method="triggerOnConnectPlayed">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="315" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsAccelerateAction.java</url>
+          <line>16</line>
+          <properties class="baModDeveloper.action.BATwinsAccelerateAction" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="359" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar!/com/megacrit/cardcrawl/characters/AbstractPlayer.class</url>
+          <line>2148</line>
+          <properties class="com.megacrit.cardcrawl.characters.AbstractPlayer">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="362" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar!/basemod/abstracts/events/PhasedEvent.class</url>
+          <line>44</line>
+          <properties class="basemod.abstracts.events.PhasedEvent" method="transitionKey">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="363" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/colorless/BATwinsAccelerate.java</url>
+          <line>42</line>
+          <properties class="baModDeveloper.cards.colorless.BATwinsAccelerate" method="use">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="373" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/potion/BATwinsAcceleratePotion.java</url>
+          <line>34</line>
+          <properties class="baModDeveloper.potion.BATwinsAcceleratePotion" method="initializeData">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="376" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsMidoriDefend.java</url>
+          <line>45</line>
+          <properties class="baModDeveloper.cards.BATwinsMidoriDefend" method="useMIDORI">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="381" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar!/com/megacrit/cardcrawl/actions/animations/TalkAction.class</url>
+          <line>45</line>
+          <properties class="com.megacrit.cardcrawl.actions.animations.TalkAction" method="update">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="383" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsHeadbandChice.java</url>
+          <line>62</line>
+          <properties class="baModDeveloper.cards.BATwinsHeadbandChice">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="387" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/relic/BATwinsMaidAttire.java</url>
+          <line>53</line>
+          <properties class="baModDeveloper.relic.BATwinsMaidAttire" method="atTurnStart">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="391" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsMysteriousChest.java</url>
@@ -766,7 +954,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsSelectHandCardToPlayAction.java</url>
-          <line>49</line>
+          <line>51</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -781,17 +969,17 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsDrawCardByColor.java</url>
-          <line>29</line>
+          <line>34</line>
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsExperienceGiftPackage.java</url>
-          <line>42</line>
+          <line>40</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsSelfConnectivity.java</url>
-          <line>76</line>
+          <line>74</line>
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -804,54 +992,54 @@
           <line>2117</line>
           <option name="timeStamp" value="167" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/effect/BATwinsShowCardAndFlashEffect.java</url>
           <line>19</line>
           <option name="timeStamp" value="194" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsAdventureBeginsAction.java</url>
-          <line>74</line>
+          <line>72</line>
           <option name="timeStamp" value="218" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsAdventureBeginsAction.java</url>
-          <line>60</line>
+          <line>58</line>
           <option name="timeStamp" value="221" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsDrawOrDisCardToHandAction.java</url>
-          <line>75</line>
+          <line>77</line>
           <option name="timeStamp" value="223" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/relic/BATwinsByProving.java</url>
-          <line>91</line>
+          <line>93</line>
           <option name="timeStamp" value="229" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar!/com/megacrit/cardcrawl/screens/SingleCardViewPopup.class</url>
           <line>388</line>
           <option name="timeStamp" value="237" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsPenetrationDamage.java</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="257" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsIntegratingAndIntegratingPower.java</url>
-          <line>60</line>
+          <line>61</line>
           <option name="timeStamp" value="259" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsForceDetonationAction.java</url>
-          <line>23</line>
+          <line>24</line>
           <option name="timeStamp" value="267" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsChangeBurnPoiAction.java</url>
-          <line>36</line>
+          <line>38</line>
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -859,25 +1047,96 @@
           <line>20</line>
           <option name="timeStamp" value="281" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/character/BATwinsCharacter.java</url>
-          <line>263</line>
+          <line>287</line>
           <option name="timeStamp" value="289" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLightSpeedStrike.java</url>
-          <line>45</line>
+          <line>41</line>
           <option name="timeStamp" value="292" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/effect/BATwinsEasterEggEffect.java</url>
-          <line>52</line>
+          <line>50</line>
           <option name="timeStamp" value="294" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java</url>
-          <line>364</line>
+          <line>395</line>
           <option name="timeStamp" value="300" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/ui/panels/BATwinsEnergyPanel.java</url>
+          <line>359</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="306" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsLeaveItToMe.java</url>
+          <line>81</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="314" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java</url>
+          <line>249</line>
+          <option name="timeStamp" value="316" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/cards/BATwinsModCustomCard.java</url>
+          <line>358</line>
+          <option name="timeStamp" value="338" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/event/BATwinsDirtShowdown.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="341" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/helpers/Character3DHelper.java</url>
+          <line>272</line>
+          <option name="timeStamp" value="343" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsAccelerateAction.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="356" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/action/BATwinsAccelerateAction.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="357" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsMaidFormPower.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="360" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../../Program Files (x86)/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar!/basemod/eventUtil/util/ConditionalEvent.class</url>
+          <line>71</line>
+          <option name="timeStamp" value="370" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/power/BATwinsMaidFormPower.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="372" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/relic/BATwinsHeadband.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="388" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/blue_archive_mod/src/main/java/baModDeveloper/event/BATwinsCommunication.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="390" />
         </line-breakpoint>
         <breakpoint type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
@@ -898,12 +1157,14 @@
         <PinnedItemInfo parentTag="com.badlogic.gdx.graphics.g3d.attributes.DirectionalLightsAttribute" memberName="lights" />
         <PinnedItemInfo parentTag="baModDeveloper.cards.BATwinsMomoiDefend" memberName="upgradedMagicNumber" />
         <PinnedItemInfo parentTag="com.badlogic.gdx.graphics.g3d.Environment" memberName="mask" />
+        <PinnedItemInfo parentTag="com.badlogic.gdx.graphics.g3d.utils.AnimationController$AnimationDesc" memberName="speed" />
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="JarApplication">
         <watch expression="___p.masterDeck" language="JAVA" />
         <watch expression="FieldPatch.isViewingExchange.get(_instance)" language="JAVA" />
+        <watch expression="this.instance.animations.items[37]" />
       </configuration>
     </watches-manager>
   </component>

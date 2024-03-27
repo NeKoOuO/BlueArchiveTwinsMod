@@ -16,65 +16,67 @@ import java.util.ArrayList;
 
 public class BATwinsSelectAdventureCardAction extends AbstractGameAction {
     private int amount;
-    private static final UIStrings uiStrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("SelectAdventureCard"));
-    public static final String[] TEXT=uiStrings.TEXT;
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("SelectAdventureCard"));
+    public static final String[] TEXT = uiStrings.TEXT;
     private AbstractPlayer p;
-    private ArrayList<AbstractCard> isNotAdvCards=new ArrayList<>();
+    private ArrayList<AbstractCard> isNotAdvCards = new ArrayList<>();
     BATwinsAdventureOpening card;
-    public BATwinsSelectAdventureCardAction(int amount, BATwinsAdventureOpening card){
-        this.amount=amount;
-        this.card=card;
-        this.p=AbstractDungeon.player;
-        this.duration= Settings.ACTION_DUR_FAST;
+
+    public BATwinsSelectAdventureCardAction(int amount, BATwinsAdventureOpening card) {
+        this.amount = amount;
+        this.card = card;
+        this.p = AbstractDungeon.player;
+        this.duration = Settings.ACTION_DUR_FAST;
     }
+
     @Override
     public void update() {
-        if(this.duration==Settings.ACTION_DUR_FAST){
-            for(AbstractCard c:this.p.hand.group){
-                if(!c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventure)||c.isInAutoplay){
+        if (this.duration == Settings.ACTION_DUR_FAST) {
+            for (AbstractCard c : this.p.hand.group) {
+                if (!c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventure) || c.isInAutoplay) {
                     this.isNotAdvCards.add(c);
                 }
             }
-            if(this.isNotAdvCards.size()==this.p.hand.group.size()){
-                this.isDone=true;
+            if (this.isNotAdvCards.size() == this.p.hand.group.size()) {
+                this.isDone = true;
                 return;
             }
-            if(this.p.hand.group.size()-this.isNotAdvCards.size()==1){
-                for(AbstractCard c:this.p.hand.group){
-                    if(c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventure)){
+            if (this.p.hand.group.size() - this.isNotAdvCards.size() == 1) {
+                for (AbstractCard c : this.p.hand.group) {
+                    if (c.hasTag(BATwinsModCustomCard.BATwinsCardTags.Adventure)) {
                         this.card.addStorageCard(c);
-                        addToBot(new ExhaustSpecificCardAction(c,this.p.hand));
-                        this.isDone=true;
+                        addToBot(new ExhaustSpecificCardAction(c, this.p.hand));
+                        this.isDone = true;
                         return;
                     }
                 }
             }
             this.p.hand.group.removeAll(this.isNotAdvCards);
-            if(this.p.hand.group.size()>1){
-                String title=TEXT[0];
-                AbstractDungeon.handCardSelectScreen.open(title,this.amount,true,true,false,false);
+            if (this.p.hand.group.size() > 1) {
+                String title = TEXT[0];
+                AbstractDungeon.handCardSelectScreen.open(title, this.amount, true, true, false, false);
                 tickDuration();
                 return;
             }
-            if(this.p.hand.group.size()==1){
+            if (this.p.hand.group.size() == 1) {
                 this.card.addStorageCard(this.p.hand.getTopCard());
-                addToBot(new ExhaustSpecificCardAction(this.p.hand.getTopCard(),this.p.hand));
-                this.isDone=true;
+                addToBot(new ExhaustSpecificCardAction(this.p.hand.getTopCard(), this.p.hand));
+                this.isDone = true;
             }
         }
 
-        if(!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved){
-            for(AbstractCard c:AbstractDungeon.handCardSelectScreen.selectedCards.group){
+        if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+            for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 this.card.addStorageCard(c);
-                addToBot(new ExhaustSpecificCardAction(c,this.p.hand));
+                addToBot(new ExhaustSpecificCardAction(c, this.p.hand));
                 this.p.hand.addToTop(c);
             }
-            for(AbstractCard c:this.isNotAdvCards){
+            for (AbstractCard c : this.isNotAdvCards) {
                 this.p.hand.addToTop(c);
             }
-            AbstractDungeon.handCardSelectScreen.wereCardsRetrieved=true;
+            AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
-            this.isDone=true;
+            this.isDone = true;
         }
         tickDuration();
     }

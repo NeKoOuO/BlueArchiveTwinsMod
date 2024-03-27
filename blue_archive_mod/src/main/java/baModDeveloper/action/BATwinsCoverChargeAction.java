@@ -13,50 +13,52 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 public class BATwinsCoverChargeAction extends AbstractGameAction {
     private final int damage;
     private final int block;
-    private boolean freeToPlayOnce=false;
+    private boolean freeToPlayOnce = false;
     private final AbstractPlayer p;
-    public BATwinsCoverChargeAction(AbstractPlayer p, int damage,int block, boolean freeToPlayOnce,AbstractMonster target){
-        this.damage=damage;
-        this.block=block;
-        this.p=p;
-        this.freeToPlayOnce=freeToPlayOnce;
-        this.target=target;
+
+    public BATwinsCoverChargeAction(AbstractPlayer p, int damage, int block, boolean freeToPlayOnce, AbstractMonster target) {
+        this.damage = damage;
+        this.block = block;
+        this.p = p;
+        this.freeToPlayOnce = freeToPlayOnce;
+        this.target = target;
     }
+
     @Override
     public void update() {
-        int MOMOICount= 0;
-        int MIDORICount=0;
-        if(this.p.energy instanceof BATwinsEnergyManager){
-            MOMOICount=BATwinsEnergyPanel.getMomoiCount();
-            MIDORICount=BATwinsEnergyPanel.getMidoriCount();
-        }else{
-            int effect=EnergyPanel.totalCount;
-            MOMOICount=effect/2;
-            MIDORICount=effect-MOMOICount;
+        int MOMOICount = 0;
+        int MIDORICount = 0;
+        if (this.p.energy instanceof BATwinsEnergyManager) {
+            MOMOICount = BATwinsEnergyPanel.getMomoiCount();
+            MIDORICount = BATwinsEnergyPanel.getMidoriCount();
+        } else {
+            int effect = EnergyPanel.totalCount;
+            MOMOICount = effect / 2;
+            MIDORICount = effect - MOMOICount;
         }
-        if(this.p.hasRelic("Chemical X")){
-            MOMOICount+=2;
-            MIDORICount+=2;
+        if (this.p.hasRelic("Chemical X")) {
+            MOMOICount += 2;
+            MIDORICount += 2;
             this.p.getRelic("Chemical X").flash();
         }
-        if(MOMOICount>0){
-            for(int i=0;i<MOMOICount;i++){
-                addToBot(new DamageAction(this.target,new DamageInfo(this.p,this.damage),AttackEffect.LIGHTNING));
+        if (MOMOICount > 0) {
+            for (int i = 0; i < MOMOICount; i++) {
+                addToBot(new DamageAction(this.target, new DamageInfo(this.p, this.damage), AttackEffect.LIGHTNING));
             }
         }
-        if(MIDORICount>0){
-            for(int i=0;i<MIDORICount;i++){
-                addToBot(new GainBlockAction(this.p,this.block));
+        if (MIDORICount > 0) {
+            for (int i = 0; i < MIDORICount; i++) {
+                addToBot(new GainBlockAction(this.p, this.block));
             }
         }
-        if(!this.freeToPlayOnce){
-            if(this.p.energy instanceof BATwinsEnergyManager){
+        if (!this.freeToPlayOnce) {
+            if (this.p.energy instanceof BATwinsEnergyManager) {
                 ((BATwinsEnergyManager) this.p.energy).use(MOMOICount, BATwinsEnergyPanel.EnergyType.MOMOI);
                 ((BATwinsEnergyManager) this.p.energy).use(MIDORICount, BATwinsEnergyPanel.EnergyType.MIDORI);
-            }else{
+            } else {
                 this.p.energy.use(EnergyPanel.totalCount);
             }
         }
-        this.isDone=true;
+        this.isDone = true;
     }
 }

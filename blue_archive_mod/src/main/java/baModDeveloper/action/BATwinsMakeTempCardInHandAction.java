@@ -67,13 +67,15 @@ public class BATwinsMakeTempCardInHandAction extends AbstractGameAction {
         this.isOtherCardInCenter = isOtherCardInCenter;
         this.sameUUID = sameUUID;
     }
-    public BATwinsMakeTempCardInHandAction(AbstractCard card,boolean isOtherCardInCenter,boolean exhuast,boolean exhaustOnUseOnce,boolean isEthereal,boolean selfRetain){
-        this(card,isOtherCardInCenter);
-        this.exhaust=exhuast;
-        this.exhaustOnUseOnce=exhaustOnUseOnce;
-        this.isEthereal=isEthereal;
-        this.selfRetain=selfRetain;
+
+    public BATwinsMakeTempCardInHandAction(AbstractCard card, boolean isOtherCardInCenter, boolean exhuast, boolean exhaustOnUseOnce, boolean isEthereal, boolean selfRetain) {
+        this(card, isOtherCardInCenter);
+        this.exhaust = exhuast;
+        this.exhaustOnUseOnce = exhaustOnUseOnce;
+        this.isEthereal = isEthereal;
+        this.selfRetain = selfRetain;
     }
+
     public void update() {
         if (this.amount == 0) {
             this.isDone = true;
@@ -104,7 +106,7 @@ public class BATwinsMakeTempCardInHandAction extends AbstractGameAction {
             case 1:
                 if (handAmt == 1) {
                     if (this.isOtherCardInCenter) {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float)Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH), (float)Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float) Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH), (float) Settings.HEIGHT / 2.0F));
                     } else {
                         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard()));
                     }
@@ -112,27 +114,27 @@ public class BATwinsMakeTempCardInHandAction extends AbstractGameAction {
                 break;
             case 2:
                 if (handAmt == 1) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float)Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH * 0.5F), (float)Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float) Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH * 0.5F), (float) Settings.HEIGHT / 2.0F));
                 } else if (handAmt == 2) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float)Settings.WIDTH / 2.0F + PADDING + AbstractCard.IMG_WIDTH, (float)Settings.HEIGHT / 2.0F));
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float)Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH), (float)Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float) Settings.WIDTH / 2.0F + PADDING + AbstractCard.IMG_WIDTH, (float) Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float) Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH), (float) Settings.HEIGHT / 2.0F));
                 }
                 break;
             case 3:
                 if (handAmt == 1) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float)Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH), (float)Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float) Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH), (float) Settings.HEIGHT / 2.0F));
                 } else if (handAmt == 2) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float)Settings.WIDTH / 2.0F + PADDING + AbstractCard.IMG_WIDTH, (float)Settings.HEIGHT / 2.0F));
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float)Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH), (float)Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float) Settings.WIDTH / 2.0F + PADDING + AbstractCard.IMG_WIDTH, (float) Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), (float) Settings.WIDTH / 2.0F - (PADDING + AbstractCard.IMG_WIDTH), (float) Settings.HEIGHT / 2.0F));
                 } else if (handAmt == 3) {
-                    for(i = 0; i < this.amount; ++i) {
+                    for (i = 0; i < this.amount; ++i) {
                         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard()));
                     }
                 }
                 break;
             default:
-                for(i = 0; i < handAmt; ++i) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), MathUtils.random((float)Settings.WIDTH * 0.2F, (float)Settings.WIDTH * 0.8F), MathUtils.random((float)Settings.HEIGHT * 0.3F, (float)Settings.HEIGHT * 0.7F)));
+                for (i = 0; i < handAmt; ++i) {
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(this.makeNewCard(), MathUtils.random((float) Settings.WIDTH * 0.2F, (float) Settings.WIDTH * 0.8F), MathUtils.random((float) Settings.HEIGHT * 0.3F, (float) Settings.HEIGHT * 0.7F)));
                 }
         }
 
@@ -144,32 +146,32 @@ public class BATwinsMakeTempCardInHandAction extends AbstractGameAction {
                 break;
             case 1:
                 if (discardAmt == 1) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH / 2.0F + PADDING + AbstractCard.IMG_WIDTH, (float)Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH / 2.0F + PADDING + AbstractCard.IMG_WIDTH, (float) Settings.HEIGHT / 2.0F));
                 }
                 break;
             case 2:
                 if (discardAmt == 1) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH * 0.5F - (PADDING + AbstractCard.IMG_WIDTH * 0.5F), (float)Settings.HEIGHT * 0.5F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH * 0.5F - (PADDING + AbstractCard.IMG_WIDTH * 0.5F), (float) Settings.HEIGHT * 0.5F));
                 } else if (discardAmt == 2) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH * 0.5F - (PADDING + AbstractCard.IMG_WIDTH * 0.5F), (float)Settings.HEIGHT * 0.5F));
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH * 0.5F + PADDING + AbstractCard.IMG_WIDTH * 0.5F, (float)Settings.HEIGHT * 0.5F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH * 0.5F - (PADDING + AbstractCard.IMG_WIDTH * 0.5F), (float) Settings.HEIGHT * 0.5F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH * 0.5F + PADDING + AbstractCard.IMG_WIDTH * 0.5F, (float) Settings.HEIGHT * 0.5F));
                 }
                 break;
             case 3:
                 if (discardAmt == 1) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH * 0.5F + PADDING + AbstractCard.IMG_WIDTH, (float)Settings.HEIGHT * 0.5F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH * 0.5F + PADDING + AbstractCard.IMG_WIDTH, (float) Settings.HEIGHT * 0.5F));
                 } else if (discardAmt == 2) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH * 0.5F, (float)Settings.HEIGHT * 0.5F));
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH * 0.5F + PADDING + AbstractCard.IMG_WIDTH, (float)Settings.HEIGHT * 0.5F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH * 0.5F, (float) Settings.HEIGHT * 0.5F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH * 0.5F + PADDING + AbstractCard.IMG_WIDTH, (float) Settings.HEIGHT * 0.5F));
                 } else if (discardAmt == 3) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH * 0.5F, (float)Settings.HEIGHT * 0.5F));
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH * 0.5F - (PADDING + AbstractCard.IMG_WIDTH), (float)Settings.HEIGHT * 0.5F));
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float)Settings.WIDTH * 0.5F + PADDING + AbstractCard.IMG_WIDTH, (float)Settings.HEIGHT * 0.5F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH * 0.5F, (float) Settings.HEIGHT * 0.5F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH * 0.5F - (PADDING + AbstractCard.IMG_WIDTH), (float) Settings.HEIGHT * 0.5F));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), (float) Settings.WIDTH * 0.5F + PADDING + AbstractCard.IMG_WIDTH, (float) Settings.HEIGHT * 0.5F));
                 }
                 break;
             default:
-                for(int i = 0; i < discardAmt; ++i) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), MathUtils.random((float)Settings.WIDTH * 0.2F, (float)Settings.WIDTH * 0.8F), MathUtils.random((float)Settings.HEIGHT * 0.3F, (float)Settings.HEIGHT * 0.7F)));
+                for (int i = 0; i < discardAmt; ++i) {
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(this.makeNewCard(), MathUtils.random((float) Settings.WIDTH * 0.2F, (float) Settings.WIDTH * 0.8F), MathUtils.random((float) Settings.HEIGHT * 0.3F, (float) Settings.HEIGHT * 0.7F)));
                 }
         }
 
@@ -177,15 +179,15 @@ public class BATwinsMakeTempCardInHandAction extends AbstractGameAction {
 
     private AbstractCard makeNewCard() {
         AbstractCard card;
-        if(this.sameUUID){
-            card=this.c.makeSameInstanceOf();
-        }else{
-            card=this.c.makeStatEquivalentCopy();
+        if (this.sameUUID) {
+            card = this.c.makeSameInstanceOf();
+        } else {
+            card = this.c.makeStatEquivalentCopy();
         }
-        card.exhaust=this.exhaust;
-        card.exhaustOnUseOnce=this.exhaustOnUseOnce;
-        card.isEthereal=this.isEthereal;
-        card.selfRetain=selfRetain;
+        card.exhaust = this.exhaust;
+        card.exhaustOnUseOnce = this.exhaustOnUseOnce;
+        card.isEthereal = this.isEthereal;
+        card.selfRetain = selfRetain;
         return card;
     }
 
