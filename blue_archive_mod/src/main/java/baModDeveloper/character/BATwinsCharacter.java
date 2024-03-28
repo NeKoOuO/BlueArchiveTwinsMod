@@ -62,7 +62,7 @@ import java.util.Objects;
 public class BATwinsCharacter extends CustomPlayer {
     private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder");
     private static final String BATWINS_CHARACTER_SHOULDER_2 = ModHelper.makeImgPath("char", "shoulder2");
-    private static final String BATWINS_CHARACTER_CORPSE = BATwinsMod.Enable3D ? ModHelper.makeImgPath("char", "p") : ModHelper.makeImgPath("char", "corpse");
+    private static final String BATWINS_CHARACTER_CORPSE = ModHelper.makeImgPath("char", "corpse");
     private static final String[] MOMOI_ORB_TEXTURES = new String[]{
             ModHelper.makeImgPath("UI/orb", "layer1_momoi"),
             ModHelper.makeImgPath("UI/orb", "layer2_momoi"),
@@ -128,7 +128,8 @@ public class BATwinsCharacter extends CustomPlayer {
     //排序手牌
     ColorComparer colorComparer;
     //角色立绘，先暂时使用图片代替，之后使用3d模型替换
-    private static final String stand_Img = BATwinsMod.Enable3D ? ModHelper.makeImgPath("char", "p") : ModHelper.makeImgPath("char", "standup");
+    private static final String stand_Img =ModHelper.makeImgPath("char", "standup");
+    private static final String empty_Img=ModHelper.makeImgPath("char","p");
 
     //    public static GifAnimation character=new GifAnimation(ModHelper.makeGifPath("char","character"));
     public BATwinsCharacter(String name) {
@@ -146,8 +147,18 @@ public class BATwinsCharacter extends CustomPlayer {
 //        character3DHelper.init();
         if (BATwinsMod.Enable3D) {
             if (!character3DHelper.inited()) {
+//                try{
+//                    character3DHelper.initWithTimeout();
+//                } catch (RuntimeException e) {
+//                    e.printStackTrace();
+//                    return;
+//                }
+                //C:\Users\22308\AppData\Local\ModTheSpire\BATwinsMod
+                //如果打不开请在这里面把选项关闭
                 character3DHelper.init();
             }
+            this.img=ImageMaster.loadImage(empty_Img);
+            this.corpseImg=ImageMaster.loadImage(empty_Img);
             character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
             character3DHelper.resetDefaultAnima(Enums.BATWINS_MOMOI_CARD);
             character3DHelper.resetDefaultAnima(Enums.BATWINS_MIDORI_CARD);
@@ -176,7 +187,6 @@ public class BATwinsCharacter extends CustomPlayer {
 //
 //        AbstractAnimation.addAnimation(null);
 //        AbstractAnimation.addAnimation(null);
-
 
         colorComparer = new ColorComparer();
 
@@ -609,6 +619,8 @@ public class BATwinsCharacter extends CustomPlayer {
         if (BATwinsMod.Enable3D) {
             character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.DYING);
             character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.DYING);
+        }else {
+            super.playDeathAnimation();
         }
 
     }
