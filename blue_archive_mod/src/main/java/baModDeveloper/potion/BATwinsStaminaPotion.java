@@ -40,6 +40,7 @@ public class BATwinsStaminaPotion extends AbstractPotion {
         this.isThrown=false;
         this.targetRequired=false;
         this.canUse=false;
+
     }
 
     @Override
