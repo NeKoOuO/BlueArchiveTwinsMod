@@ -27,7 +27,7 @@
     },
     "BATwinsMod:ParoxysmalPain":{
         "NAME":"创作之痛",
-        "DESCRIPTION":"对全体敌人造成 !D! 点伤害，给予 !M! 层 batwinsmod:灼伤 。"
+        "DESCRIPTION":"给予所有敌人 !M! 层 batwinsmod:灼伤 ， NL 对所有敌人造成 !D! 点伤害。"
     },
     "BATwinsMod:PaintingArt":{
         "NAME":"绘画艺术",
@@ -95,7 +95,7 @@
     },
     "BATwinsMod:EnchantedBullet":{
         "NAME":"附魔",
-        "DESCRIPTION":"造成 !D! 点伤害 。 NL 给予 !M! 层 batwinsmod:灼伤 。"
+        "DESCRIPTION":"给予 !M! 层 batwinsmod:灼伤 ， NL 造成 !D! 点伤害。"
     },
     "BATwinsMod:ExcellentDesigner":{
         "NAME":"最棒的开发者们",
