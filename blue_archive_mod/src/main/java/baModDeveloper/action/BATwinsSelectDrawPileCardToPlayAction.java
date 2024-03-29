@@ -71,39 +71,18 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
             return;
         }
         if (this.isRandom) {
-            for(AbstractCard card:AbstractDungeon.player.drawPile.group){
-                if(card.color==this.color||(this.removePower&&card.type== AbstractCard.CardType.POWER)){
-                    this.canNotSelect.add(card);
-                }
-            }
-//            if (this.color != null) {
-//                this.p.drawPile.group.stream().filter(card -> card.color != BATwinsSelectDrawPileCardToPlayAction.this.color).forEach(card -> BATwinsSelectDrawPileCardToPlayAction.this.canNotSelect.add(card));
-//            }
-//            if(this.removePower){
-//                this.p.drawPile.group.stream().filter(card -> card.type== AbstractCard.CardType.POWER).forEach(this.canNotSelect::add);
-//            }
-            this.p.drawPile.group.removeAll(this.canNotSelect);
+            removeCards();
             if (!this.p.drawPile.group.isEmpty()) {
                 WhatTheCardDo(this.p.drawPile.getRandomCard(AbstractDungeon.cardRandomRng));
-            } else {
+            }
+            if (!this.canNotSelect.isEmpty()) {
                 this.p.drawPile.group.addAll(this.canNotSelect);
             }
             this.isDone = true;
             tickDuration();
             return;
         } else if (this.duration == Settings.ACTION_DUR_FAST) {
-            for(AbstractCard card:AbstractDungeon.player.drawPile.group){
-                if(card.color==this.color||(this.removePower&&card.type== AbstractCard.CardType.POWER)){
-                    this.canNotSelect.add(card);
-                }
-            }
-//            if (this.color != null) {
-//                this.p.drawPile.group.stream().filter(card -> card.color != BATwinsSelectDrawPileCardToPlayAction.this.color || card.isInAutoplay).forEach(card -> BATwinsSelectDrawPileCardToPlayAction.this.canNotSelect.add(card));
-//            }
-//            if(this.removePower){
-//                this.p.drawPile.group.stream().filter(card -> card.type== AbstractCard.CardType.POWER).forEach(this.canNotSelect::add);
-//            }
-            this.p.drawPile.group.removeAll(this.canNotSelect);
+            removeCards();
             if (this.p.drawPile.isEmpty()) {
                 this.p.drawPile.group.addAll(this.canNotSelect);
                 this.isDone = true;
@@ -124,6 +103,16 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
+    }
+
+    private void removeCards() {
+        for(AbstractCard card: AbstractDungeon.player.drawPile.group){
+            if(card.color!=this.color||(this.removePower&&card.type== AbstractCard.CardType.POWER)){
+                this.canNotSelect.add(card);
+            }
+        }
+
+        this.p.drawPile.group.removeAll(this.canNotSelect);
     }
 
     private void WhatTheCardDo(AbstractCard c) {
