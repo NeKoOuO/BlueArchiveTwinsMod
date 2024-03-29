@@ -275,7 +275,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new BATwinsMomoiStrick();
+        return new BATwinsAlreadyAngry();
     }
 
     @Override
