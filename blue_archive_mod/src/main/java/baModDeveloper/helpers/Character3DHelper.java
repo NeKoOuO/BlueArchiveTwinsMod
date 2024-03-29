@@ -319,4 +319,30 @@ public class Character3DHelper {
             this.midoriController.resetDefaultAnima();
         }
     }
+
+    private class ModelLoaderThread extends Thread{
+        private boolean finishLoading=false;
+        public ModelLoaderThread(){
+        }
+
+        @Override
+        public void run(){
+            init();
+            finishLoading=true;
+        }
+    }
+
+
+    public void initWithTimeout() throws RuntimeException{
+        ModelLoaderThread thread=new ModelLoaderThread();
+        thread.start();
+        try{
+            thread.join(5000);
+            if(!thread.finishLoading){
+                throw new RuntimeException("Model loading exceeded timeout");
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

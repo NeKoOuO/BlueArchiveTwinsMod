@@ -1,0 +1,118 @@
+[
+    {
+        "NAMES":[
+            "Burn"
+        ],
+        "DESCRIPTION":"At the end of each turn, take damage equal to the number of layers, then decrease the number of layers by 1. Upon death, deal damage to other enemies equal to twice the number of layers."
+    },
+    {
+        "NAMES":[
+            "[TE]"
+        ],
+        "DESCRIPTION":"小桃能量。"
+    },
+    {
+        "NAMES":[
+            "MomoiCard"
+        ],
+        "DESCRIPTION":"The card is red and features a cute Momoi on it."
+    },
+    {
+        "NAMES":[
+            "MidoriCard"
+        ],
+        "DESCRIPTION":"The card is green and features a Midori on it."
+    },
+    {
+        "NAMES":[
+            "Share"
+        ],
+        "DESCRIPTION":"This card will first consume energy from the primary energy pool. If the primary energy pool is insufficient, it will consume from another energy pool without consuming twice the energy."
+    },
+    {
+        "NAMES":[
+            "PrimaryEnergyPool"
+        ],
+        "DESCRIPTION":"The primary energy pool is an energy pool with a small accessory displayed. It is the energy pool that is prioritized when playing cards with shared attributes or cards belonging to other characters. You can click on the energy pool to switch between them."
+    },
+    {
+        "NAMES":[
+            "Exchange"
+        ],
+        "DESCRIPTION":"Change Momoi cards to Midori cards and Midori cards to Momoi cards. The effects of some cards will be altered."
+    },
+	{
+		"NAMES":[
+			"LevelUp"
+		],
+		"DESCRIPTION":"Immediately increase the level by 1. Experience points become 0."
+	},
+	{
+		"NAMES":[
+			"ExperiencePoints"
+		],
+		"DESCRIPTION":"Gain experience points equal to the energy cost of the peach card or green card played. Level up by 1 when reaching 10 experience points."
+	},
+	{
+		"NAMES":[
+			"Synergy"
+		],
+		"DESCRIPTION":"Triggered when affected by the effects of other cards or powers."
+	},
+	{
+		"NAMES":[
+			"HyperSynergy"
+		],
+		"DESCRIPTION":"Triggered when the card that played this card is also played by an effect."
+	},
+	{
+		"NAMES":[
+			"OnlySynergy."
+		],
+		"DESCRIPTION":"Cannot be played, but can be played by effects."
+	},
+	{
+		"PROPER_NAME":"[batwinsmod:momoiorbicon]",
+		"NAMES":[
+			"momoiorbicon"
+		],
+		"DESCRIPTION":"[batwinsmod:momoiorbicon] The energy pool consumed by MomoiCards.。"
+	},
+	{
+		"PROPER_NAME":"[batwinsmod:midoriorbicon]",
+		"NAMES":[
+			"midoriorbicon"
+		],
+		"DESCRIPTION":"[batwinsmod:midoriorbicon] The energy pool consumed by MidoriCards.。"
+	},
+	{
+		"NAMES":[
+			"Storage"
+		],
+		"DESCRIPTION":"When this card is played, it will sequentially play the cards stored by this card."
+	},
+	{
+		"NAMES":[
+			"Bullet"
+		],
+		"DESCRIPTION":"Colorless cards that deal damage. They automatically merge when stored."
+	},
+	{
+		"NAMES":[
+			"Shoot"
+		],
+		"DESCRIPTION":"Cards with shooting in their name."
+	},
+	{
+		"NAMES":[
+			"Acceleration"
+		],
+		"DESCRIPTION":"Choose and play a card from the draw pile with an energy cost lower than X."
+	},
+	{
+		"NAMES":[
+			"Acceleration+"
+		],
+		"DESCRIPTION":"Choose and play a card from the draw pile with an energy cost lower than X+1."
+	}
+]

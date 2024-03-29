@@ -22,7 +22,7 @@ public class BATwinsCommunication extends PhasedEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String title = eventStrings.NAME;
     private static final String imgUrl = ModHelper.makeImgPath("event", "Communication");
-    private final int gold=100;
+    private final int gold=70;
     public BATwinsCommunication() {
         super(ID, title, imgUrl);
 

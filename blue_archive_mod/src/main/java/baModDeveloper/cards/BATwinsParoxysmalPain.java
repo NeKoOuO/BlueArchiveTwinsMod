@@ -47,17 +47,19 @@ public class BATwinsParoxysmalPain extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAllEnemiesAction(abstractPlayer, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new ApplyPowerAction(m, abstractPlayer, new BATwinsBurnPower(m, abstractPlayer, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
+        addToBot(new DamageAllEnemiesAction(abstractPlayer, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAllEnemiesAction(abstractPlayer, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.POISON));
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new ApplyPowerAction(m, abstractPlayer, new PoisonPower(m, abstractPlayer, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
+        addToBot(new DamageAllEnemiesAction(abstractPlayer, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.POISON));
+
     }
 }

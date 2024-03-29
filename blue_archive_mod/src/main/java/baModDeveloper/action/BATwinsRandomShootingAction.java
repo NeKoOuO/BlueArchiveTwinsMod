@@ -21,6 +21,9 @@ public class BATwinsRandomShootingAction extends AbstractGameAction {
         CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         AbstractDungeon.player.hand.group.stream().filter(card1 -> card1.hasTag(BATwinsModCustomCard.BATwinsCardTags.Shooting)).forEach(temp::addToBottom);
         if (temp.isEmpty()) {
+            if (clear && card instanceof BATwinsModCustomCard) {
+                ((BATwinsModCustomCard) card).clearBringOutCards();
+            }
             this.isDone = true;
             return;
         }

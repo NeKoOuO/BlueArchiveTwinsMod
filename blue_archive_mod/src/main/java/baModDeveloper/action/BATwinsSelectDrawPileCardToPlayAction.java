@@ -71,9 +71,17 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
             return;
         }
         if (this.isRandom) {
-            if (this.color != null) {
-                this.p.drawPile.group.stream().filter(card -> card.color != BATwinsSelectDrawPileCardToPlayAction.this.color || (removePower && card.type == AbstractCard.CardType.POWER)).forEach(card -> BATwinsSelectDrawPileCardToPlayAction.this.canNotSelect.add(card));
+            for(AbstractCard card:AbstractDungeon.player.drawPile.group){
+                if(card.color==this.color||(this.removePower&&card.type== AbstractCard.CardType.POWER)){
+                    this.canNotSelect.add(card);
+                }
             }
+//            if (this.color != null) {
+//                this.p.drawPile.group.stream().filter(card -> card.color != BATwinsSelectDrawPileCardToPlayAction.this.color).forEach(card -> BATwinsSelectDrawPileCardToPlayAction.this.canNotSelect.add(card));
+//            }
+//            if(this.removePower){
+//                this.p.drawPile.group.stream().filter(card -> card.type== AbstractCard.CardType.POWER).forEach(this.canNotSelect::add);
+//            }
             this.p.drawPile.group.removeAll(this.canNotSelect);
             if (!this.p.drawPile.group.isEmpty()) {
                 WhatTheCardDo(this.p.drawPile.getRandomCard(AbstractDungeon.cardRandomRng));
@@ -84,9 +92,17 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
             tickDuration();
             return;
         } else if (this.duration == Settings.ACTION_DUR_FAST) {
-            if (this.color != null) {
-                this.p.drawPile.group.stream().filter(card -> card.color != BATwinsSelectDrawPileCardToPlayAction.this.color || (removePower && card.type == AbstractCard.CardType.POWER) || card.isInAutoplay).forEach(card -> BATwinsSelectDrawPileCardToPlayAction.this.canNotSelect.add(card));
+            for(AbstractCard card:AbstractDungeon.player.drawPile.group){
+                if(card.color==this.color||(this.removePower&&card.type== AbstractCard.CardType.POWER)){
+                    this.canNotSelect.add(card);
+                }
             }
+//            if (this.color != null) {
+//                this.p.drawPile.group.stream().filter(card -> card.color != BATwinsSelectDrawPileCardToPlayAction.this.color || card.isInAutoplay).forEach(card -> BATwinsSelectDrawPileCardToPlayAction.this.canNotSelect.add(card));
+//            }
+//            if(this.removePower){
+//                this.p.drawPile.group.stream().filter(card -> card.type== AbstractCard.CardType.POWER).forEach(this.canNotSelect::add);
+//            }
             this.p.drawPile.group.removeAll(this.canNotSelect);
             if (this.p.drawPile.isEmpty()) {
                 this.p.drawPile.group.addAll(this.canNotSelect);
@@ -101,6 +117,9 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                 WhatTheCardDo(c);
             }
+            if (!this.canNotSelect.isEmpty()) {
+                this.p.drawPile.group.addAll(this.canNotSelect);
+            }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             this.isDone = true;
             return;
@@ -112,9 +131,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
 //            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
 //        }
         addToTop(new BATwinsPlayDrawPailCardAction(c, this.target, false, this.numberOfConnections, this.isBlockOrigin));
-        if (!this.canNotSelect.isEmpty()) {
-            this.p.drawPile.group.addAll(this.canNotSelect);
-        }
+
     }
 
 }

@@ -22,5 +22,11 @@
 			"给予16层灼伤。",
 			"灼伤"
 		]
+	},
+	"BATwinsMod:StaminaPotion":{
+		"NAME":"体力药剂",
+		"DESCRIPTIONS":[
+			"在火堆处使用此药水，能够在进行一次行动。"
+		]
 	}
 }
