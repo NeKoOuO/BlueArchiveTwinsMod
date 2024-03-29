@@ -1,9 +1,9 @@
 [
     {
         "NAMES":[
-            "灼伤"
+            "Burn"
         ],
-        "DESCRIPTION":"回合结束时，受到等同于层数的伤害，然后层数减1。死亡时对其他敌人造成等同于层数2倍的伤害。"
+        "DESCRIPTION":"At the end of each turn, take damage equal to the number of layers, then decrease the number of layers by 1. Upon death, deal damage to other enemies equal to twice the number of layers."
     },
     {
         "NAMES":[
@@ -13,106 +13,106 @@
     },
     {
         "NAMES":[
-            "桃牌"
+            "MomoiCard"
         ],
-        "DESCRIPTION":"卡面为红色的牌。上面印有可爱的小桃哦。"
+        "DESCRIPTION":"The card is red and features a cute Momoi on it."
     },
     {
         "NAMES":[
-            "绿牌"
+            "MidoriCard"
         ],
-        "DESCRIPTION":"卡面为绿色的牌。上面印有酷酷的小绿哦。"
+        "DESCRIPTION":"The card is green and features a Midori on it."
     },
     {
         "NAMES":[
-            "共有"
+            "Share"
         ],
-        "DESCRIPTION":"这张牌会优先消耗主能量槽的能量。主能量槽不足时消耗另一个能量槽且不会消耗两倍能量。"
+        "DESCRIPTION":"This card will first consume energy from the primary energy pool. If the primary energy pool is insufficient, it will consume from another energy pool without consuming twice the energy."
     },
     {
         "NAMES":[
-            "主能量槽"
+            "PrimaryEnergyPool"
         ],
-        "DESCRIPTION":"主能量槽为显示有小挂件的能量槽。打出共有属性的牌或非本角色的牌时优先消耗的能量槽。可以点击能量槽进行切换。"
+        "DESCRIPTION":"The primary energy pool is an energy pool with a small accessory displayed. It is the energy pool that is prioritized when playing cards with shared attributes or cards belonging to other characters. You can click on the energy pool to switch between them."
     },
     {
         "NAMES":[
-            "交换"
+            "Exchange"
         ],
-        "DESCRIPTION":"将桃牌变为绿牌，将绿牌变为桃牌。部分牌的效果会发生变化。"
+        "DESCRIPTION":"Change Momoi cards to Midori cards and Midori cards to Momoi cards. The effects of some cards will be altered."
     },
 	{
 		"NAMES":[
-			"提升等级"
+			"LevelUp"
 		],
-		"DESCRIPTION":"立即将等级增加1级。经验值变为0."
+		"DESCRIPTION":"Immediately increase the level by 1. Experience points become 0."
 	},
 	{
 		"NAMES":[
-			"经验值"
+			"ExperiencePoints"
 		],
-		"DESCRIPTION":"打出桃牌或绿牌后获得等同于其耗能的经验值，经验值达到10点时提升等级1."
+		"DESCRIPTION":"Gain experience points equal to the energy cost of the peach card or green card played. Level up by 1 when reaching 10 experience points."
 	},
 	{
 		"NAMES":[
-			"连携"
+			"Synergy"
 		],
-		"DESCRIPTION":"被其他卡或能力的效果打出时触发。"
+		"DESCRIPTION":"Triggered when affected by the effects of other cards or powers."
 	},
 	{
 		"NAMES":[
-			"超连携"
+			"HyperSynergy"
 		],
-		"DESCRIPTION":"打出这张牌的牌也是被效果打出时触发。"
+		"DESCRIPTION":"Triggered when the card that played this card is also played by an effect."
 	},
 	{
 		"NAMES":[
-			"只能被连携"
+			"OnlySynergy."
 		],
-		"DESCRIPTION":"不能被打出，但能被效果打出。"
+		"DESCRIPTION":"Cannot be played, but can be played by effects."
 	},
 	{
 		"PROPER_NAME":"[batwinsmod:momoiorbicon]",
 		"NAMES":[
 			"momoiorbicon"
 		],
-		"DESCRIPTION":"[batwinsmod:momoiorbicon] 桃牌所消耗的能量槽。"
+		"DESCRIPTION":"[batwinsmod:momoiorbicon] The energy pool consumed by MomoiCards.。"
 	},
 	{
 		"PROPER_NAME":"[batwinsmod:midoriorbicon]",
 		"NAMES":[
 			"midoriorbicon"
 		],
-		"DESCRIPTION":"[batwinsmod:midoriorbicon] 绿牌所消耗的能量槽。"
+		"DESCRIPTION":"[batwinsmod:midoriorbicon] The energy pool consumed by MidoriCards.。"
 	},
 	{
 		"NAMES":[
-			"存储"
+			"Storage"
 		],
-		"DESCRIPTION":"这张牌打出时会依次打出这张牌存储的牌。"
+		"DESCRIPTION":"When this card is played, it will sequentially play the cards stored by this card."
 	},
 	{
 		"NAMES":[
-			"子弹"
+			"Bullet"
 		],
-		"DESCRIPTION":"造成伤害的无色牌。被存储时会自动合并。"
+		"DESCRIPTION":"Colorless cards that deal damage. They automatically merge when stored."
 	},
 	{
 		"NAMES":[
-			"射击"
+			"Shoot"
 		],
-		"DESCRIPTION":"名字中包含 射击 的卡。"
+		"DESCRIPTION":"Cards with shooting in their name."
 	},
 	{
 		"NAMES":[
-			"加速"
+			"Acceleration"
 		],
-		"DESCRIPTION":"选择抽牌堆1张耗能低于X的牌打出。"
+		"DESCRIPTION":"Choose and play a card from the draw pile with an energy cost lower than X."
 	},
 	{
 		"NAMES":[
-			"加速+"
+			"Acceleration+"
 		],
-		"DESCRIPTION":"选择抽牌堆1张耗能低于X+1的牌打出。"
+		"DESCRIPTION":"Choose and play a card from the draw pile with an energy cost lower than X+1."
 	}
 ]
