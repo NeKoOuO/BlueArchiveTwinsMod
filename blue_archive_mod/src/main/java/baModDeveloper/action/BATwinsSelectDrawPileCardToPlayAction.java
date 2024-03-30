@@ -88,7 +88,8 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             }
-            AbstractDungeon.gridSelectScreen.open(this.p.drawPile, Math.min(this.amount, this.p.drawPile.size()), UISTRINGS.TEXT[0], false);
+            this.amount=Math.min(this.amount, this.p.drawPile.size());
+            AbstractDungeon.gridSelectScreen.open(this.p.drawPile, this.amount, String.format(UISTRINGS.TEXT[10]+UISTRINGS.TEXT[0],this.amount), false);
             tickDuration();
             return;
         }
@@ -107,7 +108,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
 
     private void removeCards() {
         for(AbstractCard card: AbstractDungeon.player.drawPile.group){
-            if(card.color!=this.color||(this.removePower&&card.type== AbstractCard.CardType.POWER)){
+            if((this.color!=null&&card.color!=this.color)||(this.removePower&&card.type== AbstractCard.CardType.POWER)){
                 this.canNotSelect.add(card);
             }
         }
