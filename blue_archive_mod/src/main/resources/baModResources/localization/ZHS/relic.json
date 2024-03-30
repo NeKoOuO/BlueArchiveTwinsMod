@@ -107,5 +107,12 @@
 		"DESCRIPTIONS":[
 			"随机遗物效果，每回合会改变。"
 		]
+	},
+	"BATwinsMod:RubiksCube":{
+		"NAME":"益智魔方",
+		"FLAVOR":"「解开魔方的你就是真正的千年人！」",
+		"DESCRIPTIONS":[
+			"每连携打出卡牌2次后，抽1张牌。"
+		]
 	}
 }

@@ -3,6 +3,7 @@ package baModDeveloper.action;
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
+import baModDeveloper.relic.BATwinsRubiksCube;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
@@ -52,6 +53,9 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
         }
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (AbstractDungeon.player.drawPile.contains(card)) {
+                if(AbstractDungeon.player.hasRelic(BATwinsRubiksCube.ID)){
+                    AbstractDungeon.player.getRelic(BATwinsRubiksCube.ID).onTrigger();
+                }
                 AbstractDungeon.player.drawPile.group.remove(this.card);
                 AbstractDungeon.getCurrRoom().souls.remove(this.card);
                 card.exhaust = this.exhaust;

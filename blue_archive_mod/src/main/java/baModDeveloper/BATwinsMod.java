@@ -277,6 +277,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsFitnessRing(),RelicType.SHARED);
         BaseMod.addRelic(new BATwinsBroom(),RelicType.SHARED);
         BaseMod.addRelic(new BATwinsMaidAttire(),RelicType.SHARED);
+        BaseMod.addRelicToCustomPool(new BATwinsRubiksCube(),Enums.BATWINS_MOMOI_CARD);
     }
 
     @Override

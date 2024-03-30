@@ -3,6 +3,7 @@ package baModDeveloper.action;
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
+import baModDeveloper.relic.BATwinsRubiksCube;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
@@ -61,6 +62,9 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
             }
             this.isDone=true;
             return;
+        }
+        if(AbstractDungeon.player.hasRelic(BATwinsRubiksCube.ID)){
+            AbstractDungeon.player.getRelic(BATwinsRubiksCube.ID).onTrigger();
         }
         if (this.target == null) {
             this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
