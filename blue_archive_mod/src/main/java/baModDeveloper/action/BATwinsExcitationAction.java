@@ -29,7 +29,8 @@ public class BATwinsExcitationAction extends AbstractGameAction {
             ArrayList<AbstractCard> powercards=CardLibrary.getAllCards().stream().filter(card -> card.type== AbstractCard.CardType.POWER).collect(Collectors.toCollection(ArrayList::new));
             cardGroup.group.addAll(powercards);
             cardGroup.group.sort(new ColorComparer());
-            AbstractDungeon.gridSelectScreen.open(cardGroup, Math.min(this.amount, cardGroup.size()), UISTRINGS.TEXT[0], false);
+            this.amount=Math.min(this.amount, cardGroup.size());
+            AbstractDungeon.gridSelectScreen.open(cardGroup, this.amount, String.format(UISTRINGS.TEXT[10]+UISTRINGS.TEXT[0],this.amount), false);
             tickDuration();
             return;
         }else{

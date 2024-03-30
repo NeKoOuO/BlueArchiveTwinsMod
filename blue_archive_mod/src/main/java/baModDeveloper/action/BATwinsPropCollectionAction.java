@@ -38,7 +38,7 @@ public class BATwinsPropCollectionAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             }
-            AbstractDungeon.gridSelectScreen.open(temp, this.amount, uiStrings.TEXT[5], false);
+            AbstractDungeon.gridSelectScreen.open(temp, this.amount, String.format(uiStrings.TEXT[10]+uiStrings.TEXT[5],this.amount), false);
             tickDuration();
             return;
         }

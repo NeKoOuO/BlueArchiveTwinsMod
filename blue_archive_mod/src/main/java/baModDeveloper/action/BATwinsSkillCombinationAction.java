@@ -45,7 +45,7 @@ public class BATwinsSkillCombinationAction extends AbstractGameAction {
                 return;
             }
             this.p.drawPile.group.removeAll(this.canNotSelect);
-            AbstractDungeon.gridSelectScreen.open(this.p.drawPile, 1, UISTRINGS.TEXT[1], false, false);
+            AbstractDungeon.gridSelectScreen.open(this.p.drawPile, 1, String.format(UISTRINGS.TEXT[10]+UISTRINGS.TEXT[1],1), false, false);
             tickDuration();
             return;
         }
