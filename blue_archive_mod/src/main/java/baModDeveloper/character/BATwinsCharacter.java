@@ -521,6 +521,9 @@ public class BATwinsCharacter extends CustomPlayer {
 //        if(this.rendered_anima_momoi!=null){
 //            this.rendered_anima_momoi.render(sb);
 //        }
+        if(this.isDead){
+            update();
+        }
         super.render(sb);
 
         if (BATwinsMod.ShowExpBar && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
