@@ -4,6 +4,7 @@ import baModDeveloper.BATwinsMod;
 import baModDeveloper.action.BATwinsPlayTempCardAction;
 import baModDeveloper.cards.bullets.BATwinsCustomBulletCard;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.effect.BATwinsCharAttackEffect;
 import baModDeveloper.helpers.ImageHelper;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
@@ -231,6 +232,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             } else if (this.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
                 useMIDORI(abstractPlayer, abstractMonster);
             }
+            if(this.type==CardType.ATTACK)
+                AbstractDungeon.effectsQueue.add(new BATwinsCharAttackEffect(this.color));
+
         }
 
         if (this.isInAutoplay) {
