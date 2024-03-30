@@ -3,12 +3,10 @@ package baModDeveloper;
 import baModDeveloper.cards.*;
 import baModDeveloper.cards.bullets.*;
 import baModDeveloper.cards.colorless.BATwinsAccelerate;
+import baModDeveloper.cards.colorless.BATwinsExcitation;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
-import baModDeveloper.event.BATwinsCommunication;
-import baModDeveloper.event.BATwinsDirtShowdown;
-import baModDeveloper.event.BATwinsHurdleGame;
-import baModDeveloper.event.BATwinsTrainingCamp;
+import baModDeveloper.event.*;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.potion.BATwinsAcceleratePotion;
 import baModDeveloper.potion.BATwinsBurnPotion;
@@ -36,6 +34,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
@@ -215,6 +214,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new BATwinsBulletWarehouse());
 //        BaseMod.addCard(new BATwinsExpansionMagazine());
         BaseMod.addCard(new BATwinsAccelerate());
+        BaseMod.addCard(new BATwinsExcitation());
     }
 
     @Override
@@ -302,6 +302,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsDirtShowdown.ID,BATwinsDirtShowdown.class).playerClass(Enums.BATwins).create());
         BaseMod.addEvent(BATwinsHurdleGame.ID, BATwinsHurdleGame.class);
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsCommunication.ID,BATwinsCommunication.class).playerClass(Enums.BATwins).dungeonID(Exordium.ID).create());
+        BaseMod.addEvent(new AddEventParams.Builder(BATwinsTheRoadIsLong.ID,BATwinsTheRoadIsLong.class).playerClass(Enums.BATwins).dungeonID(TheBeyond.ID).create());
         //添加药水
         BaseMod.addPotion(BATwinsAcceleratePotion.class,BATwinsAcceleratePotion.liquidColor,BATwinsAcceleratePotion.hybridColor,BATwinsAcceleratePotion.spotsColor,BATwinsAcceleratePotion.ID);
         BaseMod.addPotion(BATwinsConnectPotion.class,BATwinsConnectPotion.liquidColor,BATwinsConnectPotion.hybridColor,BATwinsConnectPotion.spotsColor,BATwinsConnectPotion.ID);

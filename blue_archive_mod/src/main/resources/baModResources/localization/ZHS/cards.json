@@ -478,5 +478,9 @@
 		"EXTENDED_DESCRIPTION":[
 			"给小绿戴上"
 		]
+	},
+	"BATwinsMod:Excitation":{
+		"NAME":"激励",
+		"DESCRIPTION":"不能被升级 NL 从游戏中的所有能力牌中选择1张打出。"
 	}
 }

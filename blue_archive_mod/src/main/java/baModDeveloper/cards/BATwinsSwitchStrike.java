@@ -27,7 +27,7 @@ public class BATwinsSwitchStrike extends BATwinsModCustomCard {
 
     public BATwinsSwitchStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 9;
+        this.baseDamage = 10;
         this.damage = this.baseDamage;
         this.tags.add(CardTags.STRIKE);
     }
