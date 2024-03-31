@@ -1,12 +1,14 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsForceDetonationAction;
+import baModDeveloper.action.BATwinsHalfPowerAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.power.BATwinsBurnPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
@@ -36,8 +38,16 @@ public class BATwinsForceDetonation extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsForceDetonationAction(this.magicNumber, BATwinsBurnPower.POWER_ID));
-        addToBot(new BATwinsForceDetonationAction(this.magicNumber, PoisonPower.POWER_ID));
+        for(int i=0;i<this.magicNumber;i++){
+            addToBot(new BATwinsForceDetonationAction(1, BATwinsBurnPower.POWER_ID));
+            addToBot(new BATwinsForceDetonationAction(1, PoisonPower.POWER_ID));
+        }
+        for(AbstractMonster m: AbstractDungeon.getCurrRoom().monsters.monsters){
+            addToBot(new BATwinsHalfPowerAction(BATwinsBurnPower.POWER_ID,m));
+            addToBot(new BATwinsHalfPowerAction(PoisonPower.POWER_ID,m));
+
+        }
+
     }
 
     @Override
