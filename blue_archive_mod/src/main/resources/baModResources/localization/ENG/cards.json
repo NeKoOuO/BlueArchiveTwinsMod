@@ -253,7 +253,7 @@
 	},
 	"BATwinsMod:TwoStageAttack":{
 		"NAME":"Double Strike",
-		"DESCRIPTION":" batwinsmod:OnlySynergy NL batwinsmod:Synergy , batwinsmod:HyperSynergy :Deal !D! Damage to all enemies twice	.",
+		"DESCRIPTION":" batwinsmod:OnlySynergy NL batwinsmod:Synergy , batwinsmod:HyperSynergy :Deal !D! Damage to all enemies twice.",
 		"EXTENDED_DESCRIPTION":[
 			"This card can only be played by effects."
 		]
