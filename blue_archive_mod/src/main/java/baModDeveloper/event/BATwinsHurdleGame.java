@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 
 import java.util.ArrayList;
 
@@ -246,8 +247,9 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
         if (rng >= 0 && rng < 50) {
             AbstractDungeon.getCurrRoom().addGoldToRewards(gold);
         } else if (rng >= 50 && rng < 80) {
-            AbstractDungeon.getCurrRoom().addPotionToRewards();
-            AbstractDungeon.getCurrRoom().addPotionToRewards();
+            AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(AbstractDungeon.returnRandomPotion()));
+            if(rng>=70)
+                AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(AbstractDungeon.returnRandomPotion()));
         } else {
             AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
         }

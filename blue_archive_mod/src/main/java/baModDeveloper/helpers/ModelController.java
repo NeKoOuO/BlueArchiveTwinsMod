@@ -107,7 +107,7 @@ public class ModelController {
     }
 
     public void setStandAnima(String anima) {
-        if (this.animationController.current.animation.id.equals(this.StandAnima)) {
+        if (this.animationController.current!=null&&this.animationController.current.animation.id.equals(this.StandAnima)) {
             this.clearQueue(this.animationController);
         }
         this.StandAnima = anima;
