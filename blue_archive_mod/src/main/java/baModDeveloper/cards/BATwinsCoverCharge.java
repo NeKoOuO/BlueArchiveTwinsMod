@@ -4,10 +4,12 @@ import baModDeveloper.action.BATwinsCoverChargeAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DoubleTapPower;
 
 public class BATwinsCoverCharge extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("CoverCharge");
@@ -21,6 +23,10 @@ public class BATwinsCoverCharge extends BATwinsModCustomCard {
     private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
+
+    public int energyOnUseMomoi=-1;
+    public int energyOnUseMidori=-1;
+    public boolean ignoredEnergyOnUse=true;
 
     public BATwinsCoverCharge() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
@@ -37,7 +43,12 @@ public class BATwinsCoverCharge extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsCoverChargeAction(abstractPlayer, this.damage, this.block, this.freeToPlayOnce, abstractMonster));
+        if(!this.isInAutoplay){
+            this.energyOnUseMomoi=BATwinsEnergyPanel.getMomoiCount();
+            this.energyOnUseMidori=BATwinsEnergyPanel.getMidoriCount();
+        }
+        addToBot(new BATwinsCoverChargeAction(abstractPlayer, this.damage, this.block, this.freeToPlayOnce, abstractMonster,this.ignoredEnergyOnUse?-1:this.energyOnUseMomoi,this.ignoredEnergyOnUse?-1:this.energyOnUseMidori));
+        this.ignoredEnergyOnUse=true;
     }
 
     @Override

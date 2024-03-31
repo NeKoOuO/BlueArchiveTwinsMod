@@ -1,5 +1,6 @@
 package baModDeveloper.power;
 
+import baModDeveloper.cards.BATwinsCoverCharge;
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -64,6 +65,11 @@ public class BATwinsSeeYouHaveASharenPower extends AbstractPower {
                     temp.purgeOnUse = true;
                     if (temp instanceof BATwinsModCustomCard) {
                         ((BATwinsModCustomCard) temp).numberOfConnections = 1;
+                    }
+                    if(card instanceof BATwinsCoverCharge&&temp instanceof BATwinsCoverCharge){
+                        ((BATwinsCoverCharge) temp).energyOnUseMomoi=((BATwinsCoverCharge) card).energyOnUseMomoi;
+                        ((BATwinsCoverCharge) temp).energyOnUseMidori=((BATwinsCoverCharge) card).energyOnUseMidori;
+                        ((BATwinsCoverCharge) temp).ignoredEnergyOnUse=false;
                     }
                     AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(temp, mo, card.energyOnUse, true, true), true);
 
