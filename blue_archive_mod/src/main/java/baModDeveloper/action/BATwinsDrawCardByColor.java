@@ -99,6 +99,7 @@ public class BATwinsDrawCardByColor extends AbstractGameAction {
                     for (AbstractRelic r : AbstractDungeon.player.relics) {
                         r.onCardDraw(c);
                     }
+                    c.triggerWhenDrawn();
                     AbstractDungeon.player.hand.refreshHandLayout();
                 }
             } else {
