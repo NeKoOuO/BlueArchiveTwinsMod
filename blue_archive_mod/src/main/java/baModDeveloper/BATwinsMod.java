@@ -219,13 +219,11 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void receiveEditStrings() {
-        String lang;
+        String lang="ENG";
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
 //        } else if(language==GameLanguage.ENG){
 //            lang = "ENG";
-        }else{
-            lang="ZHS";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");

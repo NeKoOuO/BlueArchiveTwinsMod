@@ -55,7 +55,8 @@
 			"升级",
 			"交换",
 			"放入%s",
-			"添加子弹"
+			"添加子弹",
+			"选择%d张牌"
 		]
 	},
 	"BATwinsMod:CancelButton":{
@@ -117,6 +118,21 @@
 		"TEXT":[
 			" #r已经足够了！ ",
 			" #g停下来吧。 "
+		]
+	},
+	"BATwinsMod:ModeSelectionPrompt":{
+		"TEXT":[
+			"开启3D模型",
+			"是否开启3D模型",
+			"开启需要加载模型，会消耗一些时间。\n若开启此选项导致您无法打开游戏或游戏卡死，请重启游戏后关闭此选项。"
+		]
+	},
+	"BATwinsMod:tabBarName":{
+		"TEXT":[
+			"才羽桃与才羽绿",
+			"桃牌",
+			"Batwinsmidoricard",
+			"绿牌"
 		]
 	}
 }
