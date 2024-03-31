@@ -1,28 +1,28 @@
 {
     "BATwinsMod:BurnPower":{
-        "NAME":"灼伤",
+        "NAME":"Burn",
         "DESCRIPTIONS":[
-            "回合结束时，造成","点伤害，然后层数减1。死亡时对其他敌人造成等同于层数2倍的伤害。"
+            "At the end of the turn, deal ","damage, then decrease the amount by 1. Upon death, deal damage to other enemies equal to twice the amount."
         ]
     },
     "BATwinsMod:DeveloperCollaborationPower":{
-        "NAME":"开发者协同",
+        "NAME":"Developer collaboration",
         "DESCRIPTIONS":[
-            "战斗中交替打出桃牌与绿牌后，本回合卡牌的伤害和格挡上升",
+            "After alternating between playing MomoiCard and MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase ",
             "%。",
-            "(打出的上张牌是：",
+            "(The last card played is:",
             ")",
-            "桃牌",
-            "绿牌",
-            "无色牌",
-            "诅咒牌",
-            "其他牌",
-            "没有牌",
-			"当前上升"
+            "MomoiCard",
+            "MidoriCard",
+            "ColorLess",
+            "Curses",
+            "OtherCard",
+            "NoneCard",
+			"Now "
 		]
     },
     "BATwinsMod:ArtPolishingPower":{
-        "NAME":"艺术打磨",
+        "NAME":"Art polishing",
         "DESCRIPTIONS":[
             "给予异常状态时，给予目标",
             "层中毒。不会因本能力的效果触发。"
@@ -43,7 +43,7 @@
         ]
     },
     "BATwinsMod:ArtPolishingExchangePower":{
-        "NAME":"艺术打磨(交换)",
+        "NAME":"Art polishing(Exchage)",
         "DESCRIPTIONS":[
             "给予异常状态时，给予目标",
             "层灼伤。不会因本能力的效果触发。"

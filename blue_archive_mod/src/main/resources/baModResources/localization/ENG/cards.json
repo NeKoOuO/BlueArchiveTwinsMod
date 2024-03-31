@@ -27,7 +27,7 @@
     },
     "BATwinsMod:ParoxysmalPain":{
         "NAME":"The Pain of Creation",
-        "DESCRIPTION":"Apply !M!  batwinsmod:Burn ,Deal !D! Damage to all enemies."
+        "DESCRIPTION":"Apply !M! batwinsmod:Burn ,Deal !D! Damage to all enemies."
     },
     "BATwinsMod:PaintingArt":{
         "NAME":"Painting Art",
@@ -95,7 +95,7 @@
     },
     "BATwinsMod:EnchantedBullet":{
         "NAME":"Enchantment",
-        "DESCRIPTION":"Apply !M!  batwinsmod:Burn . NL Deal !D! Damage ."
+        "DESCRIPTION":"Apply !M! batwinsmod:Burn . NL Deal !D! Damage ."
     },
     "BATwinsMod:ExcellentDesigner":{
         "NAME":"最棒的开发者们",
@@ -369,7 +369,7 @@
 	},
 	"BATwinsMod:Assault":{
 		"NAME":"Assault",
-		"DESCRIPTION":"Deal !D! Damage,Apply !M!  weak . NL if no cards were played this turn,choose and play 1 skill card from your hand."
+		"DESCRIPTION":"Deal !D! Damage,Apply !M! weak . NL if no cards were played this turn,choose and play 1 skill card from your hand."
 	},
 	"BATwinsMod:DontSayIt":{
 		"NAME":"Keep it secret from my sister",
@@ -415,11 +415,11 @@
 	},
 	"BATwinsMod:ArmorPiercingBullet":{
 		"NAME":"Armor-Piercing Bullet",
-		"DESCRIPTION":"Deal !D! Damage. NL Apply !M!  vulnerable ."
+		"DESCRIPTION":"Deal !D! Damage. NL Apply !M! vulnerable ."
 	},
 	"BATwinsMod:Shooting":{
 		"NAME":"射击",
-		"DESCRIPTION":" Retain  NL Deal !D! Damage."
+		"DESCRIPTION":" Retain NL Deal !D! Damage."
 	},
 	"BATwinsMod:Bullet":{
 		"NAME":"子弹",
@@ -445,15 +445,15 @@
 	},
 	"BATwinsMod:PoisonBullet":{
 		"NAME":"Poisoned Bullet",
-		"DESCRIPTION":"Deal !D! Damage,Apply !M!  poison ."
+		"DESCRIPTION":"Deal !D! Damage,Apply !M! poison ."
 	},
 	"BATwinsMod:IncendiaryBullet":{
 		"NAME":"Incendiary Bullet",
-		"DESCRIPTION":"Deal !D! Damage,Apply !M!  batwinsmod:Burn ."
+		"DESCRIPTION":"Deal !D! Damage,Apply !M! batwinsmod:Burn ."
 	},
 	"BATwinsMod:SniperBullet":{
 		"NAME":"Sniper Bullet",
-		"DESCRIPTION":"Deal !D! Damage,Apply !M!  weak ."
+		"DESCRIPTION":"Deal !D! Damage,Apply !M! weak ."
 	},
 	"BATwinsMod:StableShooting":{
 		"NAME":"Steady Shooting",
