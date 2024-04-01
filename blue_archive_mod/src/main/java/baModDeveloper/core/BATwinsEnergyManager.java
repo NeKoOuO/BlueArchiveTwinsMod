@@ -49,7 +49,7 @@ public class BATwinsEnergyManager extends EnergyManager {
 
     @Override
     public void use(int e) {
-        BATwinsEnergyPanel.useEnergy(e, EnergyType.SPEIFY);
+        BATwinsEnergyPanel.useEnergy(e, EnergyType.SHARE);
     }
 
     public void use(int e, EnergyType energyType) {
