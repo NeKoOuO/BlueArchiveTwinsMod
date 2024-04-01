@@ -9,7 +9,7 @@
         "NAME":"Developer collaboration",
         "DESCRIPTIONS":[
             "After alternating between playing MomoiCard and MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase ",
-            "%。",
+            "%.",
             "(The last card played is:",
             ")",
             "MomoiCard",
@@ -24,160 +24,160 @@
     "BATwinsMod:ArtPolishingPower":{
         "NAME":"Art polishing",
         "DESCRIPTIONS":[
-            "给予异常状态时，给予目标",
-            "层中毒。不会因本能力的效果触发。"
+            "When applying a status effect, apply to the target ",
+            "poison. This effect does not trigger due to this power"
         ]
     },
     "BATwinsMod:GainTENextTurnPower":{
-        "NAME":"下回合能量（小桃）",
+        "NAME":"Next turn's energy(MOMOI)",
         "DESCRIPTIONS":[
-            "下回合获得",
-            "小桃能量。"
+            "Next turn gain ",
+            "MOMOI Energy."
         ]
     },
     "BATwinsMod:GainLENextTurnPower":{
-        "NAME":"下回合能量（小绿）",
+        "NAME":"Next turn's energy(MIDORI)",
         "DESCRIPTIONS":[
-            "下回合获得",
-            "小绿能量。"
+            "Next turn gain ",
+            "MIDORI Energy."
         ]
     },
     "BATwinsMod:ArtPolishingExchangePower":{
         "NAME":"Art polishing(Exchage)",
         "DESCRIPTIONS":[
-            "给予异常状态时，给予目标",
-            "层灼伤。不会因本能力的效果触发。"
+            "When applying a status effect, apply to the target ",
+            " burn. This effect does not trigger due to this power."
         ]
     },
-    "BATwinsMod:OnceMorePower":{
-        "NAME":"再来一次",
-        "DESCRIPTIONS":[
-            "回合结束时，触发所有敌人的灼伤。"
-        ]
-    },
-    "BATwinsMod:OnceMoreExchangePower":{
-        "NAME":"再来一次（交换）",
-        "DESCRIPTIONS":[
-            "回合结束时，触发所有敌人的中毒。"
-        ]
-    },
+	"BATwinsMod:OnceMorePower":{
+		"NAME":"Once More",
+		"DESCRIPTIONS":[
+			"At the end of the turn, trigger burn on all enemies."
+		]
+	},
+	"BATwinsMod:OnceMoreExchangePower":{
+		"NAME":"Once More (Exchange)",
+		"DESCRIPTIONS":[
+			"At the end of the turn, trigger poison on all enemies."
+		]
+	},
     "BATwinsMod:BugFixPower":{
         "NAME":"漏洞修复",
         "DESCRIPTIONS":[
             "回合开始时，抽牌堆随机",
-            "张状态牌或诅咒牌消耗，若消耗的是漏洞，则获得1力量和1敏捷。"
+            "张状态牌或诅咒牌消耗，若消耗的是漏洞，则获得1力量和1敏捷."
         ]
     },
-    "BATwinsMod:ExperiencePower":{
-        "NAME":"经验值",
-        "DESCRIPTIONS":[
-            "打出桃牌或绿牌时，获得等同于其耗能的经验值。\n当前：LV",
-            "（",
-            "/",
-            "）\n卡牌的伤害和格挡增加等级数。",
-            "升级！！"
-        ]
-    },
-	"BATwinsMod:SinglePlayerGamePower":{
-		"NAME":"单人游戏",
+	"BATwinsMod:ExperiencePower":{
+		"NAME":"Experience",
 		"DESCRIPTIONS":[
-			"打出牌后若手牌只有一种颜色，获得",
-			"点格挡。"
+			"When playing a MOMOI or MDIORI card, gain experience points equal to its energy cost.\nCurrent: LV",
+			"(",
+			"/",
+			")\nCard's damage and block increase by the level number.",
+			"Level Up!!"
+		]
+	},
+	"BATwinsMod:SinglePlayerGamePower":{
+		"NAME":"Single Player Game",
+		"DESCRIPTIONS":[
+			"After playing a card, if your hand contains only one color, gain ",
+			"block."
 		]
 	},
 	"BATwinsMod:CoolingTimePower":{
-		"NAME":"下回合加入手牌",
+		"NAME":"Next Turn Addition to Hand",
 		"DESCRIPTIONS":[
-			"下回合开始时，将",
-			"加入手牌（除非其已消耗）。"
+			"At the start of the next turn, add ",
+			"to your hand (unless exhausted)."
 		]
 	},
 	"BATwinsMod:DoubleExperiencePower":{
-		"NAME":"双倍经验",
+		"NAME":"Double Experience",
 		"DESCRIPTIONS":[
-			"获得的经验值变为两倍。"
+			"Experience gained is doubled."
 		]
 	},
 	"BATwinsMod:DefensiveCounterattackPower":{
 		"NAME":"防守与打击",
 		"DESCRIPTIONS":[
 			"受到攻击时，对攻击的怪物打出",
-			"张打击。"
+			"张打击."
 		]
 	},
 	"BATwinsMod:DefensiveCounterattackExchangePower":{
-		"NAME":"防守与打击（交换）",
+		"NAME":"防守与打击(交换)",
 		"DESCRIPTIONS":[
 			"受到攻击时，对攻击的怪物打出",
-			"张打击。"
+			"张打击."
 		]
 	},
 	"BATwinsMod:NormalAttackMethodsPower":{
 		"NAME":"平A流",
 		"DESCRIPTIONS":[
 			"每回合开始从抽牌堆将",
-			"张打击牌加入手牌。那张牌变为共有"
+			"张打击牌加入手牌.那张牌变为共有"
 		]
 	},
 	"BATwinsMod:NoramlAttackAuxiliaryPower":{
 		"NAME":"平A辅助",
 		"DESCRIPTIONS":[
-			"平A流将打击牌加入手牌时，若抽牌堆打击牌数量不足，则进行1次洗牌。"
+			"平A流将打击牌加入手牌时，若抽牌堆打击牌数量不足，则进行1次洗牌."
 		]
 	},
-	"BATwinsMod:SeeYouHaveASharenPower":{
-		"NAME":"见者有份！",
-		"DESCRIPTIONS":[
-			"本回合打出的下",
-			"张单体攻击牌对所有敌人打出1次。"
+	"BATwinsMod:SeeYouHaveASharenPower": {
+		"NAME": "Each to their own!",
+		"DESCRIPTIONS": [
+			"The next",
+			"single-target attack cards played this turn will hit all enemies once."
 		]
 	},
-	"BATwinsMod:ReadingDocumentsPower":{
-		"NAME":"即时存档",
-		"DESCRIPTIONS":[
-			"本场战斗效果打出的牌会回到抽牌堆。"
+	"BATwinsMod:ReadingDocumentsPower": {
+		"NAME": "Instant Save",
+		"DESCRIPTIONS": [
+			"Cards played with effects in this battle will return to the draw pile."
 		]
 	},
-	"BATwinsMod:ShufflePower":{
-		"NAME":"结束洗牌",
-		"DESCRIPTIONS":[
-			"本回合结束时将弃牌堆洗入抽牌堆。"
+	"BATwinsMod:ShufflePower": {
+		"NAME": "End-of-Turn Shuffle",
+		"DESCRIPTIONS": [
+			"At the end of this turn, shuffle the discard pile into the draw pile."
 		]
 	},
 	"BATwinsMod:IntegratingAndIntegratingPower":{
-		"NAME":"融会贯通",
+		"NAME":"Integrated Mastery",
 		"DESCRIPTIONS":[
-			"打出交换后的耗能1以上的牌时将%d张原本颜色的牌加入手牌，并附加 虚无 ， 消耗 。"
+			"When playing a card with an energy cost greater than 1 after exchanging, add %d cards of the original color to your hand, and apply Ethereal and Exhaust."
 		]
 	},
 	"BATwinsMod:MasterCraftsmanshipPower":{
-		"NAME":"技艺大师",
+		"NAME":"Mastering All",
 		"DESCRIPTIONS":[
-			"每回合开始时至多交换%d张手牌。且本场战斗交换牌时将牌升级。"
+			"At the start of each turn, exchange up to %d cards. When exchanging cards in this battle, upgrade the cards."
 		]
 	},
 	"BATwinsMod:BorrowMePower":{
-		"NAME":"借用一下",
+		"NAME":"Borrow Me",
 		"DESCRIPTIONS":[
-			"本回合所有牌视为 batwinsmod:共有 。"
+			"This turn, all cards are considered BATwinsMod:Shared."
 		]
 	},
 	"BATwinsMod:MaidFormPower":{
-		"NAME":"女仆形态",
+		"NAME":"Maid Form",
 		"DESCRIPTIONS":[
-			"每回合打出第%d张牌后打出1张视为相同耗能的加速。"
+			"After playing the %dth card each turn, play a card with the same energy cost as an Accelerate."
 		]
 	},
 	"BATwinsMod:FlatFallPower":{
-		"NAME":"平地摔",
+		"NAME":"Flat Fall",
 		"DESCRIPTIONS":[
-			"本回合只能再打出%d张攻击牌。"
+			"You can only play %d more attack cards this turn."
 		]
 	},
 	"BATwinsMod:ExpansionMagazinePower":{
 		"NAME":"扩容弹夹",
 		"DESCRIPTIONS":[
-			"本场战斗存储的子弹升级。"
+			"本场战斗存储的子弹升级."
 		]
 	}
 }
