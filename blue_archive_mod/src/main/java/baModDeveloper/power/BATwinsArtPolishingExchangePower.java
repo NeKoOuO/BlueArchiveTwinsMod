@@ -52,7 +52,7 @@ public class BATwinsArtPolishingExchangePower extends AbstractPower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (source == AbstractDungeon.player && power.type == PowerType.DEBUFF) {
+        if (source == AbstractDungeon.player && power.type == PowerType.DEBUFF&&target!=AbstractDungeon.player) {
             addToBot(new ApplyPowerAction(target, sourcePower, new BATwinsBurnPower(target, sourcePower, this.amount)));
         }
     }
