@@ -1,29 +1,29 @@
 {
-    "BATwinsMod:Exchange":{
-        "TEXT":[
-            "选择",
-            "手牌交换"
-        ],
-        "EXTRA_TEXT":[
-            "1张",
-            "1至3张"
-        ]
-    },
-    "BATwinsMod:BattleCommandAction":{
-        "TEXT":[
-            "选择1张手牌返回抽牌堆"
-        ]
-    },
-    "BATwinsMod:AddHandAccordColorAction":{
-        "TEXT":[
-            "选择1张牌加入手牌"
-        ]
-    },
-    "BATwinsMod:InterpretiveErrorAction":{
-        "TEXT":[
-            "选择1张牌交换"
-        ]
-    },
+	"BATwinsMod:Exchange":{
+		"TEXT":[
+			"Choose",
+			"Exchange Hand"
+		],
+		"EXTRA_TEXT":[
+			"1 card",
+			"1 to 3 cards"
+		]
+	},
+	"BATwinsMod:BattleCommandAction":{
+		"TEXT":[
+			"Choose 1 card to return to the draw pile"
+		]
+	},
+	"BATwinsMod:AddHandAccordColorAction":{
+		"TEXT":[
+			"Choose 1 card to add to your hand"
+		]
+	},
+	"BATwinsMod:InterpretiveErrorAction":{
+		"TEXT":[
+			"Choose 1 card to exchange"
+		]
+	}
 	"BATwinsMod:SelectAdventureCard":{
 		"TEXT":[
 			"选择1张冒险牌"
@@ -31,108 +31,108 @@
 	},
 	"BATwinsMod:ExchangeButton":{
 		"TEXT":[
-			"交换1张牌"
+			"Exchange 1 card"
 		]
 	},
 	"BATwinsMod:ExchangeEffect":{
 		"TEXT":[
-			"选1张牌交换"
+			"Choose 1 card to exchange"
 		]
 	},
 	"BATwinsMod:Exchange_Option":{
 		"TEXT":[
-			"#b交换 %s"
+			"#bExchange %s"
 		]
 	},
 	"BATwinsMod:GridSelectTitle":{
 		"TEXT":[
-			"打出",
-			"消耗",
-			"复制",
-			"下回合加入手牌",
-			"存储",
-			"加入手牌",
-			"升级",
-			"交换",
-			"放入%s",
-			"添加子弹",
-			"选择%d张牌"
+			"Exchange",
+			"Consume",
+			"Copy",
+			"Add to hand next turn",
+			"Store",
+			"Add to hand",
+			"Upgrade",
+			"Swap",
+			"Place in %s",
+			"Add bullet",
+			"Select %d cards"
 		]
 	},
 	"BATwinsMod:CancelButton":{
 		"TEXT":[
-			"取消"
+			"Cancel"
 		]
 	},
 	"BATwinsMod:TipMsg":{
 		"TEXT":[
-			"选择1张牌交换"
+			"Choose 1 card to exchange"
 		]
 	},
 	"BATwinsMod:CardViewBtn":{
 		"TEXT":[
-			"看交换后"
+			"View after Exchange"
 		]
 	},
 	"BATwinsMod:EnergyOrbLabel":{
 		"TEXT":[
-			"小桃能量",
-			"小绿能量"
+			"Momoiiorb",
+			"Midoriorb"
 		]
 	},
 	"BATwinsMod:EnergyOrbMsg":{
 		"TEXT":[
-			"你当前的小桃能量，打出桃牌时优先消耗这个能量。不足时消耗两倍小绿能量代替。",
-			"你当前的小绿能量，打出绿牌时优先消耗这个能量。不足时消耗两倍小桃能量代替。"
+			"Your current Momoiiorb, prioritize consumption of this energy when playing Peach cards. If insufficient, consume double the Midoriorb instead.",
+			"Your current Midoriorb, prioritize consumption of this energy when playing Green cards. If insufficient, consume double the Momoiiorb instead."
 		]
 	},
 	"BATwinsMod:ConfigToggler":{
 		"TEXT":[
-			"自动排序手牌",
-			"显示经验条"
+			"Auto sort hand",
+			"Show experience bar"
 		]
 	},
 	"BATwinsMod:Tips":{
 		"TEXT":[
-			"小桃和小绿喜欢玩复古游戏",
-			"小桃好像偷偷默默在选人按钮上设置了什么，说着什么多按几次。。。。",
-			"虽然小桃和小绿的性格大不相同，但对游戏相同的热情使她们关系非常好。",
-			"小桃是姐姐，小绿是妹妹。",
-			"小桃和小绿的生日都是2月4日，因为是双胞胎嘛",
-			"小桃和小绿的枪上一直挂着对方送的挂饰"
+			"Momoi and Midori love playing retro games.",
+			"Momoi seems to have set something on the character selection button quietly, saying something about pressing it multiple times...",
+			"Although Momoi and Midori have very different personalities, their shared passion for gaming makes their relationship very good.",
+			"Momoi is the older sister, and Midori is the younger sister.",
+			"Momoi and Midori's birthdays are both on February 4th, because they are twins.",
+			"Momoi and Midori always have each other's accessories hanging on their guns."
 		]
 	},
 	"BATwinsMod:FlatFall":{
 		"TEXT":[
-			"摔倒了，不能再打出攻击牌。"
+			"Fall down, can't play attack cards anymore."
 		]
 	},
 	"BATwinsMod:Tutorial":{
 		"TEXT":[
-			"本角色拥有两个能量槽，并且有着两种颜色的卡牌。打出桃牌优先消耗桃能量，打出绿牌优先消耗率能量。",
-			"当此颜色的能量不足时也可以打出卡牌，但需要消耗2倍的另一颜色能量。",
-			"能量槽上有着挂饰的是主要能量槽，打出除了本角色的卡牌（例如无色牌等）时会优先消耗主要能量槽。 NL 能够提升能量上限的效果会同时提升两个能量槽的上限，但在战斗中获得临时能量的效果只会在主要能量槽上增加。 NL 你可以随时点击能量槽来设定主要能量槽。"
+			"This character has two energy slots and two colors of cards. Play Peach cards to prioritize consuming Peach energy, and play Green cards to prioritize consuming Midori energy.",
+			"When the energy of this color is insufficient, you can also play cards, but you need to consume double the energy of the other color.",
+			"The slot with accessories is the main energy slot. Playing cards other than those of this character (such as colorless cards) will prioritize consuming the main energy slot. NL Effects that increase energy limits will increase the limits of both slots, but effects that grant temporary energy during battles will only increase the main energy slot. NL You can click on the energy slots at any time to set the main energy slot."
 		]
 	},
 	"BATwinsMod:LoopBreak":{
 		"TEXT":[
-			" #r已经足够了！ ",
-			" #g停下来吧。 "
+			" #rThat's enough! ",
+			" #gStop it. "
 		]
 	},
 	"BATwinsMod:ModeSelectionPrompt":{
 		"TEXT":[
-			"开启3D模型",
-			"是否开启3D模型",
-			"开启需要加载模型，会消耗一些时间。\n若开启此选项导致您无法打开游戏或游戏卡死，请重启游戏后关闭此选项。"
+			"Enable 3D Models",
+			"Enable 3D Models?",
+			"Enabling 3D models requires loading, which may take some time.\nIf enabling this option prevents you from opening the game or causes the game to freeze, please restart the game and disable this option."
 		]
 	},
 	"BATwinsMod:tabBarName":{
 		"TEXT":[
-			"才羽桃与才羽绿",
-			"桃牌",
+			"Momoi & Midori",
+			"Momoi Cards",
 			"Batwinsmidoricard",
-			"绿牌"
+			"Midori Cards"
 		]
 	}
 }
