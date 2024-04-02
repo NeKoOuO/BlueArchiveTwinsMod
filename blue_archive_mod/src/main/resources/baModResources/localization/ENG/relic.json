@@ -1,104 +1,118 @@
 {
 	"BATwinsMod:MomoisGameConsole":{
-		"NAME":"小桃的游戏机",
-		"FLAVOR":"这不是已经坏了嘛，社团的经费可支撑不了买新游戏机了！\n --小桃",
+		"NAME":"Momoi's Game Console",
+		"FLAVOR":"It's already broken, and the club's funds can't afford a new one! - Momoi",
 		"DESCRIPTIONS":[
-			"每场战斗开始时，获得 [batwinsmod:momoiorbicon] 。抽牌堆随机 #ybatwinsmod:桃牌 加入手牌。"
+			"At the start of each battle, gain [batwinsmod:momoiorbicon] . Add a random #yBATwinsMod:MomoiCard from your draw pile to your hand."
 		]
 	},
 	"BATwinsMod:MidorisGameConsole":{
-		"NAME":"小绿的游戏机",
-		"FLAVOR":"找到了真是太好了，要赶快检查下游戏存档。\n --小绿",
+		"NAME":"Midori's Game Console",
+		"FLAVOR":"Finding it is great! I need to check the game saves right away. - Midori",
 		"DESCRIPTIONS":[
-			"每场战斗开始时，获得 [batwinsmod:midoriorbicon] 。抽牌堆随机 #ybatwinsmod:绿牌 加入手牌。"
+			"At the start of each battle, gain [batwinsmod:midoriorbicon] . Add a random #yBATwinsMod:MidoriCard from your draw pile to your hand."
 		]
 	},
 	"BATwinsMod:AncientGameCartridges":{
-		"NAME":"古老的游戏卡带",
-		"FLAVOR":"一块破旧的游戏卡带，已经无法读取了，勉强能看到上面写了《杀 ■ ■ 塔》。",
+		"NAME":"Ancient Game Cartridges",
+		"FLAVOR":"A worn-out game cartridge, no longer readable, barely showing the title 'S*ay *he s**re'.",
 		"DESCRIPTIONS":[
-			"每场战斗开始时，打出抽牌堆随机1张 #b能力牌 。"
+			"At the start of each battle, play a random #bPower from your draw pile."
 		]
 	},
 	"BATwinsMod:ByProving":{
-		"NAME":"关卡通过证明",
-		"FLAVOR":"一块崭新的奖章，上面写着\n新手关卡通过证明！--%s。",
+		"NAME":"By Proving",
+		"FLAVOR":"A brand new medal that reads 'Novice Level Passed!' --%s.",
 		"DESCRIPTIONS":[
-			"打出 #b%s 时，对随机敌人造成相同伤害。",
-			"打出 #b%s 时，抽2张牌",
-			"打出 #b%s 时，向抽牌堆添加1张复制。",
-			"不同类型卡牌有着不同效果",
-			"一块崭新的奖章，上面写着\n新手关卡通过证明！--%s。"
+			"When you play #b%s, deal the same damage to a random enemy.",
+			"When you play #b%s, draw 2 cards.",
+			"When you play #b%s, add a copy to your discard pile.",
+			"Different card types have different effects",
+			"A brand new medal that reads 'Novice Level Passed!' --%s."
 		]
 	},
 	"BATwinsMod:GameMagazine":{
-		"NAME":"游戏杂志",
-		"FLAVOR":"买游戏附赠的游戏杂志，很遗憾没有写关于这款游戏的内容。",
+		"NAME":"Game Magazine",
+		"FLAVOR":"A game magazine given as a bonus for purchasing a game, unfortunately, it doesn't contain any information about this game.",
 		"DESCRIPTIONS":[
-			"每场战斗开始时，将1张 #y交换 加入手牌。"
+			"At the start of each battle, add 1 #yBATwinsMod:Exchange to your hand."
 		]
 	},
 	"BATwinsMod:GameGuide":{
-		"NAME":"游戏攻略书",
-		"FLAVOR":"上面说只要拖动手牌就可以将其打出！",
+		"NAME":"Game Guide",
+		"FLAVOR":"It says you just need to drag the cards to play them!",
 		"DESCRIPTIONS":[
-			"每回合开始时将 #b1 张附带 #y虚无消耗 的 #y交换 加入手牌。"
+			"At the start of each turn, add #b1 #yBATwinsMod:Exchange with #yEthereal and #yExhaust to your hand."
 		]
 	},
 	"BATwinsMod:FoldingShield":{
-		"NAME":"偏折护盾",
-		"FLAVOR":"优香经常使用的护盾",
+		"NAME":"Folding Shield",
+		"FLAVOR":"A shield frequently used by Yuka.",
 		"DESCRIPTIONS":[
-			"回合结束时获得手牌数 #b%d 倍的格挡。"
+			"At the end of your turn, gain #b%d times the number of cards in your hand as Block."
 		]
 	},
 	"BATwinsMod:Headband":{
-		"NAME":"女仆发箍",
-		"FLAVOR":"这么奇怪的地方以前也会有女仆吗？",
+		"NAME":"Maid Headband",
+		"FLAVOR":"Would there have been maids in such a strange place before?",
 		"DESCRIPTIONS":[
-			"每回合开始时获得 [batwinsmod:momoiorbicon] 或 [batwinsmod:midoriorbicon] 。在拾取时选择。"
+			"At the start of each turn, gain [batwinsmod:momoiorbicon] or [batwinsmod:midoriorbicon] . Choose upon pickup."
 		]
 	},
 	"BATwinsMod:SpecialAmmunition":{
-		"NAME":"特制弹药",
-		"FLAVOR":"这可是工程部最新产品。",
+		"NAME":"Special Ammunition",
+		"FLAVOR":"This is the latest product from the engineering department.",
 		"DESCRIPTIONS":[
-			"子弹牌的伤害提高 #b3 点。"
+			"Increase the damage of Bullet cards by #b3."
 		]
 	},
 	"BATwinsMod:SwordOfLight":{
-		"NAME":"光之剑",
-		"FLAVOR":"拿都很难拿得动，这给我们要怎么用嘛。",
+		"NAME":"Sword of Light",
+		"FLAVOR":"It's hard to even hold it, how are we supposed to use it?",
 		"DESCRIPTIONS":[
-			"每场战斗打出 #b%d 张牌后对所有敌人造成 #b%d 点伤害。"
+			"After playing #b%d cards in a battle, deal #b%d damage to all enemies."
 		]
 	},
 	"BATwinsMod:NekoHowitzer":{
-		"NAME":"喵冲",
-		"FLAVOR":"柚子的武器，可以从远处发射榴弹炮",
+		"NAME":"Neko Howitzer",
+		"FLAVOR":"Yuzu's weapon, can fire grenades from a distance",
 		"DESCRIPTIONS":[
-			"每回合开始时给予随机敌人 #b%d 层灼伤，有 #b1%% 的几率使该敌人的灼伤翻倍。"
+			"At the start of each turn, apply #b%d stacks of Burn to a random enemy. Has a #b1%% chance to double the Burn stacks on that enemy."
 		]
 	},
 	"BATwinsMod:FitnessRing":{
-		"NAME":"健身环",
-		"FLAVOR":"总是三分钟热度。",
+		"NAME":"Fitness Ring",
+		"FLAVOR":"Always enthusiastic for the first three minutes.",
 		"DESCRIPTIONS":[
-			"第一回合抽到的牌在本场战斗中升级。"
+			"The first card drawn in the first turn of battle is upgraded for the rest of the battle."
 		]
 	},
 	"BATwinsMod:Broom":{
-		"NAME":"女仆扫把",
-		"FLAVOR":"打扫时间到！",
+		"NAME":"Broom",
+		"FLAVOR":"Time to clean up!",
 		"DESCRIPTIONS":[
-			"每过 #b3 回合从弃牌堆中选择 #b1 张牌加入手牌。"
+			"Every #b3 turns, add #b1 card from the discard pile to your hand."
 		]
 	},
 	"BATwinsMod:MaidAttire":{
-		"NAME":"女仆装",
-		"FLAVOR":"谁都有点小癖好不是吗？ --店主",
+		"NAME":"Maid Attire",
+		"FLAVOR":"Everyone has a little fetish, don't they? - Shopkeeper",
 		"DESCRIPTIONS":[
-			"若本回合打出过包含耗能为0，1，2，3的牌，获得1层无实体。"
+			"If you have played cards with costs 0, 1, 2, and 3 this turn, gain 1 stack of Intangible."
+		]
+	},
+	"BATwinsMod:UnknownObject":{
+		"NAME":"不明物体",
+		"FLAVOR":"黑客部破解了游戏，但似乎没有完全破解。",
+		"DESCRIPTIONS":[
+			"随机遗物效果，每回合会改变。"
+		]
+	},
+	"BATwinsMod:RubiksCube":{
+		"NAME":"Rubik's Cube",
+		"FLAVOR":"\"The one who solves the Rubik's Cube is the true millennium person!\"",
+		"DESCRIPTIONS":[
+			"After playing cards in synergy 2 times, draw 1 card."
 		]
 	}
 }

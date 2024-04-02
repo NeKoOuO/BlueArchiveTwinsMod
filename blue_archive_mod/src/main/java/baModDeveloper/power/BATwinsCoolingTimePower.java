@@ -45,10 +45,10 @@ public class BATwinsCoolingTimePower extends AbstractPower {
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
         StringBuilder stringBuilder = new StringBuilder(this.description);
-        stringBuilder.append("\n");
+        stringBuilder.append("\n ");
         for (AbstractCard c : this.strogedCards) {
             stringBuilder.append(c.name);
-            stringBuilder.append("\n");
+            stringBuilder.append("\n ");
         }
         stringBuilder.append(DESCRIPTIONS[1]);
         this.description = stringBuilder.toString();
