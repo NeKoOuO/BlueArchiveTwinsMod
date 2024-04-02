@@ -373,7 +373,7 @@
 	},
 	"BATwinsMod:DontSayIt":{
 		"NAME":"要对姐姐保密哦",
-		"DESCRIPTION":"获得 !B! 点 格挡 2次，丢弃手牌中所有非 batwinsmod:绿牌 。 NL 若此牌没有丢弃牌则 batwinsmod:提升等级 !M! 。",
+		"DESCRIPTION":"获得 !B! 点 格挡 2次，丢弃手牌中所有非 batwinsmod:绿牌 。 NL 若此牌没有丢弃牌则获得 !M! 层 batwinsmod:经验值 。",
 		"EXTENDED_DESCRIPTION":[
 			"要对妹妹保密哦"
 		]
