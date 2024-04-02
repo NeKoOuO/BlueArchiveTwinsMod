@@ -1,105 +1,104 @@
 {
 	"BATwinsMod:TrainingCamp":{
-		"NAME":"新手训练营",
+		"NAME":"Novice Training Camp",
 		"DESCRIPTIONS":[
-			"你来到了一处诡异的堡垒中，周围遍布着残破的机关傀儡，堡垒中央还有着一个完好的 @巨大机械怪兽@ 。",
-			"你战胜了怪兽，虽然受了些伤害。怪兽破坏后掉落了一块 ~奖章~ ，拾取后你感觉自己对技能有了新的感悟。",
-			"你战胜了怪兽，并且没有受到任何伤害。怪兽破坏后掉落了一块奖章，拾取后你感觉自己对技能有了新的感悟。",
-			"那机械怪兽一看就很强，还是小心为妙。",
-			"拾取奖章后继续赶路。"
+			"You arrive at a mysterious fortress, surrounded by broken mechanical puppets, with a intact @giant mechanical monster@ in the center of the fortress.",
+			"You defeated the monster, although you suffered some damage. After the monster was destroyed, it dropped a ~medal~. Upon picking it up, you feel a new insight into your skills.",
+			"You defeated the monster without taking any damage. After the monster was destroyed, it dropped a medal. Upon picking it up, you feel a new insight into your skills.",
+			"That mechanical monster looks very strong at first glance, so be careful.",
+			"After picking up the medal, continue on your way."
 		],
 		"OPTIONS":[
-			"尝试战斗 #g（70%%可能会损失至多%s血量） ",
-			"[离开]",
-			"选择1张攻击牌其同名牌获得对随机敌人造成相同伤害的效果。",
-			"选择1张技能牌其同名牌获得抽2张牌的效果。",
-			"选择1张能力牌其同名牌获得向弃牌堆添加1张复制的效果。",
-			"确定",
-			"[锁定] 需要攻击牌",
-			"[锁定] 需要技能牌",
-			"[锁定] 需要能力牌",
-			"[锁定] 需要牌"
+			"Try to fight #g(70%% chance to lose up to %s HP)",
+			"[Leave]",
+			"Choose 1 attack card to gain the effect of dealing the same damage to a random enemy with its same name card.",
+			"Choose 1 skill card to gain the effect of drawing 2 cards with its same name card.",
+			"Choose 1 ability card to gain the effect of adding a copy to the discard pile with its same name card.",
+			"Confirm",
+			"[Lock] Requires attack cards",
+			"[Lock] Requires skill cards",
+			"[Lock] Requires ability cards",
+			"[Lock] Requires cards"
 		]
 	},
 	"BATwinsMod:DirtShowdown":{
-		"NAME":"一决高下",
+		"NAME":"Showdown on the Ice",
 		"DESCRIPTIONS":[
-			"一台桌球机突兀的摆放在道路上，下面还有一整块地板，就如同被空间强行切割下来一般。 NL “ #r这台机器看起来好熟悉。 ” NL “ #g这就是夏莱咖啡厅里的那台机器吧，不知道为何会在这里。 ” NL “ #r既然这样，那么赶紧来一绝胜负吧！ ”",
-			"已经过去5分钟，两边依旧没有进一次球。 NL 这个时候，小桃和小绿决定：",
-			"小桃的这毫无技术的突然一击出乎了小绿的意料，反而起到了好效果。冰球直冲球洞而去。 NL “ #r耶耶，是我赢了哦。” NL “ #g唔，只是运气好罢了。”",
-			"小绿看准小桃放松警惕的时机，使出一招连续回旋球。冰球在边缘反复碰撞，让小桃应接不暇，最后轻松进球。 NL “ #g意料之中的胜利。 ” NL “ #r呜呜呜呜呜，怎么这样~~。 ”",
-			"差不多也该走了，要赶紧离开这个地方，柚子她们会担心的。",
-			"虽然很可惜，但是赶紧离开这座高塔比较要紧。"
+			"A tabletop hockey machine is abruptly placed on the road, with a whole piece of flooring underneath, as if forcibly cut off by space. NL \" #rThis machine looks so familiar.\" NL \" #gIsn't this the machine in the Charlotte Café? I wonder why it's here.\" NL \" #rWell then, let's have a showdown!\"",
+			"It's been 5 minutes, and there still hasn't been a single goal on either side. At this moment, Momoi and Midori decide:",
+			"Momoi's unexpected and unskilled sudden strike catches Midori off guard and surprisingly works well. The puck goes straight into the goal. NL \" #rYay, I won.\" NL \" #gHmm, it's just luck.\"",
+			"Midori takes advantage of Momoi's momentary relaxation and performs a continuous spin shot. The puck repeatedly bounces off the edges, making it difficult for Momoi to keep up, and finally easily scores. NL \" #gVictory as expected.\" NL \" #rWaaah, why did it have to be like this~~.\"",
+			"It's about time to leave. We need to hurry and leave this place, as Yuzu and the others will worry.",
+			"Although it's regrettable, it's more important to leave this tower quickly."
 		],
 		"OPTIONS":[
-			"[离开] #g看起来很怪异，不要随意乱动比较好。",
-			"[继续]",
-			"小桃使用大力直冲球",
-			"小绿使用连续回旋球",
-			"胜利之后心情大好。",
-			" #g随机升级2张桃牌 ",
-			" #g随机升级2张绿牌",
-			"[离开]"
+			"[Leave] #gIt looks weird, it's better not to mess around casually.",
+			"[Continue]",
+			"Momoi uses a powerful straight shot",
+			"Midori uses a continuous spin shot",
+			"Feeling great after the victory.",
+			" #gRandomly upgrade 2 Momoi cards ",
+			" #gRandomly upgrade 2 Midori cards",
+			"[Leave]"
 		]
-
 	},
 	"BATwinsMod:HurdleGame":{
-		"NAME":"跨栏小游戏",
+		"NAME":"Hurdle Mini-Game",
 		"DESCRIPTIONS":[
-			"你在前进路上看到有一群人围在一起，你好奇的凑了过去。他们轮流跑起来跳过障碍，好像是在进行某种挑战。 NL “ @嘿嘿@ ，那边的，对对，就是 ~你~ ，要不要来试一试，奖励很丰厚哦。”",
-			"这种挑战对你来说太简单了，你的成功引起围观群众的 @热烈鼓掌@ 。 NL “这是说好的奖励。”那人扔下 ~什么东西~ 后就立即离开了。",
-			"不想玩",
-			"你觉得这肯定是诈骗的把戏，于是决定在旁边观看。很久也没有人挑战成功，挑战的人开始 ~不耐烦~ 起来，和组织者爆发了冲突。形势开始混乱起来，你在地上发现了什么，趁着混乱赶紧离开了。",
-			"你得了%d分，这种挑战对你来说还是太难了，周围的群众已经 ~见怪不怪了~ ，看来也不是那么糟。 NL “每人只能挑战1次，根据成绩给你这个好了。”",
-			"“你得了0分，额。可能你还不知道规则~~”组织者对你的成绩也感到了尴尬。"
+			"You see a group of people gathered on the road ahead, and you curiously approach them. They take turns running and jumping over obstacles, as if participating in some kind of challenge. NL \" @Hey@, you there, yeah, ~you~ , want to give it a try? The rewards are quite generous.\"",
+			"This challenge is too simple for you, and your success elicits enthusiastic applause from the onlookers. NL \"This is the promised reward.\" The person throws down ~something~ and immediately leaves.",
+			"Don't want to play",
+			"You think this must be a scam, so you decide to watch from the sidelines. No one succeeds in the challenge for a long time, and the challengers start to get ~impatient~, leading to conflicts with the organizers. Things start to get chaotic, and you find something on the ground, taking advantage of the confusion to leave quickly.",
+			"You scored %d points, but this challenge is still too difficult for you. The surrounding crowd is ~unimpressed~, but it doesn't seem too bad. NL \"Each person can only challenge once, so here's something for your effort.\"",
+			"\"You scored 0 points, huh. Maybe you didn't know the rules~~\" The organizer is also embarrassed by your performance."
 		],
 		"OPTIONS":[
-			"[开始] 根据得分获得遗物。",
-			"[锁定] 需要会跑的模型。",
-			"[不想玩]",
-			"[离开]",
-			"[观看] 随机获得金币，遗物或药水"
+			"[Start] Receive relics based on your score.",
+			"[Lock] Requires a model that can run.",
+			"[Don't want to play]",
+			"[Leave]",
+			"[Watch] Randomly receive gold, relics, or potions"
 		]
 	},
 	"BATwinsMod:Communication":{
-		"NAME":"奇怪通讯",
+		"NAME":"Strange Communication",
 		"DESCRIPTIONS":[
-			"你们远远看到一处奇异的光亮，走过去发现那是一块悬浮在空中的屏幕，屏幕下还有一个悬浮的投币口。 NL 屏幕忽亮忽暗，不一会显现出画面。 NL “ #b@小桃···现在···电视···危险@ 。 ” NL “ #r优香，快救救我们啦。 ” NL “ #g我们被困在这个游戏里了。 ” NL “ #b@···需要帮助···道具···传送过去@ 。 ”",
-			"听不懂优香在说什么，应该不是什么重要的事。",
-			"一件道具突然从空中出现掉到了地上，而发光屏幕也消失了。"
+			"You see a strange light from afar, and as you approach, you find a screen floating in the air, with a floating coin slot below it. NL The screen flickers on and off, and soon a picture appears. NL \" #b@Momoi···now···TV···danger@ .\" NL \" #rYuzu, hurry and save us.\" NL \" #gWe're trapped in this game.\" NL \" #b@···need help···items···send over@ .\"",
+			"You can't understand what Yuzu is saying, so it's probably not something important.",
+			"A item suddenly appears from the air and drops to the ground, and the glowing screen disappears."
 		],
 		"OPTIONS":[
-			"[获得道具] #g花费%d金币，获得一件特殊遗物。 ",
-			"[离开] 优香说什么听不清啦",
-			"[离开]"
+			"[Obtain Item] #gSpend %d gold, and get a special relic.",
+			"[Leave] Can't hear what Yuzu is saying clearly",
+			"[Leave]"
 		]
 	},
 	"BATwinsMod:TheRoadIsLong":{
-		"NAME":"前路漫漫",
+		"NAME":"The Long Road Ahead",
 		"DESCRIPTIONS":[
-			"“ #g这里是什么地方？ ” NL 二人望着看不到尽头的楼梯，它真的有 @尽头@ 吗？ ",
-			" NL 虽然看过许多浪漫穿越故事，但现实确是 ~令人失望~ 的。这座塔是个颠覆常识的世界，我们必须对当前的状况进行 ~评估~ 。",
-			" NL “ #r小绿···唔···我已经累了， #r@一步都走不动了啦@ 。 ” NL “ #g@哈··哈··@ #g我也··这楼梯真的无穷无尽吗？ ”",
-			" NL 是时候进行决策了",
-			"“ #r这种状况我从漫画中看到过，看似是无解的，但周围一定有 #r~隐藏的道路~ ！ ”",
-			" NL “ #g是那本 #g~《XX默示录》~ #g吧。附近一定有寻找破局的方法。 ”",
-			" NL 两人强撑起精神，开始打量周围。",
-			"长时间跋涉令二人的身体与精神都陷入 @疲劳@ 。在地上坐了一会之后，率先打破沉默的是小桃。 NL ",
-			"又经过一段不长不短的路程，一座散发 @诡异气息@ 的大门突兀得出现在眼前。它似乎凭空出现，如同强行嵌入到这 @空间@ 当中。 NL 你们在门前停下脚步，那座大门缓缓打开。虽然不愿接近，但这是唯一的选择了。 NL “ @坚强··带·来··力量@ ” NL 似乎听到什么声音，感觉到身上出现了曾不属于自己的力量。",
-			"小桃发现了一处奇怪的空间，那里如同 @破碎的镜面@ 一般镶嵌在周围的空间中。 NL 你伸出手碰触后，一道强光闪过，你体内的疲劳感消失殆尽。 NL 等到你们睁开眼睛，已经站在了坚实的路面上，那无尽的楼梯也已经消失不见。",
-			"小绿发现了一处奇怪的空间，那里如同 @破碎的镜面@ 一般镶嵌在周围的空间中。 NL 你伸出手碰触后，一道强光闪过，你体内的疲劳感消失殆尽。 NL 等到你们睁开眼睛，已经站在了坚实的路面上，那无尽的楼梯也已经消失不见。",
-			" ~筋疲力尽~ 的你们相互依偎的坐在台阶上，长途跋涉的疲劳感一拥而上。你们慢慢的在阶梯上 ~睡着了~ 。 NL “ #b@帮助···破解游戏···出口···进行传送@ ” NL 迷迷糊糊中似乎听到了很多 ~熟悉~ 的声音，待到你们醒来时发现身处在一片草地中，那无尽的楼梯也已经消失不见。",
-			"“ #r小绿，我想回游戏部了。 ” NL “ #r这一路上还需要你照顾，我这个姐姐还真是丢人呢。 ” NL “ #g我们是姐妹，彼此照顾是理所当然的。现在最重要的是能够安全回去。 ” NL 小绿声音中透露出坚定与关怀，让小桃感受到了一丝温暖。她不由得露出了微笑，心中的担忧也稍稍减轻了一些。 NL ",
-			"“ #r没错，故事的主角才不会坐以待毙，我们必须找到出路。 ” NL “ #g嗯，大家还在等着我们呢，再坚持一下吧。” NL 你们休息了一会后又再次上路。地上留下的痕迹，不知是汗水还是泪水。"
+			"\" #gWhere are we?\" NL The two look at the staircase that seems to have no @end@ in sight. Does it really have an end?",
+			" NL Although they've seen many romantic time-travel stories, reality is ~disappointing~ . This tower is a world that defies common sense, and they must ~assess~ the current situation.",
+			" NL \" #rMidori···Ugh···I'm tired, #r@can't take another step@ .\" NL \" #g@Haha···@ #gMe too···Is this staircase really endless?\"",
+			" NL It's time to make a decision.",
+			"\" #rIn this situation, I've seen it in comics before. It seems unsolvable, but there must be ~hidden paths~ around!\"",
+			" NL \" #gIt's from that book, ~\"The Apocalypse of XX\"~ , right? There must be a way to find a solution nearby.\"",
+			" NL With renewed spirits, the two begin to survey their surroundings.",
+			"After a long journey, both physically and mentally exhausted, you sit down on the steps. After a while, it's Momoi who breaks the silence. NL ",
+			"After a not-so-short journey, a door emitting a @strange aura@ suddenly appears before you. It seems to materialize out of thin air, as if forcibly embedded into this @space@ . You stop in front of the door, which slowly opens. Although reluctant to approach, it's the only choice. NL \" @Strength··brings·power@ \" NL You hear some sound and feel a power that doesn't belong to you appear on your body.",
+			"Momoi discovers a strange space, like a @broken mirror@ embedded in the surrounding space. NL After touching it, a strong light flashes, and the fatigue in your body disappears. NL When you open your eyes, you're standing on solid ground, and the endless staircase has disappeared.",
+			"Midori discovers a strange space, like a @broken mirror@ embedded in the surrounding space. NL After touching it, a strong light flashes, and the fatigue in your body disappears. NL When you open your eyes, you're standing on solid ground, and the endless staircase has disappeared.",
+			"Both of you, ~exhausted~, lean against each other and sit on the steps, the fatigue of the long journey washing over you. You slowly ~fall asleep~ on the stairs. NL \" #b@Help···break the game···exit···transport@ \" In a daze, you seem to hear many ~familiar~ voices. When you wake up, you find yourself in a grassy area, and the endless staircase has disappeared.",
+			"\" #rMidori, I want to go back to the gaming club.\" NL \" #rYou still need to take care of me on the way, I'm such a disgrace as an older sister.\" NL \" #gWe're sisters, taking care of each other is natural. Right now, the most important thing is to get back safely.\" Midori's voice reveals determination and care, which makes Momoi feel a hint of warmth. She can't help but smile, and her worries are slightly relieved.",
+			"\" #rExactly, protagonists in stories don't just sit around waiting to die. We must find a way out.\" NL \" #gYeah, everyone is still waiting for us, let's hold on a bit longer.\" After resting for a while, you hit the road again. The traces left on the ground, whether sweat or tears, are indistinguishable."
 		],
 		"OPTIONS":[
-			"[激励] #g获得1张激励 ， #r获得2张疼痛 。",
-			"[寻路] #r失去%d点生命 ，继续。",
-			"[休息] #g回复%d点生命 ， #r减少%d点生命上限 。",
-			"[小桃去寻找] #g升级所有桃牌。 ",
-			"[小绿去寻找] #g升级所有绿牌。 ",
-			"[继续]",
-			"[离开]"
+			"[Encourage] #gGain 1 Encouragement , #rGain 2 Pain .",
+			"[Find the Way] #rLose %d HP , continue.",
+			"[Rest] #gRecover %d HP , #rReduce %d Max HP .",
+			"[Momoi Search] #gUpgrade all Momoi cards.",
+			"[Midori Search] #gUpgrade all Midori cards.",
+			"[Continue]",
+			"[Leave]"
 		]
 	}
 }
