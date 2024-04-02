@@ -120,7 +120,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
 //        if (this.target == null) {
 //            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
 //        }
-        addToTop(new BATwinsPlayDrawPailCardAction(c, this.target, false, this.numberOfConnections, this.isBlockOrigin));
+        addToTop(new BATwinsPlayDrawPailCardAction(c, this.target, c.exhaust, this.numberOfConnections, this.isBlockOrigin));
 
     }
 
