@@ -22,9 +22,10 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
     private int amount;
     private int numberOfConnections;
     private boolean blockTheOriginalEffect;
+    private boolean removePower=false;
     private UIStrings UISTRINGS = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
 
-    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type, int amount, int numberOfConnections, boolean blockTheOriginalEffect) {
+    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type, int amount, int numberOfConnections, boolean blockTheOriginalEffect,boolean removePower) {
         this.color = color;
         this.p = AbstractDungeon.player;
         this.target = target;
@@ -33,29 +34,26 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
         this.amount = amount;
         this.numberOfConnections = numberOfConnections;
         this.blockTheOriginalEffect = blockTheOriginalEffect;
+        this.removePower=removePower;
     }
 
     public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type, int amount, int numberOfConnections) {
-        this(color, target, type, amount, numberOfConnections, false);
+        this(color, target, type, amount, numberOfConnections, false,false);
     }
 
     public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type) {
         this(color, target, type, 1, 1);
     }
 
-    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractCard.CardType type) {
-        this(color, null, type);
+    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractCard.CardType type,int numberOfConnections,boolean removePower) {
+        this(color, null, type,1,numberOfConnections,false,removePower);
     }
 
     @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             for (AbstractCard c : this.p.hand.group) {
-                if (this.color != null && c.color != this.color) {
-                    this.canNotSelectCards.add(c);
-                } else if (this.type != null && c.type != this.type) {
-                    this.canNotSelectCards.add(c);
-                } else if (c.isInAutoplay) {
+                if ((this.color != null && c.color != this.color || this.type != null && c.type != this.type) || c.isInAutoplay || this.removePower && c.type == AbstractCard.CardType.POWER) {
                     this.canNotSelectCards.add(c);
                 }
             }

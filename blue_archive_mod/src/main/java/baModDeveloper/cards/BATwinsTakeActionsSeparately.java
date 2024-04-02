@@ -34,13 +34,13 @@ public class BATwinsTakeActionsSeparately extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1,false,true));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1,false,true));
     }
 
     @Override
