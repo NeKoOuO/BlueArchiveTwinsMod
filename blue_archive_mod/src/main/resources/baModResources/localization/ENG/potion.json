@@ -1,32 +1,32 @@
 {
 	"BATwinsMod:AcceleratePotion":{
-		"NAME":"加速药水",
+		"NAME":"Acceleration Potion",
 		"DESCRIPTIONS":[
-			"将 #b1 张 #y加速 加入手牌。",
-			"将 #b1 张 #y加速+ 加入手牌。",
-			"加速",
-			"加速+"
+			"Add #b1 #yAcceleration to your hand.",
+			"Add #b1 #yAcceleration+ to your hand.",
+			"Acceleration",
+			"Acceleration+"
 		]
 	},
 	"BATwinsMod:ConnectPotion":{
-		"NAME":"连携药水",
+		"NAME":"Synergy Potion",
 		"DESCRIPTIONS":[
-			"选择手牌 #b1 张牌打出。",
-			"选择手牌 #b2 张牌打出。"
+			"Play #b1 card from your hand.",
+			"Play #b2 cards from your hand."
 		]
 	},
 	"BATwinsMod:BurnPotion":{
-		"NAME":"灼伤药水",
+		"NAME":"Burn Potion",
 		"DESCRIPTIONS":[
-			"给予8层灼伤。",
-			"给予16层灼伤。",
-			"灼伤"
+			"Apply 8 burns.",
+			"Apply 16 burns.",
+			"Burn"
 		]
 	},
 	"BATwinsMod:StaminaPotion":{
-		"NAME":"体力药剂",
+		"NAME":"Stamina Potion",
 		"DESCRIPTIONS":[
-			"在火堆处使用此药水，能够在进行一次行动。"
+			"Use this potion at the campfire to gain an extra action."
 		]
 	}
 }
