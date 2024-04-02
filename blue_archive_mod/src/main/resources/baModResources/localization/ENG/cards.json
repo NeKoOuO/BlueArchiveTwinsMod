@@ -35,7 +35,7 @@
     },
     "BATwinsMod:DeveloperCollaboration":{
         "NAME":"Developer collaboration",
-        "DESCRIPTION":" batwinsmod:Share . NL After alternating between playing batwinsmod:MomoiCard and batwinsmod:MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase !M! %."
+        "DESCRIPTION":" batwinsmod:Share . NL After continuous alternating between playing batwinsmod:MomoiCard and batwinsmod:MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase !M! %."
     },
     "BATwinsMod:Exchange":{
         "NAME":"Exchange",
@@ -182,7 +182,7 @@
 	},
 	"BATwinsMod:AlternatingAttack":{
 		"NAME":"Alternate Attack",
-		"DESCRIPTION":"Deal !D! Damage. NL Play 1 batwinsmod:MidoriCard from your hand."
+		"DESCRIPTION":"Deal !D! Damage. NL Play 1 non-power batwinsmod:MidoriCard from your hand."
 	},
 	"BATwinsMod:TemporaryAssistance":{
 		"NAME":"Temporary Assistance",
@@ -227,7 +227,7 @@
 	},
 	"BATwinsMod:TakeActionsSeparately":{
 		"NAME":"Separate Action",
-		"DESCRIPTION":"Gain !B! Block. NL Play 1 batwinsmod:MomoiCard from your hand."
+		"DESCRIPTION":"Gain !B! Block. NL Play 1 non-power batwinsmod:MomoiCard from your hand."
 	},
 	"BATwinsMod:RepeatOperation":{
 		"NAME":"Repeat Action",
@@ -235,8 +235,8 @@
 	},
 	"BATwinsMod:ConvenientConnectivity":{
 		"NAME":"Convenient Synergy",
-		"DESCRIPTION":"Choose and play !M! cards from your hand. batwinsmod:Synergy :Random play 1 card from the draw pile.",
-		"UPGRADE_DESCRIPTION":"Choose and play !M! cards from your hand. batwinsmod:Synergy :Choose and play 1 card from the draw pile."
+		"DESCRIPTION":"Choose and play !M! non-power cards from your hand. batwinsmod:Synergy :Random play 1 non-power card from the draw pile.",
+		"UPGRADE_DESCRIPTION":"Choose and play !M! non-power cards from your hand. batwinsmod:Synergy :Choose and play 1 non-power card from the draw pile."
 	},
 	"BATwinsMod:EndCombo":{
 		"NAME":"Finisher Combo",
