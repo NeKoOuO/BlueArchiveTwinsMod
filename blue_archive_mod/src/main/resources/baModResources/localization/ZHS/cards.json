@@ -276,7 +276,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"经验大礼包",
-		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 和这张牌的耗能相同，打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
+		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 大于这张牌的耗能，打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",

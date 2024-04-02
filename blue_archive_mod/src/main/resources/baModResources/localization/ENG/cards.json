@@ -276,7 +276,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"Experience Gift Pack",
-		"DESCRIPTION":" batwinsmod:Share NL if your have the same amount of batwinsmod:ExperiencePoints as the energy cost of this card,play this card. NL Draw !M! cards,then reduce the cost of this card by 1 for the rest of this battle."
+		"DESCRIPTION":" batwinsmod:Share NL If you have batwinsmod:ExperiencePoints greater than the energy cost of this card,play this card. NL Draw !M! cards,then reduce the cost of this card by 1 for the rest of this battle."
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"Self-Synergy",
