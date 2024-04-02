@@ -71,10 +71,10 @@
 	"BATwinsMod:ExperiencePower":{
 		"NAME":"Experience",
 		"DESCRIPTIONS":[
-			"When playing a MOMOI or MDIORI card, gain experience points equal to its energy cost.\nCurrent: LV",
+			"When playing a MOMOI or MDIORI card, gain experience points equal to its energy cost.\n Current: LV",
 			"(",
 			"/",
-			")\nCard's damage and block increase by the level number.",
+			")\n Card's damage and block increase by the level number.",
 			"Level Up!!"
 		]
 	},
@@ -128,7 +128,7 @@
 	"BATwinsMod:SeeYouHaveASharenPower": {
 		"NAME": "Each to their own!",
 		"DESCRIPTIONS": [
-			"The next",
+			"The next ",
 			"single-target attack cards played this turn will hit all enemies once."
 		]
 	},

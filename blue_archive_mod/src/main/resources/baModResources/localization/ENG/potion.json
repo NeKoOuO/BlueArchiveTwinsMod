@@ -4,8 +4,8 @@
 		"DESCRIPTIONS":[
 			"Add #b1 #yAcceleration to your hand.",
 			"Add #b1 #yAcceleration+ to your hand.",
-			"Acceleration",
-			"Acceleration+"
+			"acceleration",
+			"acceleration+"
 		]
 	},
 	"BATwinsMod:ConnectPotion":{
@@ -20,7 +20,7 @@
 		"DESCRIPTIONS":[
 			"Apply 8 burns.",
 			"Apply 16 burns.",
-			"Burn"
+			"burn"
 		]
 	},
 	"BATwinsMod:StaminaPotion":{

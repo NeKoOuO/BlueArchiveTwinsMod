@@ -3,19 +3,19 @@
 		"NAME":"Momoi's Game Console",
 		"FLAVOR":"It's already broken, and the club's funds can't afford a new one! - Momoi",
 		"DESCRIPTIONS":[
-			"At the start of each battle, gain [batwinsmod:momoiorbicon]. Add a random #yBATwinsMod:MomoiCard from your draw pile to your hand."
+			"At the start of each battle, gain [batwinsmod:momoiorbicon] . Add a random #yBATwinsMod:MomoiCard from your draw pile to your hand."
 		]
 	},
 	"BATwinsMod:MidorisGameConsole":{
 		"NAME":"Midori's Game Console",
 		"FLAVOR":"Finding it is great! I need to check the game saves right away. - Midori",
 		"DESCRIPTIONS":[
-			"At the start of each battle, gain [batwinsmod:midoriorbicon]. Add a random #yBATwinsMod:MidoriCard from your draw pile to your hand."
+			"At the start of each battle, gain [batwinsmod:midoriorbicon] . Add a random #yBATwinsMod:MidoriCard from your draw pile to your hand."
 		]
 	},
 	"BATwinsMod:AncientGameCartridges":{
 		"NAME":"Ancient Game Cartridges",
-		"FLAVOR":"A worn-out game cartridge, no longer readable, barely showing the title 'S■ay ■he s■■re'.",
+		"FLAVOR":"A worn-out game cartridge, no longer readable, barely showing the title 'S*ay *he s**re'.",
 		"DESCRIPTIONS":[
 			"At the start of each battle, play a random #bPower from your draw pile."
 		]
@@ -56,7 +56,7 @@
 		"NAME":"Maid Headband",
 		"FLAVOR":"Would there have been maids in such a strange place before?",
 		"DESCRIPTIONS":[
-			"At the start of each turn, gain [batwinsmod:momoiorbicon] or [batwinsmod:midoriorbicon]. Choose upon pickup."
+			"At the start of each turn, gain [batwinsmod:momoiorbicon] or [batwinsmod:midoriorbicon] . Choose upon pickup."
 		]
 	},
 	"BATwinsMod:SpecialAmmunition":{
@@ -98,7 +98,7 @@
 		"NAME":"Maid Attire",
 		"FLAVOR":"Everyone has a little fetish, don't they? - Shopkeeper",
 		"DESCRIPTIONS":[
-			"If you have played cards with costs 0, 1, 2, and 3 this turn, gain 1 stack of Ethereal."
+			"If you have played cards with costs 0, 1, 2, and 3 this turn, gain 1 stack of Intangible."
 		]
 	},
 	"BATwinsMod:UnknownObject":{
