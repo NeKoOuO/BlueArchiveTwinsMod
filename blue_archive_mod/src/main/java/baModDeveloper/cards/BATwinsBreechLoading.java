@@ -22,9 +22,9 @@ public class BATwinsBreechLoading extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("BreechLoading");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "BreechLoading");
     private static final int COST = 1;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -45,13 +45,13 @@ public class BATwinsBreechLoading extends BATwinsModCustomCard {
 
     public BATwinsBreechLoading() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock=this.block=5;
+        this.baseBlock = this.block = 5;
         this.baseMagicNumber = this.magicNumber = 3;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new GainBlockAction(abstractPlayer,this.block));
+        addToBot(new GainBlockAction(abstractPlayer, this.block));
         addToBot(new SelectCardsInHandAction(99, SELECTTEXT.TEXT[9], false, false, filter, callback));
     }
 

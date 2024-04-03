@@ -14,12 +14,12 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.ArrayList;
 
 public class BATwinsInterpretiveErrorAction extends AbstractGameAction {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("InterpretiveErrorAction"));
+    public static final String[] TEXT = uiStrings.TEXT;
     private boolean upgraded;
     private int amount;
     private AbstractPlayer p;
     private ArrayList<AbstractCard> cannotexchange;
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("InterpretiveErrorAction"));
-    public static final String[] TEXT = uiStrings.TEXT;
 
     public BATwinsInterpretiveErrorAction(boolean upgraded, int amount) {
         this.upgraded = upgraded;

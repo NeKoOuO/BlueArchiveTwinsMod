@@ -27,6 +27,13 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             .getTutorialString("Energy Panel Tip");
     private static final int RAW_W = 256;
     private static final Color ENERGY_TEXT_COLOR = new Color(1.0F, 1.0F, 0.86F, 1.0F);
+    private static final float VFX_ROTATE_SPEED = -30.0F;
+    public static int MomoiCount = 0;
+    public static int MidoriCount = 0;
+    public static EnergyType selectedEnergySlot = EnergyType.MOMOI;
+    private static EnergyType energyVfxType = EnergyType.ALL;
+    private static UIStrings orbLabel = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbLabel"));
+    private static UIStrings orbMsg = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbMsg"));
     private Hitbox tipHitbox_MOMOI = new Hitbox(0.0F, 0.0F, 120.0F * Settings.scale, 120.0F * Settings.scale);
     private Hitbox tipHitbox_MIDORI = new Hitbox(-128.0F, 64.0F, 120.0F * Settings.scale, 120.0F * Settings.scale);
     private Texture gainEnergyImg;
@@ -34,18 +41,6 @@ public class BATwinsEnergyPanel extends EnergyPanel {
     private float energyVfxAngle = 0.0F;
     private float energyVfxScale = Settings.scale;
     private Color energyVfxColor = Color.WHITE.cpy();
-    private static final float VFX_ROTATE_SPEED = -30.0F;
-    private static EnergyType energyVfxType = EnergyType.ALL;
-    private static UIStrings orbLabel = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbLabel"));
-    private static UIStrings orbMsg = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("EnergyOrbMsg"));
-    public static int MomoiCount = 0;
-    public static int MidoriCount = 0;
-
-    public static EnergyType selectedEnergySlot = EnergyType.MOMOI;
-
-    public enum EnergyType {
-        MOMOI, MIDORI, ALL, SPEIFY, SHARE
-    }
 
     public BATwinsEnergyPanel() {
         this.img = null;
@@ -205,6 +200,33 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         }
     }
 
+    public static int getCurrentEnergy() {
+        if (AbstractDungeon.player == null)
+            return 0;
+        return totalCount;
+    }
+
+    public static int getMomoiCount() {
+        if (AbstractDungeon.player == null)
+            return 0;
+        return MomoiCount;
+    }
+
+    public static int getMidoriCount() {
+        if (AbstractDungeon.player == null)
+            return 0;
+        return MidoriCount;
+    }
+
+    public static EnergyType getOtherEnergyType(EnergyType type) {
+        if (type == EnergyType.MOMOI) {
+            return EnergyType.MIDORI;
+        } else if (type == EnergyType.MIDORI) {
+            return EnergyType.MOMOI;
+        }
+        return type;
+    }
+
     @Override
     public void update() {
         AbstractPlayer player = AbstractDungeon.player;
@@ -328,36 +350,13 @@ public class BATwinsEnergyPanel extends EnergyPanel {
         }
     }
 
-    public static int getCurrentEnergy() {
-        if (AbstractDungeon.player == null)
-            return 0;
-        return totalCount;
-    }
-
-    public static int getMomoiCount() {
-        if (AbstractDungeon.player == null)
-            return 0;
-        return MomoiCount;
-    }
-
-    public static int getMidoriCount() {
-        if (AbstractDungeon.player == null)
-            return 0;
-        return MidoriCount;
-    }
-
-    public static EnergyType getOtherEnergyType(EnergyType type) {
-        if (type == EnergyType.MOMOI) {
-            return EnergyType.MIDORI;
-        } else if (type == EnergyType.MIDORI) {
-            return EnergyType.MOMOI;
-        }
-        return type;
-    }
-
     private void updateSelectedEnergyIcon() {
         if (AbstractDungeon.player != null) {
             AbstractDungeon.player.relics.forEach(abstractRelic -> abstractRelic.updateDescription(AbstractDungeon.player.chosenClass));
         }
+    }
+
+    public enum EnergyType {
+        MOMOI, MIDORI, ALL, SPEIFY, SHARE
     }
 }

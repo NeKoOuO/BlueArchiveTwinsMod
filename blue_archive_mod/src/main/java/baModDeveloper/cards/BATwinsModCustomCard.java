@@ -33,20 +33,18 @@ import java.util.Iterator;
 import java.util.Optional;
 
 public abstract class BATwinsModCustomCard extends CustomCard {
+    public static UIStrings flatFallMsg = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("FlatFall"));
     public BATwinsEnergyPanel.EnergyType modifyEnergyType;
     public CardColor OriginalColor;
     public boolean playBackOriginalColor = false;
     public ArrayList<Color> GradientColor = new ArrayList<>();
-    private int startColor = 0;
-    private float gradientDuration = 0.0F;
-
     public int numberOfConnections = 0;
     public boolean justHovered = false;
     protected boolean bringOutCard = false;
     protected ArrayList<AbstractCard> cardToBringOut = new ArrayList<>();
     protected String originRawDescription;
-
-    public static UIStrings flatFallMsg = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("FlatFall"));
+    private int startColor = 0;
+    private float gradientDuration = 0.0F;
 
     //    public boolean playedByOtherCard=false;
     public BATwinsModCustomCard(String ID, String NAME, String IMG_PATH, int COST, String DESCRIPTION, CardType TYPE, CardColor COLOR, CardRarity RARITY, CardTarget TARGET, BATwinsEnergyPanel.EnergyType ENERGYTYPE) {
@@ -232,7 +230,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             } else if (this.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
                 useMIDORI(abstractPlayer, abstractMonster);
             }
-            if(this.type==CardType.ATTACK)
+            if (this.type == CardType.ATTACK)
                 AbstractDungeon.effectsQueue.add(new BATwinsCharAttackEffect(this.color));
 
         }
@@ -300,19 +298,6 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         return description;
     }
 
-    public static class BATwinsAttackEffect {
-        @SpireEnum
-        public static AbstractGameAction.AttackEffect BATwinsShooting;
-    }
-
-    public static class BATwinsCardTags {
-        @SpireEnum
-        public static CardTags Adventure;
-        @SpireEnum
-        public static CardTags Shooting;
-    }
-
-
     @Override
     public void render(SpriteBatch sb) {
         if (this.modifyEnergyType == BATwinsEnergyPanel.EnergyType.SHARE) {
@@ -362,9 +347,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             Optional<AbstractCard> c = this.hasCardInBringOutCards(card);
             if (c.isPresent()) {
                 c.get().upgrade();
-                if(card.upgraded){
+                if (card.upgraded) {
                     //修复了存储升级后子弹却没升级的bug
-                    for(int i=0;i<card.timesUpgraded;i++){
+                    for (int i = 0; i < card.timesUpgraded; i++) {
                         c.get().upgrade();
                     }
                 }
@@ -455,5 +440,17 @@ public abstract class BATwinsModCustomCard extends CustomCard {
                 c.applyPowers();
             }
         }
+    }
+
+    public static class BATwinsAttackEffect {
+        @SpireEnum
+        public static AbstractGameAction.AttackEffect BATwinsShooting;
+    }
+
+    public static class BATwinsCardTags {
+        @SpireEnum
+        public static CardTags Adventure;
+        @SpireEnum
+        public static CardTags Shooting;
     }
 }

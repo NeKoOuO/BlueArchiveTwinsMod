@@ -14,9 +14,9 @@ public class BATwinsConvenientConnectivity extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("ConvenientConnectivity");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "ConvenientConnectivity");
     private static final int COST = 1;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -31,7 +31,7 @@ public class BATwinsConvenientConnectivity extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsSelectHandCardToPlayAction(null, null,this.numberOfConnections+1,true));
+        addToBot(new BATwinsSelectHandCardToPlayAction(null, null, this.numberOfConnections + 1, true));
     }
 
     @Override
@@ -42,9 +42,9 @@ public class BATwinsConvenientConnectivity extends BATwinsModCustomCard {
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         if (this.upgraded) {
-            addToBot(new BATwinsSelectDrawPileCardToPlayAction(false,null,1, this.numberOfConnections + 1,false,true));
+            addToBot(new BATwinsSelectDrawPileCardToPlayAction(false, null, 1, this.numberOfConnections + 1, false, true));
         } else {
-            addToBot(new BATwinsSelectDrawPileCardToPlayAction(true,null,1, this.numberOfConnections + 1,false,true));
+            addToBot(new BATwinsSelectDrawPileCardToPlayAction(true, null, 1, this.numberOfConnections + 1, false, true));
         }
     }
 

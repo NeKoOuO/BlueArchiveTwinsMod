@@ -18,18 +18,14 @@ import com.megacrit.cardcrawl.core.Settings;
 import java.util.function.Consumer;
 
 public class ModelController {
+    private static final float SCALE = 4.5F * Settings.scale;
+    private static final float MOVESCALE = Settings.scale * 4;
     private G3dModelLoader loader;
     private Model model;
     private ModelInstance instance;
     private ModelBatch modelBatch;
-
     private AnimationController animationController;
-
-
-    private static final float SCALE = 4.5F * Settings.scale;
     private float current_x = 0, current_y = 0, target_x = 0, target_y = 0;
-    private static final float MOVESCALE = Settings.scale * 4;
-
     private String StandAnima;
 
     public ModelController(String modelPath, float x, float y, float z, String StandAnima) {
@@ -107,7 +103,7 @@ public class ModelController {
     }
 
     public void setStandAnima(String anima) {
-        if (this.animationController.current!=null&&this.animationController.current.animation.id.equals(this.StandAnima)) {
+        if (this.animationController.current != null && this.animationController.current.animation.id.equals(this.StandAnima)) {
             this.clearQueue(this.animationController);
         }
         this.StandAnima = anima;

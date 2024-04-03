@@ -6,10 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.unique.PoisonLoseHpAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -43,8 +40,8 @@ public class BATwinsBurnPower extends AbstractPower implements HealthBarRenderPo
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
 
 
-        if(this.amount>=9999){
-            this.amount=9999;
+        if (this.amount >= 9999) {
+            this.amount = 9999;
         }
         this.updateDescription();
     }
@@ -70,7 +67,7 @@ public class BATwinsBurnPower extends AbstractPower implements HealthBarRenderPo
 //        }
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            addToBot(new BATwinsBurnDamageAction(this.owner,this.source,this.amount, AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new BATwinsBurnDamageAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.FIRE));
         }
     }
 

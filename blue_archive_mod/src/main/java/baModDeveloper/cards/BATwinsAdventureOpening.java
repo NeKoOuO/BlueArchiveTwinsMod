@@ -17,9 +17,9 @@ public class BATwinsAdventureOpening extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("AdventureOpening");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "defaultSkill");
     private static final int COST = 2;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -35,6 +35,14 @@ public class BATwinsAdventureOpening extends BATwinsModCustomCard {
         this.magicNumber = this.baseMagicNumber;
         this.tags.add(BATwinsCardTags.Adventure);
         this.selfRetain = true;
+    }
+
+    public static boolean PreviousCardIsAdventrue() {
+        if (!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
+            AbstractCard previousCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
+            return previousCard.hasTag(BATwinsCardTags.Adventure);
+        }
+        return false;
     }
 
     @Override
@@ -86,13 +94,5 @@ public class BATwinsAdventureOpening extends BATwinsModCustomCard {
             }
         }
         this.rawDescription = strBuilder.toString();
-    }
-
-    public static boolean PreviousCardIsAdventrue() {
-        if (!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
-            AbstractCard previousCard = AbstractDungeon.actionManager.cardsPlayedThisTurn.get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
-            return previousCard.hasTag(BATwinsCardTags.Adventure);
-        }
-        return false;
     }
 }

@@ -11,15 +11,15 @@ import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 
 public class BATwinsCharacterSelectScreenPatch {
 
-    public static boolean isBATwinsSelected(){
-        return CardCrawlGame.chosenCharacter== BATwinsCharacter.Enums.BATwins&& (Boolean) ReflectionHacks.getPrivate(CardCrawlGame.mainMenuScreen.charSelectScreen, CharacterSelectScreen.class,"anySelected");
+    public static boolean isBATwinsSelected() {
+        return CardCrawlGame.chosenCharacter == BATwinsCharacter.Enums.BATwins && (Boolean) ReflectionHacks.getPrivate(CardCrawlGame.mainMenuScreen.charSelectScreen, CharacterSelectScreen.class, "anySelected");
     }
 
-    @SpirePatch(clz = CharacterSelectScreen.class,method = "update")
-    public static class updatePatch{
+    @SpirePatch(clz = CharacterSelectScreen.class, method = "update")
+    public static class updatePatch {
         @SpirePostfixPatch
-        public static void updatePatch(CharacterSelectScreen _instance){
-            if(isBATwinsSelected()){
+        public static void updatePatch(CharacterSelectScreen _instance) {
+            if (isBATwinsSelected()) {
                 BATwinsCharacterSelectScreen.getInstance().update();
             }
         }
@@ -27,11 +27,11 @@ public class BATwinsCharacterSelectScreenPatch {
 
     }
 
-    @SpirePatch(clz = CharacterSelectScreen.class,method = "render")
-    public static class renderPatch{
+    @SpirePatch(clz = CharacterSelectScreen.class, method = "render")
+    public static class renderPatch {
         @SpirePostfixPatch
-        public static void renderPatch(CharacterSelectScreen _instance, SpriteBatch sb){
-            if(isBATwinsSelected()){
+        public static void renderPatch(CharacterSelectScreen _instance, SpriteBatch sb) {
+            if (isBATwinsSelected()) {
                 BATwinsCharacterSelectScreen.getInstance().render(sb);
             }
         }

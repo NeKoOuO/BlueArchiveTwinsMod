@@ -12,11 +12,6 @@ public class BATwinsDrawOrDisCardToHandAction extends AbstractGameAction {
     private AbstractCard card;
     private boolean randomCard;
     private AbstractPlayer p;
-
-    public enum Pile {
-        DrawPile, DiscardPile, ALL
-    }
-
     private Pile pile;
 
     public BATwinsDrawOrDisCardToHandAction(boolean randomCard, AbstractCard card, Pile pile) {
@@ -92,5 +87,9 @@ public class BATwinsDrawOrDisCardToHandAction extends AbstractGameAction {
         }
         this.isDone = true;
         tickDuration();
+    }
+
+    public enum Pile {
+        DrawPile, DiscardPile, ALL
     }
 }

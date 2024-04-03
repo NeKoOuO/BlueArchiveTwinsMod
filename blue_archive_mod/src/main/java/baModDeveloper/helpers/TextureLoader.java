@@ -8,8 +8,8 @@ import org.apache.logging.log4j.Logger;
 import java.util.HashMap;
 
 public class TextureLoader {
-    private static HashMap<String, Texture> textrues = new HashMap<>();
     public static final Logger logger = LogManager.getLogger(TextureLoader.class.getName());
+    private static HashMap<String, Texture> textrues = new HashMap<>();
 
     public static Texture getTexture(String id) {
         if (textrues.get(id) == null) {

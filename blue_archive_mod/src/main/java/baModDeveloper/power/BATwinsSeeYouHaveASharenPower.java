@@ -66,10 +66,10 @@ public class BATwinsSeeYouHaveASharenPower extends AbstractPower {
                     if (temp instanceof BATwinsModCustomCard) {
                         ((BATwinsModCustomCard) temp).numberOfConnections = 1;
                     }
-                    if(card instanceof BATwinsCoverCharge&&temp instanceof BATwinsCoverCharge){
-                        ((BATwinsCoverCharge) temp).energyOnUseMomoi=((BATwinsCoverCharge) card).energyOnUseMomoi;
-                        ((BATwinsCoverCharge) temp).energyOnUseMidori=((BATwinsCoverCharge) card).energyOnUseMidori;
-                        ((BATwinsCoverCharge) temp).ignoredEnergyOnUse=false;
+                    if (card instanceof BATwinsCoverCharge && temp instanceof BATwinsCoverCharge) {
+                        ((BATwinsCoverCharge) temp).energyOnUseMomoi = ((BATwinsCoverCharge) card).energyOnUseMomoi;
+                        ((BATwinsCoverCharge) temp).energyOnUseMidori = ((BATwinsCoverCharge) card).energyOnUseMidori;
+                        ((BATwinsCoverCharge) temp).ignoredEnergyOnUse = false;
                     }
                     AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(temp, mo, card.energyOnUse, true, true), true);
 

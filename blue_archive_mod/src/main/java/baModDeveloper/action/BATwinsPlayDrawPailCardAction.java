@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,11 +17,11 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
+    private static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
     private AbstractCard card;
     private boolean exhaust;
     private int numberOfConnections;
     private boolean isBlockOrigin = false;
-    private static UIStrings uiStrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
 
     public BATwinsPlayDrawPailCardAction(AbstractCard card, AbstractCreature target, boolean exhaust, int numberOfConnections) {
         this.card = card;
@@ -44,16 +43,16 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(this.numberOfConnections>10){
-            for(int i=uiStrings.TEXT.length-1;i>=0;i--){
-                addToTop(new TalkAction(true,uiStrings.TEXT[i],3.0F,3.0F));
+        if (this.numberOfConnections > 10) {
+            for (int i = uiStrings.TEXT.length - 1; i >= 0; i--) {
+                addToTop(new TalkAction(true, uiStrings.TEXT[i], 3.0F, 3.0F));
             }
-            this.isDone=true;
+            this.isDone = true;
             return;
         }
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (AbstractDungeon.player.drawPile.contains(card)) {
-                if(AbstractDungeon.player.hasRelic(BATwinsRubiksCube.ID)){
+                if (AbstractDungeon.player.hasRelic(BATwinsRubiksCube.ID)) {
                     AbstractDungeon.player.getRelic(BATwinsRubiksCube.ID).onTrigger();
                 }
                 AbstractDungeon.player.drawPile.group.remove(this.card);
@@ -77,9 +76,9 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
                 card.applyPowers();
                 card.calculateCardDamage((AbstractMonster) this.target);
                 card.isInAutoplay = true;
-                if(this.target==null){
+                if (this.target == null) {
                     addToTop(new NewQueueCardAction(card, true, false, true));
-                }else{
+                } else {
                     addToTop(new NewQueueCardAction(card, this.target, false, true));
                 }
                 addToTop(new UnlimboAction(card));

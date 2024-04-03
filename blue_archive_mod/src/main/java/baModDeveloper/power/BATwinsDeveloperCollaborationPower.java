@@ -74,9 +74,9 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
             if (this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
                 this.flash();
                 this.count++;
-            }else{
+            } else {
                 this.flash();
-                this.count=0;
+                this.count = 0;
             }
         }
         this.lastColor = usedCard.color;

@@ -8,19 +8,19 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class BATwinsAccelerateAction extends BATwinsSelectDrawPileCardToPlayAction {
+    AbstractPlayer p;
     //    private ArrayList<AbstractCard> canNotSelected;
     private boolean freeToPlay;
     private int enegyOnUse = -1;
-    AbstractPlayer p;
     private boolean upgraded;
 
-    public BATwinsAccelerateAction(int numOfConnection, int energyOnUse, boolean freeToPlay,boolean upgraded) {
+    public BATwinsAccelerateAction(int numOfConnection, int energyOnUse, boolean freeToPlay, boolean upgraded) {
         super(false, (AbstractMonster) null, numOfConnection);
 //        canNotSelected=new ArrayList<>();
         this.freeToPlay = freeToPlay;
         this.enegyOnUse = energyOnUse;
         this.p = AbstractDungeon.player;
-        this.upgraded=upgraded;
+        this.upgraded = upgraded;
     }
 
     @Override
@@ -30,8 +30,8 @@ public class BATwinsAccelerateAction extends BATwinsSelectDrawPileCardToPlayActi
             if (this.enegyOnUse != -1) {
                 energy = this.enegyOnUse;
             }
-            if(this.upgraded){
-                energy+=1;
+            if (this.upgraded) {
+                energy += 1;
             }
             if (this.p.hasRelic("Chemical X")) {
                 energy += 2;

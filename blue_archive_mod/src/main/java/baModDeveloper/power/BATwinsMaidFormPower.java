@@ -1,6 +1,5 @@
 package baModDeveloper.power;
 
-import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.cards.colorless.BATwinsAccelerate;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
@@ -64,13 +63,13 @@ public class BATwinsMaidFormPower extends AbstractPower {
             AbstractMonster m = (AbstractMonster) action.target;
 
             BATwinsAccelerate temp = new BATwinsAccelerate();
-            BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(temp,1);
+            BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(temp, 1);
             temp.purgeOnUse = true;
             temp.freeToPlayOnce = true;
             temp.energyOnUse = card.cost;
             temp.connectionCost = card.cost;
-            if(card.cost==-1){
-                temp.energyOnUse=temp.connectionCost=card.energyOnUse;
+            if (card.cost == -1) {
+                temp.energyOnUse = temp.connectionCost = card.energyOnUse;
             }
 
             AbstractDungeon.player.limbo.addToBottom(temp);

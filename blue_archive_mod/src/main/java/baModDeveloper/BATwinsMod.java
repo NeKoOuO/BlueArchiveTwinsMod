@@ -24,12 +24,10 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.Settings.GameLanguage;
@@ -38,11 +36,9 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.monsters.MonsterInfo;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Properties;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -219,7 +215,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void receiveEditStrings() {
-        String lang="ENG";
+        String lang = "ENG";
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
 //        } else if(language==GameLanguage.ENG){
@@ -231,10 +227,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.loadCustomStringsFile(UIStrings.class, "baModResources/localization/" + lang + "/uistring.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "baModResources/localization/" + lang + "/relic.json");
         BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
-        BaseMod.loadCustomStringsFile(PotionStrings.class,"baModResources/localization/" + lang + "/potion.json");
-        BaseMod.loadCustomStringsFile(MonsterStrings.class,"baModResources/localization/" + lang + "/monster.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, "baModResources/localization/" + lang + "/potion.json");
+        BaseMod.loadCustomStringsFile(MonsterStrings.class, "baModResources/localization/" + lang + "/monster.json");
 
-  }
+    }
 
     @Override
     public void receiveEditCharacters() {
@@ -267,15 +263,15 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsByProving(), RelicType.SHARED);
         BaseMod.addRelicToCustomPool(new BATwinsGameMagazine(), Enums.BATWINS_MOMOI_CARD);
         BaseMod.addRelicToCustomPool(new BATwinsGameGuide(), Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelic(new BATwinsFoldingShield(),RelicType.SHARED);
-        BaseMod.addRelicToCustomPool(new BATwinsHeadband(),Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelicToCustomPool(new BATwinsSpecialAmmunition(),Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelicToCustomPool(new BATwinsSwordOfLight(),Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelicToCustomPool(new BATwinsNekoHowitzer(),Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelic(new BATwinsFitnessRing(),RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsBroom(),RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsMaidAttire(),RelicType.SHARED);
-        BaseMod.addRelicToCustomPool(new BATwinsRubiksCube(),Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelic(new BATwinsFoldingShield(), RelicType.SHARED);
+        BaseMod.addRelicToCustomPool(new BATwinsHeadband(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelicToCustomPool(new BATwinsSpecialAmmunition(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelicToCustomPool(new BATwinsSwordOfLight(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelicToCustomPool(new BATwinsNekoHowitzer(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelic(new BATwinsFitnessRing(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsBroom(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsMaidAttire(), RelicType.SHARED);
+        BaseMod.addRelicToCustomPool(new BATwinsRubiksCube(), Enums.BATWINS_MOMOI_CARD);
     }
 
     @Override
@@ -286,7 +282,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("eateregg2"), ModHelper.makeAudioPath("eateregg2"));
         BaseMod.addAudio(ModHelper.makePath("charSelect_momoi"), ModHelper.makeAudioPath("charSelect_momoi"));
         BaseMod.addAudio(ModHelper.makePath("charSelect_midori"), ModHelper.makeAudioPath("charSelect_midori"));
-        BaseMod.addAudio(ModHelper.makePath("pixelTime"),ModHelper.makeAudioPath("PixelTime"));
+        BaseMod.addAudio(ModHelper.makePath("pixelTime"), ModHelper.makeAudioPath("PixelTime"));
     }
 
     @Override
@@ -298,15 +294,15 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         }
         //添加事件
         BaseMod.addEvent(BATwinsTrainingCamp.ID, BATwinsTrainingCamp.class);
-        BaseMod.addEvent(new AddEventParams.Builder(BATwinsDirtShowdown.ID,BATwinsDirtShowdown.class).playerClass(Enums.BATwins).create());
+        BaseMod.addEvent(new AddEventParams.Builder(BATwinsDirtShowdown.ID, BATwinsDirtShowdown.class).playerClass(Enums.BATwins).create());
         BaseMod.addEvent(BATwinsHurdleGame.ID, BATwinsHurdleGame.class);
-        BaseMod.addEvent(new AddEventParams.Builder(BATwinsCommunication.ID,BATwinsCommunication.class).playerClass(Enums.BATwins).dungeonID(Exordium.ID).create());
-        BaseMod.addEvent(new AddEventParams.Builder(BATwinsTheRoadIsLong.ID,BATwinsTheRoadIsLong.class).playerClass(Enums.BATwins).dungeonID(TheBeyond.ID).create());
+        BaseMod.addEvent(new AddEventParams.Builder(BATwinsCommunication.ID, BATwinsCommunication.class).playerClass(Enums.BATwins).dungeonID(Exordium.ID).create());
+        BaseMod.addEvent(new AddEventParams.Builder(BATwinsTheRoadIsLong.ID, BATwinsTheRoadIsLong.class).playerClass(Enums.BATwins).dungeonID(TheBeyond.ID).create());
         //添加药水
-        BaseMod.addPotion(BATwinsAcceleratePotion.class,BATwinsAcceleratePotion.liquidColor,BATwinsAcceleratePotion.hybridColor,BATwinsAcceleratePotion.spotsColor,BATwinsAcceleratePotion.ID);
-        BaseMod.addPotion(BATwinsConnectPotion.class,BATwinsConnectPotion.liquidColor,BATwinsConnectPotion.hybridColor,BATwinsConnectPotion.spotsColor,BATwinsConnectPotion.ID);
-        BaseMod.addPotion(BATwinsBurnPotion.class,BATwinsBurnPotion.liquidColor,BATwinsBurnPotion.hybridColor,BATwinsBurnPotion.spotsColor,BATwinsBurnPotion.ID);
-        BaseMod.addPotion(BATwinsStaminaPotion.class,BATwinsStaminaPotion.liquidColor,BATwinsStaminaPotion.hybridColor,BATwinsStaminaPotion.spotsColor,BATwinsStaminaPotion.ID);
+        BaseMod.addPotion(BATwinsAcceleratePotion.class, BATwinsAcceleratePotion.liquidColor, BATwinsAcceleratePotion.hybridColor, BATwinsAcceleratePotion.spotsColor, BATwinsAcceleratePotion.ID);
+        BaseMod.addPotion(BATwinsConnectPotion.class, BATwinsConnectPotion.liquidColor, BATwinsConnectPotion.hybridColor, BATwinsConnectPotion.spotsColor, BATwinsConnectPotion.ID);
+        BaseMod.addPotion(BATwinsBurnPotion.class, BATwinsBurnPotion.liquidColor, BATwinsBurnPotion.hybridColor, BATwinsBurnPotion.spotsColor, BATwinsBurnPotion.ID);
+        BaseMod.addPotion(BATwinsStaminaPotion.class, BATwinsStaminaPotion.liquidColor, BATwinsStaminaPotion.hybridColor, BATwinsStaminaPotion.spotsColor, BATwinsStaminaPotion.ID);
         //添加怪物
 //        BaseMod.addMonster(BATwinsAkane.ID, BATwinsAkane::new);
 //        BaseMod.addStrongMonsterEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));

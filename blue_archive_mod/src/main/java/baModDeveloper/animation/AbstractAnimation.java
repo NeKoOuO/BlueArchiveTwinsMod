@@ -44,42 +44,28 @@ public class AbstractAnimation {
     public static List<AbstractAnimation> animations = new ArrayList<>();
 
     public static SkeletonMeshRenderer sr;
+    public static Color AColor = new Color(1.0F, 1.0F, 1.0F, 0.1F);
 
     static {
         sr = new SkeletonMeshRenderer();
         sr.setPremultipliedAlpha(true);
     }
 
-    public static Color AColor = new Color(1.0F, 1.0F, 1.0F, 0.1F);
-
-    protected Texture img;
-    protected TextureAtlas atlas;
     public Skeleton skeleton;
-    protected AnimationStateData stateData;
-    protected AnimationState state;
-
     public Hitbox hb;
     public TintEffect tint;
     public String id;
-
     public float drawX;
     public float drawY;
-
     public boolean flipHorizontal;
     public boolean flipVertical;
-
+    protected Texture img;
+    protected TextureAtlas atlas;
+    protected AnimationStateData stateData;
+    protected AnimationState state;
+    GifAnimation gifAnimation;
     private boolean movable = true;
     private boolean visible = true;
-
-    GifAnimation gifAnimation;
-
-    public void setMovable(boolean movable) {
-        this.movable = movable;
-    }
-
-    public void setVisible(boolean visible) {
-        this.visible = visible;
-    }
 
     public AbstractAnimation(String id, String atlasUrl, String skeletonUrl, float scale, float positionX, float positionY, float hb_w, float hb_h, float hbScale) {
         this.id = id;
@@ -114,6 +100,14 @@ public class AbstractAnimation {
 //        addAnimation(this);
     }
 
+    public AbstractAnimation(String imgUrl, float positionX, float positionY, float hb_w, float hb_h) {
+        this(imgUrl, positionX, positionY, 1.0F, hb_w, hb_h);
+    }
+
+    public AbstractAnimation(String imgUrl, float positionX, float positionY) {
+        this(imgUrl, positionX, positionY, 1.0F, 0, 0);
+    }
+
     public static void addAnimation(AbstractAnimation abstractAnimation) {
         if (abstractAnimation == null) {
             return;
@@ -126,12 +120,40 @@ public class AbstractAnimation {
         animations.add(abstractAnimation);
     }
 
-    public AbstractAnimation(String imgUrl, float positionX, float positionY, float hb_w, float hb_h) {
-        this(imgUrl, positionX, positionY, 1.0F, hb_w, hb_h);
+    public static AbstractAnimation getAnimation(String id) {
+        if (id == null) {
+            return null;
+        }
+        for (AbstractAnimation animation : animations) {
+            if (id.equals(animation.id)) {
+                return animation;
+            }
+        }
+        return null;
     }
 
-    public AbstractAnimation(String imgUrl, float positionX, float positionY) {
-        this(imgUrl, positionX, positionY, 1.0F, 0, 0);
+    public static void clearAll() {
+        animations.clear();
+    }
+
+    public static void hideAll() {
+        for (AbstractAnimation animation : animations) {
+            animation.visible = false;
+        }
+    }
+
+    public static void showAll() {
+        for (AbstractAnimation animation : animations) {
+            animation.visible = true;
+        }
+    }
+
+    public void setMovable(boolean movable) {
+        this.movable = movable;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     public void setAnimation(int trackIndex, String animationName, boolean loop) {
@@ -198,7 +220,6 @@ public class AbstractAnimation {
         }
     }
 
-
     protected void loadAnimation(String atlasUrl, String skeletonUrl, float scale) {
         this.atlas = new TextureAtlas(Gdx.files.internal(atlasUrl));
         SkeletonJson json = new SkeletonJson(this.atlas);
@@ -222,33 +243,5 @@ public class AbstractAnimation {
             gifAnimation = null;
         }
         atlas = null;
-    }
-
-    public static AbstractAnimation getAnimation(String id) {
-        if (id == null) {
-            return null;
-        }
-        for (AbstractAnimation animation : animations) {
-            if (id.equals(animation.id)) {
-                return animation;
-            }
-        }
-        return null;
-    }
-
-    public static void clearAll() {
-        animations.clear();
-    }
-
-    public static void hideAll() {
-        for (AbstractAnimation animation : animations) {
-            animation.visible = false;
-        }
-    }
-
-    public static void showAll() {
-        for (AbstractAnimation animation : animations) {
-            animation.visible = true;
-        }
     }
 }

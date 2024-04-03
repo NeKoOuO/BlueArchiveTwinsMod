@@ -24,22 +24,42 @@ import java.util.function.Consumer;
 import static baModDeveloper.helpers.Character3DHelper.AnimationName.*;
 
 public class Character3DHelper {
-    OrthographicCamera camera;
+    private static final Map<AnimationName, String[]> AnimationNames = new HashMap<>();
 
+    static {
+        AnimationNames.put(NORMAL_IDLE, new String[]{"Armature|Momoi_Original_Normal_Idle", "Armature|Midori_Original_Normal_Idle"});
+        AnimationNames.put(STAND_ATTACK_DELAY, new String[]{"Armature|Momoi_Original_Stand_Attack_Delay", "Armature|Midori_Original_Stand_Attack_Delay"});
+        AnimationNames.put(MOVING, new String[]{"Armature|Momoi_Original_Move_Ing", "Armature|Midori_Original_Move_Ing"});
+        AnimationNames.put(MOVING_END, new String[]{"Armature|Momoi_Original_Move_End_Normal", "Armature|Midori_Original_Move_End_Normal"});
+        AnimationNames.put(ATTACK_START, new String[]{"Armature|Momoi_Original_Normal_Attack_Start", "Armature|Midori_Original_Normal_Attack_Start"});
+        AnimationNames.put(ATTACKING, new String[]{"Armature|Momoi_Original_Normal_Attack_Ing", "Armature|Midori_Original_Normal_Attack_Ing"});
+        AnimationNames.put(ATTACK_END, new String[]{"Armature|Momoi_Original_Normal_Attack_End", "Armature|Midori_Original_Normal_Attack_End"});
+        AnimationNames.put(MOVE_JUMP, new String[]{"Armature|Momoi_Original_Move_Jump", "Armature|Midori_Original_Move_Jump"});
+        AnimationNames.put(DEATH, new String[]{"Armature|Momoi_Original_Vital_Death", "Armature|Midori_Original_Vital_Death"});
+        AnimationNames.put(DYING, new String[]{"Armature|Momoi_Original_Vital_Dying_ing", "Armature|Midori_Original_Vital_Dying_ing"});
+        AnimationNames.put(RELOAD, new String[]{"Armature|Momoi_Original_Normal_Reload", "Armature|Midori_Original_Normal_Reload"});
+    }
+
+    public float current_x = 0, current_y = 0;
+    OrthographicCamera camera;
     FrameBuffer frameBuffer;
     TextureRegion region;
     Environment environment;
     PolygonSpriteBatch psb;
-    public float current_x = 0, current_y = 0;
-
-    private boolean inited = false;
-
     ModelController momoiController;
     ModelController midoriController;
+    private boolean inited = false;
 
     public Character3DHelper() {
         if (BATwinsMod.Enable3D)
             init();
+    }
+
+    public static String getAnimationString(AnimationName name, AbstractCard.CardColor color) {
+        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD)
+            return AnimationNames.get(name)[0];
+        else
+            return AnimationNames.get(name)[1];
     }
 
     public void init() {
@@ -72,10 +92,11 @@ public class Character3DHelper {
         midoriController.update();
     }
 
-    public void render(SpriteBatch sb){
-        render(sb,false);
+    public void render(SpriteBatch sb) {
+        render(sb, false);
     }
-    public void render(SpriteBatch sb,boolean flipHorizontal) {
+
+    public void render(SpriteBatch sb, boolean flipHorizontal) {
         //3D相关
         sb.end();
 
@@ -97,12 +118,12 @@ public class Character3DHelper {
         frameBuffer.getColorBufferTexture().bind(0);
         psb.begin();
 
-        if(flipHorizontal){
-            psb.draw(region, this.current_x-125.0F*Settings.scale, this.current_y,
+        if (flipHorizontal) {
+            psb.draw(region, this.current_x - 125.0F * Settings.scale, this.current_y,
                     Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),
                     Gdx.graphics.getWidth() / 2.0F, Gdx.graphics.getHeight() / 2.0F,
                     1.0F, 1.0F, 0.0F);
-        }else{
+        } else {
             psb.draw(region, this.current_x, this.current_y,
                     Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),
                     Gdx.graphics.getWidth() / 2.0F, Gdx.graphics.getHeight() / 2.0F,
@@ -116,6 +137,78 @@ public class Character3DHelper {
         sb.begin();
     }
 
+    public void setMomoiAnimation(MomoiActionList action) {
+        this.momoiController.setAnimation(action.getOperation());
+        switch (action) {
+            case MOVING:
+                this.momoiController.moveCurrentPosition(200, 0);
+                break;
+        }
+    }
+
+    public void setMidoriAnimation(MidoriActionList action) {
+        this.midoriController.setAnimation(action.getOperation());
+        switch (action) {
+            case MOVING:
+                this.midoriController.moveCurrentPosition(200, 0);
+                break;
+        }
+    }
+
+    public void resetModelPosition(float x, float y, AbstractCard.CardColor color) {
+        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+            this.momoiController.resetPosition(x, y);
+        } else {
+            this.midoriController.resetPosition(x, y);
+        }
+
+    }
+
+    public void setPosition(float x, float y) {
+        this.current_x = x;
+        this.current_y = y;
+    }
+
+    public boolean inited() {
+        return this.inited;
+    }
+
+    public void setStandAnima(AnimationName anima, AbstractCard.CardColor color) {
+        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+            this.momoiController.setStandAnima(AnimationNames.get(anima)[0]);
+        } else {
+            this.midoriController.setStandAnima(AnimationNames.get(anima)[1]);
+        }
+    }
+
+    public String getCurrentAnima(AbstractCard.CardColor color) {
+        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+            return this.momoiController.getCurrentAnima();
+        } else {
+            return this.midoriController.getCurrentAnima();
+        }
+    }
+
+    public void resetDefaultAnima(AbstractCard.CardColor color) {
+        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+            this.momoiController.resetDefaultAnima();
+        } else {
+            this.midoriController.resetDefaultAnima();
+        }
+    }
+
+    public void initWithTimeout() throws RuntimeException {
+        ModelLoaderThread thread = new ModelLoaderThread();
+        thread.start();
+        try {
+            thread.join(5000);
+            if (!thread.finishLoading) {
+                throw new RuntimeException("Model loading exceeded timeout");
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public enum AnimationName {
         NORMAL_IDLE,
@@ -129,29 +222,6 @@ public class Character3DHelper {
         DEATH,
         DYING,
         RELOAD
-    }
-
-    private static final Map<AnimationName, String[]> AnimationNames = new HashMap<>();
-
-    static {
-        AnimationNames.put(NORMAL_IDLE, new String[]{"Armature|Momoi_Original_Normal_Idle", "Armature|Midori_Original_Normal_Idle"});
-        AnimationNames.put(STAND_ATTACK_DELAY, new String[]{"Armature|Momoi_Original_Stand_Attack_Delay", "Armature|Midori_Original_Stand_Attack_Delay"});
-        AnimationNames.put(MOVING, new String[]{"Armature|Momoi_Original_Move_Ing", "Armature|Midori_Original_Move_Ing"});
-        AnimationNames.put(MOVING_END, new String[]{"Armature|Momoi_Original_Move_End_Normal", "Armature|Midori_Original_Move_End_Normal"});
-        AnimationNames.put(ATTACK_START, new String[]{"Armature|Momoi_Original_Normal_Attack_Start", "Armature|Midori_Original_Normal_Attack_Start"});
-        AnimationNames.put(ATTACKING, new String[]{"Armature|Momoi_Original_Normal_Attack_Ing", "Armature|Midori_Original_Normal_Attack_Ing"});
-        AnimationNames.put(ATTACK_END, new String[]{"Armature|Momoi_Original_Normal_Attack_End", "Armature|Midori_Original_Normal_Attack_End"});
-        AnimationNames.put(MOVE_JUMP, new String[]{"Armature|Momoi_Original_Move_Jump", "Armature|Midori_Original_Move_Jump"});
-        AnimationNames.put(DEATH, new String[]{"Armature|Momoi_Original_Vital_Death", "Armature|Midori_Original_Vital_Death"});
-        AnimationNames.put(DYING, new String[]{"Armature|Momoi_Original_Vital_Dying_ing", "Armature|Midori_Original_Vital_Dying_ing"});
-        AnimationNames.put(RELOAD, new String[]{"Armature|Momoi_Original_Normal_Reload", "Armature|Midori_Original_Normal_Reload"});
-    }
-
-    public static String getAnimationString(AnimationName name, AbstractCard.CardColor color) {
-        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD)
-            return AnimationNames.get(name)[0];
-        else
-            return AnimationNames.get(name)[1];
     }
 
     public enum MomoiActionList {
@@ -259,90 +329,16 @@ public class Character3DHelper {
         }
     }
 
-    public void setMomoiAnimation(MomoiActionList action) {
-        this.momoiController.setAnimation(action.getOperation());
-        switch (action) {
-            case MOVING:
-                this.momoiController.moveCurrentPosition(200, 0);
-                break;
-        }
-    }
+    private class ModelLoaderThread extends Thread {
+        private boolean finishLoading = false;
 
-    public void setMidoriAnimation(MidoriActionList action) {
-        this.midoriController.setAnimation(action.getOperation());
-        switch (action) {
-            case MOVING:
-                this.midoriController.moveCurrentPosition(200, 0);
-                break;
-        }
-    }
-
-
-    public void resetModelPosition(float x, float y, AbstractCard.CardColor color) {
-        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
-            this.momoiController.resetPosition(x, y);
-        } else {
-            this.midoriController.resetPosition(x, y);
-        }
-
-    }
-
-    public void setPosition(float x, float y) {
-        this.current_x = x;
-        this.current_y = y;
-    }
-
-    public boolean inited() {
-        return this.inited;
-    }
-
-    public void setStandAnima(AnimationName anima, AbstractCard.CardColor color) {
-        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
-            this.momoiController.setStandAnima(AnimationNames.get(anima)[0]);
-        } else {
-            this.midoriController.setStandAnima(AnimationNames.get(anima)[1]);
-        }
-    }
-
-    public String getCurrentAnima(AbstractCard.CardColor color) {
-        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
-            return this.momoiController.getCurrentAnima();
-        } else {
-            return this.midoriController.getCurrentAnima();
-        }
-    }
-
-    public void resetDefaultAnima(AbstractCard.CardColor color) {
-        if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
-            this.momoiController.resetDefaultAnima();
-        } else {
-            this.midoriController.resetDefaultAnima();
-        }
-    }
-
-    private class ModelLoaderThread extends Thread{
-        private boolean finishLoading=false;
-        public ModelLoaderThread(){
+        public ModelLoaderThread() {
         }
 
         @Override
-        public void run(){
+        public void run() {
             init();
-            finishLoading=true;
-        }
-    }
-
-
-    public void initWithTimeout() throws RuntimeException{
-        ModelLoaderThread thread=new ModelLoaderThread();
-        thread.start();
-        try{
-            thread.join(5000);
-            if(!thread.finishLoading){
-                throw new RuntimeException("Model loading exceeded timeout");
-            }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            finishLoading = true;
         }
     }
 }

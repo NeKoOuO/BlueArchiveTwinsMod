@@ -24,6 +24,6 @@ public class BATwinsExchangeDrawPailAction extends SelectCardsAction {
     private static final UIStrings uistrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
 
     public BATwinsExchangeDrawPailAction(int amount) {
-        super(AbstractDungeon.player.drawPile.group, amount, String.format(uistrings.TEXT[10]+uistrings.TEXT[7],amount), false, cardFilter, callback);
+        super(AbstractDungeon.player.drawPile.group, amount, String.format(uistrings.TEXT[10] + uistrings.TEXT[7], amount), false, cardFilter, callback);
     }
 }

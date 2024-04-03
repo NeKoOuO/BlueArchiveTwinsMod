@@ -9,10 +9,9 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  * Created by Keeper on 2019/3/16.
  */
 public class GifAnimation {
+    public GifDecoder gdec;
     Animation<TextureRegion> animation;
     float elapsed;
-
-    public GifDecoder gdec;
 
     public GifAnimation(String filePath) {
         create(filePath);

@@ -3,7 +3,6 @@ package baModDeveloper.action;
 import baModDeveloper.character.BATwinsCharacter;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -44,14 +43,14 @@ public class BATwinsGameLaunchAction extends AbstractGameAction {
                     AbstractCard firstcard = handcards.getRandomCard(AbstractDungeon.cardRandomRng);
                     firstcard.setCostForTurn(0);
                     handcards.removeCard(firstcard);
-                    if(!handcards.isEmpty()){
+                    if (!handcards.isEmpty()) {
                         AbstractCard secondcard = handcards.getRandomCard(AbstractDungeon.cardRandomRng);
                         secondcard.setCostForTurn(0);
                     }
 
                 }
             }
-        this.isDone=true;
+            this.isDone = true;
         }
     }
 }

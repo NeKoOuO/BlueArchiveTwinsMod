@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class BATwinsEnergyMomoiOrb extends CustomEnergyOrb {
-    private Texture orbMark;
     private static final int ORB_W = 128;
     private static final float ORB_IMG_SCALE = 1.15f * Settings.scale;
     private static float JEWELRY_DEV_X = 20.0F;
     private static float JEWELRY_DEV_Y = -90.0F;
+    private Texture orbMark;
 
     public BATwinsEnergyMomoiOrb(String[] orbTexturePaths, String orbVfxPath, float[] layerSpeeds) {
         super(orbTexturePaths, orbVfxPath, layerSpeeds);

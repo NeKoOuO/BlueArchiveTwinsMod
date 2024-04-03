@@ -11,13 +11,11 @@ import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class BATwinsEasterEggEffect extends AbstractGameEffect {
-    private boolean character;
-    private boolean HSence;
     private static Texture momoi1;
     private static Texture midori1 = ImageMaster.loadImage(ModHelper.makeImgPath("UI", "EasterEgg"));
-
     private static Texture momoi2, midori2;
-
+    private boolean character;
+    private boolean HSence;
     //    private boolean reverse;
     private float FadeInOut;
 

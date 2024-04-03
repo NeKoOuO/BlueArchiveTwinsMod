@@ -15,12 +15,12 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.ArrayList;
 
 public class BATwinsSelectAdventureCardAction extends AbstractGameAction {
-    private int amount;
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("SelectAdventureCard"));
     public static final String[] TEXT = uiStrings.TEXT;
+    BATwinsAdventureOpening card;
+    private int amount;
     private AbstractPlayer p;
     private ArrayList<AbstractCard> isNotAdvCards = new ArrayList<>();
-    BATwinsAdventureOpening card;
 
     public BATwinsSelectAdventureCardAction(int amount, BATwinsAdventureOpening card) {
         this.amount = amount;

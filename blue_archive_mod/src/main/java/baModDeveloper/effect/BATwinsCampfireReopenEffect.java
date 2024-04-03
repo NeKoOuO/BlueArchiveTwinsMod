@@ -1,15 +1,11 @@
 package baModDeveloper.effect;
 
-import basemod.ModColorDisplay;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
@@ -20,11 +16,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class BATwinsCampfireReopenEffect extends CampfireSleepEffect {
 
-    private final Color screenColor=AbstractDungeon.fadeColor.cpy();
+    private final Color screenColor = AbstractDungeon.fadeColor.cpy();
 
     @Override
     public void update() {
@@ -37,29 +32,31 @@ public class BATwinsCampfireReopenEffect extends CampfireSleepEffect {
         if (this.duration < this.startingDuration / 2.0F) {
 
             this.isDone = true;
-            ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();
+            ((RestRoom) AbstractDungeon.getCurrRoom()).fadeIn();
             AbstractRoom.waitTimer = 0.0F;
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
 
 
         }
-        if(this.isDone&& AbstractDungeon.getCurrRoom() instanceof RestRoom){
+        if (this.isDone && AbstractDungeon.getCurrRoom() instanceof RestRoom) {
             try {
-                Method method= CampfireUI.class.getDeclaredMethod("initializeButtons");
+                Method method = CampfireUI.class.getDeclaredMethod("initializeButtons");
                 method.setAccessible(true);
-                Field field=CampfireUI.class.getDeclaredField("buttons");
+                Field field = CampfireUI.class.getDeclaredField("buttons");
                 field.setAccessible(true);
-                ArrayList<AbstractCampfireOption> buttons= (ArrayList<AbstractCampfireOption>) field.get(((RestRoom) AbstractDungeon.getCurrRoom()).campfireUI);
+                ArrayList<AbstractCampfireOption> buttons = (ArrayList<AbstractCampfireOption>) field.get(((RestRoom) AbstractDungeon.getCurrRoom()).campfireUI);
                 buttons.clear();
                 method.invoke(((RestRoom) AbstractDungeon.getCurrRoom()).campfireUI);
                 ((RestRoom) AbstractDungeon.getCurrRoom()).campfireUI.reopen();
 //                field.setAccessible(false);
 //                method.setAccessible(false);
-            } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | NoSuchFieldException e) {
+            } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException |
+                     NoSuchFieldException e) {
                 throw new RuntimeException(e);
             }
         }
     }
+
     private void updateBlackScreenColor() {
         if (this.duration > this.startingDuration - 0.5F) {
             this.screenColor.a = Interpolation.fade.apply(1.0F, 0.0F, (this.duration - (this.startingDuration - 0.5F)) * 2.0F);
@@ -70,6 +67,7 @@ public class BATwinsCampfireReopenEffect extends CampfireSleepEffect {
         }
 
     }
+
     private void playSleepJingle() {
         int roll = MathUtils.random(0, 2);
         switch (AbstractDungeon.id) {
