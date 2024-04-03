@@ -26,7 +26,7 @@ public class BATwinsExcitationAction extends AbstractGameAction {
     public void update() {
         if(this.duration==Settings.ACTION_DUR_FAST){
             CardGroup cardGroup=new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            ArrayList<AbstractCard> powercards=CardLibrary.getAllCards().stream().filter(card -> card.type== AbstractCard.CardType.POWER).collect(Collectors.toCollection(ArrayList::new));
+            ArrayList<AbstractCard> powercards=CardLibrary.getAllCards().stream().filter(card -> card.type== AbstractCard.CardType.POWER&&card.color!= AbstractCard.CardColor.COLORLESS).collect(Collectors.toCollection(ArrayList::new));
             cardGroup.group.addAll(powercards);
             cardGroup.group.sort(new ColorComparer());
             this.amount=Math.min(this.amount, cardGroup.size());

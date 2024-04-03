@@ -481,6 +481,6 @@
 	},
 	"BATwinsMod:Excitation":{
 		"NAME":"Inspiration",
-		"DESCRIPTION":"Cannot be upgraded. NL Choose and play 1 power card from all power cards in the game."
+		"DESCRIPTION":"Cannot be upgraded. NL Choose and play 1 power card from all character's cards in the game."
 	}
 }
