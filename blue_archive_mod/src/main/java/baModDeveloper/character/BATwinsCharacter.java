@@ -38,6 +38,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
@@ -54,10 +55,7 @@ import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class BATwinsCharacter extends CustomPlayer {
     private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder");
@@ -657,6 +655,21 @@ public class BATwinsCharacter extends CustomPlayer {
         public static CardLibrary.LibraryType BATWINS_MOMOI_LIBRARY;
         @SpireEnum(name = "BATWINSMIDORICARD")
         public static CardLibrary.LibraryType BATWINS_MIDORI_LIBRARY;
+
+    }
+
+    @Override
+    public Texture getCutsceneBg() {
+        return ImageMaster.loadImage(ModHelper.makeImgPath("UI/scence","blueBg"));
+    }
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> cutscenePanelList=new ArrayList<>();
+        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins1")));
+        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins2")));
+        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins3")));
+        return cutscenePanelList;
 
     }
 }
