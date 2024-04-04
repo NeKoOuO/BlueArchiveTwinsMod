@@ -25,9 +25,9 @@ public class BATwinsCampfireReopenEffect extends CampfireSleepEffect {
     public void update() {
         this.duration -= Gdx.graphics.getDeltaTime();
         this.updateBlackScreenColor();
-        if (this.duration < this.startingDuration - 0.5F) {
-            this.playSleepJingle();
-        }
+//        if (this.duration < this.startingDuration - 0.5F) {
+//            this.playSleepJingle();
+//        }
 
         if (this.duration < this.startingDuration / 2.0F) {
 
