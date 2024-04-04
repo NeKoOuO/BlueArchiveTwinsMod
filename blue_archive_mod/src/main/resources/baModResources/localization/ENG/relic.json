@@ -47,7 +47,7 @@
 	},
 	"BATwinsMod:FoldingShield":{
 		"NAME":"Folding Shield",
-		"FLAVOR":"A shield frequently used by Yuka.",
+		"FLAVOR":"A shield frequently used by Yuuka.",
 		"DESCRIPTIONS":[
 			"At the end of your turn, gain #b%d times the number of cards in your hand as Block."
 		]
@@ -74,7 +74,7 @@
 		]
 	},
 	"BATwinsMod:NekoHowitzer":{
-		"NAME":"Neko Howitzer",
+		"NAME":"Nyan's Dash",
 		"FLAVOR":"Yuzu's weapon, can fire grenades from a distance",
 		"DESCRIPTIONS":[
 			"At the start of each turn, apply #b%d stacks of Burn to a random enemy. Has a #b1%% chance to double the Burn stacks on that enemy."
