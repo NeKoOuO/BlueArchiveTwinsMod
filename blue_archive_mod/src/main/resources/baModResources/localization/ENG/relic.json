@@ -42,7 +42,7 @@
 		"NAME":"Game Guide",
 		"FLAVOR":"It says you just need to drag the cards to play them!",
 		"DESCRIPTIONS":[
-			"At the start of each turn, add #b1 #yBATwinsMod:Exchange with #yEthereal and #yExhaust to your hand."
+			"Replace #yGame #yMagazine .At the start of each turn, add #b1 #yBATwinsMod:Exchange with #yEthereal and #yExhaust to your hand."
 		]
 	},
 	"BATwinsMod:FoldingShield":{
