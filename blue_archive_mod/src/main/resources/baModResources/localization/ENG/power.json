@@ -179,5 +179,17 @@
 		"DESCRIPTIONS":[
 			"本场战斗存储的子弹升级."
 		]
+	},
+	"BATwinsMod:DisabledMomoiPower": {
+		"NAME": "Momoi Card Prohibited",
+		"DESCRIPTIONS": [
+			"Cannot play Momoi cards this turn."
+		]
+	},
+	"BATwinsMod:DisabledMidoriPower": {
+		"NAME": "Midori Card Prohibited",
+		"DESCRIPTIONS": [
+			"Cannot play Midori cards this turn."
+		]
 	}
 }

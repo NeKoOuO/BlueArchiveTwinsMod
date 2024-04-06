@@ -482,5 +482,10 @@
 	"BATwinsMod:Excitation":{
 		"NAME":"Inspiration",
 		"DESCRIPTION":"Cannot be upgraded. NL Choose and play 1 power card from all character's cards in the game."
+	},
+	"BATwinsMod:TacticalRelay": {
+		"NAME": "Tactical Relay",
+		"DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon]. NL Cannot play batwinsmod:MomoiCard this turn.",
+		"UPGRADE_DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon]. NL Cannot play batwinsmod:MomoiCard this turn."
 	}
 }

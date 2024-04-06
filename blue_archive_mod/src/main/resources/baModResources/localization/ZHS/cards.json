@@ -482,5 +482,10 @@
 	"BATwinsMod:Excitation":{
 		"NAME":"激励",
 		"DESCRIPTION":"不能被升级 NL 从所有角色的能力牌中选择1张打出。"
+	},
+	"BATwinsMod:TacticalRelay":{
+		"NAME": "战术接力",
+		"DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , NL 本回合不能再打出 batwinsmod:桃牌 。",
+		"UPGRADE_DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , NL 本回合不能再打出 batwinsmod:桃牌 。"
 	}
 }

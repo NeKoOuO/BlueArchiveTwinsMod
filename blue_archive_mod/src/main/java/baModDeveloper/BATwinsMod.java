@@ -211,6 +211,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 //        BaseMod.addCard(new BATwinsExpansionMagazine());
         BaseMod.addCard(new BATwinsAccelerate());
         BaseMod.addCard(new BATwinsExcitation());
+        BaseMod.addCard(new BATwinsTacticalRelay());
     }
 
     @Override
