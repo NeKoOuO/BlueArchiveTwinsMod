@@ -52,7 +52,7 @@ public class BATwinsSwordOfLight extends CustomRelic {
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         this.counter++;
-        if (this.counter >= count) {
+        if (this.counter == count) {
             flash();
             addToBot((AbstractGameAction) new RelicAboveCreatureAction((AbstractCreature) AbstractDungeon.player, this));
             addToBot((AbstractGameAction) new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
