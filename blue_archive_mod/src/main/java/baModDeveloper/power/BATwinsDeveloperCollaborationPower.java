@@ -1,5 +1,6 @@
 package baModDeveloper.power;
 
+import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.Color;
@@ -72,7 +73,7 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         if (this.lastColor != null) {
-            if (this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
+            if (usedCard instanceof BATwinsModCustomCard&&this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
                 this.flash();
                 this.count++;
             } else {
