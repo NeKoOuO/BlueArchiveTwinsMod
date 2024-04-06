@@ -45,6 +45,7 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     protected String originRawDescription;
     private int startColor = 0;
     private float gradientDuration = 0.0F;
+    private static UIStrings ExchangeKeywords=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("ExchangeKeyowrds"));
 
     //    public boolean playedByOtherCard=false;
     public BATwinsModCustomCard(String ID, String NAME, String IMG_PATH, int COST, String DESCRIPTION, CardType TYPE, CardColor COLOR, CardRarity RARITY, CardTarget TARGET, BATwinsEnergyPanel.EnergyType ENERGYTYPE) {
@@ -283,10 +284,14 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     abstract public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
 
     public String replaceDescription(String description) {
-        description = exchangeStr(description, "中毒", "batwinsmod:灼伤");
-        description = exchangeStr(description, "[batwinsmod:midoriorbicon]", "[batwinsmod:momoiorbicon]");
-        description = exchangeStr(description, "batwinsmod:桃牌", "batwinsmod:绿牌");
-        description = exchangeStr(description, "虚弱", "易伤");
+//        description = exchangeStr(description, "中毒", "batwinsmod:灼伤");
+//        description = exchangeStr(description, "[batwinsmod:midoriorbicon]", "[batwinsmod:momoiorbicon]");
+//        description = exchangeStr(description, "batwinsmod:桃牌", "batwinsmod:绿牌");
+//        description = exchangeStr(description, "虚弱", "易伤");
+
+        for(int i=0;i<ExchangeKeywords.TEXT.length;i+=2){
+            description=exchangeStr(description,ExchangeKeywords.TEXT[i],ExchangeKeywords.TEXT[i+1]);
+        }
         return description;
     }
 
