@@ -253,7 +253,7 @@
 	},
 	"BATwinsMod:TwoStageAttack":{
 		"NAME":"Double Strike",
-		"DESCRIPTION":" batwinsmod:OnlySynergy NL  When this card in hand and playing other strike cards,play this card. NL batwinsmod:Synergy , batwinsmod:HyperSynergy :Deal !D! Damage to all enemies twice.",
+		"DESCRIPTION":" batwinsmod:OnlySynergy NL  When this card in hand and playing other strike cards,play this card. NL batwinsmod:Synergy , batwinsmod:HyperSynergy :Deal !D! Damage to all enemies.",
 		"EXTENDED_DESCRIPTION":[
 			"This card can only be played by effects."
 		]
@@ -485,7 +485,7 @@
 	},
 	"BATwinsMod:TacticalRelay": {
 		"NAME": "Tactical Relay",
-		"DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon]. NL Cannot play batwinsmod:MomoiCard this turn.",
-		"UPGRADE_DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon]. NL Cannot play batwinsmod:MomoiCard this turn."
+		"DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] . NL Cannot play batwinsmod:MomoiCard this turn.",
+		"UPGRADE_DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] . NL Cannot play batwinsmod:MomoiCard this turn."
 	}
 }
