@@ -164,7 +164,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new BATwinsConvenientConnectivity());
         BaseMod.addCard(new BATwinsEndCombo());
         BaseMod.addCard(new BATwinsReadingDocuments());
-        BaseMod.addCard(new BATwinsMandatoryInstruction());
+//        BaseMod.addCard(new BATwinsMandatoryInstruction());
         BaseMod.addCard(new BATwinsTwoStageAttack());
         BaseMod.addCard(new BATwinsTakeABreak());
         BaseMod.addCard(new BATwinsAttackWithAllMight());
@@ -211,7 +211,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 //        BaseMod.addCard(new BATwinsExpansionMagazine());
         BaseMod.addCard(new BATwinsAccelerate());
         BaseMod.addCard(new BATwinsExcitation());
-//        BaseMod.addCard(new BATwinsTacticalRelay());
+        BaseMod.addCard(new BATwinsTacticalRelay());
     }
 
     @Override
@@ -221,6 +221,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             lang = "ZHS";
 //        } else if(language==GameLanguage.ENG){
 //            lang = "ENG";
+        }else if(language==GameLanguage.ZHT){
+            lang="ZHS";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
@@ -244,6 +246,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         String lang = "ENG";
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
+        }else if(language==GameLanguage.ZHT){
+            lang="ZHS";
         }
         String json = Gdx.files.internal("baModResources/localization/" + lang + "/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);

@@ -134,7 +134,7 @@
 	},
 	"BATwinsMod:LightSpeedStrike":{
 		"NAME":"Lightspeed Strike",
-		"DESCRIPTION":"Deal !D! Damage. NL If no attack cards were played this turn, choose and play 1 attack card from your hand. You can only play 1 more attack card this turn."
+		"DESCRIPTION":"Deal !D! Damage.Choose and play 1 attack card from your hand,and discard other attack cards."
 	},
 	"BATwinsMod:SinglePlayerGame":{
 		"NAME":"Single-player Game",
@@ -253,7 +253,7 @@
 	},
 	"BATwinsMod:TwoStageAttack":{
 		"NAME":"Double Strike",
-		"DESCRIPTION":" batwinsmod:OnlySynergy NL batwinsmod:Synergy , batwinsmod:HyperSynergy :Deal !D! Damage to all enemies twice.",
+		"DESCRIPTION":" batwinsmod:OnlySynergy NL  When this card in hand and playing other strike cards,play this card. NL batwinsmod:Synergy , batwinsmod:HyperSynergy :Deal !D! Damage to all enemies twice.",
 		"EXTENDED_DESCRIPTION":[
 			"This card can only be played by effects."
 		]
@@ -276,7 +276,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"Experience Gift Pack",
-		"DESCRIPTION":" batwinsmod:Share NL If you have batwinsmod:ExperiencePoints greater than the energy cost of this card,play this card. NL Draw !M! cards,then reduce the cost of this card by 1 for the rest of this battle."
+		"DESCRIPTION":" batwinsmod:Share NL If you have batwinsmod:ExperiencePoints greater than the energy cost of this card(except 0),play this card. NL Draw !M! cards,then reduce the cost of this card by 1 for the rest of this battle."
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"Self-Synergy",
@@ -306,7 +306,7 @@
 	},
 	"BATwinsMod:PoisonGasBomb":{
 		"NAME":"Poison Gas Bomb",
-		"DESCRIPTION":"Apply !M! poison and !M! batwinsmod:Burn .Trigger the enemy's poison ."
+		"DESCRIPTION":"Apply !M! poison and !M! batwinsmod:Burn .Trigger the enemy's poison . NL batwinsmod:synergy :Trigger the enemy's batwinsmod:Burn ."
 	},
 	"BATwinsMod:AdventureBegins":{
 		"NAME":"Adventuring Team",

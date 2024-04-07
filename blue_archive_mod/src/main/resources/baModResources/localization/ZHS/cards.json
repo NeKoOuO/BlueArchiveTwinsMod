@@ -134,7 +134,7 @@
 	},
 	"BATwinsMod:LightSpeedStrike":{
 		"NAME":"光速打击",
-		"DESCRIPTION":"造成 !D! 点伤害。 NL 若本回合没有打出攻击牌，选择手牌1张攻击牌打出，本回合只能再打出1张攻击牌。"
+		"DESCRIPTION":"造成 !D! 点伤害。 NL 选择手牌1张攻击牌打出并弃置其他攻击牌。"
 	},
 	"BATwinsMod:SinglePlayerGame":{
 		"NAME":"单人游戏",
@@ -253,7 +253,7 @@
 	},
 	"BATwinsMod:TwoStageAttack":{
 		"NAME":"二次打击",
-		"DESCRIPTION":" batwinsmod:只能被连携 NL batwinsmod:连携 ， batwinsmod:超连携 ：对全体敌人造成 !D! 点伤害2次。",
+		"DESCRIPTION":" batwinsmod:只能被连携 NL 在手牌并打出打击牌时打出这张牌。 NL batwinsmod:连携 ， batwinsmod:超连携 ：对全体敌人造成 !D! 点伤害。",
 		"EXTENDED_DESCRIPTION":[
 			"这张牌只能被效果打出。"
 		]
@@ -276,7 +276,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"经验大礼包",
-		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 大于这张牌的耗能，打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
+		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 大于这张牌的耗能（除0以外），打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",
@@ -306,7 +306,7 @@
 	},
 	"BATwinsMod:PoisonGasBomb":{
 		"NAME":"毒气炸弹",
-		"DESCRIPTION":"给予 !M! 层 中毒 !M! 层 batwinsmod:灼伤 。触发该敌人的 中毒 。"
+		"DESCRIPTION":"给予 !M! 层 中毒 !M! 层 batwinsmod:灼伤 。触发该敌人的 中毒 。 NL batwinsmod:连携 ：触发该敌人的 batwinsmod:灼伤 。"
 	},
 	"BATwinsMod:AdventureBegins":{
 		"NAME":"冒险小队",

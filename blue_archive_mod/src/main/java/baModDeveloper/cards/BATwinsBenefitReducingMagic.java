@@ -29,7 +29,7 @@ public class BATwinsBenefitReducingMagic extends BATwinsModCustomCard {
 
     public BATwinsBenefitReducingMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber = 1;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }
 

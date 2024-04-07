@@ -94,7 +94,7 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //                ((BATwinsModCustomCard) card).playedByOtherCard=true;
 //            }
 //            addToTop(new UnlimboAction(this.card));
-            if (this.target == null) {
+            if (this.target == null||this.target.isDeadOrEscaped()) {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, true, false, true));
             } else {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, this.target, false, true));

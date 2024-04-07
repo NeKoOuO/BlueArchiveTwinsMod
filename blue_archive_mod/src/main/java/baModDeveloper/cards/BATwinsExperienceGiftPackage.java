@@ -46,7 +46,7 @@ public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard {
     public void applyPowers() {
         super.applyPowers();
         if (AbstractDungeon.player.hand.contains(this) && AbstractDungeon.player.hasPower(BATwinsExperiencePower.POWER_ID)) {
-            if (this.costForTurn <= AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID).amount) {
+            if (this.costForTurn!=0&&this.costForTurn <= AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID).amount) {
                 addToBot(new BATwinsPlayHandCardAction(this, null));
             }
         }

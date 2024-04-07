@@ -66,6 +66,7 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             this.gainEnergyImgs = ((BATwinsCharacter) AbstractDungeon.player).getEnergyImages();
         }
         this.gainEnergyImg = AbstractDungeon.player.getEnergyImage();
+        selectedEnergySlot=EnergyType.MOMOI;
     }
 
     public static void setEnergy(int energy, EnergyType type) {

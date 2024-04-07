@@ -52,14 +52,14 @@ public class BATwinsCoverChargeAction extends AbstractGameAction {
             MIDORICount += 2;
             this.p.getRelic("Chemical X").flash();
         }
-        if (MOMOICount > 0) {
-            for (int i = 0; i < MOMOICount; i++) {
-                addToBot(new DamageAction(this.target, new DamageInfo(this.p, this.damage), AttackEffect.LIGHTNING));
-            }
-        }
         if (MIDORICount > 0) {
             for (int i = 0; i < MIDORICount; i++) {
                 addToBot(new GainBlockAction(this.p, this.block));
+            }
+        }
+        if (MOMOICount > 0) {
+            for (int i = 0; i < MOMOICount; i++) {
+                addToBot(new DamageAction(this.target, new DamageInfo(this.p, this.damage), AttackEffect.LIGHTNING));
             }
         }
         if (!this.freeToPlayOnce) {
