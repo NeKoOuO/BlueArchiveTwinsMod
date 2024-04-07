@@ -310,8 +310,8 @@
 	},
 	"BATwinsMod:AdventureBegins":{
 		"NAME":"Adventuring Team",
-		"DESCRIPTION":"Choose 1 card from your hand that is different form the type of all batwinsmod:Storaged cards,exhaust it,and then batwinsmod:Storage it.",
-		"UPGRADE_DESCRIPTION":"You can choose 1 card from your hand that is different form the type of all batwinsmod:Storaged cards,exhaust it,and then batwinsmod:Storage it.",
+		"DESCRIPTION":"Choose 1 card from your hand that is different form the type of all batwinsmod:Storaged cards and is not exhaust,exhaust it,and then batwinsmod:Storage it.",
+		"UPGRADE_DESCRIPTION":"You can choose 1 card from your hand that is different form the type of all batwinsmod:Storaged cards and is not exhaust,exhaust it,and then batwinsmod:Storage it.",
 		"EXTENDED_DESCRIPTION":[
 			"Attack",
 			"Skill",
@@ -327,7 +327,7 @@
 	},
 	"BATwinsMod:EquipmentUpgrade":{
 		"NAME":"Equipment Upgrade",
-		"DESCRIPTION":"Choose !M! cards from your hand to upgrade,the card gain batwinsmod:Share , Retain and remove exhaust , ethereal . NL exhaust "
+		"DESCRIPTION":"Choose !M! cards from your hand to upgrade,the card gain batwinsmod:Share , Retain . NL exhaust "
 	},
 	"BATwinsMod:AutomaticDefense":{
 		"NAME":"Automatic Defense",

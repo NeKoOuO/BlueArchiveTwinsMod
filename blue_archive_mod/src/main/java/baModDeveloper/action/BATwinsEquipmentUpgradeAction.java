@@ -27,8 +27,8 @@ public class BATwinsEquipmentUpgradeAction extends SelectCardsInHandAction {
                 ((BATwinsModCustomCard) card).modifyEnergyType = BATwinsEnergyPanel.EnergyType.SHARE;
             }
             card.selfRetain = true;
-            card.exhaust = false;
-            card.isEthereal = false;
+//            card.exhaust = false;
+//            card.isEthereal = false;
         }
     };
 

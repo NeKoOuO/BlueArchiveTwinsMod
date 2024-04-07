@@ -310,8 +310,8 @@
 	},
 	"BATwinsMod:AdventureBegins":{
 		"NAME":"冒险小队",
-		"DESCRIPTION":"选择一张和所有 batwinsmod:存储 的牌类型不同的手牌 消耗 并 batwinsmod:存储 。",
-		"UPGRADE_DESCRIPTION":"可以 选择一张和所有 batwinsmod:存储 的牌类型不同的手牌 消耗 并 batwinsmod:存储 。",
+		"DESCRIPTION":"选择一张和所有 batwinsmod:存储 的牌类型不同的非消耗的手牌 消耗 并 batwinsmod:存储 。",
+		"UPGRADE_DESCRIPTION":"可以 选择一张和所有 batwinsmod:存储 的牌类型不同的非消耗的手牌 消耗 并 batwinsmod:存储 。",
 		"EXTENDED_DESCRIPTION":[
 			"攻击",
 			"技能",
@@ -327,7 +327,7 @@
 	},
 	"BATwinsMod:EquipmentUpgrade":{
 		"NAME":"装备升级",
-		"DESCRIPTION":"选择手牌 !M! 张牌 升级 ，获得 batwinsmod:共有 ， 保留 且去除 消耗 ， 虚无 。 NL 消耗 "
+		"DESCRIPTION":"选择手牌 !M! 张牌 升级 ，获得 batwinsmod:共有 ， 保留 。 NL 消耗 "
 	},
 	"BATwinsMod:AutomaticDefense":{
 		"NAME":"自动防御",
