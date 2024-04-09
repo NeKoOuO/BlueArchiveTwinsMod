@@ -46,6 +46,9 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
         if (this.numberOfConnections > 10) {
             for (int i = uiStrings.TEXT.length - 1; i >= 0; i--) {
                 addToTop(new TalkAction(true, uiStrings.TEXT[i], 3.0F, 3.0F));
+                if(!AbstractDungeon.player.drawPile.contains(this.card)){
+                    AbstractDungeon.player.drawPile.addToRandomSpot(this.card);
+                }
             }
             this.isDone = true;
             return;

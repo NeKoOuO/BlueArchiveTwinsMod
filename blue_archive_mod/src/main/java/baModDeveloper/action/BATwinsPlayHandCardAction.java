@@ -59,6 +59,9 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
         if (this.numberOfConnections > 10) {
             for (int i = uiStrings.TEXT.length - 1; i >= 0; i--) {
                 addToTop(new TalkAction(true, uiStrings.TEXT[i], 3.0F, 3.0F));
+                if(!this.p.hand.contains(this.card)){
+                    this.p.hand.addToTop(this.card);
+                }
             }
             this.isDone = true;
             return;
