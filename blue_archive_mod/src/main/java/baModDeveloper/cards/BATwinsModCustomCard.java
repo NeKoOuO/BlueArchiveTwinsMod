@@ -407,18 +407,34 @@ public abstract class BATwinsModCustomCard extends CustomCard {
 
     @Override
     public void renderCardPreview(SpriteBatch sb) {
-        super.renderCardPreview(sb);
+        if(this.cardToBringOut.size()<=1){
+            super.renderCardPreview(sb);
+            return;
+        }
+        int renderCardsNum=this.cardToBringOut.size();
+        float tmpScale;
+        tmpScale=(Settings.HEIGHT*0.9F)/(renderCardsNum*AbstractCard.IMG_HEIGHT);
+        tmpScale=Math.min(tmpScale,0.8F);
+        if (AbstractDungeon.player == null || !AbstractDungeon.player.isDraggingCard) {
+            if (this.current_x > (float)Settings.WIDTH * 0.75F) {
+                this.cardsToPreview.current_x = this.current_x + (IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * tmpScale + 16.0F) * this.drawScale;
+            } else {
+                this.cardsToPreview.current_x = this.current_x - (IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * tmpScale + 16.0F) * this.drawScale;
+            }
+            this.cardsToPreview.current_y =  IMG_HEIGHT / 2.0F * tmpScale * this.drawScale;
+            this.cardsToPreview.drawScale = tmpScale;
+            this.cardsToPreview.render(sb);
+        }
         int count = 2;
         if (this.bringOutCard) {
             for (AbstractCard c : this.cardToBringOut) {
                 if (this.cardsToPreview != c) {
-                    float tmpScale = this.drawScale * 0.8F;
                     if (this.current_x > (float) Settings.WIDTH * 0.75F) {
-                        c.current_x = this.current_x + ((IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * 0.8F + 12.0F) * this.drawScale) * count;
+                        c.current_x = this.current_x + (IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * tmpScale + 16.0F) * this.drawScale;
                     } else {
-                        c.current_x = this.current_x - ((IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * 0.8F + 12.0F) * this.drawScale) * count;
+                        c.current_x = this.current_x - (IMG_WIDTH / 2.0F + IMG_WIDTH / 2.0F * tmpScale + 16.0F) * this.drawScale;
                     }
-                    c.current_y = this.current_y + (IMG_HEIGHT / 2.0F - IMG_HEIGHT / 2.0F * 0.8F) * this.drawScale;
+                    c.current_y = (IMG_HEIGHT / 2.0F * tmpScale)*this.drawScale +IMG_HEIGHT*tmpScale* this.drawScale*(count-1);
 //                    c.current_y=c.current_y-IMG_HEIGHT*0.15F*count;
                     c.drawScale = tmpScale;
                     c.render(sb);
