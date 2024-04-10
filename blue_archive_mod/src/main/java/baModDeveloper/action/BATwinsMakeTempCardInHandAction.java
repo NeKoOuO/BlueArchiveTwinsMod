@@ -5,6 +5,13 @@
 
 package baModDeveloper.action;
 
+import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.modifier.BATwinsEtherealModifier;
+import baModDeveloper.modifier.BATwinsExhaustModifier;
+import baModDeveloper.modifier.BATwinsRetainModifier;
+import baModDeveloper.modifier.BATwinsSharedModifier;
+import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -189,10 +196,38 @@ public class BATwinsMakeTempCardInHandAction extends AbstractGameAction {
         } else {
             card = this.c.makeStatEquivalentCopy();
         }
-        card.exhaust = this.exhaust;
-        card.exhaustOnUseOnce = this.exhaustOnUseOnce;
-        card.isEthereal = this.isEthereal;
-        card.selfRetain = selfRetain;
+        if(this.exhaust&&!c.exhaust&&!CardModifierManager.hasModifier(card,BATwinsExhaustModifier.ID)){
+            CardModifierManager.addModifier(card,new BATwinsExhaustModifier());
+        }
+        if(this.isEthereal&&!c.isEthereal&&!CardModifierManager.hasModifier(card,BATwinsEtherealModifier.ID)){
+            CardModifierManager.addModifier(card,new BATwinsEtherealModifier());
+        }
+        if(this.selfRetain&&!c.selfRetain&&!CardModifierManager.hasModifier(card,BATwinsRetainModifier.ID)){
+            CardModifierManager.addModifier(card,new BATwinsRetainModifier());
+        }
+        if(card instanceof BATwinsModCustomCard&&c instanceof BATwinsModCustomCard){
+            if(((BATwinsModCustomCard) card).modifyEnergyType!= BATwinsEnergyPanel.EnergyType.SHARE&&((BATwinsModCustomCard) c).modifyEnergyType== BATwinsEnergyPanel.EnergyType.SHARE&&!CardModifierManager.hasModifier(card, BATwinsSharedModifier.ID)){
+                CardModifierManager.addModifier(card,new BATwinsSharedModifier());
+            }
+        }
+
+
+//        if(this.exhaust && !card.exhaust){
+//            card.exhaust= true;
+//            CardModifierManager.addModifier(card,new BATwinsExhaustModifier());
+//        }
+////        card.exhaust = this.exhaust;
+////        card.exhaustOnUseOnce = this.exhaustOnUseOnce;
+//        if(this.isEthereal&&!card.isEthereal){
+//            card.isEthereal = true;
+//            CardModifierManager.addModifier(card,new BATwinsEtherealModifier());
+//        }
+//        if(this.selfRetain&&!card.selfRetain){
+//            card.selfRetain=true;
+//            CardModifierManager.addModifier(card,new BATwinsRetainModifier());
+//        }
+//        card.initializeDescription();
+//        card.selfRetain = selfRetain;
         return card;
     }
 }
