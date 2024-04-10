@@ -27,7 +27,7 @@ public class BATwinsAttackWithAllMight extends BATwinsModCustomCard {
 
     public BATwinsAttackWithAllMight() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 30;
+        this.baseDamage = 21;
         this.damage = this.baseDamage;
         this.baseMagicNumber = 30;
         this.magicNumber = this.baseMagicNumber;
@@ -48,7 +48,8 @@ public class BATwinsAttackWithAllMight extends BATwinsModCustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(20);
+//            this.upgradeMagicNumber(20);
+            this.upgradeDamage(6);
         }
     }
 
