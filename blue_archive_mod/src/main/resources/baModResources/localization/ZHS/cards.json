@@ -253,7 +253,7 @@
 	},
 	"BATwinsMod:TwoStageAttack":{
 		"NAME":"二次打击",
-		"DESCRIPTION":" batwinsmod:只能被连携 NL 在手牌并打出打击牌时打出这张牌。 NL batwinsmod:连携 ， batwinsmod:超连携 ：对全体敌人造成 !D! 点伤害。",
+		"DESCRIPTION":" batwinsmod:只能被连携 NL 在手牌并打出 打击 牌时打出这张牌。 NL batwinsmod:连携 ， batwinsmod:超连携 ：对全体敌人造成 !D! 点伤害。",
 		"EXTENDED_DESCRIPTION":[
 			"这张牌只能被效果打出。"
 		]
