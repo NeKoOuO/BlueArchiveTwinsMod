@@ -384,7 +384,10 @@
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"Penetrating Damage",
-		"DESCRIPTION":"Deal !D! Damage to all enemies,all enemies without Block lose !M! strength . NL exhaust NL batwinsmod:Synergy :This card does not exhaust for the rest of this battle."
+		"DESCRIPTION":"Deal !D! Damage to all enemies,all enemies without Block lose !M! strength . NL exhaust NL batwinsmod:Synergy :This card does not exhaust for the rest of this battle.",
+		"EXTENDED_DESCRIPTION": [
+			"Deal !D! Damage to all enemies,all enemies without Block lose !M! strength ."
+		]
 	},
 	"BATwinsMod:LoginRewards":{
 		"NAME":"登入奖励",

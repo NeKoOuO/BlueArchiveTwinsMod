@@ -73,5 +73,7 @@ public class BATwinsPenetrationDamage extends BATwinsModCustomCard {
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         this.exhaust = false;
+        this.originRawDescription=this.rawDescription=CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 }
