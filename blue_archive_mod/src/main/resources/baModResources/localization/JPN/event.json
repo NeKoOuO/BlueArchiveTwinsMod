@@ -1,0 +1,104 @@
+{
+	"BATwinsMod:TrainingCamp":{
+		"NAME":"Novice Training Camp",
+		"DESCRIPTIONS":[
+			"You arrive at a mysterious fortress, surrounded by broken mechanical puppets, with a intact @giant@ @mechanical@ @monster@ in the center of the fortress.",
+			"You defeated the monster, although you suffered some damage. After the monster was destroyed, it dropped a ~medal~ . Upon picking it up, you feel a new insight into your skills.",
+			"You defeated the monster without taking any damage. After the monster was destroyed, it dropped a medal. Upon picking it up, you feel a new insight into your skills.",
+			"That mechanical monster looks very strong at first glance, so be careful.",
+			"After picking up the medal, continue on your way."
+		],
+		"OPTIONS":[
+			"Try to fight #g(70%% chance to lose up to %s HP)",
+			"[Leave]",
+			"Choose 1 attack card to gain the effect of dealing the same damage to a random enemy with its same name card.",
+			"Choose 1 skill card to gain the effect of drawing 2 cards with its same name card.",
+			"Choose 1 ability card to gain the effect of adding a copy to the discard pile with its same name card.",
+			"Confirm",
+			"[Lock] Requires attack cards",
+			"[Lock] Requires skill cards",
+			"[Lock] Requires ability cards",
+			"[Lock] Requires cards"
+		]
+	},
+	"BATwinsMod:DirtShowdown":{
+		"NAME":"Showdown on the Ice",
+		"DESCRIPTIONS":[
+			"A tabletop hockey machine is abruptly placed on the road, with a whole piece of flooring underneath, as if forcibly cut off by space. NL \" #rThis machine looks so familiar.\" NL \" #gIsn't this the machine in the Charlotte Café? I wonder why it's here.\" NL \" #rWell then, let's have a showdown!\"",
+			"It's been 5 minutes, and there still hasn't been a single goal on either side. At this moment, Momoi and Midori decide:",
+			"Momoi's unexpected and unskilled sudden strike catches Midori off guard and surprisingly works well. The puck goes straight into the goal. NL \" #rYay, I won.\" NL \" #gHmm, it's just luck.\"",
+			"Midori takes advantage of Momoi's momentary relaxation and performs a continuous spin shot. The puck repeatedly bounces off the edges, making it difficult for Momoi to keep up, and finally easily scores. NL \" #gVictory as expected.\" NL \" #rWaaah, why did it have to be like this~~.\"",
+			"It's about time to leave. We need to hurry and leave this place, as Yuzu and the others will worry.",
+			"Although it's regrettable, it's more important to leave this tower quickly."
+		],
+		"OPTIONS":[
+			"[Leave] It looks weird, it's better not to mess around casually.",
+			"[Continue]",
+			"Momoi uses a powerful straight shot",
+			"Midori uses a continuous spin shot",
+			"Feeling great after the victory.",
+			" #gRandomly upgrade 2 Momoi cards ",
+			" #gRandomly upgrade 2 Midori cards",
+			"[Leave]"
+		]
+	},
+	"BATwinsMod:HurdleGame":{
+		"NAME":"Hurdle Mini-Game",
+		"DESCRIPTIONS":[
+			"You see a group of people gathered on the road ahead, and you curiously approach them. They take turns running and jumping over obstacles, as if participating in some kind of challenge. NL \" @Hey@ , you there, yeah, ~you~ , want to give it a try? The rewards are quite generous.\"",
+			"This challenge is too simple for you, and your success elicits enthusiastic applause from the onlookers. NL \"This is the promised reward.\" The person throws down ~something~ and immediately leaves.",
+			"Don't want to play",
+			"You think this must be a scam, so you decide to watch from the sidelines. No one succeeds in the challenge for a long time, and the challengers start to get ~impatient~ , leading to conflicts with the organizers. Things start to get chaotic, and you find something on the ground, taking advantage of the confusion to leave quickly.",
+			"You scored %d points, but this challenge is still too difficult for you. The surrounding crowd is ~unimpressed~ , but it doesn't seem too bad. NL \"Each person can only challenge once, so here's something for your effort.\"",
+			"\"You scored 0 points, huh. Maybe you didn't know the rules~~\" The organizer is also embarrassed by your performance."
+		],
+		"OPTIONS":[
+			"[Start] Receive relics based on your score.",
+			"[Lock] Requires a model that can run.",
+			"[Don't want to play]",
+			"[Leave]",
+			"[Watch] Randomly receive gold, relics, or potions"
+		]
+	},
+	"BATwinsMod:Communication":{
+		"NAME":"Strange Communication",
+		"DESCRIPTIONS":[
+			"You see a strange light from afar, and as you approach, you find a screen floating in the air, with a floating coin slot below it. NL The screen flickers on and off, and soon a picture appears. NL \" #b@Momoi···now···TV···danger@ .\" NL \" #rYuuka, hurry and save us.\" NL \" #gWe're trapped in this game.\" NL \" #b@···need help···items···send over@ .\"",
+			"You can't understand what Yuuka is saying, so it's probably not something important.",
+			"A item suddenly appears from the air and drops to the ground, and the glowing screen disappears."
+		],
+		"OPTIONS":[
+			"[Obtain Item] #gSpend %d gold, and get a special relic.",
+			"[Leave] Can't hear what Yuuka is saying clearly",
+			"[Leave]"
+		]
+	},
+	"BATwinsMod:TheRoadIsLong":{
+		"NAME":"The Long Road Ahead",
+		"DESCRIPTIONS":[
+			"\" #gWhere #rare #rwe?\" NL The two look at the staircase that seems to have no @end@ in sight. Does it really have an end?",
+			" NL Although they've seen many romantic time-travel stories, reality is ~disappointing~ . This tower is a world that defies common sense, and they must ~assess~ the current situation.",
+			" NL \" #rMidori···Ugh···I'm #rtired, #r@can't@ #r@take@ #r@another@ #r@step@ .\" NL \" #g@Haha···@ #gMe #gtoo···Is #gthis #gstaircase #greally #gendless?\"",
+			" NL It's time to make a decision.",
+			"\" #rIn #rthis #rsituation, #rI've #rseen #rit #rin #rcomics #rbefore. #rIt #rseems #runsolvable, #rbut #rthere #rmust #rbe #r~hidden #rpaths~ #raround!\"",
+			" NL \" #gIt's #gfrom #gthat #gbook, #g\"The #gApocalypse #gof #gXX\" #g, #gright? #gThere #gmust #gbe #ga #gway #gto #gfind #ga #gsolution #gnearby.\"",
+			" NL With renewed spirits, the two begin to survey their surroundings.",
+			"After a long journey, both physically and mentally exhausted, you sit down on the steps. After a while, it's Momoi who breaks the silence. NL ",
+			"After a not-so-short journey, a door emitting a @strange@ @aura@ suddenly appears before you. It seems to materialize out of thin air, as if forcibly embedded into this @space@ . You stop in front of the door, which slowly opens. Although reluctant to approach, it's the only choice. NL \" @Strength··brings·power@ \" NL You hear some sound and feel a power that doesn't belong to you appear on your body.",
+			"Momoi discovers a strange space, like a @broken@ @mirror@ embedded in the surrounding space. NL After touching it, a strong light flashes, and the fatigue in your body disappears. NL When you open your eyes, you're standing on solid ground, and the endless staircase has disappeared.",
+			"Midori discovers a strange space, like a @broken@ @mirror@ embedded in the surrounding space. NL After touching it, a strong light flashes, and the fatigue in your body disappears. NL When you open your eyes, you're standing on solid ground, and the endless staircase has disappeared.",
+			"Both of you, ~exhausted~ , lean against each other and sit on the steps, the fatigue of the long journey washing over you. You slowly ~fall~ ~asleep~ on the stairs. NL \" #b@Help@ #b@···@ #b@break@ #b@the@ #b@game@ #b@···@ #b@exit@ #b@···@ #b@transport@ \" In a daze, you seem to hear many ~familiar~ voices. When you wake up, you find yourself in a grassy area, and the endless staircase has disappeared.",
+			"\" #rMidori, #rI #rwant #rto #rgo #rback #rto #rthe #rgaming #rclub.\" NL \" #rYou #rstill #rneed #rto #rtake #rcare #rof #rme #ron #rthe #rway, #rI'm #rsuch #ra #rdisgrace #ras #ran #rolder #rsister.\" NL \" #gWe're #gsisters, #gtaking #gcare #gof #geach #gother #gis #gnatural. #gRight #gnow, #gthe #gmost #gimportant #gthing #gis #gto #gget #gback #gsafely.\" Midori's voice reveals determination and care, which makes Momoi feel a hint of warmth. She can't help but smile, and her worries are slightly relieved.",
+			"\" #rExactly, #rprotagonists #rin #rstories #rdon't #rjust #rsit #raround #rwaiting #rto #rdie. #rWe #rmust #rfind #ra #rway #rout.\" NL \" #gYeah, #geveryone #gis #gstill #gwaiting #gfor #gus, #glet's #ghold #gon #ga #gbit #glonger.\" After resting for a while, you hit the road again. The traces left on the ground, whether sweat or tears, are indistinguishable."
+		],
+		"OPTIONS":[
+			"[Encourage] #gGain 1 Encouragement , #rGain 2 Pain .",
+			"[Find the Way] #rLose %d HP , continue.",
+			"[Rest] #gRecover %d HP , #rReduce %d Max HP .",
+			"[Momoi Search] #gUpgrade all Momoi cards.",
+			"[Midori Search] #gUpgrade all Midori cards.",
+			"[Continue]",
+			"[Leave]"
+		]
+	}
+}

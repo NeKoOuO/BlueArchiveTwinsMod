@@ -1,0 +1,118 @@
+{
+	"BATwinsMod:MomoisGameConsole":{
+		"NAME":"Momoi's Game Console",
+		"FLAVOR":"It's already broken, and the club's funds can't afford a new one! - Momoi",
+		"DESCRIPTIONS":[
+			"At the start of each battle, gain [batwinsmod:momoiorbicon] . Add a random #yBATwinsMod:MomoiCard from your draw pile to your hand."
+		]
+	},
+	"BATwinsMod:MidorisGameConsole":{
+		"NAME":"Midori's Game Console",
+		"FLAVOR":"Finding it is great! I need to check the game saves right away. - Midori",
+		"DESCRIPTIONS":[
+			"At the start of each battle, gain [batwinsmod:midoriorbicon] . Add a random #yBATwinsMod:MidoriCard from your draw pile to your hand."
+		]
+	},
+	"BATwinsMod:AncientGameCartridges":{
+		"NAME":"Ancient Game Cartridges",
+		"FLAVOR":"A worn-out game cartridge, no longer readable, barely showing the title 'S*ay *he s**re'.",
+		"DESCRIPTIONS":[
+			"At the start of each battle, play a random #bPower from your draw pile."
+		]
+	},
+	"BATwinsMod:ByProving":{
+		"NAME":"By Proving",
+		"FLAVOR":"A brand new medal that reads 'Novice Level Passed!' --%s.",
+		"DESCRIPTIONS":[
+			"When you play #b%s, deal the same damage to a random enemy.",
+			"When you play #b%s, draw 2 cards.",
+			"When you play #b%s, add a copy to your discard pile.",
+			"Different card types have different effects",
+			"A brand new medal that reads 'Novice Level Passed!' --%s."
+		]
+	},
+	"BATwinsMod:GameMagazine":{
+		"NAME":"Game Magazine",
+		"FLAVOR":"A game magazine given as a bonus for purchasing a game, unfortunately, it doesn't contain any information about this game.",
+		"DESCRIPTIONS":[
+			"At the start of each battle, add 1 #yBATwinsMod:Exchange to your hand."
+		]
+	},
+	"BATwinsMod:GameGuide":{
+		"NAME":"Game Guide",
+		"FLAVOR":"It says you just need to drag the cards to play them!",
+		"DESCRIPTIONS":[
+			"Replace #yGame #yMagazine .At the start of each turn, add #b1 #yBATwinsMod:Exchange with #yEthereal and #yExhaust to your hand."
+		]
+	},
+	"BATwinsMod:FoldingShield":{
+		"NAME":"Folding Shield",
+		"FLAVOR":"A shield frequently used by Yuuka.",
+		"DESCRIPTIONS":[
+			"At the end of your turn, gain #b%d times the number of cards in your hand as Block."
+		]
+	},
+	"BATwinsMod:Headband":{
+		"NAME":"Maid Headband",
+		"FLAVOR":"Would there have been maids in such a strange place before?",
+		"DESCRIPTIONS":[
+			"At the start of each turn, gain [batwinsmod:momoiorbicon] or [batwinsmod:midoriorbicon] . Choose upon pickup."
+		]
+	},
+	"BATwinsMod:SpecialAmmunition":{
+		"NAME":"Special Ammunition",
+		"FLAVOR":"This is the latest product from the engineering department.",
+		"DESCRIPTIONS":[
+			"Increase the damage of Bullet cards by #b3."
+		]
+	},
+	"BATwinsMod:SwordOfLight":{
+		"NAME":"Sword of Light",
+		"FLAVOR":"It's hard to even hold it, how are we supposed to use it?",
+		"DESCRIPTIONS":[
+			"After playing #b%d cards in a battle, deal #b%d damage to all enemies."
+		]
+	},
+	"BATwinsMod:NekoHowitzer":{
+		"NAME":"Nyan's Dash",
+		"FLAVOR":"Yuzu's weapon, can fire grenades from a distance",
+		"DESCRIPTIONS":[
+			"At the start of each turn, apply #b%d stacks of Burn to a random enemy. Has a #b1%% chance to double the Burn stacks on that enemy."
+		]
+	},
+	"BATwinsMod:FitnessRing":{
+		"NAME":"Fitness Ring",
+		"FLAVOR":"Always enthusiastic for the first three minutes.",
+		"DESCRIPTIONS":[
+			"The first card drawn in the first turn of battle is upgraded for the rest of the battle."
+		]
+	},
+	"BATwinsMod:Broom":{
+		"NAME":"Broom",
+		"FLAVOR":"Time to clean up!",
+		"DESCRIPTIONS":[
+			"Every #b3 turns, add #b1 card from the discard pile to your hand."
+		]
+	},
+	"BATwinsMod:MaidAttire":{
+		"NAME":"Maid Attire",
+		"FLAVOR":"Everyone has a little fetish, don't they? - Shopkeeper",
+		"DESCRIPTIONS":[
+			"If you have played cards with costs 0, 1, 2, and 3 this turn, gain 1 stack of Intangible."
+		]
+	},
+	"BATwinsMod:UnknownObject":{
+		"NAME":"不明物体",
+		"FLAVOR":"黑客部破解了游戏，但似乎没有完全破解。",
+		"DESCRIPTIONS":[
+			"随机遗物效果，每回合会改变。"
+		]
+	},
+	"BATwinsMod:RubiksCube":{
+		"NAME":"Rubik's Cube",
+		"FLAVOR":"\"The one who solves the Rubik's Cube is the true millennium person!\"",
+		"DESCRIPTIONS":[
+			"After playing cards in synergy 2 times, draw 1 card."
+		]
+	}
+}
