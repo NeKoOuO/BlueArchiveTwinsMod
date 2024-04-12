@@ -17,8 +17,13 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 public class BATwinsMakeTempCardInHandAction extends AbstractGameAction {
-    private AbstractCard c;
     private static final float PADDING;
+
+    static {
+        PADDING = 25.0F * Settings.scale;
+    }
+
+    private AbstractCard c;
     private boolean isOtherCardInCenter;
     private boolean sameUUID;
     private boolean exhaust;
@@ -189,9 +194,5 @@ public class BATwinsMakeTempCardInHandAction extends AbstractGameAction {
         card.isEthereal = this.isEthereal;
         card.selfRetain = selfRetain;
         return card;
-    }
-
-    static {
-        PADDING = 25.0F * Settings.scale;
     }
 }

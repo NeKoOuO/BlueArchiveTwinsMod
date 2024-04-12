@@ -51,7 +51,7 @@ public class BATwinsAncientGameCartridges extends CustomRelic {
                         AbstractCard card = powerCards.getRandomCard(AbstractDungeon.cardRandomRng);
                         addToTop(new BATwinsPlayDrawPailCardAction(card, null, false));
                     }
-                    this.isDone=true;
+                    this.isDone = true;
                 }
             });
 

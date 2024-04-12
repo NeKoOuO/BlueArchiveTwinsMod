@@ -17,12 +17,12 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BATwinsPlayHandCardAction extends AbstractGameAction {
+    private static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
     public AbstractCard card;
     private AbstractPlayer p;
     private boolean ignoreDeath;
     private int numberOfConnections;
     private boolean blockTheOriginalEffect;
-    private static UIStrings uiStrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
 
     public BATwinsPlayHandCardAction(AbstractCard card, AbstractCreature target, boolean randomTarget, boolean ignoreDeath, int numberOfConnections, boolean blockTheOriginalEffect) {
         this.card = card;
@@ -56,14 +56,17 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(this.numberOfConnections>10){
-            for(int i=uiStrings.TEXT.length-1;i>=0;i--){
-                addToTop(new TalkAction(true,uiStrings.TEXT[i],3.0F,3.0F));
+        if (this.numberOfConnections > 10) {
+            for (int i = uiStrings.TEXT.length - 1; i >= 0; i--) {
+                addToTop(new TalkAction(true, uiStrings.TEXT[i], 3.0F, 3.0F));
+                if(!this.p.hand.contains(this.card)){
+                    this.p.hand.addToTop(this.card);
+                }
             }
-            this.isDone=true;
+            this.isDone = true;
             return;
         }
-        if(AbstractDungeon.player.hasRelic(BATwinsRubiksCube.ID)){
+        if (AbstractDungeon.player.hasRelic(BATwinsRubiksCube.ID)) {
             AbstractDungeon.player.getRelic(BATwinsRubiksCube.ID).onTrigger();
         }
         if (this.target == null) {
@@ -82,10 +85,10 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 
             BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(card, this.blockTheOriginalEffect);
             card.isInAutoplay = true;
-            if(card instanceof BATwinsModCustomCard){
-                ((BATwinsModCustomCard) card).numberOfConnections=this.numberOfConnections;
-            }else{
-                BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(card,this.numberOfConnections);
+            if (card instanceof BATwinsModCustomCard) {
+                ((BATwinsModCustomCard) card).numberOfConnections = this.numberOfConnections;
+            } else {
+                BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(card, this.numberOfConnections);
             }
 //            this.card.isInAutoplay=true;
 //            addToTop(new ShowCardAction(this.card));
@@ -94,9 +97,9 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //                ((BATwinsModCustomCard) card).playedByOtherCard=true;
 //            }
 //            addToTop(new UnlimboAction(this.card));
-            if(this.target==null){
+            if (this.target == null||this.target.isDeadOrEscaped()) {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, true, false, true));
-            }else{
+            } else {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, this.target, false, true));
             }
 //            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(this.card, (AbstractMonster) this.target,card.energyOnUse,true,true),true);

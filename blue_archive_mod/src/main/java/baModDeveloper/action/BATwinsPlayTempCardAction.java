@@ -15,9 +15,9 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BATwinsPlayTempCardAction extends AbstractGameAction {
+    private static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
     private AbstractCard cardToPlay;
     private int numberOfConnections;
-    private static UIStrings uiStrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
 
     public BATwinsPlayTempCardAction(AbstractCard card, int numberOfConnections, AbstractCreature target) {
         this.cardToPlay = card;
@@ -32,11 +32,11 @@ public class BATwinsPlayTempCardAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(this.numberOfConnections>10){
-            for(int i=uiStrings.TEXT.length-1;i>=0;i--){
-                addToTop(new TalkAction(true,uiStrings.TEXT[i],3.0F,3.0F));
+        if (this.numberOfConnections > 10) {
+            for (int i = uiStrings.TEXT.length - 1; i >= 0; i--) {
+                addToTop(new TalkAction(true, uiStrings.TEXT[i], 3.0F, 3.0F));
             }
-            this.isDone=true;
+            this.isDone = true;
             return;
         }
         AbstractDungeon.player.limbo.group.add(cardToPlay);
@@ -55,8 +55,8 @@ public class BATwinsPlayTempCardAction extends AbstractGameAction {
             ((BATwinsModCustomCard) cardToPlay).numberOfConnections = this.numberOfConnections;
         }
         if (this.target == null) {
-            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay,true, cardToPlay.energyOnUse, true, true), true);
-        }else{
+            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, true, cardToPlay.energyOnUse, true, true), true);
+        } else {
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, (AbstractMonster) this.target, cardToPlay.energyOnUse, true, true), true);
         }
 //            addToTop(new UnlimboAction(cardToPlay));

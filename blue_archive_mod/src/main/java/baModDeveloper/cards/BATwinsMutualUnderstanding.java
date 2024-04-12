@@ -15,9 +15,9 @@ public class BATwinsMutualUnderstanding extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("MutualUnderstanding");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "MutualUnderstanding");
     private static final int COST = 0;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET = CardTarget.NONE;

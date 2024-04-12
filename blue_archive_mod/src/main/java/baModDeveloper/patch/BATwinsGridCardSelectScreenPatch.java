@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
+import com.megacrit.cardcrawl.ui.buttons.CancelButton;
 import com.megacrit.cardcrawl.ui.buttons.PeekButton;
 
 import java.lang.reflect.InvocationTargetException;
@@ -66,7 +67,7 @@ public class BATwinsGridCardSelectScreenPatch {
         @SpireInsertPatch(rloc = 18)
         public static void cancelUpgradePatch(GridCardSelectScreen __instance) {
             if (FiledPatch.forExchange.get(__instance)) {
-                AbstractDungeon.overlayMenu.cancelButton.show("取消");
+                AbstractDungeon.overlayMenu.cancelButton.show(FiledPatch.CANCELBUTTON.TEXT[0]);
             }
         }
     }
@@ -116,7 +117,7 @@ public class BATwinsGridCardSelectScreenPatch {
         @SpireInsertPatch(rloc = 16)
         public static void openPatch(GridCardSelectScreen __instance, CardGroup group, int numCards, String tipMsg, boolean forUpgrade, boolean forTransform, boolean canCancel, boolean forPurge) {
             if (FiledPatch.forExchange.get(__instance)) {
-                AbstractDungeon.overlayMenu.cancelButton.show("取消");
+                AbstractDungeon.overlayMenu.cancelButton.show(FiledPatch.CANCELBUTTON.TEXT[0]);
             }
         }
     }

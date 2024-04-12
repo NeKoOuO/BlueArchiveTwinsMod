@@ -24,7 +24,7 @@ public class BATwinsEnergyManager extends EnergyManager {
         super.prep();
         BATwinsEnergyPanel.MomoiCount = 0;
         BATwinsEnergyPanel.MidoriCount = 0;
-        BATwinsEnergyPanel.selectedEnergySlot = EnergyType.MOMOI;
+//        BATwinsEnergyPanel.selectedEnergySlot = EnergyType.MOMOI;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class BATwinsEnergyManager extends EnergyManager {
 
     @Override
     public void use(int e) {
-        BATwinsEnergyPanel.useEnergy(e, EnergyType.SPEIFY);
+        BATwinsEnergyPanel.useEnergy(e, EnergyType.SHARE);
     }
 
     public void use(int e, EnergyType energyType) {

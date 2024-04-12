@@ -13,15 +13,19 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 public class BATwinsCoverChargeAction extends AbstractGameAction {
     private final int damage;
     private final int block;
-    private boolean freeToPlayOnce = false;
     private final AbstractPlayer p;
+    public int energyOnUseMomoi = -1;
+    public int energyOnUseMidori = -1;
+    private boolean freeToPlayOnce = false;
 
-    public BATwinsCoverChargeAction(AbstractPlayer p, int damage, int block, boolean freeToPlayOnce, AbstractMonster target) {
+    public BATwinsCoverChargeAction(AbstractPlayer p, int damage, int block, boolean freeToPlayOnce, AbstractMonster target, int energyOnUseMomoi, int energyOnUseMidori) {
         this.damage = damage;
         this.block = block;
         this.p = p;
         this.freeToPlayOnce = freeToPlayOnce;
         this.target = target;
+        this.energyOnUseMomoi = energyOnUseMomoi;
+        this.energyOnUseMidori = energyOnUseMidori;
     }
 
     @Override
@@ -36,19 +40,26 @@ public class BATwinsCoverChargeAction extends AbstractGameAction {
             MOMOICount = effect / 2;
             MIDORICount = effect - MOMOICount;
         }
+        if (this.energyOnUseMomoi != -1) {
+            MOMOICount = energyOnUseMomoi;
+        }
+        if (this.energyOnUseMidori != -1) {
+            MIDORICount = energyOnUseMidori;
+        }
+
         if (this.p.hasRelic("Chemical X")) {
             MOMOICount += 2;
             MIDORICount += 2;
             this.p.getRelic("Chemical X").flash();
         }
-        if (MOMOICount > 0) {
-            for (int i = 0; i < MOMOICount; i++) {
-                addToBot(new DamageAction(this.target, new DamageInfo(this.p, this.damage), AttackEffect.LIGHTNING));
-            }
-        }
         if (MIDORICount > 0) {
             for (int i = 0; i < MIDORICount; i++) {
                 addToBot(new GainBlockAction(this.p, this.block));
+            }
+        }
+        if (MOMOICount > 0) {
+            for (int i = 0; i < MOMOICount; i++) {
+                addToBot(new DamageAction(this.target, new DamageInfo(this.p, this.damage), AttackEffect.LIGHTNING));
             }
         }
         if (!this.freeToPlayOnce) {

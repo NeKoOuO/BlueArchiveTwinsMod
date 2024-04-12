@@ -18,9 +18,9 @@ public class BATwinsAccumulatedStrike extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("AccumulatedStrike");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "AccumulatedStrike");
     private static final int COST = 1;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -36,6 +36,16 @@ public class BATwinsAccumulatedStrike extends BATwinsModCustomCard {
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         this.tags.add(CardTags.STRIKE);
+    }
+
+    public static int strickCount() {
+        int count = 0;
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+            if (c.hasTag(CardTags.STRIKE)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     @Override
@@ -68,16 +78,6 @@ public class BATwinsAccumulatedStrike extends BATwinsModCustomCard {
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         this.applyPowers();
-    }
-
-    public static int strickCount() {
-        int count = 0;
-        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
-            if (c.hasTag(CardTags.STRIKE)) {
-                count++;
-            }
-        }
-        return count;
     }
 
     @Override

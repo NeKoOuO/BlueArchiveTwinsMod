@@ -8,12 +8,13 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class BATwinsRubiksCube extends CustomRelic {
-    public static final String ID= ModHelper.makePath("RubiksCube");
-    private static final Texture texture= TextureLoader.getTexture(ModHelper.makeImgPath("relic","RubiksCube"));
-    private static final Texture outline=TextureLoader.getTexture(ModHelper.makeImgPath("relic","RubiksCube_p"));
-    private static final RelicTier type=RelicTier.RARE;
+    public static final String ID = ModHelper.makePath("RubiksCube");
+    private static final Texture texture = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "RubiksCube"));
+    private static final Texture outline = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "RubiksCube_p"));
+    private static final RelicTier type = RelicTier.RARE;
+
     public BATwinsRubiksCube() {
-        super(ID, texture, outline, type,LandingSound.HEAVY);
+        super(ID, texture, outline, type, LandingSound.HEAVY);
     }
 
     @Override
@@ -24,24 +25,24 @@ public class BATwinsRubiksCube extends CustomRelic {
     @Override
     public void onTrigger() {
         this.counter++;
-        if(this.counter==2){
+        if (this.counter == 2) {
             this.triggerOnConnection();
-            this.counter=0;
+            this.counter = 0;
         }
     }
 
-    public void triggerOnConnection(){
+    public void triggerOnConnection() {
         this.flash();
         addToBot(new DrawCardAction(1));
     }
 
     @Override
     public void onEnterRoom(AbstractRoom room) {
-        this.counter=0;
+        this.counter = 0;
     }
 
     @Override
     public void onVictory() {
-        this.counter=-1;
+        this.counter = -1;
     }
 }

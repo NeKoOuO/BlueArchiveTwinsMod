@@ -13,11 +13,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 
 public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
+    protected ArrayList<AbstractCard> canNotSelect;
     private boolean isRandom;
     private AbstractPlayer p;
     private int numberOfConnections;
     private AbstractCard.CardColor color;
-    protected ArrayList<AbstractCard> canNotSelect;
     private boolean isBlockOrigin = false;
     private boolean removePower = false;
     private UIStrings UISTRINGS = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
@@ -64,7 +64,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.p.drawPile.isEmpty()) {
-            if(!this.canNotSelect.isEmpty()){
+            if (!this.canNotSelect.isEmpty()) {
                 this.p.drawPile.group.addAll(canNotSelect);
             }
             this.isDone = true;
@@ -88,8 +88,8 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             }
-            this.amount=Math.min(this.amount, this.p.drawPile.size());
-            AbstractDungeon.gridSelectScreen.open(this.p.drawPile, this.amount, String.format(UISTRINGS.TEXT[10]+UISTRINGS.TEXT[0],this.amount), false);
+            this.amount = Math.min(this.amount, this.p.drawPile.size());
+            AbstractDungeon.gridSelectScreen.open(this.p.drawPile, this.amount, String.format(UISTRINGS.TEXT[10] + UISTRINGS.TEXT[0], this.amount), false);
             tickDuration();
             return;
         }
@@ -107,8 +107,8 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
     }
 
     private void removeCards() {
-        for(AbstractCard card: AbstractDungeon.player.drawPile.group){
-            if((this.color!=null&&card.color!=this.color)||(this.removePower&&card.type== AbstractCard.CardType.POWER)){
+        for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
+            if ((this.color != null && card.color != this.color) || (this.removePower && card.type == AbstractCard.CardType.POWER)) {
                 this.canNotSelect.add(card);
             }
         }
@@ -120,7 +120,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
 //        if (this.target == null) {
 //            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
 //        }
-        addToTop(new BATwinsPlayDrawPailCardAction(c, this.target, false, this.numberOfConnections, this.isBlockOrigin));
+        addToTop(new BATwinsPlayDrawPailCardAction(c, this.target, c.exhaust, this.numberOfConnections, this.isBlockOrigin));
 
     }
 

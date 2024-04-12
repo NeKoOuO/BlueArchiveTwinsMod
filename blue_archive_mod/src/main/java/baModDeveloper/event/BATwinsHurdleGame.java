@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 
 import java.util.ArrayList;
 
@@ -58,8 +59,6 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
     private float startingPoint = Settings.WIDTH * 0.2F;
 
     private Character3DHelper character3DHelper;
-
-    private enum CurrentScreen {MAIN, GAMING, DONE, LEAVE, LOOK}
 
     public BATwinsHurdleGame() {
         super(title, DESCRIPTIONS[0], imgUrl);
@@ -173,10 +172,10 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
                     this.currentScreen = CurrentScreen.DONE;
                     GenericEventDialog.show();
                     this.imageEventText.clearAllDialogs();
-                    if(this.sorce==0){
+                    if (this.sorce == 0) {
                         this.imageEventText.updateBodyText(DESCRIPTIONS[5]);
-                    }else{
-                        this.imageEventText.updateBodyText(String.format(DESCRIPTIONS[4],this.sorce));
+                    } else {
+                        this.imageEventText.updateBodyText(String.format(DESCRIPTIONS[4], this.sorce));
                     }
                     this.imageEventText.setDialogOption(OPTIONS[3]);
                     getRewardWithGaming();
@@ -187,10 +186,10 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
                     this.imageEventText.clearAllDialogs();
                     if (this.sorce == 10) {
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                    } else if(this.sorce==0){
+                    } else if (this.sorce == 0) {
                         this.imageEventText.updateBodyText(DESCRIPTIONS[5]);
-                    }else{
-                        this.imageEventText.updateBodyText(String.format(DESCRIPTIONS[4],this.sorce));
+                    } else {
+                        this.imageEventText.updateBodyText(String.format(DESCRIPTIONS[4], this.sorce));
                     }
                     this.imageEventText.setDialogOption(OPTIONS[3]);
                     getRewardWithGaming();
@@ -218,7 +217,7 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
         for (Float aFloat : this.ObstacleLocation) {
             sb.draw(obstacleImg, this.imgX + aFloat, this.imgY, this.obstacleImg.getWidth() * Settings.scale * 1.2F, this.obstacleImg.getHeight() * Settings.scale * 1.2F);
         }
-        this.character3DHelper.render(sb,false);
+        this.character3DHelper.render(sb, false);
 
 //        sb.draw(this.pressButton,Settings.WIDTH/2.0F,Settings.HEIGHT/5.0F);
 
@@ -246,8 +245,9 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
         if (rng >= 0 && rng < 50) {
             AbstractDungeon.getCurrRoom().addGoldToRewards(gold);
         } else if (rng >= 50 && rng < 80) {
-            AbstractDungeon.getCurrRoom().addPotionToRewards();
-            AbstractDungeon.getCurrRoom().addPotionToRewards();
+            AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(AbstractDungeon.returnRandomPotion()));
+            if (rng >= 70)
+                AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(AbstractDungeon.returnRandomPotion()));
         } else {
             AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
         }
@@ -267,4 +267,6 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
         }
         AbstractDungeon.combatRewardScreen.open();
     }
+
+    private enum CurrentScreen {MAIN, GAMING, DONE, LEAVE, LOOK}
 }

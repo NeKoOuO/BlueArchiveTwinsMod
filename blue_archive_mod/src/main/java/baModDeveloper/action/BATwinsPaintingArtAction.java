@@ -12,10 +12,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class BATwinsPaintingArtAction extends AbstractGameAction {
+    DamageInfo.DamageType type;
     private AbstractCard card;
     private int poisonNum;
     private boolean exchange;
-    DamageInfo.DamageType type;
 
     public BATwinsPaintingArtAction(AbstractCard card, int poisonNum, boolean exchange, DamageInfo.DamageType type) {
         this.card = card;

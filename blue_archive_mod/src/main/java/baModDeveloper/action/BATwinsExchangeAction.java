@@ -15,10 +15,10 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.ArrayList;
 
 public class BATwinsExchangeAction extends AbstractGameAction {
-    private int amount;
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
     public static final String[] TEXT = uiStrings.TEXT;
     public static final String[] EXTRETEXT = uiStrings.EXTRA_TEXT;
+    private int amount;
     private AbstractPlayer p;
     private ArrayList<AbstractCard> cannotexchange = new ArrayList<>();
     private boolean playBackOriginColor;

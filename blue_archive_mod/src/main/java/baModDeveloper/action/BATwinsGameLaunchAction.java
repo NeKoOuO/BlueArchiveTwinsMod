@@ -3,7 +3,6 @@ package baModDeveloper.action;
 import baModDeveloper.character.BATwinsCharacter;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,9 +16,7 @@ public class BATwinsGameLaunchAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        AbstractDungeon.actionManager.addToTop(new WaitAction(0.4F));
-        tickDuration();
-        if (this.isDone) {
+        if (!this.isDone) {
             if (!upgraded) {
                 CardGroup MOMOICards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
                 CardGroup MIDORICards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
@@ -46,11 +43,14 @@ public class BATwinsGameLaunchAction extends AbstractGameAction {
                     AbstractCard firstcard = handcards.getRandomCard(AbstractDungeon.cardRandomRng);
                     firstcard.setCostForTurn(0);
                     handcards.removeCard(firstcard);
-                    AbstractCard secondcard = handcards.getRandomCard(AbstractDungeon.cardRandomRng);
-                    secondcard.setCostForTurn(0);
+                    if (!handcards.isEmpty()) {
+                        AbstractCard secondcard = handcards.getRandomCard(AbstractDungeon.cardRandomRng);
+                        secondcard.setCostForTurn(0);
+                    }
+
                 }
             }
-
+            this.isDone = true;
         }
     }
 }

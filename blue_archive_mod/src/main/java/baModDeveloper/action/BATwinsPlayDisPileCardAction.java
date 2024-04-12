@@ -16,10 +16,10 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BATwinsPlayDisPileCardAction extends AbstractGameAction {
+    private static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
     private AbstractCard card;
     private boolean exhaust;
     private int numberOfConnections;
-    private static UIStrings uiStrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("LoopBreak"));
 
     public BATwinsPlayDisPileCardAction(AbstractCard card, AbstractCreature target, boolean exhaust, int numberOfConnections) {
         this.card = card;
@@ -31,11 +31,11 @@ public class BATwinsPlayDisPileCardAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(this.numberOfConnections>10){
-            for(int i=uiStrings.TEXT.length-1;i>=0;i--){
-                addToTop(new TalkAction(true,uiStrings.TEXT[i],3.0F,3.0F));
+        if (this.numberOfConnections > 10) {
+            for (int i = uiStrings.TEXT.length - 1; i >= 0; i--) {
+                addToTop(new TalkAction(true, uiStrings.TEXT[i], 3.0F, 3.0F));
             }
-            this.isDone=true;
+            this.isDone = true;
             return;
         }
         if (this.duration == Settings.ACTION_DUR_FAST) {

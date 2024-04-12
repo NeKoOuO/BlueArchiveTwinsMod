@@ -16,9 +16,9 @@ public class BATwinsPoisonGasBomb extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("PoisonGasBomb");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "PoisonGasBomb");
     private static final int COST = 2;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -51,6 +51,15 @@ public class BATwinsPoisonGasBomb extends BATwinsModCustomCard {
             this.upgradeName();
             this.upgradeMagicNumber(1);
 
+        }
+    }
+
+    @Override
+    public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        if(this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
+            addToBot(new BATwinsOneMoreAction(PoisonPower.POWER_ID, abstractMonster));
+        }else{
+            addToBot(new BATwinsOneMoreAction(BATwinsBurnPower.POWER_ID, abstractMonster));
         }
     }
 }

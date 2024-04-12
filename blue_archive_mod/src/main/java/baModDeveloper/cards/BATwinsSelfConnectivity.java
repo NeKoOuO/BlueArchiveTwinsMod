@@ -19,10 +19,10 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("SelfConnectivity");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "SelfConnectivity");
     private static final String IMG_PATH2 = ModHelper.makeImgPath("cards", "SelfConnectivity2");
     private static final int COST = 1;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
@@ -124,10 +124,10 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
     private void updateCardPreview() {
         if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
             Optional<AbstractCard> preCard;
-            if(this.upgraded){
-                preCard=AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> !Objects.equals(card.cardID, this.cardID)).reduce((first, second) -> second);
-            }else {
-                preCard=AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> !Objects.equals(card.cardID, this.cardID) && card.color == this.color).reduce((first, second) -> second);
+            if (this.upgraded) {
+                preCard = AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> !Objects.equals(card.cardID, this.cardID)).reduce((first, second) -> second);
+            } else {
+                preCard = AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(card -> !Objects.equals(card.cardID, this.cardID) && card.color == this.color).reduce((first, second) -> second);
             }
             if (preCard.isPresent()) {
                 this.cardsToPreview = preCard.get().makeStatEquivalentCopy();

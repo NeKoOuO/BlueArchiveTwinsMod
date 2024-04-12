@@ -1,10 +1,12 @@
 package baModDeveloper.power;
 
+import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -71,9 +73,12 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         if (this.lastColor != null) {
-            if (this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
+            if (usedCard instanceof BATwinsModCustomCard&&this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
                 this.flash();
                 this.count++;
+            } else {
+                this.flash();
+                this.count = 0;
             }
         }
         this.lastColor = usedCard.color;
@@ -84,6 +89,7 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
 //                this.lastColor=usedCard.color;
 //            }
 //        }
+        addToTop(new TextAboveCreatureAction(this.owner, this.name+":"+this.amount*this.count+"%"));
         this.updateDescription();
     }
 
@@ -91,6 +97,7 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     public void atStartOfTurn() {
 //        this.lastColor = null;
         this.count = 0;
+        addToTop(new TextAboveCreatureAction(this.owner, this.name+":"+ 0 +"%"));
         this.updateDescription();
     }
 

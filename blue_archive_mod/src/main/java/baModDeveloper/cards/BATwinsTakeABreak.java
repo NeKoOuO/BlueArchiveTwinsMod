@@ -22,9 +22,9 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("TakeABreak");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "TakeABreak");
     private static final int COST = 2;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -84,13 +84,15 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
 
             @Override
             public void update() {
-                if(DrawCardAction.drawnCards.isEmpty()){
-                    this.isDone=true;
+                if (DrawCardAction.drawnCards.isEmpty()) {
+                    this.isDone = true;
                     return;
                 }
                 if (this.duration == Settings.ACTION_DUR_FAST) {
                     for (AbstractCard c : DrawCardAction.drawnCards) {
-                        c.retain = true;
+                        if(!c.isEthereal){
+                            c.retain = true;
+                        }
                     }
 
                     for (AbstractCard c : AbstractDungeon.player.hand.group) {

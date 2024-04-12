@@ -21,6 +21,9 @@ public class BATwinsSaveAndContinuePatch {
             Gson gson = new Gson();
             JsonObject jsonObject = gson.fromJson(savestr[0], JsonObject.class);
             JsonArray jsonArray = jsonObject.getAsJsonArray("cards");
+            if(jsonArray==null||jsonArray.size()==0){
+                return;
+            }
             int i = 0;
             String keyName = "";
             JsonObject obj = jsonArray.get(0).getAsJsonObject();

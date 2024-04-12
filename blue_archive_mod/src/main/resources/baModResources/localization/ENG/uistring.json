@@ -134,5 +134,17 @@
 			"Batwinsmidoricard",
 			"Midori Cards"
 		]
+	},
+	"BATwinsMod:ExchangeKeyowrds":{
+		"TEXT":[
+			"poison",
+			"batwinsmod:Burn",
+			"[batwinsmod:midoriorbicon]",
+			"[batwinsmod:momoiorbicon]",
+			"batwinsmod:MomoiCard",
+			"batwinsmod:MidoriCard",
+			"weak",
+			"vulnerable"
+		]
 	}
 }

@@ -13,17 +13,18 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import java.util.Arrays;
 
 public class BATwinsMaidAttire extends CustomRelic {
-    public static final String ID= ModHelper.makePath("MaidAttire");
-    private static final Texture texture= TextureLoader.getTexture(ModHelper.makeImgPath("relic","MaidAttire"));
-    private static final Texture outline=TextureLoader.getTexture(ModHelper.makeImgPath("relic","MaidAttire_p"));
-    private static final RelicTier type=RelicTier.SHOP;
+    public static final String ID = ModHelper.makePath("MaidAttire");
+    private static final Texture texture = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "MaidAttire"));
+    private static final Texture outline = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "MaidAttire_p"));
+    private static final RelicTier type = RelicTier.SHOP;
 
-    boolean[] costs=new boolean[4];
-    private boolean triggered=false;
+    boolean[] costs = new boolean[4];
+    private boolean triggered = false;
+
     public BATwinsMaidAttire() {
-        super(ID, texture,outline,type, LandingSound.MAGICAL);
-        for(boolean i:costs){
-            i=false;
+        super(ID, texture, outline, type, LandingSound.MAGICAL);
+        for (boolean i : costs) {
+            i = false;
         }
     }
 
@@ -34,25 +35,25 @@ public class BATwinsMaidAttire extends CustomRelic {
 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        if(triggered){
+        if (triggered) {
             return;
         }
-        if(targetCard.costForTurn<4&&targetCard.costForTurn>=0){
-            this.costs[targetCard.costForTurn]=true;
+        if (targetCard.costForTurn < 4 && targetCard.costForTurn >= 0) {
+            this.costs[targetCard.costForTurn] = true;
         }
-        for(boolean b:costs){
-            if(!b){
+        for (boolean b : costs) {
+            if (!b) {
                 return;
             }
         }
         flash();
-        triggered=true;
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new IntangiblePlayerPower(AbstractDungeon.player,1)));
+        triggered = true;
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 1)));
     }
 
     @Override
     public void atTurnStart() {
         Arrays.fill(costs, false);
-        triggered=false;
+        triggered = false;
     }
 }

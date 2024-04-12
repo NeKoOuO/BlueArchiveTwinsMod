@@ -179,5 +179,17 @@
 		"DESCRIPTIONS":[
 			"本场战斗存储的子弹升级。"
 		]
+	},
+	"BATwinsMod:DisabledMomoiPower": {
+		"NAME": "桃牌禁止",
+		"DESCRIPTIONS": [
+			"本回合不能打出桃牌。"
+		]
+	},
+	"BATwinsMod:DisabledMidoriPower": {
+		"NAME": "绿牌禁止",
+		"DESCRIPTIONS": [
+			"本回合不能打出绿牌。"
+		]
 	}
 }

@@ -55,7 +55,7 @@ public class BATwinsIntegratingAndIntegratingPower extends AbstractPower {
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card instanceof BATwinsModCustomCard&&card.costForTurn>0) {
+        if (card instanceof BATwinsModCustomCard && card.costForTurn > 0) {
             if (((BATwinsModCustomCard) card).exchanged()) {
                 this.flash();
                 for (int i = 0; i < this.amount; i++) {

@@ -22,18 +22,15 @@ public class BATwinsExperencePanel extends AbstractPanel {
     private static final Texture expPanelEmpty = ImageMaster.loadImage(expPanelEmptyPath);
     private static final Texture expPanelFull = ImageMaster.loadImage(expPanelFullPath);
     private static final float FontSize = 34.0F;
+    private static final Color FONT_COLOR = new Color(1.0F, 1.0F, 0.86F, 1.0F);
+    public static boolean LEVELUP = false;
     private static float ChangedFontSize = FontSize;
     private static BitmapFont expPanelFont = prepFont(FontSize, true);
     private static float WIDTH = 138.0F / 3 * Settings.scale;
     private static float HEIGHT = 64.0F / 3 * Settings.scale;
-
-    private static final Color FONT_COLOR = new Color(1.0F, 1.0F, 0.86F, 1.0F);
+    private static float FontScale = 1.0F;
     private int expAmount;
     private int expLevel;
-
-
-    public static boolean LEVELUP = false;
-    private static float FontScale = 1.0F;
 
     public BATwinsExperencePanel(float show_x, float show_y) {
         super(show_x, show_y, -480 * Settings.scale, 200 * Settings.scale, 200.0F * Settings.yScale, 12.0F * Settings.scale, null, true);
@@ -41,6 +38,11 @@ public class BATwinsExperencePanel extends AbstractPanel {
         this.expAmount = 0;
         this.expLevel = 0;
 
+    }
+
+    public static void LevelUp() {
+        LEVELUP = true;
+        FontScale = 2.0F;
     }
 
     public void update() {
@@ -84,13 +86,8 @@ public class BATwinsExperencePanel extends AbstractPanel {
         super.show();
     }
 
-    public static void LevelUp() {
-        LEVELUP = true;
-        FontScale = 2.0F;
-    }
-
-    public void updatePosition(float x,float y){
-        this.target_x=x;
-        this.target_y=y;
+    public void updatePosition(float x, float y) {
+        this.target_x = x;
+        this.target_y = y;
     }
 }

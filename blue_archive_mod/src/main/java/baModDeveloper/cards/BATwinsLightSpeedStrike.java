@@ -8,6 +8,7 @@ import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,9 +21,9 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("LightSpeedStrike");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "LightSpeedStrike");
     private static final int COST = 1;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -40,10 +41,19 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        if (playedAttack(true)) {
-            addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK));
-            addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsFlatFallPower(abstractPlayer)));
-        }
+        addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK,1,this.numberOfConnections+1));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                for(AbstractCard c:AbstractDungeon.player.hand.group){
+                    if(c.type==CardType.ATTACK){
+                        addToTop(new DiscardSpecificCardAction(c));
+                    }
+                }
+                this.isDone=true;
+            }
+        });
+//        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsFlatFallPower(abstractPlayer)));
 
 //        abstractPlayer.hand.group.removeAll(strikeCards);
     }
@@ -64,30 +74,28 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
 
     @Override
     public void triggerOnHovered() {
-        if (playedAttack(false)) {
-            AbstractDungeon.player.hand.group.stream().filter(card -> card.type == CardType.ATTACK && card != this).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
-        }
+        AbstractDungeon.player.hand.group.stream().filter(card -> card.type == CardType.ATTACK && card != this).forEach(card -> card.flash(BATwinsCharacter.getColorWithCardColor(card.color)));
     }
 
-    private boolean playedAttack(boolean playing) {
-        int a = 0;
-        if (playing) {
-            a = 1;
-        }
-        for (int i = 0; i < AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - a; i++) {
-            if (AbstractDungeon.actionManager.cardsPlayedThisTurn.get(i).type == CardType.ATTACK) {
-                return false;
-            }
-        }
-        return true;
-    }
+//    private boolean playedAttack(boolean playing) {
+//        int a = 0;
+//        if (playing) {
+//            a = 1;
+//        }
+//        for (int i = 0; i < AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - a; i++) {
+//            if (AbstractDungeon.actionManager.cardsPlayedThisTurn.get(i).type == CardType.ATTACK) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
-    @Override
-    public void triggerOnGlowCheck() {
-        if (playedAttack(false)) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
-    }
+//    @Override
+//    public void triggerOnGlowCheck() {
+//        if (playedAttack(false)) {
+//            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+//        } else {
+//            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+//        }
+//    }
 }
