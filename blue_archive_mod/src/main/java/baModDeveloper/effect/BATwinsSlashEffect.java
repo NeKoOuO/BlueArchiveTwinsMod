@@ -41,6 +41,6 @@ public class BATwinsSlashEffect extends AbstractGameEffect {
 
     @Override
     public void dispose() {
-
+        this.img.dispose();
     }
 }
