@@ -46,6 +46,7 @@ public class BATwinsPaintingArtAction extends AbstractGameAction {
             } else {
                 addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, this.card.damage, this.type), AttackEffect.FIRE));
                 addToTop((new ApplyPowerAction(this.target, AbstractDungeon.player, new BATwinsBurnPower(this.target, AbstractDungeon.player, this.poisonNum))));
+                addToTop(new VFXAction(new BATwinsPaintingArtEffect(BATwinsCharacter.getColorWithCardColor(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD), (AbstractMonster) this.target)));
             }
 
         }
