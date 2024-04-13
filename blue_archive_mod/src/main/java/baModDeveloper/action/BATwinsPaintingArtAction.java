@@ -3,6 +3,7 @@ package baModDeveloper.action;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.effect.BATwinsPaintingArtEffect;
 import baModDeveloper.power.BATwinsBurnPower;
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -25,10 +26,15 @@ public class BATwinsPaintingArtAction extends AbstractGameAction {
         this.poisonNum = poisonNum;
         this.exchange = exchange;
         this.type = type;
+        this.startDuration=0.3F;
     }
 
     @Override
     public void update() {
+        if(this.startDuration>=0.0F){
+            this.startDuration-= Gdx.graphics.getDeltaTime();
+            return;
+        }
         this.target = (AbstractCreature) AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         if (this.target != null) {
             this.card.calculateCardDamage((AbstractMonster) this.target);
