@@ -1,6 +1,7 @@
 package baModDeveloper.effect;
 
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.patch.BATwinsNeowNarrationScreenPatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -28,6 +29,8 @@ public class BATwinsEasterEggEffect extends AbstractGameEffect {
         this.FadeInOut = 0.2F;
         this.color = new Color(1.0F, 1.0F, 1.0F, 1.0F);
         this.color.a = 0.0F;
+
+        BATwinsNeowNarrationScreenPatch.openPatch.isBATwins=true;
     }
 
     @Override
