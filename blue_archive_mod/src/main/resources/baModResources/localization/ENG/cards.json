@@ -404,8 +404,8 @@
 	},
 	"BATwinsMod:ScriptRewriting":{
 		"NAME":"Script Rewrite",
-		"DESCRIPTION":"Exchange the amount of batwinsmod:Burn and poison,Gain Block equal to the difference between them. NL exhaust ",
-		"UPGRADE_DESCRIPTION":" Retain NL Exchange the amount of batwinsmod:Burn and poison,Gain Block equal to the difference between them. NL exhaust "
+		"DESCRIPTION":"Give poison equivalent to its batwinsmod:Burn ,gave batwinsmod:Burn equivalent to its poison . NL exhaust ",
+		"UPGRADE_DESCRIPTION":"Give poison equivalent to its batwinsmod:Burn , then gave batwinsmod:Burn equivalent to its poison. NL exhaust "
 	},
 	"BATwinsMod:EasterEgg":{
 		"NAME":"Easter Egg",
