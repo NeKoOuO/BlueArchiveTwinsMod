@@ -36,6 +36,7 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -289,6 +290,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("charSelect_midori"), ModHelper.makeAudioPath("charSelect_midori"));
         BaseMod.addAudio(ModHelper.makePath("pixelTime"), ModHelper.makeAudioPath("PixelTime"));
         BaseMod.addAudio(ModHelper.makePath("coin"),ModHelper.makeAudioPath("coin"));
+        BaseMod.addAudio(ModHelper.makePath("Momoi_Ex"),ModHelper.makeAudioPath("Momoi_Ex"));
     }
 
     @Override
