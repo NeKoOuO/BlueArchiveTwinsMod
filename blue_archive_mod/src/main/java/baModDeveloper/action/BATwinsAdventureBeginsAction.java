@@ -37,7 +37,7 @@ public class BATwinsAdventureBeginsAction extends AbstractGameAction {
             if (this.p.hand.isEmpty()) {
                 this.isDone = true;
             }
-            this.p.hand.group.stream().filter(c -> cardTypes.contains(c.type) || c == card||c.exhaust).forEach(c -> canNotSelect.add(c));
+            this.p.hand.group.stream().filter(c -> cardTypes.contains(c.type) || c.cardID.equals(card.cardID)||c.exhaust).forEach(c -> canNotSelect.add(c));
             if (this.p.hand.size() == this.canNotSelect.size()) {
                 this.isDone = true;
                 return;

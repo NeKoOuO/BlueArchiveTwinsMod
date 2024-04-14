@@ -130,10 +130,10 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
                 this.cardToCopy.applyPowers();
             }
         }
-        if (this.cardsToPreview == null) {
-            this.cardsToPreview = this.makeCopy();
-            this.cardToCopy = null;
-        }
+//        if (this.cardsToPreview == null) {
+//            this.cardsToPreview = this.makeCopy();
+//            this.cardToCopy = null;
+//        }
     }
 
     @Override

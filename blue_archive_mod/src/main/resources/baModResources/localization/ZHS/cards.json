@@ -35,7 +35,10 @@
     },
     "BATwinsMod:DeveloperCollaboration":{
         "NAME":"开发者协同",
-        "DESCRIPTION":" batwinsmod:共有 。 NL 战斗中持续交替打出 batwinsmod:桃牌 与 batwinsmod:绿牌 后，本回合卡牌造成的伤害和获得的 格挡 增加 !M! %。"
+        "DESCRIPTION":" batwinsmod:共有 。 NL 战斗中持续交替打出 batwinsmod:桃牌 与 batwinsmod:绿牌 后，本回合卡牌造成的伤害和获得的 格挡 增加 !M! %。",
+		"EXTENDED_DESCRIPTION": [
+			" batwinsmod:共有 。 NL 战斗中持续交替打出 batwinsmod:桃牌 与 batwinsmod:绿牌 后，敌人的 中毒 和 batwinsmod:灼伤 增加 !M! %。"
+		]
     },
     "BATwinsMod:Exchange":{
         "NAME":"交换",
