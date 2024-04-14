@@ -4,12 +4,18 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.AnimatedSlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
+
+import java.awt.*;
 
 public class BATwinsEndCombo extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("EndCombo");
@@ -33,7 +39,9 @@ public class BATwinsEndCombo extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        CardCrawlGame.sound.play("ATTACK_HEAVY");
+        addToBot(new VFXAction(new AnimatedSlashEffect(abstractMonster.hb.x+abstractMonster.hb.width/2.0F,abstractMonster.hb.y+abstractMonster.hb.height/2.0F,0.0F,0.0F,90.0F, BATwinsCharacter.getColorWithCardColor(this.color),BATwinsCharacter.getColorWithCardColor(this.color))));
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
@@ -43,12 +51,15 @@ public class BATwinsEndCombo extends BATwinsModCustomCard {
 
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.block), AbstractGameAction.AttackEffect.LIGHTNING));
+//        CardCrawlGame.sound.play("ATTACK_HEAVY");
+        addToBot(new VFXAction(new AnimatedSlashEffect(abstractMonster.hb.x+abstractMonster.hb.width/2.0F,abstractMonster.hb.y+abstractMonster.hb.height/2.0F,0.0F,0.0F,0.0F, BATwinsCharacter.getColorWithCardColor(this.color),BATwinsCharacter.getColorWithCardColor(this.color))));
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.block), AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
     public void triggerOnSuperConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.magicNumber), AbstractGameAction.AttackEffect.LIGHTNING));
+        addToBot(new VFXAction(new WeightyImpactEffect(abstractMonster.hb.cX,abstractMonster.hb.cY,BATwinsCharacter.getColorWithCardColor(this.color))));
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.magicNumber), AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

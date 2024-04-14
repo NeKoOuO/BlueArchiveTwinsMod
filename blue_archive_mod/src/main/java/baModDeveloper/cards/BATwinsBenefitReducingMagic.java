@@ -4,6 +4,8 @@ import baModDeveloper.action.BATwinsClearBlockAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -35,6 +37,7 @@ public class BATwinsBenefitReducingMagic extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        talkAction();
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             addToBot(new ApplyPowerAction(m, abstractPlayer, new VulnerablePower(m, this.magicNumber, false)));
             addToBot(new BATwinsClearBlockAction(m));
@@ -43,6 +46,7 @@ public class BATwinsBenefitReducingMagic extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        talkAction();
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new ApplyPowerAction(m, abstractPlayer, new WeakPower(m, this.magicNumber, false)));
             addToBot(new BATwinsClearBlockAction(m));
@@ -54,6 +58,14 @@ public class BATwinsBenefitReducingMagic extends BATwinsModCustomCard {
         if (!upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
+        }
+    }
+
+    private void talkAction(){
+        for(AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters){
+            if(!m.isDeadOrEscaped()){
+                addToBot(new TalkAction(m,CARD_STRINGS.EXTENDED_DESCRIPTION[MathUtils.random(0,CARD_STRINGS.EXTENDED_DESCRIPTION.length-1)]));
+            }
         }
     }
 }
