@@ -59,7 +59,7 @@ public class BATwinsPaintingArtEffect extends AbstractGameEffect {
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.setColor(this.color);
-        spriteBatch.draw(this.textureRegion,this.x,this.y,width,this.textureRegion.getRegionHeight()/2.0F);
+        spriteBatch.draw(this.textureRegion,this.x,this.y,width,this.textureRegion.getRegionHeight()/3.0F);
 //        public void draw(Texture texture, float x, float y, float originX, float originY, float width, float height, float scaleX, float scaleY, float rotation, int srcX, int srcY, int srcWidth, int srcHeight, boolean flipX, boolean flipY)
 
     }
