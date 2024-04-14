@@ -384,7 +384,10 @@
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"Penetrating Damage",
-		"DESCRIPTION":"Deal !D! Damage to all enemies,all enemies without Block lose !M! strength . NL exhaust NL batwinsmod:Synergy :This card does not exhaust for the rest of this battle."
+		"DESCRIPTION":"Deal !D! Damage to all enemies,all enemies without Block lose !M! strength . NL exhaust NL batwinsmod:Synergy :This card does not exhaust for the rest of this battle.",
+		"EXTENDED_DESCRIPTION": [
+			"Deal !D! Damage to all enemies,all enemies without Block lose !M! strength ."
+		]
 	},
 	"BATwinsMod:LoginRewards":{
 		"NAME":"登入奖励",
@@ -401,8 +404,8 @@
 	},
 	"BATwinsMod:ScriptRewriting":{
 		"NAME":"Script Rewrite",
-		"DESCRIPTION":"Exchange the amount of batwinsmod:Burn and poison,Gain Block equal to the difference between them. NL exhaust ",
-		"UPGRADE_DESCRIPTION":" Retain NL Exchange the amount of batwinsmod:Burn and poison,Gain Block equal to the difference between them. NL exhaust "
+		"DESCRIPTION":"Give poison equivalent to its batwinsmod:Burn ,gave batwinsmod:Burn equivalent to its poison . NL exhaust ",
+		"UPGRADE_DESCRIPTION":"Give poison equivalent to its batwinsmod:Burn , then gave batwinsmod:Burn equivalent to its poison. NL exhaust "
 	},
 	"BATwinsMod:EasterEgg":{
 		"NAME":"Easter Egg",

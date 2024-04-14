@@ -4,6 +4,7 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -69,19 +70,13 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
         updateCardPreview();
     }
 
-    @Override
-    public void renderCardPreview(SpriteBatch sb) {
-        updateCardPreview();
-        if (this.cardsToPreview.cardID != this.cardID) {
-            super.renderCardPreview(sb);
-        }
-    }
+
 
     @Override
     public void render(SpriteBatch sb) {
-        if (this.cardsToPreview == null) {
-            updateCardPreview();
-        }
+//        if (this.cardsToPreview == null) {
+//            updateCardPreview();
+//        }
         super.render(sb);
 
     }
@@ -135,27 +130,42 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
                 this.cardToCopy.applyPowers();
             }
         }
-        if (this.cardsToPreview == null) {
-            this.cardsToPreview = this.makeCopy();
-            this.cardToCopy = null;
-        }
+//        if (this.cardsToPreview == null) {
+//            this.cardsToPreview = this.makeCopy();
+//            this.cardToCopy = null;
+//        }
     }
 
     @Override
     public void conversionColor(boolean flash) {
         super.conversionColor(flash);
-        if (this.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
-            this.loadCardImage(IMG_PATH);
-            this.portraitImg = ImageMaster.loadImage("baModResources/img/cards/SelfConnectivity_p.png");
-        } else if (this.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
-            this.loadCardImage(IMG_PATH2);
-            this.portraitImg = ImageMaster.loadImage("baModResources/img/cards/SelfConnectivity2_p.png");
-        } else {
-            this.loadCardImage(IMG_PATH);
-            this.portraitImg = ImageMaster.loadImage("baModResources/img/cards/SelfConnectivity_p.png");
+        this.updateCardPreview();
+    }
 
+    @SpireOverride
+    protected void renderPortrait(SpriteBatch sb) {
+        if (this.cardsToPreview!=null&& !Objects.equals(this.cardsToPreview.cardID, this.cardID)) {
+            float tempScale=this.drawScale*0.4F;
+            sb.setColor(1.0F, 1.0F, 1.0F, 1.0F);
+            this.cardsToPreview.angle=this.angle;
+            this.cardsToPreview.drawScale=tempScale;
+            this.cardsToPreview.current_x=this.current_x;
+            this.cardsToPreview.current_y=this.current_y+AbstractCard.IMG_HEIGHT*0.18F*this.drawScale;
+            this.cardsToPreview.render(sb);
         }
+
 
     }
 
+    @Override
+    public void triggerOnCardPlayed(AbstractCard cardPlayed) {
+        this.updateCardPreview();
+    }
+
+    @Override
+    public void renderCardPreview(SpriteBatch sb) {
+        if(!Objects.equals(this.cardsToPreview.cardID, this.cardID)){
+            super.renderCardPreview(sb);
+        }
+    }
 }

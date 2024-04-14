@@ -3,6 +3,7 @@ package baModDeveloper.character;
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.cards.*;
 import baModDeveloper.core.BATwinsEnergyManager;
+import baModDeveloper.effect.BATwinsEasterEggEffect;
 import baModDeveloper.helpers.Character3DHelper;
 import baModDeveloper.helpers.ColorComparer;
 import baModDeveloper.helpers.ImageHelper;
@@ -53,6 +54,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.io.IOException;
 import java.util.*;
@@ -671,5 +673,10 @@ public class BATwinsCharacter extends CustomPlayer {
         cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins3")));
         return cutscenePanelList;
 
+    }
+
+    @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        effects.add(new BATwinsEasterEggEffect(true,false));
     }
 }

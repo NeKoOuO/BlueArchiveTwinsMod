@@ -34,6 +34,7 @@ public class BATwinsTacticalRelay extends BATwinsModCustomCard{
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsGainEnergyAction(this.magicNumber, BATwinsEnergyPanel.EnergyType.MIDORI));
         addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsDisabledMomoiPower(abstractPlayer)));
+
     }
 
     @Override

@@ -60,7 +60,8 @@ public class BATwinsIntegratingAndIntegratingPower extends AbstractPower {
                 this.flash();
                 for (int i = 0; i < this.amount; i++) {
                     BATwinsModCustomCard c = (BATwinsModCustomCard) card.makeStatEquivalentCopy();
-
+                    c.exhaust=card.exhaust;
+                    c.isEthereal=card.isEthereal;
                     c.conversionColor();
                     //如果有技艺大师buff则升级
                     if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)) {

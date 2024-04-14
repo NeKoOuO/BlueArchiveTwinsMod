@@ -1,13 +1,19 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsChangeBurnPoiAction;
+import baModDeveloper.action.BATwinsScriptRewritingAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.power.BATwinsBurnPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class BATwinsScriptRewriting extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("ScriptRewriting");
@@ -34,14 +40,32 @@ public class BATwinsScriptRewriting extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsChangeBurnPoiAction(abstractMonster, true));
+//        addToBot(new BATwinsChangeBurnPoiAction(abstractMonster, true));
+        addToBot(new BATwinsScriptRewritingAction(this.upgraded,this.color,abstractMonster));
+        if(upgraded){
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    if(color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
+                        if(abstractMonster.hasPower(PoisonPower.POWER_ID)){
+                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player,new BATwinsBurnPower(this.target,AbstractDungeon.player,abstractMonster.getPower(PoisonPower.POWER_ID).amount)));
+                        }
+                    }else{
+                        if(abstractMonster.hasPower(BATwinsBurnPower.POWER_ID)){
+                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player,new PoisonPower(this.target,AbstractDungeon.player,abstractMonster.getPower(BATwinsBurnPower.POWER_ID).amount)));
+                        }
+                    }
+                    this.isDone=true;
+                }
+            });
+        }
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.selfRetain = true;
+//            this.selfRetain = true;
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.originRawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
