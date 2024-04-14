@@ -4,6 +4,7 @@ import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.relic.BATwinsRubiksCube;
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
@@ -60,7 +61,11 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
             for (int i = uiStrings.TEXT.length - 1; i >= 0; i--) {
                 addToTop(new TalkAction(true, uiStrings.TEXT[i], 3.0F, 3.0F));
                 if(!this.p.hand.contains(this.card)){
-                    this.p.hand.addToTop(this.card);
+                    if(this.p.hand.size()< BaseMod.MAX_HAND_SIZE){
+                        this.p.hand.addToTop(this.card);
+                    }else{
+                        this.p.discardPile.addToTop(this.card);
+                    }
                 }
             }
             this.isDone = true;
