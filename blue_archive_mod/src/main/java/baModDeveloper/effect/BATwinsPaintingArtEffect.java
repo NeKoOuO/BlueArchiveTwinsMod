@@ -29,11 +29,16 @@ public class BATwinsPaintingArtEffect extends AbstractGameEffect {
         this.color.a=1.0F;
         this.img= ImageMaster.loadImage(ModHelper.makeImgPath("effect","vfx"));
         textureRegion= new TextureRegion(this.img);
-        this.x= AbstractDungeon.player.hb.cX+150* Settings.scale;
+        if(AbstractDungeon.player.flipHorizontal){
+            this.x= AbstractDungeon.player.hb.cX-150* Settings.scale;
+        }else{
+            this.x= AbstractDungeon.player.hb.cX+150* Settings.scale;
+        }
         this.y= AbstractDungeon.floorY+120*Settings.scale;
 //        this.rotation= MathUtils.random(-20,20);
-        width=Math.min(150*Settings.scale,target.hb.cX-this.x);
+//        width=Math.min(150*Settings.scale,target.hb.cX-this.x);
         height=0.0F;
+        width=0.0F;
         this.duration=0.5F;
 
         this.stepX=(target.hb.cX-this.x)/this.duration;

@@ -24,7 +24,7 @@ public class BATwinsPenetrationDamage extends BATwinsModCustomCard {
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
 
     public BATwinsPenetrationDamage() {
@@ -65,8 +65,8 @@ public class BATwinsPenetrationDamage extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeDamage(2);
-            this.upgradeMagicNumber(1);
+            this.upgradeDamage(4);
+//            this.upgradeMagicNumber(1);
         }
     }
 

@@ -156,6 +156,7 @@ public class BATwinsCharacter extends CustomPlayer {
             this.img = ImageMaster.loadImage(empty_Img);
             this.corpseImg = ImageMaster.loadImage(empty_Img);
             character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+            character3DHelper.resetCharacterPosition();
             character3DHelper.resetDefaultAnima(Enums.BATWINS_MOMOI_CARD);
             character3DHelper.resetDefaultAnima(Enums.BATWINS_MIDORI_CARD);
         }
@@ -596,6 +597,7 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public void playDeathAnimation() {
         if (BATwinsMod.Enable3D) {
+            character3DHelper.resetCharacterPosition();
             character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.DYING);
             character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.DYING);
         } else {

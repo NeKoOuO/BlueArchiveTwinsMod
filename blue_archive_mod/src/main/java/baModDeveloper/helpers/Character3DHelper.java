@@ -16,7 +16,6 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.math.Vector3;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import org.lwjgl.Sys;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -82,8 +81,9 @@ public class Character3DHelper {
 
         this.momoiController = new ModelController("baModResources/img/char/model/momoi.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[0]);
         this.midoriController = new ModelController("baModResources/img/char/model/midori.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[1]);
-        this.momoiController.resetPosition(150 * Settings.scale, 0);
-        this.midoriController.resetPosition(-150 * Settings.scale, 0);
+//        this.momoiController.resetPosition(150 * Settings.scale, 0);
+//        this.midoriController.resetPosition(-150 * Settings.scale, 0);
+        this.resetCharacterPosition();
 
         this.inited = true;
     }
@@ -358,5 +358,10 @@ public class Character3DHelper {
     }
     public void clearMidoriAnima(){
         this.midoriController.resetDefaultAnima();
+    }
+
+    public void resetCharacterPosition(){
+        this.momoiController.resetPosition(150 * Settings.scale, 0);
+        this.midoriController.resetPosition(-150 * Settings.scale, 0);
     }
 }

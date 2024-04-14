@@ -1,11 +1,11 @@
 {
     "BATwinsMod:MomoiStrick":{
-        "NAME":"Strick",
+        "NAME":"Strike",
         "DESCRIPTION":"Deal !D! damage",
         "UPGRADE_DESCRIPTION":"Deal !D! Damage."
     },
     "BATwinsMod:MidoriStrick": {
-        "NAME": "Strick",
+        "NAME": "Strike",
         "DESCRIPTION":"Deal !D! damage",
         "UPGRADE_DESCRIPTION":"Deal !D! Damage."
     },
@@ -35,7 +35,10 @@
     },
     "BATwinsMod:DeveloperCollaboration":{
         "NAME":"Developer collaboration",
-        "DESCRIPTION":" batwinsmod:Share . NL After alternating between playing batwinsmod:MomoiCard and batwinsmod:MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase !M! %."
+        "DESCRIPTION":" batwinsmod:Share . NL After alternating between playing batwinsmod:MomoiCard and batwinsmod:MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase !M! %.",
+		"EXTENDED_DESCRIPTION":[
+			" batwinsmod:Share . NL After alternating between playing batwinsmod:MomoiCard and batwinsmod:MidoriCard in battle,the enemy's poison and batwinsmod:Burn increase by !M! %"
+		]
     },
     "BATwinsMod:Exchange":{
         "NAME":"Exchange",
@@ -335,7 +338,12 @@
 	},
 	"BATwinsMod:BenefitReducingMagic":{
 		"NAME":"Headshot",
-		"DESCRIPTION":"Apply !M! weak to all enemies.Remove all enemies' Block ."
+		"DESCRIPTION":"Apply !M! weak to all enemies.Remove all enemies' Block .",
+		"EXTENDED_DESCRIPTION": [
+			"Cute!",
+			"So Cute!",
+			"Too Cute!"
+		]
 	},
 	"BATwinsMod:BorrowMe":{
 		"NAME":"Borrow Me",
