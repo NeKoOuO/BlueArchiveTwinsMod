@@ -1,12 +1,15 @@
 package baModDeveloper.power;
 
+import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.helpers.Character3DHelper;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -46,6 +49,22 @@ public class BATwinsDisabledMomoiPower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        }
+    }
+
+    @Override
+    public void onInitialApplication() {
+        super.onInitialApplication();
+        if(AbstractDungeon.player instanceof BATwinsCharacter&& BATwinsMod.Enable3D){
+            BATwinsCharacter.get3DHelper().setMomoiAnimation(Character3DHelper.MomoiActionList.PANIC);
+        }
+    }
+
+    @Override
+    public void onRemove() {
+        super.onRemove();
+        if(AbstractDungeon.player instanceof BATwinsCharacter&& BATwinsMod.Enable3D){
+            BATwinsCharacter.get3DHelper().clearMomoiAnima();
         }
     }
 }
