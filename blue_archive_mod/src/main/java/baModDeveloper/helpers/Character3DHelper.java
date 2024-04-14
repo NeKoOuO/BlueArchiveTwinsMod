@@ -38,7 +38,7 @@ public class Character3DHelper {
         AnimationNames.put(DEATH, new String[]{"Armature|Momoi_Original_Vital_Death", "Armature|Midori_Original_Vital_Death"});
         AnimationNames.put(DYING, new String[]{"Armature|Momoi_Original_Vital_Dying_ing", "Armature|Midori_Original_Vital_Dying_ing"});
         AnimationNames.put(RELOAD, new String[]{"Armature|Momoi_Original_Normal_Reload", "Armature|Midori_Original_Normal_Reload"});
-        AnimationNames.put(PANIC,new String[]{"Armature|Momoi_Original_Vital_Panic","Armature|Midori_Original_Vital_Panic"});
+        AnimationNames.put(PANIC, new String[]{"Armature|Momoi_Original_Vital_Panic", "Armature|Midori_Original_Vital_Panic"});
     }
 
     public float current_x = 0, current_y = 0;
@@ -143,7 +143,7 @@ public class Character3DHelper {
         this.momoiController.setAnimation(action.getOperation());
         switch (action) {
             case MOVING:
-                this.momoiController.moveCurrentPosition(250*Settings.scale, 0);
+                this.momoiController.moveCurrentPosition(250 * Settings.scale, 0);
                 break;
         }
     }
@@ -152,7 +152,7 @@ public class Character3DHelper {
         this.midoriController.setAnimation(action.getOperation());
         switch (action) {
             case MOVING:
-                this.midoriController.moveCurrentPosition(250*Settings.scale, 0);
+                this.midoriController.moveCurrentPosition(250 * Settings.scale, 0);
                 break;
         }
     }
@@ -212,6 +212,19 @@ public class Character3DHelper {
         }
     }
 
+    public void clearMomoiAnima() {
+        this.momoiController.resetDefaultAnima();
+    }
+
+    public void clearMidoriAnima() {
+        this.midoriController.resetDefaultAnima();
+    }
+
+    public void resetCharacterPosition() {
+        this.momoiController.resetPosition(150 * Settings.scale, 0);
+        this.midoriController.resetPosition(-150 * Settings.scale, 0);
+    }
+
     public enum AnimationName {
         NORMAL_IDLE,
         STAND_ATTACK_DELAY,
@@ -268,9 +281,9 @@ public class Character3DHelper {
             System.out.println("RELOAD");
             animationController.queue(AnimationNames.get(AnimationName.RELOAD)[0], 1, 1, null, 0.5F);
         }),
-        PANIC(animationController->{
+        PANIC(animationController -> {
             System.out.println("PANIC");
-            animationController.queue(AnimationNames.get(AnimationName.PANIC)[0],-1,1,null,0.5F);
+            animationController.queue(AnimationNames.get(AnimationName.PANIC)[0], -1, 1, null, 0.5F);
         });
         private final Consumer<AnimationController> operation;
 
@@ -324,9 +337,9 @@ public class Character3DHelper {
             System.out.println("RELOAD");
             animationController.queue(AnimationNames.get(AnimationName.RELOAD)[1], 1, 1, null, 0.5F);
         }),
-        PANIC(animationController->{
+        PANIC(animationController -> {
             System.out.println("PANIC");
-            animationController.queue(AnimationNames.get(AnimationName.PANIC)[1],-1,1,null,0.5F);
+            animationController.queue(AnimationNames.get(AnimationName.PANIC)[1], -1, 1, null, 0.5F);
         });
 
         private final Consumer<AnimationController> operation;
@@ -351,17 +364,5 @@ public class Character3DHelper {
             init();
             finishLoading = true;
         }
-    }
-
-    public void clearMomoiAnima(){
-        this.momoiController.resetDefaultAnima();
-    }
-    public void clearMidoriAnima(){
-        this.midoriController.resetDefaultAnima();
-    }
-
-    public void resetCharacterPosition(){
-        this.momoiController.resetPosition(150 * Settings.scale, 0);
-        this.midoriController.resetPosition(-150 * Settings.scale, 0);
     }
 }

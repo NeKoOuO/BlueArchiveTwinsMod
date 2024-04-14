@@ -60,10 +60,10 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
         if (this.numberOfConnections > 10) {
             for (int i = uiStrings.TEXT.length - 1; i >= 0; i--) {
                 addToTop(new TalkAction(true, uiStrings.TEXT[i], 3.0F, 3.0F));
-                if(!this.p.hand.contains(this.card)){
-                    if(this.p.hand.size()< BaseMod.MAX_HAND_SIZE){
+                if (!this.p.hand.contains(this.card)) {
+                    if (this.p.hand.size() < BaseMod.MAX_HAND_SIZE) {
                         this.p.hand.addToTop(this.card);
-                    }else{
+                    } else {
                         this.p.discardPile.addToTop(this.card);
                     }
                 }
@@ -102,7 +102,7 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //                ((BATwinsModCustomCard) card).playedByOtherCard=true;
 //            }
 //            addToTop(new UnlimboAction(this.card));
-            if (this.target == null||this.target.isDeadOrEscaped()) {
+            if (this.target == null || this.target.isDeadOrEscaped()) {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, true, false, true));
             } else {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, this.target, false, true));

@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -69,7 +68,6 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
     public void triggerWhenDrawn() {
         updateCardPreview();
     }
-
 
 
     @Override
@@ -144,13 +142,13 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
 
     @SpireOverride
     protected void renderPortrait(SpriteBatch sb) {
-        if (this.cardsToPreview!=null&& !Objects.equals(this.cardsToPreview.cardID, this.cardID)) {
-            float tempScale=this.drawScale*0.4F;
+        if (this.cardsToPreview != null && !Objects.equals(this.cardsToPreview.cardID, this.cardID)) {
+            float tempScale = this.drawScale * 0.4F;
             sb.setColor(1.0F, 1.0F, 1.0F, 1.0F);
-            this.cardsToPreview.angle=this.angle;
-            this.cardsToPreview.drawScale=tempScale;
-            this.cardsToPreview.current_x=this.current_x;
-            this.cardsToPreview.current_y=this.current_y+AbstractCard.IMG_HEIGHT*0.18F*this.drawScale;
+            this.cardsToPreview.angle = this.angle;
+            this.cardsToPreview.drawScale = tempScale;
+            this.cardsToPreview.current_x = this.current_x;
+            this.cardsToPreview.current_y = this.current_y + AbstractCard.IMG_HEIGHT * 0.18F * this.drawScale;
             this.cardsToPreview.render(sb);
         }
 
@@ -164,7 +162,7 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
 
     @Override
     public void renderCardPreview(SpriteBatch sb) {
-        if(!Objects.equals(this.cardsToPreview.cardID, this.cardID)){
+        if (!Objects.equals(this.cardsToPreview.cardID, this.cardID)) {
             super.renderCardPreview(sb);
         }
     }

@@ -61,10 +61,10 @@ public class BATwinsBenefitReducingMagic extends BATwinsModCustomCard {
         }
     }
 
-    private void talkAction(){
-        for(AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters){
-            if(!m.isDeadOrEscaped()){
-                addToBot(new TalkAction(m,CARD_STRINGS.EXTENDED_DESCRIPTION[MathUtils.random(0,CARD_STRINGS.EXTENDED_DESCRIPTION.length-1)]));
+    private void talkAction() {
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!m.isDeadOrEscaped()) {
+                addToBot(new TalkAction(m, CARD_STRINGS.EXTENDED_DESCRIPTION[MathUtils.random(0, CARD_STRINGS.EXTENDED_DESCRIPTION.length - 1)]));
             }
         }
     }

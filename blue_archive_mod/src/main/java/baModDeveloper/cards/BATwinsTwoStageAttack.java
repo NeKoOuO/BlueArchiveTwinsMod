@@ -53,8 +53,8 @@ public class BATwinsTwoStageAttack extends BATwinsModCustomCard {
 
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot((AbstractGameAction)new SFXAction("ATTACK_HEAVY"));
-        addToBot((AbstractGameAction)new VFXAction((AbstractCreature)abstractPlayer, (AbstractGameEffect)new CleaveEffect(), 0.1F));
+        addToBot((AbstractGameAction) new SFXAction("ATTACK_HEAVY"));
+        addToBot((AbstractGameAction) new VFXAction((AbstractCreature) abstractPlayer, (AbstractGameEffect) new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(abstractPlayer, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
 //        addToBot(new DamageAllEnemiesAction(abstractPlayer, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.LIGHTNING));
     }
@@ -85,8 +85,8 @@ public class BATwinsTwoStageAttack extends BATwinsModCustomCard {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if(AbstractDungeon.player.hand.contains(this)&&c.hasTag(CardTags.STRIKE)){
-            addToBot(new BATwinsPlayHandCardAction(this,null,1));
+        if (AbstractDungeon.player.hand.contains(this) && c.hasTag(CardTags.STRIKE)) {
+            addToBot(new BATwinsPlayHandCardAction(this, null, 1));
         }
     }
 }

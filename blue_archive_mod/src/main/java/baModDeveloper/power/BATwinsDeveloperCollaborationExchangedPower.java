@@ -7,7 +7,6 @@ import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -35,7 +34,7 @@ public class BATwinsDeveloperCollaborationExchangedPower extends AbstractPower {
     private final TextureAtlas.AtlasRegion momoi128, momoi48, midori128, midori48;
     private AbstractCard.CardColor lastColor;
 
-    public BATwinsDeveloperCollaborationExchangedPower(AbstractCreature owner,int amount){
+    public BATwinsDeveloperCollaborationExchangedPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.type = TYPE;
@@ -53,7 +52,7 @@ public class BATwinsDeveloperCollaborationExchangedPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        String lastcard="";
+        String lastcard = "";
         if (this.lastColor == null) {
             lastcard = DESCRIPTIONS[6];
         } else if (this.lastColor == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
@@ -67,7 +66,7 @@ public class BATwinsDeveloperCollaborationExchangedPower extends AbstractPower {
         } else {
             lastcard = DESCRIPTIONS[5];
         }
-        this.description=String.format(DESCRIPTIONS[0],this.amount,lastcard);
+        this.description = String.format(DESCRIPTIONS[0], this.amount, lastcard);
     }
 
 //    public void onAfterCardPlayed(AbstractCard usedCard) {
@@ -97,11 +96,11 @@ public class BATwinsDeveloperCollaborationExchangedPower extends AbstractPower {
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (this.lastColor != null) {
-            if (card instanceof BATwinsModCustomCard &&this.lastColor == BATwinsCharacter.getOtherColor(card.color)) {
+            if (card instanceof BATwinsModCustomCard && this.lastColor == BATwinsCharacter.getOtherColor(card.color)) {
                 this.flash();
-                for(AbstractMonster m: AbstractDungeon.getCurrRoom().monsters.monsters){
-                    addToBot(new BATwinsDoublePowerAction(BATwinsBurnPower.POWER_ID,m, (float) this.amount /100));
-                    addToBot(new BATwinsDoublePowerAction(PoisonPower.POWER_ID,m, (float) this.amount /100));
+                for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    addToBot(new BATwinsDoublePowerAction(BATwinsBurnPower.POWER_ID, m, (float) this.amount / 100));
+                    addToBot(new BATwinsDoublePowerAction(PoisonPower.POWER_ID, m, (float) this.amount / 100));
                 }
             } else {
                 this.flash();

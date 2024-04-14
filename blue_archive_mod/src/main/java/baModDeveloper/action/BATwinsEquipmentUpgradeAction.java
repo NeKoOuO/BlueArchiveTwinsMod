@@ -27,14 +27,14 @@ public class BATwinsEquipmentUpgradeAction extends SelectCardsInHandAction {
                 card.name += "◆";
             }
             if (card instanceof BATwinsModCustomCard) {
-                if(((BATwinsModCustomCard) card).modifyEnergyType!= BATwinsEnergyPanel.EnergyType.SHARE){
+                if (((BATwinsModCustomCard) card).modifyEnergyType != BATwinsEnergyPanel.EnergyType.SHARE) {
                     ((BATwinsModCustomCard) card).modifyEnergyType = BATwinsEnergyPanel.EnergyType.SHARE;
-                    CardModifierManager.addModifier(card,new BATwinsSharedModifier());
+                    CardModifierManager.addModifier(card, new BATwinsSharedModifier());
                 }
             }
-            if(!card.selfRetain){
+            if (!card.selfRetain) {
                 card.selfRetain = true;
-                CardModifierManager.addModifier(card,new BATwinsRetainModifier());
+                CardModifierManager.addModifier(card, new BATwinsRetainModifier());
             }
 //            card.exhaust = false;
 //            card.isEthereal = false;

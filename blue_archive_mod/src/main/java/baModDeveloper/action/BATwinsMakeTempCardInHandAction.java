@@ -196,18 +196,18 @@ public class BATwinsMakeTempCardInHandAction extends AbstractGameAction {
         } else {
             card = this.c.makeStatEquivalentCopy();
         }
-        if(this.exhaust&&!c.exhaust&&!CardModifierManager.hasModifier(card,BATwinsExhaustModifier.ID)){
-            CardModifierManager.addModifier(card,new BATwinsExhaustModifier());
+        if (this.exhaust && !c.exhaust && !CardModifierManager.hasModifier(card, BATwinsExhaustModifier.ID)) {
+            CardModifierManager.addModifier(card, new BATwinsExhaustModifier());
         }
-        if(this.isEthereal&&!c.isEthereal&&!CardModifierManager.hasModifier(card,BATwinsEtherealModifier.ID)){
-            CardModifierManager.addModifier(card,new BATwinsEtherealModifier());
+        if (this.isEthereal && !c.isEthereal && !CardModifierManager.hasModifier(card, BATwinsEtherealModifier.ID)) {
+            CardModifierManager.addModifier(card, new BATwinsEtherealModifier());
         }
-        if(this.selfRetain&&!c.selfRetain&&!CardModifierManager.hasModifier(card,BATwinsRetainModifier.ID)){
-            CardModifierManager.addModifier(card,new BATwinsRetainModifier());
+        if (this.selfRetain && !c.selfRetain && !CardModifierManager.hasModifier(card, BATwinsRetainModifier.ID)) {
+            CardModifierManager.addModifier(card, new BATwinsRetainModifier());
         }
-        if(card instanceof BATwinsModCustomCard&&c instanceof BATwinsModCustomCard){
-            if(((BATwinsModCustomCard) card).modifyEnergyType!= BATwinsEnergyPanel.EnergyType.SHARE&&((BATwinsModCustomCard) c).modifyEnergyType== BATwinsEnergyPanel.EnergyType.SHARE&&!CardModifierManager.hasModifier(card, BATwinsSharedModifier.ID)){
-                CardModifierManager.addModifier(card,new BATwinsSharedModifier());
+        if (card instanceof BATwinsModCustomCard && c instanceof BATwinsModCustomCard) {
+            if (((BATwinsModCustomCard) card).modifyEnergyType != BATwinsEnergyPanel.EnergyType.SHARE && ((BATwinsModCustomCard) c).modifyEnergyType == BATwinsEnergyPanel.EnergyType.SHARE && !CardModifierManager.hasModifier(card, BATwinsSharedModifier.ID)) {
+                CardModifierManager.addModifier(card, new BATwinsSharedModifier());
             }
         }
 

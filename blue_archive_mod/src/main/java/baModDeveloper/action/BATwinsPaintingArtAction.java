@@ -26,13 +26,13 @@ public class BATwinsPaintingArtAction extends AbstractGameAction {
         this.poisonNum = poisonNum;
         this.exchange = exchange;
         this.type = type;
-        this.startDuration=0.3F;
+        this.startDuration = 0.3F;
     }
 
     @Override
     public void update() {
-        if(this.startDuration>=0.0F){
-            this.startDuration-= Gdx.graphics.getDeltaTime();
+        if (this.startDuration >= 0.0F) {
+            this.startDuration -= Gdx.graphics.getDeltaTime();
             return;
         }
         this.target = (AbstractCreature) AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);

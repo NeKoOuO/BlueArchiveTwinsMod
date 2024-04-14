@@ -15,34 +15,35 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class BATwinsDisabledMomoiPower extends AbstractPower {
-    public static final String POWER_ID= ModHelper.makePath("DisabledMomoiPower");
-    private static final AbstractPower.PowerType TYPE=PowerType.DEBUFF;
-    private static final PowerStrings powerStrings= CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    private static final String NAME=powerStrings.NAME;
-    private static final String[] DESCRIPTIONS=powerStrings.DESCRIPTIONS;
-    private static final String IMG_84=ModHelper.makeImgPath("power","DisabledMomoi84");
-    private static final String IMG_32=ModHelper.makeImgPath("power","DisabledMomoi32");
-    public BATwinsDisabledMomoiPower(AbstractCreature owner){
-        this.name=NAME;
-        this.ID=POWER_ID;
-        this.type=TYPE;
-        this.owner=owner;
-        this.region128=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84),0,0,84,84);
-        this.region48=new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32),0,0,32,32);
-        this.owner=owner;
-        this.amount=-1;
+    public static final String POWER_ID = ModHelper.makePath("DisabledMomoiPower");
+    private static final AbstractPower.PowerType TYPE = PowerType.DEBUFF;
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    private static final String NAME = powerStrings.NAME;
+    private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private static final String IMG_84 = ModHelper.makeImgPath("power", "DisabledMomoi84");
+    private static final String IMG_32 = ModHelper.makeImgPath("power", "DisabledMomoi32");
+
+    public BATwinsDisabledMomoiPower(AbstractCreature owner) {
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.type = TYPE;
+        this.owner = owner;
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
+        this.owner = owner;
+        this.amount = -1;
 
         this.updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        this.description=DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0];
     }
 
     @Override
     public boolean canPlayCard(AbstractCard card) {
-        return card.color!= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
+        return card.color != BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     }
 
     @Override
@@ -55,7 +56,7 @@ public class BATwinsDisabledMomoiPower extends AbstractPower {
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
-        if(AbstractDungeon.player instanceof BATwinsCharacter&& BATwinsMod.Enable3D){
+        if (AbstractDungeon.player instanceof BATwinsCharacter && BATwinsMod.Enable3D) {
             BATwinsCharacter.get3DHelper().setMomoiAnimation(Character3DHelper.MomoiActionList.PANIC);
         }
     }
@@ -63,7 +64,7 @@ public class BATwinsDisabledMomoiPower extends AbstractPower {
     @Override
     public void onRemove() {
         super.onRemove();
-        if(AbstractDungeon.player instanceof BATwinsCharacter&& BATwinsMod.Enable3D){
+        if (AbstractDungeon.player instanceof BATwinsCharacter && BATwinsMod.Enable3D) {
             BATwinsCharacter.get3DHelper().clearMomoiAnima();
         }
     }

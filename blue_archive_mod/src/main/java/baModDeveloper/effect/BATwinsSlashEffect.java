@@ -13,30 +13,31 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class BATwinsSlashEffect extends AbstractGameEffect {
     Texture img;
-    private float x,y;
-    public BATwinsSlashEffect(Color color){
-        this.color=color.cpy();
-        this.color.a=1.0F;
-        this.img= ImageMaster.loadImage(ModHelper.makeImgPath("effect","vfx"));
-        this.startingDuration=0.2F;
-        this.duration=0.2F;
-        this.x= Settings.WIDTH/2.0F-150*Settings.scale;
-        this.y= AbstractDungeon.floorY;
-        this.y+= MathUtils.random(0,300*Settings.scale);
+    private float x, y;
+
+    public BATwinsSlashEffect(Color color) {
+        this.color = color.cpy();
+        this.color.a = 1.0F;
+        this.img = ImageMaster.loadImage(ModHelper.makeImgPath("effect", "vfx"));
+        this.startingDuration = 0.2F;
+        this.duration = 0.2F;
+        this.x = Settings.WIDTH / 2.0F - 150 * Settings.scale;
+        this.y = AbstractDungeon.floorY;
+        this.y += MathUtils.random(0, 300 * Settings.scale);
     }
 
     @Override
     public void update() {
-        this.duration-= Gdx.graphics.getDeltaTime();
-        if(this.duration<=0.0F){
-            this.isDone=true;
+        this.duration -= Gdx.graphics.getDeltaTime();
+        if (this.duration <= 0.0F) {
+            this.isDone = true;
         }
     }
 
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.setColor(this.color);
-        spriteBatch.draw(this.img,this.x,this.y,Settings.WIDTH/2.0F,this.img.getHeight()/2.0F);
+        spriteBatch.draw(this.img, this.x, this.y, Settings.WIDTH / 2.0F, this.img.getHeight() / 2.0F);
     }
 
     @Override

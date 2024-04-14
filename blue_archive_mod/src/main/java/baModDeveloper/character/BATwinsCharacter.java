@@ -646,6 +646,26 @@ public class BATwinsCharacter extends CustomPlayer {
         super.applyStartOfTurnPreDrawCards();
     }
 
+    @Override
+    public Texture getCutsceneBg() {
+        return ImageMaster.loadImage(ModHelper.makeImgPath("UI/scence", "blueBg"));
+    }
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> cutscenePanelList = new ArrayList<>();
+        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence", "Batwins1")));
+        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence", "Batwins2")));
+        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence", "Batwins3")));
+        return cutscenePanelList;
+
+    }
+
+    @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        effects.add(new BATwinsEasterEggEffect(true, false));
+    }
+
     public static class Enums {
         @SpireEnum
         public static PlayerClass BATwins;
@@ -660,25 +680,5 @@ public class BATwinsCharacter extends CustomPlayer {
         @SpireEnum(name = "BATWINSMIDORICARD")
         public static CardLibrary.LibraryType BATWINS_MIDORI_LIBRARY;
 
-    }
-
-    @Override
-    public Texture getCutsceneBg() {
-        return ImageMaster.loadImage(ModHelper.makeImgPath("UI/scence","blueBg"));
-    }
-
-    @Override
-    public List<CutscenePanel> getCutscenePanels() {
-        List<CutscenePanel> cutscenePanelList=new ArrayList<>();
-        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins1")));
-        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins2")));
-        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins3")));
-        return cutscenePanelList;
-
-    }
-
-    @Override
-    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
-        effects.add(new BATwinsEasterEggEffect(true,false));
     }
 }

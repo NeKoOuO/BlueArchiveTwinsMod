@@ -73,7 +73,7 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         if (this.lastColor != null) {
-            if (usedCard instanceof BATwinsModCustomCard&&this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
+            if (usedCard instanceof BATwinsModCustomCard && this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
                 this.flash();
                 this.count++;
             } else {
@@ -89,7 +89,7 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
 //                this.lastColor=usedCard.color;
 //            }
 //        }
-        addToTop(new TextAboveCreatureAction(this.owner, this.name+":"+this.amount*this.count+"%"));
+        addToTop(new TextAboveCreatureAction(this.owner, this.name + ":" + this.amount * this.count + "%"));
         this.updateDescription();
     }
 
@@ -97,7 +97,7 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     public void atStartOfTurn() {
 //        this.lastColor = null;
         this.count = 0;
-        addToTop(new TextAboveCreatureAction(this.owner, this.name+":"+ 0 +"%"));
+        addToTop(new TextAboveCreatureAction(this.owner, this.name + ":" + 0 + "%"));
         this.updateDescription();
     }
 

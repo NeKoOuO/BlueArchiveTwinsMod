@@ -6,9 +6,9 @@ import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.localization.Keyword;
 
 public class BATwinsEtherealModifier extends AbstractCardModifier {
-    private static final Keyword ETHEREAL= GameDictionary.ETHEREAL;
-    private static final String LineBreak="NL ";
-    public static final String ID="BATwinsEtherealModifier";
+    public static final String ID = "BATwinsEtherealModifier";
+    private static final Keyword ETHEREAL = GameDictionary.ETHEREAL;
+    private static final String LineBreak = "NL ";
 
     @Override
     public AbstractCardModifier makeCopy() {
@@ -18,16 +18,16 @@ public class BATwinsEtherealModifier extends AbstractCardModifier {
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
 
-        if(rawDescription.charAt(rawDescription.length()-1)!=' '){
-            rawDescription+=" ";
+        if (rawDescription.charAt(rawDescription.length() - 1) != ' ') {
+            rawDescription += " ";
         }
-        rawDescription+=(LineBreak+ETHEREAL.NAMES[0]+" ");
-        card.isEthereal=true;
-        if(card.selfRetain){
-            card.selfRetain=false;
+        rawDescription += (LineBreak + ETHEREAL.NAMES[0] + " ");
+        card.isEthereal = true;
+        if (card.selfRetain) {
+            card.selfRetain = false;
         }
-        if(card.retain){
-            card.retain=false;
+        if (card.retain) {
+            card.retain = false;
         }
         return rawDescription;
     }

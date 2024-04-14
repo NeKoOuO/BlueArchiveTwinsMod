@@ -40,7 +40,7 @@ public class BATwinsInspirationEmergence extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot((AbstractGameAction)new VFXAction((AbstractGameEffect)new LightBulbEffect(abstractPlayer.hb)));
+        addToBot((AbstractGameAction) new VFXAction((AbstractGameEffect) new LightBulbEffect(abstractPlayer.hb)));
         addToBot(new DrawCardAction(this.magicNumber, new BATwinsInspirationEmergenceAction(1)));
     }
 

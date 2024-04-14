@@ -38,8 +38,8 @@ public class BATwinsAttackWithAllMight extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if(abstractMonster!=null){
-            addToBot((AbstractGameAction)new VFXAction((AbstractGameEffect)new VerticalImpactEffect(abstractMonster.hb.cX + abstractMonster.hb.width / 4.0F, abstractPlayer.hb.cY - abstractMonster.hb.height / 4.0F)));
+        if (abstractMonster != null) {
+            addToBot((AbstractGameAction) new VFXAction((AbstractGameEffect) new VerticalImpactEffect(abstractMonster.hb.cX + abstractMonster.hb.width / 4.0F, abstractPlayer.hb.cY - abstractMonster.hb.height / 4.0F)));
         }
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         this.decline = true;

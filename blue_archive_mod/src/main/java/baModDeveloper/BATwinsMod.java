@@ -36,7 +36,6 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -222,8 +221,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             lang = "ZHS";
 //        } else if(language==GameLanguage.ENG){
 //            lang = "ENG";
-        }else if(language==GameLanguage.ZHT){
-            lang="ZHS";
+        } else if (language == GameLanguage.ZHT) {
+            lang = "ZHS";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
@@ -247,8 +246,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         String lang = "ENG";
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
-        }else if(language==GameLanguage.ZHT){
-            lang="ZHS";
+        } else if (language == GameLanguage.ZHT) {
+            lang = "ZHS";
         }
         String json = Gdx.files.internal("baModResources/localization/" + lang + "/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
@@ -289,9 +288,9 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("charSelect_momoi"), ModHelper.makeAudioPath("charSelect_momoi"));
         BaseMod.addAudio(ModHelper.makePath("charSelect_midori"), ModHelper.makeAudioPath("charSelect_midori"));
         BaseMod.addAudio(ModHelper.makePath("pixelTime"), ModHelper.makeAudioPath("PixelTime"));
-        BaseMod.addAudio(ModHelper.makePath("coin"),ModHelper.makeAudioPath("coin"));
-        BaseMod.addAudio(ModHelper.makePath("Momoi_Ex"),ModHelper.makeAudioPath("Momoi_Ex"));
-        BaseMod.addAudio(ModHelper.makePath("Midori_Ex"),ModHelper.makeAudioPath("Midori_Ex"));
+        BaseMod.addAudio(ModHelper.makePath("coin"), ModHelper.makeAudioPath("coin"));
+        BaseMod.addAudio(ModHelper.makePath("Momoi_Ex"), ModHelper.makeAudioPath("Momoi_Ex"));
+        BaseMod.addAudio(ModHelper.makePath("Midori_Ex"), ModHelper.makeAudioPath("Midori_Ex"));
     }
 
     @Override

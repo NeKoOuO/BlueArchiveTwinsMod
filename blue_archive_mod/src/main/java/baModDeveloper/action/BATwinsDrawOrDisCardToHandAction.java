@@ -48,7 +48,7 @@ public class BATwinsDrawOrDisCardToHandAction extends AbstractGameAction {
                     card.lighten(true);
                     this.p.hand.refreshHandLayout();
                     this.p.hand.applyPowers();
-                }else{
+                } else {
                     this.p.drawPile.moveToDiscardPile(card);
                     AbstractDungeon.player.createHandIsFullDialog();
                 }
@@ -71,7 +71,7 @@ public class BATwinsDrawOrDisCardToHandAction extends AbstractGameAction {
                     this.p.hand.refreshHandLayout();
                     this.p.hand.applyPowers();
 
-                }else{
+                } else {
                     this.p.discardPile.moveToDiscardPile(card);
                     AbstractDungeon.player.createHandIsFullDialog();
 

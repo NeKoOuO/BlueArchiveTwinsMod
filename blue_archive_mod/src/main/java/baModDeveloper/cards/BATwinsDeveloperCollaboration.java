@@ -51,10 +51,10 @@ public class BATwinsDeveloperCollaboration extends BATwinsModCustomCard {
 
     @Override
     public void initializeDescription() {
-        if(this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
-            this.originRawDescription=CARD_STRINGS.DESCRIPTION;
-        }else{
-            this.originRawDescription=CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        if (this.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+            this.originRawDescription = CARD_STRINGS.DESCRIPTION;
+        } else {
+            this.originRawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         }
         super.initializeDescription();
     }

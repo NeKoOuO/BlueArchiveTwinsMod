@@ -1,6 +1,5 @@
 package baModDeveloper.cards;
 
-import baModDeveloper.action.BATwinsChangeBurnPoiAction;
 import baModDeveloper.action.BATwinsScriptRewritingAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
@@ -41,21 +40,21 @@ public class BATwinsScriptRewriting extends BATwinsModCustomCard {
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 //        addToBot(new BATwinsChangeBurnPoiAction(abstractMonster, true));
-        addToBot(new BATwinsScriptRewritingAction(this.upgraded,this.color,abstractMonster));
-        if(upgraded){
+        addToBot(new BATwinsScriptRewritingAction(this.upgraded, this.color, abstractMonster));
+        if (upgraded) {
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {
-                    if(color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
-                        if(abstractMonster.hasPower(PoisonPower.POWER_ID)){
-                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player,new BATwinsBurnPower(this.target,AbstractDungeon.player,abstractMonster.getPower(PoisonPower.POWER_ID).amount)));
+                    if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+                        if (abstractMonster.hasPower(PoisonPower.POWER_ID)) {
+                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player, new BATwinsBurnPower(this.target, AbstractDungeon.player, abstractMonster.getPower(PoisonPower.POWER_ID).amount)));
                         }
-                    }else{
-                        if(abstractMonster.hasPower(BATwinsBurnPower.POWER_ID)){
-                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player,new PoisonPower(this.target,AbstractDungeon.player,abstractMonster.getPower(BATwinsBurnPower.POWER_ID).amount)));
+                    } else {
+                        if (abstractMonster.hasPower(BATwinsBurnPower.POWER_ID)) {
+                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player, new PoisonPower(this.target, AbstractDungeon.player, abstractMonster.getPower(BATwinsBurnPower.POWER_ID).amount)));
                         }
                     }
-                    this.isDone=true;
+                    this.isDone = true;
                 }
             });
         }

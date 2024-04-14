@@ -1,6 +1,5 @@
 package baModDeveloper.effect;
 
-import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.Gdx;
@@ -14,36 +13,37 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 
 public class BATwinsParoxysmalPainEffect extends AbstractGameEffect {
+    private static float IntervalTime = 0.1F;
     Texture img;
-    float x,y;
-    private static float IntervalTime=0.1F;
-    private int count;
-    private boolean playSound=false;
+    float x, y;
     AbstractCard.CardColor color;
+    private int count;
+    private boolean playSound = false;
+
     public BATwinsParoxysmalPainEffect(AbstractCard.CardColor color) {
-        this.duration=IntervalTime;
-        this.count=7;
-        this.color=color;
+        this.duration = IntervalTime;
+        this.count = 7;
+        this.color = color;
     }
 
     @Override
     public void update() {
-        this.duration-= Gdx.graphics.getDeltaTime();
-        if(this.duration<=0.0F){
-            if(!playSound){
+        this.duration -= Gdx.graphics.getDeltaTime();
+        if (this.duration <= 0.0F) {
+            if (!playSound) {
                 CardCrawlGame.sound.play(ModHelper.makePath("Momoi_Ex"));
-                playSound=true;
+                playSound = true;
             }
-            this.duration=IntervalTime;
+            this.duration = IntervalTime;
             this.count--;
             AbstractDungeon.effectsQueue.add(new BATwinsSlashEffect(BATwinsCharacter.getColorWithCardColor(this.color)));
-            for(AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters){
-                if(!m.isDeadOrEscaped()){
-                    AbstractDungeon.effectsQueue.add(new StarBounceEffect(m.hb.cX,m.hb.cY));
+            for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (!m.isDeadOrEscaped()) {
+                    AbstractDungeon.effectsQueue.add(new StarBounceEffect(m.hb.cX, m.hb.cY));
                 }
             }
-            if(this.count<=0){
-                this.isDone=true;
+            if (this.count <= 0) {
+                this.isDone = true;
             }
         }
     }
