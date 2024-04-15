@@ -1,118 +1,118 @@
 {
 	"BATwinsMod:MomoisGameConsole":{
-		"NAME":"Momoi's Game Console",
-		"FLAVOR":"It's already broken, and the club's funds can't afford a new one! - Momoi",
+		"NAME":"モモイのゲーム機",
+		"FLAVOR":"これもう壊れるじゃん、部費はもう新しやつを買いません！\n --モモイ",
 		"DESCRIPTIONS":[
-			"At the start of each battle, gain [batwinsmod:momoiorbicon] . Add a random #yBATwinsMod:MomoiCard from your draw pile to your hand."
+			"戦闘開始時、 [batwinsmod:momoiorbicon] を得る。山札からランダムな #ybatwinsmod:モモイカード を手札に加える。"
 		]
 	},
 	"BATwinsMod:MidorisGameConsole":{
-		"NAME":"Midori's Game Console",
-		"FLAVOR":"Finding it is great! I need to check the game saves right away. - Midori",
+		"NAME":"ミドリのゲーム機",
+		"FLAVOR":"見つけてよかった。さそっくセーブデータをチェックしないと。\n --ミドリ",
 		"DESCRIPTIONS":[
-			"At the start of each battle, gain [batwinsmod:midoriorbicon] . Add a random #yBATwinsMod:MidoriCard from your draw pile to your hand."
+			"戦闘開始時、 [batwinsmod:midoriorbicon] を得る。山札からランダムな #ybatwinsmod:ミドリカード を手札に加える。"
 		]
 	},
 	"BATwinsMod:AncientGameCartridges":{
-		"NAME":"Ancient Game Cartridges",
-		"FLAVOR":"A worn-out game cartridge, no longer readable, barely showing the title 'S*ay *he s**re'.",
+		"NAME":"古いゲームカード",
+		"FLAVOR":"古いゲームカード、もうロードできない。上に「スレイ ■ ■ アイヤ」を書いた。",
 		"DESCRIPTIONS":[
-			"At the start of each battle, play a random #bPower from your draw pile."
+			"戦闘開始時、山札のランダムな #bパワー 1枚をプレイする。"
 		]
 	},
 	"BATwinsMod:ByProving":{
-		"NAME":"By Proving",
-		"FLAVOR":"A brand new medal that reads 'Novice Level Passed!' --%s.",
+		"NAME":"クリア証明",
+		"FLAVOR":"新しいメタル、上に書いたのは\n初心者ステージのクリア証明！--%s。",
 		"DESCRIPTIONS":[
-			"When you play #b%s, deal the same damage to a random enemy.",
-			"When you play #b%s, draw 2 cards.",
-			"When you play #b%s, add a copy to your discard pile.",
-			"Different card types have different effects",
-			"A brand new medal that reads 'Novice Level Passed!' --%s."
+			" #b%s をプレイした時、ランダムな敵を同じなダメージを与える。",
+			" #b%s をプレイした時、カード2枚引く。",
+			" #b%s をプレイした時、捨て札へコピー1枚を加える。",
+			"異なるタイプのカードには異なる効果があります。",
+			"新しいメタル、上に書いたのは\n初心者ステージのクリア証明！--%s。"
 		]
 	},
 	"BATwinsMod:GameMagazine":{
-		"NAME":"Game Magazine",
-		"FLAVOR":"A game magazine given as a bonus for purchasing a game, unfortunately, it doesn't contain any information about this game.",
+		"NAME":"ゲーム雑誌",
+		"FLAVOR":"ゲームにおまけな雑誌、残念だがこのゲームに関わる内容はいません。",
 		"DESCRIPTIONS":[
-			"At the start of each battle, add 1 #yBATwinsMod:Exchange to your hand."
+			"戦闘開始時、 #yチェンジ 1枚を手札に加える。"
 		]
 	},
 	"BATwinsMod:GameGuide":{
-		"NAME":"Game Guide",
-		"FLAVOR":"It says you just need to drag the cards to play them!",
+		"NAME":"ゲーム攻略本",
+		"FLAVOR":"手札をドラッグするだけでカードを出すことができます！",
 		"DESCRIPTIONS":[
-			"Replace #yGame #yMagazine .At the start of each turn, add #b1 #yBATwinsMod:Exchange with #yEthereal and #yExhaust to your hand."
+			" #yゲーム雑誌 と置き換える。ターン開始時、 #b1 まい #yエセリアル、消滅 な #yチェンジ を手札に加える。"
 		]
 	},
 	"BATwinsMod:FoldingShield":{
-		"NAME":"Folding Shield",
-		"FLAVOR":"A shield frequently used by Yuuka.",
+		"NAME":"Q.E.D",
+		"FLAVOR":"ユウカに使ったシールド",
 		"DESCRIPTIONS":[
-			"At the end of your turn, gain #b%d times the number of cards in your hand as Block."
+			"ターン終了時、手札数× #b%d のブロックを得る。"
 		]
 	},
 	"BATwinsMod:Headband":{
-		"NAME":"Maid Headband",
-		"FLAVOR":"Would there have been maids in such a strange place before?",
+		"NAME":"カチューシャ",
+		"FLAVOR":"こんな場所でメイドがある？",
 		"DESCRIPTIONS":[
-			"At the start of each turn, gain [batwinsmod:momoiorbicon] or [batwinsmod:midoriorbicon] . Choose upon pickup."
+			"ターン開始時、 [batwinsmod:momoiorbicon] もしくは [batwinsmod:midoriorbicon] を得る。拾った時を選ぶ。"
 		]
 	},
 	"BATwinsMod:SpecialAmmunition":{
-		"NAME":"Special Ammunition",
-		"FLAVOR":"This is the latest product from the engineering department.",
+		"NAME":"特製爆薬",
+		"FLAVOR":"エンジニア部の最新製品！",
 		"DESCRIPTIONS":[
-			"Increase the damage of Bullet cards by #b3."
+			"弾丸カードのダメージは #b3 を上がる。"
 		]
 	},
 	"BATwinsMod:SwordOfLight":{
-		"NAME":"Sword of Light",
-		"FLAVOR":"It's hard to even hold it, how are we supposed to use it?",
+		"NAME":"光の剣：スーパーノヴァ",
+		"FLAVOR":"持ってもほとんど持ち上げられないんだけど、これをどう使えばいいの？",
 		"DESCRIPTIONS":[
-			"After playing #b%d cards in a battle, deal #b%d damage to all enemies."
+			"バトル中、 #b%d 枚カードをプレイした後、敵全体 #b%d ダメージを与える。"
 		]
 	},
 	"BATwinsMod:NekoHowitzer":{
-		"NAME":"Nyan's Dash",
-		"FLAVOR":"Yuzu's weapon, can fire grenades from a distance",
+		"NAME":"にゃん's ダッシュ",
+		"FLAVOR":"ユズの武器、遠距離から榴弾砲を発射できます。",
 		"DESCRIPTIONS":[
-			"At the start of each turn, apply #b%d stacks of Burn to a random enemy. Has a #b1%% chance to double the Burn stacks on that enemy."
+			"ターン開始時、ランダムな敵 #b%d 焼傷を与える。 #b1%% な確率でこの敵の焼傷を2倍にする。"
 		]
 	},
 	"BATwinsMod:FitnessRing":{
-		"NAME":"Fitness Ring",
-		"FLAVOR":"Always enthusiastic for the first three minutes.",
+		"NAME":"O-フィット",
+		"FLAVOR":"いつも三分間の熱さ.",
 		"DESCRIPTIONS":[
-			"The first card drawn in the first turn of battle is upgraded for the rest of the battle."
+			"最初のターン引いたカードはこのバトルの間アップグレードする。"
 		]
 	},
 	"BATwinsMod:Broom":{
-		"NAME":"Broom",
-		"FLAVOR":"Time to clean up!",
+		"NAME":"メイド箒",
+		"FLAVOR":"お掃除時間ですよ！",
 		"DESCRIPTIONS":[
-			"Every #b3 turns, add #b1 card from the discard pile to your hand."
+			"毎 #b3 ターン、捨て札の #b1 枚選び、手札に加える。"
 		]
 	},
 	"BATwinsMod:MaidAttire":{
-		"NAME":"Maid Attire",
-		"FLAVOR":"Everyone has a little fetish, don't they? - Shopkeeper",
+		"NAME":"メイド服",
+		"FLAVOR":"誰もがちょっとした癖があるんじゃないかな。 --店主",
 		"DESCRIPTIONS":[
-			"If you have played cards with costs 0, 1, 2, and 3 this turn, gain 1 stack of Intangible."
+			"もしこのターン、コスト0、1、2、3のカードをプレイする、 無形 1を得る。"
 		]
 	},
 	"BATwinsMod:UnknownObject":{
-		"NAME":"不明物体",
-		"FLAVOR":"黑客部破解了游戏，但似乎没有完全破解。",
+		"NAME":"未確認物体",
+		"FLAVOR":"ヴェリタスはゲームをハッキングけど、完全にはないようだ。",
 		"DESCRIPTIONS":[
-			"随机遗物效果，每回合会改变。"
+			"ランダムな効果、毎ターン変わる。"
 		]
 	},
 	"BATwinsMod:RubiksCube":{
-		"NAME":"Rubik's Cube",
-		"FLAVOR":"\"The one who solves the Rubik's Cube is the true millennium person!\"",
+		"NAME":"キューブパズル",
+		"FLAVOR":"「解けたすると本当のミレニアム生！」",
 		"DESCRIPTIONS":[
-			"After playing cards in synergy 2 times, draw 1 card."
+			"連携カード2回プレイすると、カード1枚引く。"
 		]
 	}
 }

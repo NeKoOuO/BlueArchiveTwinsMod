@@ -1,120 +1,118 @@
 [
     {
         "NAMES":[
-            "burn"
+            "焼傷"
         ],
-        "DESCRIPTION":"At the end of each turn, take damage equal to the number of layers, then decrease the number of layers by 1. Upon death, deal damage to other enemies equal to twice the number of layers."
+        "DESCRIPTION":"ターン終了時、ダメージを受ける。焼傷は1減少する。死亡した時、敵全体に焼傷2倍のダメージを与える。"
     },
     {
         "NAMES":[
             "[TE]"
         ],
-        "DESCRIPTION":"小桃能量。"
+        "DESCRIPTION":"モモイエナジー。"
     },
     {
         "NAMES":[
-            "momoicard"
+            "モモイカード"
         ],
-        "DESCRIPTION":"The card is red and features a cute Momoi on it."
+        "DESCRIPTION":"モモイ色のカード。その上に可愛いなミドリがありますよ！"
     },
     {
         "NAMES":[
-            "midoricard"
+            "ミドリカード"
         ],
-        "DESCRIPTION":"The card is green and features a Midori on it."
+        "DESCRIPTION":"ミドリ色のカード。その上に卑しいなミドリがありますよ！"
     },
     {
         "NAMES":[
-            "share"
+            "共有"
         ],
-        "DESCRIPTION":"This card will first consume energy from the primary energy pool. If the primary energy pool is insufficient, it will consume from another energy pool without consuming twice the energy."
+        "DESCRIPTION":"このカードがメインエナジーを優先使う。メインエナジーが不足サブエナジーを使うとき、2倍なエナジーをコストしない。"
     },
     {
         "NAMES":[
-            "primaryenergypool"
+            "メインエナジー"
         ],
-        "DESCRIPTION":"The primary energy pool is an energy pool with a small accessory displayed. It is the energy pool that is prioritized when playing cards with shared attributes or cards belonging to other characters. You can click on the energy pool to switch between them."
+        "DESCRIPTION":"メインエナジーはペンダントがあるエナジーです。共有と非モモイ/ミドリカードをプレイするとき、メインエナジーを優先使う。エナジーアイコンをクリックするとメインエナジーが交換する可能。"
     },
     {
         "NAMES":[
-            "exchange",
-			"exchanged"
+            "チェンジ"
         ],
-        "DESCRIPTION":"Change Momoi cards to Midori cards and Midori cards to Momoi cards. The effects of some cards will be altered."
+        "DESCRIPTION":"モモイカードがミドリカードに変わる、ミドリカードがモモイカードに変わる。一部なカードの効果が変更となります。"
     },
 	{
 		"NAMES":[
-			"levelup"
+			"レベルアップ"
 		],
-		"DESCRIPTION":"Immediately increase the level by 1. Experience points become 0."
+		"DESCRIPTION":"レベル1を上がる、経験値を0にする。"
 	},
 	{
 		"NAMES":[
-			"experiencepoints"
+			"経験値"
 		],
-		"DESCRIPTION":"Gain experience points equal to the energy cost of the peach card or green card played. Level up by 1 when reaching 10 experience points."
+		"DESCRIPTION":"モモイカードもしくはミドリカードをプレイする度、コストと同じ量な経験値を得る。経験値は10に至るとき、レベル1を上がる。"
 	},
 	{
 		"NAMES":[
-			"synergy"
+			"連携"
 		],
-		"DESCRIPTION":"Triggered when affected by the effects of cards or powers."
+		"DESCRIPTION":"他の効果（カード、パワー、ポーションなど）よりプレイするとき発動する。"
 	},
 	{
 		"NAMES":[
-			"hypersynergy"
+			"超連携"
 		],
-		"DESCRIPTION":"Triggered when the card that played this card is also played by an effect."
+		"DESCRIPTION":"このカードをプレイするカード自体も他の効果よりプレイした時発動する。"
 	},
 	{
 		"NAMES":[
-			"onlysynergy"
+			"連携するのみ"
 		],
-		"DESCRIPTION":"Cannot be played, but can be played by effects."
+		"DESCRIPTION":"使用不可、効果よりプレイできる。"
 	},
 	{
 		"PROPER_NAME":"[batwinsmod:momoiorbicon]",
 		"NAMES":[
 			"momoiorbicon"
 		],
-		"DESCRIPTION":"[batwinsmod:momoiorbicon] The energy pool consumed by MomoiCards.。"
+		"DESCRIPTION":"[batwinsmod:momoiorbicon] モモイカードが使うエナジー。"
 	},
 	{
 		"PROPER_NAME":"[batwinsmod:midoriorbicon]",
 		"NAMES":[
 			"midoriorbicon"
 		],
-		"DESCRIPTION":"[batwinsmod:midoriorbicon] The energy pool consumed by MidoriCards.。"
+		"DESCRIPTION":"[batwinsmod:midoriorbicon] ミドリカードが使うエナジー。"
 	},
 	{
 		"NAMES":[
-			"storage",
-			"storaged"
+			"保存"
 		],
-		"DESCRIPTION":"When this card is played, it will sequentially play the cards stored by this card."
+		"DESCRIPTION":"このカードをプレイするとき、自動で順次にこのカードを保存するカードをプレイする。"
 	},
 	{
 		"NAMES":[
-			"bullet"
+			"弾丸"
 		],
-		"DESCRIPTION":"Colorless cards that deal damage. They automatically merge when stored."
+		"DESCRIPTION":"ダメージを与える無色カード。自動的に保存、合併する。"
 	},
 	{
 		"NAMES":[
-			"shoot"
+			"射撃"
 		],
-		"DESCRIPTION":"Cards with shooting in their name."
+		"DESCRIPTION":"名前に「射撃」を入ったカード。"
 	},
 	{
 		"NAMES":[
-			"acceleration"
+			"加速"
 		],
-		"DESCRIPTION":"Choose and play a card from the draw pile with an energy cost lower than X."
+		"DESCRIPTION":"山札の中で1枚コストXより低いなカードをプレイする。"
 	},
 	{
 		"NAMES":[
-			"acceleration+"
+			"加速+"
 		],
-		"DESCRIPTION":"Choose and play a card from the draw pile with an energy cost lower than X+1."
+		"DESCRIPTION":"山札の中で1枚コストX+1り低いなカードをプレイする。"
 	}
 ]

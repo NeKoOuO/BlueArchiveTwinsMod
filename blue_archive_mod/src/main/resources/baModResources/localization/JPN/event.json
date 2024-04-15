@@ -1,104 +1,106 @@
 {
 	"BATwinsMod:TrainingCamp":{
-		"NAME":"Novice Training Camp",
+		"NAME":"ブートキャップ",
 		"DESCRIPTIONS":[
-			"You arrive at a mysterious fortress, surrounded by broken mechanical puppets, with a intact @giant@ @mechanical@ @monster@ in the center of the fortress.",
-			"You defeated the monster, although you suffered some damage. After the monster was destroyed, it dropped a ~medal~ . Upon picking it up, you feel a new insight into your skills.",
-			"You defeated the monster without taking any damage. After the monster was destroyed, it dropped a medal. Upon picking it up, you feel a new insight into your skills.",
-			"That mechanical monster looks very strong at first glance, so be careful.",
-			"After picking up the medal, continue on your way."
+			"あなたは壊れた機械人形に囲まれた奇妙な要塞にやって来ました、そして要塞の中心には無傷の @巨大な機械の怪物@ がいます。",
+			"多少のダメージはありましたが、モンスターを倒しました。モンスターを倒すと ～メダル～ が落ちてくるので、それを拾うとスキルの理解が深まったような気分になります。",
+			"ダメージを受けずにモンスターを倒しました。モンスターを倒すとメダルが落ちてくるので、それを拾うとスキルの理解が深まった気がします。",
+			"あの機械の怪物は一見すると非常に強そうに見えるので注意した方が良いです。",
+			"メダルを受け取って先へ進みましょう"
 		],
 		"OPTIONS":[
-			"Try to fight #g(70%% chance to lose up to %s HP)",
-			"[Leave]",
-			"Choose 1 attack card to gain the effect of dealing the same damage to a random enemy with its same name card.",
-			"Choose 1 skill card to gain the effect of drawing 2 cards with its same name card.",
-			"Choose 1 ability card to gain the effect of adding a copy to the discard pile with its same name card.",
-			"Confirm",
-			"[Lock] Requires attack cards",
-			"[Lock] Requires skill cards",
-			"[Lock] Requires ability cards",
-			"[Lock] Requires cards"
+			"バトルを試してみる #g（70%%の可能性で%shpまで失う） ",
+			"[立ち去る]",
+			"アタック１枚を選び、そのカードと同じネームなカードがランダムな敵１体を同じダメージを与える効果を得る。",
+			"スキル１枚を選び、そのカードと同じネームなカードがカード２枚引く効果を得る。",
+			"パワー１枚を選び、そのカードと同じネームなカードがプレイした時、捨て札へ１枚コピーを加える効果を得る。",
+			"確定",
+			"[ロック] 必要なもの：「アッタク」カード",
+			"[ロック] 必要なもの：「スキル」カード",
+			"[ロック] 必要なもの：「パワー」カード",
+			"[ロック] 必要なもの：カード"
 		]
 	},
 	"BATwinsMod:DirtShowdown":{
-		"NAME":"Showdown on the Ice",
+		"NAME":"いさ尋常に勝負",
 		"DESCRIPTIONS":[
-			"A tabletop hockey machine is abruptly placed on the road, with a whole piece of flooring underneath, as if forcibly cut off by space. NL \" #rThis machine looks so familiar.\" NL \" #gIsn't this the machine in the Charlotte Café? I wonder why it's here.\" NL \" #rWell then, let's have a showdown!\"",
-			"It's been 5 minutes, and there still hasn't been a single goal on either side. At this moment, Momoi and Midori decide:",
-			"Momoi's unexpected and unskilled sudden strike catches Midori off guard and surprisingly works well. The puck goes straight into the goal. NL \" #rYay, I won.\" NL \" #gHmm, it's just luck.\"",
-			"Midori takes advantage of Momoi's momentary relaxation and performs a continuous spin shot. The puck repeatedly bounces off the edges, making it difficult for Momoi to keep up, and finally easily scores. NL \" #gVictory as expected.\" NL \" #rWaaah, why did it have to be like this~~.\"",
-			"It's about time to leave. We need to hurry and leave this place, as Yuzu and the others will worry.",
-			"Although it's regrettable, it's more important to leave this tower quickly."
+			"ビリヤード台が道路上に唐突に置かれ、床一面がその下にあり、あたかも空間を無理やり切り取ったかのようだった。 NL 「 #rこのマシンはとても見覚えがあります。」 NL 「 #gこれはシャーレにある機械ですが、なぜここにあるのかわかりませんが。」 NL 「 #rなら早速勝負しよ！」",
+			"5分が経過したが、両チームともゴールは生まれなかった。 NL このとき、モモイとミドリは次のように決めました。",
+			"モモイの突然の未熟な攻撃はミドリの期待を捉え、良い効果をもたらしました、パックはホールに直行します。 NL 「 #rやった！わたしの勝ち！」 NL 「 #gうう…運が良いだけだ。」",
+			"ミドリはモモイが警戒を緩め、連続回転ボールのトリックを使用したときに機会を見つけました。パックはエッジで何度も衝突し、モモイは圧倒され、最終的には簡単にゴールを決めた。「 #g予定通りな勝ちね。」 NL 「 #r悔しいっ……悔しいーーっ！」",
+			"そろそろ行こう、この場出ないとユズたちが心配でしょう。",
+			"残念ですが、このタワーを立ち去るはもっと重要だろ。"
 		],
 		"OPTIONS":[
-			"[Leave] It looks weird, it's better not to mess around casually.",
-			"[Continue]",
-			"Momoi uses a powerful straight shot",
-			"Midori uses a continuous spin shot",
-			"Feeling great after the victory.",
-			" #gRandomly upgrade 2 Momoi cards ",
-			" #gRandomly upgrade 2 Midori cards",
-			"[Leave]"
+			"[立ち去る] #g見た目が変なので、動かさないでください。",
+			"[続こう]",
+			"モモイが全力でパックをスマッシュ",
+			"ミドリが連続回転ボールを使う",
+			"勝利勝利！",
+			" #gランダムなモモイカード2枚をアップグレードする",
+			" #gランダムなミドリカード2枚をアップグレードする",
+			"[立ち去る]"
 		]
+
 	},
 	"BATwinsMod:HurdleGame":{
-		"NAME":"Hurdle Mini-Game",
+		"NAME":"ハードルゲーム",
 		"DESCRIPTIONS":[
-			"You see a group of people gathered on the road ahead, and you curiously approach them. They take turns running and jumping over obstacles, as if participating in some kind of challenge. NL \" @Hey@ , you there, yeah, ~you~ , want to give it a try? The rewards are quite generous.\"",
-			"This challenge is too simple for you, and your success elicits enthusiastic applause from the onlookers. NL \"This is the promised reward.\" The person throws down ~something~ and immediately leaves.",
-			"Don't want to play",
-			"You think this must be a scam, so you decide to watch from the sidelines. No one succeeds in the challenge for a long time, and the challengers start to get ~impatient~ , leading to conflicts with the organizers. Things start to get chaotic, and you find something on the ground, taking advantage of the confusion to leave quickly.",
-			"You scored %d points, but this challenge is still too difficult for you. The surrounding crowd is ~unimpressed~ , but it doesn't seem too bad. NL \"Each person can only challenge once, so here's something for your effort.\"",
-			"\"You scored 0 points, huh. Maybe you didn't know the rules~~\" The organizer is also embarrassed by your performance."
+			"道を歩いていると、集まっている人たちのグループが目に入りました。好奇心から近づいてみると、彼らは障害物を走って跳び越える挑戦をしているようでした。 NL 「 @ははは@、そこの、そうそう ~あなた~ 、ためしてみませんか？報酬はとてもいいぞ。」",
+			"こんな挑戦はあなたにとってあまりに簡単でしたね。あなたの成功に、周囲の観衆は @熱烈な拍手@ を送りました。 NL 「これは報酬だよ」あの人は ~何かを~ 捨てる後立ち去った。",
+			"遊びたくない",
+			"あなたはこれが詐欺のトリックであると確信し、そこで見物することを決めました。長い間誰も成功しなかったため、挑戦者たちは ~イライラ~ し始め、主催者と衝突しました。状況が混乱し始める中、地面で何かを見つけました。混乱の中でこの場から逃げった。",
+			"あなたは%dポイントがゲット、この挑戦は難しい過ぎる、周囲の群衆はもう ~慣れっこ~ になっていました。それほどひどいことではなさそうです。 NL 「1人1回の挑戦だけです。結果に基づこれをあげるよ。」",
+			"「0ポイントだね、ええと、あなたは多分ルールが知らない」主催者もあなたの成績に恥ずかしさを感じました。"
 		],
 		"OPTIONS":[
-			"[Start] Receive relics based on your score.",
-			"[Lock] Requires a model that can run.",
-			"[Don't want to play]",
-			"[Leave]",
-			"[Watch] Randomly receive gold, relics, or potions"
+			"[スタート] ポイントによってレリックを獲得。",
+			"[ロック] 走れるモデルが必要。",
+			"[遊びたくない]",
+			"[立ち去る]",
+			"[観戦] ランダムなゴールド、レリックもしくわポーションが得る。"
 		]
 	},
 	"BATwinsMod:Communication":{
-		"NAME":"Strange Communication",
+		"NAME":"奇妙な通信",
 		"DESCRIPTIONS":[
-			"You see a strange light from afar, and as you approach, you find a screen floating in the air, with a floating coin slot below it. NL The screen flickers on and off, and soon a picture appears. NL \" #b@Momoi···now···TV···danger@ .\" NL \" #rYuuka, hurry and save us.\" NL \" #gWe're trapped in this game.\" NL \" #b@···need help···items···send over@ .\"",
-			"You can't understand what Yuuka is saying, so it's probably not something important.",
-			"A item suddenly appears from the air and drops to the ground, and the glowing screen disappears."
+			"あなたたちは遠くから奇妙な光を見つけ、その光の元に近づいて行くと、空中に浮かぶスクリーンを見つけました。スクリーンの下には浮かぶコイン投入口があります。スクリーンは明滅しながら、しばらくして画面が現れました。 NL 画面が交互に明るくなったり暗くなったりしながら、やがて映像が現れました。 NL 「 #b@モモイ…テレビ…危険@ 」 NL 「 #rユウカ、私たちを助けて！」 NL 「 #g私たちこのゲームの中で困っています」 NL 「 #b@…道具…転送@。」",
+			"ユウカの言っていることがわからないけど、重要なことじゃないと思うよ。",
+			"突然、空からアイテムが地面に落ちてきて、光る画面も消えました。"
 		],
 		"OPTIONS":[
-			"[Obtain Item] #gSpend %d gold, and get a special relic.",
-			"[Leave] Can't hear what Yuuka is saying clearly",
-			"[Leave]"
+			"[アイテムゲット] #g%dゴールドを消費する、特殊なレリックを獲得する。 ",
+			"[立ち去る] ユウカの言っていること、全然聞き取れないよ。",
+			"[立ち去る]"
 		]
 	},
 	"BATwinsMod:TheRoadIsLong":{
-		"NAME":"The Long Road Ahead",
+		"NAME":"前途多難",
 		"DESCRIPTIONS":[
-			"\" #gWhere #rare #rwe?\" NL The two look at the staircase that seems to have no @end@ in sight. Does it really have an end?",
-			" NL Although they've seen many romantic time-travel stories, reality is ~disappointing~ . This tower is a world that defies common sense, and they must ~assess~ the current situation.",
-			" NL \" #rMidori···Ugh···I'm #rtired, #r@can't@ #r@take@ #r@another@ #r@step@ .\" NL \" #g@Haha···@ #gMe #gtoo···Is #gthis #gstaircase #greally #gendless?\"",
-			" NL It's time to make a decision.",
-			"\" #rIn #rthis #rsituation, #rI've #rseen #rit #rin #rcomics #rbefore. #rIt #rseems #runsolvable, #rbut #rthere #rmust #rbe #r~hidden #rpaths~ #raround!\"",
-			" NL \" #gIt's #gfrom #gthat #gbook, #g\"The #gApocalypse #gof #gXX\" #g, #gright? #gThere #gmust #gbe #ga #gway #gto #gfind #ga #gsolution #gnearby.\"",
-			" NL With renewed spirits, the two begin to survey their surroundings.",
-			"After a long journey, both physically and mentally exhausted, you sit down on the steps. After a while, it's Momoi who breaks the silence. NL ",
-			"After a not-so-short journey, a door emitting a @strange@ @aura@ suddenly appears before you. It seems to materialize out of thin air, as if forcibly embedded into this @space@ . You stop in front of the door, which slowly opens. Although reluctant to approach, it's the only choice. NL \" @Strength··brings·power@ \" NL You hear some sound and feel a power that doesn't belong to you appear on your body.",
-			"Momoi discovers a strange space, like a @broken@ @mirror@ embedded in the surrounding space. NL After touching it, a strong light flashes, and the fatigue in your body disappears. NL When you open your eyes, you're standing on solid ground, and the endless staircase has disappeared.",
-			"Midori discovers a strange space, like a @broken@ @mirror@ embedded in the surrounding space. NL After touching it, a strong light flashes, and the fatigue in your body disappears. NL When you open your eyes, you're standing on solid ground, and the endless staircase has disappeared.",
-			"Both of you, ~exhausted~ , lean against each other and sit on the steps, the fatigue of the long journey washing over you. You slowly ~fall~ ~asleep~ on the stairs. NL \" #b@Help@ #b@···@ #b@break@ #b@the@ #b@game@ #b@···@ #b@exit@ #b@···@ #b@transport@ \" In a daze, you seem to hear many ~familiar~ voices. When you wake up, you find yourself in a grassy area, and the endless staircase has disappeared.",
-			"\" #rMidori, #rI #rwant #rto #rgo #rback #rto #rthe #rgaming #rclub.\" NL \" #rYou #rstill #rneed #rto #rtake #rcare #rof #rme #ron #rthe #rway, #rI'm #rsuch #ra #rdisgrace #ras #ran #rolder #rsister.\" NL \" #gWe're #gsisters, #gtaking #gcare #gof #geach #gother #gis #gnatural. #gRight #gnow, #gthe #gmost #gimportant #gthing #gis #gto #gget #gback #gsafely.\" Midori's voice reveals determination and care, which makes Momoi feel a hint of warmth. She can't help but smile, and her worries are slightly relieved.",
-			"\" #rExactly, #rprotagonists #rin #rstories #rdon't #rjust #rsit #raround #rwaiting #rto #rdie. #rWe #rmust #rfind #ra #rway #rout.\" NL \" #gYeah, #geveryone #gis #gstill #gwaiting #gfor #gus, #glet's #ghold #gon #ga #gbit #glonger.\" After resting for a while, you hit the road again. The traces left on the ground, whether sweat or tears, are indistinguishable."
+			"「 #gここはどこ？」 NL 二人が果ての見えない階段を見つめていますが、本当にその @終わり@ はあるのでしょうか？",
+			" NL いろんな異世界シナリオを見たけど、現実は ~がっかりさせられるもの~ だ。このタワーは常識がない世界、現在状況を ~評価~ しないと。",
+			" NL 「 #rミドリ、もう疲れたよ。 #r@もう一歩も歩けないよ@ 。」 NL 「 #g@わ…私も@ #gこの階段、終わりがないの？」",
+			" NL そろそろ決めろう",
+			"「 #rこんな状況漫画から見たことある、周りがきっと #r~隠し通路~ がある！」",
+			" NL 「 #gあの #g~「xxリーデフォルト」」~ #gだよね。近くに何にか方法があるはず。」",
+			" NL 二人は元気を出す、周りを観察する。",
+			"長い旅で二人の身も心も @疲れ@ 果ててしまった。しばらく地面に座っていた後、最初に沈黙を破ったのはモモイでした。 NL ",
+			"ある程度の距離を歩んだ後、 @不思議な雰囲気@ を漂わせる大きな扉が突然目の前に現れました。それは @空間@ に埋め込まれたように突然出現したかのようでした。 NL あなたたちは扉の前で立ち止まり、その扉がゆっくりと開きました。近づきたくない気持ちもあるが、これしか選択肢はないのです。 NL ",
+			"「強さ···力をもたらす···」 NL 何かの声が聞こえたようで、自分の中に本来属していない力を感じました。",
+			"モモイは奇妙な空間を見つけました。その場所は周囲の空間に埋め込まれた、 @割れた鏡@ のようでした。 NL 手を触れると、一筋の強い光が走り抜け、体の疲労感がほとんど消え去りました。 NL 目を開けると、堅固な地面に立っており、そしてその無限の階段はもう見当たりませんでした。",
+			"ミドリは奇妙な空間を見つけました。その場所は周囲の空間に埋め込まれた、 @割れた鏡@ のようでした。 NL 手を触れると、一筋の強い光が走り抜け、体の疲労感がほとんど消え去りました。 NL 目を開けると、堅固な地面に立っており、そしてその無限の階段はもう見当たりませんでした。",
+			" ~力を尽き~ たあなたたちは、互いに寄り添って階段に座っています。長い旅の疲労感が波のように押し寄せます、ゆっくりと階段で ~眠り~ に落ちていきました。 NL 「 #b@ゲームをクリア…出口…転送…@ 」 NL 夢から ~懐かしい~ な声が聞こえる、目が覚めた後あなたたちは草地の中で、階段も消えたんだ。",
+			"「 #rミドリ、部室に戻りたいんだ。」 NL 「 #rまだミドリに世話になるなんて、お姉ちゃんにとて恥ずかしいだね。」 NL 「 #g私たちは姉妹ですから。何よりも安全に帰るこどです。 」",
+			"「 #rそう、ゲームの主役は必ず道を切り拓くんだ。 」 NL 「 #gそうだね、みんなが待てるだ。」 NL 少しの休憩の後、姉妹たちは再び道を踏み込んでいた。"
 		],
 		"OPTIONS":[
-			"[Encourage] #gGain 1 Encouragement , #rGain 2 Pain .",
-			"[Find the Way] #rLose %d HP , continue.",
-			"[Rest] #gRecover %d HP , #rReduce %d Max HP .",
-			"[Momoi Search] #gUpgrade all Momoi cards.",
-			"[Midori Search] #gUpgrade all Midori cards.",
-			"[Continue]",
-			"[Leave]"
+			"[励まし] #g励ましを得る 、 #r痛み2枚を得る 。",
+			"[道探し] #r%dhpを失う 、続行。",
+			"[休憩] #g%dhpを回復する 、 #r%d最大HPを失う 。",
+			"[モモイに探す] #gすべてのモモイカードがアップグレードする。 ",
+			"[ミドリに探す] #gすべてのミドリカードがアップグレードする。 ",
+			"[続こう]",
+			"[立ち去る]"
 		]
 	}
 }

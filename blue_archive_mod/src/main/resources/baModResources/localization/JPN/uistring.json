@@ -1,150 +1,151 @@
 {
-	"BATwinsMod:Exchange":{
-		"TEXT":[
-			"Choose",
-			"Exchange Hand"
-		],
-		"EXTRA_TEXT":[
-			"1 card",
-			"1 to 3 cards"
-		]
-	},
-	"BATwinsMod:BattleCommandAction":{
-		"TEXT":[
-			"Choose 1 card to return to the draw pile"
-		]
-	},
-	"BATwinsMod:AddHandAccordColorAction":{
-		"TEXT":[
-			"Choose 1 card to add to your hand"
-		]
-	},
-	"BATwinsMod:InterpretiveErrorAction":{
-		"TEXT":[
-			"Choose 1 card to exchange"
-		]
-	},
+    "BATwinsMod:Exchange":{
+        "TEXT":[
+            "チェンジ",
+            "手札チェンジ"
+        ],
+        "EXTRA_TEXT":[
+            "1枚",
+            "1-3枚"
+        ]
+    },
+    "BATwinsMod:BattleCommandAction":{
+        "TEXT":[
+            "手札1枚を選び、山札に戻る"
+        ]
+    },
+    "BATwinsMod:AddHandAccordColorAction":{
+        "TEXT":[
+            "カード1枚を選び、手札に加える"
+        ]
+    },
+    "BATwinsMod:InterpretiveErrorAction":{
+        "TEXT":[
+            "カード1枚を選び、チャンジする"
+        ]
+    },
 	"BATwinsMod:SelectAdventureCard":{
 		"TEXT":[
-			"选择1张冒险牌"
+			"1枚冒険カードを選ぶ"
 		]
 	},
 	"BATwinsMod:ExchangeButton":{
 		"TEXT":[
-			"Exchange 1 card"
+			"カード1枚をチャンジする"
 		]
 	},
 	"BATwinsMod:ExchangeEffect":{
 		"TEXT":[
-			"Choose 1 card to exchange"
+			"カード1枚を選び、チャンジする"
 		]
 	},
 	"BATwinsMod:Exchange_Option":{
 		"TEXT":[
-			"#bExchange %s"
+			"#bチェンジ %s"
 		]
 	},
 	"BATwinsMod:GridSelectTitle":{
 		"TEXT":[
-			"Exchange",
-			"Consume",
-			"Copy",
-			"Add to hand next turn",
-			"Store",
-			"Add to hand",
-			"Upgrade",
-			"Swap",
-			"Place in %s",
-			"Add bullet",
-			"Select %d cards"
+			"プレイ",
+			"消滅",
+			"コッピ",
+			"次ターン手札に加える",
+			"保存",
+			"手札に加える",
+			"アップグレード",
+			"チャンジ",
+			"加入%s",
+			"弾丸加える",
+			"%d枚カードを選び"
 		]
 	},
 	"BATwinsMod:CancelButton":{
 		"TEXT":[
-			"Cancel"
+			"キャンセル"
 		]
 	},
 	"BATwinsMod:TipMsg":{
 		"TEXT":[
-			"Choose 1 card to exchange"
+			"カード1枚を選び、チャンジする"
 		]
 	},
 	"BATwinsMod:CardViewBtn":{
 		"TEXT":[
-			"View after Exchange"
+			"チェンジしたバーション"
 		]
 	},
 	"BATwinsMod:EnergyOrbLabel":{
 		"TEXT":[
-			"Momoiiorb",
-			"Midoriorb"
+			"モモイエナジー",
+			"ミドリエナジー"
 		]
 	},
 	"BATwinsMod:EnergyOrbMsg":{
 		"TEXT":[
-			"Your current Momoiiorb, prioritize consumption of this energy when playing Peach cards. If insufficient, consume double the Midoriorb instead.",
-			"Your current Midoriorb, prioritize consumption of this energy when playing Green cards. If insufficient, consume double the Momoiiorb instead."
+			"モモイエナジー。モモイカードをプレイした時このエナジーを消費する。不足とき2倍のミドリエナジーを消費。",
+			"ミドリエナジー。ミドリカードをプレイした時このエナジーを消費する。不足とき2倍のモモイエナジーを消費。"
 		]
 	},
 	"BATwinsMod:ConfigToggler":{
 		"TEXT":[
-			"Auto sort hand",
-			"Show experience bar"
+			"手札を自動整列",
+			"Expゲージを展示"
 		]
 	},
 	"BATwinsMod:Tips":{
 		"TEXT":[
-			"Momoi and Midori love playing retro games.",
-			"Momoi seems to have set something on the character selection button quietly, saying something about pressing it multiple times...",
-			"Although Momoi and Midori have very different personalities, their shared passion for gaming makes their relationship very good.",
-			"Momoi is the older sister, and Midori is the younger sister.",
-			"Momoi and Midori's birthdays are both on February 4th, because they are twins.",
-			"Momoi and Midori always have each other's accessories hanging on their guns."
+			"モモイとミドリはレトロゲームが好き",
+			"モモイはチャラ選択バッタンを何かを設定した、何回を押すとを……",
+			"モモイとミドリの性格は違うけど、ゲームへの熱情で仲良しになた。",
+			"モモイはお姉ちゃん、ミドリは妹。",
+			"モモイとミドリの誕生日は2月4日、双子ですから。",
+			"モモイとミドリの銃には相手からもらった装飾品がぶら下がっています。"
 		]
 	},
 	"BATwinsMod:FlatFall":{
 		"TEXT":[
-			"Fall down, can't play attack cards anymore."
+			"転んだ。アッタクカードはプレイできない。"
 		]
 	},
 	"BATwinsMod:Tutorial":{
 		"TEXT":[
-			"This character has two energy slots and two colors of cards. Play Peach cards to prioritize consuming Peach energy, and play Green cards to prioritize consuming Midori energy.",
-			"When the energy of this color is insufficient, you can also play cards, but you need to consume double the energy of the other color.",
-			"The slot with accessories is the main energy slot. Playing cards other than those of this character (such as colorless cards) will prioritize consuming the main energy slot. NL Effects that increase energy limits will increase the limits of both slots, but effects that grant temporary energy during battles will only increase the main energy slot. NL You can click on the energy slots at any time to set the main energy slot."
+			"このキャラは2エナジーゲージがあります。モモイカードをプレイするとモモイエナジーを優先消費。ミドリカードをプレイするとミドリエナジーを優先消費。",
+			"当色エナジーは不足の場合プレイできる、2倍のもう一つな色のエナジーを消費する。",
+			"メインエナジーはペンダントがあるエナジーです。共有と非モモイ/ミドリカードをプレイするとき、メインエナジーを優先使う。エナジーアイコンをクリックするとメインエナジーが交換する可能",
+			" NL エナジーアップ効果は2のエナジーゲージを上げるけど、バトルの臨時エナジはメインエナジーだけ有効。 NL エナジーゲージをクリックするとメインエナジーを切り替える。"
 		]
 	},
 	"BATwinsMod:LoopBreak":{
 		"TEXT":[
-			" #rThat's enough! ",
-			" #gStop it. "
+			" #rもういい！ ",
+			" #g止めてよ。 "
 		]
 	},
 	"BATwinsMod:ModeSelectionPrompt":{
 		"TEXT":[
-			"Enable 3D Models",
-			"Enable 3D Models?",
-			"Enabling 3D models requires loading, which may take some time.\nIf enabling this option prevents you from opening the game or causes the game to freeze, please restart the game and disable this option."
+			"3Dモデルを使う",
+			"3Dモデルを使うか",
+			"モデルを使うと少し時間を掛かるとロードする。\nもしゲームが起動できないもしくはゲームをデスロックすると、ゲームを再起動そしてこれを閉じてください。"
 		]
 	},
 	"BATwinsMod:tabBarName":{
 		"TEXT":[
-			"Momoi & Midori",
-			"Momoi Cards",
+			"才羽モモイと才羽ミドリ",
+			"モモイカード",
 			"Batwinsmidoricard",
-			"Midori Cards"
+			"ミドリカード"
 		]
 	},
 	"BATwinsMod:ExchangeKeyowrds":{
 		"TEXT":[
-			"poison",
-			"batwinsmod:Burn",
+			"毒",
+			"batwinsmod:焼傷",
 			"[batwinsmod:midoriorbicon]",
 			"[batwinsmod:momoiorbicon]",
-			"batwinsmod:MomoiCard",
-			"batwinsmod:MidoriCard",
-			"weak",
-			"vulnerable"
+			"batwinsmod:モモイカード",
+			"batwinsmod:ミドリカード",
+			"脱力",
+			"弱体"
 		]
 	}
 }

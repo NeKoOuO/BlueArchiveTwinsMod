@@ -1,195 +1,195 @@
 {
     "BATwinsMod:BurnPower":{
-        "NAME":"Burn",
+        "NAME":"焼傷",
         "DESCRIPTIONS":[
-            "At the end of the turn, deal ","damage, then decrease the amount by 1. Upon death, deal damage to other enemies equal to twice the amount."
+			"ターン終了時、","ダメージを受ける。焼傷は1減少する。死亡した時、敵全体に焼傷2倍のダメージを与える。"
         ]
     },
     "BATwinsMod:DeveloperCollaborationPower":{
-        "NAME":"Developer collaboration",
+        "NAME":"開発者の協力",
         "DESCRIPTIONS":[
-            "After alternating between playing MomoiCard and MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase ",
-            "%.",
-            "(The last card played is:",
+			"戦闘中にモモイカードとミドリカードを交互に出すと、このターン、カードによるダメージとブロックが増加します",
+            "%。",
+            "(前プレイしたカードは：",
             ")",
-            "MomoiCard",
-            "MidoriCard",
-            "ColorLess",
-            "Curses",
-            "OtherCard",
-            "NoneCard",
-			"Now "
+            "モモイカード",
+            "ミドリカード",
+            "無色カード",
+            "呪カード",
+            "他のカード",
+            "またプレイしていません",
+			"今上昇"
 		]
     },
     "BATwinsMod:ArtPolishingPower":{
-        "NAME":"Art polishing",
+        "NAME":"芸術の磨き",
         "DESCRIPTIONS":[
-            "When applying a status effect, apply to the target ",
-            "poison. This effect does not trigger due to this power"
+			"異常状態に与える時、",
+			"毒を与える。この能力は自身の効果で発動しない。"
         ]
     },
     "BATwinsMod:GainTENextTurnPower":{
-        "NAME":"Next turn's energy(MOMOI)",
+        "NAME":"次のターンエナジ（モモイ）",
         "DESCRIPTIONS":[
-            "Next turn gain ",
-            "MOMOI Energy."
+            "次のターン、",
+            "モモイエナジーを得る。"
         ]
     },
     "BATwinsMod:GainLENextTurnPower":{
-        "NAME":"Next turn's energy(MIDORI)",
+        "NAME":"次のターンエナジ（ミドリ）",
         "DESCRIPTIONS":[
-            "Next turn gain ",
-            "MIDORI Energy."
+            "次のターン、",
+            "ミドリエナジーを得る。"
         ]
     },
     "BATwinsMod:ArtPolishingExchangePower":{
-        "NAME":"Art polishing(Exchage)",
+        "NAME":"芸術の磨き(チェンジ)",
         "DESCRIPTIONS":[
-            "When applying a status effect, apply to the target ",
-            " burn. This effect does not trigger due to this power."
+            "異常状態に与える時、",
+			"焼傷を与える。この能力は自身の効果で発動しない。"
         ]
     },
-	"BATwinsMod:OnceMorePower":{
-		"NAME":"Once More",
-		"DESCRIPTIONS":[
-			"At the end of the turn, trigger burn on all enemies."
-		]
-	},
-	"BATwinsMod:OnceMoreExchangePower":{
-		"NAME":"Once More (Exchange)",
-		"DESCRIPTIONS":[
-			"At the end of the turn, trigger poison on all enemies."
-		]
-	},
+    "BATwinsMod:OnceMorePower":{
+        "NAME":"もう一度",
+        "DESCRIPTIONS":[
+            "ターン終了時、敵全体の焼傷を発動する。"
+        ]
+    },
+    "BATwinsMod:OnceMoreExchangePower":{
+        "NAME":"もう一度（チェンジ）",
+        "DESCRIPTIONS":[
+            "ターン終了時、敵全体の毒を発動する。"
+        ]
+    },
     "BATwinsMod:BugFixPower":{
         "NAME":"漏洞修复",
         "DESCRIPTIONS":[
             "回合开始时，抽牌堆随机",
-            "张状态牌或诅咒牌消耗，若消耗的是漏洞，则获得1力量和1敏捷."
+            "张状态牌或诅咒牌消耗，若消耗的是漏洞，则获得1力量和1敏捷。"
         ]
     },
-	"BATwinsMod:ExperiencePower":{
-		"NAME":"Experience",
-		"DESCRIPTIONS":[
-			"When playing a MOMOI or MDIORI card, gain experience points equal to its energy cost.\n Current: LV",
-			"(",
-			"/",
-			")\n Card's damage and block increase by the level number.",
-			"Level Up!!"
-		]
-	},
+    "BATwinsMod:ExperiencePower":{
+        "NAME":"経験値",
+        "DESCRIPTIONS":[
+            "モモイとミドリカードをプレイするとき、そのコストの経験値を得る\nいま：LV",
+            "（",
+            "/",
+            "）\nカードによるダメージとブロックはLV数をアップする。",
+            "レベルアップ！！"
+        ]
+    },
 	"BATwinsMod:SinglePlayerGamePower":{
-		"NAME":"Single Player Game",
+		"NAME":"シングルプレイ",
 		"DESCRIPTIONS":[
-			"After playing a card, if your hand contains only one color, gain ",
-			"block."
+			"カードをプレイする後、手札は１種類色のカードだけの場合、",
+			"ブロックを得る。"
 		]
 	},
 	"BATwinsMod:CoolingTimePower":{
-		"NAME":"Next Turn Addition to Hand",
+		"NAME":"次ターン手札に加える",
 		"DESCRIPTIONS":[
-			"At the start of the next turn, add ",
-			"to your hand (unless exhausted)."
+			"次のターン開始時、",
+			"を手札に加える（消滅した場合を除く）。"
 		]
 	},
 	"BATwinsMod:DoubleExperiencePower":{
-		"NAME":"Double Experience",
+		"NAME":"経験値×2",
 		"DESCRIPTIONS":[
-			"Experience gained is doubled."
+			"カードをプレイする度得るの経験値を2倍にする"
 		]
 	},
 	"BATwinsMod:DefensiveCounterattackPower":{
 		"NAME":"防守与打击",
 		"DESCRIPTIONS":[
 			"受到攻击时，对攻击的怪物打出",
-			"张打击."
+			"张打击。"
 		]
 	},
 	"BATwinsMod:DefensiveCounterattackExchangePower":{
-		"NAME":"防守与打击(交换)",
+		"NAME":"防守与打击（交换）",
 		"DESCRIPTIONS":[
 			"受到攻击时，对攻击的怪物打出",
-			"张打击."
+			"张打击。"
 		]
 	},
 	"BATwinsMod:NormalAttackMethodsPower":{
 		"NAME":"平A流",
 		"DESCRIPTIONS":[
 			"每回合开始从抽牌堆将",
-			"张打击牌加入手牌.那张牌变为共有"
+			"张打击牌加入手牌。那张牌变为共有"
 		]
 	},
 	"BATwinsMod:NoramlAttackAuxiliaryPower":{
 		"NAME":"平A辅助",
 		"DESCRIPTIONS":[
-			"平A流将打击牌加入手牌时，若抽牌堆打击牌数量不足，则进行1次洗牌."
+			"平A流将打击牌加入手牌时，若抽牌堆打击牌数量不足，则进行1次洗牌。"
 		]
 	},
-	"BATwinsMod:SeeYouHaveASharenPower": {
-		"NAME": "Each to their own!",
-		"DESCRIPTIONS": [
-			"The next ",
-			"single-target attack cards played this turn will hit all enemies once."
+	"BATwinsMod:SeeYouHaveASharenPower":{
+		"NAME":"全員くらえ！",
+		"DESCRIPTIONS":[
+			"このターン、次の",
+			"枚単体アタックを敵全体にもう１回をプレイする。"
 		]
 	},
-	"BATwinsMod:ReadingDocumentsPower": {
-		"NAME": "Instant Save",
-		"DESCRIPTIONS": [
-			"Cards played with effects in this battle will return to the draw pile."
+	"BATwinsMod:ReadingDocumentsPower":{
+		"NAME":"インスタントセーブ",
+		"DESCRIPTIONS":[
+			"このバトルカードの効果にプレイしたカードは山札に戻る。"
 		]
 	},
-	"BATwinsMod:ShufflePower": {
-		"NAME": "End-of-Turn Shuffle",
-		"DESCRIPTIONS": [
-			"At the end of this turn, shuffle the discard pile into the draw pile."
+	"BATwinsMod:ShufflePower":{
+		"NAME":"结束洗牌",
+		"DESCRIPTIONS":[
+			"本回合结束时将弃牌堆洗入抽牌堆。"
 		]
 	},
 	"BATwinsMod:IntegratingAndIntegratingPower":{
-		"NAME":"Integrated Mastery",
+		"NAME":"融通無碍",
 		"DESCRIPTIONS":[
-			"When playing a card with an energy cost greater than 1 after exchanging, add %d cards of the original color to your hand, and apply Ethereal and Exhaust."
+			"１コスト以上なチェンジしたカードをプレイしたあと、元色のそのカードのコッピ１枚が手札に加える、 エセリアル 、 廃棄 を得る"
 		]
 	},
 	"BATwinsMod:MasterCraftsmanshipPower":{
-		"NAME":"Mastering All",
+		"NAME":"スキルマスター",
 		"DESCRIPTIONS":[
-			"At the start of each turn, exchange up to %d cards. When exchanging cards in this battle, upgrade the cards."
+			"ターン開始時、チェンジ最大1枚カード。このバトルチェンジしたのカードをアップグレードする。"
 		]
 	},
 	"BATwinsMod:BorrowMePower":{
-		"NAME":"Borrow Me",
+		"NAME":"借ります",
 		"DESCRIPTIONS":[
-			"This turn, all cards are considered BATwinsMod:Shared."
+			"このターン、すべてのカードが 共有 にする。"
 		]
 	},
 	"BATwinsMod:MaidFormPower":{
-		"NAME":"Maid Form",
+		"NAME":"メイド化",
 		"DESCRIPTIONS":[
-			"After playing the %dth card each turn, play a card with the same energy cost as an Accelerate."
+			"ターンの最初の%dカードをプレイした後、コスト同じな加速１枚にプレイする。"
 		]
 	},
 	"BATwinsMod:FlatFallPower":{
-		"NAME":"Flat Fall",
+		"NAME":"平地摔",
 		"DESCRIPTIONS":[
-			"You can only play %d more attack cards this turn."
+			"本回合只能再打出%d张攻击牌。"
 		]
 	},
 	"BATwinsMod:ExpansionMagazinePower":{
 		"NAME":"扩容弹夹",
 		"DESCRIPTIONS":[
-			"本场战斗存储的子弹升级."
+			"本场战斗存储的子弹升级。"
 		]
 	},
 	"BATwinsMod:DisabledMomoiPower": {
-		"NAME": "Momoi Card Prohibited",
+		"NAME": "モモイカード禁止",
 		"DESCRIPTIONS": [
-			"Cannot play Momoi cards this turn."
+			"このターンモモイカードがプレイできません。"
 		]
 	},
 	"BATwinsMod:DisabledMidoriPower": {
-		"NAME": "Midori Card Prohibited",
+		"NAME": "ミドリカード禁止",
 		"DESCRIPTIONS": [
-			"Cannot play Midori cards this turn."
+			"このターンミドリカードがプレイできません。"
 		]
 	}
 }

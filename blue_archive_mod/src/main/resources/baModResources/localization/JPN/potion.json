@@ -1,32 +1,32 @@
 {
 	"BATwinsMod:AcceleratePotion":{
-		"NAME":"Acceleration Potion",
+		"NAME":"加速ポーション",
 		"DESCRIPTIONS":[
-			"Add #b1 #yAcceleration to your hand.",
-			"Add #b1 #yAcceleration+ to your hand.",
-			"acceleration",
-			"acceleration+"
+			" #y加速 #b1 枚 手札に加える。",
+			" #y加速+ #b1 枚 手札に加える。",
+			"加速",
+			"加速+"
 		]
 	},
 	"BATwinsMod:ConnectPotion":{
-		"NAME":"Synergy Potion",
+		"NAME":"連携ポーション",
 		"DESCRIPTIONS":[
-			"Play #b1 card from your hand.",
-			"Play #b2 cards from your hand."
+			"手札の #b1 枚を選び、プレイする。",
+			"手札の #b2 枚を選び、プレイする。"
 		]
 	},
 	"BATwinsMod:BurnPotion":{
-		"NAME":"Burn Potion",
+		"NAME":"焼傷ポーション",
 		"DESCRIPTIONS":[
-			"Apply 8 burns.",
-			"Apply 16 burns.",
-			"burn"
+			"焼傷8を与える。",
+			"焼傷16を与える。",
+			"焼傷"
 		]
 	},
 	"BATwinsMod:StaminaPotion":{
-		"NAME":"Stamina Potion",
+		"NAME":"体力ポーション",
 		"DESCRIPTIONS":[
-			"Use this potion at the campfire to gain an extra action."
+			"休憩場所にこのポーションを使う、もう一度行動ができる。"
 		]
 	}
 }
