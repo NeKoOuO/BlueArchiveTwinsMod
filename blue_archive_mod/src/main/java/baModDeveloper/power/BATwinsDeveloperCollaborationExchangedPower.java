@@ -1,23 +1,26 @@
 package baModDeveloper.power;
 
+import baModDeveloper.action.BATwinsDoublePowerAction;
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 
-public class BATwinsDeveloperCollaborationPower extends AbstractPower {
-    public static final String POWER_ID = ModHelper.makePath("DeveloperCollaborationPower");
+public class BATwinsDeveloperCollaborationExchangedPower extends AbstractPower {
+    public static final String POWER_ID = ModHelper.makePath("DeveloperCollaborationExchangedPower");
     private static final AbstractPower.PowerType TYPE = PowerType.BUFF;
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
@@ -31,9 +34,7 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
     private final TextureAtlas.AtlasRegion momoi128, momoi48, midori128, midori48;
     private AbstractCard.CardColor lastColor;
 
-    private int count;
-
-    public BATwinsDeveloperCollaborationPower(AbstractCreature owner, int amount) {
+    public BATwinsDeveloperCollaborationExchangedPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.type = TYPE;
@@ -46,42 +47,66 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
         this.midori128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MIDORI_84), 0, 0, 84, 84);
         this.midori48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MIDORI_32), 0, 0, 32, 32);
 
-        this.count = 0;
         this.updateDescription();
-
     }
 
     @Override
     public void updateDescription() {
         String lastcard = "";
         if (this.lastColor == null) {
-            lastcard = DESCRIPTIONS[9];
-        } else if (this.lastColor == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
-            lastcard = DESCRIPTIONS[4];
-        } else if (this.lastColor == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
-            lastcard = DESCRIPTIONS[5];
-        } else if (this.lastColor == AbstractCard.CardColor.COLORLESS) {
             lastcard = DESCRIPTIONS[6];
+        } else if (this.lastColor == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+            lastcard = DESCRIPTIONS[1];
+        } else if (this.lastColor == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
+            lastcard = DESCRIPTIONS[2];
+        } else if (this.lastColor == AbstractCard.CardColor.COLORLESS) {
+            lastcard = DESCRIPTIONS[3];
         } else if (this.lastColor == AbstractCard.CardColor.CURSE) {
-            lastcard = DESCRIPTIONS[7];
+            lastcard = DESCRIPTIONS[4];
         } else {
-            lastcard = DESCRIPTIONS[8];
+            lastcard = DESCRIPTIONS[5];
         }
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + DESCRIPTIONS[2] + lastcard + DESCRIPTIONS[3] + DESCRIPTIONS[10] + Integer.toString(this.count * this.amount) + DESCRIPTIONS[1];
+        this.description = String.format(DESCRIPTIONS[0], this.amount, lastcard);
     }
 
+//    public void onAfterCardPlayed(AbstractCard usedCard) {
+//        if (this.lastColor != null) {
+//            if (usedCard instanceof BATwinsModCustomCard &&this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
+//                this.flash();
+//                for(AbstractMonster m: AbstractDungeon.getCurrRoom().monsters.monsters){
+//                    addToBot(new BATwinsDoublePowerAction(BATwinsBurnPower.POWER_ID,m, (float) this.amount /100));
+//                    addToBot(new BATwinsDoublePowerAction(PoisonPower.POWER_ID,m, (float) this.amount /100));
+//                }
+//            } else {
+//                this.flash();
+//            }
+//        }
+//        this.lastColor = usedCard.color;
+////        else if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size()>=2){
+////            if((this.lastColor== BATwinsCharacter.Enums.BATWINS_MOMOI_CARD&&usedCard.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD)||(this.lastColor==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD&&usedCard.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD)){
+////                addToBot(new DrawCardAction(this.amount));
+////                this.flash();
+////                this.lastColor=usedCard.color;
+////            }
+////        }
+////        addToTop(new TextAboveCreatureAction(this.owner, this.name+":"+this.amount*this.count+"%"));
+//        this.updateDescription();
+//    }
+
     @Override
-    public void onAfterCardPlayed(AbstractCard usedCard) {
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (this.lastColor != null) {
-            if (usedCard instanceof BATwinsModCustomCard && this.lastColor == BATwinsCharacter.getOtherColor(usedCard.color)) {
+            if (card instanceof BATwinsModCustomCard && this.lastColor == BATwinsCharacter.getOtherColor(card.color)) {
                 this.flash();
-                this.count++;
+                for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    addToBot(new BATwinsDoublePowerAction(BATwinsBurnPower.POWER_ID, m, (float) this.amount / 100));
+                    addToBot(new BATwinsDoublePowerAction(PoisonPower.POWER_ID, m, (float) this.amount / 100));
+                }
             } else {
                 this.flash();
-                this.count = 0;
             }
         }
-        this.lastColor = usedCard.color;
+        this.lastColor = card.color;
 //        else if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size()>=2){
 //            if((this.lastColor== BATwinsCharacter.Enums.BATWINS_MOMOI_CARD&&usedCard.color==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD)||(this.lastColor==BATwinsCharacter.Enums.BATWINS_MIDORI_CARD&&usedCard.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD)){
 //                addToBot(new DrawCardAction(this.amount));
@@ -89,15 +114,7 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
 //                this.lastColor=usedCard.color;
 //            }
 //        }
-        addToTop(new TextAboveCreatureAction(this.owner, this.name + ":" + this.amount * this.count + "%"));
-        this.updateDescription();
-    }
-
-    @Override
-    public void atStartOfTurn() {
-//        this.lastColor = null;
-        this.count = 0;
-        addToTop(new TextAboveCreatureAction(this.owner, this.name + ":" + 0 + "%"));
+//        addToTop(new TextAboveCreatureAction(this.owner, this.name+":"+this.amount*this.count+"%"));
         this.updateDescription();
     }
 
@@ -136,18 +153,5 @@ public class BATwinsDeveloperCollaborationPower extends AbstractPower {
         } else {
             return this.region48;
         }
-    }
-
-    @Override
-    public float atDamageFinalGive(float damage, DamageInfo.DamageType type) {
-        if (type == DamageInfo.DamageType.NORMAL) {
-            return damage * (1.0F + (float) this.count * this.amount / 100);
-        }
-        return damage;
-    }
-
-    @Override
-    public float modifyBlockLast(float blockAmount) {
-        return blockAmount * (1.0F + (float) this.count * this.amount / 100);
     }
 }

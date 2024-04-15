@@ -3,10 +3,8 @@ package baModDeveloper.cards;
 import baModDeveloper.action.BATwinsSelectHandCardToPlayAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
-import baModDeveloper.power.BATwinsFlatFallPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -41,16 +39,16 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK,1,this.numberOfConnections+1));
+        addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK, 1, this.numberOfConnections + 1));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                for(AbstractCard c:AbstractDungeon.player.hand.group){
-                    if(c.type==CardType.ATTACK){
+                for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                    if (c.type == CardType.ATTACK) {
                         addToTop(new DiscardSpecificCardAction(c));
                     }
                 }
-                this.isDone=true;
+                this.isDone = true;
             }
         });
 //        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsFlatFallPower(abstractPlayer)));

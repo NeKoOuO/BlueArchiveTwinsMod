@@ -1,10 +1,8 @@
 package baModDeveloper.power;
 
 import baModDeveloper.helpers.ModHelper;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,18 +18,18 @@ public class BATwinsArtPolishingExchangePower extends AbstractPower {
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final String IMG_84 = ModHelper.makeImgPath("power", "ArtPolishing84");
     private static final String IMG_32 = ModHelper.makeImgPath("power", "ArtPolishing32");
-    private static final AbstractCreature sourcePower = new AbstractCreature() {
-
-        @Override
-        public void damage(DamageInfo damageInfo) {
-
-        }
-
-        @Override
-        public void render(SpriteBatch spriteBatch) {
-
-        }
-    };
+//    private static final AbstractCreature sourcePower = new AbstractCreature() {
+//
+//        @Override
+//        public void damage(DamageInfo damageInfo) {
+//
+//        }
+//
+//        @Override
+//        public void render(SpriteBatch spriteBatch) {
+//
+//        }
+//    };
 
     public BATwinsArtPolishingExchangePower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -53,7 +51,8 @@ public class BATwinsArtPolishingExchangePower extends AbstractPower {
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (source == AbstractDungeon.player && power.type == PowerType.DEBUFF && target != AbstractDungeon.player) {
-            addToBot(new ApplyPowerAction(target, sourcePower, new BATwinsBurnPower(target, sourcePower, this.amount)));
+            this.flash();
+            addToBot(new ApplyPowerAction(target, null, new BATwinsBurnPower(target, null, this.amount)));
         }
     }
 }

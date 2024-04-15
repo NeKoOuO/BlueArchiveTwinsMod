@@ -4,12 +4,15 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 
 public class BATwinsAttackWithAllMight extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("AttackWithAllMight");
@@ -27,7 +30,7 @@ public class BATwinsAttackWithAllMight extends BATwinsModCustomCard {
 
     public BATwinsAttackWithAllMight() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 30;
+        this.baseDamage = 21;
         this.damage = this.baseDamage;
         this.baseMagicNumber = 30;
         this.magicNumber = this.baseMagicNumber;
@@ -35,6 +38,9 @@ public class BATwinsAttackWithAllMight extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        if (abstractMonster != null) {
+            addToBot((AbstractGameAction) new VFXAction((AbstractGameEffect) new VerticalImpactEffect(abstractMonster.hb.cX + abstractMonster.hb.width / 4.0F, abstractPlayer.hb.cY - abstractMonster.hb.height / 4.0F)));
+        }
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         this.decline = true;
     }
@@ -48,7 +54,8 @@ public class BATwinsAttackWithAllMight extends BATwinsModCustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(20);
+//            this.upgradeMagicNumber(20);
+            this.upgradeDamage(6);
         }
     }
 

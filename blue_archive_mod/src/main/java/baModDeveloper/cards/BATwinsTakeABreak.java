@@ -90,7 +90,7 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
                 }
                 if (this.duration == Settings.ACTION_DUR_FAST) {
                     for (AbstractCard c : DrawCardAction.drawnCards) {
-                        if(!c.isEthereal){
+                        if (!c.isEthereal) {
                             c.retain = true;
                         }
                     }

@@ -32,6 +32,7 @@ public class BATwinsFundOverdraft extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        CardCrawlGame.sound.play(ModHelper.makePath("coin"));
         addToBot(new DrawCardAction(this.magicNumber));
         this.playedCount++;
         this.applyPowers();

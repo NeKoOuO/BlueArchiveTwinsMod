@@ -2,6 +2,7 @@ package baModDeveloper.cards;
 
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.power.BATwinsDeveloperCollaborationExchangedPower;
 import baModDeveloper.power.BATwinsDeveloperCollaborationPower;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -45,6 +46,16 @@ public class BATwinsDeveloperCollaboration extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        useMOMOI(abstractPlayer, abstractMonster);
+        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsDeveloperCollaborationExchangedPower(abstractPlayer, this.magicNumber)));
+    }
+
+    @Override
+    public void initializeDescription() {
+        if (this.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+            this.originRawDescription = CARD_STRINGS.DESCRIPTION;
+        } else {
+            this.originRawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        }
+        super.initializeDescription();
     }
 }

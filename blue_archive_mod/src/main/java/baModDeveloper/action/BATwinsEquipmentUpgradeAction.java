@@ -2,7 +2,10 @@ package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.modifier.BATwinsRetainModifier;
+import baModDeveloper.modifier.BATwinsSharedModifier;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -24,9 +27,15 @@ public class BATwinsEquipmentUpgradeAction extends SelectCardsInHandAction {
                 card.name += "◆";
             }
             if (card instanceof BATwinsModCustomCard) {
-                ((BATwinsModCustomCard) card).modifyEnergyType = BATwinsEnergyPanel.EnergyType.SHARE;
+                if (((BATwinsModCustomCard) card).modifyEnergyType != BATwinsEnergyPanel.EnergyType.SHARE) {
+                    ((BATwinsModCustomCard) card).modifyEnergyType = BATwinsEnergyPanel.EnergyType.SHARE;
+                    CardModifierManager.addModifier(card, new BATwinsSharedModifier());
+                }
             }
-            card.selfRetain = true;
+            if (!card.selfRetain) {
+                card.selfRetain = true;
+                CardModifierManager.addModifier(card, new BATwinsRetainModifier());
+            }
 //            card.exhaust = false;
 //            card.isEthereal = false;
         }

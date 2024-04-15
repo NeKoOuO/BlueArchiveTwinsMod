@@ -191,5 +191,17 @@
 		"DESCRIPTIONS": [
 			"Cannot play Midori cards this turn."
 		]
+	},
+	"BATwinsMod:DeveloperCollaborationExchangedPower": {
+		"NAME": "DeveloperCollaboration(Exchange)",
+		"DESCRIPTIONS": [
+			"After alternating between playing MomoiCard and MidoriCard in battle,the enemy's poison and batwinsmod:Burn increase by %d%%.(The last card played is %s)",
+			"MomoiCard",
+			"MidoriCard",
+			"ColorLess",
+			"Curses",
+			"OtherCard",
+			"NoneCard"
+		]
 	}
 }

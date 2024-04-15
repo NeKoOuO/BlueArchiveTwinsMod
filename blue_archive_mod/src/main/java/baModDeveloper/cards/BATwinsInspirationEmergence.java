@@ -4,11 +4,15 @@ import baModDeveloper.action.BATwinsInspirationEmergenceAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.LightBulbEffect;
 
 public class BATwinsInspirationEmergence extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("InspirationEmergence");
@@ -36,6 +40,7 @@ public class BATwinsInspirationEmergence extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        addToBot((AbstractGameAction) new VFXAction((AbstractGameEffect) new LightBulbEffect(abstractPlayer.hb)));
         addToBot(new DrawCardAction(this.magicNumber, new BATwinsInspirationEmergenceAction(1)));
     }
 

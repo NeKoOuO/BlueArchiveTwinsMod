@@ -280,7 +280,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsFitnessRing(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsBroom(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsMaidAttire(), RelicType.SHARED);
-        BaseMod.addRelicToCustomPool(new BATwinsRubiksCube(), Enums.BATWINS_MOMOI_CARD);
+//        BaseMod.addRelicToCustomPool(new BATwinsRubiksCube(), Enums.BATWINS_MOMOI_CARD);
     }
 
     @Override
@@ -292,6 +292,9 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("charSelect_momoi"), ModHelper.makeAudioPath("charSelect_momoi"));
         BaseMod.addAudio(ModHelper.makePath("charSelect_midori"), ModHelper.makeAudioPath("charSelect_midori"));
         BaseMod.addAudio(ModHelper.makePath("pixelTime"), ModHelper.makeAudioPath("PixelTime"));
+        BaseMod.addAudio(ModHelper.makePath("coin"), ModHelper.makeAudioPath("coin"));
+        BaseMod.addAudio(ModHelper.makePath("Momoi_Ex"), ModHelper.makeAudioPath("Momoi_Ex"));
+        BaseMod.addAudio(ModHelper.makePath("Midori_Ex"), ModHelper.makeAudioPath("Midori_Ex"));
     }
 
     @Override

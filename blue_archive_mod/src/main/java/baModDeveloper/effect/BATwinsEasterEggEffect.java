@@ -28,6 +28,8 @@ public class BATwinsEasterEggEffect extends AbstractGameEffect {
         this.FadeInOut = 0.2F;
         this.color = new Color(1.0F, 1.0F, 1.0F, 1.0F);
         this.color.a = 0.0F;
+
+//        BATwinsNeowNarrationScreenPatch.openPatch.isBATwins=true;
     }
 
     @Override

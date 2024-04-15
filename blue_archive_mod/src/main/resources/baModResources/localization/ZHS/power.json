@@ -8,7 +8,7 @@
     "BATwinsMod:DeveloperCollaborationPower":{
         "NAME":"开发者协同",
         "DESCRIPTIONS":[
-            "战斗中交替打出桃牌与绿牌后，本回合卡牌的伤害和格挡上升",
+            "战斗中连续交替打出桃牌与绿牌后，本回合卡牌的伤害和格挡上升",
             "%。",
             "(打出的上张牌是：",
             ")",
@@ -190,6 +190,18 @@
 		"NAME": "绿牌禁止",
 		"DESCRIPTIONS": [
 			"本回合不能打出绿牌。"
+		]
+	},
+	"BATwinsMod:DeveloperCollaborationExchangedPower": {
+		"NAME": "开发者协同（交换）",
+		"DESCRIPTIONS": [
+			"战斗中连续交替打出桃牌与绿牌后，所有敌人的中毒与灼伤层数增加%d%%。（打出的上张牌是：%s）",
+			"桃牌",
+			"绿牌",
+			"无色牌",
+			"诅咒牌",
+			"其他牌",
+			"没有牌"
 		]
 	}
 }

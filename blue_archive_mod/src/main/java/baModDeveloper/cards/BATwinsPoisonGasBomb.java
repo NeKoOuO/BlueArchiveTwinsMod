@@ -56,9 +56,9 @@ public class BATwinsPoisonGasBomb extends BATwinsModCustomCard {
 
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if(this.color==BATwinsCharacter.Enums.BATWINS_MOMOI_CARD){
+        if (this.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
             addToBot(new BATwinsOneMoreAction(PoisonPower.POWER_ID, abstractMonster));
-        }else{
+        } else {
             addToBot(new BATwinsOneMoreAction(BATwinsBurnPower.POWER_ID, abstractMonster));
         }
     }

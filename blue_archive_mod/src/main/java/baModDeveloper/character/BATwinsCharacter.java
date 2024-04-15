@@ -3,6 +3,7 @@ package baModDeveloper.character;
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.cards.*;
 import baModDeveloper.core.BATwinsEnergyManager;
+import baModDeveloper.effect.BATwinsEasterEggEffect;
 import baModDeveloper.helpers.Character3DHelper;
 import baModDeveloper.helpers.ColorComparer;
 import baModDeveloper.helpers.ImageHelper;
@@ -53,6 +54,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.io.IOException;
 import java.util.*;
@@ -154,6 +156,7 @@ public class BATwinsCharacter extends CustomPlayer {
             this.img = ImageMaster.loadImage(empty_Img);
             this.corpseImg = ImageMaster.loadImage(empty_Img);
             character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+            character3DHelper.resetCharacterPosition();
             character3DHelper.resetDefaultAnima(Enums.BATWINS_MOMOI_CARD);
             character3DHelper.resetDefaultAnima(Enums.BATWINS_MIDORI_CARD);
         }
@@ -594,6 +597,7 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public void playDeathAnimation() {
         if (BATwinsMod.Enable3D) {
+            character3DHelper.resetCharacterPosition();
             character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.DYING);
             character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.DYING);
         } else {
@@ -642,6 +646,26 @@ public class BATwinsCharacter extends CustomPlayer {
         super.applyStartOfTurnPreDrawCards();
     }
 
+    @Override
+    public Texture getCutsceneBg() {
+        return ImageMaster.loadImage(ModHelper.makeImgPath("UI/scence", "blueBg"));
+    }
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> cutscenePanelList = new ArrayList<>();
+        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence", "Batwins1")));
+        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence", "Batwins2")));
+        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence", "Batwins3")));
+        return cutscenePanelList;
+
+    }
+
+    @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        effects.add(new BATwinsEasterEggEffect(true, false));
+    }
+
     public static class Enums {
         @SpireEnum
         public static PlayerClass BATwins;
@@ -655,21 +679,6 @@ public class BATwinsCharacter extends CustomPlayer {
         public static CardLibrary.LibraryType BATWINS_MOMOI_LIBRARY;
         @SpireEnum(name = "BATWINSMIDORICARD")
         public static CardLibrary.LibraryType BATWINS_MIDORI_LIBRARY;
-
-    }
-
-    @Override
-    public Texture getCutsceneBg() {
-        return ImageMaster.loadImage(ModHelper.makeImgPath("UI/scence","blueBg"));
-    }
-
-    @Override
-    public List<CutscenePanel> getCutscenePanels() {
-        List<CutscenePanel> cutscenePanelList=new ArrayList<>();
-        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins1")));
-        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins2")));
-        cutscenePanelList.add(new CutscenePanel(ModHelper.makeImgPath("UI/scence","Batwins3")));
-        return cutscenePanelList;
 
     }
 }
