@@ -33,10 +33,13 @@
         "NAME":"絵画芸術",
         "DESCRIPTION":"ランダムな敵に !D! ダメージと 毒 ２を与える、 !M! 回繰り返す。"
     },
-    "BATwinsMod:DeveloperCollaboration":{
-        "NAME":"開発者の協力",
-        "DESCRIPTION":" batwinsmod:共有 。 NL 戦闘中に batwinsmod:モモイカード と batwinsmod:ミドリカード を交互に出すと、このターン、カードによるダメージと獲得する ブロック が !M! 増加します。"
-    },
+	"BATwinsMod:DeveloperCollaboration":{
+		"NAME":"開発者の協力",
+		"DESCRIPTION":" batwinsmod:共有 。 NL 戦闘中に batwinsmod:モモイカード と batwinsmod:ミドリカード を交互に出すと、このターン、カードによるダメージと獲得する ブロック が !M! 増加します。",
+		"EXTENDED_DESCRIPTION": [
+			" batwinsmod:共有 。 NL 戦闘中に batwinsmod:モモイカード と batwinsmod:ミドリカード を交互に出すと、敵の 毒 と batwinsmod:焼傷 を !M! ％増加します。"
+		]
+	},
     "BATwinsMod:Exchange":{
         "NAME":"チェンジ",
         "DESCRIPTION":" 保留 。 NL batwinsmod:チェンジ 最大2枚の手札。",
@@ -389,7 +392,10 @@
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"貫通ダメージ",
-		"DESCRIPTION":"敵全体に !D! ダメージを与える、 ブロック がいないな敵 筋力 !M! を失う。 NL 消滅 NL batwinsmod:連携 ：このバトル、 消滅 しない。"
+		"DESCRIPTION":"敵全体に !D! ダメージを与える、 ブロック がいないな敵 筋力 !M! を失う。 NL 消滅 NL batwinsmod:連携 ：このバトル、 消滅 しない。",
+		"EXTENDED_DESCRIPTION": [
+			" 敵全体に !D! ダメージを与える、 ブロック がいないな敵 筋力 !M! を失う。"
+		]
 	},
 	"BATwinsMod:LoginRewards":{
 		"NAME":"登入奖励",
@@ -406,8 +412,8 @@
 	},
 	"BATwinsMod:ScriptRewriting":{
 		"NAME":"シナリオリライト",
-		"DESCRIPTION":"敵１体の batwinsmod:焼傷 と 毒 をチェンジする、その差の ブッロク を得る。 NL 消滅 ",
-		"UPGRADE_DESCRIPTION":" 保留 NL 敵１体の batwinsmod:焼傷 と 毒 をチェンジする、その差の ブッロク を得る。 NL 消滅 "
+		"DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 、 batwinsmod:焼傷 と同じな 毒 を与える。 NL 消滅 ",
+		"UPGRADE_DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 を与える、その後 batwinsmod:焼傷 と同じな 毒 を与える。 NL 消滅 "
 	},
 	"BATwinsMod:EasterEgg":{
 		"NAME":"イースターエッグ",

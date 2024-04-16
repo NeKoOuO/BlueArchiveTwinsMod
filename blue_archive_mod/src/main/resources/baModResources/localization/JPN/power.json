@@ -139,9 +139,9 @@
 		]
 	},
 	"BATwinsMod:ShufflePower":{
-		"NAME":"结束洗牌",
+		"NAME":"ターン終了シャッフル",
 		"DESCRIPTIONS":[
-			"本回合结束时将弃牌堆洗入抽牌堆。"
+			"ターン終了時、捨て札を山札に戻る。"
 		]
 	},
 	"BATwinsMod:IntegratingAndIntegratingPower":{
@@ -190,6 +190,18 @@
 		"NAME": "ミドリカード禁止",
 		"DESCRIPTIONS": [
 			"このターンミドリカードがプレイできません。"
+		]
+	},
+	"BATwinsMod:DeveloperCollaborationExchangePower":{
+		"NAME":"開発者の協力",
+		"DESCRIPTIONS":[
+			"戦闘中にモモイカードとミドリカードを交互に出すと、敵の毒と焼傷%d%%を増加します。(前プレイしたカードは：%s)",
+			"モモイカード",
+			"ミドリカード",
+			"無色カード",
+			"呪カード",
+			"他のカード",
+			"またプレイしていません"
 		]
 	}
 }
