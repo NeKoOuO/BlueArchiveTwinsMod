@@ -42,8 +42,8 @@
     },
     "BATwinsMod:Exchange":{
         "NAME":"交换",
-        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多2张手牌。",
-        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。"
+        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多2张手牌。 NL 消耗 ",
+        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。 NL 消耗 "
     },
     "BATwinsMod:KeepItToTheEnd":{
         "NAME":"严守截稿日",
@@ -163,7 +163,7 @@
 	},
 	"BATwinsMod:AbstractSchool":{
 		"NAME":"像素艺术",
-		"DESCRIPTION":"你的手牌每有1种颜色，造成 !D! 点伤害，抽 !M! 张牌。"
+		"DESCRIPTION":"造成手牌颜色数 !B! 倍（ !D! ）点伤害，抽手牌颜色数/2（ !M! ）张牌。"
 	},
 	"BATwinsMod:DefensiveCounterattack":{
 		"NAME":"防守与打击",
@@ -279,7 +279,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"经验大礼包",
-		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 大于这张牌的耗能（除0以外），打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
+		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 大于这张牌的耗能，打出这张牌（0耗能时消耗）。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",

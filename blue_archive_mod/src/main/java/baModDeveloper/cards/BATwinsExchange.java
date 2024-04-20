@@ -27,6 +27,7 @@ public class BATwinsExchange extends BATwinsModCustomCard {
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         this.selfRetain = true;
+        this.exhaust=true;
     }
 
     @Override

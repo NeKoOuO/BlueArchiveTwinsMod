@@ -5,6 +5,7 @@ import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import java.util.ArrayList;
 
@@ -30,12 +32,14 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MIDORI;
 
+
     public BATwinsAbstractSchool() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 5;
+        this.baseDamage = 0;
         this.damage = this.baseDamage;
-        this.baseMagicNumber = 1;
+        this.baseMagicNumber = 0;
         this.magicNumber = this.baseMagicNumber;
+        this.baseBlock=this.block=5;
     }
 
     @Override
@@ -45,24 +49,15 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        ArrayList<CardColor> colors = new ArrayList<>();
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (!colors.contains(c.color) && c != this) {
-                colors.add(c.color);
-            }
-        }
-        for (int i = 0; i < colors.size(); i++) {
-            addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        }
-        if (!colors.isEmpty())
-            addToBot(new DrawCardAction(colors.size()));
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        addToBot(new DrawCardAction(this.magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeDamage(2);
+            this.upgradeBlock(2);
         }
     }
 
@@ -78,5 +73,49 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
 //        this.baseMagicNumber=colors.size();
 //        this.magicNumber=this.baseMagicNumber;
         super.renderTitle(sb);
+    }
+
+    private int calColorNum(){
+        ArrayList<CardColor> colors = new ArrayList<>();
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (!colors.contains(c.color) && c != this) {
+                colors.add(c.color);
+            }
+        }
+        return colors.size();
+    }
+
+    @Override
+    public void applyPowers() {
+        int colorNum=calColorNum();
+        int baseBaseDamage=this.baseDamage;
+        this.baseDamage=this.baseBlock*colorNum;
+        int baseBaseMagicNumber=this.baseMagicNumber;
+        this.baseMagicNumber=colorNum;
+        this.magicNumber=this.baseMagicNumber/2;
+        super.applyPowers();
+        this.isDamageModified=this.damage!=colorNum;
+        this.isMagicNumberModified=this.magicNumber!=baseBaseMagicNumber;
+        this.baseDamage=baseBaseDamage;
+        this.baseMagicNumber=baseBaseMagicNumber;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        int colorNum=calColorNum();
+        int baseBaseDamage=this.baseDamage;
+        this.baseDamage=this.baseBlock*colorNum;
+        int baseBaseMagicNumber=this.baseMagicNumber;
+        this.baseMagicNumber=colorNum;
+        super.calculateCardDamage(mo);
+        this.isDamageModified=this.damage!=colorNum;
+        this.isMagicNumberModified=this.magicNumber!=this.baseMagicNumber;
+        this.baseDamage=baseBaseDamage;
+        this.baseMagicNumber=baseBaseMagicNumber;
+    }
+
+    @Override
+    protected void applyPowersToBlock() {
+
     }
 }
