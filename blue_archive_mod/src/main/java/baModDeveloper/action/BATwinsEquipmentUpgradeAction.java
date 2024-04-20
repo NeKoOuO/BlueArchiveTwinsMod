@@ -28,12 +28,10 @@ public class BATwinsEquipmentUpgradeAction extends SelectCardsInHandAction {
             }
             if (card instanceof BATwinsModCustomCard) {
                 if (((BATwinsModCustomCard) card).modifyEnergyType != BATwinsEnergyPanel.EnergyType.SHARE) {
-                    ((BATwinsModCustomCard) card).modifyEnergyType = BATwinsEnergyPanel.EnergyType.SHARE;
                     CardModifierManager.addModifier(card, new BATwinsSharedModifier());
                 }
             }
             if (!card.selfRetain) {
-                card.selfRetain = true;
                 CardModifierManager.addModifier(card, new BATwinsRetainModifier());
             }
 //            card.exhaust = false;
