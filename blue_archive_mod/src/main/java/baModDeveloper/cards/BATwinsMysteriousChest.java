@@ -37,9 +37,9 @@ public class BATwinsMysteriousChest extends BATwinsModCustomCard {
         c.isCostModified = true;
 //        c.exhaustOnUseOnce=true;
         if (this.upgraded) {
-            addToBot(new BATwinsMakeTempCardInHandAction(c, false, false, true, false, true));
+            addToBot(new BATwinsMakeTempCardInHandAction(c, false, true, true, false, true));
         } else {
-            addToBot(new BATwinsMakeTempCardInHandAction(c, false, false, true, true, false));
+            addToBot(new BATwinsMakeTempCardInHandAction(c, false, true, true, true, false));
         }
         addToBot(new BATwinsCoversionColorAction(this));
     }
@@ -52,9 +52,9 @@ public class BATwinsMysteriousChest extends BATwinsModCustomCard {
         c.isCostModified = true;
 //        c.exhaustOnUseOnce=true;
         if (this.upgraded) {
-            addToBot(new BATwinsMakeTempCardInHandAction(c, false, false, true, false, true));
+            addToBot(new BATwinsMakeTempCardInHandAction(c, false, true, true, false, true));
         } else {
-            addToBot(new BATwinsMakeTempCardInHandAction(c, false, false, true, true, false));
+            addToBot(new BATwinsMakeTempCardInHandAction(c, false, true, true, true, false));
         }
         addToBot(new BATwinsCoversionColorAction(this));
     }

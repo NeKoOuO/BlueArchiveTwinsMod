@@ -47,11 +47,11 @@ public class BATwinsScriptRewriting extends BATwinsModCustomCard {
                 public void update() {
                     if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
                         if (abstractMonster.hasPower(PoisonPower.POWER_ID)) {
-                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player, new BATwinsBurnPower(this.target, AbstractDungeon.player, abstractMonster.getPower(PoisonPower.POWER_ID).amount)));
+                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player, new BATwinsBurnPower(abstractMonster, AbstractDungeon.player, abstractMonster.getPower(PoisonPower.POWER_ID).amount)));
                         }
                     } else {
                         if (abstractMonster.hasPower(BATwinsBurnPower.POWER_ID)) {
-                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player, new PoisonPower(this.target, AbstractDungeon.player, abstractMonster.getPower(BATwinsBurnPower.POWER_ID).amount)));
+                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player, new PoisonPower(abstractMonster, AbstractDungeon.player, abstractMonster.getPower(BATwinsBurnPower.POWER_ID).amount)));
                         }
                     }
                     this.isDone = true;
