@@ -1,14 +1,20 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsGainEnergyAction;
+import baModDeveloper.action.BATwinsPlayHandCardAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.stream.Collectors;
 
 public class BATwinsPaintingConception extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("PaintingConception");
@@ -27,6 +33,7 @@ public class BATwinsPaintingConception extends BATwinsModCustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseBlock = 5;
         this.block = this.baseBlock;
+        this.baseMagicNumber=this.magicNumber=1;
     }
 
     @Override
@@ -34,19 +41,35 @@ public class BATwinsPaintingConception extends BATwinsModCustomCard {
         if (!upgraded) {
             this.upgradeName();
             this.upgradeBlock(3);
+            this.upgradeMagicNumber(1);
         }
     }
 
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MIDORI));
+//        addToBot(new GainBlockAction(abstractPlayer, this.block));
+//        addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MIDORI));
+        CardGroup temp=new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        temp.group.addAll(abstractPlayer.hand.group.stream().filter(c->c.color==this.color&&c!=this).collect(Collectors.toList()));
+
+        for(int i=0;i<this.magicNumber;i++){
+            if(temp.isEmpty()){
+                return;
+            }
+            AbstractCard card=temp.getRandomCard(AbstractDungeon.cardRandomRng);
+            addToBot(new BATwinsPlayHandCardAction(card,null,this.numberOfConnections+1));
+            temp.removeCard(card);
+            abstractPlayer.hand.removeCard(card);
+        }
+
+
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MOMOI));
+//        addToBot(new GainBlockAction(abstractPlayer, this.block));
+//        addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MOMOI));
+        useMOMOI(abstractPlayer,abstractMonster);
     }
 }

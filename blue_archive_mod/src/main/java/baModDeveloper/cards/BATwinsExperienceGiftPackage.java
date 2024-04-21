@@ -38,9 +38,9 @@ public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if(this.costForTurn==0){
-            this.exhaust=true;
-        }
+//        if(this.costForTurn==0){
+//            this.exhaust=true;
+//        }
         addToBot(new DrawCardAction(this.magicNumber));
     }
 

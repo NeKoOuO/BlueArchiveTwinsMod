@@ -76,10 +76,12 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
             drawCards += 1;
         }
         addToBot(new DrawCardAction(drawCards, new AbstractGameAction() {
+            private int numberOfConnections;
             ArrayList<AbstractCard> canNotSelect = new ArrayList<>();
-
+            int numOfConnection;
             {
                 this.duration = Settings.ACTION_DUR_FAST;
+                this.numberOfConnections=BATwinsTakeABreak.this.numberOfConnections;
             }
 
             @Override
@@ -108,7 +110,7 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
                 if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                     for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
 //                        AbstractDungeon.player.hand.addToTop(c);
-                        addToTop(new BATwinsPlayHandCardAction(c, null, BATwinsTakeABreak.this.numberOfConnections + 1));
+                        addToTop(new BATwinsPlayHandCardAction(c, null, this.numberOfConnections + 1));
                     }
                     AbstractDungeon.player.hand.group.addAll(canNotSelect);
                     AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;

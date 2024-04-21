@@ -23,7 +23,7 @@
     },
     "BATwinsMod:PaintingConception":{
         "NAME":"画面构思",
-        "DESCRIPTION":"获得 !B! 点格挡，获得 [batwinsmod:momoiorbicon] 。"
+        "DESCRIPTION":"打出 !M! 张手牌中的随机 batwinsmod:绿牌 。"
     },
     "BATwinsMod:ParoxysmalPain":{
         "NAME":"创作之痛",
@@ -42,8 +42,8 @@
     },
     "BATwinsMod:Exchange":{
         "NAME":"交换",
-        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多2张手牌。 NL 消耗 ",
-        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。 NL 消耗 "
+        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。 NL 消耗 ",
+        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。 "
     },
     "BATwinsMod:KeepItToTheEnd":{
         "NAME":"严守截稿日",
@@ -137,7 +137,7 @@
 	},
 	"BATwinsMod:LightSpeedStrike":{
 		"NAME":"光速打击",
-		"DESCRIPTION":"造成 !D! 点伤害。 NL 选择手牌1张攻击牌打出并弃置其他攻击牌。"
+		"DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 易伤 。 NL 选择手牌1张攻击牌打出并弃置其他攻击牌。"
 	},
 	"BATwinsMod:SinglePlayerGame":{
 		"NAME":"单人游戏",
@@ -163,7 +163,7 @@
 	},
 	"BATwinsMod:AbstractSchool":{
 		"NAME":"像素艺术",
-		"DESCRIPTION":"造成手牌颜色数 !B! 倍（ !D! ）点伤害，抽手牌颜色数/2（ !M! ）张牌。"
+		"DESCRIPTION":"造成手牌颜色数 !B! 倍（ !D! ）点伤害，抽手牌颜色数（ !M! ）张牌。"
 	},
 	"BATwinsMod:DefensiveCounterattack":{
 		"NAME":"防守与打击",
@@ -238,8 +238,8 @@
 	},
 	"BATwinsMod:ConvenientConnectivity":{
 		"NAME":"便捷连携",
-		"DESCRIPTION":"选择 !M! 张非能力手牌打出。 batwinsmod:连携 ：随机打出抽牌堆1张非能力牌。",
-		"UPGRADE_DESCRIPTION":"选择 !M! 张非能力手牌打出。 batwinsmod:连携 ：选择抽牌堆1张非能力牌打出。"
+		"DESCRIPTION":"选择 !M! 张手牌打出。 NL batwinsmod:连携 ：随机打出抽牌堆1张牌。",
+		"UPGRADE_DESCRIPTION":"选择 !M! 张手牌打出。 NL batwinsmod:连携 ：选择抽牌堆1张牌打出。"
 	},
 	"BATwinsMod:EndCombo":{
 		"NAME":"终结连击",
@@ -279,7 +279,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"经验大礼包",
-		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 大于这张牌的耗能，打出这张牌（0耗能时消耗）。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
+		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 大于这张牌的耗能，打出这张牌（0耗能时除外）。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",
@@ -496,7 +496,7 @@
 	},
 	"BATwinsMod:TacticalRelay":{
 		"NAME": "战术接力",
-		"DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , NL 本回合不能再打出 batwinsmod:桃牌 。",
-		"UPGRADE_DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , NL 本回合不能再打出 batwinsmod:桃牌 。"
+		"DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:桃牌 。",
+		"UPGRADE_DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:桃牌 。"
 	}
 }

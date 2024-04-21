@@ -100,7 +100,7 @@ public class BATwinsByProving extends CustomRelic implements CustomSavable<Strin
                     addToBot(new DamageAction(monster, new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
                     return;
                 case SKILL:
-                    addToBot(new DrawCardAction(2));
+                    addToBot(new DrawCardAction(1));
                     return;
                 case POWER:
                     addToBot(new MakeTempCardInDiscardAction(c.makeSameInstanceOf(), 1));

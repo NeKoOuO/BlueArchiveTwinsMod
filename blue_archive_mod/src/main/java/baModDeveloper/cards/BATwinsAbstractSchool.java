@@ -92,7 +92,7 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
         this.baseDamage=this.baseBlock*colorNum;
         int baseBaseMagicNumber=this.baseMagicNumber;
         this.baseMagicNumber=colorNum;
-        this.magicNumber=this.baseMagicNumber/2;
+        this.magicNumber=this.baseMagicNumber;
         super.applyPowers();
         this.isDamageModified=this.damage!=colorNum;
         this.isMagicNumberModified=this.magicNumber!=baseBaseMagicNumber;

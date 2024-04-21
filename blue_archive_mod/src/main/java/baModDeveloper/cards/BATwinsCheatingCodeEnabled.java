@@ -34,27 +34,28 @@ public class BATwinsCheatingCodeEnabled extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsCheatingCodeEnabledAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, true));
-        if (upgraded) {
-            addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsShufflePower(abstractPlayer)));
-        }
+//        if (upgraded) {
+//            addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsShufflePower(abstractPlayer)));
+//        }
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsCheatingCodeEnabledAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, true));
-        if (upgraded) {
-            addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsShufflePower(abstractPlayer)));
-        }
+//        if (upgraded) {
+//            addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsShufflePower(abstractPlayer)));
+//        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.originRawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-
-            initializeDescription();
+            this.updateCost(-1);
+//            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+//            this.originRawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+//
+//            initializeDescription();
         }
     }
 }

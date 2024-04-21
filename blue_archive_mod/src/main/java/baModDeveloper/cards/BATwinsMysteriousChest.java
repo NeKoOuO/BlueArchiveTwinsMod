@@ -31,7 +31,7 @@ public class BATwinsMysteriousChest extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color);
+        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color).makeCopy();
         c.cost = 0;
         c.costForTurn = 0;
         c.isCostModified = true;
@@ -46,7 +46,7 @@ public class BATwinsMysteriousChest extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color);
+        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color).makeCopy();
         c.cost = 0;
         c.costForTurn = 0;
         c.isCostModified = true;

@@ -23,7 +23,7 @@
     },
     "BATwinsMod:PaintingConception":{
         "NAME":"Picture conception",
-        "DESCRIPTION":"Gain !B! Block,Gain [batwinsmod:momoiorbicon] ."
+        "DESCRIPTION":"Play !M! random batwinsmod:MidoriCard from your hand."
     },
     "BATwinsMod:ParoxysmalPain":{
         "NAME":"The Pain of Creation",
@@ -42,7 +42,7 @@
     },
     "BATwinsMod:Exchange":{
         "NAME":"Exchange",
-        "DESCRIPTION":" Retain . NL batwinsmod:Exchange up to 2 cards in your hand.",
+        "DESCRIPTION":" Retain . NL batwinsmod:Exchange up to 3 cards in your hand. NL Exhaust ",
         "UPGRADE_DESCRIPTION":" Retain . NL batwinsmod:Exchange up to 3 cards in your hand."
     },
     "BATwinsMod:KeepItToTheEnd":{
@@ -137,7 +137,7 @@
 	},
 	"BATwinsMod:LightSpeedStrike":{
 		"NAME":"Lightspeed Strike",
-		"DESCRIPTION":"Deal !D! Damage.Choose and play 1 attack card from your hand,and discard other attack cards."
+		"DESCRIPTION":"Deal !D! Damage,apply !M! Vulnerable . NL Choose and play 1 attack card from your hand,and discard other attack cards."
 	},
 	"BATwinsMod:SinglePlayerGame":{
 		"NAME":"Single-player Game",
@@ -163,7 +163,7 @@
 	},
 	"BATwinsMod:AbstractSchool":{
 		"NAME":"Pixel Art",
-		"DESCRIPTION":"For each unique color in your hand,Deal !D! Damage,Draw !M! cards."
+		"DESCRIPTION":"Deal damage equal to !B! times the number of colors in your hand (!D!), and draw !M! cards equal to the number of colors in your hand."
 	},
 	"BATwinsMod:DefensiveCounterattack":{
 		"NAME":"防守与打击",
@@ -238,8 +238,8 @@
 	},
 	"BATwinsMod:ConvenientConnectivity":{
 		"NAME":"Convenient Synergy",
-		"DESCRIPTION":"Choose and play !M! cards from your hand. batwinsmod:Synergy :Random play 1 card from the draw pile.",
-		"UPGRADE_DESCRIPTION":"Choose and play !M! cards from your hand. batwinsmod:Synergy :Choose and play 1 card from the draw pile."
+		"DESCRIPTION":"Choose and play !M! cards from your hand. NL batwinsmod:Synergy :Random play 1 card from the draw pile.",
+		"UPGRADE_DESCRIPTION":"Choose and play !M! cards from your hand. NL batwinsmod:Synergy :Choose and play 1 card from the draw pile."
 	},
 	"BATwinsMod:EndCombo":{
 		"NAME":"Finisher Combo",
@@ -496,7 +496,7 @@
 	},
 	"BATwinsMod:TacticalRelay": {
 		"NAME": "Tactical Relay",
-		"DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] . NL Cannot play batwinsmod:MomoiCard this turn.",
-		"UPGRADE_DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] . NL Cannot play batwinsmod:MomoiCard this turn."
+		"DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:Exchange up to 2 cards in your hand. NL Cannot play batwinsmod:MomoiCard this turn.",
+		"UPGRADE_DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:Exchange up to 2 cards in your hand. NL Cannot play batwinsmod:MomoiCard this turn."
 	}
 }
