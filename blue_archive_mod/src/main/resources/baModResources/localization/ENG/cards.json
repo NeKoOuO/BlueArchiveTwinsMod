@@ -163,7 +163,7 @@
 	},
 	"BATwinsMod:AbstractSchool":{
 		"NAME":"Pixel Art",
-		"DESCRIPTION":"Deal damage equal to !B! times the number of colors in your hand (!D!), and draw !M! cards equal to the number of colors in your hand."
+		"DESCRIPTION":"Deal damage equal to !B! times the number of colors in your hand ( !D! ), and draw cards equal to the number of colors in your hand( !M! )."
 	},
 	"BATwinsMod:DefensiveCounterattack":{
 		"NAME":"防守与打击",
