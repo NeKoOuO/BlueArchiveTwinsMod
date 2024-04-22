@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("LightSpeedStrike");
@@ -61,8 +62,20 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        useMOMOI(abstractPlayer, abstractMonster);
-
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new WeakPower(abstractMonster,this.magicNumber,false)));
+        addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK, 1, this.numberOfConnections + 1));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                    if (c.type == CardType.ATTACK) {
+                        addToTop(new DiscardSpecificCardAction(c));
+                    }
+                }
+                this.isDone = true;
+            }
+        });
     }
 
     @Override
