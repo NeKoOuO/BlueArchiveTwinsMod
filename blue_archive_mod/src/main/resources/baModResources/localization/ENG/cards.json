@@ -23,7 +23,8 @@
     },
     "BATwinsMod:PaintingConception":{
         "NAME":"Picture conception",
-        "DESCRIPTION":"Play !M! random batwinsmod:MidoriCard from your hand."
+        "DESCRIPTION":"Gain !B! block . NL Play !M! random batwinsmod:MidoriCard from your hand.",
+		"UPGRADE_DESCRIPTION": "Gain !B! block . NL Select and play !M! batwinsmod:MidoriCard from your hand."
     },
     "BATwinsMod:ParoxysmalPain":{
         "NAME":"The Pain of Creation",

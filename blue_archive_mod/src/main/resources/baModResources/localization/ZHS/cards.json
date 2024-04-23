@@ -23,7 +23,8 @@
     },
     "BATwinsMod:PaintingConception":{
         "NAME":"画面构思",
-        "DESCRIPTION":"打出 !M! 张手牌中的随机 batwinsmod:绿牌 。"
+        "DESCRIPTION":"获得 !B! 点 格挡 。 NL 打出 !M! 张手牌中的随机非能力 batwinsmod:绿牌 。",
+		"UPGRADE_DESCRIPTION":"获得 !B! 点 格挡 。 NL 选择打出 !M! 张手牌中的非能力 batwinsmod:绿牌 。"
     },
     "BATwinsMod:ParoxysmalPain":{
         "NAME":"创作之痛",
