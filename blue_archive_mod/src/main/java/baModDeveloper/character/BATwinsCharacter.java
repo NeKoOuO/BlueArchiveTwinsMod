@@ -237,19 +237,19 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public Color getCardRenderColor() {
-        return BATwinsMod.BATwinsColor;
+        return BATwinsMod.BATwinsColor.cpy();
     }
 
     @Override
     public Color getCardTrailColor() {
-        return BATwinsMod.BATwinsColor;
+        return BATwinsMod.BATwinsColor.cpy();
     }
 
     public Color getCardTrailColor(BATwinsEnergyPanel.EnergyType cardType) {
         if (cardType == BATwinsEnergyPanel.EnergyType.MOMOI) {
-            return BATwinsMod.MOMOIColor;
+            return BATwinsMod.MOMOIColor.cpy();
         } else {
-            return BATwinsMod.MIDORIColor;
+            return BATwinsMod.MIDORIColor.cpy();
         }
     }
 
@@ -276,7 +276,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public Color getSlashAttackColor() {
-        return BATwinsMod.BATwinsColor;
+        return BATwinsMod.BATwinsColor.cpy();
     }
 
     @Override
