@@ -138,7 +138,7 @@
 	},
 	"BATwinsMod:LightSpeedStrike":{
 		"NAME":"光速打击",
-		"DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 易伤 。 NL 选择手牌1张攻击牌打出并弃置其他攻击牌。"
+		"DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 易伤 。 NL 选择手牌1张攻击牌打出并丢弃其他攻击牌。"
 	},
 	"BATwinsMod:SinglePlayerGame":{
 		"NAME":"单人游戏",
