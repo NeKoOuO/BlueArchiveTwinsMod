@@ -56,7 +56,7 @@ public class BATwinsPaintingConception extends BATwinsModCustomCard {
 //        addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MIDORI));
 
         if(this.upgraded){
-            addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD,null,this.numberOfConnections+1,true));
+            addToBot(new BATwinsSelectHandCardToPlayAction(this.color,null,this.numberOfConnections+1,true));
         }else{
             CardGroup temp=new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             temp.group.addAll(abstractPlayer.hand.group.stream().filter(c->c.color==this.color&&c!=this&&c.type!=CardType.POWER).collect(Collectors.toList()));
