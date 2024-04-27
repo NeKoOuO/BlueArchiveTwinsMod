@@ -25,7 +25,7 @@ public class BATwinsShiftingAndGhosting extends BATwinsModCustomCard {
 
     public BATwinsShiftingAndGhosting() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock = 10;
+        this.baseBlock = 14;
         this.block = this.baseBlock;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;

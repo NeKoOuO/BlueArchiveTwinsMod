@@ -1,5 +1,6 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.action.BATwinsDisCardByColorAction;
 import baModDeveloper.action.BATwinsDisOtherCardByColorAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
@@ -47,7 +48,7 @@ public class BATwinsDontSayIt extends BATwinsModCustomCard {
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, this.callback));
+        addToBot(new BATwinsDisCardByColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, this.callback));
 
     }
 
@@ -55,7 +56,7 @@ public class BATwinsDontSayIt extends BATwinsModCustomCard {
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, this.callback));
+        addToBot(new BATwinsDisCardByColorAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, this.callback));
 
 
     }
@@ -89,7 +90,7 @@ public class BATwinsDontSayIt extends BATwinsModCustomCard {
     public void triggerOnHovered() {
         if (AbstractDungeon.player != null) {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c.color != this.color) {
+                if (c.color ==BATwinsCharacter.getOtherColor(this.color)) {
                     c.flash(BATwinsCharacter.getColorWithCardColor(c.color));
                 }
             }
