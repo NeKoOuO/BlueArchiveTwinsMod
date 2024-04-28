@@ -2,6 +2,7 @@ package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsGainEnergyAction;
 import baModDeveloper.action.BATwinsPlayHandCardAction;
+import baModDeveloper.action.BATwinsSelectHandCardToPlayAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
@@ -31,7 +32,7 @@ public class BATwinsPaintingConception extends BATwinsModCustomCard {
 
     public BATwinsPaintingConception() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock = 5;
+        this.baseBlock = 3;
         this.block = this.baseBlock;
         this.baseMagicNumber=this.magicNumber=1;
     }
@@ -40,28 +41,36 @@ public class BATwinsPaintingConception extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeBlock(3);
-            this.upgradeMagicNumber(1);
+//            this.upgradeBlock(3);
+//            this.upgradeMagicNumber(1);
+            this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-//        addToBot(new GainBlockAction(abstractPlayer, this.block));
+        addToBot(new GainBlockAction(abstractPlayer, this.block));
 //        addToBot(new BATwinsGainEnergyAction(1, BATwinsEnergyPanel.EnergyType.MIDORI));
-        CardGroup temp=new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        temp.group.addAll(abstractPlayer.hand.group.stream().filter(c->c.color==this.color&&c!=this).collect(Collectors.toList()));
 
-        for(int i=0;i<this.magicNumber;i++){
-            if(temp.isEmpty()){
-                return;
+        if(this.upgraded){
+            addToBot(new BATwinsSelectHandCardToPlayAction(this.color,null,this.numberOfConnections+1,true));
+        }else{
+            CardGroup temp=new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            temp.group.addAll(abstractPlayer.hand.group.stream().filter(c->c.color==this.color&&c!=this&&c.type!=CardType.POWER).collect(Collectors.toList()));
+            for(int i=0;i<this.magicNumber;i++){
+                if(temp.isEmpty()){
+                    return;
+                }
+                AbstractCard card=temp.getRandomCard(AbstractDungeon.cardRandomRng);
+                addToBot(new BATwinsPlayHandCardAction(card,null,this.numberOfConnections+1));
+                temp.removeCard(card);
+                abstractPlayer.hand.removeCard(card);
             }
-            AbstractCard card=temp.getRandomCard(AbstractDungeon.cardRandomRng);
-            addToBot(new BATwinsPlayHandCardAction(card,null,this.numberOfConnections+1));
-            temp.removeCard(card);
-            abstractPlayer.hand.removeCard(card);
         }
+
 
 
     }

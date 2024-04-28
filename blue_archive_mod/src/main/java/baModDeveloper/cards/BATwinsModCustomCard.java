@@ -53,8 +53,8 @@ public abstract class BATwinsModCustomCard extends CustomCard {
         this.originRawDescription = DESCRIPTION;
         this.OriginalColor = COLOR;
         this.modifyEnergyType = ENERGYTYPE;
-        this.GradientColor.add(BATwinsMod.MOMOIColor);
-        this.GradientColor.add(BATwinsMod.MIDORIColor);
+        this.GradientColor.add(BATwinsMod.MOMOIColor.cpy());
+        this.GradientColor.add(BATwinsMod.MIDORIColor.cpy());
 
     }
 

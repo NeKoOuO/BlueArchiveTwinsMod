@@ -1,5 +1,6 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.action.BATwinsDisCardByColorAction;
 import baModDeveloper.action.BATwinsDisOtherCardByColorAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
@@ -37,7 +38,7 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DrawCardAction(this.magicNumber));
         addToBot(new WaitAction(1.0F));
-        addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, integer -> {
+        addToBot(new BATwinsDisCardByColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, integer -> {
             if (integer > 0)
                 addToTop(new DrawCardAction(integer));
         }));
@@ -47,7 +48,7 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DrawCardAction(this.magicNumber));
         addToBot(new WaitAction(1.0F));
-        addToBot(new BATwinsDisOtherCardByColorAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, integer -> {
+        addToBot(new BATwinsDisCardByColorAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, integer -> {
             if (integer > 0) {
                 addToTop(new DrawCardAction(integer));
             } else if (integer == 0) {
@@ -86,7 +87,7 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
     public void triggerOnHovered() {
         if (AbstractDungeon.player != null) {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c.color != this.color) {
+                if (c.color == BATwinsCharacter.getOtherColor(this.color)) {
                     c.flash(BATwinsCharacter.getColorWithCardColor(c.color));
                 }
             }

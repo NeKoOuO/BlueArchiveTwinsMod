@@ -16,7 +16,7 @@ public class BATwinsDualProtection extends BATwinsModCustomCard {
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "DualProtection");
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -25,7 +25,7 @@ public class BATwinsDualProtection extends BATwinsModCustomCard {
 
     public BATwinsDualProtection() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock = 10;
+        this.baseBlock = 7;
         this.block = this.baseBlock;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;

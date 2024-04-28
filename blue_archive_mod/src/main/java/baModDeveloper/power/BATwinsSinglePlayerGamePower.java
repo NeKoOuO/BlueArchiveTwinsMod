@@ -1,5 +1,6 @@
 package baModDeveloper.power;
 
+import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -42,19 +43,24 @@ public class BATwinsSinglePlayerGamePower extends AbstractPower {
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         addToBot(new AbstractGameAction() {
+            private int amount=BATwinsSinglePlayerGamePower.this.amount;
+            private AbstractCreature owner=BATwinsSinglePlayerGamePower.this.owner;
             @Override
             public void update() {
                 if (AbstractDungeon.player.hand.size() <= 0) {
                     this.isDone = true;
                     return;
                 }
-                boolean same = true;
                 ArrayList<AbstractCard> temp = new ArrayList<>(AbstractDungeon.player.hand.group);
                 temp.remove(usedCard);
-                AbstractCard.CardColor firstColor = temp.get(0).color;
-                if (temp.stream().allMatch(obj -> (obj.color.equals(firstColor)))) {
-                    BATwinsSinglePlayerGamePower.this.flash();
-                    addToTop(new GainBlockAction(BATwinsSinglePlayerGamePower.this.owner, BATwinsSinglePlayerGamePower.this.amount));
+                boolean noMomoiCard=temp.stream().allMatch(card->card.color!= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD);
+                boolean noMidoriCard=temp.stream().allMatch(card->card.color!= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD);
+                if(noMomoiCard||noMidoriCard){
+                    AbstractPower p=this.owner.getPower(BATwinsSinglePlayerGamePower.POWER_ID);
+                    if(p!=null){
+                        p.flash();
+                    }
+                    addToBot(new GainBlockAction(this.owner,this.amount));
                 }
                 this.isDone = true;
             }

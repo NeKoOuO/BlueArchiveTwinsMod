@@ -23,7 +23,8 @@
     },
     "BATwinsMod:PaintingConception":{
         "NAME":"Picture conception",
-        "DESCRIPTION":"Play !M! random batwinsmod:MidoriCard from your hand."
+        "DESCRIPTION":"Gain !B! block . NL Play !M! random batwinsmod:MidoriCard from your hand.",
+		"UPGRADE_DESCRIPTION": "Gain !B! block . NL Select and play !M! batwinsmod:MidoriCard from your hand."
     },
     "BATwinsMod:ParoxysmalPain":{
         "NAME":"The Pain of Creation",
@@ -141,7 +142,7 @@
 	},
 	"BATwinsMod:SinglePlayerGame":{
 		"NAME":"Single-player Game",
-		"DESCRIPTION":"If there is only 1 color of cards in your hand after playing a card,Gain !M! Block."
+		"DESCRIPTION":"If there is no batwinsmod:MomoiCard or batwinsmod:MidoriCard in your hand after playing a card,Gain !M! Block."
 	},
 	"BATwinsMod:CoolingTime":{
 		"NAME":"Cooldown Acceleration",
@@ -368,7 +369,7 @@
 	},
 	"BATwinsMod:CheckTheStrategy":{
 		"NAME":"Search Strategy Guide",
-		"DESCRIPTION":"Draw !M! cards,Discard all non- batwinsmod:MidoriCard and draw the same number of cards. NL if no cards were discarded this way,choose 1 card from the draw pile and add it to your hand.",
+		"DESCRIPTION":"Draw !M! cards,Discard all batwinsmod:MomoiCard and draw the same number of cards. NL if no cards were discarded this way,choose 1 card from the draw pile and add it to your hand.",
 		"UPGRADE_DESCRIPTION":"Draw !M! cards,丢弃所有非 batwinsmod:MidoriCard Draw等量牌. NL 若此牌没有丢弃牌则从Draw牌堆选择1cards加入手牌."
 	},
 	"BATwinsMod:LeaveItToMe":{
@@ -381,14 +382,14 @@
 	},
 	"BATwinsMod:DontSayIt":{
 		"NAME":"Keep it secret from my sister",
-		"DESCRIPTION":"Gain !B! 点 Block 2 times,discard all non- batwinsmod:MidoriCard from your hand. NL If no cards were discarded this way, batwinsmod:LevelUp by !M! .",
+		"DESCRIPTION":"Gain !B! 点 Block 2 times,discard all batwinsmod:MomoiCard from your hand. NL If no cards were discarded this way, batwinsmod:LevelUp by !M! .",
 		"EXTENDED_DESCRIPTION":[
 			"Keep it secret from my sister"
 		]
 	},
 	"BATwinsMod:ItsSoPainful":{
 		"NAME":"Solo Attack",
-		"DESCRIPTION":"Deal !D! Damage !M! times,discard all non- batwinsmod:MomoiCard .If no cards were discarded this way,increase the number of times this card deals for the rest of this battle."
+		"DESCRIPTION":"Deal !D! Damage !M! times,discard all batwinsmod:MidoriCard .If no cards were discarded this way,increase the number of times this card deals for the rest of this battle."
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"Penetrating Damage",
