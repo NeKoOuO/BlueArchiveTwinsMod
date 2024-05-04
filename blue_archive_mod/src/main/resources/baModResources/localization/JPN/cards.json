@@ -23,7 +23,8 @@
     },
     "BATwinsMod:PaintingConception":{
         "NAME":"画面構想",
-        "DESCRIPTION":"!B! ブロック を得る、 [batwinsmod:momoiorbicon] を得る。"
+        "DESCRIPTION":"!B! ブロック を得る。 NL 手札のランダムな非パワーカード !M! 枚をプレイする。",
+		"UPGRADE_DESCRIPTION":"!B! ブロック を得る。 NL 手札の非パワーカード !M! 枚を選び、プレイする。"
     },
     "BATwinsMod:ParoxysmalPain":{
         "NAME":"創作の痛み",
@@ -42,7 +43,7 @@
 	},
     "BATwinsMod:Exchange":{
         "NAME":"チェンジ",
-        "DESCRIPTION":" 保留 。 NL batwinsmod:チェンジ 最大2枚の手札。",
+        "DESCRIPTION":" 保留 。 NL batwinsmod:チェンジ 最大3枚の手札。 廃棄 ",
         "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:チェンジ 最大3枚の手札。"
     },
     "BATwinsMod:KeepItToTheEnd":{
@@ -137,11 +138,11 @@
 	},
 	"BATwinsMod:LightSpeedStrike":{
 		"NAME":"光速ストライク",
-		"DESCRIPTION":"!D! ダメージを与える。 NL 手札の攻撃カード１枚を選び、プレイする。他の攻撃カードを捨てる。"
+		"DESCRIPTION":"!D! ダメージを与える。 弱体 !M! を与える。 NL 手札の攻撃カード１枚を選び、プレイする。他の攻撃カードを捨てる。"
 	},
 	"BATwinsMod:SinglePlayerGame":{
 		"NAME":"シングルプレイ",
-		"DESCRIPTION":"カードをプレイする後、手札は１種類色のカードだけの場合、 !M! ブロック を得る。"
+		"DESCRIPTION":"カードをプレイする後、手札は batwinsmod:モモイカード もしくは  batwinsmod:ミドリカード がいない場合、 !M! ブロック を得る。"
 	},
 	"BATwinsMod:CoolingTime":{
 		"NAME":"クーリングブースト",
@@ -163,7 +164,7 @@
 	},
 	"BATwinsMod:AbstractSchool":{
 		"NAME":"ピクセルアート",
-		"DESCRIPTION":"手札に異なる色のカードが毎１種類ずつあることに、 !D! ダメージを与える、 !M! 枚カードを引く。"
+		"DESCRIPTION":"手札に異なる色の種類数の !B! 倍( !D! )ダメージを与える。異なる色の種類数の枚数( !M! )カードを引く。"
 	},
 	"BATwinsMod:DefensiveCounterattack":{
 		"NAME":"防守与ストライク",
@@ -189,8 +190,8 @@
 	},
 	"BATwinsMod:TemporaryAssistance":{
 		"NAME":"臨時サッポート",
-		"DESCRIPTION":" batwinsmod:チャンジ １枚手札。プレイしたあと、そのカードの色は元に戻る。もしこのカードは山札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。",
-		"UPGRADE_DESCRIPTION":" batwinsmod:チャンジ １枚手札。プレイしたあと、そのカードの色は元に戻る。もしこのカードは山札も捨て札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。"
+		"DESCRIPTION":" batwinsmod:チェンジ １枚手札。プレイしたあと、そのカードの色は元に戻る。もしこのカードは山札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:チェンジ １枚手札。プレイしたあと、そのカードの色は元に戻る。もしこのカードは山札も捨て札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。"
 	},
 	"BATwinsMod:AdventureExperience":{
 		"NAME":"冒险-历练",
@@ -238,8 +239,8 @@
 	},
 	"BATwinsMod:ConvenientConnectivity":{
 		"NAME":"クイック連携",
-		"DESCRIPTION":" !M! 枚非パワー手札をプレイする。 batwinsmod:連携 ：ランダムな１枚非パワー山札カードをプレイする。",
-		"UPGRADE_DESCRIPTION":" !M! 枚非パワー手札をプレイする。 batwinsmod:連携 ：１枚非パワー山札カードを選び、プレイする。"
+		"DESCRIPTION":" !M! 枚手札をプレイする。 batwinsmod:連携 ：ランダムな１枚山札カードをプレイする。",
+		"UPGRADE_DESCRIPTION":" !M! 枚手札をプレイする。 batwinsmod:連携 ：１枚山札カードを選び、プレイする。"
 	},
 	"BATwinsMod:EndCombo":{
 		"NAME":"终结连击",
@@ -271,7 +272,7 @@
 	},
 	"BATwinsMod:DualProtection":{
 		"NAME":"ダブルガード",
-		"DESCRIPTION":" !B! ブロックを得る、 !M! 枚カードを引く。 NL batwinsmod:連携 ： !B! ブロック を得る、 !M! 枚カードを引く。"
+		"DESCRIPTION":" !B! ブロック を得る、 !M! 枚カードを引く。 NL batwinsmod:連携 ： !B! ブロック を得る、 !M! 枚カードを引く。"
 	},
 	"BATwinsMod:OperateFreely":{
 		"NAME":"意のままに捜索",
@@ -279,7 +280,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"経験値パケージ",
-		"DESCRIPTION":" batwinsmod:共有 NL もし batwinsmod:経験値 はこのカードのコストより高い（0以外）、このカードをプレイする。 NL !M! 枚カードを引く。このバトル、このカードのコスト１が1減少する。"
+		"DESCRIPTION":" batwinsmod:共有 NL もし batwinsmod:経験値 はこのカードのコストより高い（コストは0な場合以外）、このカードをプレイする。 NL !M! 枚カードを引く。このバトル、このカードのコスト１が1減少する。"
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"セルフ連携",
@@ -368,8 +369,8 @@
 	},
 	"BATwinsMod:CheckTheStrategy":{
 		"NAME":"攻略本を参考",
-		"DESCRIPTION":" !M! 枚カードを引く、すべての非 batwinsmod:ミドリカード を捨てる、同じ数のカードを引く。 NL もしカードを捨てない、山札に１枚カードを手札に加える。",
-		"UPGRADE_DESCRIPTION":" !M! 枚カードを引く、すべての非 batwinsmod:ミドリカード を捨てる、同じ数のカードを引く。 NL もしカードを捨てない、山札に１枚カードを手札に加える。"
+		"DESCRIPTION":" !M! 枚カードを引く、すべての batwinsmod:モモイカード を捨てる、同じ数のカードを引く。 NL もしカードを捨てない、山札に１枚カードを手札に加える。",
+		"UPGRADE_DESCRIPTION":" !M! 枚カードを引く、すべての batwinsmod:モモイカード を捨てる、同じ数のカードを引く。 NL もしカードを捨てない、山札に１枚カードを手札に加える。"
 	},
 	"BATwinsMod:LeaveItToMe":{
 		"NAME":"任せってよ！",
@@ -381,14 +382,14 @@
 	},
 	"BATwinsMod:DontSayIt":{
 		"NAME":"お姉ちゃんには内緒ですよ",
-		"DESCRIPTION":" !B! ブロック 2回を得る、すべての非 batwinsmod:ミドリカード を捨てる。 NL もし手札を捨ててない場合、 batwinsmod:経験値 !M! を得る。",
+		"DESCRIPTION":" !B! ブロック 2回を得る、すべての batwinsmod:モモイカード を捨てる。 NL もし手札を捨ててない場合、 batwinsmod:経験値 !M! を得る。",
 		"EXTENDED_DESCRIPTION":[
 			"ミドリに内緒だよ"
 		]
 	},
 	"BATwinsMod:ItsSoPainful":{
 		"NAME":"ソロアッタク",
-		"DESCRIPTION":" !D! ダメージ !M! 回を与える、すべての非 batwinsmod:モモイカード を捨てる。カードを捨てない場合、ダメージの回数＋１。"
+		"DESCRIPTION":" !D! ダメージ !M! 回を与える、すべての batwinsmod:ミドリカード を捨てる。カードを捨てない場合、ダメージの回数＋１。"
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"貫通ダメージ",
@@ -496,7 +497,7 @@
 	},
 	"BATwinsMod:TacticalRelay":{
 		"NAME": "戦術リレー",
-		"DESCRIPTION": " [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] を得る、 NL このターン、 batwinsmod:モモイカード をプレイできない。",
-		"UPGRADE_DESCRIPTION": " [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] を得る、 NL このターン、 batwinsmod:モモイカード をプレイできない。"
+		"DESCRIPTION": " [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] を得る、最大2枚カードを batwinsmod:チェンジ できる。 NL このターン、 batwinsmod:モモイカード をプレイできない。",
+		"UPGRADE_DESCRIPTION": " [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] を得る、、最大2枚カードを batwinsmod:チェンジ できる。 NL このターン、 batwinsmod:モモイカード をプレイできない。"
 	}
 }
