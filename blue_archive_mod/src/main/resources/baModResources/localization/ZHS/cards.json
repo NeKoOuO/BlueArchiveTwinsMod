@@ -23,7 +23,8 @@
     },
     "BATwinsMod:PaintingConception":{
         "NAME":"画面构思",
-        "DESCRIPTION":"获得 !B! 点格挡，获得 [batwinsmod:momoiorbicon] 。"
+        "DESCRIPTION":"获得 !B! 点 格挡 。 NL 打出 !M! 张手牌中的随机非能力 batwinsmod:绿牌 。",
+		"UPGRADE_DESCRIPTION":"获得 !B! 点 格挡 。 NL 选择打出 !M! 张手牌中的非能力 batwinsmod:绿牌 。"
     },
     "BATwinsMod:ParoxysmalPain":{
         "NAME":"创作之痛",
@@ -42,8 +43,8 @@
     },
     "BATwinsMod:Exchange":{
         "NAME":"交换",
-        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多2张手牌。",
-        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。"
+        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。 NL 消耗 ",
+        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。 "
     },
     "BATwinsMod:KeepItToTheEnd":{
         "NAME":"严守截稿日",
@@ -137,11 +138,11 @@
 	},
 	"BATwinsMod:LightSpeedStrike":{
 		"NAME":"光速打击",
-		"DESCRIPTION":"造成 !D! 点伤害。 NL 选择手牌1张攻击牌打出并弃置其他攻击牌。"
+		"DESCRIPTION":"造成 !D! 点伤害，给予 !M! 层 易伤 。 NL 选择手牌1张攻击牌打出并丢弃其他攻击牌。"
 	},
 	"BATwinsMod:SinglePlayerGame":{
 		"NAME":"单人游戏",
-		"DESCRIPTION":"打出牌后若手牌只有一种颜色。获得 !M! 点 格挡 。"
+		"DESCRIPTION":"打出牌后若手牌没有 batwinsmod:桃牌 或 batwinsmod:绿牌 。获得 !M! 点 格挡 。"
 	},
 	"BATwinsMod:CoolingTime":{
 		"NAME":"冷却加速",
@@ -163,7 +164,7 @@
 	},
 	"BATwinsMod:AbstractSchool":{
 		"NAME":"像素艺术",
-		"DESCRIPTION":"你的手牌每有1种颜色，造成 !D! 点伤害，抽 !M! 张牌。"
+		"DESCRIPTION":"造成手牌颜色数 !B! 倍（ !D! ）点伤害，抽手牌颜色数（ !M! ）张牌。"
 	},
 	"BATwinsMod:DefensiveCounterattack":{
 		"NAME":"防守与打击",
@@ -238,8 +239,8 @@
 	},
 	"BATwinsMod:ConvenientConnectivity":{
 		"NAME":"便捷连携",
-		"DESCRIPTION":"选择 !M! 张非能力手牌打出。 batwinsmod:连携 ：随机打出抽牌堆1张非能力牌。",
-		"UPGRADE_DESCRIPTION":"选择 !M! 张非能力手牌打出。 batwinsmod:连携 ：选择抽牌堆1张非能力牌打出。"
+		"DESCRIPTION":"选择 !M! 张手牌打出。 NL batwinsmod:连携 ：随机打出抽牌堆1张牌。",
+		"UPGRADE_DESCRIPTION":"选择 !M! 张手牌打出。 NL batwinsmod:连携 ：选择抽牌堆1张牌打出。"
 	},
 	"BATwinsMod:EndCombo":{
 		"NAME":"终结连击",
@@ -279,7 +280,7 @@
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"经验大礼包",
-		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 大于这张牌的耗能（除0以外），打出这张牌。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
+		"DESCRIPTION":" batwinsmod:共有 NL 若拥有的 batwinsmod:经验值 大于这张牌的耗能，打出这张牌（0耗能时除外）。 NL 抽 !M! 张牌,然后这张牌本场战斗耗能减1。"
 	},
 	"BATwinsMod:SelfConnectivity":{
 		"NAME":"自我连携",
@@ -368,8 +369,8 @@
 	},
 	"BATwinsMod:CheckTheStrategy":{
 		"NAME":"查询攻略书",
-		"DESCRIPTION":"抽 !M! 张牌，丢弃所有非 batwinsmod:绿牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆选择1张牌加入手牌。",
-		"UPGRADE_DESCRIPTION":"抽 !M! 张牌，丢弃所有非 batwinsmod:绿牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆选择1张牌加入手牌。"
+		"DESCRIPTION":"抽 !M! 张牌，丢弃所有 batwinsmod:桃牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆选择1张牌加入手牌。",
+		"UPGRADE_DESCRIPTION":"抽 !M! 张牌，丢弃所有 batwinsmod:桃牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆选择1张牌加入手牌。"
 	},
 	"BATwinsMod:LeaveItToMe":{
 		"NAME":"交给我吧",
@@ -381,14 +382,14 @@
 	},
 	"BATwinsMod:DontSayIt":{
 		"NAME":"要对姐姐保密哦",
-		"DESCRIPTION":"获得 !B! 点 格挡 2次，丢弃手牌中所有非 batwinsmod:绿牌 。 NL 若此牌没有丢弃牌则获得 !M! 层 batwinsmod:经验值 。",
+		"DESCRIPTION":"获得 !B! 点 格挡 2次，丢弃手牌中所有 batwinsmod:桃牌 。 NL 若此牌没有丢弃牌则获得 !M! 层 batwinsmod:经验值 。",
 		"EXTENDED_DESCRIPTION":[
 			"要对妹妹保密哦"
 		]
 	},
 	"BATwinsMod:ItsSoPainful":{
 		"NAME":"单独进攻",
-		"DESCRIPTION":"给予 !D! 点伤害 !M! 次，丢弃手牌中所有非 batwinsmod:桃牌 。若此牌没有丢弃牌则本场战斗此牌伤害次数增加1。"
+		"DESCRIPTION":"给予 !D! 点伤害 !M! 次，丢弃手牌中所有 batwinsmod:绿牌 。若此牌没有丢弃牌则本场战斗此牌伤害次数增加1。"
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"贯通伤害",
@@ -496,7 +497,7 @@
 	},
 	"BATwinsMod:TacticalRelay":{
 		"NAME": "战术接力",
-		"DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , NL 本回合不能再打出 batwinsmod:桃牌 。",
-		"UPGRADE_DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , NL 本回合不能再打出 batwinsmod:桃牌 。"
+		"DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:桃牌 。",
+		"UPGRADE_DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:桃牌 。"
 	}
 }
