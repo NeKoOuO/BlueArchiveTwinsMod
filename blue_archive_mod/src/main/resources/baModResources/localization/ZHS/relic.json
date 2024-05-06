@@ -121,5 +121,12 @@
 		"DESCRIPTIONS": [
 			"每回合多抽 #b2 张牌，抽到的牌全部变为 #ybatwinsmod:桃牌 或 #ybatwinsmod:绿牌 。"
 		]
+	},
+	"BATwinsMod:BookOfProhibitions": {
+		"NAME": "禁断之书",
+		"FLAVOR": "记录着不为人知的内容",
+		"DESCRIPTIONS": [
+			"每回合卡牌造成第 #y1 次伤害后，回复 #y1/3 未被格挡的伤害的血量。"
+		]
 	}
 }
