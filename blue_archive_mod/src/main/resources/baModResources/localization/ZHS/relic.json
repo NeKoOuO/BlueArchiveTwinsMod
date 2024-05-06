@@ -116,10 +116,10 @@
 		]
 	},
 	"BATwinsMod:RetroGame": {
-		"NAME": "复古游戏机",
-		"FLAVOR": "古老的游戏机，只能显示一种颜色。",
+		"NAME": "像素游戏机",
+		"FLAVOR": "只能显示一种颜色。",
 		"DESCRIPTIONS": [
-			"每回合多抽 #b3 张牌，抽到的牌全部变为 #ybatwinsmod:桃牌 或 #ybatwinsmod:绿牌 。"
+			"每回合多抽 #b2 张牌，抽到的牌全部变为 #ybatwinsmod:桃牌 或 #ybatwinsmod:绿牌 。"
 		]
 	}
 }

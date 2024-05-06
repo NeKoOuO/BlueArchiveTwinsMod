@@ -35,11 +35,11 @@ public class BATwinsRetroGame extends CustomRelic {
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.masterHandSize+=3;
+        AbstractDungeon.player.masterHandSize+=2;
     }
 
     @Override
     public void onUnequip() {
-        AbstractDungeon.player.masterHandSize-=3;
+        AbstractDungeon.player.masterHandSize-=2;
     }
 }
