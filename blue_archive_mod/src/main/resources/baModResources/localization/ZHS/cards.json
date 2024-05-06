@@ -499,5 +499,12 @@
 		"NAME": "战术接力",
 		"DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:桃牌 。",
 		"UPGRADE_DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:桃牌 。"
+	},
+	"BATwinsMod:Gorgeous": {
+		"NAME": "华丽散场",
+		"DESCRIPTION": " 不能被打出 NL 本回合达到 batwinsmod:连携 5时丢弃这张牌并对所有敌人造成 !D! 点伤害。",
+		"EXTENDED_DESCRIPTION": [
+			"这张牌只能被效果打出"
+		]
 	}
 }

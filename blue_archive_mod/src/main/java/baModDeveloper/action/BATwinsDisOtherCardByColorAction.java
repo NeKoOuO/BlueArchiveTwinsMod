@@ -1,6 +1,7 @@
 package baModDeveloper.action;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -27,6 +28,7 @@ public class BATwinsDisOtherCardByColorAction extends AbstractGameAction {
         for (AbstractCard c : disCards) {
             AbstractDungeon.player.hand.moveToDiscardPile(c);
             c.triggerOnManualDiscard();
+            GameActionManager.incrementDiscard(false);
         }
         if (this.callback != null) {
             this.callback.accept(disCards.size());
