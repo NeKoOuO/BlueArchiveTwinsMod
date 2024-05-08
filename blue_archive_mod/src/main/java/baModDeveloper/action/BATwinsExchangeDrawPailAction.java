@@ -18,7 +18,11 @@ public class BATwinsExchangeDrawPailAction extends SelectCardsAction {
     };
     private static final Consumer<List<AbstractCard>> callback = cardList -> {
         for (AbstractCard c : cardList) {
-            AbstractDungeon.actionManager.addToBottom(new BATwinsCoversionColorAction((BATwinsModCustomCard) c, false));
+            if(AbstractDungeon.player.drawPile.contains(c)){
+                AbstractDungeon.player.drawPile.removeCard(c);
+                AbstractDungeon.player.drawPile.addToTop(c);
+            }
+            AbstractDungeon.actionManager.addToTop(new BATwinsCoversionColorAction((BATwinsModCustomCard) c, false));
         }
     };
     private static final UIStrings uistrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
