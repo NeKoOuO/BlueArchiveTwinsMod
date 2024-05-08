@@ -506,5 +506,9 @@
 		"EXTENDED_DESCRIPTION": [
 			"这张牌只能被效果打出"
 		]
+	},
+	"BATwinsMod:UniversalBullet": {
+		"NAME": "通配子弹",
+		"DESCRIPTION": "造成 !D! 点伤害，随机手牌1张 batwinsmod:桃牌 batwinsmod:存储 这张牌。 NL 消耗 。"
 	}
 }
