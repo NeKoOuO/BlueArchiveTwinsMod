@@ -81,7 +81,7 @@
 	"BATwinsMod:SinglePlayerGamePower":{
 		"NAME":"单人游戏",
 		"DESCRIPTIONS":[
-			"打出牌后若手牌只有一种颜色，获得",
+			"打出牌后若手牌没有桃牌或绿牌，获得",
 			"点格挡。"
 		]
 	},
