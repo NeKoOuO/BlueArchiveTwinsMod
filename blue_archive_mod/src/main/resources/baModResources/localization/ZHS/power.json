@@ -165,7 +165,7 @@
 	"BATwinsMod:MaidFormPower":{
 		"NAME":"女仆形态",
 		"DESCRIPTIONS":[
-			"每回合打出第%d张牌后打出1张视为相同耗能的加速。"
+			"每回合打出第%d张牌后打出抽牌堆1张耗能低于那张牌的牌。"
 		]
 	},
 	"BATwinsMod:FlatFallPower":{

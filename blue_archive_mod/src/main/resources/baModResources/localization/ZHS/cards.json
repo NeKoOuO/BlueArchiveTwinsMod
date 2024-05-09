@@ -353,8 +353,8 @@
 	},
 	"BATwinsMod:MaidForm":{
 		"NAME":"女仆形态",
-		"DESCRIPTION":"每回合打出第1张牌后打出1张视为相同耗能的加速。",
-		"UPGRADE_DESCRIPTION":" batwinsmod:共有 NL 每回合打出第1张牌后打出1张视为相同耗能的加速。"
+		"DESCRIPTION":"每回合打出第1张牌后打出抽牌堆1张耗能低于那张牌的牌。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:共有 NL 每回合打出第1张牌后打出抽牌堆1张耗能低于那张牌的牌。"
 	},
 	"BATwinsMod:Collaboration":{
 		"NAME":"蓄力",
