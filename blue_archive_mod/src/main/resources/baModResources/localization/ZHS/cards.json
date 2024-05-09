@@ -452,8 +452,8 @@
 	},
 	"BATwinsMod:BulletWarehouse":{
 		"NAME":"武器库",
-		"DESCRIPTION":"从4张 batwinsmod:射击 牌中选择1张加入手牌。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION":"从4张 升级 的 batwinsmod:射击 牌中选择1张加入手牌。 NL 消耗 "
+		"DESCRIPTION":"从4张 batwinsmod:射击 牌中选择1张加入手牌。获得 保留 并 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 NL 消耗 ",
+		"UPGRADE_DESCRIPTION":"从4张 升级 的 batwinsmod:射击 牌中选择1张加入手牌。获得 保留 并 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 NL 消耗 "
 	},
 	"BATwinsMod:PoisonBullet":{
 		"NAME":"淬毒子弹",
