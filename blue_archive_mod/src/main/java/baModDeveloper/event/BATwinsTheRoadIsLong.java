@@ -37,7 +37,7 @@ public class BATwinsTheRoadIsLong extends PhasedEvent {
         super(ID, title, imgUrl);
         this.loseHp = 30;
         this.loseMaxHp = 12;
-        this.recoveryHp = AbstractDungeon.player.maxHealth / 2;
+        this.recoveryHp = AbstractDungeon.player.maxHealth;
         registerPhase("EnterRoom", new TextPhase(DESCRIPTIONS[0] + DESCRIPTIONS[1]).addOption(OPTIONS[5], integer -> transitionKey("Start")));
         registerPhase("Start", new TextPhase(DESCRIPTIONS[2] + DESCRIPTIONS[3]).addOption(OPTIONS[0], this::startOptionResult).addOption(String.format(OPTIONS[1], this.loseHp), this::startOptionResult).addOption(String.format(OPTIONS[2], this.recoveryHp, this.loseMaxHp), this::startOptionResult));
         registerPhase("Forward", new TextPhase(DESCRIPTIONS[7] + DESCRIPTIONS[12] + DESCRIPTIONS[13]).addOption(OPTIONS[5], integer -> transitionKey("ForwardEnd")));

@@ -353,8 +353,8 @@
 	},
 	"BATwinsMod:MaidForm":{
 		"NAME":"女仆形态",
-		"DESCRIPTION":"每回合打出第1张牌后打出1张视为相同耗能的加速。",
-		"UPGRADE_DESCRIPTION":" batwinsmod:共有 NL 每回合打出第1张牌后打出1张视为相同耗能的加速。"
+		"DESCRIPTION":"每回合打出第1张牌后打出抽牌堆1张耗能低于那张牌的牌。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:共有 NL 每回合打出第1张牌后打出抽牌堆1张耗能低于那张牌的牌。"
 	},
 	"BATwinsMod:Collaboration":{
 		"NAME":"蓄力",
@@ -452,8 +452,8 @@
 	},
 	"BATwinsMod:BulletWarehouse":{
 		"NAME":"武器库",
-		"DESCRIPTION":"从4张 batwinsmod:射击 牌中选择1张加入手牌。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION":"从4张 升级 的 batwinsmod:射击 牌中选择1张加入手牌。 NL 消耗 "
+		"DESCRIPTION":"从4张 batwinsmod:射击 牌中选择1张加入手牌。获得 保留 并 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 NL 消耗 ",
+		"UPGRADE_DESCRIPTION":"从4张 升级 的 batwinsmod:射击 牌中选择1张加入手牌。获得 保留 并 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 NL 消耗 "
 	},
 	"BATwinsMod:PoisonBullet":{
 		"NAME":"淬毒子弹",
@@ -499,5 +499,20 @@
 		"NAME": "战术接力",
 		"DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:桃牌 。",
 		"UPGRADE_DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:桃牌 。"
+	},
+	"BATwinsMod:Gorgeous": {
+		"NAME": "华丽散场",
+		"DESCRIPTION": " 不能被打出 NL 本回合达到 batwinsmod:连携 5时丢弃这张牌并对所有敌人造成 !D! 点伤害。",
+		"EXTENDED_DESCRIPTION": [
+			"这张牌只能被效果打出"
+		]
+	},
+	"BATwinsMod:UniversalBullet": {
+		"NAME": "通配子弹",
+		"DESCRIPTION": "造成 !D! 点伤害，随机手牌1张 batwinsmod:桃牌 batwinsmod:存储 这张牌。 NL 消耗 。"
+	},
+	"BATwinsMod:MultipleShadows": {
+		"NAME": "占据先机",
+		"DESCRIPTION": "获得 !B! 点 格挡 ， 格挡 在下 !M! 个回合不会消失 。 NL 消耗 "
 	}
 }

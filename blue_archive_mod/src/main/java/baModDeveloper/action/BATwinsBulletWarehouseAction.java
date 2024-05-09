@@ -1,9 +1,9 @@
 package baModDeveloper.action;
 
-import baModDeveloper.cards.BATwinsContinuousShooting;
-import baModDeveloper.cards.BATwinsFocusShooting;
-import baModDeveloper.cards.BATwinsRandomShooting;
-import baModDeveloper.cards.BATwinsStableShooting;
+import baModDeveloper.cards.*;
+import baModDeveloper.cards.bullets.BATwinsCustomBulletCard;
+import baModDeveloper.modifier.BATwinsRetainModifier;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -18,10 +18,11 @@ import java.util.ArrayList;
 public class BATwinsBulletWarehouseAction extends AbstractGameAction {
     private boolean retrieveCard = false;
     private boolean upgraded;
-
-    public BATwinsBulletWarehouseAction(boolean upgraded) {
+    private int bulletAmount;
+    public BATwinsBulletWarehouseAction(boolean upgraded,int bulletAmount) {
         this.amount = 1;
         this.upgraded = upgraded;
+        this.bulletAmount=bulletAmount;
         this.duration = Settings.ACTION_DUR_FAST;
 
     }
@@ -49,6 +50,12 @@ public class BATwinsBulletWarehouseAction extends AbstractGameAction {
                 if (AbstractDungeon.player.hasPower(MasterRealityPower.POWER_ID)) {
                     disCard1.upgrade();
 //                    disCard2.upgrade();
+                }
+                CardModifierManager.addModifier(disCard1,new BATwinsRetainModifier());
+                if(disCard1 instanceof BATwinsModCustomCard){
+                    for(int i=0;i<this.bulletAmount;i++){
+                        ((BATwinsModCustomCard) disCard1).addBringOutCard(BATwinsCustomBulletCard.getRandomBullet());
+                    }
                 }
                 disCard1.current_x = -1000.0F * Settings.xScale;
 //                disCard2.current_x=-1000.0F*Settings.xScale+AbstractCard.IMG_HEIGHT;

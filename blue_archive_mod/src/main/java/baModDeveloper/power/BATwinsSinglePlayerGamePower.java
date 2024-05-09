@@ -54,7 +54,7 @@ public class BATwinsSinglePlayerGamePower extends AbstractPower {
                 ArrayList<AbstractCard> temp = new ArrayList<>(AbstractDungeon.player.hand.group);
                 temp.remove(usedCard);
                 boolean noMomoiCard=temp.stream().allMatch(card->card.color!= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD);
-                boolean noMidoriCard=temp.stream().allMatch(card->card.color!= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD);
+                boolean noMidoriCard=temp.stream().allMatch(card->card.color!= BATwinsCharacter.Enums.BATWINS_MIDORI_CARD);
                 if(noMomoiCard||noMidoriCard){
                     AbstractPower p=this.owner.getPower(BATwinsSinglePlayerGamePower.POWER_ID);
                     if(p!=null){

@@ -25,11 +25,12 @@ public class BATwinsBulletWarehouse extends BATwinsModCustomCard {
     public BATwinsBulletWarehouse() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.exhaust = true;
+        this.baseMagicNumber=this.magicNumber=3;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsBulletWarehouseAction(this.upgraded));
+        addToBot(new BATwinsBulletWarehouseAction(this.upgraded,this.magicNumber));
     }
 
     @Override

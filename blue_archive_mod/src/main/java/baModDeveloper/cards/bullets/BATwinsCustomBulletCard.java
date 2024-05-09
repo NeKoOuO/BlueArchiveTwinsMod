@@ -1,15 +1,22 @@
 package baModDeveloper.cards.bullets;
 
+import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.relic.BATwinsSpecialAmmunition;
+import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-public abstract class BATwinsCustomBulletCard extends CustomCard {
+public abstract class BATwinsCustomBulletCard extends BATwinsModCustomCard {
     private static BATwinsCustomBulletCard[] BULLETS = null;
 
     public BATwinsCustomBulletCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        super(id, name, img, cost, rawDescription, type, color, rarity, target, BATwinsEnergyPanel.EnergyType.SHARE);
+    }
+    public BATwinsCustomBulletCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, BATwinsEnergyPanel.EnergyType energyType){
+        super(id, name, img, cost, rawDescription, type, color, rarity, target, energyType);
     }
 
     private static void initializationBullets() {
@@ -51,4 +58,13 @@ public abstract class BATwinsCustomBulletCard extends CustomCard {
         return true;
     }
 
+    @Override
+    public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+
+    }
+
+    @Override
+    public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+
+    }
 }

@@ -1,11 +1,11 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.action.BATwinsAdditionalAttacksAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -57,8 +57,7 @@ public class BATwinsAdditionalAttacks extends BATwinsModCustomCard {
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         if (c.type == CardType.ATTACK) {
             this.flash(BATwinsCharacter.getColorWithCardColor(this.color));
-
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, this.damage), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+            addToBot(new BATwinsAdditionalAttacksAction(this.color,new DamageInfo(AbstractDungeon.player, this.damage), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
     }
 
