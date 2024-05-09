@@ -54,7 +54,7 @@ public class BATwinsPlayTempCardAction extends AbstractGameAction {
         if (cardToPlay instanceof BATwinsModCustomCard) {
             ((BATwinsModCustomCard) cardToPlay).numberOfConnections = this.numberOfConnections;
         }
-        if (this.target == null || this.target.isDeadOrEscaped()) {
+        if (this.target == null) {
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, true, cardToPlay.energyOnUse, true, true), true);
         } else {
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(cardToPlay, (AbstractMonster) this.target, cardToPlay.energyOnUse, true, true), true);
