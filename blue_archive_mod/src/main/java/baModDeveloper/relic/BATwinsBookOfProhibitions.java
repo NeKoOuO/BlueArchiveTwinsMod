@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -44,7 +45,9 @@ public class BATwinsBookOfProhibitions extends CustomRelic {
         if(!this.grayscale){
             if(info.type== DamageInfo.DamageType.NORMAL){
                 this.flash();
-                this.duration=3.0F;
+                if(MathUtils.randomBoolean(0.1F)){
+                    this.duration=3.0F;
+                }
                 addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
                 this.grayscale=true;
                 addToBot(new HealAction(AbstractDungeon.player,AbstractDungeon.player,damageAmount/3));
