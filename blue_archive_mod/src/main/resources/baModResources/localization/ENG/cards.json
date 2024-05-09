@@ -1,503 +1,518 @@
 {
-    "BATwinsMod:MomoiStrick":{
-        "NAME":"Strike",
-        "DESCRIPTION":"Deal !D! damage",
-        "UPGRADE_DESCRIPTION":"Deal !D! Damage."
-    },
-    "BATwinsMod:MidoriStrick": {
-        "NAME": "Strike",
-        "DESCRIPTION":"Deal !D! damage",
-        "UPGRADE_DESCRIPTION":"Deal !D! Damage."
-    },
-    "BATwinsMod:MomoiDefense":{
-        "NAME":"Defend",
-        "DESCRIPTION":"Gain !B! Block."
-    },
-    "BATwinsMod:MidoriDefense":{
-        "NAME":"Defend",
-        "DESCRIPTION":"Gain !B! Block."
-    },
-    "BATwinsMod:AlreadyAngry":{
-        "NAME":"I'm angry！！",
-        "DESCRIPTION":"Apply !M! batwinsmod:Burn ,Deal !D! Damage."
-    },
-    "BATwinsMod:PaintingConception":{
-        "NAME":"Picture conception",
-        "DESCRIPTION":"Gain !B! block . NL Play !M! random batwinsmod:MidoriCard from your hand.",
+	"BATwinsMod:MomoiStrick": {
+		"NAME": "Strike",
+		"DESCRIPTION": "Deal !D! damage",
+		"UPGRADE_DESCRIPTION": "Deal !D! Damage."
+	},
+	"BATwinsMod:MidoriStrick": {
+		"NAME": "Strike",
+		"DESCRIPTION": "Deal !D! damage",
+		"UPGRADE_DESCRIPTION": "Deal !D! Damage."
+	},
+	"BATwinsMod:MomoiDefense": {
+		"NAME": "Defend",
+		"DESCRIPTION": "Gain !B! Block."
+	},
+	"BATwinsMod:MidoriDefense": {
+		"NAME": "Defend",
+		"DESCRIPTION": "Gain !B! Block."
+	},
+	"BATwinsMod:AlreadyAngry": {
+		"NAME": "I'm angry！！",
+		"DESCRIPTION": "Apply !M! batwinsmod:Burn ,Deal !D! Damage."
+	},
+	"BATwinsMod:PaintingConception": {
+		"NAME": "Picture conception",
+		"DESCRIPTION": "Gain !B! block . NL Play !M! random batwinsmod:MidoriCard from your hand.",
 		"UPGRADE_DESCRIPTION": "Gain !B! block . NL Select and play !M! batwinsmod:MidoriCard from your hand."
-    },
-    "BATwinsMod:ParoxysmalPain":{
-        "NAME":"The Pain of Creation",
-        "DESCRIPTION":"Apply !M! batwinsmod:Burn ,Deal !D! Damage to all enemies."
-    },
-    "BATwinsMod:PaintingArt":{
-        "NAME":"Painting Art",
-        "DESCRIPTION":"Deal !D! Damage and Apply 2 poison to a random enemy !M! times."
-    },
-    "BATwinsMod:DeveloperCollaboration":{
-        "NAME":"Developer collaboration",
-        "DESCRIPTION":" batwinsmod:Share . NL After alternating between playing batwinsmod:MomoiCard and batwinsmod:MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase !M! %.",
-		"EXTENDED_DESCRIPTION":[
+	},
+	"BATwinsMod:ParoxysmalPain": {
+		"NAME": "The Pain of Creation",
+		"DESCRIPTION": "Apply !M! batwinsmod:Burn ,Deal !D! Damage to all enemies."
+	},
+	"BATwinsMod:PaintingArt": {
+		"NAME": "Painting Art",
+		"DESCRIPTION": "Deal !D! Damage and Apply 2 poison to a random enemy !M! times."
+	},
+	"BATwinsMod:DeveloperCollaboration": {
+		"NAME": "Developer collaboration",
+		"DESCRIPTION": " batwinsmod:Share . NL After alternating between playing batwinsmod:MomoiCard and batwinsmod:MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase !M! %.",
+		"EXTENDED_DESCRIPTION": [
 			" batwinsmod:Share . NL After alternating between playing batwinsmod:MomoiCard and batwinsmod:MidoriCard in battle,the enemy's poison and batwinsmod:Burn increase by !M! %"
 		]
-    },
-    "BATwinsMod:Exchange":{
-        "NAME":"Exchange",
-        "DESCRIPTION":" Retain . NL batwinsmod:Exchange up to 3 cards in your hand. NL Exhaust ",
-        "UPGRADE_DESCRIPTION":" Retain . NL batwinsmod:Exchange up to 3 cards in your hand."
-    },
-    "BATwinsMod:KeepItToTheEnd":{
-        "NAME":"Deadline",
-        "DESCRIPTION":"Discard all batwinsmod:MomoiCard in your hand,Gain !B! Block for each card."
-    },
-    "BATwinsMod:ArtPolishing":{
-        "NAME":"Art polishing",
-        "DESCRIPTION":"When you apply debuff,Apply !M! poison to same enemy.Will not be triggered by the effect of this power."
-    },
-    "BATwinsMod:BattleCommand":{
-        "NAME":"Combat guidance",
-        "DESCRIPTION":"Choose 1 card to return to the drawing pile, and add 1 card of different color to your hand from the draw pile."
-    },
-    "BATwinsMod:IgniteTheUpperBody":{
-        "NAME":"引火上身",
-        "DESCRIPTION":"Gain !B! Block,Gain !M!  batwinsmod:Burn ."
-    },
-    "BATwinsMod:NotReconciled":{
-        "NAME":"I am not willing！",
-        "DESCRIPTION":"Deal !D! Damage.Gain [batwinsmod:momoiorbicon] next turn.",
-        "UPGRADE_DESCRIPTION":"Deal !D! Damage.Gain [batwinsmod:momoiorbicon] 和 [batwinsmod:midoriorbicon] next turn."
-    },
-    "BATwinsMod:AdditionalAttacks":{
-        "NAME":"Additional attacks",
-        "DESCRIPTION":" Unplayable . NL When this card in hand and playing other attack cards,Deal !D! Damage to random enemy."
-    },
-    "BATwinsMod:AccurateBlocking":{
-        "NAME":"Accurate blocking",
-        "DESCRIPTION":"Gain !B! 点 Block . NL If the current Block is less than the attack damage of the selected enemy,Gain !B! 点 Block . NL Only be played when there are no other batwinsmod:MidoriCard in the hand."
-    },
-    "BATwinsMod:GameLaunch":{
-        "NAME":"Game Launch",
-        "DESCRIPTION":" batwinsmod:Share , innate . NL Draw !M! cards,random 1 batwinsmod:MomoiCard and random 1 batwinsmod:MidoriCard drawn set cost 0 this turn. NL exhaust ",
-        "UPGRADE_DESCRIPTION":" batwinsmod:Share , innate . NL Draw !M! cards,2 random cards drawn set cost 0 this turn. NL exhaust "
-    },
-    "BATwinsMod:InspirationEmergence":{
-        "NAME":"Inspiration Emerges",
-        "DESCRIPTION":" batwinsmod:Share . NL Draw !M! cards, Scry 2X and Draw 1 cards.(X is the number of colors of the drawn cards.)"
-    },
-    "BATwinsMod:PassageInForce":{
-        "NAME":"强行通过",
-        "DESCRIPTION":"对全体敌人Deal !D! Damage,Gain !B! Block,丢弃2cards."
-    },
-    "BATwinsMod:SiteAdaptation":{
-        "NAME":"场地适应",
-        "DESCRIPTION":"Gain !M! 力量 , !M! 敏捷 , !M! 金属化 ."
-    },
-    "BATwinsMod:OnceMore":{
-        "NAME":"Flame Spreading",
-        "DESCRIPTION":"At the end of our turn, trigger batwinsmod:Burn on all enemies.",
-        "UPGRADE_DESCRIPTION":" innate . NL At the end of our turn, trigger batwinsmod:Burn on all enemies."
-    },
-    "BATwinsMod:EnchantedBullet":{
-        "NAME":"Enchantment",
-        "DESCRIPTION":"Apply !M! batwinsmod:Burn . NL Deal !D! Damage ."
-    },
-    "BATwinsMod:ExcellentDesigner":{
-        "NAME":"最棒的开发者们",
-        "DESCRIPTION":" ethereal . NL Draw到时Draw !M! cards. NL Deal !D! Damage,Gain !B! Block.在手牌时打出其他牌,在打出前上升那cards基础伤害值和基础Block值.",
-        "UPGRADE_DESCRIPTION":"Draw到时Draw !M! cards. NL Deal !D! Damage,Gain !B! Block.在手牌时打出其他牌,在打出前上升那cards基础伤害值和基础Block值."
-    },
-    "BATwinsMod:BadDesigner":{
-        "NAME":"糟糕设计师",
-        "DESCRIPTION":"手牌只有时才能打出. NL 在手牌时,打出其他牌时丢弃1cards.再累计打出 !M! 次的话会发生蜕变. exhaust "
-    },
-    "BATwinsMod:BugCard":{
-        "NAME":"漏洞",
-        "DESCRIPTION":"Draw到时,随机 exhaust 1张其他手牌. exhaust ."
-    },
-    "BATwinsMod:RushToDraft":{
-        "NAME":"赶稿",
-        "DESCRIPTION":"Draw !M! cards.将1张漏洞放入弃牌堆."
-    },
-    "BATwinsMod:PlotRepair":{
-        "NAME":"剧情修补",
-        "DESCRIPTION":"Deal !D! Damage, exhaust Draw牌堆1张漏洞,将1张漏洞放入弃牌堆.",
-        "UPGRADE_DESCRIPTION":"Deal !D! Damage, exhaust Draw牌堆所有漏洞,将1张漏洞放入弃牌堆."
-    },
-    "BATwinsMod:BugFix":{
-        "NAME":"漏洞修复",
-        "DESCRIPTION":"回合开始时,Draw牌堆随机 !M! 张状态牌或诅咒牌 exhaust .若exhaust的是漏洞,Gain1 力量 和1 敏捷 ."
-    },
-	"BATwinsMod:AdventureOpening":{
-		"NAME":"冒险-开幕",
-		"DESCRIPTION":" Retain NL 打出exhaust的牌.从手牌选择一张冒险牌exhaust.",
-		"UPGRADE_DESCRIPTION":" Retain batwinsmod:Share NL 打出exhaust的牌.从手牌选择一张冒险牌exhaust."
 	},
-	"BATwinsMod:AdventureBattle":{
-		"NAME":"冒险-战斗",
-		"DESCRIPTION":"Deal !D! Damage.本回合打出的上一cards如果是冒险牌,伤害翻倍. NL exhaust ."
+	"BATwinsMod:Exchange": {
+		"NAME": "Exchange",
+		"DESCRIPTION": " Retain . NL batwinsmod:Exchange up to 3 cards in your hand. NL Exhaust ",
+		"UPGRADE_DESCRIPTION": " Retain . NL batwinsmod:Exchange up to 3 cards in your hand."
 	},
-	"BATwinsMod:LightSpeedStrike":{
-		"NAME":"Lightspeed Strike",
-		"DESCRIPTION":"Deal !D! Damage,apply !M! Vulnerable . NL Choose and play 1 attack card from your hand,and discard other attack cards."
+	"BATwinsMod:KeepItToTheEnd": {
+		"NAME": "Deadline",
+		"DESCRIPTION": "Discard all batwinsmod:MomoiCard in your hand,Gain !B! Block for each card."
 	},
-	"BATwinsMod:SinglePlayerGame":{
-		"NAME":"Single-player Game",
-		"DESCRIPTION":"If there is no batwinsmod:MomoiCard or batwinsmod:MidoriCard in your hand after playing a card,Gain !M! Block."
+	"BATwinsMod:ArtPolishing": {
+		"NAME": "Art polishing",
+		"DESCRIPTION": "When you apply debuff,Apply !M! poison to same enemy.Will not be triggered by the effect of this power."
 	},
-	"BATwinsMod:CoolingTime":{
-		"NAME":"Cooldown Acceleration",
-		"DESCRIPTION":"Gain !B! Block.Choose 1 batwinsmod:MidoriCard from the discard pile. It will be added to your hand at the beginning of the next turn unless it is already exhausted."
+	"BATwinsMod:BattleCommand": {
+		"NAME": "Combat guidance",
+		"DESCRIPTION": "Choose 1 card to return to the drawing pile, and add 1 card of different color to your hand from the draw pile."
 	},
-	"BATwinsMod:DoubleExperience":{
-		"NAME":"Double Experience",
-		"DESCRIPTION":"The batwinsmod:ExperiencePoints gained from playing cards during this battle is doubled.",
-		"UPGRADE_DESCRIPTION":" batwinsmod:LevelUp 1 . NL The batwinsmod:ExperiencePoints gained from playing cards during this battle is doubled."
+	"BATwinsMod:IgniteTheUpperBody": {
+		"NAME": "引火上身",
+		"DESCRIPTION": "Gain !B! Block,Gain !M!  batwinsmod:Burn ."
 	},
-	"BATwinsMod:BDStudy":{
-		"NAME":"BD Study",
-		"DESCRIPTION":" Exhaust all batwinsmod:MomoiCard in hand,Gain batwinsmod:ExperiencePoints equal to the total energy cost of exhausted cards, multiplied by !M!. exhaust "
+	"BATwinsMod:NotReconciled": {
+		"NAME": "I am not willing！",
+		"DESCRIPTION": "Deal !D! Damage.Gain [batwinsmod:momoiorbicon] next turn.",
+		"UPGRADE_DESCRIPTION": "Deal !D! Damage.Gain [batwinsmod:momoiorbicon] 和 [batwinsmod:midoriorbicon] next turn."
 	},
-	"BATwinsMod:EmergencyRecovery":{
-		"NAME":"紧急恢复",
-		"DESCRIPTION":"Gain [batwinsmod:midoriorbicon] .若桃能量为0,Gain [batwinsmod:momoiorbicon] . exhaust ",
-		"UPGRADE_DESCRIPTION":"Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] .若桃能量为0,Gain [batwinsmod:momoiorbicon] . exhaust "
+	"BATwinsMod:AdditionalAttacks": {
+		"NAME": "Additional attacks",
+		"DESCRIPTION": " Unplayable . NL When this card in hand and playing other attack cards,Deal !D! Damage to random enemy."
 	},
-	"BATwinsMod:AbstractSchool":{
-		"NAME":"Pixel Art",
-		"DESCRIPTION":"Deal damage equal to !B! times the number of colors in your hand ( !D! ), and draw cards equal to the number of colors in your hand( !M! )."
+	"BATwinsMod:AccurateBlocking": {
+		"NAME": "Accurate blocking",
+		"DESCRIPTION": "Gain !B! 点 Block . NL If the current Block is less than the attack damage of the selected enemy,Gain !B! 点 Block . NL Only be played when there are no other batwinsmod:MidoriCard in the hand."
 	},
-	"BATwinsMod:DefensiveCounterattack":{
-		"NAME":"防守与打击",
-		"DESCRIPTION":"Gain !B! Block.受到攻击后在下个回合开始时对攻击的怪物打出一张打击."
+	"BATwinsMod:GameLaunch": {
+		"NAME": "Game Launch",
+		"DESCRIPTION": " batwinsmod:Share , innate . NL Draw !M! cards,random 1 batwinsmod:MomoiCard and random 1 batwinsmod:MidoriCard drawn set cost 0 this turn. NL exhaust ",
+		"UPGRADE_DESCRIPTION": " batwinsmod:Share , innate . NL Draw !M! cards,2 random cards drawn set cost 0 this turn. NL exhaust "
 	},
-	"BATwinsMod:AdventureRewards":{
-		"NAME":"冒险-奖励",
-		"DESCRIPTION":"随机Gain以下1项: NL Gain5 batwinsmod:ExperiencePoints NL 回复3生命 NL Gain [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,Draw2cards NL exhaust .若上cards是冒险牌,改为随机选择2项.",
-		"UPGRADE_DESCRIPTION":"随机Gain以下1项: NL Gain5 batwinsmod:ExperiencePoints NL 回复3生命 NL Gain [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,Draw2cards NL Gain1随机药水 NL exhaust .若上cards是冒险牌,改为随机选择2项."
+	"BATwinsMod:InspirationEmergence": {
+		"NAME": "Inspiration Emerges",
+		"DESCRIPTION": " batwinsmod:Share . NL Draw !M! cards, Scry 2X and Draw 1 cards.(X is the number of colors of the drawn cards.)"
 	},
-	"BATwinsMod:AccumulatedStrike":{
-		"NAME":"蓄力打击",
-		"DESCRIPTION":"Deal !D! Damage.本场战斗每打出1张打击牌,这cards的伤害上升 !M! ."
+	"BATwinsMod:PassageInForce": {
+		"NAME": "强行通过",
+		"DESCRIPTION": "对全体敌人Deal !D! Damage,Gain !B! Block,丢弃2cards."
 	},
-	"BATwinsMod:NormalAttackMethods":{
-		"NAME":"平A流",
-		"DESCRIPTION":"每回合开始时,将Draw牌堆随机1张打击牌加入手牌.那cards变为 batwinsmod:Share .",
-		"UPGRADE_DESCRIPTION":"每回合开始时,将Draw牌堆随机1张打击牌加入手牌.那cards变为 batwinsmod:Share . NL Draw牌堆打击牌不足时,将弃牌堆洗入Draw牌堆."
+	"BATwinsMod:SiteAdaptation": {
+		"NAME": "场地适应",
+		"DESCRIPTION": "Gain !M! 力量 , !M! 敏捷 , !M! 金属化 ."
 	},
-	"BATwinsMod:AlternatingAttack":{
-		"NAME":"Alternate Attack",
-		"DESCRIPTION":"Deal !D! Damage. NL Play 1 batwinsmod:MidoriCard from your hand."
+	"BATwinsMod:OnceMore": {
+		"NAME": "Flame Spreading",
+		"DESCRIPTION": "At the end of our turn, trigger batwinsmod:Burn on all enemies.",
+		"UPGRADE_DESCRIPTION": " innate . NL At the end of our turn, trigger batwinsmod:Burn on all enemies."
 	},
-	"BATwinsMod:TemporaryAssistance":{
-		"NAME":"Temporary Assistance",
-		"DESCRIPTION":" batwinsmod:Exchange 1 card from your hand,the card returns to its original color after being palyed.When this card is in the draw pile,if [batwinsmod:midoriorbicon] is exhuausted,add it to your hand.",
-		"UPGRADE_DESCRIPTION":" batwinsmod:Exchange 1 card from your hand,the card returns to its original color after being palyed.When this card is in the draw pile or discard pile,if [batwinsmod:midoriorbicon] is exhuausted,add it to your hand."
+	"BATwinsMod:EnchantedBullet": {
+		"NAME": "Enchantment",
+		"DESCRIPTION": "Apply !M! batwinsmod:Burn . NL Deal !D! Damage ."
 	},
-	"BATwinsMod:AdventureExperience":{
-		"NAME":"冒险-历练",
-		"DESCRIPTION":"Gain [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,Draw !M! cards.本回合打出的上一cards是冒险牌时,Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] .",
-		"UPGRADE_DESCRIPTION":"Gain [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,Draw !M! cards.本回合打出的上一cards是冒险牌时,Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] ."
+	"BATwinsMod:ExcellentDesigner": {
+		"NAME": "最棒的开发者们",
+		"DESCRIPTION": " ethereal . NL Draw到时Draw !M! cards. NL Deal !D! Damage,Gain !B! Block.在手牌时打出其他牌,在打出前上升那cards基础伤害值和基础Block值.",
+		"UPGRADE_DESCRIPTION": "Draw到时Draw !M! cards. NL Deal !D! Damage,Gain !B! Block.在手牌时打出其他牌,在打出前上升那cards基础伤害值和基础Block值."
 	},
-	"BATwinsMod:SwitchStrike":{
-		"NAME":"Switch Strike",
-		"DESCRIPTION":"Deal !D! Damage. NL batwinsmod:Synergy :Play 1 batwinsmod:MidoriCard with same name from your hand."
+	"BATwinsMod:BadDesigner": {
+		"NAME": "糟糕设计师",
+		"DESCRIPTION": "手牌只有时才能打出. NL 在手牌时,打出其他牌时丢弃1cards.再累计打出 !M! 次的话会发生蜕变. exhaust "
 	},
-	"BATwinsMod:CoverCharge":{
-		"NAME":"Covering Charge",
-		"DESCRIPTION":"Deal !D! Damage for each MomoiEnergy spent,Gain !B! Block for each MidoriEnergy spent."
+	"BATwinsMod:BugCard": {
+		"NAME": "漏洞",
+		"DESCRIPTION": "Draw到时,随机 exhaust 1张其他手牌. exhaust ."
 	},
-	"BATwinsMod:MutualUnderstanding":{
-		"NAME":"Twin Telepathy",
-		"DESCRIPTION":"Draw !M! cards,if it's batwinsmod:MomoiCard ,play it.",
-		"UPGRADE_DESCRIPTION":" Scry 1.Draw !M! cards,if it's batwinsmod:MomoiCard ,play it."
+	"BATwinsMod:RushToDraft": {
+		"NAME": "赶稿",
+		"DESCRIPTION": "Draw !M! cards.将1张漏洞放入弃牌堆."
 	},
-	"BATwinsMod:MysteriousChest":{
-		"NAME":"Mystery Chest",
-		"DESCRIPTION":"Add 1 random batwinsmod:MidoriCard to your hand,The card gain ethereal exhaust and have 0 energy cost before being played. NL batwinsmod:Exchange this cards.",
-		"UPGRADE_DESCRIPTION":"Add 1 random batwinsmod:MidoriCard to your hand,The card gain Retain exhaust and have 0 energy cost before being played. NL batwinsmod:Exchange this cards."
+	"BATwinsMod:PlotRepair": {
+		"NAME": "剧情修补",
+		"DESCRIPTION": "Deal !D! Damage, exhaust Draw牌堆1张漏洞,将1张漏洞放入弃牌堆.",
+		"UPGRADE_DESCRIPTION": "Deal !D! Damage, exhaust Draw牌堆所有漏洞,将1张漏洞放入弃牌堆."
 	},
-	"BATwinsMod:SeeYouHaveAShare":{
-		"NAME":"Each to Their Own！",
-		"DESCRIPTION":"Each of the next !M! single-target attack cards played this turn will additionally target all enemies once."
+	"BATwinsMod:BugFix": {
+		"NAME": "漏洞修复",
+		"DESCRIPTION": "回合开始时,Draw牌堆随机 !M! 张状态牌或诅咒牌 exhaust .若exhaust的是漏洞,Gain1 力量 和1 敏捷 ."
 	},
-	"BATwinsMod:CheatingCodeEnabled":{
-		"NAME":"Cheat Code Activated",
-		"DESCRIPTION":"Discard all batwinsmod:MidoriCard ,Draw batwinsmod:MomoiCard until your hand is full.Convert all [batwinsmod:midoriorbicon] to [batwinsmod:momoiorbicon] . exhaust ",
-		"UPGRADE_DESCRIPTION":"Discard all batwinsmod:MidoriCard ,Draw batwinsmod:MomoiCard until your hand is full.Convert all [batwinsmod:midoriorbicon] to [batwinsmod:momoiorbicon] .At the end of this turn,shuffle the discard pile into the draw pile. exhaust "
+	"BATwinsMod:AdventureOpening": {
+		"NAME": "冒险-开幕",
+		"DESCRIPTION": " Retain NL 打出exhaust的牌.从手牌选择一张冒险牌exhaust.",
+		"UPGRADE_DESCRIPTION": " Retain batwinsmod:Share NL 打出exhaust的牌.从手牌选择一张冒险牌exhaust."
 	},
-	"BATwinsMod:FundOverdraft":{
-		"NAME":"Fund Overdraft",
-		"DESCRIPTION":"Draw !M! cards.Reduce the draw count by 1. NL batwinsmod:Synergy :Reset the draw count."
+	"BATwinsMod:AdventureBattle": {
+		"NAME": "冒险-战斗",
+		"DESCRIPTION": "Deal !D! Damage.本回合打出的上一cards如果是冒险牌,伤害翻倍. NL exhaust ."
 	},
-	"BATwinsMod:TakeActionsSeparately":{
-		"NAME":"Separate Action",
-		"DESCRIPTION":"Gain !B! Block. NL Play 1 batwinsmod:MomoiCard from your hand."
+	"BATwinsMod:LightSpeedStrike": {
+		"NAME": "Lightspeed Strike",
+		"DESCRIPTION": "Deal !D! Damage,apply !M! Vulnerable . NL Choose and play 1 attack card from your hand,and discard other attack cards."
 	},
-	"BATwinsMod:RepeatOperation":{
-		"NAME":"Repeat Action",
-		"DESCRIPTION":"Choose up to !M! non-power cards from your hand,then add a copy with batwinsmod:Exchange to your hand."
+	"BATwinsMod:SinglePlayerGame": {
+		"NAME": "Single-player Game",
+		"DESCRIPTION": "If there is no batwinsmod:MomoiCard or batwinsmod:MidoriCard in your hand after playing a card,Gain !M! Block."
 	},
-	"BATwinsMod:ConvenientConnectivity":{
-		"NAME":"Convenient Synergy",
-		"DESCRIPTION":"Choose and play !M! cards from your hand. NL batwinsmod:Synergy :Random play 1 card from the draw pile.",
-		"UPGRADE_DESCRIPTION":"Choose and play !M! cards from your hand. NL batwinsmod:Synergy :Choose and play 1 card from the draw pile."
+	"BATwinsMod:CoolingTime": {
+		"NAME": "Cooldown Acceleration",
+		"DESCRIPTION": "Gain !B! Block.Choose 1 batwinsmod:MidoriCard from the discard pile. It will be added to your hand at the beginning of the next turn unless it is already exhausted."
 	},
-	"BATwinsMod:EndCombo":{
-		"NAME":"Finisher Combo",
-		"DESCRIPTION":"Deal !D! Damage. NL batwinsmod:Synergy :Deal !B! Damage. NL batwinsmod:HyperSynergy :Deal !M! Damage."
+	"BATwinsMod:DoubleExperience": {
+		"NAME": "Double Experience",
+		"DESCRIPTION": "The batwinsmod:ExperiencePoints gained from playing cards during this battle is doubled.",
+		"UPGRADE_DESCRIPTION": " batwinsmod:LevelUp 1 . NL The batwinsmod:ExperiencePoints gained from playing cards during this battle is doubled."
 	},
-	"BATwinsMod:ReadingDocuments":{
-		"NAME":"Instant Save",
-		"DESCRIPTION":"Cards played by effects during this battle will return to the draw pile."
+	"BATwinsMod:BDStudy": {
+		"NAME": "BD Study",
+		"DESCRIPTION": " Exhaust all batwinsmod:MomoiCard in hand,Gain batwinsmod:ExperiencePoints equal to the total energy cost of exhausted cards, multiplied by !M!. exhaust "
 	},
-	"BATwinsMod:MandatoryInstruction":{
-		"NAME":"Mandatory Instruction",
-		"DESCRIPTION":"Choose and play !M! non-power cards from the draw pile,but only use their batwinsmod:Synergy and batwinsmod:HyperSynergy effects.",
-		"UPGRADE_DESCRIPTION":" Retain NL Choose and play !M! non-power cards from the draw pile,but only use their batwinsmod:Synergy and batwinsmod:HyperSynergy effects."
+	"BATwinsMod:EmergencyRecovery": {
+		"NAME": "紧急恢复",
+		"DESCRIPTION": "Gain [batwinsmod:midoriorbicon] .若桃能量为0,Gain [batwinsmod:momoiorbicon] . exhaust ",
+		"UPGRADE_DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] .若桃能量为0,Gain [batwinsmod:momoiorbicon] . exhaust "
 	},
-	"BATwinsMod:TwoStageAttack":{
-		"NAME":"Double Strike",
-		"DESCRIPTION":" batwinsmod:OnlySynergy NL  When this card in hand and playing other strike cards,play this card. NL batwinsmod:Synergy , batwinsmod:HyperSynergy :Deal !D! Damage to all enemies.",
-		"EXTENDED_DESCRIPTION":[
+	"BATwinsMod:AbstractSchool": {
+		"NAME": "Pixel Art",
+		"DESCRIPTION": "Deal damage equal to !B! times the number of colors in your hand ( !D! ), and draw cards equal to the number of colors in your hand( !M! )."
+	},
+	"BATwinsMod:DefensiveCounterattack": {
+		"NAME": "防守与打击",
+		"DESCRIPTION": "Gain !B! Block.受到攻击后在下个回合开始时对攻击的怪物打出一张打击."
+	},
+	"BATwinsMod:AdventureRewards": {
+		"NAME": "冒险-奖励",
+		"DESCRIPTION": "随机Gain以下1项: NL Gain5 batwinsmod:ExperiencePoints NL 回复3生命 NL Gain [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,Draw2cards NL exhaust .若上cards是冒险牌,改为随机选择2项.",
+		"UPGRADE_DESCRIPTION": "随机Gain以下1项: NL Gain5 batwinsmod:ExperiencePoints NL 回复3生命 NL Gain [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,Draw2cards NL Gain1随机药水 NL exhaust .若上cards是冒险牌,改为随机选择2项."
+	},
+	"BATwinsMod:AccumulatedStrike": {
+		"NAME": "蓄力打击",
+		"DESCRIPTION": "Deal !D! Damage.本场战斗每打出1张打击牌,这cards的伤害上升 !M! ."
+	},
+	"BATwinsMod:NormalAttackMethods": {
+		"NAME": "平A流",
+		"DESCRIPTION": "每回合开始时,将Draw牌堆随机1张打击牌加入手牌.那cards变为 batwinsmod:Share .",
+		"UPGRADE_DESCRIPTION": "每回合开始时,将Draw牌堆随机1张打击牌加入手牌.那cards变为 batwinsmod:Share . NL Draw牌堆打击牌不足时,将弃牌堆洗入Draw牌堆."
+	},
+	"BATwinsMod:AlternatingAttack": {
+		"NAME": "Alternate Attack",
+		"DESCRIPTION": "Deal !D! Damage. NL Play 1 batwinsmod:MidoriCard from your hand."
+	},
+	"BATwinsMod:TemporaryAssistance": {
+		"NAME": "Temporary Assistance",
+		"DESCRIPTION": " batwinsmod:Exchange 1 card from your hand,the card returns to its original color after being palyed.When this card is in the draw pile,if [batwinsmod:midoriorbicon] is exhuausted,add it to your hand.",
+		"UPGRADE_DESCRIPTION": " batwinsmod:Exchange 1 card from your hand,the card returns to its original color after being palyed.When this card is in the draw pile or discard pile,if [batwinsmod:midoriorbicon] is exhuausted,add it to your hand."
+	},
+	"BATwinsMod:AdventureExperience": {
+		"NAME": "冒险-历练",
+		"DESCRIPTION": "Gain [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,Draw !M! cards.本回合打出的上一cards是冒险牌时,Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] .",
+		"UPGRADE_DESCRIPTION": "Gain [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,Draw !M! cards.本回合打出的上一cards是冒险牌时,Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] ."
+	},
+	"BATwinsMod:SwitchStrike": {
+		"NAME": "Switch Strike",
+		"DESCRIPTION": "Deal !D! Damage. NL batwinsmod:Synergy :Play 1 batwinsmod:MidoriCard with same name from your hand."
+	},
+	"BATwinsMod:CoverCharge": {
+		"NAME": "Covering Charge",
+		"DESCRIPTION": "Deal !D! Damage for each MomoiEnergy spent,Gain !B! Block for each MidoriEnergy spent."
+	},
+	"BATwinsMod:MutualUnderstanding": {
+		"NAME": "Twin Telepathy",
+		"DESCRIPTION": "Draw !M! cards,if it's batwinsmod:MomoiCard ,play it.",
+		"UPGRADE_DESCRIPTION": " Scry 1.Draw !M! cards,if it's batwinsmod:MomoiCard ,play it."
+	},
+	"BATwinsMod:MysteriousChest": {
+		"NAME": "Mystery Chest",
+		"DESCRIPTION": "Add 1 random batwinsmod:MidoriCard to your hand,The card gain ethereal exhaust and have 0 energy cost before being played. NL batwinsmod:Exchange this cards.",
+		"UPGRADE_DESCRIPTION": "Add 1 random batwinsmod:MidoriCard to your hand,The card gain Retain exhaust and have 0 energy cost before being played. NL batwinsmod:Exchange this cards."
+	},
+	"BATwinsMod:SeeYouHaveAShare": {
+		"NAME": "Each to Their Own！",
+		"DESCRIPTION": "Each of the next !M! single-target attack cards played this turn will additionally target all enemies once."
+	},
+	"BATwinsMod:CheatingCodeEnabled": {
+		"NAME": "Cheat Code Activated",
+		"DESCRIPTION": "Discard all batwinsmod:MidoriCard ,Draw batwinsmod:MomoiCard until your hand is full.Convert all [batwinsmod:midoriorbicon] to [batwinsmod:momoiorbicon] . exhaust ",
+		"UPGRADE_DESCRIPTION": "Discard all batwinsmod:MidoriCard ,Draw batwinsmod:MomoiCard until your hand is full.Convert all [batwinsmod:midoriorbicon] to [batwinsmod:momoiorbicon] .At the end of this turn,shuffle the discard pile into the draw pile. exhaust "
+	},
+	"BATwinsMod:FundOverdraft": {
+		"NAME": "Fund Overdraft",
+		"DESCRIPTION": "Draw !M! cards.Reduce the draw count by 1. NL batwinsmod:Synergy :Reset the draw count."
+	},
+	"BATwinsMod:TakeActionsSeparately": {
+		"NAME": "Separate Action",
+		"DESCRIPTION": "Gain !B! Block. NL Play 1 batwinsmod:MomoiCard from your hand."
+	},
+	"BATwinsMod:RepeatOperation": {
+		"NAME": "Repeat Action",
+		"DESCRIPTION": "Choose up to !M! non-power cards from your hand,then add a copy with batwinsmod:Exchange to your hand."
+	},
+	"BATwinsMod:ConvenientConnectivity": {
+		"NAME": "Convenient Synergy",
+		"DESCRIPTION": "Choose and play !M! cards from your hand. NL batwinsmod:Synergy :Random play 1 card from the draw pile.",
+		"UPGRADE_DESCRIPTION": "Choose and play !M! cards from your hand. NL batwinsmod:Synergy :Choose and play 1 card from the draw pile."
+	},
+	"BATwinsMod:EndCombo": {
+		"NAME": "Finisher Combo",
+		"DESCRIPTION": "Deal !D! Damage. NL batwinsmod:Synergy :Deal !B! Damage. NL batwinsmod:HyperSynergy :Deal !M! Damage."
+	},
+	"BATwinsMod:ReadingDocuments": {
+		"NAME": "Instant Save",
+		"DESCRIPTION": "Cards played by effects during this battle will return to the draw pile."
+	},
+	"BATwinsMod:MandatoryInstruction": {
+		"NAME": "Mandatory Instruction",
+		"DESCRIPTION": "Choose and play !M! non-power cards from the draw pile,but only use their batwinsmod:Synergy and batwinsmod:HyperSynergy effects.",
+		"UPGRADE_DESCRIPTION": " Retain NL Choose and play !M! non-power cards from the draw pile,but only use their batwinsmod:Synergy and batwinsmod:HyperSynergy effects."
+	},
+	"BATwinsMod:TwoStageAttack": {
+		"NAME": "Double Strike",
+		"DESCRIPTION": " batwinsmod:OnlySynergy NL  When this card in hand and playing other strike cards,play this card. NL batwinsmod:Synergy , batwinsmod:HyperSynergy :Deal !D! Damage to all enemies.",
+		"EXTENDED_DESCRIPTION": [
 			"This card can only be played by effects."
 		]
 	},
-	"BATwinsMod:TakeABreak":{
-		"NAME":"Take a Rest for Now",
-		"DESCRIPTION":"Draw !M! cards,These cards gain Retain . NL batwinsmod:Synergy :Draw 1 additional card and choose 1 of them to play."
+	"BATwinsMod:TakeABreak": {
+		"NAME": "Take a Rest for Now",
+		"DESCRIPTION": "Draw !M! cards,These cards gain Retain . NL batwinsmod:Synergy :Draw 1 additional card and choose 1 of them to play."
 	},
-	"BATwinsMod:AttackWithAllMight":{
-		"NAME":"Exhaustive Strike",
-		"DESCRIPTION":"Deal !D! Damage,this card's damage is reduced by !M! % for the rest of this battle. NL batwinsmod:Synergy :Damage restored to 100%."
+	"BATwinsMod:AttackWithAllMight": {
+		"NAME": "Exhaustive Strike",
+		"DESCRIPTION": "Deal !D! Damage,this card's damage is reduced by !M! % for the rest of this battle. NL batwinsmod:Synergy :Damage restored to 100%."
 	},
-	"BATwinsMod:DualProtection":{
-		"NAME":"Double Protection",
-		"DESCRIPTION":"Gain !B! Block ,Draw !M! cards. NL batwinsmod:Synergy :Gain !B! Block ,Draw !M! cards."
+	"BATwinsMod:DualProtection": {
+		"NAME": "Double Protection",
+		"DESCRIPTION": "Gain !B! Block ,Draw !M! cards. NL batwinsmod:Synergy :Gain !B! Block ,Draw !M! cards."
 	},
-	"BATwinsMod:OperateFreely":{
-		"NAME":"Free Manipulation",
-		"DESCRIPTION":"Randomly play 1 batwinsmod:MomoiCard from your draw pile. NL batwinsmod:Synergy :Choose and play 1 batwinsmod:MomoiCard from the draw pile instand."
+	"BATwinsMod:OperateFreely": {
+		"NAME": "Free Manipulation",
+		"DESCRIPTION": "Randomly play 1 batwinsmod:MomoiCard from your draw pile. NL batwinsmod:Synergy :Choose and play 1 batwinsmod:MomoiCard from the draw pile instand."
 	},
-	"BATwinsMod:ExperienceGiftPackage":{
-		"NAME":"Experience Gift Pack",
-		"DESCRIPTION":" batwinsmod:Share NL If you have batwinsmod:ExperiencePoints greater than the energy cost of this card(except 0),play this card. NL Draw !M! cards,then reduce the cost of this card by 1 for the rest of this battle."
+	"BATwinsMod:ExperienceGiftPackage": {
+		"NAME": "Experience Gift Pack",
+		"DESCRIPTION": " batwinsmod:Share NL If you have batwinsmod:ExperiencePoints greater than the energy cost of this card(except 0),play this card. NL Draw !M! cards,then reduce the cost of this card by 1 for the rest of this battle."
 	},
-	"BATwinsMod:SelfConnectivity":{
-		"NAME":"Self-Synergy",
-		"DESCRIPTION":"Duplicate the effect of the last batwinsmod:MomoiCard played this battle.",
-		"UPGRADE_DESCRIPTION":"Duplicate the effect of the last card played this battle."
+	"BATwinsMod:SelfConnectivity": {
+		"NAME": "Self-Synergy",
+		"DESCRIPTION": "Duplicate the effect of the last batwinsmod:MomoiCard played this battle.",
+		"UPGRADE_DESCRIPTION": "Duplicate the effect of the last card played this battle."
 	},
-	"BATwinsMod:SkillCombination":{
-		"NAME":"Skill Fusion",
-		"DESCRIPTION":"Choose 1 skill card from the draw pile and exhaust it.Add !M! strike to the draw pile,and those strikes batwinsmod:Storage the card chosen. NL exhaust "
+	"BATwinsMod:SkillCombination": {
+		"NAME": "Skill Fusion",
+		"DESCRIPTION": "Choose 1 skill card from the draw pile and exhaust it.Add !M! strike to the draw pile,and those strikes batwinsmod:Storage the card chosen. NL exhaust "
 	},
-	"BATwinsMod:IntegratingAndIntegrating":{
-		"NAME":"Mastering All",
-		"DESCRIPTION":" batwinsmod:Share NL When playing a batwinsmod:exchanged card with an energy cost of 1 or more,add 1 card of its original color to your hand,and apply ethereal and exhaust to it."
+	"BATwinsMod:IntegratingAndIntegrating": {
+		"NAME": "Mastering All",
+		"DESCRIPTION": " batwinsmod:Share NL When playing a batwinsmod:exchanged card with an energy cost of 1 or more,add 1 card of its original color to your hand,and apply ethereal and exhaust to it."
 	},
 	"BATwinsMod:EndlessCombo": {
 		"NAME": "无尽连击",
 		"DESCRIPTION": "对所有敌人Deal !D! Damage.这cards的伤害翻倍打出这cards时的连携数的次数."
 	},
-	"BATwinsMod:PlotPrediction":{
-		"NAME":"剧情编排",
-		"DESCRIPTION":"回合开始时,失去 [batwinsmod:momoiorbicon] ,每回合结束时打出 !M! 张 batwinsmod:MomoiCard."
+	"BATwinsMod:PlotPrediction": {
+		"NAME": "剧情编排",
+		"DESCRIPTION": "回合开始时,失去 [batwinsmod:momoiorbicon] ,每回合结束时打出 !M! 张 batwinsmod:MomoiCard."
 	},
-	"BATwinsMod:MasterCraftsmanship":{
-		"NAME":"Master Artistry",
-		"DESCRIPTION":" batwinsmod:Share NL At the start of each turn, batwinsmod:Exchange up to 1 cards from your hand. NL Additionally,cards with batwinsmod:Exchanged are upgrade for the duration of this battle.",
-		"UPGRADE_DESCRIPTION":" innate , batwinsmod:Share NL At the start of each turn, batwinsmod:Exchange up to 1 cards from your hand. NL Additionally,cards with batwinsmod:Exchanged are upgrade for the duration of this battle."
+	"BATwinsMod:MasterCraftsmanship": {
+		"NAME": "Master Artistry",
+		"DESCRIPTION": " batwinsmod:Share NL At the start of each turn, batwinsmod:Exchange up to 1 cards from your hand. NL Additionally,cards with batwinsmod:Exchanged are upgrade for the duration of this battle.",
+		"UPGRADE_DESCRIPTION": " innate , batwinsmod:Share NL At the start of each turn, batwinsmod:Exchange up to 1 cards from your hand. NL Additionally,cards with batwinsmod:Exchanged are upgrade for the duration of this battle."
 	},
-	"BATwinsMod:PoisonGasBomb":{
-		"NAME":"Poison Gas Bomb",
-		"DESCRIPTION":"Apply !M! poison and !M! batwinsmod:Burn .Trigger the enemy's poison . NL batwinsmod:synergy :Trigger the enemy's batwinsmod:Burn ."
+	"BATwinsMod:PoisonGasBomb": {
+		"NAME": "Poison Gas Bomb",
+		"DESCRIPTION": "Apply !M! poison and !M! batwinsmod:Burn .Trigger the enemy's poison . NL batwinsmod:synergy :Trigger the enemy's batwinsmod:Burn ."
 	},
-	"BATwinsMod:AdventureBegins":{
-		"NAME":"Adventuring Team",
-		"DESCRIPTION":"Choose 1 card from your hand that is different form the type of all batwinsmod:Storaged cards and is not exhaust,exhaust it,and then batwinsmod:Storage it.",
-		"UPGRADE_DESCRIPTION":"You can choose 1 card from your hand that is different form the type of all batwinsmod:Storaged cards and is not exhaust,exhaust it,and then batwinsmod:Storage it.",
-		"EXTENDED_DESCRIPTION":[
+	"BATwinsMod:AdventureBegins": {
+		"NAME": "Adventuring Team",
+		"DESCRIPTION": "Choose 1 card from your hand that is different form the type of all batwinsmod:Storaged cards and is not exhaust,exhaust it,and then batwinsmod:Storage it.",
+		"UPGRADE_DESCRIPTION": "You can choose 1 card from your hand that is different form the type of all batwinsmod:Storaged cards and is not exhaust,exhaust it,and then batwinsmod:Storage it.",
+		"EXTENDED_DESCRIPTION": [
 			"Attack",
 			"Skill",
 			"Power",
 			"State",
 			"Curses"
 		],
-		"FLAVOR":"lll"
+		"FLAVOR": "lll"
 	},
-	"BATwinsMod:PropCollection":{
-		"NAME":"Item Collection",
-		"DESCRIPTION":"Choose !M! cards from the draw pile and discard pile to add to your hand. NL You cannot draw cards for the rest of this turn."
+	"BATwinsMod:PropCollection": {
+		"NAME": "Item Collection",
+		"DESCRIPTION": "Choose !M! cards from the draw pile and discard pile to add to your hand. NL You cannot draw cards for the rest of this turn."
 	},
-	"BATwinsMod:EquipmentUpgrade":{
-		"NAME":"Equipment Upgrade",
-		"DESCRIPTION":"Choose !M! cards from your hand to upgrade,the card gain batwinsmod:Share , Retain . NL exhaust "
+	"BATwinsMod:EquipmentUpgrade": {
+		"NAME": "Equipment Upgrade",
+		"DESCRIPTION": "Choose !M! cards from your hand to upgrade,the card gain batwinsmod:Share , Retain . NL exhaust "
 	},
-	"BATwinsMod:AutomaticDefense":{
-		"NAME":"Automatic Defense",
-		"DESCRIPTION":" Unplayable . NL When in hand and other attack cards are played,Gain !B! Block ."
+	"BATwinsMod:AutomaticDefense": {
+		"NAME": "Automatic Defense",
+		"DESCRIPTION": " Unplayable . NL When in hand and other attack cards are played,Gain !B! Block ."
 	},
-	"BATwinsMod:BenefitReducingMagic":{
-		"NAME":"Headshot",
-		"DESCRIPTION":"Apply !M! weak to all enemies.Remove all enemies' Block .",
+	"BATwinsMod:BenefitReducingMagic": {
+		"NAME": "Headshot",
+		"DESCRIPTION": "Apply !M! weak to all enemies.Remove all enemies' Block .",
 		"EXTENDED_DESCRIPTION": [
 			"Cute!",
 			"So Cute!",
 			"Too Cute!"
 		]
 	},
-	"BATwinsMod:BorrowMe":{
-		"NAME":"Borrow Me",
-		"DESCRIPTION":"All cards this turn are treated as batwinsmod:Share . NL exhaust ",
-		"UPGRADE_DESCRIPTION":"All cards this turn are treated as batwinsmod:Share ."
+	"BATwinsMod:BorrowMe": {
+		"NAME": "Borrow Me",
+		"DESCRIPTION": "All cards this turn are treated as batwinsmod:Share . NL exhaust ",
+		"UPGRADE_DESCRIPTION": "All cards this turn are treated as batwinsmod:Share ."
 	},
-	"BATwinsMod:MaidForm":{
-		"NAME":"Maid Form",
-		"DESCRIPTION":"After playing the first card cach turn,play an acceleration that counts as having the same cost.",
-		"UPGRADE_DESCRIPTION":" batwinsmod:Share NL After playing the first card cach turn,play an acceleration that counts as having the same cost."
+	"BATwinsMod:MaidForm": {
+		"NAME": "Maid Form",
+		"DESCRIPTION": "After playing the first card each turn, play 1 card from the draw pile with cost lower than that card.",
+		"UPGRADE_DESCRIPTION": " batwinsmod:Share NL After playing the first card each turn, play 1 card from the draw pile with cost lower than that card."
 	},
-	"BATwinsMod:Collaboration":{
-		"NAME":"Charge",
-		"DESCRIPTION":"Deal !D! Damage to a random enemy for each batwinsmod:MomoiCard in your hand.",
-		"EXTENDED_DESCRIPTION":[
+	"BATwinsMod:Collaboration": {
+		"NAME": "Charge",
+		"DESCRIPTION": "Deal !D! Damage to a random enemy for each batwinsmod:MomoiCard in your hand.",
+		"EXTENDED_DESCRIPTION": [
 			"(当前为%s)"
 		]
 	},
-	"BATwinsMod:ShiftingAndGhosting":{
-		"NAME":"Shape-Shifting",
-		"DESCRIPTION":"Gain !B! Block, batwinsmod:Exchange !M! cards from your draw pile."
+	"BATwinsMod:ShiftingAndGhosting": {
+		"NAME": "Shape-Shifting",
+		"DESCRIPTION": "Gain !B! Block, batwinsmod:Exchange !M! cards from your draw pile."
 	},
-	"BATwinsMod:CheckTheStrategy":{
-		"NAME":"Search Strategy Guide",
-		"DESCRIPTION":"Draw !M! cards,Discard all batwinsmod:MomoiCard and draw the same number of cards. NL if no cards were discarded this way,choose 1 card from the draw pile and add it to your hand.",
-		"UPGRADE_DESCRIPTION":"Draw !M! cards,丢弃所有非 batwinsmod:MidoriCard Draw等量牌. NL 若此牌没有丢弃牌则从Draw牌堆选择1cards加入手牌."
+	"BATwinsMod:CheckTheStrategy": {
+		"NAME": "Search Strategy Guide",
+		"DESCRIPTION": "Draw !M! cards,Discard all batwinsmod:MomoiCard and draw the same number of cards. NL if no cards were discarded this way,choose 1 card from the draw pile and add it to your hand.",
+		"UPGRADE_DESCRIPTION": "Draw !M! cards,丢弃所有非 batwinsmod:MidoriCard Draw等量牌. NL 若此牌没有丢弃牌则从Draw牌堆选择1cards加入手牌."
 	},
-	"BATwinsMod:LeaveItToMe":{
-		"NAME":"Here you go.",
-		"DESCRIPTION":"Deal !D! Damage. NL if all cards in your hand are batwinsmod:MomoiCard or batwinsmod:Synergy :Gain !B! Block for each enemy."
+	"BATwinsMod:LeaveItToMe": {
+		"NAME": "Here you go.",
+		"DESCRIPTION": "Deal !D! Damage. NL if all cards in your hand are batwinsmod:MomoiCard or batwinsmod:Synergy :Gain !B! Block for each enemy."
 	},
-	"BATwinsMod:Assault":{
-		"NAME":"Assault",
-		"DESCRIPTION":"Deal !D! Damage,Apply !M! weak . NL if no cards were played this turn,choose and play 1 skill card from your hand."
+	"BATwinsMod:Assault": {
+		"NAME": "Assault",
+		"DESCRIPTION": "Deal !D! Damage,Apply !M! weak . NL if no cards were played this turn,choose and play 1 skill card from your hand."
 	},
-	"BATwinsMod:DontSayIt":{
-		"NAME":"Keep it secret from my sister",
-		"DESCRIPTION":"Gain !B! 点 Block 2 times,discard all batwinsmod:MomoiCard from your hand. NL If no cards were discarded this way, batwinsmod:LevelUp by !M! .",
-		"EXTENDED_DESCRIPTION":[
+	"BATwinsMod:DontSayIt": {
+		"NAME": "Keep it secret from my sister",
+		"DESCRIPTION": "Gain !B! 点 Block 2 times,discard all batwinsmod:MomoiCard from your hand. NL If no cards were discarded this way, batwinsmod:LevelUp by !M! .",
+		"EXTENDED_DESCRIPTION": [
 			"Keep it secret from my sister"
 		]
 	},
-	"BATwinsMod:ItsSoPainful":{
-		"NAME":"Solo Attack",
-		"DESCRIPTION":"Deal !D! Damage !M! times,discard all batwinsmod:MidoriCard .If no cards were discarded this way,increase the number of times this card deals for the rest of this battle."
+	"BATwinsMod:ItsSoPainful": {
+		"NAME": "Solo Attack",
+		"DESCRIPTION": "Deal !D! Damage !M! times,discard all batwinsmod:MidoriCard .If no cards were discarded this way,increase the number of times this card deals for the rest of this battle."
 	},
-	"BATwinsMod:PenetrationDamage":{
-		"NAME":"Penetrating Damage",
-		"DESCRIPTION":"Deal !D! Damage to all enemies,all enemies without Block lose !M! strength . NL exhaust NL batwinsmod:Synergy :This card does not exhaust for the rest of this battle.",
+	"BATwinsMod:PenetrationDamage": {
+		"NAME": "Penetrating Damage",
+		"DESCRIPTION": "Deal !D! Damage to all enemies,all enemies without Block lose !M! strength . NL exhaust NL batwinsmod:Synergy :This card does not exhaust for the rest of this battle.",
 		"EXTENDED_DESCRIPTION": [
 			"Deal !D! Damage to all enemies,all enemies without Block lose !M! strength ."
 		]
 	},
-	"BATwinsMod:LoginRewards":{
-		"NAME":"登入奖励",
-		"DESCRIPTION":"Gain !M! batwinsmod:ExperiencePoints . NL batwinsmod:Synergy :手牌随机1张 batwinsmod:MidoriCard batwinsmod:Storage 1张 登入奖励 (不会重复存储). exhaust ",
-		"UPGRADE_DESCRIPTION":"Gain !M! batwinsmod:ExperiencePoints . NL batwinsmod:Synergy :手牌随机1张 batwinsmod:MidoriCard batwinsmod:Storage 1张 登入奖励+ (不会重复存储). exhaust "
+	"BATwinsMod:LoginRewards": {
+		"NAME": "登入奖励",
+		"DESCRIPTION": "Gain !M! batwinsmod:ExperiencePoints . NL batwinsmod:Synergy :手牌随机1张 batwinsmod:MidoriCard batwinsmod:Storage 1张 登入奖励 (不会重复存储). exhaust ",
+		"UPGRADE_DESCRIPTION": "Gain !M! batwinsmod:ExperiencePoints . NL batwinsmod:Synergy :手牌随机1张 batwinsmod:MidoriCard batwinsmod:Storage 1张 登入奖励+ (不会重复存储). exhaust "
 	},
-	"BATwinsMod:Learned":{
-		"NAME":"Perfect Transformation",
-		"DESCRIPTION":"Upon drawing,choose 1 non-power card to exhaust and batwinsmod:Storage .(Only stores 1 card) NL Deal !D! Damage, if Fatal,the card in batwinsmod:Storage is permantently batwinsmod:Exchanged for batwinsmod:MomoiCard ."
+	"BATwinsMod:Learned": {
+		"NAME": "Perfect Transformation",
+		"DESCRIPTION": "Upon drawing,choose 1 non-power card to exhaust and batwinsmod:Storage .(Only stores 1 card) NL Deal !D! Damage, if Fatal,the card in batwinsmod:Storage is permantently batwinsmod:Exchanged for batwinsmod:MomoiCard ."
 	},
-	"BATwinsMod:ForceDetonation":{
-		"NAME":"Forceful Detonation",
-		"DESCRIPTION":"Trigger batwinsmod:Burn and poison on all enemies !M! times.Then halve the amount of batwinsmod:Burn and poison on all enemies."
+	"BATwinsMod:ForceDetonation": {
+		"NAME": "Forceful Detonation",
+		"DESCRIPTION": "Trigger batwinsmod:Burn and poison on all enemies !M! times.Then halve the amount of batwinsmod:Burn and poison on all enemies."
 	},
-	"BATwinsMod:ScriptRewriting":{
-		"NAME":"Script Rewrite",
-		"DESCRIPTION":"Give poison equivalent to its batwinsmod:Burn ,gave batwinsmod:Burn equivalent to its poison . NL exhaust ",
-		"UPGRADE_DESCRIPTION":"Give poison equivalent to its batwinsmod:Burn , then gave batwinsmod:Burn equivalent to its poison. NL exhaust "
+	"BATwinsMod:ScriptRewriting": {
+		"NAME": "Script Rewrite",
+		"DESCRIPTION": "Give poison equivalent to its batwinsmod:Burn ,gave batwinsmod:Burn equivalent to its poison . NL exhaust ",
+		"UPGRADE_DESCRIPTION": "Give poison equivalent to its batwinsmod:Burn , then gave batwinsmod:Burn equivalent to its poison. NL exhaust "
 	},
-	"BATwinsMod:EasterEgg":{
-		"NAME":"Easter Egg",
-		"DESCRIPTION":"Draw !M! cards. NL Congratulations on finding the Easter egg!",
-		"UPGRADE_DESCRIPTION":"Draw !M! cards. NL Thank you! Upgrading the Easter egg is just a little extra surprise."
+	"BATwinsMod:EasterEgg": {
+		"NAME": "Easter Egg",
+		"DESCRIPTION": "Draw !M! cards. NL Congratulations on finding the Easter egg!",
+		"UPGRADE_DESCRIPTION": "Draw !M! cards. NL Thank you! Upgrading the Easter egg is just a little extra surprise."
 	},
-	"BATwinsMod:HeavyBullets":{
-		"NAME":"Heavy Bullet",
-		"DESCRIPTION":"Deal !D! Damage."
+	"BATwinsMod:HeavyBullets": {
+		"NAME": "Heavy Bullet",
+		"DESCRIPTION": "Deal !D! Damage."
 	},
-	"BATwinsMod:ArmorPiercingBullet":{
-		"NAME":"Armor-Piercing Bullet",
-		"DESCRIPTION":"Deal !D! Damage. NL Apply !M! vulnerable ."
+	"BATwinsMod:ArmorPiercingBullet": {
+		"NAME": "Armor-Piercing Bullet",
+		"DESCRIPTION": "Deal !D! Damage. NL Apply !M! vulnerable ."
 	},
-	"BATwinsMod:Shooting":{
-		"NAME":"射击",
-		"DESCRIPTION":" Retain NL Deal !D! Damage."
+	"BATwinsMod:Shooting": {
+		"NAME": "射击",
+		"DESCRIPTION": " Retain NL Deal !D! Damage."
 	},
-	"BATwinsMod:Bullet":{
-		"NAME":"子弹",
-		"DESCRIPTION":"Deal !D! Damage."
+	"BATwinsMod:Bullet": {
+		"NAME": "子弹",
+		"DESCRIPTION": "Deal !D! Damage."
 	},
-	"BATwinsMod:ContinuousShooting":{
-		"NAME":"Continuous Shooting",
-		"DESCRIPTION":"Retain ,Can be Upgraded any number of times NL While retained, batwinsmod:Storage !M! random batwinsmod:Bullet . Upon played,empty all batwinsmod:Storaged batwinsmod:Bullet ."
+	"BATwinsMod:ContinuousShooting": {
+		"NAME": "Continuous Shooting",
+		"DESCRIPTION": "Retain ,Can be Upgraded any number of times NL While retained, batwinsmod:Storage !M! random batwinsmod:Bullet . Upon played,empty all batwinsmod:Storaged batwinsmod:Bullet ."
 	},
-	"BATwinsMod:BreechLoading":{
-		"NAME":"Load Up",
-		"DESCRIPTION":"Gain !B! 点 Block . NL batwinsmod:Storage !M! random batwinsmod:Bullet for all batwinsmod:Shoot cards in your hand.",
-		"UPGRADE_DESCRIPTION":" Retain NL Gain !B! 点 Block . NL batwinsmod:Storage !M! random batwinsmod:Bullet for all batwinsmod:Shoot cards in your hand."
+	"BATwinsMod:BreechLoading": {
+		"NAME": "Load Up",
+		"DESCRIPTION": "Gain !B! 点 Block . NL batwinsmod:Storage !M! random batwinsmod:Bullet for all batwinsmod:Shoot cards in your hand.",
+		"UPGRADE_DESCRIPTION": " Retain NL Gain !B! 点 Block . NL batwinsmod:Storage !M! random batwinsmod:Bullet for all batwinsmod:Shoot cards in your hand."
 	},
-	"BATwinsMod:ExpansionMagazine":{
-		"NAME":"扩容弹夹",
-		"DESCRIPTION":"本场战斗 batwinsmod:Storage 的 batwinsmod:Bullet 牌 upgrade ."
+	"BATwinsMod:ExpansionMagazine": {
+		"NAME": "扩容弹夹",
+		"DESCRIPTION": "本场战斗 batwinsmod:Storage 的 batwinsmod:Bullet 牌 upgrade ."
 	},
-	"BATwinsMod:BulletWarehouse":{
-		"NAME":"Armory",
-		"DESCRIPTION":"Choose 1 card from 4 batwinsmod:Shoot cards and add it to your hand. NL exhaust ",
-		"UPGRADE_DESCRIPTION":"Choose 1 card from 4 batwinsmod:Shoot cards Upgraded and add it to your hand. NL exhaust "
+	"BATwinsMod:BulletWarehouse": {
+		"NAME": "Armory",
+		"DESCRIPTION": "Choose 1 card from 4 batwinsmod:Shoot cards and add it to your hand.Gain Retain and store !M! random batwinsmod:Bullet. NL exhaust ",
+		"UPGRADE_DESCRIPTION": "Choose 1 card from 4 batwinsmod:Shoot cards Upgraded and add it to your hand.Gain Retain and store !M! random batwinsmod:Bullet. NL exhaust "
 	},
-	"BATwinsMod:PoisonBullet":{
-		"NAME":"Poisoned Bullet",
-		"DESCRIPTION":"Deal !D! Damage,Apply !M! poison ."
+	"BATwinsMod:PoisonBullet": {
+		"NAME": "Poisoned Bullet",
+		"DESCRIPTION": "Deal !D! Damage,Apply !M! poison ."
 	},
-	"BATwinsMod:IncendiaryBullet":{
-		"NAME":"Incendiary Bullet",
-		"DESCRIPTION":"Deal !D! Damage,Apply !M! batwinsmod:Burn ."
+	"BATwinsMod:IncendiaryBullet": {
+		"NAME": "Incendiary Bullet",
+		"DESCRIPTION": "Deal !D! Damage,Apply !M! batwinsmod:Burn ."
 	},
-	"BATwinsMod:SniperBullet":{
-		"NAME":"Sniper Bullet",
-		"DESCRIPTION":"Deal !D! Damage,Apply !M! weak ."
+	"BATwinsMod:SniperBullet": {
+		"NAME": "Sniper Bullet",
+		"DESCRIPTION": "Deal !D! Damage,Apply !M! weak ."
 	},
-	"BATwinsMod:StableShooting":{
-		"NAME":"Steady Shooting",
-		"DESCRIPTION":"Deal !D! Damage. NL Damage increased by !M! for each card batwinsmod:Storaged ."
+	"BATwinsMod:StableShooting": {
+		"NAME": "Steady Shooting",
+		"DESCRIPTION": "Deal !D! Damage. NL Damage increased by !M! for each card batwinsmod:Storaged ."
 	},
-	"BATwinsMod:RandomShooting":{
-		"NAME":"Wildfire Shooting",
-		"DESCRIPTION":" batwinsmod:Storage !M! random batwinsmod:Bullet. NL Upon playing,move all batwinsmod:Storaged batwinsmod:Bullet to random batwinsmod:Shoot card in your hand.Empty all batwinsmod:Storage cards."
+	"BATwinsMod:RandomShooting": {
+		"NAME": "Wildfire Shooting",
+		"DESCRIPTION": " batwinsmod:Storage !M! random batwinsmod:Bullet. NL Upon playing,move all batwinsmod:Storaged batwinsmod:Bullet to random batwinsmod:Shoot card in your hand.Empty all batwinsmod:Storage cards."
 	},
-	"BATwinsMod:FocusShooting":{
-		"NAME":"Focused Shot",
-		"DESCRIPTION":"Deal !D! Damage. NL When batwinsmod:Storage batwinsmod:Bullet , batwinsmod:Storage !M! additional copies of the same batwinsmod:Bullet .Empty all batwinsmod:Storage cards."
+	"BATwinsMod:FocusShooting": {
+		"NAME": "Focused Shot",
+		"DESCRIPTION": "Deal !D! Damage. NL When batwinsmod:Storage batwinsmod:Bullet , batwinsmod:Storage !M! additional copies of the same batwinsmod:Bullet .Empty all batwinsmod:Storage cards."
 	},
-	"BATwinsMod:Accelerate":{
-		"NAME":"Accelerate",
-		"DESCRIPTION":"Choose and play !M! cards from the draw pile with an energy cost lower than X.",
-		"UPGRADE_DESCRIPTION":"Choose and play !M! cards from the draw pile with an energy cost lower than X+1."
+	"BATwinsMod:Accelerate": {
+		"NAME": "Accelerate",
+		"DESCRIPTION": "Choose and play !M! cards from the draw pile with an energy cost lower than X.",
+		"UPGRADE_DESCRIPTION": "Choose and play !M! cards from the draw pile with an energy cost lower than X+1."
 	},
-	"BATwinsMod:HeadbandChice":{
-		"NAME":"Put on Momoi",
-		"DESCRIPTION":"Gain [batwinsmod:momoiorbicon] at the beginning of each turn.",
-		"EXTENDED_DESCRIPTION":[
+	"BATwinsMod:HeadbandChice": {
+		"NAME": "Put on Momoi",
+		"DESCRIPTION": "Gain [batwinsmod:momoiorbicon] at the beginning of each turn.",
+		"EXTENDED_DESCRIPTION": [
 			"Put on Midori"
 		]
 	},
-	"BATwinsMod:Excitation":{
-		"NAME":"Inspiration",
-		"DESCRIPTION":"Cannot be upgraded. NL Choose and play 1 power card from all character's cards in the game."
+	"BATwinsMod:Excitation": {
+		"NAME": "Inspiration",
+		"DESCRIPTION": "Cannot be upgraded. NL Choose and play 1 power card from all character's cards in the game."
 	},
 	"BATwinsMod:TacticalRelay": {
 		"NAME": "Tactical Relay",
 		"DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:Exchange up to 2 cards in your hand. NL Cannot play batwinsmod:MomoiCard this turn.",
 		"UPGRADE_DESCRIPTION": "Gain [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:Exchange up to 2 cards in your hand. NL Cannot play batwinsmod:MomoiCard this turn."
+	},
+	"BATwinsMod:Gorgeous": {
+		"NAME": "华丽散场",
+		"DESCRIPTION": " 不能被打出 NL 本回合达到 batwinsmod:连携 5时丢弃这张牌并对所有敌人造成 !D! 点伤害。",
+		"EXTENDED_DESCRIPTION": [
+			"这张牌只能被效果打出"
+		]
+	},
+	"BATwinsMod:UniversalBullet": {
+		"NAME": "Wildcard Bullets",
+		"DESCRIPTION": "Deal !D! damage, randomly 1 batwinsmod:MomoiCard in your hand batwinsmod:storage this card. NL Exhaust "
+	},
+	"BATwinsMod:MultipleShadows": {
+		"NAME": "Seize the Initiative",
+		"DESCRIPTION": "Gain !B! Block. Block is not removed at the start of your next !M! turns. NL Exhaust "
 	}
 }

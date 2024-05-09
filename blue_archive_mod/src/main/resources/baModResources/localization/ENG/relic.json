@@ -114,5 +114,19 @@
 		"DESCRIPTIONS":[
 			"After playing cards in synergy 2 times, draw 1 card."
 		]
+	},
+	"BATwinsMod:RetroGame": {
+		"NAME": "Pixel Console",
+		"FLAVOR": "Can only display one color.",
+		"DESCRIPTIONS": [
+			"Draw #b2 additional cards each turn. Cards drawn become either #ybatwinsmod:MomoiCard or #ybatwinsmod:MidoriCard ."
+		]
+	},
+	"BATwinsMod:BookOfProhibitions": {
+		"NAME": "Book of Prohibitions",
+		"FLAVOR": "Contains unknown contents",
+		"DESCRIPTIONS": [
+			"After cards deal damage for the #y1st time each turn, heal for #y1/3 of the damage not blocked."
+		]
 	}
 }

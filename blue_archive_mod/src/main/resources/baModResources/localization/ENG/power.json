@@ -81,7 +81,7 @@
 	"BATwinsMod:SinglePlayerGamePower":{
 		"NAME":"Single Player Game",
 		"DESCRIPTIONS":[
-			"After playing a card, if your hand contains only one color, gain ",
+			"After playing a card, if there is no Momoi Card or Midori Card in your hand, gain ",
 			"block."
 		]
 	},
@@ -165,7 +165,7 @@
 	"BATwinsMod:MaidFormPower":{
 		"NAME":"Maid Form",
 		"DESCRIPTIONS":[
-			"After playing the %dth card each turn, play a card with the same energy cost as an Accelerate."
+			"After playing the %dth card each turn, play 1 card from the draw pile with energy cost lower than that card."
 		]
 	},
 	"BATwinsMod:FlatFallPower":{
