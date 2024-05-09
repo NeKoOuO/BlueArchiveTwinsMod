@@ -62,7 +62,7 @@ public class BATwinsMaidFormPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && this.amount > 0 && this.cardsToPlayThisTurn < this.amount) {
+        if (!card.purgeOnUse && this.amount > 0 && AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= this.amount) {
             this.cardsToPlayThisTurn++;
             flash();
             addToBot(new BATwinsMaidFormAction(card.costForTurn, (AbstractMonster) action.target));
