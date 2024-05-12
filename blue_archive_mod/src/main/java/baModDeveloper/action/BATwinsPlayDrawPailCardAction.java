@@ -67,8 +67,9 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
                     BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(card, this.numberOfConnections);
                 }
                 AbstractDungeon.player.limbo.group.add(this.card);
+                card.current_x=0.0F*Settings.scale;
                 card.current_y = 0.0F * Settings.scale;
-                card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale;
+                card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale-20.0F;
                 card.target_y = (float) Settings.HEIGHT / 2.0F;
                 card.targetAngle = 0.0F;
                 card.lighten(false);
@@ -84,7 +85,7 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
                 } else {
                     addToTop(new NewQueueCardAction(card, this.target, false, true));
                 }
-                addToTop(new UnlimboAction(card));
+//                addToTop(new UnlimboAction(card));
 //                if (Settings.FAST_MODE) {
 //                    addToTop(new WaitAction(Settings.ACTION_DUR_MED));
 //                } else {
