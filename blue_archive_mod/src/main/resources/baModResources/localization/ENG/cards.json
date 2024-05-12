@@ -509,7 +509,7 @@
 	},
 	"BATwinsMod:UniversalBullet": {
 		"NAME": "Wildcard Bullets",
-		"DESCRIPTION": "Deal !D! damage, randomly 1 batwinsmod:MomoiCard in your hand batwinsmod:storage this card. NL Exhaust "
+		"DESCRIPTION": "Deal !D! damage, randomly 1 batwinsmod:MomoiCard in your hand batwinsmod:storage !M! *Wildcard *Bullets . NL Exhaust "
 	},
 	"BATwinsMod:MultipleShadows": {
 		"NAME": "Seize the Initiative",

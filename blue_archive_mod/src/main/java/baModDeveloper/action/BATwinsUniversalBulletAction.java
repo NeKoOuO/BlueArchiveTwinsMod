@@ -17,6 +17,9 @@ public class BATwinsUniversalBulletAction extends AbstractGameAction {
     public BATwinsUniversalBulletAction(AbstractCard.CardColor color,BATwinsCustomBulletCard bullet){
         this.color=color;
         this.bullet=bullet;
+        if(this.bullet.color!=this.color){
+            this.bullet.conversionColor();
+        }
     }
     @Override
     public void update() {

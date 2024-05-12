@@ -509,7 +509,7 @@
 	},
 	"BATwinsMod:UniversalBullet": {
 		"NAME": "通配子弹",
-		"DESCRIPTION": "造成 !D! 点伤害，随机手牌1张 batwinsmod:桃牌 batwinsmod:存储 这张牌。 NL 消耗 。"
+		"DESCRIPTION": "造成 !D! 点伤害，随机手牌1张 batwinsmod:桃牌 batwinsmod:存储 !M! 张 *通配子弹 。 NL 消耗 。"
 	},
 	"BATwinsMod:MultipleShadows": {
 		"NAME": "占据先机",

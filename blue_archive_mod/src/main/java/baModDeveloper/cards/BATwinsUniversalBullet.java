@@ -26,17 +26,17 @@ public class BATwinsUniversalBullet extends BATwinsCustomBulletCard {
     private static final CardRarity RARITY=CardRarity.RARE;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE= BATwinsEnergyPanel.EnergyType.MOMOI;
 
-
     public BATwinsUniversalBullet() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage=this.damage=5;
+        this.baseDamage=this.damage=3;
+        this.baseMagicNumber=this.magicNumber=1;
         this.exhaust=true;
     }
 
     @Override
     public void upgrade() {
         this.upgradeName();
-        this.upgradeDamage(5);
+        this.upgradeDamage(3);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class BATwinsUniversalBullet extends BATwinsCustomBulletCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster,new DamageInfo(abstractPlayer,this.damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new BATwinsUniversalBulletAction(this.color,this));
+        addToBot(new BATwinsUniversalBulletAction(this.color,new BATwinsUniversalBullet()));
     }
 
     @Override
