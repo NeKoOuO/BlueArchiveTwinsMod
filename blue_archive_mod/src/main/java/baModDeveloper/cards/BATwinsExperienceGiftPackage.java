@@ -1,6 +1,7 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsPlayHandCardAction;
+import baModDeveloper.action.BATwinsRemoveHandCardAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.power.BATwinsExperiencePower;
@@ -49,6 +50,7 @@ public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard {
         super.applyPowers();
         if (AbstractDungeon.player.hand.contains(this) && AbstractDungeon.player.hasPower(BATwinsExperiencePower.POWER_ID)) {
             if (this.costForTurn != 0 && this.costForTurn <= AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID).amount) {
+                addToTop(new BATwinsRemoveHandCardAction(this));
                 addToBot(new BATwinsPlayHandCardAction(this, null));
             }
         }

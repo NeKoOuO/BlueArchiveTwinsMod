@@ -1,6 +1,7 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsPlayHandCardAction;
+import baModDeveloper.action.BATwinsRemoveHandCardAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
@@ -86,7 +87,9 @@ public class BATwinsTwoStageAttack extends BATwinsModCustomCard {
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (AbstractDungeon.player.hand.contains(this) && c.hasTag(CardTags.STRIKE)) {
+            addToTop(new BATwinsRemoveHandCardAction(this));
             addToBot(new BATwinsPlayHandCardAction(this, null, 1));
+//            AbstractDungeon.player.hand.removeCard(this);
         }
     }
 }
