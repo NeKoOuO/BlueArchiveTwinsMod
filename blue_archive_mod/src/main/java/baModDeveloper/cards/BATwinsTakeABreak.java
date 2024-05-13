@@ -76,12 +76,12 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
             drawCards += 1;
         }
         addToBot(new DrawCardAction(drawCards, new AbstractGameAction() {
-            private int numberOfConnections;
             ArrayList<AbstractCard> canNotSelect = new ArrayList<>();
-            int numOfConnection;
+            private int numberOfConnections;
+
             {
                 this.duration = Settings.ACTION_DUR_FAST;
-                this.numberOfConnections=BATwinsTakeABreak.this.numberOfConnections;
+                this.numberOfConnections = BATwinsTakeABreak.this.numberOfConnections;
             }
 
             @Override

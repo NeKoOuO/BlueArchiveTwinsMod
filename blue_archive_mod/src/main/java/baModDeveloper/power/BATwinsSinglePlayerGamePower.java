@@ -43,8 +43,9 @@ public class BATwinsSinglePlayerGamePower extends AbstractPower {
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         addToBot(new AbstractGameAction() {
-            private int amount=BATwinsSinglePlayerGamePower.this.amount;
-            private AbstractCreature owner=BATwinsSinglePlayerGamePower.this.owner;
+            private int amount = BATwinsSinglePlayerGamePower.this.amount;
+            private AbstractCreature owner = BATwinsSinglePlayerGamePower.this.owner;
+
             @Override
             public void update() {
                 if (AbstractDungeon.player.hand.size() <= 0) {
@@ -53,14 +54,14 @@ public class BATwinsSinglePlayerGamePower extends AbstractPower {
                 }
                 ArrayList<AbstractCard> temp = new ArrayList<>(AbstractDungeon.player.hand.group);
                 temp.remove(usedCard);
-                boolean noMomoiCard=temp.stream().allMatch(card->card.color!= BATwinsCharacter.Enums.BATWINS_MOMOI_CARD);
-                boolean noMidoriCard=temp.stream().allMatch(card->card.color!= BATwinsCharacter.Enums.BATWINS_MIDORI_CARD);
-                if(noMomoiCard||noMidoriCard){
-                    AbstractPower p=this.owner.getPower(BATwinsSinglePlayerGamePower.POWER_ID);
-                    if(p!=null){
+                boolean noMomoiCard = temp.stream().allMatch(card -> card.color != BATwinsCharacter.Enums.BATWINS_MOMOI_CARD);
+                boolean noMidoriCard = temp.stream().allMatch(card -> card.color != BATwinsCharacter.Enums.BATWINS_MIDORI_CARD);
+                if (noMomoiCard || noMidoriCard) {
+                    AbstractPower p = this.owner.getPower(BATwinsSinglePlayerGamePower.POWER_ID);
+                    if (p != null) {
                         p.flash();
                     }
-                    addToBot(new GainBlockAction(this.owner,this.amount));
+                    addToBot(new GainBlockAction(this.owner, this.amount));
                 }
                 this.isDone = true;
             }

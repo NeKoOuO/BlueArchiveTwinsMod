@@ -13,9 +13,9 @@ public class BATwinsRemoveHandCardAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(AbstractDungeon.player.hand.contains(this.card)){
+        if (AbstractDungeon.player.hand.contains(this.card)) {
             AbstractDungeon.player.hand.removeCard(this.card);
         }
-        this.isDone=true;
+        this.isDone = true;
     }
 }

@@ -1,7 +1,6 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsDisCardByColorAction;
-import baModDeveloper.action.BATwinsDisOtherCardByColorAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;

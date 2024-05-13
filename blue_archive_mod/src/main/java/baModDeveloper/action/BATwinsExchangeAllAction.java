@@ -8,20 +8,21 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class BATwinsExchangeAllAction extends AbstractGameAction {
     private final AbstractCard.CardColor color;
-    public BATwinsExchangeAllAction(AbstractCard.CardColor color){
-        this.color=color;
-        this.duration= Settings.ACTION_DUR_FAST;
+
+    public BATwinsExchangeAllAction(AbstractCard.CardColor color) {
+        this.color = color;
+        this.duration = Settings.ACTION_DUR_FAST;
     }
 
     @Override
     public void update() {
         AbstractDungeon.player.hand.group.forEach(this::exchange);
-        this.isDone=true;
+        this.isDone = true;
     }
 
-    private void exchange(AbstractCard card){
-        if(card instanceof BATwinsModCustomCard &&card.color!=this.color){
-            addToTop(new BATwinsCoversionColorAction((BATwinsModCustomCard) card,true));
+    private void exchange(AbstractCard card) {
+        if (card instanceof BATwinsModCustomCard && card.color != this.color) {
+            addToTop(new BATwinsCoversionColorAction((BATwinsModCustomCard) card, true));
         }
     }
 }

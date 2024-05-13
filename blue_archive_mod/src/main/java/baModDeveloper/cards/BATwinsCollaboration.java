@@ -42,7 +42,7 @@ public class BATwinsCollaboration extends BATwinsModCustomCard {
             }
         }
         for (int i = 0; i < amount; i++) {
-            addToBot(new DamageRandomEnemyAction( new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+            addToBot(new DamageRandomEnemyAction(new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         }
     }
 

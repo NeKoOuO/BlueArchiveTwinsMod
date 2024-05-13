@@ -7,7 +7,6 @@ import baModDeveloper.relic.BATwinsRubiksCube;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
-import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -67,9 +66,9 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
                     BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(card, this.numberOfConnections);
                 }
                 AbstractDungeon.player.limbo.group.add(this.card);
-                card.current_x=0.0F*Settings.scale;
+                card.current_x = 0.0F * Settings.scale;
                 card.current_y = 0.0F * Settings.scale;
-                card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale-20.0F;
+                card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale - 20.0F;
                 card.target_y = (float) Settings.HEIGHT / 2.0F;
                 card.targetAngle = 0.0F;
                 card.lighten(false);

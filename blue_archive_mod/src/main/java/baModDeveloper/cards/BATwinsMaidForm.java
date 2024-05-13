@@ -1,6 +1,5 @@
 package baModDeveloper.cards;
 
-import baModDeveloper.cards.colorless.BATwinsAccelerate;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.power.BATwinsMaidFormPower;
