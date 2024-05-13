@@ -26,7 +26,7 @@ public class BATwinsAutomaticDefense extends BATwinsModCustomCard {
 
     public BATwinsAutomaticDefense() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock = 2;
+        this.baseBlock = 3;
         this.block = this.baseBlock;
     }
 

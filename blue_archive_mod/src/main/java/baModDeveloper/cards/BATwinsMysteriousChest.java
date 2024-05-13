@@ -31,30 +31,30 @@ public class BATwinsMysteriousChest extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color);
+        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color).makeCopy();
         c.cost = 0;
         c.costForTurn = 0;
         c.isCostModified = true;
 //        c.exhaustOnUseOnce=true;
         if (this.upgraded) {
-            addToBot(new BATwinsMakeTempCardInHandAction(c, false, false, true, false, true));
+            addToBot(new BATwinsMakeTempCardInHandAction(c, false, true, true, false, true));
         } else {
-            addToBot(new BATwinsMakeTempCardInHandAction(c, false, false, true, true, false));
+            addToBot(new BATwinsMakeTempCardInHandAction(c, false, true, true, true, false));
         }
         addToBot(new BATwinsCoversionColorAction(this));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color);
+        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color).makeCopy();
         c.cost = 0;
         c.costForTurn = 0;
         c.isCostModified = true;
 //        c.exhaustOnUseOnce=true;
         if (this.upgraded) {
-            addToBot(new BATwinsMakeTempCardInHandAction(c, false, false, true, false, true));
+            addToBot(new BATwinsMakeTempCardInHandAction(c, false, true, true, false, true));
         } else {
-            addToBot(new BATwinsMakeTempCardInHandAction(c, false, false, true, true, false));
+            addToBot(new BATwinsMakeTempCardInHandAction(c, false, true, true, true, false));
         }
         addToBot(new BATwinsCoversionColorAction(this));
     }

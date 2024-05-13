@@ -1,5 +1,6 @@
 package baModDeveloper.cards;
 
+import baModDeveloper.action.BATwinsExchangeAction;
 import baModDeveloper.action.BATwinsGainEnergyAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
@@ -33,6 +34,7 @@ public class BATwinsTacticalRelay extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsGainEnergyAction(this.magicNumber, BATwinsEnergyPanel.EnergyType.MIDORI));
+        addToBot(new BATwinsExchangeAction(2));
         addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsDisabledMomoiPower(abstractPlayer)));
 
     }
@@ -40,6 +42,7 @@ public class BATwinsTacticalRelay extends BATwinsModCustomCard {
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new BATwinsGainEnergyAction(this.magicNumber, BATwinsEnergyPanel.EnergyType.MOMOI));
+        addToBot(new BATwinsExchangeAction(2));
         addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsDisabledMidoriPower(abstractPlayer)));
     }
 

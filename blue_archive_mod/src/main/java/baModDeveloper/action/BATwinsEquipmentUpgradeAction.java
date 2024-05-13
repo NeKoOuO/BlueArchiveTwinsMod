@@ -22,18 +22,18 @@ public class BATwinsEquipmentUpgradeAction extends SelectCardsInHandAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
     private static final Consumer<List<AbstractCard>> callback = cardList -> {
         for (AbstractCard card : cardList) {
-            card.upgrade();
+            if(card.canUpgrade()){
+                card.upgrade();
+            }
             if (!card.name.contains("◆")) {
                 card.name += "◆";
             }
             if (card instanceof BATwinsModCustomCard) {
                 if (((BATwinsModCustomCard) card).modifyEnergyType != BATwinsEnergyPanel.EnergyType.SHARE) {
-                    ((BATwinsModCustomCard) card).modifyEnergyType = BATwinsEnergyPanel.EnergyType.SHARE;
                     CardModifierManager.addModifier(card, new BATwinsSharedModifier());
                 }
             }
             if (!card.selfRetain) {
-                card.selfRetain = true;
                 CardModifierManager.addModifier(card, new BATwinsRetainModifier());
             }
 //            card.exhaust = false;

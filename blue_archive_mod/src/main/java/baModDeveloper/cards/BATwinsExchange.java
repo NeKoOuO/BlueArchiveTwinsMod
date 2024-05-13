@@ -17,23 +17,25 @@ public class BATwinsExchange extends BATwinsModCustomCard {
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "Exchange");
     private static final int COST = 0;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
+    private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MIDORI;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
 
     public BATwinsExchange() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber = 2;
+        this.baseMagicNumber = 3;
         this.magicNumber = this.baseMagicNumber;
         this.selfRetain = true;
+        this.exhaust=true;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+//            this.upgradeMagicNumber(1);
+            this.exhaust=false;
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.originRawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();

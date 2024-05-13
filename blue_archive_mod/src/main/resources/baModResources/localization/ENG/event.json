@@ -12,7 +12,7 @@
 			"Try to fight #g(70%% chance to lose up to %s HP)",
 			"[Leave]",
 			"Choose 1 attack card to gain the effect of dealing the same damage to a random enemy with its same name card.",
-			"Choose 1 skill card to gain the effect of drawing 2 cards with its same name card.",
+			"Choose 1 skill card to gain the effect of drawing 1 cards with its same name card.",
 			"Choose 1 ability card to gain the effect of adding a copy to the discard pile with its same name card.",
 			"Confirm",
 			"[Lock] Requires attack cards",

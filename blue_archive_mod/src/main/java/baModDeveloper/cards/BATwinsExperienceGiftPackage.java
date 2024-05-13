@@ -1,6 +1,7 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsPlayHandCardAction;
+import baModDeveloper.action.BATwinsRemoveHandCardAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.power.BATwinsExperiencePower;
@@ -38,7 +39,9 @@ public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-//        addToBot(new ApplyPowerAction(abstractPlayer,abstractPlayer,new BATwinsExperiencePower(abstractPlayer,this.costForTurn)));
+//        if(this.costForTurn==0){
+//            this.exhaust=true;
+//        }
         addToBot(new DrawCardAction(this.magicNumber));
     }
 
@@ -47,6 +50,7 @@ public class BATwinsExperienceGiftPackage extends BATwinsModCustomCard {
         super.applyPowers();
         if (AbstractDungeon.player.hand.contains(this) && AbstractDungeon.player.hasPower(BATwinsExperiencePower.POWER_ID)) {
             if (this.costForTurn != 0 && this.costForTurn <= AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID).amount) {
+                addToTop(new BATwinsRemoveHandCardAction(this));
                 addToBot(new BATwinsPlayHandCardAction(this, null));
             }
         }

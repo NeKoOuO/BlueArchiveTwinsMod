@@ -8,6 +8,7 @@ import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
+import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -82,11 +83,12 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
             this.card.calculateCardDamage((AbstractMonster) this.target);
 //            this.p.hand.removeCard(this.card);
             AbstractDungeon.getCurrRoom().souls.remove(this.card);
+//            AbstractDungeon.player.limbo.group.add(card);
 //            card.current_x = Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
 //            card.current_y = 0.0F * Settings.scale;
-//            card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale;
-//            card.target_y = (float) Settings.HEIGHT / 2.0F;
-//            AbstractDungeon.player.limbo.group.add(this.card);
+            card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale;
+            card.target_y = (float) Settings.HEIGHT / 2.0F;
+            AbstractDungeon.player.limbo.group.add(this.card);
 
             BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(card, this.blockTheOriginalEffect);
             card.isInAutoplay = true;
@@ -101,12 +103,13 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //            if(card instanceof BATwinsModCustomCard){
 //                ((BATwinsModCustomCard) card).playedByOtherCard=true;
 //            }
-//            addToTop(new UnlimboAction(this.card));
             if (this.target == null || this.target.isDeadOrEscaped()) {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, true, false, true));
             } else {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, this.target, false, true));
             }
+//            addToTop(new UnlimboAction(this.card));
+
 //            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(this.card, (AbstractMonster) this.target,card.energyOnUse,true,true),true);
         }
         this.isDone = true;

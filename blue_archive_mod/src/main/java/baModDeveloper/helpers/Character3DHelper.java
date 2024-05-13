@@ -143,7 +143,7 @@ public class Character3DHelper {
         this.momoiController.setAnimation(action.getOperation());
         switch (action) {
             case MOVING:
-                this.momoiController.moveCurrentPosition(250 * Settings.scale, 0);
+                this.momoiController.moveCurrentPosition(300 * Settings.scale, 0);
                 break;
         }
     }
@@ -152,7 +152,7 @@ public class Character3DHelper {
         this.midoriController.setAnimation(action.getOperation());
         switch (action) {
             case MOVING:
-                this.midoriController.moveCurrentPosition(250 * Settings.scale, 0);
+                this.midoriController.moveCurrentPosition(300 * Settings.scale, 0);
                 break;
         }
     }

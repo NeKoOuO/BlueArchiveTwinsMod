@@ -24,7 +24,7 @@ public class BATwinsAdventureBegins extends BATwinsModCustomCard {
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
     //    private ArrayList<AbstractCard> cardsToBringOut;
     public static CardType[] TYPES = {CardType.ATTACK, CardType.SKILL, CardType.POWER, CardType.STATUS, CardType.CURSE};

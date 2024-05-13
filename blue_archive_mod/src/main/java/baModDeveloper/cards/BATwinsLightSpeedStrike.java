@@ -5,6 +5,7 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +15,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("LightSpeedStrike");
@@ -33,12 +36,13 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
         this.baseDamage = 8;
         this.damage = this.baseDamage;
         this.tags.add(CardTags.STRIKE);
-
+        this.baseMagicNumber=this.magicNumber=1;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new VulnerablePower(abstractMonster,this.magicNumber,false)));
         addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK, 1, this.numberOfConnections + 1));
         addToBot(new AbstractGameAction() {
             @Override
@@ -58,8 +62,20 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        useMOMOI(abstractPlayer, abstractMonster);
-
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new WeakPower(abstractMonster,this.magicNumber,false)));
+        addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK, 1, this.numberOfConnections + 1));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                    if (c.type == CardType.ATTACK) {
+                        addToTop(new DiscardSpecificCardAction(c));
+                    }
+                }
+                this.isDone = true;
+            }
+        });
     }
 
     @Override

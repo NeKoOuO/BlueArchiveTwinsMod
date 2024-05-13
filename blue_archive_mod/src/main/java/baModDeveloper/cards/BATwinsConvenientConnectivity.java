@@ -31,7 +31,7 @@ public class BATwinsConvenientConnectivity extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsSelectHandCardToPlayAction(null, null, this.numberOfConnections + 1, true));
+        addToBot(new BATwinsSelectHandCardToPlayAction(null, null, this.numberOfConnections + 1, false));
     }
 
     @Override
@@ -42,9 +42,9 @@ public class BATwinsConvenientConnectivity extends BATwinsModCustomCard {
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         if (this.upgraded) {
-            addToBot(new BATwinsSelectDrawPileCardToPlayAction(false, null, 1, this.numberOfConnections + 1, false, true));
+            addToBot(new BATwinsSelectDrawPileCardToPlayAction(false, null, 1, this.numberOfConnections + 1, false, false));
         } else {
-            addToBot(new BATwinsSelectDrawPileCardToPlayAction(true, null, 1, this.numberOfConnections + 1, false, true));
+            addToBot(new BATwinsSelectDrawPileCardToPlayAction(true, null, 1, this.numberOfConnections + 1, false, false));
         }
     }
 

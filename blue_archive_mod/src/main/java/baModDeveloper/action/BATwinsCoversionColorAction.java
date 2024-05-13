@@ -24,7 +24,8 @@ public class BATwinsCoversionColorAction extends AbstractGameAction {
         card.conversionColor(flash);
         //如果有技艺大师buff则升级
         if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)) {
-            card.upgrade();
+            if(card.canUpgrade())
+                card.upgrade();
             AbstractDungeon.player.getPower(BATwinsMasterCraftsmanshipPower.POWER_ID).flash();
         }
         this.isDone = true;

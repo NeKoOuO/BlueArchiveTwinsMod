@@ -27,7 +27,7 @@
         "NAMES":[
             "share"
         ],
-        "DESCRIPTION":"This card will first consume energy from the primary energy pool. If the primary energy pool is insufficient, it will consume from another energy pool without consuming twice the energy."
+        "DESCRIPTION":"This card will first consume energy from the primary energy pool. If the primary energy pool is insufficient, it will consume from another energy pool without consuming twice the energy.The primary energy pool is an energy pool with a small accessory displayed. It is the energy pool that is prioritized when playing cards with shared attributes or cards belonging to other characters. You can click on the energy pool to switch between them."
     },
     {
         "NAMES":[

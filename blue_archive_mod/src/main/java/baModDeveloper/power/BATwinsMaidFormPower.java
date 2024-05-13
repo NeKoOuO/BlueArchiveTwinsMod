@@ -1,9 +1,12 @@
 package baModDeveloper.power;
 
+import baModDeveloper.action.BATwinsAccelerateAction;
+import baModDeveloper.action.BATwinsMaidFormAction;
 import baModDeveloper.cards.colorless.BATwinsAccelerate;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
@@ -15,6 +18,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import java.util.List;
 
 public class BATwinsMaidFormPower extends AbstractPower {
     public static final String POWER_ID = ModHelper.makePath("MaidFormPower");
@@ -57,32 +62,10 @@ public class BATwinsMaidFormPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && this.amount > 0 && AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - this.cardsToPlayThisTurn <= this.amount) {
+        if (!card.purgeOnUse && this.amount > 0 && AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= this.amount) {
             this.cardsToPlayThisTurn++;
             flash();
-            AbstractMonster m = (AbstractMonster) action.target;
-
-            BATwinsAccelerate temp = new BATwinsAccelerate();
-            BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(temp, 1);
-            temp.purgeOnUse = true;
-            temp.freeToPlayOnce = true;
-            temp.energyOnUse = card.cost;
-            temp.connectionCost = card.cost;
-            if (card.cost == -1) {
-                temp.energyOnUse = temp.connectionCost = card.energyOnUse;
-            }
-
-            AbstractDungeon.player.limbo.addToBottom(temp);
-            temp.current_x = card.current_x;
-            temp.current_y = card.current_y;
-            temp.target_x = Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-            temp.target_y = Settings.HEIGHT / 2.0F;
-
-            if (m != null) {
-                temp.calculateCardDamage(m);
-            }
-
-            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(temp, m, card.energyOnUse, true, true), true);
+            addToBot(new BATwinsMaidFormAction(card.costForTurn, (AbstractMonster) action.target));
         }
     }
 }

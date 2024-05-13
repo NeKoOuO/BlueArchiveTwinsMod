@@ -37,7 +37,7 @@ public class BATwinsAccelerateAction extends BATwinsSelectDrawPileCardToPlayActi
                 energy += 2;
                 this.p.getRelic("Chemical X").flash();
             }
-            if (energy <= 0) {
+            if (energy < 0) {
                 this.isDone = true;
                 return;
             }

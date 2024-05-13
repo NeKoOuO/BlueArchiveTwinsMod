@@ -15,7 +15,7 @@ public class BATwinsRepeatOperation extends BATwinsModCustomCard {
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "RepeatOperation");
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.NONE;

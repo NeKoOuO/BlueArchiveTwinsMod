@@ -26,10 +26,10 @@ public class BATwinsBreechLoading extends BATwinsModCustomCard {
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "BreechLoading");
     private static final int COST = 1;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
+    private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
+    private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MIDORI;
     private static final UIStrings SELECTTEXT = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
     private final Predicate<AbstractCard> filter = card -> {
         return card.hasTag(BATwinsCardTags.Shooting);

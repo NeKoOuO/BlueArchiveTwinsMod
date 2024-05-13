@@ -212,6 +212,9 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new BATwinsAccelerate());
         BaseMod.addCard(new BATwinsExcitation());
         BaseMod.addCard(new BATwinsTacticalRelay());
+//        BaseMod.addCard(new BATwinsGorgeous());
+        BaseMod.addCard(new BATwinsUniversalBullet());
+        BaseMod.addCard(new BATwinsMultipleShadows());
     }
 
     @Override
@@ -281,6 +284,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsBroom(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsMaidAttire(), RelicType.SHARED);
 //        BaseMod.addRelicToCustomPool(new BATwinsRubiksCube(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelicToCustomPool(new BATwinsRetroGame(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelic(new BATwinsBookOfProhibitions(),RelicType.SHARED);
     }
 
     @Override
@@ -352,7 +357,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         settingPanel.addUIElement(showExpBar);
 
-        ModLabeledToggleButton enable3D = new ModLabeledToggleButton("Enable3D（Need to restart game!）", 500.0F, 200.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, Enable3D, settingPanel, modLabel -> {
+        ModLabeledToggleButton enable3D = new ModLabeledToggleButton("Enable3D", 500.0F, 200.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, Enable3D, settingPanel, modLabel -> {
 
         }, modToggleButton -> {
             spireConfig.setBool(ModHelper.makePath("Enable3D"), Enable3D = modToggleButton.enabled);
