@@ -333,7 +333,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public String getVampireText() {
-        return Vampires.DESCRIPTIONS[0];
+        return characterStrings.TEXT[2];
     }
 
     @Override
