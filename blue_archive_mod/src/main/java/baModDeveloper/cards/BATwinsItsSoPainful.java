@@ -1,7 +1,6 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsDisCardByColorAction;
-import baModDeveloper.action.BATwinsDisOtherCardByColorAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
@@ -72,7 +71,7 @@ public class BATwinsItsSoPainful extends BATwinsModCustomCard {
     public void triggerOnHovered() {
         if (AbstractDungeon.player != null) {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c.color ==BATwinsCharacter.getOtherColor(this.color)) {
+                if (c.color == BATwinsCharacter.getOtherColor(this.color)) {
                     c.flash(BATwinsCharacter.getColorWithCardColor(c.color));
                 }
             }

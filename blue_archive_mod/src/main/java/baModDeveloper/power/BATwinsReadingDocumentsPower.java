@@ -2,10 +2,12 @@ package baModDeveloper.power;
 
 import baModDeveloper.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -41,6 +43,13 @@ public class BATwinsReadingDocumentsPower extends AbstractPower {
             if (card.type != AbstractCard.CardType.POWER) {
                 this.flash();
                 action.reboundCard = true;
+                addToTop(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        AbstractDungeon.player.drawPile.shuffle();
+                        this.isDone=true;
+                    }
+                });
             }
         }
     }

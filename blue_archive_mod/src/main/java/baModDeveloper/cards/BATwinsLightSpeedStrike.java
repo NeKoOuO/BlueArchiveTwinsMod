@@ -36,13 +36,13 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
         this.baseDamage = 8;
         this.damage = this.baseDamage;
         this.tags.add(CardTags.STRIKE);
-        this.baseMagicNumber=this.magicNumber=1;
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new VulnerablePower(abstractMonster,this.magicNumber,false)));
+        addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new VulnerablePower(abstractMonster, this.magicNumber, false)));
         addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK, 1, this.numberOfConnections + 1));
         addToBot(new AbstractGameAction() {
             @Override
@@ -63,7 +63,7 @@ public class BATwinsLightSpeedStrike extends BATwinsModCustomCard {
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new ApplyPowerAction(abstractMonster,abstractPlayer,new WeakPower(abstractMonster,this.magicNumber,false)));
+        addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new WeakPower(abstractMonster, this.magicNumber, false)));
         addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.ATTACK, 1, this.numberOfConnections + 1));
         addToBot(new AbstractGameAction() {
             @Override

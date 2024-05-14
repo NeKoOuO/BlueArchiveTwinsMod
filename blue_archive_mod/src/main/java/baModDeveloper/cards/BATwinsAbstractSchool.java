@@ -5,7 +5,6 @@ import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,7 +14,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import java.util.ArrayList;
 
@@ -39,7 +37,7 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
         this.damage = this.baseDamage;
         this.baseMagicNumber = 0;
         this.magicNumber = this.baseMagicNumber;
-        this.baseBlock=this.block=5;
+        this.baseBlock = this.block = 5;
     }
 
     @Override
@@ -75,7 +73,7 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
         super.renderTitle(sb);
     }
 
-    private int calColorNum(){
+    private int calColorNum() {
         ArrayList<CardColor> colors = new ArrayList<>();
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (!colors.contains(c.color) && c != this) {
@@ -87,32 +85,32 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
 
     @Override
     public void applyPowers() {
-        int colorNum=calColorNum();
-        int baseBaseDamage=this.baseDamage;
-        this.baseDamage=this.baseBlock*colorNum;
-        int baseBaseMagicNumber=this.baseMagicNumber;
-        this.baseMagicNumber=colorNum;
-        this.magicNumber=this.baseMagicNumber;
+        int colorNum = calColorNum();
+        int baseBaseDamage = this.baseDamage;
+        this.baseDamage = this.baseBlock * colorNum;
+        int baseBaseMagicNumber = this.baseMagicNumber;
+        this.baseMagicNumber = colorNum;
+        this.magicNumber = this.baseMagicNumber;
         super.applyPowers();
-        this.isDamageModified=this.damage!=colorNum;
-        this.isMagicNumberModified=this.magicNumber!=baseBaseMagicNumber;
-        this.baseDamage=baseBaseDamage;
-        this.baseMagicNumber=baseBaseMagicNumber;
+        this.isDamageModified = this.damage != colorNum;
+        this.isMagicNumberModified = this.magicNumber != baseBaseMagicNumber;
+        this.baseDamage = baseBaseDamage;
+        this.baseMagicNumber = baseBaseMagicNumber;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int colorNum=calColorNum();
-        int baseBaseDamage=this.baseDamage;
-        this.baseDamage=this.baseBlock*colorNum;
-        int baseBaseMagicNumber=this.baseMagicNumber;
-        this.baseMagicNumber=colorNum;
-        this.magicNumber=this.baseMagicNumber;
+        int colorNum = calColorNum();
+        int baseBaseDamage = this.baseDamage;
+        this.baseDamage = this.baseBlock * colorNum;
+        int baseBaseMagicNumber = this.baseMagicNumber;
+        this.baseMagicNumber = colorNum;
+        this.magicNumber = this.baseMagicNumber;
         super.calculateCardDamage(mo);
-        this.isDamageModified=this.damage!=colorNum;
-        this.isMagicNumberModified=this.magicNumber!=this.baseMagicNumber;
-        this.baseDamage=baseBaseDamage;
-        this.baseMagicNumber=baseBaseMagicNumber;
+        this.isDamageModified = this.damage != colorNum;
+        this.isMagicNumberModified = this.magicNumber != this.baseMagicNumber;
+        this.baseDamage = baseBaseDamage;
+        this.baseMagicNumber = baseBaseMagicNumber;
     }
 
     @Override

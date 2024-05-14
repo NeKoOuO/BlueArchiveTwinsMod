@@ -19,10 +19,11 @@ public class BATwinsBulletWarehouseAction extends AbstractGameAction {
     private boolean retrieveCard = false;
     private boolean upgraded;
     private int bulletAmount;
-    public BATwinsBulletWarehouseAction(boolean upgraded,int bulletAmount) {
+
+    public BATwinsBulletWarehouseAction(boolean upgraded, int bulletAmount) {
         this.amount = 1;
         this.upgraded = upgraded;
-        this.bulletAmount=bulletAmount;
+        this.bulletAmount = bulletAmount;
         this.duration = Settings.ACTION_DUR_FAST;
 
     }
@@ -51,9 +52,9 @@ public class BATwinsBulletWarehouseAction extends AbstractGameAction {
                     disCard1.upgrade();
 //                    disCard2.upgrade();
                 }
-                CardModifierManager.addModifier(disCard1,new BATwinsRetainModifier());
-                if(disCard1 instanceof BATwinsModCustomCard){
-                    for(int i=0;i<this.bulletAmount;i++){
+                CardModifierManager.addModifier(disCard1, new BATwinsRetainModifier());
+                if (disCard1 instanceof BATwinsModCustomCard) {
+                    for (int i = 0; i < this.bulletAmount; i++) {
                         ((BATwinsModCustomCard) disCard1).addBringOutCard(BATwinsCustomBulletCard.getRandomBullet());
                     }
                 }

@@ -3,7 +3,6 @@ package baModDeveloper.cards.bullets;
 import baModDeveloper.cards.BATwinsModCustomCard;
 import baModDeveloper.relic.BATwinsSpecialAmmunition;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,7 +14,8 @@ public abstract class BATwinsCustomBulletCard extends BATwinsModCustomCard {
     public BATwinsCustomBulletCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target, BATwinsEnergyPanel.EnergyType.SHARE);
     }
-    public BATwinsCustomBulletCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, BATwinsEnergyPanel.EnergyType energyType){
+
+    public BATwinsCustomBulletCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, BATwinsEnergyPanel.EnergyType energyType) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target, energyType);
     }
 

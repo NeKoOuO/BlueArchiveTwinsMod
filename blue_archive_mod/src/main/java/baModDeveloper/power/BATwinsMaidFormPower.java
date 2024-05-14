@@ -1,25 +1,17 @@
 package baModDeveloper.power;
 
-import baModDeveloper.action.BATwinsAccelerateAction;
 import baModDeveloper.action.BATwinsMaidFormAction;
-import baModDeveloper.cards.colorless.BATwinsAccelerate;
 import baModDeveloper.helpers.ModHelper;
-import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import java.util.List;
 
 public class BATwinsMaidFormPower extends AbstractPower {
     public static final String POWER_ID = ModHelper.makePath("MaidFormPower");

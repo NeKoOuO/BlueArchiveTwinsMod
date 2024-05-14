@@ -23,9 +23,9 @@ public class BATwinsMutualUnderstandingAction extends AbstractGameAction {
             return;
         }
         AbstractCard c = DrawCardAction.drawnCards.get(0);
-        if (c.color.equals(this.color)) {
-            AbstractMonster m = AbstractDungeon.getRandomMonster();
-            addToTop(new BATwinsPlayHandCardAction(c, m, numberOfConnections));
+        if (c.color.equals(this.color)&&c.cost!=-2) {
+//            AbstractMonster m = AbstractDungeon.getRandomMonster();
+            addToTop(new BATwinsPlayHandCardAction(c, null, numberOfConnections));
         }
         addToTop(new WaitAction(0.4F));
         this.isDone = true;

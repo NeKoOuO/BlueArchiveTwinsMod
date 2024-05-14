@@ -22,7 +22,7 @@ public class BATwinsEquipmentUpgradeAction extends SelectCardsInHandAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
     private static final Consumer<List<AbstractCard>> callback = cardList -> {
         for (AbstractCard card : cardList) {
-            if(card.canUpgrade()){
+            if (card.canUpgrade()) {
                 card.upgrade();
             }
             if (!card.name.contains("◆")) {

@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class BATwinsCoversionColorAction extends AbstractGameAction {
-    private BATwinsModCustomCard card;
-    private boolean flash;
+    private final BATwinsModCustomCard card;
+    private final boolean flash;
 
     public BATwinsCoversionColorAction(BATwinsModCustomCard card, boolean flash) {
         this.card = card;
@@ -24,7 +24,7 @@ public class BATwinsCoversionColorAction extends AbstractGameAction {
         card.conversionColor(flash);
         //如果有技艺大师buff则升级
         if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)) {
-            if(card.canUpgrade())
+            if (card.canUpgrade())
                 card.upgrade();
             AbstractDungeon.player.getPower(BATwinsMasterCraftsmanshipPower.POWER_ID).flash();
         }
