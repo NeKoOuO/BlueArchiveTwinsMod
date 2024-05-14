@@ -146,7 +146,7 @@
 	},
 	"BATwinsMod:CoolingTime":{
 		"NAME":"クーリングブースト",
-		"DESCRIPTION":"!B! ブロック を得る。捨て札の batwinsmod:ミドリカード １枚を選び、次のターン開始時、手札に加える（ 消滅 した場合を除く）。"
+		"DESCRIPTION":"!B! ブロック を得る。捨て札の batwinsmod:ミドリカード １枚を選び、次のターン開始時、手札に加える（ 廃棄 した場合を除く）。"
 	},
 	"BATwinsMod:DoubleExperience":{
 		"NAME":"経験値×2",
@@ -314,8 +314,8 @@
 	},
 	"BATwinsMod:AdventureBegins":{
 		"NAME":"勇者チーム",
-		"DESCRIPTION":" batwinsmod:保存 した種類違うな非 消滅 手札を選び、 消滅 、 batwinsmod:保存 する。",
-		"UPGRADE_DESCRIPTION":" batwinsmod:保存 した種類違うな非 消滅 手札を選びできる、 消滅 、 batwinsmod:保存 する。",
+		"DESCRIPTION":" batwinsmod:保存 した種類違うな非 廃棄 手札を選び、 廃棄 、 batwinsmod:保存 する。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:保存 した種類違うな非 廃棄 手札を選びできる、 廃棄 、 batwinsmod:保存 する。",
 		"EXTENDED_DESCRIPTION":[
 			"アタック",
 			"スキル",
@@ -331,7 +331,7 @@
 	},
 	"BATwinsMod:EquipmentUpgrade":{
 		"NAME":"装備アップグレード",
-		"DESCRIPTION":" !M! 枚手札を選び、 アップグレード 、 batwinsmod:共有 、 保留 を得る。 NL 消滅 "
+		"DESCRIPTION":" !M! 枚手札を選び、 アップグレード 、 batwinsmod:共有 、 保留 を得る。 NL 廃棄 "
 	},
 	"BATwinsMod:AutomaticDefense":{
 		"NAME":"オートガード",
@@ -348,13 +348,13 @@
 	},
 	"BATwinsMod:BorrowMe":{
 		"NAME":"借ります",
-		"DESCRIPTION":"このターン、すべてのカードが batwinsmod:共有 にする。 NL 消滅 ",
+		"DESCRIPTION":"このターン、すべてのカードが batwinsmod:共有 にする。 NL 廃棄 ",
 		"UPGRADE_DESCRIPTION":"このターン、すべてのカードが batwinsmod:共有 にする。"
 	},
 	"BATwinsMod:MaidForm":{
 		"NAME":"メイド化",
-		"DESCRIPTION":"ターンの最初にカードをプレイした後、コスト同じな加速１枚にプレイする。",
-		"UPGRADE_DESCRIPTION":" batwinsmod:共有 NL ターンの最初にカードをプレイした後、コスト同じな加速１枚にプレイする。"
+		"DESCRIPTION":"毎ターン、最初にカードを1枚プレイした後、そのカードよりもエネルギーコストの低い1枚のカードを引く。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:共有 NL 毎ターン、最初にカードを1枚プレイした後、そのカードよりもエネルギーコストの低い1枚のカードを引く。"
 	},
 	"BATwinsMod:Collaboration":{
 		"NAME":"チャージ",
@@ -393,7 +393,7 @@
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"貫通ダメージ",
-		"DESCRIPTION":"敵全体に !D! ダメージを与える、 ブロック がいないな敵 筋力 !M! を失う。 NL 消滅 NL batwinsmod:連携 ：このバトル、 消滅 しない。",
+		"DESCRIPTION":"敵全体に !D! ダメージを与える、 ブロック がいないな敵 筋力 !M! を失う。 NL 廃棄 NL batwinsmod:連携 ：このバトル、 廃棄 しない。",
 		"EXTENDED_DESCRIPTION": [
 			" 敵全体に !D! ダメージを与える、 ブロック がいないな敵 筋力 !M! を失う。"
 		]
@@ -405,7 +405,7 @@
 	},
 	"BATwinsMod:Learned":{
 		"NAME":"パーフェクトチェンジ",
-		"DESCRIPTION":"引いた時、非パワーカード１枚に 消滅 、 batwinsmod:保存 。（１枚まで） NL !D! ダメージを与える， 致命 時、 batwinsmod:保存 したカード永続的に batwinsmod:モモイカード へ batwinsmod:チェンジ 。"
+		"DESCRIPTION":"引いた時、非パワーカード１枚に 廃棄 、 batwinsmod:保存 。（１枚まで） NL !D! ダメージを与える， 致命 時、 batwinsmod:保存 したカード永続的に batwinsmod:モモイカード へ batwinsmod:チェンジ 。"
 	},
 	"BATwinsMod:ForceDetonation":{
 		"NAME":"強制爆破",
@@ -413,8 +413,8 @@
 	},
 	"BATwinsMod:ScriptRewriting":{
 		"NAME":"シナリオリライト",
-		"DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 、 batwinsmod:焼傷 と同じな 毒 を与える。 NL 消滅 ",
-		"UPGRADE_DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 を与える、その後 batwinsmod:焼傷 と同じな 毒 を与える。 NL 消滅 "
+		"DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 、 batwinsmod:焼傷 と同じな 毒 を与える。 NL 廃棄 ",
+		"UPGRADE_DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 を与える、その後 batwinsmod:焼傷 と同じな 毒 を与える。 NL 廃棄 "
 	},
 	"BATwinsMod:EasterEgg":{
 		"NAME":"イースターエッグ",
@@ -452,8 +452,8 @@
 	},
 	"BATwinsMod:BulletWarehouse":{
 		"NAME":"武器庫",
-		"DESCRIPTION":"4枚 batwinsmod:射撃 カードの中で１枚選び、手札に加える。 NL 消滅 ",
-		"UPGRADE_DESCRIPTION":"4枚 アップグレード した batwinsmod:射撃 カードの中で１枚選び、手札に加える。 NL 消滅 "
+		"DESCRIPTION":"4枚 batwinsmod:射撃 カードの中で１枚選び、手札に加える。ランダムな batwinsmod:弾丸 を !M! 枚 保留 、 batwinsmod:保存 。 NL 廃棄 ",
+		"UPGRADE_DESCRIPTION":"4枚 アップグレード した batwinsmod:射撃 カードの中で１枚選び、手札に加える。 NL 廃棄 "
 	},
 	"BATwinsMod:PoisonBullet":{
 		"NAME":"毒バッレト",
@@ -499,5 +499,20 @@
 		"NAME": "戦術リレー",
 		"DESCRIPTION": " [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] を得る、最大2枚カードを batwinsmod:チェンジ できる。 NL このターン、 batwinsmod:モモイカード をプレイできない。",
 		"UPGRADE_DESCRIPTION": " [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] を得る、、最大2枚カードを batwinsmod:チェンジ できる。 NL このターン、 batwinsmod:モモイカード をプレイできない。"
+	},
+	"BATwinsMod:Gorgeous": {
+		"NAME": "华丽散场",
+		"DESCRIPTION": " 不能被打出 NL 本回合达到 batwinsmod:连携 5时丢弃这张牌并对所有敌人造成 !D! 点伤害。",
+		"EXTENDED_DESCRIPTION": [
+			"这张牌只能被效果打出"
+		]
+	},
+	"BATwinsMod:UniversalBullet": {
+		"NAME": "ユニバーサル弾",
+		"DESCRIPTION": " !D! ダメージを与え、手札からランダムに1枚の batwinsmod:モモイカード を batwinsmod:保存 します。 NL 廃棄 。"
+	},
+	"BATwinsMod:MultipleShadows": {
+		"NAME": "先手を取る",
+		"DESCRIPTION": "!B! ブロック を得る。 NL 次のターン開始時にブロックを失わない。 NL 廃棄 "
 	}
 }

@@ -114,5 +114,20 @@
 		"DESCRIPTIONS":[
 			"連携カード2回プレイすると、カード1枚引く。"
 		]
+	},
+	"BATwinsMod:RetroGame": {
+		"NAME": "レトロゲーム",
+		"FLAVOR": "一色しか表示できません。",
+		"DESCRIPTIONS": [
+			"毎ターン、追加で #b2 枚のカードを引き、引いたカードはすべて #ybatwinsmod:モモイカード または #ybatwinsmod:ミドリカード になります。"
+		]
+	},
+	"BATwinsMod:BookOfProhibitions": {
+		"NAME": "禁断の書",
+		"FLAVOR": "人知れぬ内容を記録しています",
+		"DESCRIPTIONS": [
+			"毎ターン、カードが #y1 回目のダメージを与えた後、ブロックされなかったダメージの #y1/3 を回復します。"
+		]
 	}
+
 }

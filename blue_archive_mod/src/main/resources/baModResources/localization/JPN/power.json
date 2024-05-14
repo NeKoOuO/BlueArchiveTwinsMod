@@ -81,8 +81,8 @@
 	"BATwinsMod:SinglePlayerGamePower":{
 		"NAME":"シングルプレイ",
 		"DESCRIPTIONS":[
-			"カードをプレイする後、手札は１種類色のカードだけの場合、",
-			"ブロックを得る。"
+			"カードをプレイする後、手札は batwinsmod:モモイカード もしくは  batwinsmod:ミドリカード がいない場合、",
+			"ブロック を得る。"
 		]
 	},
 	"BATwinsMod:CoolingTimePower":{
@@ -165,7 +165,7 @@
 	"BATwinsMod:MaidFormPower":{
 		"NAME":"メイド化",
 		"DESCRIPTIONS":[
-			"ターンの最初の%dカードをプレイした後、コスト同じな加速１枚にプレイする。"
+			"毎ターン、%d 枚目のカードをプレイした後、そのカードよりもエネルギーコストの低い1枚のカードを引く。"
 		]
 	},
 	"BATwinsMod:FlatFallPower":{
