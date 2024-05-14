@@ -58,7 +58,7 @@ public class BATwinsPaintingConception extends BATwinsModCustomCard {
             addToBot(new BATwinsSelectHandCardToPlayAction(this.color, null, this.numberOfConnections + 1, true));
         } else {
             CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            temp.group.addAll(abstractPlayer.hand.group.stream().filter(c -> c.color == this.color && c != this && c.type != CardType.POWER).collect(Collectors.toList()));
+            temp.group.addAll(abstractPlayer.hand.group.stream().filter(c -> c.color == this.color && c != this && c.type != CardType.POWER&&c.cost!=-2).collect(Collectors.toList()));
             for (int i = 0; i < this.magicNumber; i++) {
                 if (temp.isEmpty()) {
                     return;
@@ -66,7 +66,7 @@ public class BATwinsPaintingConception extends BATwinsModCustomCard {
                 AbstractCard card = temp.getRandomCard(AbstractDungeon.cardRandomRng);
                 addToBot(new BATwinsPlayHandCardAction(card, null, this.numberOfConnections + 1));
                 temp.removeCard(card);
-                abstractPlayer.hand.removeCard(card);
+//                abstractPlayer.hand.removeCard(card);
             }
         }
 

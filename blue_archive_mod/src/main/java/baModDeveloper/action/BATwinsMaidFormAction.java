@@ -23,7 +23,7 @@ public class BATwinsMaidFormAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        addToTop(new SelectCardsAction(AbstractDungeon.player.drawPile.group, 1, uiStrings.TEXT[0], false, this::filter, this::callback));
+        addToTop(new SelectCardsAction(AbstractDungeon.player.drawPile.group, 1, String.format(uiStrings.TEXT[10]+uiStrings.TEXT[0],1), false, this::filter, this::callback));
         this.isDone = true;
     }
 
@@ -34,6 +34,6 @@ public class BATwinsMaidFormAction extends AbstractGameAction {
     }
 
     private boolean filter(AbstractCard card) {
-        return card.cost <= this.costMax;
+        return card.cost <= this.costMax&&card.cost!=-2;
     }
 }

@@ -26,7 +26,7 @@ public class BATwinsTwoStageAttack extends BATwinsModCustomCard {
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "TwoStageAttack");
-    private static final int COST = -2;
+    private static final int COST = -22;
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
