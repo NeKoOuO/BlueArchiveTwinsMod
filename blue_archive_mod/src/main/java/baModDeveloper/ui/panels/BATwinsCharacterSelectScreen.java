@@ -44,10 +44,10 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
 
         spireConfig = new SpireConfig("BATwinsMod", "Common");
 
-        initSkinSelecter();
+        initSkinSelector();
     }
 
-    private void initSkinSelecter(){
+    private void initSkinSelector(){
         this.leftArrow=new Hitbox(50*Settings.scale,50*Settings.scale);
         this.rightArrow=new Hitbox(50*Settings.scale,50*Settings.scale);
         this.leftArrow.move(this.current_x+200*Settings.scale,this.current_y);
