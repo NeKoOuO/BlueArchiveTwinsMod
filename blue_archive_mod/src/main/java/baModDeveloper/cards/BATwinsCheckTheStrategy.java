@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
@@ -26,6 +27,7 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MIDORI;
+    private static final UIStrings uiString=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
 
     public BATwinsCheckTheStrategy() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
@@ -54,7 +56,7 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
 //                if(BATwinsCheckTheStrategy.this.upgraded){
 //                    addToTop(new ArmamentsAction(true));
 //                }
-                addToTop(new SelectCardsAction(AbstractDungeon.player.drawPile.group, 1, "", false, card -> {
+                addToTop(new SelectCardsAction(AbstractDungeon.player.drawPile.group, 1, String.format(uiString.TEXT[10]+uiString.TEXT[5],1), false, card -> {
                     return true;
                 }, cards -> {
                     for (AbstractCard c : cards) {
