@@ -57,7 +57,7 @@ public class BATwinsDisabledMomoiPower extends AbstractPower {
     public void onInitialApplication() {
         super.onInitialApplication();
         if (AbstractDungeon.player instanceof BATwinsCharacter && BATwinsMod.Enable3D) {
-            BATwinsCharacter.get3DHelper().setMomoiAnimation(Character3DHelper.MomoiActionList.PANIC);
+            ((BATwinsCharacter) AbstractDungeon.player).get3DHelper().setMomoiAnimation(Character3DHelper.MomoiActionList.PANIC);
         }
     }
 
@@ -65,7 +65,7 @@ public class BATwinsDisabledMomoiPower extends AbstractPower {
     public void onRemove() {
         super.onRemove();
         if (AbstractDungeon.player instanceof BATwinsCharacter && BATwinsMod.Enable3D) {
-            BATwinsCharacter.get3DHelper().clearMomoiAnima();
+            ((BATwinsCharacter) AbstractDungeon.player).get3DHelper().clearMomoiAnima();
         }
     }
 }

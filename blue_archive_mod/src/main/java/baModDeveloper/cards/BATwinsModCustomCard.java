@@ -410,6 +410,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     public void renderCardPreview(SpriteBatch sb) {
         if (this.cardToBringOut.size() <= 1) {
             super.renderCardPreview(sb);
+            if(!this.cardToBringOut.isEmpty()&&this.cardToBringOut.get(0)==this.cardsToPreview){
+                this.renderCardChain(sb,this.cardsToPreview);
+            }
             return;
         }
         int renderCardsNum = this.cardToBringOut.size();

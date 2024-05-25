@@ -75,6 +75,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public static boolean AutoSort = true;
     public static boolean ShowExpBar = true;
     public static boolean Enable3D = false;
+    public static int SelectedSkin=0;
     public static boolean Tutorial = true;
 
     public BATwinsMod() {
@@ -94,10 +95,12 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             ShowExpBar = config.getBool(ModHelper.makePath("ShowExpBar"));
             Enable3D = config.getBool(ModHelper.makePath("Enable3D"));
             Tutorial = config.getBool(ModHelper.makePath("Tutorial"));
+            SelectedSkin=config.getInt(ModHelper.makePath("SelectedSkin"));
 
 //            Settings.isDebug=true;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+//            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 

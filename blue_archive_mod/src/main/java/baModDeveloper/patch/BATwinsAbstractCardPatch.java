@@ -14,6 +14,7 @@ public class BATwinsAbstractCardPatch {
     public static class FieldPatch {
         public static SpireField<Boolean> blockTheOriginalEffect = new SpireField<>(() -> false);
         public static SpireField<Integer> numberOfConnections = new SpireField<>(() -> 0);
+        public static SpireField<Boolean> dontFadeOutInLimbo=new SpireField<>(()->false);
     }
 
     @SpirePatch(clz = AbstractCard.class, method = "hover")

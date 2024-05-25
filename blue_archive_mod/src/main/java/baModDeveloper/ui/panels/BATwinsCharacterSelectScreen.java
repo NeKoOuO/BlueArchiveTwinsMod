@@ -4,6 +4,7 @@ import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import basemod.interfaces.ISubscriber;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,6 +21,7 @@ import java.io.IOException;
 public class BATwinsCharacterSelectScreen implements ISubscriber {
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("ModeSelectionPrompt"));
+    private static final UIStrings skinSelector=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("Skins"));
     public static BATwinsCharacterSelectScreen instance;
     private Hitbox checkbox;
     private boolean checked;
@@ -27,6 +29,9 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
     private boolean shown;
     private float current_x, current_y;
     private SpireConfig spireConfig;
+
+    private Hitbox leftArrow;
+    private Hitbox rightArrow;
 
     public BATwinsCharacterSelectScreen() throws IOException {
         this.checkbox = new Hitbox(300.0F * Settings.scale, 50.0F * Settings.scale);
@@ -39,8 +44,15 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
 
         spireConfig = new SpireConfig("BATwinsMod", "Common");
 
+        initSkinSelector();
     }
 
+    private void initSkinSelector(){
+        this.leftArrow=new Hitbox(50*Settings.scale,50*Settings.scale);
+        this.rightArrow=new Hitbox(50*Settings.scale,50*Settings.scale);
+        this.leftArrow.move(this.current_x+200*Settings.scale,this.current_y);
+        this.rightArrow.move(this.current_x+400*Settings.scale,this.current_y);
+    }
     public static BATwinsCharacterSelectScreen getInstance() {
         if (instance == null) {
             try {
@@ -56,6 +68,16 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
         if (CardCrawlGame.chosenCharacter == BATwinsCharacter.Enums.BATwins) {
             this.shown = true;
             this.checkbox.update();
+            this.leftArrow.update();
+            this.rightArrow.update();
+            if (InputHelper.justClickedLeft) {
+                if (this.leftArrow.hovered) {
+                    this.leftArrow.clickStarted = true;
+                } else if (this.rightArrow.hovered) {
+                    this.rightArrow.clickStarted = true;
+                }
+            }
+
             if (this.checkbox.clicked) {
                 this.checkbox.clicked = false;
                 CardCrawlGame.sound.play("UI_CLICK_1");
@@ -68,6 +90,19 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
                     throw new RuntimeException(e);
                 }
 
+            }
+            if(this.leftArrow.clicked||this.rightArrow.clicked){
+                int add=this.leftArrow.clicked?-1:1;
+                this.leftArrow.clicked=false;
+                this.rightArrow.clicked=false;
+                CardCrawlGame.sound.play("UI_CLICK_1");
+                BATwinsMod.SelectedSkin=Math.abs((BATwinsMod.SelectedSkin+add)%skinSelector.TEXT.length);
+                spireConfig.setInt(ModHelper.makePath("SelectedSkin"), BATwinsMod.SelectedSkin);
+                try {
+                    spireConfig.save();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
 
             if (InputHelper.justClickedLeft) {
@@ -93,7 +128,30 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
                 this.renderTip(sb);
             }
             this.checkbox.render(sb);
+
+            if(BATwinsMod.Enable3D){
+                renderSkinSelector(sb);
+            }
         }
+    }
+
+    private void renderSkinSelector(SpriteBatch sb){
+        if (!this.leftArrow.hovered && !Settings.isControllerMode) {
+            sb.setColor(Color.LIGHT_GRAY);
+        } else {
+            sb.setColor(Color.WHITE);
+        }
+        sb.draw(ImageMaster.CF_LEFT_ARROW, this.leftArrow.cX - 24.0F, this.leftArrow.cY - 24.0F, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 48, 48, false, false);
+        if (!this.rightArrow.hovered && !Settings.isControllerMode) {
+            sb.setColor(Color.LIGHT_GRAY);
+        } else {
+            sb.setColor(Color.WHITE);
+        }
+        sb.draw(ImageMaster.CF_LEFT_ARROW, this.rightArrow.cX - 24.0F, this.rightArrow.cY - 24.0F, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 48, 48, true, false);
+        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, skinSelector.TEXT[BATwinsMod.SelectedSkin], this.current_x + 300 * Settings.scale, this.current_y);
+        this.leftArrow.render(sb);
+        this.rightArrow.render(sb);
+
     }
 
     private void renderTip(SpriteBatch sb) {

@@ -4,10 +4,7 @@ import baModDeveloper.BATwinsMod;
 import baModDeveloper.cards.*;
 import baModDeveloper.core.BATwinsEnergyManager;
 import baModDeveloper.effect.BATwinsEasterEggEffect;
-import baModDeveloper.helpers.Character3DHelper;
-import baModDeveloper.helpers.ColorComparer;
-import baModDeveloper.helpers.ImageHelper;
-import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.helpers.*;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.patch.BATwinsCharacterOptionPatch;
 import baModDeveloper.power.BATwinsBorrowMePower;
@@ -41,7 +38,6 @@ import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -116,7 +112,9 @@ public class BATwinsCharacter extends CustomPlayer {
 //    private AbstractAnimation rendered_anima_momoi;
 //    private AbstractAnimation rendered_anima_midori;
     //3D相关
-    private static final Character3DHelper character3DHelper = new Character3DHelper();
+    private static final CharacterNormalHelper normal3DCharacter=new CharacterNormalHelper();
+    private static final CharacterMaidHelper maid3DCharacter=new CharacterMaidHelper();
+    private Character3DHelper character3DHelper;
     //角色立绘，先暂时使用图片代替，之后使用3d模型替换
     private static final String stand_Img = ModHelper.makeImgPath("char", "standup");
     private static final String empty_Img = ModHelper.makeImgPath("char", "p");
@@ -142,6 +140,14 @@ public class BATwinsCharacter extends CustomPlayer {
         //3D相关
 //        character3DHelper.init();
         if (BATwinsMod.Enable3D) {
+            switch (BATwinsMod.SelectedSkin){
+                case 0:
+                    this.character3DHelper=normal3DCharacter;
+                    break;
+                case 1:
+                    this.character3DHelper=maid3DCharacter;
+                    break;
+            }
             if (!character3DHelper.inited()) {
 //                try{
 //                    character3DHelper.initWithTimeout();
@@ -181,7 +187,7 @@ public class BATwinsCharacter extends CustomPlayer {
         return BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
-    public static Character3DHelper get3DHelper() {
+    public Character3DHelper get3DHelper() {
         return character3DHelper;
     }
 

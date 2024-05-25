@@ -146,5 +146,11 @@
 			"weak",
 			"vulnerable"
 		]
-	}
+	},
+	"BATwinsMod:Skins": {
+	"TEXT": [
+		"Normal Form",
+		"Maid Form"
+	]
+}
 }
