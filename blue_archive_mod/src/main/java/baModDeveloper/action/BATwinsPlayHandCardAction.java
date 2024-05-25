@@ -106,6 +106,7 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //            if(card instanceof BATwinsModCustomCard){
 //                ((BATwinsModCustomCard) card).playedByOtherCard=true;
 //            }
+            BATwinsAbstractCardPatch.FieldPatch.dontFadeOutInLimbo.set(this.card,true);
             if (this.target == null || this.target.isDeadOrEscaped()) {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, true, false, true));
             } else {
