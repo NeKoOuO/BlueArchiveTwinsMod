@@ -25,22 +25,8 @@ import static baModDeveloper.character.BATwinsCharacter.Enums.BATWINS_MOMOI_CARD
 import static baModDeveloper.helpers.Character3DHelper.AnimationName.*;
 
 public class Character3DHelper {
-    private static final Map<AnimationName, String[]> AnimationNames = new HashMap<>();
+    protected static Map<AnimationName, String[]> AnimationNames = new HashMap<>();
 
-    static {
-        AnimationNames.put(NORMAL_IDLE, new String[]{"Armature|Momoi_Original_Normal_Idle", "Armature|Midori_Original_Normal_Idle"});
-        AnimationNames.put(STAND_ATTACK_DELAY, new String[]{"Armature|Momoi_Original_Stand_Attack_Delay", "Armature|Midori_Original_Stand_Attack_Delay"});
-        AnimationNames.put(MOVING, new String[]{"Armature|Momoi_Original_Move_Ing", "Armature|Midori_Original_Move_Ing"});
-        AnimationNames.put(MOVING_END, new String[]{"Armature|Momoi_Original_Move_End_Normal", "Armature|Midori_Original_Move_End_Normal"});
-        AnimationNames.put(ATTACK_START, new String[]{"Armature|Momoi_Original_Normal_Attack_Start", "Armature|Midori_Original_Normal_Attack_Start"});
-        AnimationNames.put(ATTACKING, new String[]{"Armature|Momoi_Original_Normal_Attack_Ing", "Armature|Midori_Original_Normal_Attack_Ing"});
-        AnimationNames.put(ATTACK_END, new String[]{"Armature|Momoi_Original_Normal_Attack_End", "Armature|Midori_Original_Normal_Attack_End"});
-        AnimationNames.put(MOVE_JUMP, new String[]{"Armature|Momoi_Original_Move_Jump", "Armature|Midori_Original_Move_Jump"});
-        AnimationNames.put(DEATH, new String[]{"Armature|Momoi_Original_Vital_Death", "Armature|Midori_Original_Vital_Death"});
-        AnimationNames.put(DYING, new String[]{"Armature|Momoi_Original_Vital_Dying_ing", "Armature|Midori_Original_Vital_Dying_ing"});
-        AnimationNames.put(RELOAD, new String[]{"Armature|Momoi_Original_Normal_Reload", "Armature|Midori_Original_Normal_Reload"});
-        AnimationNames.put(PANIC, new String[]{"Armature|Momoi_Original_Vital_Panic", "Armature|Midori_Original_Vital_Panic"});
-    }
 
     public float current_x = 0, current_y = 0;
     OrthographicCamera camera;
@@ -58,6 +44,14 @@ public class Character3DHelper {
     }
 
     public static String getAnimationString(AnimationName name, AbstractCard.CardColor color) {
+        switch (BATwinsMod.SelectedSkin){
+            case 0:
+                AnimationNames=CharacterNormalHelper.AnimationNames;
+                break;
+            case 1:
+                AnimationNames=CharacterMaidHelper.AnimationNames;
+                break;
+        }
         if (color == BATWINS_MOMOI_CARD)
             return AnimationNames.get(name)[0];
         else
@@ -78,10 +72,6 @@ public class Character3DHelper {
         environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 1.0F, 1.0F, 1.0F, 1.0F));
 
         psb = new PolygonSpriteBatch();
-
-        this.momoiController = new ModelController("baModResources/img/char/model/momoi.g3dj", 0, 0, -500, getAnimationString(NORMAL_IDLE,BATWINS_MOMOI_CARD));
-        this.midoriController = new ModelController("baModResources/img/char/model/midori.g3dj", 0, 0, -500, getAnimationString(NORMAL_IDLE,BATWINS_MIDORI_CARD));
-
         this.resetCharacterPosition();
 
         this.inited = true;

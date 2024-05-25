@@ -56,7 +56,7 @@ public class BATwinsDisabledMidoriPower extends AbstractPower {
     public void onInitialApplication() {
         super.onInitialApplication();
         if (AbstractDungeon.player instanceof BATwinsCharacter && BATwinsMod.Enable3D) {
-            BATwinsCharacter.get3DHelper().setMidoriAnimation(Character3DHelper.MidoriActionList.PANIC);
+            ((BATwinsCharacter) AbstractDungeon.player).get3DHelper().setMidoriAnimation(Character3DHelper.MidoriActionList.PANIC);
         }
     }
 
@@ -64,7 +64,7 @@ public class BATwinsDisabledMidoriPower extends AbstractPower {
     public void onRemove() {
         super.onRemove();
         if (AbstractDungeon.player instanceof BATwinsCharacter && BATwinsMod.Enable3D) {
-            BATwinsCharacter.get3DHelper().clearMidoriAnima();
+            ((BATwinsCharacter) AbstractDungeon.player).get3DHelper().clearMidoriAnima();
         }
     }
 }

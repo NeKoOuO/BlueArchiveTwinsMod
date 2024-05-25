@@ -1,0 +1,12 @@
+blue_archive_mod/target/classes/baModResources/img/char/model/momoi_maid.j3dj filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/target/classes/baModResources/img/char/model/midori_maid.j3dj filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/src/main/resources/baModResources/img/char/model/momoi.g3dj filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/src/main/resources/baModResources/img/char/model/Momoi.g3dj filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/src/main/resources/baModResources/img/char/mode/Momoi_Original.g3db filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/src/main/resources/baModResources/img/char/mode/Momoi_Original.g3dj filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/src/main/resources/baModResources/img/char/mode/Momoi.g3dj filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/target/classes/baModResources/img/char/model/Momoi_Original.g3db filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/target/classes/baModResources/img/char/model/Momoi_Original.g3dj filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/target/classes/baModResources/img/char/model/momoi.g3dj filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/src/main/resources/baModResources/img/char/mode/midori.g3dj filter=lfs diff=lfs merge=lfs -text
+blue_archive_mod/target/classes/baModResources/img/char/model/midori.g3dj filter=lfs diff=lfs merge=lfs -text

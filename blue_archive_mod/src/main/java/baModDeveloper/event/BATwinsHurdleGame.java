@@ -81,8 +81,8 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
         this.buttonHb.move(Settings.WIDTH / 2.0F, Settings.HEIGHT / 5.0F);
         this.imgX = 0;
         this.imgY = Settings.HEIGHT / 3.0F;
-        if (BATwinsMod.Enable3D) {
-            this.character3DHelper = BATwinsCharacter.get3DHelper();
+        if (BATwinsMod.Enable3D&&AbstractDungeon.player instanceof BATwinsCharacter) {
+            this.character3DHelper = ((BATwinsCharacter) AbstractDungeon.player).get3DHelper();
             this.character3DHelper.resetModelPosition(-1000.0F, -1000.0F, BATwinsCharacter.Enums.BATWINS_MIDORI_CARD);
         }
 
