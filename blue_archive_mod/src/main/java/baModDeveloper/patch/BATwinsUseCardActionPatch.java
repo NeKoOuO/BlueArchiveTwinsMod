@@ -12,7 +12,7 @@ public class BATwinsUseCardActionPatch {
     public static class updatePatch {
         @SpireInsertPatch(rloc = 67)
         public static void insertPatch(UseCardAction _instance, AbstractCard ___targetCard) {
-            if (___targetCard instanceof BATwinsModCustomCard && AbstractDungeon.player.limbo.contains(___targetCard)) {
+            if (AbstractDungeon.player.limbo.contains(___targetCard)) {
                 AbstractDungeon.player.limbo.removeCard(___targetCard);
             }
         }
