@@ -15,6 +15,9 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
+import javassist.CannotCompileException;
+import javassist.expr.ExprEditor;
+import javassist.expr.MethodCall;
 
 public class BATwinsSingleCardViewPopupPatch {
     @SpirePatch(clz = SingleCardViewPopup.class, method = SpirePatch.CLASS)
@@ -131,5 +134,29 @@ public class BATwinsSingleCardViewPopupPatch {
             }
             FieldPatch.exchangeHb.get(_instance).render(sb);
         }
+    }
+    @SpirePatch(clz = SingleCardViewPopup.class,method = "renderCost")
+    public static class renderCostPatch{
+        @SpireInstrumentPatch
+        public static ExprEditor Instrument(){
+            return new ExprEditor(){
+                @Override
+                public void edit(MethodCall m) throws CannotCompileException {
+                    if(isMethodCalled(m)){
+                        m.replace("{" +
+                                "if(!"+BATwinsSingleCardViewPopupPatch.class.getName()+
+                                ".isCanNotConnectCard($3)){$_=$proceed($$);}}");
+                    }
+                }
+
+                private boolean isMethodCalled(MethodCall m){
+                    String methodName=m.getMethodName();
+                    return methodName.equals("renderFont");
+                }
+            };
+        }
+    }
+    public static boolean isCanNotConnectCard(String cost){
+        return cost.equals("-22");
     }
 }
