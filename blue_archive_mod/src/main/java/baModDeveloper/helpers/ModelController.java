@@ -4,10 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g3d.Environment;
-import com.badlogic.gdx.graphics.g3d.Model;
-import com.badlogic.gdx.graphics.g3d.ModelBatch;
-import com.badlogic.gdx.graphics.g3d.ModelInstance;
+import com.badlogic.gdx.graphics.g3d.*;
 import com.badlogic.gdx.graphics.g3d.attributes.BlendingAttribute;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.loader.G3dModelLoader;
@@ -40,13 +37,10 @@ public class ModelController {
         instance.transform.rotate(0, 3, 1, 180);
         instance.transform.rotate(1, 0, 0, 34);
         instance.transform.scale(SCALE, SCALE, SCALE);
-
         for (int i = 0; i < instance.materials.size; i++) {
             instance.materials.get(i).set(ColorAttribute.createDiffuse(Color.WHITE));
-            if (this.instance.materials.get(i).id.equals("Month")) {
-                this.instance.materials.get(i).set(new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
-            }
         }
+
         this.StandAnima = StandAnima;
     }
 
@@ -118,5 +112,13 @@ public class ModelController {
 
     public void resetDefaultAnima() {
         this.clearQueue(this.animationController);
+    }
+
+    public void setAttribute(String matId, Attribute attribute){
+        for (int i = 0; i < instance.materials.size; i++) {
+            if (this.instance.materials.get(i).id.equals(matId)) {
+                this.instance.materials.get(i).set(attribute);
+            }
+        }
     }
 }

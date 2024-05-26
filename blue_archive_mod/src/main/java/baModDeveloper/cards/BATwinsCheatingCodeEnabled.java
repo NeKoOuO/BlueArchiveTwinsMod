@@ -4,8 +4,10 @@ import baModDeveloper.action.BATwinsCheatingCodeEnabledAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -55,5 +57,17 @@ public class BATwinsCheatingCodeEnabled extends BATwinsModCustomCard {
 //
 //            initializeDescription();
         }
+    }
+
+    @Override
+    public void triggerOnHovered() {
+        if (AbstractDungeon.player != null) {
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                if (c.color == BATwinsCharacter.getOtherColor(this.color)) {
+                    c.flash(BATwinsCharacter.getColorWithCardColor(c.color));
+                }
+            }
+        }
+
     }
 }
