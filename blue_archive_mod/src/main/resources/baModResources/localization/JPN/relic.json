@@ -1,0 +1,133 @@
+{
+	"BATwinsMod:MomoisGameConsole":{
+		"NAME":"モモイのゲーム機",
+		"FLAVOR":"これもう壊れるじゃん、部費はもう新しやつを買いません！\n --モモイ",
+		"DESCRIPTIONS":[
+			"戦闘開始時、 [batwinsmod:momoiorbicon] を得る。山札からランダムな #ybatwinsmod:モモイカード を手札に加える。"
+		]
+	},
+	"BATwinsMod:MidorisGameConsole":{
+		"NAME":"ミドリのゲーム機",
+		"FLAVOR":"見つけてよかった。さそっくセーブデータをチェックしないと。\n --ミドリ",
+		"DESCRIPTIONS":[
+			"戦闘開始時、 [batwinsmod:midoriorbicon] を得る。山札からランダムな #ybatwinsmod:ミドリカード を手札に加える。"
+		]
+	},
+	"BATwinsMod:AncientGameCartridges":{
+		"NAME":"古いゲームカード",
+		"FLAVOR":"古いゲームカード、もうロードできない。上に「スレイ ■ ■ アイヤ」を書いた。",
+		"DESCRIPTIONS":[
+			"戦闘開始時、山札のランダムな #bパワー 1枚をプレイする。"
+		]
+	},
+	"BATwinsMod:ByProving":{
+		"NAME":"クリア証明",
+		"FLAVOR":"新しいメタル、上に書いたのは\n初心者ステージのクリア証明！--%s。",
+		"DESCRIPTIONS":[
+			" #b%s をプレイした時、ランダムな敵を同じなダメージを与える。",
+			" #b%s をプレイした時、カード1枚引く。",
+			" #b%s をプレイした時、捨て札へコピー1枚を加える。",
+			"異なるタイプのカードには異なる効果があります。",
+			"新しいメタル、上に書いたのは\n初心者ステージのクリア証明！--%s。"
+		]
+	},
+	"BATwinsMod:GameMagazine":{
+		"NAME":"ゲーム雑誌",
+		"FLAVOR":"ゲームにおまけな雑誌、残念だがこのゲームに関わる内容はいません。",
+		"DESCRIPTIONS":[
+			"戦闘開始時、 #yチェンジ 1枚を手札に加える。"
+		]
+	},
+	"BATwinsMod:GameGuide":{
+		"NAME":"ゲーム攻略本",
+		"FLAVOR":"手札をドラッグするだけでカードを出すことができます！",
+		"DESCRIPTIONS":[
+			" #yゲーム雑誌 と置き換える。ターン開始時、 #b1 まい #yエセリアル、消滅 な #yチェンジ を手札に加える。"
+		]
+	},
+	"BATwinsMod:FoldingShield":{
+		"NAME":"Q.E.D",
+		"FLAVOR":"ユウカに使ったシールド",
+		"DESCRIPTIONS":[
+			"ターン終了時、手札数× #b%d のブロックを得る。"
+		]
+	},
+	"BATwinsMod:Headband":{
+		"NAME":"カチューシャ",
+		"FLAVOR":"こんな場所でメイドがある？",
+		"DESCRIPTIONS":[
+			"ターン開始時、 [batwinsmod:momoiorbicon] もしくは [batwinsmod:midoriorbicon] を得る。拾った時を選ぶ。"
+		]
+	},
+	"BATwinsMod:SpecialAmmunition":{
+		"NAME":"特製爆薬",
+		"FLAVOR":"エンジニア部の最新製品！",
+		"DESCRIPTIONS":[
+			"弾丸カードのダメージは #b3 を上がる。"
+		]
+	},
+	"BATwinsMod:SwordOfLight":{
+		"NAME":"光の剣：スーパーノヴァ",
+		"FLAVOR":"持ってもほとんど持ち上げられないんだけど、これをどう使えばいいの？",
+		"DESCRIPTIONS":[
+			"バトル中、 #b%d 枚カードをプレイした後、敵全体 #b%d ダメージを与える。"
+		]
+	},
+	"BATwinsMod:NekoHowitzer":{
+		"NAME":"にゃん's ダッシュ",
+		"FLAVOR":"ユズの武器、遠距離から榴弾砲を発射できます。",
+		"DESCRIPTIONS":[
+			"ターン開始時、ランダムな敵 #b%d 焼傷を与える。 #b1%% な確率でこの敵の焼傷を2倍にする。"
+		]
+	},
+	"BATwinsMod:FitnessRing":{
+		"NAME":"O-フィット",
+		"FLAVOR":"いつも三分間の熱さ.",
+		"DESCRIPTIONS":[
+			"最初のターン引いたカードはこのバトルの間アップグレードする。"
+		]
+	},
+	"BATwinsMod:Broom":{
+		"NAME":"メイド箒",
+		"FLAVOR":"お掃除時間ですよ！",
+		"DESCRIPTIONS":[
+			"毎 #b3 ターン、捨て札の #b1 枚選び、手札に加える。"
+		]
+	},
+	"BATwinsMod:MaidAttire":{
+		"NAME":"メイド服",
+		"FLAVOR":"誰もがちょっとした癖があるんじゃないかな。 --店主",
+		"DESCRIPTIONS":[
+			"もしこのターン、コスト0、1、2、3のカードをプレイする、 無形 1を得る。"
+		]
+	},
+	"BATwinsMod:UnknownObject":{
+		"NAME":"未確認物体",
+		"FLAVOR":"ヴェリタスはゲームをハッキングけど、完全にはないようだ。",
+		"DESCRIPTIONS":[
+			"ランダムな効果、毎ターン変わる。"
+		]
+	},
+	"BATwinsMod:RubiksCube":{
+		"NAME":"キューブパズル",
+		"FLAVOR":"「解けたすると本当のミレニアム生！」",
+		"DESCRIPTIONS":[
+			"連携カード2回プレイすると、カード1枚引く。"
+		]
+	},
+	"BATwinsMod:RetroGame": {
+		"NAME": "レトロゲーム",
+		"FLAVOR": "一色しか表示できません。",
+		"DESCRIPTIONS": [
+			"毎ターン、追加で #b2 枚のカードを引き、引いたカードはすべて #ybatwinsmod:モモイカード または #ybatwinsmod:ミドリカード になります。"
+		]
+	},
+	"BATwinsMod:BookOfProhibitions": {
+		"NAME": "禁断の書",
+		"FLAVOR": "人知れぬ内容を記録しています",
+		"DESCRIPTIONS": [
+			"毎ターン、カードが #y1 回目のダメージを与えた後、ブロックされなかったダメージの #y1/3 を回復します。"
+		]
+	}
+
+}

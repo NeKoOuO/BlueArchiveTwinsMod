@@ -12,7 +12,8 @@ public class BATwinsSharedModifier extends AbstractCardModifier {
     private static final String LineBreak = "NL ";
     private static final String[] SHARED_NAME = new String[]{
             "batwinsmod:共有",
-            "batwinsmod:share"
+            "batwinsmod:share",
+            "batwinsmod:共有"
     };
     private static int strPos = 0;
 
@@ -24,6 +25,8 @@ public class BATwinsSharedModifier extends AbstractCardModifier {
             case ZHT:
                 strPos = 0;
                 break;
+            case JPN:
+                strPos=2;
             default:
                 strPos = 1;
                 break;

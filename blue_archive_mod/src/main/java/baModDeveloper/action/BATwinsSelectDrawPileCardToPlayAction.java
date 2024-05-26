@@ -108,7 +108,6 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
 
     private void removeCards() {
         for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
-            card.isInAutoplay=true;
             if ((this.color != null && card.color != this.color) ||
                     (this.removePower && card.type == AbstractCard.CardType.POWER||card.cost==-2)) {
                 this.canNotSelect.add(card);

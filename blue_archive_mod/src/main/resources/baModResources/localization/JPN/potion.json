@@ -1,0 +1,32 @@
+{
+	"BATwinsMod:AcceleratePotion":{
+		"NAME":"加速ポーション",
+		"DESCRIPTIONS":[
+			" #y加速 #b1 枚 手札に加える。",
+			" #y加速+ #b1 枚 手札に加える。",
+			"加速",
+			"加速+"
+		]
+	},
+	"BATwinsMod:ConnectPotion":{
+		"NAME":"連携ポーション",
+		"DESCRIPTIONS":[
+			"手札の #b1 枚を選び、プレイする。",
+			"手札の #b2 枚を選び、プレイする。"
+		]
+	},
+	"BATwinsMod:BurnPotion":{
+		"NAME":"焼傷ポーション",
+		"DESCRIPTIONS":[
+			"焼傷8を与える。",
+			"焼傷16を与える。",
+			"焼傷"
+		]
+	},
+	"BATwinsMod:StaminaPotion":{
+		"NAME":"体力ポーション",
+		"DESCRIPTIONS":[
+			"休憩場所にこのポーションを使う、もう一度行動ができる。"
+		]
+	}
+}

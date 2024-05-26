@@ -1,0 +1,518 @@
+{
+    "BATwinsMod:MomoiStrick":{
+        "NAME":"ストライク",
+        "DESCRIPTION":"!D! ダメージを与える。",
+        "UPGRADE_DESCRIPTION":"!D! ダメージを与える。"
+    },
+    "BATwinsMod:MidoriStrick": {
+        "NAME": "ストライク",
+        "DESCRIPTION":"!D! ダメージを与える。",
+        "UPGRADE_DESCRIPTION":"!D! ダメージを与える。"
+    },
+    "BATwinsMod:MomoiDefense":{
+        "NAME":"防御",
+        "DESCRIPTION":"!B! ブロック を得る。"
+    },
+    "BATwinsMod:MidoriDefense":{
+        "NAME":"防御",
+        "DESCRIPTION":"!B! ブロック を得る。"
+    },
+    "BATwinsMod:AlreadyAngry":{
+        "NAME":"もう怒ったんだから！",
+        "DESCRIPTION":"batwinsmod:焼傷 !M! を与える、 !D! ダメージを与える。"
+    },
+    "BATwinsMod:PaintingConception":{
+        "NAME":"画面構想",
+        "DESCRIPTION":"!B! ブロック を得る。 NL 手札のランダムな非パワーカード !M! 枚をプレイする。",
+		"UPGRADE_DESCRIPTION":"!B! ブロック を得る。 NL 手札の非パワーカード !M! 枚を選び、プレイする。"
+    },
+    "BATwinsMod:ParoxysmalPain":{
+        "NAME":"創作の痛み",
+        "DESCRIPTION":"敵全体に batwinsmod:焼傷 !M! を与える， NL 敵全体に!D! ダメージを与える。"
+    },
+    "BATwinsMod:PaintingArt":{
+        "NAME":"絵画芸術",
+        "DESCRIPTION":"ランダムな敵に !D! ダメージと 毒 ２を与える、 !M! 回繰り返す。"
+    },
+	"BATwinsMod:DeveloperCollaboration":{
+		"NAME":"開発者の協力",
+		"DESCRIPTION":" batwinsmod:共有 。 NL 戦闘中に batwinsmod:モモイカード と batwinsmod:ミドリカード を交互に出すと、このターン、カードによるダメージと獲得する ブロック が !M! 増加します。",
+		"EXTENDED_DESCRIPTION": [
+			" batwinsmod:共有 。 NL 戦闘中に batwinsmod:モモイカード と batwinsmod:ミドリカード を交互に出すと、敵の 毒 と batwinsmod:焼傷 を !M! ％増加します。"
+		]
+	},
+    "BATwinsMod:Exchange":{
+        "NAME":"チェンジ",
+        "DESCRIPTION":" 保留 。 NL batwinsmod:チェンジ 最大3枚の手札。 廃棄 ",
+        "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:チェンジ 最大3枚の手札。"
+    },
+    "BATwinsMod:KeepItToTheEnd":{
+        "NAME":"DDLを厳守",
+        "DESCRIPTION":"すべての batwinsmod:モモイカード を捨てる，捨てた枚数× !B! ブロック を得る。"
+    },
+    "BATwinsMod:ArtPolishing":{
+        "NAME":"芸術の磨き",
+        "DESCRIPTION":"異常状態に与える時、 !M! 毒 を与える。この能力は自身の効果で発動しない。"
+    },
+    "BATwinsMod:BattleCommand":{
+        "NAME":"戦闘指導",
+        "DESCRIPTION":"１枚カードを選び、山札に戻る。山札から異なる色のカード1枚選び、手札に加える。"
+    },
+    "BATwinsMod:IgniteTheUpperBody":{
+        "NAME":"引火上身",
+        "DESCRIPTION":"!B! ブロック を得る、batwinsmod:焼傷  !M! を得る。"
+    },
+    "BATwinsMod:NotReconciled":{
+        "NAME":"悔し…悔し！",
+        "DESCRIPTION":"!D! ダメージを与える。次のターン、 [batwinsmod:momoiorbicon] を得る。",
+        "UPGRADE_DESCRIPTION":"!D! ダメージを与える。次のターン、 [batwinsmod:momoiorbicon] と [batwinsmod:midoriorbicon] を得る。"
+    },
+    "BATwinsMod:AdditionalAttacks":{
+        "NAME":"附加攻击",
+        "DESCRIPTION":" 使用不可 。 NL このカードは手札にある場合、他の攻撃カードをプレイする後、ランダムな敵に !D! ダメージを与える。"
+    },
+    "BATwinsMod:AccurateBlocking":{
+        "NAME":"ガードポイント",
+        "DESCRIPTION":" !B! ブロック を得る。 NL ブロック は敵の攻撃ダメージより低い場合、 !B! ブロック を得る。 NL 手札に他の batwinsmod:ミドリカード がいない場合のみプレイできる。"
+    },
+    "BATwinsMod:GameLaunch":{
+        "NAME":"ゲームスタート",
+        "DESCRIPTION":" batwinsmod:共有 , 天賦 。 NL カード !M! 枚を引く、ランダムな batwinsmod:モモイカード と batwinsmod:ミドリカード の１枚に、このターン、エナジー消費しない. NL 廃棄 ",
+        "UPGRADE_DESCRIPTION":" batwinsmod:共有 、 天賦 。 NL !M! 枚カードを引く、ランダムな２枚カードに、このターン、エナジー消費しない。 NL 廃棄 "
+    },
+    "BATwinsMod:InspirationEmergence":{
+        "NAME":"インスピレーション",
+        "DESCRIPTION":" batwinsmod:共有 。 NL !M! 枚カードを引く， 占術 2X 、そしてカード１枚を引く。(Xは引いたカードの色の数）"
+    },
+    "BATwinsMod:PassageInForce":{
+        "NAME":"强行通过",
+        "DESCRIPTION":"敵全体に !D! ダメージを与える、 !B! ブロック を得る，２枚カードを捨てる。"
+    },
+    "BATwinsMod:SiteAdaptation":{
+        "NAME":"场地适应",
+        "DESCRIPTION":"筋力 !M! 、敏捷性 !M! ，金属化 !M! を得る。"
+    },
+    "BATwinsMod:OnceMore":{
+        "NAME":"火炎拡散",
+        "DESCRIPTION":"ターン終了時、敵全体の batwinsmod:焼傷 を引き起こす。",
+        "UPGRADE_DESCRIPTION":" 天賦 。 NL ターン終了時、敵全体の batwinsmod:焼傷 を引き起こす。"
+    },
+    "BATwinsMod:EnchantedBullet":{
+        "NAME":"附魔",
+        "DESCRIPTION":"!M! batwinsmod:焼傷 を得る， NL !D! ダメージを与える。"
+    },
+    "BATwinsMod:ExcellentDesigner":{
+        "NAME":"最棒的开发者们",
+        "DESCRIPTION":" エセリアル 。 NL 引いた時 !M! 枚カードを引く。 NL  !D! ダメージを与える，!B! ブロック を得る。このカードは手札にいるとき他のカードをプレイするたび、このカードはそのカードのダメージと ブロック を得る。",
+        "UPGRADE_DESCRIPTION":"引いた時 !M! 枚カードを引く。 NL  !D! ダメージを与える，!B! ブロック を得る。このカードは手札にいるとき他のカードをプレイするたび、このカードはそのカードのダメージと ブロック を得る。"
+    },
+    "BATwinsMod:BadDesigner":{
+        "NAME":"糟糕设计师",
+        "DESCRIPTION":"手牌只有时才能打出。 NL 在手牌时，打出其他牌时丢弃1张牌。再累计打出 !M! 次的话会发生蜕变。 消耗 "
+    },
+    "BATwinsMod:BugCard":{
+        "NAME":"漏洞",
+        "DESCRIPTION":"抽到时，随机 消耗 1张其他手牌。 消耗 。"
+    },
+    "BATwinsMod:RushToDraft":{
+        "NAME":"赶稿",
+        "DESCRIPTION":"抽 !M! 张牌。将1张漏洞放入弃牌堆。"
+    },
+    "BATwinsMod:PlotRepair":{
+        "NAME":"剧情修补",
+        "DESCRIPTION":"造成 !D! 点伤害， 消耗 抽牌堆1张漏洞，将1张漏洞放入弃牌堆。",
+        "UPGRADE_DESCRIPTION":"造成 !D! 点伤害， 消耗 抽牌堆所有漏洞，将1张漏洞放入弃牌堆。"
+    },
+    "BATwinsMod:BugFix":{
+        "NAME":"漏洞修复",
+        "DESCRIPTION":"回合开始时，抽牌堆随机 !M! 张状态牌或诅咒牌 消耗 。若消耗的是漏洞，获得1 力量 和1 敏捷 。"
+    },
+	"BATwinsMod:AdventureOpening":{
+		"NAME":"冒险-开幕",
+		"DESCRIPTION":" 保留 NL 打出消耗的牌。从手牌选择一张冒险牌消耗。",
+		"UPGRADE_DESCRIPTION":" 保留 batwinsmod:共有 NL 打出消耗的牌。从手牌选择一张冒险牌消耗。"
+	},
+	"BATwinsMod:AdventureBattle":{
+		"NAME":"冒险-战斗",
+		"DESCRIPTION":"!D! ダメージを与える。本回合打出的上一张牌如果是冒险牌，伤害翻倍。 NL 消耗 。"
+	},
+	"BATwinsMod:LightSpeedStrike":{
+		"NAME":"光速ストライク",
+		"DESCRIPTION":"!D! ダメージを与える。 弱体 !M! を与える。 NL 手札の攻撃カード１枚を選び、プレイする。他の攻撃カードを捨てる。"
+	},
+	"BATwinsMod:SinglePlayerGame":{
+		"NAME":"シングルプレイ",
+		"DESCRIPTION":"カードをプレイする後、手札は batwinsmod:モモイカード もしくは  batwinsmod:ミドリカード がいない場合、 !M! ブロック を得る。"
+	},
+	"BATwinsMod:CoolingTime":{
+		"NAME":"クーリングブースト",
+		"DESCRIPTION":"!B! ブロック を得る。捨て札の batwinsmod:ミドリカード １枚を選び、次のターン開始時、手札に加える（ 廃棄 した場合を除く）。"
+	},
+	"BATwinsMod:DoubleExperience":{
+		"NAME":"経験値×2",
+		"DESCRIPTION":"このバトル、カードをプレイする度得るの batwinsmod:経験値 を2倍にする。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:レベルアップ 1 . NL このバトル、カードをプレイする度得るの batwinsmod:経験値 を2倍にする。"
+	},
+	"BATwinsMod:BDStudy":{
+		"NAME":"BDレベリング",
+		"DESCRIPTION":"手札のすべての batwinsmod:モモイカード を 廃棄 する、 廃棄 したカードのエナジー !M! 倍の batwinsmod:経験値 を得る。 廃棄 "
+	},
+	"BATwinsMod:EmergencyRecovery":{
+		"NAME":"紧急恢复",
+		"DESCRIPTION":"获得 [batwinsmod:midoriorbicon] 。若桃能量为0，获得 [batwinsmod:momoiorbicon] 。 消耗 ",
+		"UPGRADE_DESCRIPTION":"获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。若桃能量为0，获得 [batwinsmod:momoiorbicon] 。 消耗 "
+	},
+	"BATwinsMod:AbstractSchool":{
+		"NAME":"ピクセルアート",
+		"DESCRIPTION":"手札に異なる色の種類数の !B! 倍( !D! )ダメージを与える。異なる色の種類数の枚数( !M! )カードを引く。"
+	},
+	"BATwinsMod:DefensiveCounterattack":{
+		"NAME":"防守与ストライク",
+		"DESCRIPTION":"!B! ブロック を得る。受到攻击后在下个回合开始时对攻击的怪物打出一张ストライク。"
+	},
+	"BATwinsMod:AdventureRewards":{
+		"NAME":"冒险-奖励",
+		"DESCRIPTION":"随机获得以下1项： NL 获得5 batwinsmod:经验值 NL 回复3生命 NL 获得 [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,抽2张牌 NL 消耗 。若上张牌是冒险牌，改为随机选择2项。",
+		"UPGRADE_DESCRIPTION":"随机获得以下1项： NL 获得5 batwinsmod:经验值 NL 回复3生命 NL 获得 [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,抽2张牌 NL 获得1随机药水 NL 消耗 。若上张牌是冒险牌，改为随机选择2项。"
+	},
+	"BATwinsMod:AccumulatedStrike":{
+		"NAME":"蓄力ストライク",
+		"DESCRIPTION":"!D! ダメージを与える。本场战斗每打出1张打击牌，这张牌的伤害上升 !M! 。"
+	},
+	"BATwinsMod:NormalAttackMethods":{
+		"NAME":"平A流",
+		"DESCRIPTION":"每回合开始时，将抽牌堆随机1张打击牌加入手牌。那张牌变为 batwinsmod:共有 。",
+		"UPGRADE_DESCRIPTION":"每回合开始时，将抽牌堆随机1张打击牌加入手牌。那张牌变为 batwinsmod:共有 。 NL 抽牌堆打击牌不足时，将弃牌堆洗入抽牌堆。"
+	},
+	"BATwinsMod:AlternatingAttack":{
+		"NAME":"交替攻撃",
+		"DESCRIPTION":"!D! ダメージを与える。１枚 batwinsmod:ミドリカード 非パワー手札をプレイする。"
+	},
+	"BATwinsMod:TemporaryAssistance":{
+		"NAME":"臨時サッポート",
+		"DESCRIPTION":" batwinsmod:チェンジ １枚手札。プレイしたあと、そのカードの色は元に戻る。もしこのカードは山札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:チェンジ １枚手札。プレイしたあと、そのカードの色は元に戻る。もしこのカードは山札も捨て札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。"
+	},
+	"BATwinsMod:AdventureExperience":{
+		"NAME":"冒险-历练",
+		"DESCRIPTION":"获得 [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,抽 !M! 张牌。本回合打出的上一张牌是冒险牌时，获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。",
+		"UPGRADE_DESCRIPTION":"获得 [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,抽 !M! 张牌。本回合打出的上一张牌是冒险牌时，获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。"
+	},
+	"BATwinsMod:SwitchStrike":{
+		"NAME":"スイッチストライク",
+		"DESCRIPTION":"!D! ダメージを与える。 NL batwinsmod:連携 ：手札の中１枚の同じ名前の batwinsmod:ミドリカード をプレイする。"
+	},
+	"BATwinsMod:CoverCharge":{
+		"NAME":"掩护冲锋",
+		"DESCRIPTION":" !D! ダメージをモモイエナジー回得る、 !B! ブロック ミドリエナジー回を得る。"
+	},
+	"BATwinsMod:MutualUnderstanding":{
+		"NAME":"双子の黙契",
+		"DESCRIPTION":" !M! 枚カードを引く，もしそれは batwinsmod:モモイカード 、プレイする。",
+		"UPGRADE_DESCRIPTION":" 占術 1。 !M! 枚カードを引く，もしそれは batwinsmod:モモイカード 、プレイする。"
+	},
+	"BATwinsMod:MysteriousChest":{
+		"NAME":"神秘な宝箱",
+		"DESCRIPTION":"ランダムな batwinsmod:ミドリカード １枚に手札に加える、このカードは エセリアル ， 廃棄 を得る、プレイするまでそのコストは 0。 NL batwinsmod:チャンジ このカード。",
+		"UPGRADE_DESCRIPTION":"ランダムな batwinsmod:ミドリカード １枚に手札に加える、このカードは 保留 ， 廃棄 を得る、プレイするまでそのコストは0。 NL batwinsmod:チャンジ このカード。"
+	},
+	"BATwinsMod:SeeYouHaveAShare":{
+		"NAME":"全員くらえ！",
+		"DESCRIPTION":"このターン、次の !M! 枚単体アタックを敵全体にもう１回をプレイする。"
+	},
+	"BATwinsMod:CheatingCodeEnabled":{
+		"NAME":"チートコード",
+		"DESCRIPTION":"すべての batwinsmod:ミドリカード を捨てる、手札にいっぱいになるまで batwinsmod:モモイカード を引く。すべとの [batwinsmod:midoriorbicon] を [batwinsmod:momoiorbicon] にチェンジする。 廃棄 ",
+		"UPGRADE_DESCRIPTION":"batwinsmod:ミドリカード を捨てる、手札にいっぱいになるまで batwinsmod:モモイカード を引く。すべとの [batwinsmod:midoriorbicon] を [batwinsmod:momoiorbicon] にチェンジする。ターン終了時、捨て札を山札に戻る。 廃棄 "
+	},
+	"BATwinsMod:FundOverdraft":{
+		"NAME":"オーバードロー",
+		"DESCRIPTION":" !M! 枚カードを引く。毎プレイする度、引いたカード数-1。 NL batwinsmod:連携 ：引いたカード数をリセットする。"
+	},
+	"BATwinsMod:TakeActionsSeparately":{
+		"NAME":"分かれ行動",
+		"DESCRIPTION":"!B! ブロック を得る。１枚 batwinsmod:モモイカード 非パワー手札をプレイする。"
+	},
+	"BATwinsMod:RepeatOperation":{
+		"NAME":"リピート操作",
+		"DESCRIPTION":"最大 !M! 枚非パワー手札を選び、 batwinsmod:チェンジ したのコッピを手札に加える。"
+	},
+	"BATwinsMod:ConvenientConnectivity":{
+		"NAME":"クイック連携",
+		"DESCRIPTION":" !M! 枚手札をプレイする。 batwinsmod:連携 ：ランダムな１枚山札カードをプレイする。",
+		"UPGRADE_DESCRIPTION":" !M! 枚手札をプレイする。 batwinsmod:連携 ：１枚山札カードを選び、プレイする。"
+	},
+	"BATwinsMod:EndCombo":{
+		"NAME":"终结连击",
+		"DESCRIPTION":"!D! ダメージを与える。 NL batwinsmod:連携 ： !B! ダメージを与える。 NL batwinsmod:超連携 ： !M! ダメージを与える。"
+	},
+	"BATwinsMod:ReadingDocuments":{
+		"NAME":"インスタントセーブ",
+		"DESCRIPTION":"このバトルカードの効果にプレイしたカードは山札に戻る。"
+	},
+	"BATwinsMod:MandatoryInstruction":{
+		"NAME":"強制連鎖",
+		"DESCRIPTION":"山札の !M! 枚非パワーカードを選び、プレイする、しかし batwinsmod:連携 と batwinsmod:超連携 のみ使用する。",
+		"UPGRADE_DESCRIPTION":" 保留 NL 山札の !M! 枚非パワーカードを選び、プレイする、しかし batwinsmod:連携 と batwinsmod:超連携 のみ使用する。"
+	},
+	"BATwinsMod:TwoStageAttack":{
+		"NAME":"ダブルストライク",
+		"DESCRIPTION":" batwinsmod:連携するのみ NL このカードは手札にいる時、ストライクをプレイする度このカードをプレイする。 NL batwinsmod:連携 ， batwinsmod:超連携 ： !D! ダメージを与える。",
+		"EXTENDED_DESCRIPTION":[
+			"このカードは他の効果にプレイするのみ。"
+		]
+	},
+	"BATwinsMod:TakeABreak":{
+		"NAME":"小休憩",
+		"DESCRIPTION":" !M! まいカードを引く、 保留 を得る。 NL batwinsmod:连携 ：多抽1张牌并选择其中1张牌打出。"
+	},
+	"BATwinsMod:AttackWithAllMight":{
+		"NAME":"渾身の一撃",
+		"DESCRIPTION":" !D! ダメージを与える、このバトル、このカードのダメージが !M! %に減少します。 NL batwinsmod:連携 ：ダメージは100%に戻る。"
+	},
+	"BATwinsMod:DualProtection":{
+		"NAME":"ダブルガード",
+		"DESCRIPTION":" !B! ブロック を得る、 !M! 枚カードを引く。 NL batwinsmod:連携 ： !B! ブロック を得る、 !M! 枚カードを引く。"
+	},
+	"BATwinsMod:OperateFreely":{
+		"NAME":"意のままに捜索",
+		"DESCRIPTION":"山札にランダムな batwinsmod:モモイカード １枚にプレイする。 NL batwinsmod:連携 ：ランダムではなく batwinsmod:モモイカード １枚を選択、プレイする。"
+	},
+	"BATwinsMod:ExperienceGiftPackage":{
+		"NAME":"経験値パケージ",
+		"DESCRIPTION":" batwinsmod:共有 NL もし batwinsmod:経験値 はこのカードのコストより高い（コストは0な場合以外）、このカードをプレイする。 NL !M! 枚カードを引く。このバトル、このカードのコスト１が1減少する。"
+	},
+	"BATwinsMod:SelfConnectivity":{
+		"NAME":"セルフ連携",
+		"DESCRIPTION":"このバトルの前プレイした batwinsmod:モモイカード の効果を発動する。",
+		"UPGRADE_DESCRIPTION":"このバトルの前プレイしたカードの効果を発動する。"
+	},
+	"BATwinsMod:SkillCombination":{
+		"NAME":"スキル融合",
+		"DESCRIPTION":"山札のスキルカード１枚を選び、 廃棄 。ストライク !M! 枚山札に加える、そのストライクたち batwinsmod:保存 選択したカード。 NL 廃棄 "
+	},
+	"BATwinsMod:IntegratingAndIntegrating":{
+		"NAME":"融通無碍",
+		"DESCRIPTION":" batwinsmod:共有 NL １コスト以上な batwinsmod:チェンジ したカードをプレイしたあと、元色のそのカードのコッピ１枚が手札に加える、 エセリアル 、 廃棄 を得る。"
+	},
+	"BATwinsMod:EndlessCombo": {
+		"NAME": "无尽连击",
+		"DESCRIPTION": "对所有敌人!D! ダメージを与える。这张牌的伤害翻倍打出这张牌时的连携层数的次数。"
+	},
+	"BATwinsMod:PlotPrediction":{
+		"NAME":"剧情编排",
+		"DESCRIPTION":"回合开始时，失去 [batwinsmod:momoiorbicon] ,每回合结束时打出 !M! 张 batwinsmod:モモイカード。"
+	},
+	"BATwinsMod:MasterCraftsmanship":{
+		"NAME":"スキルマスター",
+		"DESCRIPTION":" batwinsmod:共有 NL ターン開始時、 batwinsmod:チェンジ 最大１枚カード。 NL このバトル batwinsmod:チェンジ したのカードを アップグレード する。",
+		"UPGRADE_DESCRIPTION":" 天賦 、 batwinsmod:共有 NL ターン開始時、 batwinsmod:チェンジ 最大１枚カード。 NL このバトル batwinsmod:チェンジ したのカードを アップグレード する。"
+	},
+	"BATwinsMod:PoisonGasBomb":{
+		"NAME":"毒ガス爆弾",
+		"DESCRIPTION":"毒 !M! 、 batwinsmod:焼傷 !M! に与える。この敵の 毒 を発動する。 NL batwinsmod:連携 ：この敵の batwinsmod:焼傷 を発動する。"
+	},
+	"BATwinsMod:AdventureBegins":{
+		"NAME":"勇者チーム",
+		"DESCRIPTION":" batwinsmod:保存 した種類違うな非 廃棄 手札を選び、 廃棄 、 batwinsmod:保存 する。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:保存 した種類違うな非 廃棄 手札を選びできる、 廃棄 、 batwinsmod:保存 する。",
+		"EXTENDED_DESCRIPTION":[
+			"アタック",
+			"スキル",
+			"パワー",
+			"状態異常",
+			"呪い"
+		],
+		"FLAVOR":"lll"
+	},
+	"BATwinsMod:PropCollection":{
+		"NAME":"アイテムコレクト",
+		"DESCRIPTION":"山札と捨て札から !M! 枚カードが手札に加える。 NL このターン、カードを引くことができない。"
+	},
+	"BATwinsMod:EquipmentUpgrade":{
+		"NAME":"装備アップグレード",
+		"DESCRIPTION":" !M! 枚手札を選び、 アップグレード 、 batwinsmod:共有 、 保留 を得る。 NL 廃棄 "
+	},
+	"BATwinsMod:AutomaticDefense":{
+		"NAME":"オートガード",
+		"DESCRIPTION":" 使用不可 。 NL 手札にある状態で他のアッタクをプレイする度、 !B! ブロック を得る。"
+	},
+	"BATwinsMod:BenefitReducingMagic":{
+		"NAME":"クイック写真",
+		"DESCRIPTION":"敵全体に 脱力 !M! を与える。敵全体の ブロック を取り除く。",
+		"EXTENDED_DESCRIPTION": [
+			"可愛い",
+			"とっても可愛い",
+			"可愛いすぎる"
+		]
+	},
+	"BATwinsMod:BorrowMe":{
+		"NAME":"借ります",
+		"DESCRIPTION":"このターン、すべてのカードが batwinsmod:共有 にする。 NL 廃棄 ",
+		"UPGRADE_DESCRIPTION":"このターン、すべてのカードが batwinsmod:共有 にする。"
+	},
+	"BATwinsMod:MaidForm":{
+		"NAME":"メイド化",
+		"DESCRIPTION":"毎ターン、最初にカードを1枚プレイした後、そのカードよりもエネルギーコストの低い1枚のカードを引く。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:共有 NL 毎ターン、最初にカードを1枚プレイした後、そのカードよりもエネルギーコストの低い1枚のカードを引く。"
+	},
+	"BATwinsMod:Collaboration":{
+		"NAME":"チャージ",
+		"DESCRIPTION":"手札にある batwinsmod:モモイカード の枚数× !D! ダメージをランダムな敵に与える。",
+		"EXTENDED_DESCRIPTION":[
+			"(今は%s)"
+		]
+	},
+	"BATwinsMod:ShiftingAndGhosting":{
+		"NAME":"影の入れ替わり",
+		"DESCRIPTION":" !B! ブロック を得る，山札の !M! 枚 を batwinsmod:チェンジ する。"
+	},
+	"BATwinsMod:CheckTheStrategy":{
+		"NAME":"攻略本を参考",
+		"DESCRIPTION":" !M! 枚カードを引く、すべての batwinsmod:モモイカード を捨てる、同じ数のカードを引く。 NL もしカードを捨てない、山札に１枚カードを手札に加える。",
+		"UPGRADE_DESCRIPTION":" !M! 枚カードを引く、すべての batwinsmod:モモイカード を捨てる、同じ数のカードを引く。 NL もしカードを捨てない、山札に１枚カードを手札に加える。"
+	},
+	"BATwinsMod:LeaveItToMe":{
+		"NAME":"任せってよ！",
+		"DESCRIPTION":" !D! ダメージを与える。 NL 手札がすべて batwinsmod:モモイカード だった場合、もしくは batwinsmod:連携 ：敵１体にずつ ブロック !B! を得る。"
+	},
+	"BATwinsMod:Assault":{
+		"NAME":"ねこだまし",
+		"DESCRIPTION":" !D! ダメージを与える、脱力 !M! を与える。 NL このターンまだ他のカードをプレイしていない場合、手札のスキル１枚に選び、プレイする。"
+	},
+	"BATwinsMod:DontSayIt":{
+		"NAME":"お姉ちゃんには内緒ですよ",
+		"DESCRIPTION":" !B! ブロック 2回を得る、すべての batwinsmod:モモイカード を捨てる。 NL もし手札を捨ててない場合、 batwinsmod:経験値 !M! を得る。",
+		"EXTENDED_DESCRIPTION":[
+			"ミドリに内緒だよ"
+		]
+	},
+	"BATwinsMod:ItsSoPainful":{
+		"NAME":"ソロアッタク",
+		"DESCRIPTION":" !D! ダメージ !M! 回を与える、すべての batwinsmod:ミドリカード を捨てる。カードを捨てない場合、ダメージの回数＋１。"
+	},
+	"BATwinsMod:PenetrationDamage":{
+		"NAME":"貫通ダメージ",
+		"DESCRIPTION":"敵全体に !D! ダメージを与える、 ブロック がいないな敵 筋力 !M! を失う。 NL 廃棄 NL batwinsmod:連携 ：このバトル、 廃棄 しない。",
+		"EXTENDED_DESCRIPTION": [
+			" 敵全体に !D! ダメージを与える、 ブロック がいないな敵 筋力 !M! を失う。"
+		]
+	},
+	"BATwinsMod:LoginRewards":{
+		"NAME":"登入奖励",
+		"DESCRIPTION":"获得 !M! batwinsmod:经验值 。 NL batwinsmod:连携 ：手牌随机1张 batwinsmod:ミドリカード batwinsmod:保存 1张 登入奖励 （不会重复存储）。 消耗 ",
+		"UPGRADE_DESCRIPTION":"获得 !M! batwinsmod:经验值 。 NL batwinsmod:连携 ：手牌随机1张 batwinsmod:ミドリカード batwinsmod:保存 1张 登入奖励+ （不会重复存储）。 消耗 "
+	},
+	"BATwinsMod:Learned":{
+		"NAME":"パーフェクトチェンジ",
+		"DESCRIPTION":"引いた時、非パワーカード１枚に 廃棄 、 batwinsmod:保存 。（１枚まで） NL !D! ダメージを与える， 致命 時、 batwinsmod:保存 したカード永続的に batwinsmod:モモイカード へ batwinsmod:チェンジ 。"
+	},
+	"BATwinsMod:ForceDetonation":{
+		"NAME":"強制爆破",
+		"DESCRIPTION":"敵全体の batwinsmod:焼傷 と 毒 !M! 回発動する。敵全体の batwinsmod:焼傷 と 毒 半分にする。"
+	},
+	"BATwinsMod:ScriptRewriting":{
+		"NAME":"シナリオリライト",
+		"DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 、 batwinsmod:焼傷 と同じな 毒 を与える。 NL 廃棄 ",
+		"UPGRADE_DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 を与える、その後 batwinsmod:焼傷 と同じな 毒 を与える。 NL 廃棄 "
+	},
+	"BATwinsMod:EasterEgg":{
+		"NAME":"イースターエッグ",
+		"DESCRIPTION":" !M! 枚カードを引く。 NL 隠し要素を見つけた！おめでとう。",
+		"UPGRADE_DESCRIPTION":" !M! 枚カードを引く。 NL なんと、あなたがこのイースター・エッグをアップグレードするとは！"
+	},
+	"BATwinsMod:HeavyBullets":{
+		"NAME":"ヘビーバッレト",
+		"DESCRIPTION":"!D! ダメージを与える。"
+	},
+	"BATwinsMod:ArmorPiercingBullet":{
+		"NAME":"APバッレト",
+		"DESCRIPTION":"!D! ダメージを与える。 NL 弱体 !M! を与える。"
+	},
+	"BATwinsMod:Shooting":{
+		"NAME":"射撃",
+		"DESCRIPTION":" 保留 NL !D! ダメージを与える。"
+	},
+	"BATwinsMod:Bullet":{
+		"NAME":"バッレト",
+		"DESCRIPTION":"!D! ダメージを与える。"
+	},
+	"BATwinsMod:ContinuousShooting":{
+		"NAME":"連続射撃",
+		"DESCRIPTION":"保留 、何度でも アップグレード できる NL 保留 した時、ランダムな batwinsmod:弾丸 !M! 枚 を batwinsmod:保存 する。プレイした後、 batwinsmod:保存 した batwinsmod:弾丸 をクリアする。"
+	},
+	"BATwinsMod:BreechLoading":{
+		"NAME":"リロード",
+		"DESCRIPTION":" ブロック !B! を得る。 NL 手札すべての batwinsmod:射撃 カード ランダムな batwinsmod:弾丸 !M! 枚を batwinsmod:保存する。",
+		"UPGRADE_DESCRIPTION":" 保留 NL ブロック !B! を得る。 NL 手札すべての batwinsmod:射撃 カード ランダムな batwinsmod:弾丸 !M! 枚を batwinsmod:保存する。"
+	},
+	"BATwinsMod:ExpansionMagazine":{
+		"NAME":"扩容弹夹",
+		"DESCRIPTION":"本场战斗 batwinsmod:保存 的 batwinsmod:弾丸 牌 升级 。"
+	},
+	"BATwinsMod:BulletWarehouse":{
+		"NAME":"武器庫",
+		"DESCRIPTION":"4枚 batwinsmod:射撃 カードの中で１枚選び、手札に加える。ランダムな batwinsmod:弾丸 を !M! 枚 保留 、 batwinsmod:保存 。 NL 廃棄 ",
+		"UPGRADE_DESCRIPTION":"4枚 アップグレード した batwinsmod:射撃 カードの中で１枚選び、手札に加える。 NL 廃棄 "
+	},
+	"BATwinsMod:PoisonBullet":{
+		"NAME":"毒バッレト",
+		"DESCRIPTION":" !D! ダメージを与える、 毒 !M! を与える。"
+	},
+	"BATwinsMod:IncendiaryBullet":{
+		"NAME":"炎バッレト",
+		"DESCRIPTION":" !D! ダメージを与える、 batwinsmod:焼傷 !M! を与える。"
+	},
+	"BATwinsMod:SniperBullet":{
+		"NAME":"狙撃バレット",
+		"DESCRIPTION":" !D! ダメージを与える、 弱体 !M! を与える。"
+	},
+	"BATwinsMod:StableShooting":{
+		"NAME":"安定射撃",
+		"DESCRIPTION":"!D! ダメージを与える。 NL batwinsmod:保存 したカードの数× !M! のダメージをアップする。"
+	},
+	"BATwinsMod:RandomShooting":{
+		"NAME":"乱暴射撃",
+		"DESCRIPTION":" !M! 枚ランダムな batwinsmod:弾丸 を batwinsmod:保存 する。 NL プレイした batwinsmod:保存 した batwinsmod:弾丸 を 手札の ランダムな batwinsmod:射击 カードを batwinsmod:保存 する。このカードをクリアする。"
+	},
+	"BATwinsMod:FocusShooting":{
+		"NAME":"集中射撃",
+		"DESCRIPTION":"!D! ダメージを与える。 NL batwinsmod:弾丸 を batwinsmod:保存 した時、 同じな batwinsmod:弾丸 !M! 枚を追加 batwinsmod:保存 する。プレイした後このカードをクリアする。"
+	},
+	"BATwinsMod:Accelerate":{
+		"NAME":"加速",
+		"DESCRIPTION":"山札の中で !M! 枚コストXより低いなカードをプレイする。",
+		"UPGRADE_DESCRIPTION":"山札の中で !M! 枚コストX+1より低いなカードをプレイする。"
+	},
+	"BATwinsMod:HeadbandChice":{
+		"NAME":"モモイに被る",
+		"DESCRIPTION":"每回合开始时获得 [batwinsmod:momoiorbicon] 。",
+		"EXTENDED_DESCRIPTION":[
+			"ミドリに被る"
+		]
+	},
+	"BATwinsMod:Excitation":{
+		"NAME":"励まし",
+		"DESCRIPTION":"アップグレードができない NL すべてのキャラクターの中でパワーカード1枚を選び、プレイする。"
+	},
+	"BATwinsMod:TacticalRelay":{
+		"NAME": "戦術リレー",
+		"DESCRIPTION": " [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] を得る、最大2枚カードを batwinsmod:チェンジ できる。 NL このターン、 batwinsmod:モモイカード をプレイできない。",
+		"UPGRADE_DESCRIPTION": " [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] を得る、、最大2枚カードを batwinsmod:チェンジ できる。 NL このターン、 batwinsmod:モモイカード をプレイできない。"
+	},
+	"BATwinsMod:Gorgeous": {
+		"NAME": "华丽散场",
+		"DESCRIPTION": " 不能被打出 NL 本回合达到 batwinsmod:连携 5时丢弃这张牌并对所有敌人造成 !D! 点伤害。",
+		"EXTENDED_DESCRIPTION": [
+			"这张牌只能被效果打出"
+		]
+	},
+	"BATwinsMod:UniversalBullet": {
+		"NAME": "ユニバーサル弾",
+		"DESCRIPTION": " !D! ダメージを与え、手札からランダムに1枚の batwinsmod:モモイカード を batwinsmod:保存 します。 NL 廃棄 。"
+	},
+	"BATwinsMod:MultipleShadows": {
+		"NAME": "先手を取る",
+		"DESCRIPTION": "!B! ブロック を得る。 NL 次のターン開始時にブロックを失わない。 NL 廃棄 "
+	}
+}

@@ -184,9 +184,9 @@
 		"DESCRIPTION": "每回合开始时,将Draw牌堆随机1张打击牌加入手牌.那cards变为 batwinsmod:Share .",
 		"UPGRADE_DESCRIPTION": "每回合开始时,将Draw牌堆随机1张打击牌加入手牌.那cards变为 batwinsmod:Share . NL Draw牌堆打击牌不足时,将弃牌堆洗入Draw牌堆."
 	},
-	"BATwinsMod:AlternatingAttack": {
-		"NAME": "Alternate Attack",
-		"DESCRIPTION": "Deal !D! Damage. NL Play 1 batwinsmod:MidoriCard from your hand."
+	"BATwinsMod:AlternatingAttack":{
+		"NAME":"Alternate Attack",
+		"DESCRIPTION":"Deal !D! Damage. NL Play 1 non-power batwinsmod:MidoriCard from your hand."
 	},
 	"BATwinsMod:TemporaryAssistance": {
 		"NAME": "Temporary Assistance",
@@ -229,9 +229,9 @@
 		"NAME": "Fund Overdraft",
 		"DESCRIPTION": "Draw !M! cards.Reduce the draw count by 1. NL batwinsmod:Synergy :Reset the draw count."
 	},
-	"BATwinsMod:TakeActionsSeparately": {
-		"NAME": "Separate Action",
-		"DESCRIPTION": "Gain !B! Block. NL Play 1 batwinsmod:MomoiCard from your hand."
+	"BATwinsMod:TakeActionsSeparately":{
+		"NAME":"Separate Action",
+		"DESCRIPTION":"Gain !B! Block. NL Play 1 non-power batwinsmod:MomoiCard from your hand."
 	},
 	"BATwinsMod:RepeatOperation": {
 		"NAME": "Repeat Action",
