@@ -231,11 +231,11 @@ public class Character3DHelper {
 
     public enum MomoiActionList {
         STAND_NORMAL(animationController -> {
-            System.out.println("STAND_NORMAL");
+            ModHelper.getLogger().info("STAND_NORMAL");
             animationController.queue(getAnimationString(STAND_ATTACK_DELAY,BATWINS_MOMOI_CARD), -1, 1, null, 0.5F);
         }),
         ATTACK(animationController -> {
-            System.out.println("ATTACK");
+            ModHelper.getLogger().info("ATTACK");
             animationController.queue(getAnimationString(ATTACK_START,BATWINS_MOMOI_CARD), 1, 1, null, 0.2F);
             animationController.queue(getAnimationString(ATTACKING,BATWINS_MOMOI_CARD), 1, 1, new AnimationController.AnimationListener() {
                 @Override
@@ -250,28 +250,28 @@ public class Character3DHelper {
             }, 0.2F);
         }),
         MOVING(animationController -> {
-            System.out.println("MOVING");
+            ModHelper.getLogger().info("MOVING");
             animationController.queue(getAnimationString(AnimationName.MOVING,BATWINS_MOMOI_CARD), 4, 1.8F, null, 0.5F);
             animationController.queue(getAnimationString(MOVING_END,BATWINS_MOMOI_CARD), 1, 1.0F, null, 0.2F);
         }),
         JUMP(animationController -> {
-            System.out.println("JUMP");
+            ModHelper.getLogger().info("JUMP");
             animationController.queue(getAnimationString(MOVE_JUMP,BATWINS_MOMOI_CARD), 1, 1, null, 0.5F);
         }),
         DEATH(animationController -> {
-            System.out.println("DEATH");
+            ModHelper.getLogger().info("DEATH");
             animationController.queue(getAnimationString(AnimationName.DEATH,BATWINS_MOMOI_CARD), 1, 1, null, 0.5F);
         }),
         DYING(animationController -> {
-            System.out.println("DYING");
+            ModHelper.getLogger().info("DYING");
             animationController.queue(getAnimationString(AnimationName.DYING,BATWINS_MOMOI_CARD), -1, 1, null, 0.5F);
         }),
         RELOAD(animationController -> {
-            System.out.println("RELOAD");
+            ModHelper.getLogger().info("RELOAD");
             animationController.queue(getAnimationString(AnimationName.RELOAD,BATWINS_MOMOI_CARD), 1, 1, null, 0.5F);
         }),
         PANIC(animationController -> {
-            System.out.println("PANIC");
+            ModHelper.getLogger().info("PANIC");
             animationController.queue(getAnimationString(AnimationName.PANIC,BATWINS_MOMOI_CARD), -1, 1, null, 0.5F);
         });
         private final Consumer<AnimationController> operation;
@@ -287,11 +287,11 @@ public class Character3DHelper {
 
     public enum MidoriActionList {
         STAND_NORMAL(animationController -> {
-            System.out.println("STAND_NORMAL");
+            ModHelper.getLogger().info("STAND_NORMAL");
             animationController.queue(getAnimationString(STAND_ATTACK_DELAY,BATWINS_MIDORI_CARD), -1, 1, null, 0.5F);
         }),
         ATTACK(animationController -> {
-            System.out.println("ATTACK");
+            ModHelper.getLogger().info("ATTACK");
             animationController.queue(getAnimationString(ATTACK_START,BATWINS_MIDORI_CARD), 1, 1, null, 0.2F);
             animationController.queue(getAnimationString(ATTACKING,BATWINS_MIDORI_CARD), 1, 1, new AnimationController.AnimationListener() {
                 @Override
@@ -306,28 +306,28 @@ public class Character3DHelper {
             }, 0.2F);
         }),
         MOVING(animationController -> {
-            System.out.println("MOVING");
+            ModHelper.getLogger().info("MOVING");
             animationController.queue(getAnimationString(AnimationName.MOVING,BATWINS_MIDORI_CARD), 4, 1.8F, null, 0.5F);
             animationController.queue(getAnimationString(MOVING_END,BATWINS_MIDORI_CARD), 1, 1.0F, null, 0.2F);
         }),
         JUMP(animationController -> {
-            System.out.println("JUMP");
+            ModHelper.getLogger().info("JUMP");
             animationController.queue(getAnimationString(MOVE_JUMP,BATWINS_MIDORI_CARD), 1, 1, null, 0.5F);
         }),
         DEATH(animationController -> {
-            System.out.println("DEATH");
+            ModHelper.getLogger().info("DEATH");
             animationController.queue(getAnimationString(AnimationName.DEATH,BATWINS_MIDORI_CARD), 1, 1, null, 0.5F);
         }),
         DYING(animationController -> {
-            System.out.println("DYING");
+            ModHelper.getLogger().info("DYING");
             animationController.queue(getAnimationString(AnimationName.DYING,BATWINS_MIDORI_CARD), -1, 1, null, 0.5F);
         }),
         RELOAD(animationController -> {
-            System.out.println("RELOAD");
+            ModHelper.getLogger().info("RELOAD");
             animationController.queue(getAnimationString(AnimationName.RELOAD,BATWINS_MIDORI_CARD), 1, 1, null, 0.5F);
         }),
         PANIC(animationController -> {
-            System.out.println("PANIC");
+            ModHelper.getLogger().info("PANIC");
             animationController.queue(getAnimationString(AnimationName.PANIC,BATWINS_MIDORI_CARD), -1, 1, null, 0.5F);
         });
 
