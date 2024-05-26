@@ -1,9 +1,12 @@
 package baModDeveloper.helpers;
 
+import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,6 +14,9 @@ import java.util.Iterator;
 public class ModHelper {
     public static String MOMOI_FLODER = "momoi";
     public static String MIDORI_FLODER = "midori";
+
+    public static final Logger logger = LogManager.getLogger(BATwinsMod.class.getName());
+
 
     public static String makePath(String id) {
         return "BATwinsMod:" + id;
@@ -73,5 +79,9 @@ public class ModHelper {
 
     public static String makeAudioPath(String filename) {
         return makeAudioPath(filename, "ogg");
+    }
+
+    public static Logger getLogger(){
+        return logger;
     }
 }
