@@ -1,5 +1,8 @@
 package baModDeveloper.helpers;
 
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g3d.attributes.BlendingAttribute;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +33,9 @@ public class CharacterNormalHelper extends Character3DHelper{
     public void init() {
         this.momoiController = new ModelController("baModResources/img/char/model/momoi.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[0]);
         this.midoriController = new ModelController("baModResources/img/char/model/midori.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[1]);
+
+        this.momoiController.setAttribute("Month",new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
+        this.midoriController.setAttribute("Month",new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
         super.init();
 
     }
