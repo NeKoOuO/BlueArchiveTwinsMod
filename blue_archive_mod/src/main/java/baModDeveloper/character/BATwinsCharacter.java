@@ -633,12 +633,15 @@ public class BATwinsCharacter extends CustomPlayer {
             }
 
         }
-        if (this.drawX == Settings.WIDTH / 2.0F) {
-            character3DHelper.setPosition(Settings.WIDTH * 0.28F, Settings.HEIGHT * 0.07F);
+        if(BATwinsMod.Enable3D){
+            if (this.drawX == Settings.WIDTH / 2.0F) {
+                character3DHelper.setPosition(Settings.WIDTH * 0.28F, Settings.HEIGHT * 0.07F);
 
-        } else {
-            character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+            } else {
+                character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+            }
         }
+
         super.applyPreCombatLogic();
     }
 
