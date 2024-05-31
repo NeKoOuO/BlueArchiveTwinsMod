@@ -228,7 +228,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 //        } else if(language==GameLanguage.ENG){
 //            lang = "ENG";
         }else if(language==GameLanguage.ZHT){
-            lang="ZHS";
+            lang="ZHT";
         }else if(language==GameLanguage.JPN){
             lang="JPN";
         }
@@ -255,7 +255,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
         }else if(language==GameLanguage.ZHT){
-            lang="ZHS";
+            lang="ZHT";
         }else if(language==GameLanguage.JPN){
             lang="JPN";
         }
