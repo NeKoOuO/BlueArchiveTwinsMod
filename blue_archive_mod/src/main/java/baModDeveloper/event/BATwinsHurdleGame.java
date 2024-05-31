@@ -117,7 +117,7 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
             case DONE:
             case LEAVE:
             case LOOK:
-                if (BATwinsMod.Enable3D&&AbstractDungeon.player instanceof BATwinsCharacter) {
+                if (this.character3DHelper!=null) {
                     this.character3DHelper.setStandAnima(Character3DHelper.AnimationName.NORMAL_IDLE, BATwinsCharacter.Enums.BATWINS_MOMOI_CARD);
                     this.character3DHelper.resetModelPosition(-150 * Settings.scale, 0, BATwinsCharacter.Enums.BATWINS_MIDORI_CARD);
                 }
@@ -135,6 +135,11 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
                 super.update();
                 break;
             case GAMING:
+                if(this.character3DHelper==null){
+                    this.currentScreen = CurrentScreen.DONE;
+                    openMap();
+                    return;
+                }
                 this.buttonHb.update();
                 if (this.gameState == 1 && this.canPress && this.buttonHb.hovered && InputHelper.justClickedLeft || CInputActionSet.proceed.isJustPressed()) {
                     character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.JUMP);
