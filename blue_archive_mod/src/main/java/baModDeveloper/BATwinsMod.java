@@ -247,10 +247,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             lang = "ZHS";
 //        } else if(language==GameLanguage.ENG){
 //            lang = "ENG";
-        } else if (language == GameLanguage.ZHT) {
-            lang = "ZHS";
-        } else if (language == GameLanguage.JPN) {
-            lang = "JPN";
+        }else if(language==GameLanguage.ZHT){
+            lang="ZHT";
+        }else if(language==GameLanguage.JPN){
+            lang="JPN";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
@@ -275,10 +275,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         String lang = "ENG";
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
-        } else if (language == GameLanguage.ZHT) {
-            lang = "ZHS";
-        } else if (language == GameLanguage.JPN) {
-            lang = "JPN";
+        }else if(language==GameLanguage.ZHT){
+            lang="ZHT";
+        }else if(language==GameLanguage.JPN){
+            lang="JPN";
         }
         String json = Gdx.files.internal("baModResources/localization/" + lang + "/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
