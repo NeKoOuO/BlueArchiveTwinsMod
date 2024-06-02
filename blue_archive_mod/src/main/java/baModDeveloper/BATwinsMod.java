@@ -23,7 +23,10 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -39,12 +42,15 @@ import com.megacrit.cardcrawl.localization.*;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
+import java.util.function.BiConsumer;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber {
+public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber,ScreenPostProcessor{
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -77,6 +83,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public static boolean Enable3D = false;
     public static int SelectedSkin=0;
     public static boolean Tutorial = true;
+
+    //shader绘制
+    public static final List<BiConsumer<SpriteBatch, TextureRegion>> postProcessQueue = new ArrayList<>();
+
 
     public BATwinsMod() {
         BaseMod.subscribe(this);
@@ -376,5 +386,18 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         Texture badgeTexture = ImageMaster.loadImage(ModHelper.makeImgPath("UI", "configButton"));
         BaseMod.registerModBadge(badgeTexture, "BATwinsMod", "0v0", "config", settingPanel);
+    }
+
+    @Override
+    public void postProcess(SpriteBatch spriteBatch, TextureRegion textureRegion, OrthographicCamera orthographicCamera) {
+        if(!postProcessQueue.isEmpty()){
+            for(BiConsumer<SpriteBatch,TextureRegion> consumer:postProcessQueue){
+                consumer.accept(spriteBatch,textureRegion);
+            }
+            postProcessQueue.clear();
+        }else{
+            spriteBatch.draw(textureRegion,0.0F,0.0F);
+        }
+        spriteBatch.setProjectionMatrix(orthographicCamera.combined);
     }
 }
