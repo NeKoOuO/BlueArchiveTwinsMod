@@ -20,6 +20,7 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
+import basemod.helpers.ScreenPostProcessorManager;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -92,6 +93,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.subscribe(this);
         BaseMod.addColor(Enums.BATWINS_MOMOI_CARD, MOMOIColor, MOMOIColor, MOMOIColor, MOMOIColor, MOMOIColor, MOMOIColor, MOMOIColor, BATWINS_MOMOI_ATTACK_512, BATWINS_MOMOI_SKILL_512, BATWINS_MOMOI_POWER_512, MOMOI_BIG_ORB, BATWINS_MOMOI_ATTACK_1024, BATWINS_MOMOI_SKILL_1024, BATWINS_MOMOI_POWER_1024, MOMOI_ENERGY_ORB, MOMOI_SMALL_ORB);
         BaseMod.addColor(Enums.BATWINS_MIDORI_CARD, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, BATWINS_MIDORI_ATTACK_512, BATWINS_MIDORI_SKILL_512, BATWINS_MIDORI_POWER_512, MIDORI_BIG_ORB, BATWINS_MIDORI_ATTACK_1024, BATWINS_MIDORI_SKILL_1024, BATWINS_MIDORI_POWER_1024, MIDORI_ENERGY_ORB, MIDORI_SMALL_ORB);
+
+        ScreenPostProcessorManager.addPostProcessor(this);
     }
 
     public static void initialize() {

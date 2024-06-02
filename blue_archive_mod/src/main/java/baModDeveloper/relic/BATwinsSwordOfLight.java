@@ -1,5 +1,6 @@
 package baModDeveloper.relic;
 
+import baModDeveloper.action.BATwinsSwordOfLightAction;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
 import basemod.abstracts.CustomRelic;
@@ -55,6 +56,7 @@ public class BATwinsSwordOfLight extends CustomRelic {
         if (this.counter == count) {
             flash();
             addToBot((AbstractGameAction) new RelicAboveCreatureAction((AbstractCreature) AbstractDungeon.player, this));
+            addToBot(new BATwinsSwordOfLightAction());
             addToBot((AbstractGameAction) new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             stopPulse();
             this.grayscale = true;
