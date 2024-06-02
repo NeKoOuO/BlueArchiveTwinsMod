@@ -8,6 +8,7 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.event.*;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.patch.BATwinsAbstractMonsterPatch;
 import baModDeveloper.potion.BATwinsAcceleratePotion;
 import baModDeveloper.potion.BATwinsBurnPotion;
 import baModDeveloper.potion.BATwinsConnectPotion;
@@ -402,5 +403,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             spriteBatch.draw(textureRegion,0.0F,0.0F);
         }
         spriteBatch.setProjectionMatrix(orthographicCamera.combined);
+
+        BATwinsAbstractMonsterPatch.takeTime();
     }
 }

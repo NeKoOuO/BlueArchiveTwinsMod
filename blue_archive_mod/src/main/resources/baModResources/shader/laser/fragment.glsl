@@ -9,8 +9,6 @@ varying vec2 v_texCoords;
 
 uniform sampler2D u_texture;
 uniform vec2 iResolution;
-uniform vec2 center;
-uniform float radius;
 uniform float iTime;
 
 
