@@ -273,6 +273,10 @@ public class Character3DHelper {
         PANIC(animationController -> {
             ModHelper.getLogger().info("PANIC");
             animationController.queue(getAnimationString(AnimationName.PANIC,BATWINS_MOMOI_CARD), -1, 1, null, 0.5F);
+        }),
+        ESCAPE(animationController->{
+            ModHelper.getLogger().info("ESCAPE");
+            animationController.queue(getAnimationString(AnimationName.MOVING,BATWINS_MOMOI_CARD),7,1,null,0.5F);
         });
         private final Consumer<AnimationController> operation;
 
@@ -329,6 +333,10 @@ public class Character3DHelper {
         PANIC(animationController -> {
             ModHelper.getLogger().info("PANIC");
             animationController.queue(getAnimationString(AnimationName.PANIC,BATWINS_MIDORI_CARD), -1, 1, null, 0.5F);
+        }),
+        ESCAPE(animationController->{
+            ModHelper.getLogger().info("ESCAPE");
+            animationController.queue(getAnimationString(AnimationName.MOVING,BATWINS_MIDORI_CARD),7,1,null,0.5F);
         });
 
         private final Consumer<AnimationController> operation;

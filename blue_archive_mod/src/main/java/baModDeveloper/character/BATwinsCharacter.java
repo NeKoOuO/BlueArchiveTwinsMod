@@ -476,6 +476,8 @@ public class BATwinsCharacter extends CustomPlayer {
         }
     }
 
+    float x=this.drawX-400.0F*Settings.scale;
+    float y=this.drawY;
     @Override
     public void update() {
         super.update();
@@ -488,7 +490,7 @@ public class BATwinsCharacter extends CustomPlayer {
                 this.expPanel.updatePosition(this.drawX - 230 * Settings.scale, this.drawY);
                 this.dialogX = (this.drawX + 0.0F * Settings.scale);
                 this.dialogY = this.drawY + 170.0F * Settings.scale;
-                this.expPanel.update();
+                this.expPanel.update(this.hbAlpha);
 
             }
 //            if(BATwinsMod.Enable3D)
@@ -496,8 +498,8 @@ public class BATwinsCharacter extends CustomPlayer {
 
         }
         if (BATwinsMod.Enable3D && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+            character3DHelper.setPosition(this.drawX-400.0F*Settings.scale,this.drawY-260.0F*Settings.scale);
             character3DHelper.update();
-
         }
     }
 
@@ -569,7 +571,7 @@ public class BATwinsCharacter extends CustomPlayer {
     public void onEnterRoom() {
         //设置进入房间时的动画
         if (BATwinsMod.Enable3D) {
-            character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+//            character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
             character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.MOVING);
             character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.MOVING);
         }
@@ -633,14 +635,14 @@ public class BATwinsCharacter extends CustomPlayer {
             }
 
         }
-        if(BATwinsMod.Enable3D){
-            if (this.drawX == Settings.WIDTH / 2.0F) {
-                character3DHelper.setPosition(Settings.WIDTH * 0.28F, Settings.HEIGHT * 0.07F);
-
-            } else {
-                character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
-            }
-        }
+//        if(BATwinsMod.Enable3D){
+//            if (this.drawX == Settings.WIDTH / 2.0F) {
+//                character3DHelper.setPosition(Settings.WIDTH * 0.28F, Settings.HEIGHT * 0.07F);
+//
+//            } else {
+//                character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);
+//            }
+//        }
 
         super.applyPreCombatLogic();
     }

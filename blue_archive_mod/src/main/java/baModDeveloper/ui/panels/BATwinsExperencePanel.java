@@ -31,6 +31,8 @@ public class BATwinsExperencePanel extends AbstractPanel {
     private static float FontScale = 1.0F;
     private int expAmount;
     private int expLevel;
+    private Color color;
+    private Color fontColor;
 
     public BATwinsExperencePanel(float show_x, float show_y) {
         super(show_x, show_y, -480 * Settings.scale, 200 * Settings.scale, 200.0F * Settings.yScale, 12.0F * Settings.scale, null, true);
@@ -38,6 +40,9 @@ public class BATwinsExperencePanel extends AbstractPanel {
         this.expAmount = 0;
         this.expLevel = 0;
 
+        this.color=Color.WHITE.cpy();
+        this.color.a=1.0F;
+        this.fontColor=FONT_COLOR;
     }
 
     public static void LevelUp() {
@@ -45,7 +50,7 @@ public class BATwinsExperencePanel extends AbstractPanel {
         FontScale = 2.0F;
     }
 
-    public void update() {
+    public void update(float hbAlpha) {
         if (this.target_x != this.current_x) {
             this.current_x = this.target_x;
         }
@@ -65,20 +70,24 @@ public class BATwinsExperencePanel extends AbstractPanel {
         if (FontScale != 1.0F) {
             FontScale = MathHelper.scaleLerpSnap(FontScale, 1.0F);
         }
+
+        this.color.a=hbAlpha;
+        this.fontColor.a=hbAlpha;
     }
 
     public void render(SpriteBatch sb) {
 //        Gdx.gl.glClearColor(0,0,0,1);
 //        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        sb.setColor(this.color);
         for (int i = 0; i < this.expAmount; i++) {
             sb.draw(expPanelFull, this.current_x, this.current_y + i * HEIGHT, WIDTH, HEIGHT);
         }
         for (int i = this.expAmount; i < 10; i++) {
             sb.draw(expPanelEmpty, this.current_x, this.current_y + i * HEIGHT, WIDTH, HEIGHT);
         }
-        FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(this.expAmount), this.current_x, this.current_y + 10 * HEIGHT, FONT_COLOR);
+        FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(this.expAmount), this.current_x, this.current_y + 10 * HEIGHT, fontColor);
         expPanelFont.getData().setScale(FontScale);
-        FontHelper.renderFontCentered(sb, expPanelFont, "LV:" + this.expLevel, this.current_x + 20.0F * Settings.scale, this.current_y + 11 * HEIGHT, FONT_COLOR);
+        FontHelper.renderFontCentered(sb, expPanelFont, "LV:" + this.expLevel, this.current_x + 20.0F * Settings.scale, this.current_y + 11 * HEIGHT, fontColor);
     }
 
     @Override
@@ -90,4 +99,6 @@ public class BATwinsExperencePanel extends AbstractPanel {
         this.target_x = x;
         this.target_y = y;
     }
+
+
 }
