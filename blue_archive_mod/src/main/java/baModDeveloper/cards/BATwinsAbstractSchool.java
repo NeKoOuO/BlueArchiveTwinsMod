@@ -52,7 +52,8 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new DrawCardAction(this.magicNumber));
-        BATwinsAbstractMonsterPatch.addPixelMonster(abstractMonster);
+        if(abstractMonster!=null)
+            BATwinsAbstractMonsterPatch.addPixelMonster(abstractMonster);
     }
 
     @Override

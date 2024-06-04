@@ -58,9 +58,9 @@ public class BATwinsAbstractMonsterPatch {
                 sb.setShader(shaderProgram);
                 shaderProgram.setUniformf("iResolution", Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
                 if(monsterList.get(__instance)>1.0F){
-                    shaderProgram.setUniformf("pw",5.0F);
+                    shaderProgram.setUniformf("pw",8.0F);
                 }else{
-                    shaderProgram.setUniformf("pw",1.0F+4.0F*monsterList.get(__instance));
+                    shaderProgram.setUniformf("pw",1.0F+7.0F*monsterList.get(__instance));
                 }
                 sb.setColor(renderColor);
 
