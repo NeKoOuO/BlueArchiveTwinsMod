@@ -27,6 +27,7 @@ public class CharacterNormalHelper extends Character3DHelper{
         AnimationNames.put(DYING, new String[]{"Armature|Momoi_Original_Vital_Dying_ing", "Armature|Midori_Original_Vital_Dying_ing"});
         AnimationNames.put(RELOAD, new String[]{"Armature|Momoi_Original_Normal_Reload", "Armature|Midori_Original_Normal_Reload"});
         AnimationNames.put(PANIC, new String[]{"Armature|Momoi_Original_Vital_Panic", "Armature|Midori_Original_Vital_Panic"});
+        AnimationNames.put(REACTION,new String[]{"Armature|Momoi_Original_Victory_Start","Armature|Midori_Original_Victory_Start"});
     }
 
     @Override

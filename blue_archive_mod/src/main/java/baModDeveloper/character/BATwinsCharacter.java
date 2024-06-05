@@ -42,6 +42,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -501,6 +502,15 @@ public class BATwinsCharacter extends CustomPlayer {
             character3DHelper.setPosition(this.drawX-400.0F*Settings.scale,this.drawY-260.0F*Settings.scale);
             character3DHelper.update();
         }
+
+        if(this.hb.hovered&& InputHelper.justClickedRight){
+            this.playReactionAnima();
+        }
+    }
+
+    private void playReactionAnima() {
+        character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.REACTION);
+        character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.REACTION);
     }
 
     @Override

@@ -15,9 +15,9 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.math.Vector3;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import javafx.util.Pair;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Consumer;
 
 import static baModDeveloper.character.BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
@@ -37,6 +37,7 @@ public class Character3DHelper {
     ModelController momoiController;
     ModelController midoriController;
     private boolean inited = false;
+    private List<Countdown> controlCountdown;
 
     public Character3DHelper() {
         if (BATwinsMod.Enable3D)
@@ -74,6 +75,8 @@ public class Character3DHelper {
         psb = new PolygonSpriteBatch();
         this.resetCharacterPosition();
 
+        this.controlCountdown=new ArrayList<>();
+
         this.inited = true;
     }
 
@@ -81,6 +84,21 @@ public class Character3DHelper {
 
         momoiController.update();
         midoriController.update();
+
+        if(!this.controlCountdown.isEmpty()){
+            Iterator<Countdown> iterator = this.controlCountdown.iterator();
+            while (iterator.hasNext()) {
+                Countdown pair = iterator.next();
+                pair.time -= Gdx.graphics.getDeltaTime();
+                if (pair.time <= 0.0F) {
+                    if(pair.color==BATWINS_MOMOI_CARD)
+                        pair.consumer.accept(this.momoiController);
+                    else
+                        pair.consumer.accept(this.midoriController);
+                    iterator.remove(); // 使用迭代器安全删除元素
+                }
+            }
+        }
     }
 
     public void render(SpriteBatch sb) {
@@ -134,6 +152,22 @@ public class Character3DHelper {
             case MOVING:
                 this.momoiController.moveCurrentPosition(300 * Settings.scale, 0);
                 break;
+            case REACTION:
+                boolean already=false;
+                for(Countdown c:this.controlCountdown){
+                    if(c.ID.equals("MOMOIREACTION")){
+                        c.time=3.3F;
+                        already=true;
+                        break;
+                    }
+                }
+                if(!already){
+                    this.momoiController.rotate(0,1,0,-90);
+                    this.controlCountdown.add(new Countdown(modelController -> {
+                        modelController.rotate(0,1,0,90);
+                    },3.3F,BATWINS_MOMOI_CARD,"MOMOIREACTION"));
+                }
+                break;
         }
     }
 
@@ -142,6 +176,23 @@ public class Character3DHelper {
         switch (action) {
             case MOVING:
                 this.midoriController.moveCurrentPosition(300 * Settings.scale, 0);
+                break;
+            case REACTION:
+                boolean already=false;
+                for(Countdown c:this.controlCountdown){
+                    if(c.ID.equals("MIDORIREACTION")){
+                        c.time=3.3F;
+                        already=true;
+                        break;
+                    }
+                }
+                if(!already){
+                    this.midoriController.rotate(0,1,0,-90);
+                    this.controlCountdown.add(new Countdown(modelController -> {
+                        modelController.rotate(0,1,0,90);
+                    },3.3F,BATWINS_MIDORI_CARD,"MIDORIREACTION"));
+                }
+
                 break;
         }
     }
@@ -226,7 +277,8 @@ public class Character3DHelper {
         DEATH,
         DYING,
         RELOAD,
-        PANIC
+        PANIC,
+        REACTION
     }
 
     public enum MomoiActionList {
@@ -277,6 +329,11 @@ public class Character3DHelper {
         ESCAPE(animationController->{
             ModHelper.getLogger().info("ESCAPE");
             animationController.queue(getAnimationString(AnimationName.MOVING,BATWINS_MOMOI_CARD),7,1,null,0.5F);
+        }),
+        REACTION(animationController->{
+            ModHelper.getLogger().info("REACTION");
+
+            animationController.queue(getAnimationString(AnimationName.REACTION,BATWINS_MOMOI_CARD),1,1,null,0.5F);
         });
         private final Consumer<AnimationController> operation;
 
@@ -337,8 +394,12 @@ public class Character3DHelper {
         ESCAPE(animationController->{
             ModHelper.getLogger().info("ESCAPE");
             animationController.queue(getAnimationString(AnimationName.MOVING,BATWINS_MIDORI_CARD),7,1,null,0.5F);
-        });
+        }),
+        REACTION(animationController->{
+            ModHelper.getLogger().info("REACTION");
 
+            animationController.queue(getAnimationString(AnimationName.REACTION,BATWINS_MIDORI_CARD),1,1,null,0.5F);
+        });
         private final Consumer<AnimationController> operation;
 
         private MidoriActionList(Consumer<AnimationController> operation) {
@@ -362,5 +423,20 @@ public class Character3DHelper {
             character3DHelper.init();
             finishLoading = true;
         }
+    }
+
+    private static class Countdown{
+        public Consumer<ModelController> consumer;
+        public float time;
+        public AbstractCard.CardColor color;
+        public String ID;
+
+        public Countdown(Consumer<ModelController> consumer, float time, AbstractCard.CardColor color, String ID) {
+            this.consumer = consumer;
+            this.time = time;
+            this.color = color;
+            this.ID = ID;
+        }
+
     }
 }

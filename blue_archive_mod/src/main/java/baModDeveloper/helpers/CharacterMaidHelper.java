@@ -28,6 +28,7 @@ public class CharacterMaidHelper extends Character3DHelper{
         AnimationNames.put(DYING, new String[]{"bone_root|CH0201_Vital_Dying_Ing", "bone_root|CH0202_Vital_Dying_Ing"});
         AnimationNames.put(RELOAD, new String[]{"bone_root|CH0201_Normal_Reload", "bone_root|CH0202_Normal_Reload"});
         AnimationNames.put(PANIC, new String[]{"bone_root|CH0201_Vital_Panic", "bone_root|CH0202_Vital_Panic"});
+        AnimationNames.put(REACTION,new String[]{"bone_root|CH0201_Victory_Start","bone_root|CH0202_Victory_Start"});
     }
 
     @Override
