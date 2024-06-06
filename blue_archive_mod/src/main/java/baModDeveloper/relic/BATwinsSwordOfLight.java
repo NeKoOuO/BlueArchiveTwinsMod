@@ -21,7 +21,7 @@ public class BATwinsSwordOfLight extends CustomRelic {
     private static final Texture outline = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "SwordOfLight_p"));
     private static final RelicTier type = RelicTier.SPECIAL;
     private final int damage = 50;
-    private final int count = 25;
+    private final int count = 1;
 
     public BATwinsSwordOfLight() {
         super(ID, texture, outline, type, LandingSound.HEAVY);
