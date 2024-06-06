@@ -317,6 +317,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("coin"), ModHelper.makeAudioPath("coin"));
         BaseMod.addAudio(ModHelper.makePath("Momoi_Ex"), ModHelper.makeAudioPath("Momoi_Ex"));
         BaseMod.addAudio(ModHelper.makePath("Midori_Ex"), ModHelper.makeAudioPath("Midori_Ex"));
+        BaseMod.addAudio(ModHelper.makePath("Alice"),ModHelper.makeAudioPath("alice"));
     }
 
     @Override
