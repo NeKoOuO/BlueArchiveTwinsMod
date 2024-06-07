@@ -6,7 +6,10 @@ import baModDeveloper.helpers.ShaderHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,6 +40,7 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
     private AbstractCard cardToCopy;
     private static AbstractCard EasterEggCard=new BATwinsMomoiStrick();
     private static ShaderProgram shaderProgram;
+    private static final FrameBuffer frameBuffer=new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth(),Gdx.graphics.getHeight(),false,false);
 
     public BATwinsSelfConnectivity() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
@@ -85,7 +89,9 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
 //            updateCardPreview();
 //        }
         super.render(sb);
-
+        if(this.cardToCopy==null){
+            this.renderEasterEggCard(sb);
+        }
     }
 
     @Override
@@ -135,6 +141,8 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
                 this.cardsToPreview = preCard.get().makeStatEquivalentCopy();
                 this.cardToCopy = preCard.get();
                 this.cardToCopy.applyPowers();
+                this.target=this.cardToCopy.target;
+
             }
         }
 //        if (this.cardsToPreview == null) {
@@ -160,8 +168,24 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
             this.cardsToPreview.current_y = this.current_y + AbstractCard.IMG_HEIGHT * 0.18F * this.drawScale;
             this.cardsToPreview.render(sb);
         }else if(this.cardsToPreview==null&&AbstractDungeon.getCurrRoom().phase== AbstractRoom.RoomPhase.COMBAT){
+//            this.renderEasterEggCard(sb);
+//            Gdx.gl.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
+//            Gdx.gl.glClear(16640);
+//            this.renderEasterEggCard(sb);
+//            frameBuffer.end();
+            sb.setShader(shaderProgram);
             shaderProgram.setUniformf("iResolution", Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-            ShaderHelper.renderShader(shaderProgram,sb,this::renderEasterEggCard);
+            shaderProgram.setUniformf("center",this.current_x,this.current_y+45.0F);
+            shaderProgram.setUniformf("len",80.0F,60.0F);
+            Texture renderImage=frameBuffer.getColorBufferTexture();
+
+            sb.setColor(Color.WHITE.cpy());
+            sb.draw(renderImage, 0.0F, 0.0F, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT, 1.0F, 1.0F, 0.0F, 0, 0, Settings.WIDTH, Settings.HEIGHT, false, true);
+            sb.end();
+            sb.setShader(null);
+            sb.flush();
+            sb.begin();
+            this.copyEasterEggCard();
         }
 
 
@@ -180,10 +204,25 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
     }
 
     private void renderEasterEggCard(SpriteBatch sb){
+        frameBuffer.begin();
         sb.setColor(Color.WHITE);
         EasterEggCard.current_x= Settings.WIDTH/2.0F;
         EasterEggCard.current_y=Settings.HEIGHT/2.0F;
         EasterEggCard.drawScale=1.0F;
         EasterEggCard.render(sb);
+        frameBuffer.end();
+    }
+
+    private boolean copyEasterEggCard(){
+        float len=5.0F;
+        if(Math.abs(this.current_x-EasterEggCard.current_x)<=len&&Math.abs(this.current_y-EasterEggCard.current_y)<=len){
+            this.cardsToPreview = EasterEggCard.makeStatEquivalentCopy();
+            this.cardToCopy = EasterEggCard;
+            this.cardToCopy.applyPowers();
+            this.target=this.cardToCopy.target;
+            this.flash(Color.GOLD.cpy());
+            return true;
+        }
+        return false;
     }
 }

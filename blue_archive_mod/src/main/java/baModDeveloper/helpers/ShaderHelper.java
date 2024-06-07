@@ -19,6 +19,8 @@ public class ShaderHelper {
     public static void renderShader(ShaderProgram shaderProgram, SpriteBatch spriteBatch, Consumer<SpriteBatch> method){
         spriteBatch.end();
         frameBuffer.begin();
+        Gdx.gl.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
+        Gdx.gl.glClear(16640);
         spriteBatch.begin();
         method.accept(spriteBatch);
         spriteBatch.end();
@@ -26,6 +28,7 @@ public class ShaderHelper {
         spriteBatch.setShader(shaderProgram);
         spriteBatch.begin();
         Texture renderImage=frameBuffer.getColorBufferTexture();
+
         spriteBatch.setColor(Color.WHITE.cpy());
         spriteBatch.draw(renderImage, 0.0F, 0.0F, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT, 1.0F, 1.0F, 0.0F, 0, 0, Settings.WIDTH, Settings.HEIGHT, false, true);
 
