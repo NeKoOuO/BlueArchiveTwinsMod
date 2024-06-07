@@ -2,15 +2,21 @@ package baModDeveloper.cards;
 
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.helpers.ShaderHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -25,13 +31,16 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
     private static final int COST = 1;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
     private AbstractCard cardToCopy;
+    private static AbstractCard EasterEggCard=new BATwinsMomoiStrick();
+    private static ShaderProgram shaderProgram;
 
     public BATwinsSelfConnectivity() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
+        shaderProgram=ShaderHelper.getShaderProgram("selfConnectivity");
     }
 
     @Override
@@ -150,6 +159,9 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
             this.cardsToPreview.current_x = this.current_x;
             this.cardsToPreview.current_y = this.current_y + AbstractCard.IMG_HEIGHT * 0.18F * this.drawScale;
             this.cardsToPreview.render(sb);
+        }else if(this.cardsToPreview==null&&AbstractDungeon.getCurrRoom().phase== AbstractRoom.RoomPhase.COMBAT){
+            shaderProgram.setUniformf("iResolution", Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            ShaderHelper.renderShader(shaderProgram,sb,this::renderEasterEggCard);
         }
 
 
@@ -165,5 +177,13 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
         if (!Objects.equals(this.cardsToPreview.cardID, this.cardID)) {
             super.renderCardPreview(sb);
         }
+    }
+
+    private void renderEasterEggCard(SpriteBatch sb){
+        sb.setColor(Color.WHITE);
+        EasterEggCard.current_x= Settings.WIDTH/2.0F;
+        EasterEggCard.current_y=Settings.HEIGHT/2.0F;
+        EasterEggCard.drawScale=1.0F;
+        EasterEggCard.render(sb);
     }
 }
