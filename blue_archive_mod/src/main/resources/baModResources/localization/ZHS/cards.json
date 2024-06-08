@@ -369,8 +369,8 @@
 	},
 	"BATwinsMod:CheckTheStrategy":{
 		"NAME":"查询攻略书",
-		"DESCRIPTION":"抽 !M! 张牌，丢弃所有 batwinsmod:桃牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆选择1张牌加入手牌。",
-		"UPGRADE_DESCRIPTION":"抽 !M! 张牌，丢弃所有 batwinsmod:桃牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆选择1张牌加入手牌。"
+		"DESCRIPTION":"丢弃 !M! 张牌，抽 !M! 张牌，若丢弃的牌颜色相同，则多抽1张牌。 NL 消耗 ",
+		"UPGRADE_DESCRIPTION":"丢弃 !M! 张牌，抽 !M! 张牌，若丢弃的牌颜色相同，则多抽1张牌。"
 	},
 	"BATwinsMod:LeaveItToMe":{
 		"NAME":"交给我吧",

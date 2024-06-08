@@ -369,8 +369,8 @@
 	},
 	"BATwinsMod:CheckTheStrategy":{
 		"NAME":"攻略本を参考",
-		"DESCRIPTION":" !M! 枚カードを引く、すべての batwinsmod:モモイカード を捨てる、同じ数のカードを引く。 NL もしカードを捨てない、山札に１枚カードを手札に加える。",
-		"UPGRADE_DESCRIPTION":" !M! 枚カードを引く、すべての batwinsmod:モモイカード を捨てる、同じ数のカードを引く。 NL もしカードを捨てない、山札に１枚カードを手札に加える。"
+		"DESCRIPTION":"カードを !M! 枚捨て、!M! 枚引きます。捨てたカードの色が同じ場合、さらに1枚引きます。 NL 廃棄 ",
+		"UPGRADE_DESCRIPTION":"カードを !M! 枚捨て、!M! 枚引きます。捨てたカードの色が同じ場合、さらに1枚引きます。"
 	},
 	"BATwinsMod:LeaveItToMe":{
 		"NAME":"任せってよ！",

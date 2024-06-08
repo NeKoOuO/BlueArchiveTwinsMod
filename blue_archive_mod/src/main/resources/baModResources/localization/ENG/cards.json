@@ -369,8 +369,8 @@
 	},
 	"BATwinsMod:CheckTheStrategy": {
 		"NAME": "Search Strategy Guide",
-		"DESCRIPTION": "Draw !M! cards,Discard all batwinsmod:MomoiCard and draw the same number of cards. NL if no cards were discarded this way,choose 1 card from the draw pile and add it to your hand.",
-		"UPGRADE_DESCRIPTION": "Draw !M! cards,丢弃所有非 batwinsmod:MidoriCard Draw等量牌. NL 若此牌没有丢弃牌则从Draw牌堆选择1cards加入手牌."
+		"DESCRIPTION": "Discard !M! cards, draw !M! cards. If the discarded cards are the same color, draw 1 more card. NL Exhaust ",
+		"UPGRADE_DESCRIPTION": "Discard !M! cards, draw !M! cards. If the discarded cards are the same color, draw 1 more card."
 	},
 	"BATwinsMod:LeaveItToMe": {
 		"NAME": "Here you go.",
