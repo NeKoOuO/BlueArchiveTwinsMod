@@ -8,6 +8,7 @@ import baModDeveloper.helpers.*;
 import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.patch.BATwinsCharacterOptionPatch;
 import baModDeveloper.power.BATwinsBorrowMePower;
+import baModDeveloper.power.BATwinsExperiencePower;
 import baModDeveloper.relic.BATwinsGameMagazine;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import baModDeveloper.ui.panels.BATwinsExperencePanel;
@@ -120,9 +121,14 @@ public class BATwinsCharacter extends CustomPlayer {
     private static final String stand_Img = ModHelper.makeImgPath("char", "standup");
     private static final String empty_Img = ModHelper.makeImgPath("char", "p");
     private static final Color BLUE_BORDER_GLOW_COLOR = new Color(0.2F, 0.9F, 1.0F, 0.25F);
-    BATwinsExperencePanel expPanel;
+
+    public BATwinsExperencePanel getExpPanel() {
+        return expPanel;
+    }
+
+    private BATwinsExperencePanel expPanel;
     //排序手牌
-    ColorComparer colorComparer;
+    private ColorComparer colorComparer;
     private EnergyOrbInterface energyOrbMomoi;
     private EnergyOrbInterface energyOrbMidori;
 
@@ -215,7 +221,7 @@ public class BATwinsCharacter extends CustomPlayer {
 //        AbstractAnimation.addAnimation(null);
 
         colorComparer = new ColorComparer();
-
+        BATwinsExperiencePower.MAX=10;
         expPanel = new BATwinsExperencePanel(this.drawX - 230 * Settings.scale, this.drawY);
         expPanel.show();
         this.dialogX = (this.drawX + 0.0F * Settings.scale);

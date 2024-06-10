@@ -1,6 +1,7 @@
 package baModDeveloper.power;
 
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.helpers.BATwinsLevelUpInterface;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsExperencePanel;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class BATwinsExperiencePower extends AbstractPower {
     public static final String POWER_ID = ModHelper.makePath("ExperiencePower");
@@ -46,13 +48,7 @@ public class BATwinsExperiencePower extends AbstractPower {
         this.amount += stackAmount;
         while (true) {
             if (this.amount >= MAX) {
-                this.flash();
-                this.amount = this.amount - MAX;
-                LEVEL++;
-                addToTop(new TextAboveCreatureAction(this.owner, DESCRIPTIONS[4]));
-                if (AbstractDungeon.player instanceof BATwinsCharacter) {
-                    BATwinsExperencePanel.LevelUp();
-                }
+                this.levelup(1,false);
             } else {
                 break;
             }
@@ -80,9 +76,16 @@ public class BATwinsExperiencePower extends AbstractPower {
         this.LEVEL += amount;
         if (clearExp) {
             this.amount = 0;
+        }else{
+            this.amount = this.amount - MAX;
         }
         addToTop(new TextAboveCreatureAction(this.owner, DESCRIPTIONS[4]));
 
+        for(AbstractRelic r:AbstractDungeon.player.relics){
+            if(r instanceof BATwinsLevelUpInterface){
+                ((BATwinsLevelUpInterface) r).triggerOnLevelUp();
+            }
+        }
         updateDescription();
         if (AbstractDungeon.player instanceof BATwinsCharacter) {
             BATwinsExperencePanel.LevelUp();

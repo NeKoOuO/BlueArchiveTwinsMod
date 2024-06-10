@@ -135,5 +135,12 @@
 		"DESCRIPTIONS": [
 			"When upgrading at a campfire, if you upgrade a common or basic card, randomly upgrade 1 additional common or basic card."
 		]
+	},
+	"BATwinsMod:Adaptability": {
+		"NAME": "Adaptability",
+		"FLAVOR": "Attribute enhancement!",
+		"DESCRIPTIONS": [
+			"Gain 2 #yExperience after Level Up."
+		]
 	}
 }
