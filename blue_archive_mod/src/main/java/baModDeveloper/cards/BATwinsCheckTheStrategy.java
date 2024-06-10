@@ -28,8 +28,7 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MIDORI;
-    private static final UIStrings uiString=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
-
+    private static final UIStrings uiString=CardCrawlGame.languagePack.getUIString("DiscardAction");
     public BATwinsCheckTheStrategy() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseMagicNumber = 2;
@@ -40,7 +39,7 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 
-        addToBot(new SelectCardsInHandAction(this.magicNumber,"",false,false,this::filter,this::callback));
+        addToBot(new SelectCardsInHandAction(this.magicNumber,uiString.TEXT[0],false,false,this::filter,this::callback));
         addToBot(new DrawCardAction(this.magicNumber));
     }
 
