@@ -128,5 +128,12 @@
 		"DESCRIPTIONS": [
 			"After cards deal damage for the #y1st time each turn, heal for #y1/3 of the damage not blocked."
 		]
+	},
+	"BATwinsMod:LearningMaterial": {
+		"NAME": "Basic Learning Materials",
+		"FLAVOR": "Quickly enhance your skills!",
+		"DESCRIPTIONS": [
+			"When upgrading at a campfire, if you upgrade a common or basic card, randomly upgrade 1 additional common or basic card."
+		]
 	}
 }
