@@ -128,5 +128,12 @@
 		"DESCRIPTIONS": [
 			"每回合卡牌造成第 #y1 次伤害后，回复 #y1/3 未被格挡的伤害的血量。"
 		]
+	},
+	"BATwinsMod:LearningMaterial": {
+		"NAME": "初级学习材料",
+		"FLAVOR": "快速提升技能！",
+		"DESCRIPTIONS": [
+			"在火堆升级时，若升级的是普通或初始卡牌，则随机升级1张普通或初始卡牌。"
+		]
 	}
 }
