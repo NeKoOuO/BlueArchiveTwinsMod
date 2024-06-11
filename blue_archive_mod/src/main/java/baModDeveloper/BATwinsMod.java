@@ -8,6 +8,7 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.event.*;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.patch.BATwinsAbstractMonsterPatch;
 import baModDeveloper.potion.BATwinsAcceleratePotion;
 import baModDeveloper.potion.BATwinsBurnPotion;
 import baModDeveloper.potion.BATwinsConnectPotion;
@@ -20,10 +21,14 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
+import basemod.helpers.ScreenPostProcessorManager;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -39,12 +44,15 @@ import com.megacrit.cardcrawl.localization.*;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
+import java.util.function.BiConsumer;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber {
+public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber,ScreenPostProcessor{
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -78,10 +86,16 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public static int SelectedSkin=0;
     public static boolean Tutorial = true;
 
+    //shader绘制
+    public static final List<BiConsumer<SpriteBatch, TextureRegion>> postProcessQueue = new ArrayList<>();
+
+
     public BATwinsMod() {
         BaseMod.subscribe(this);
         BaseMod.addColor(Enums.BATWINS_MOMOI_CARD, MOMOIColor, MOMOIColor, MOMOIColor, MOMOIColor, MOMOIColor, MOMOIColor, MOMOIColor, BATWINS_MOMOI_ATTACK_512, BATWINS_MOMOI_SKILL_512, BATWINS_MOMOI_POWER_512, MOMOI_BIG_ORB, BATWINS_MOMOI_ATTACK_1024, BATWINS_MOMOI_SKILL_1024, BATWINS_MOMOI_POWER_1024, MOMOI_ENERGY_ORB, MOMOI_SMALL_ORB);
         BaseMod.addColor(Enums.BATWINS_MIDORI_CARD, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, BATWINS_MIDORI_ATTACK_512, BATWINS_MIDORI_SKILL_512, BATWINS_MIDORI_POWER_512, MIDORI_BIG_ORB, BATWINS_MIDORI_ATTACK_1024, BATWINS_MIDORI_SKILL_1024, BATWINS_MIDORI_POWER_1024, MIDORI_ENERGY_ORB, MIDORI_SMALL_ORB);
+
+        ScreenPostProcessorManager.addPostProcessor(this);
     }
 
     public static void initialize() {
@@ -305,6 +319,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("coin"), ModHelper.makeAudioPath("coin"));
         BaseMod.addAudio(ModHelper.makePath("Momoi_Ex"), ModHelper.makeAudioPath("Momoi_Ex"));
         BaseMod.addAudio(ModHelper.makePath("Midori_Ex"), ModHelper.makeAudioPath("Midori_Ex"));
+        BaseMod.addAudio(ModHelper.makePath("Alice"),ModHelper.makeAudioPath("alice"));
     }
 
     @Override
@@ -378,5 +393,20 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         Texture badgeTexture = ImageMaster.loadImage(ModHelper.makeImgPath("UI", "configButton"));
         BaseMod.registerModBadge(badgeTexture, "BATwinsMod", "0v0", "config", settingPanel);
+    }
+
+    @Override
+    public void postProcess(SpriteBatch spriteBatch, TextureRegion textureRegion, OrthographicCamera orthographicCamera) {
+        if(!postProcessQueue.isEmpty()){
+            for(BiConsumer<SpriteBatch,TextureRegion> consumer:postProcessQueue){
+                consumer.accept(spriteBatch,textureRegion);
+            }
+            postProcessQueue.clear();
+        }else{
+            spriteBatch.draw(textureRegion,0.0F,0.0F);
+        }
+        spriteBatch.setProjectionMatrix(orthographicCamera.combined);
+
+        BATwinsAbstractMonsterPatch.takeTime();
     }
 }

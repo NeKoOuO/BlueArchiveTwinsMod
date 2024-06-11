@@ -2,8 +2,11 @@ package baModDeveloper.cards;
 
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.patch.BATwinsAbstractMonsterPatch;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -49,6 +52,8 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new DrawCardAction(this.magicNumber));
+        if(abstractMonster!=null)
+            BATwinsAbstractMonsterPatch.addPixelMonster(abstractMonster);
     }
 
     @Override
@@ -59,19 +64,6 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
         }
     }
 
-
-    @Override
-    protected void renderTitle(SpriteBatch sb) {
-//        ArrayList<CardColor> colors=new ArrayList<>();
-//        for(AbstractCard c: AbstractDungeon.player.hand.group){
-//            if(!colors.contains(c.color)){
-//                colors.add(c.color);
-//            }
-//        }
-//        this.baseMagicNumber=colors.size();
-//        this.magicNumber=this.baseMagicNumber;
-        super.renderTitle(sb);
-    }
 
     private int calColorNum() {
         ArrayList<CardColor> colors = new ArrayList<>();
