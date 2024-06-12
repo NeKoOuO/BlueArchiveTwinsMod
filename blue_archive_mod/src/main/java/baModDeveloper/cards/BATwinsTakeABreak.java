@@ -103,6 +103,11 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
                         }
                     }
                     AbstractDungeon.player.hand.group.removeAll(canNotSelect);
+                    if(AbstractDungeon.player.hand.group.isEmpty()){
+                        AbstractDungeon.player.hand.group.addAll(canNotSelect);
+                        this.isDone=true;
+                        return;
+                    }
                     AbstractDungeon.handCardSelectScreen.open(String.format(UISTRING.TEXT[0], 1), 1, false, false, false, false);
                     tickDuration();
                     return;
