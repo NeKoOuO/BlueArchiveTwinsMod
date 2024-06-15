@@ -425,56 +425,6 @@ public class BATwinsCharacter extends CustomPlayer {
         }
     }
 
-    @Override
-    public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
-        if (c.type == AbstractCard.CardType.ATTACK) {
-            this.useFastAttackAnimation();
-        }
-
-        c.calculateCardDamage(monster);
-        if (c.cost == -1 && EnergyPanel.totalCount < energyOnUse && !c.ignoreEnergyOnUse) {
-            c.energyOnUse = EnergyPanel.totalCount;
-        }
-
-        if (c.cost == -1 && c.isInAutoplay) {
-            c.freeToPlayOnce = true;
-        }
-        if (!(c instanceof BATwinsModCustomCard)) {
-            if (!BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.get(c)) {
-                c.use(this, monster);
-            } else {
-                BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(c, false);
-            }
-        } else {
-            c.use(this, monster);
-        }
-        AbstractDungeon.actionManager.addToBottom(new UseCardAction(c, monster));
-        if (!c.dontTriggerOnUseCard) {
-            this.hand.triggerOnOtherCardPlayed(c);
-        }
-
-        this.hand.removeCard(c);
-        this.cardInUse = c;
-        c.target_x = (float) (Settings.WIDTH / 2);
-        c.target_y = (float) (Settings.HEIGHT / 2);
-        if (c.costForTurn > 0 && !c.freeToPlay() && !c.isInAutoplay && (!this.hasPower("Corruption") || c.type != AbstractCard.CardType.SKILL)) {
-            if (c instanceof BATwinsModCustomCard && this.energy instanceof BATwinsEnergyManager) {
-                if (AbstractDungeon.player.hasPower(BATwinsBorrowMePower.POWER_ID)) {
-                    ((BATwinsEnergyManager) this.energy).use(c.costForTurn, BATwinsEnergyPanel.EnergyType.SHARE);
-                } else {
-                    ((BATwinsEnergyManager) this.energy).use(c.costForTurn, ((BATwinsModCustomCard) c).modifyEnergyType);
-                }
-            } else {
-                this.energy.use(c.costForTurn);
-            }
-        }
-
-        if (!this.hand.canUseAnyCard() && !this.endTurnQueued) {
-            AbstractDungeon.overlayMenu.endTurnButton.isGlowing = true;
-        }
-
-    }
-
     public TextureAtlas.AtlasRegion getOrb(String word) {
         if (word.equals("[TE]")) {
             return ImageHelper.MOMOISMALLORB;
