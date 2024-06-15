@@ -418,8 +418,8 @@
 	},
 	"BATwinsMod:EasterEgg":{
 		"NAME":"イースターエッグ",
-		"DESCRIPTION":" !M! 枚カードを引く。 NL 隠し要素を見つけた！おめでとう。",
-		"UPGRADE_DESCRIPTION":" !M! 枚カードを引く。 NL なんと、あなたがこのイースター・エッグをアップグレードするとは！"
+		"DESCRIPTION":" !M! 枚カードを引く。 NL 隠し要素を見つけた！おめでとう。 NL 廃棄 ",
+		"UPGRADE_DESCRIPTION":" !M! 枚カードを引く。 NL なんと、あなたがこのイースター・エッグをアップグレードするとは！ NL 廃棄 "
 	},
 	"BATwinsMod:HeavyBullets":{
 		"NAME":"ヘビーバッレト",

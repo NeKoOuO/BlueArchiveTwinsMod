@@ -418,8 +418,8 @@
 	},
 	"BATwinsMod:EasterEgg": {
 		"NAME": "Easter Egg",
-		"DESCRIPTION": "Draw !M! cards. NL Congratulations on finding the Easter egg!",
-		"UPGRADE_DESCRIPTION": "Draw !M! cards. NL Thank you! Upgrading the Easter egg is just a little extra surprise."
+		"DESCRIPTION": "Draw !M! cards. NL Congratulations on finding the Easter egg! NL exhaust ",
+		"UPGRADE_DESCRIPTION": "Draw !M! cards. NL Thank you! Upgrading the Easter egg is just a little extra surprise. NL exhaust "
 	},
 	"BATwinsMod:HeavyBullets": {
 		"NAME": "Heavy Bullet",
