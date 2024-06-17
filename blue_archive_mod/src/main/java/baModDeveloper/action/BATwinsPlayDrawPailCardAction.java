@@ -65,9 +65,9 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
                 } else {
                     BATwinsAbstractCardPatch.FieldPatch.numberOfConnections.set(card, this.numberOfConnections);
                 }
-                if(AbstractDungeon.player.limbo.group.isEmpty()){
+                if (AbstractDungeon.player.limbo.group.isEmpty()) {
                     card.target_x = (float) Settings.WIDTH / 2.0F;
-                }else{
+                } else {
                     card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale;
                 }
                 card.current_x = 0.0F * Settings.scale;
@@ -84,7 +84,7 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
                 card.applyPowers();
                 card.calculateCardDamage((AbstractMonster) this.target);
                 card.isInAutoplay = true;
-                BATwinsAbstractCardPatch.FieldPatch.dontFadeOutInLimbo.set(this.card,true);
+                BATwinsAbstractCardPatch.FieldPatch.dontFadeOutInLimbo.set(this.card, true);
                 if (this.target == null || this.target.isDeadOrEscaped()) {
                     addToTop(new NewQueueCardAction(card, true, false, true));
                 } else {

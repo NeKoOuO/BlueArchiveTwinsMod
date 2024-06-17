@@ -47,7 +47,7 @@ public class BATwinsReadingDocumentsPower extends AbstractPower {
                     @Override
                     public void update() {
                         AbstractDungeon.player.drawPile.shuffle();
-                        this.isDone=true;
+                        this.isDone = true;
                     }
                 });
             }

@@ -40,11 +40,11 @@ public class BATwinsExperencePanel extends AbstractPanel {
 
         this.expAmount = 0;
         this.expLevel = 0;
-        this.MaxExp=10;
+        this.MaxExp = 10;
 
-        this.color=Color.WHITE.cpy();
-        this.color.a=1.0F;
-        this.fontColor=FONT_COLOR;
+        this.color = Color.WHITE.cpy();
+        this.color.a = 1.0F;
+        this.fontColor = FONT_COLOR;
     }
 
     public static void LevelUp() {
@@ -64,7 +64,7 @@ public class BATwinsExperencePanel extends AbstractPanel {
                 BATwinsExperiencePower power = (BATwinsExperiencePower) AbstractDungeon.player.getPower(BATwinsExperiencePower.POWER_ID);
                 this.expAmount = power.amount;
                 this.expLevel = power.LEVEL;
-                this.MaxExp=BATwinsExperiencePower.MAX;
+                this.MaxExp = BATwinsExperiencePower.MAX;
             } else {
                 this.expAmount = 0;
                 this.expLevel = 0;
@@ -74,8 +74,8 @@ public class BATwinsExperencePanel extends AbstractPanel {
             FontScale = MathHelper.scaleLerpSnap(FontScale, 1.0F);
         }
 
-        this.color.a=hbAlpha;
-        this.fontColor.a=hbAlpha;
+        this.color.a = hbAlpha;
+        this.fontColor.a = hbAlpha;
     }
 
     public void render(SpriteBatch sb) {
@@ -90,7 +90,7 @@ public class BATwinsExperencePanel extends AbstractPanel {
         }
         FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(this.expAmount), this.current_x, this.current_y + MaxExp * HEIGHT, fontColor);
         expPanelFont.getData().setScale(FontScale);
-        FontHelper.renderFontCentered(sb, expPanelFont, "LV:" + this.expLevel, this.current_x + 20.0F * Settings.scale, this.current_y + (MaxExp+1) * HEIGHT, fontColor);
+        FontHelper.renderFontCentered(sb, expPanelFont, "LV:" + this.expLevel, this.current_x + 20.0F * Settings.scale, this.current_y + (MaxExp + 1) * HEIGHT, fontColor);
     }
 
     @Override

@@ -52,11 +52,13 @@ import java.util.function.BiConsumer;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber,ScreenPostProcessor{
+public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber, ScreenPostProcessor {
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MIDORIColor = new Color(85.0F / 255.0F, 171.0F / 255.0F, 72.0F / 255.0F, 1.0F);
+    //shader绘制
+    public static final List<BiConsumer<SpriteBatch, TextureRegion>> postProcessQueue = new ArrayList<>();
     private static final String BATWINS_CHARACTER_BUTTON = ModHelper.makeImgPath("char", "Character_Button");
     private static final String BATWINS_CHARACTER_PORTRAIT = ModHelper.makeImgPath("char", "Character_Portrait");
     private static final String BATWINS_MOMOI_ATTACK_512 = ModHelper.makeImgPath("512", "bg_attack_512");
@@ -77,17 +79,12 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     private static final String MIDORI_BIG_ORB = ModHelper.makeImgPath("512", "card_orb_2");
     private static final String MOMOI_ENERGY_ORB = ModHelper.makeImgPath("1024", "cost_orb");
     private static final String MIDORI_ENERGY_ORB = ModHelper.makeImgPath("1024", "cost_orb_2");
-
-
     //模组选项
     public static boolean AutoSort = true;
     public static boolean ShowExpBar = true;
     public static boolean Enable3D = false;
-    public static int SelectedSkin=0;
+    public static int SelectedSkin = 0;
     public static boolean Tutorial = true;
-
-    //shader绘制
-    public static final List<BiConsumer<SpriteBatch, TextureRegion>> postProcessQueue = new ArrayList<>();
 
 
     public BATwinsMod() {
@@ -109,7 +106,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             ShowExpBar = config.getBool(ModHelper.makePath("ShowExpBar"));
             Enable3D = config.getBool(ModHelper.makePath("Enable3D"));
             Tutorial = config.getBool(ModHelper.makePath("Tutorial"));
-            SelectedSkin=config.getInt(ModHelper.makePath("SelectedSkin"));
+            SelectedSkin = config.getInt(ModHelper.makePath("SelectedSkin"));
 
 //            Settings.isDebug=true;
         } catch (Exception e) {
@@ -241,10 +238,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             lang = "ZHS";
 //        } else if(language==GameLanguage.ENG){
 //            lang = "ENG";
-        }else if(language==GameLanguage.ZHT){
-            lang="ZHS";
-        }else if(language==GameLanguage.JPN){
-            lang="JPN";
+        } else if (language == GameLanguage.ZHT) {
+            lang = "ZHS";
+        } else if (language == GameLanguage.JPN) {
+            lang = "JPN";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
@@ -268,10 +265,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         String lang = "ENG";
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
-        }else if(language==GameLanguage.ZHT){
-            lang="ZHS";
-        }else if(language==GameLanguage.JPN){
-            lang="JPN";
+        } else if (language == GameLanguage.ZHT) {
+            lang = "ZHS";
+        } else if (language == GameLanguage.JPN) {
+            lang = "JPN";
         }
         String json = Gdx.files.internal("baModResources/localization/" + lang + "/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
@@ -303,8 +300,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 //        BaseMod.addRelicToCustomPool(new BATwinsRubiksCube(), Enums.BATWINS_MOMOI_CARD);
         BaseMod.addRelicToCustomPool(new BATwinsRetroGame(), Enums.BATWINS_MOMOI_CARD);
         BaseMod.addRelic(new BATwinsBookOfProhibitions(), RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsLearningMaterials(),RelicType.SHARED);
-        BaseMod.addRelicToCustomPool(new BATwinsAdaptability(),Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelic(new BATwinsLearningMaterials(), RelicType.SHARED);
+        BaseMod.addRelicToCustomPool(new BATwinsAdaptability(), Enums.BATWINS_MOMOI_CARD);
     }
 
     @Override
@@ -319,7 +316,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("coin"), ModHelper.makeAudioPath("coin"));
         BaseMod.addAudio(ModHelper.makePath("Momoi_Ex"), ModHelper.makeAudioPath("Momoi_Ex"));
         BaseMod.addAudio(ModHelper.makePath("Midori_Ex"), ModHelper.makeAudioPath("Midori_Ex"));
-        BaseMod.addAudio(ModHelper.makePath("Alice"),ModHelper.makeAudioPath("alice"));
+        BaseMod.addAudio(ModHelper.makePath("Alice"), ModHelper.makeAudioPath("alice"));
     }
 
     @Override
@@ -397,13 +394,13 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void postProcess(SpriteBatch spriteBatch, TextureRegion textureRegion, OrthographicCamera orthographicCamera) {
-        if(!postProcessQueue.isEmpty()){
-            for(BiConsumer<SpriteBatch,TextureRegion> consumer:postProcessQueue){
-                consumer.accept(spriteBatch,textureRegion);
+        if (!postProcessQueue.isEmpty()) {
+            for (BiConsumer<SpriteBatch, TextureRegion> consumer : postProcessQueue) {
+                consumer.accept(spriteBatch, textureRegion);
             }
             postProcessQueue.clear();
-        }else{
-            spriteBatch.draw(textureRegion,0.0F,0.0F);
+        } else {
+            spriteBatch.draw(textureRegion, 0.0F, 0.0F);
         }
         spriteBatch.setProjectionMatrix(orthographicCamera.combined);
 

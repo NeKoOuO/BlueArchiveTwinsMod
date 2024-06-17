@@ -28,7 +28,7 @@ public class BATwinsEasterEgg extends CustomCard {
     public BATwinsEasterEgg() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 1;
-        this.exhaust=true;
+        this.exhaust = true;
     }
 
     @Override

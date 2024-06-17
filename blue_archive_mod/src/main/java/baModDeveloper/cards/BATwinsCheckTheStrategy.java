@@ -28,37 +28,38 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MIDORI;
-    private static final UIStrings uiString=CardCrawlGame.languagePack.getUIString("DiscardAction");
+    private static final UIStrings uiString = CardCrawlGame.languagePack.getUIString("DiscardAction");
+
     public BATwinsCheckTheStrategy() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
-        this.exhaust=true;
+        this.exhaust = true;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 
-        addToBot(new SelectCardsInHandAction(this.magicNumber,uiString.TEXT[0],false,false,this::filter,this::callback));
+        addToBot(new SelectCardsInHandAction(this.magicNumber, uiString.TEXT[0], false, false, this::filter, this::callback));
         addToBot(new DrawCardAction(this.magicNumber));
     }
 
     private void callback(List<AbstractCard> cards) {
-        for(AbstractCard c:cards){
+        for (AbstractCard c : cards) {
             AbstractDungeon.player.hand.moveToDiscardPile(c);
             c.triggerOnManualDiscard();
             GameActionManager.incrementDiscard(false);
         }
-        if(!cards.isEmpty()){
-            boolean allSameColor=true;
-            AbstractCard.CardColor color=cards.get(0).color;
-            for(int i=1;i<cards.size();i++){
-                if(cards.get(i).color!=color){
-                    allSameColor=false;
+        if (!cards.isEmpty()) {
+            boolean allSameColor = true;
+            AbstractCard.CardColor color = cards.get(0).color;
+            for (int i = 1; i < cards.size(); i++) {
+                if (cards.get(i).color != color) {
+                    allSameColor = false;
                     break;
                 }
             }
-            if(allSameColor){
+            if (allSameColor) {
                 addToBot(new DrawCardAction(1));
             }
         }
@@ -72,7 +73,7 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        useMOMOI(abstractPlayer,abstractMonster);
+        useMOMOI(abstractPlayer, abstractMonster);
     }
 
     @Override
@@ -80,10 +81,10 @@ public class BATwinsCheckTheStrategy extends BATwinsModCustomCard {
         if (!upgraded) {
             this.upgradeName();
 //            this.upgradeMagicNumber(1);
-            this.originRawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.originRawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
-            this.exhaust=false;
+            this.exhaust = false;
         }
     }
 

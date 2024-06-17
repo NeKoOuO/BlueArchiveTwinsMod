@@ -98,14 +98,14 @@ public class BATwinsTakeABreak extends BATwinsModCustomCard {
                     }
 
                     for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                        if (!DrawCardAction.drawnCards.contains(c)||c.cost==-2) {
+                        if (!DrawCardAction.drawnCards.contains(c) || c.cost == -2) {
                             canNotSelect.add(c);
                         }
                     }
                     AbstractDungeon.player.hand.group.removeAll(canNotSelect);
-                    if(AbstractDungeon.player.hand.group.isEmpty()){
+                    if (AbstractDungeon.player.hand.group.isEmpty()) {
                         AbstractDungeon.player.hand.group.addAll(canNotSelect);
-                        this.isDone=true;
+                        this.isDone = true;
                         return;
                     }
                     AbstractDungeon.handCardSelectScreen.open(String.format(UISTRING.TEXT[0], 1), 1, false, false, false, false);

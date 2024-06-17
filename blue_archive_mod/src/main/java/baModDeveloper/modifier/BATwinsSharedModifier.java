@@ -26,7 +26,7 @@ public class BATwinsSharedModifier extends AbstractCardModifier {
                 strPos = 0;
                 break;
             case JPN:
-                strPos=2;
+                strPos = 2;
             default:
                 strPos = 1;
                 break;

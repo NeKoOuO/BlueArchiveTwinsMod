@@ -54,7 +54,7 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             for (AbstractCard c : this.p.hand.group) {
                 if ((this.color != null && c.color != this.color || this.type != null && c.type != this.type) ||
-                        c.isInAutoplay || this.removePower && c.type == AbstractCard.CardType.POWER||c.cost==-2) {
+                        c.isInAutoplay || this.removePower && c.type == AbstractCard.CardType.POWER || c.cost == -2) {
                     this.canNotSelectCards.add(c);
                 }
             }

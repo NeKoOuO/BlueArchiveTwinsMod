@@ -85,9 +85,9 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //            AbstractDungeon.player.limbo.group.add(card);
 //            card.current_x = Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
 //            card.current_y = 0.0F * Settings.scale;
-            if(AbstractDungeon.player.limbo.group.isEmpty()){
+            if (AbstractDungeon.player.limbo.group.isEmpty()) {
                 card.target_x = (float) Settings.WIDTH / 2.0F;
-            }else{
+            } else {
                 card.target_x = (float) Settings.WIDTH / 2.0F - 200.0F * Settings.xScale;
             }
             card.target_y = (float) Settings.HEIGHT / 2.0F;
@@ -106,7 +106,7 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
 //            if(card instanceof BATwinsModCustomCard){
 //                ((BATwinsModCustomCard) card).playedByOtherCard=true;
 //            }
-            BATwinsAbstractCardPatch.FieldPatch.dontFadeOutInLimbo.set(this.card,true);
+            BATwinsAbstractCardPatch.FieldPatch.dontFadeOutInLimbo.set(this.card, true);
             if (this.target == null || this.target.isDeadOrEscaped()) {
                 addToTop((AbstractGameAction) new NewQueueCardAction(card, true, false, true));
             } else {

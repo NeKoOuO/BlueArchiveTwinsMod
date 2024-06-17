@@ -20,6 +20,10 @@ import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
 
 public class BATwinsSingleCardViewPopupPatch {
+    public static boolean isCanNotConnectCard(String cost) {
+        return cost.equals("-22");
+    }
+
     @SpirePatch(clz = SingleCardViewPopup.class, method = SpirePatch.CLASS)
     public static class FieldPatch {
         public static String exchangeBtn = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("CardViewBtn")).TEXT[0];
@@ -135,28 +139,26 @@ public class BATwinsSingleCardViewPopupPatch {
             FieldPatch.exchangeHb.get(_instance).render(sb);
         }
     }
-    @SpirePatch(clz = SingleCardViewPopup.class,method = "renderCost")
-    public static class renderCostPatch{
+
+    @SpirePatch(clz = SingleCardViewPopup.class, method = "renderCost")
+    public static class renderCostPatch {
         @SpireInstrumentPatch
-        public static ExprEditor Instrument(){
-            return new ExprEditor(){
+        public static ExprEditor Instrument() {
+            return new ExprEditor() {
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {
-                    if(isMethodCalled(m)){
+                    if (isMethodCalled(m)) {
                         m.replace("{" +
-                                "if(!"+BATwinsSingleCardViewPopupPatch.class.getName()+
+                                "if(!" + BATwinsSingleCardViewPopupPatch.class.getName() +
                                 ".isCanNotConnectCard($3)){$_=$proceed($$);}}");
                     }
                 }
 
-                private boolean isMethodCalled(MethodCall m){
-                    String methodName=m.getMethodName();
+                private boolean isMethodCalled(MethodCall m) {
+                    String methodName = m.getMethodName();
                     return methodName.equals("renderFont");
                 }
             };
         }
-    }
-    public static boolean isCanNotConnectCard(String cost){
-        return cost.equals("-22");
     }
 }

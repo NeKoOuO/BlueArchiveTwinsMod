@@ -4,9 +4,6 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractMonsterPatch;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -52,7 +49,7 @@ public class BATwinsAbstractSchool extends BATwinsModCustomCard {
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         addToBot(new DrawCardAction(this.magicNumber));
-        if(abstractMonster!=null)
+        if (abstractMonster != null)
             BATwinsAbstractMonsterPatch.addPixelMonster(abstractMonster);
     }
 

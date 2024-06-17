@@ -48,7 +48,7 @@ public class BATwinsExperiencePower extends AbstractPower {
         this.amount += stackAmount;
         while (true) {
             if (this.amount >= MAX) {
-                this.levelup(1,false);
+                this.levelup(1, false);
             } else {
                 break;
             }
@@ -76,13 +76,13 @@ public class BATwinsExperiencePower extends AbstractPower {
         this.LEVEL += amount;
         if (clearExp) {
             this.amount = 0;
-        }else{
+        } else {
             this.amount = this.amount - MAX;
         }
         addToTop(new TextAboveCreatureAction(this.owner, DESCRIPTIONS[4]));
 
-        for(AbstractRelic r:AbstractDungeon.player.relics){
-            if(r instanceof BATwinsLevelUpInterface){
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            if (r instanceof BATwinsLevelUpInterface) {
                 ((BATwinsLevelUpInterface) r).triggerOnLevelUp();
             }
         }

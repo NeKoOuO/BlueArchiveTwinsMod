@@ -87,7 +87,7 @@ public class BATwinsExchangeAction extends AbstractGameAction {
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                if(!(c instanceof BATwinsModCustomCard)){
+                if (!(c instanceof BATwinsModCustomCard)) {
                     continue;
                 }
                 ((BATwinsModCustomCard) c).conversionColor();

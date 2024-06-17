@@ -5,9 +5,7 @@ import baModDeveloper.cards.*;
 import baModDeveloper.core.BATwinsEnergyManager;
 import baModDeveloper.effect.BATwinsEasterEggEffect;
 import baModDeveloper.helpers.*;
-import baModDeveloper.patch.BATwinsAbstractCardPatch;
 import baModDeveloper.patch.BATwinsCharacterOptionPatch;
-import baModDeveloper.power.BATwinsBorrowMePower;
 import baModDeveloper.power.BATwinsExperiencePower;
 import baModDeveloper.relic.BATwinsGameMagazine;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
@@ -29,7 +27,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -45,11 +42,9 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -114,18 +109,15 @@ public class BATwinsCharacter extends CustomPlayer {
 //    private AbstractAnimation rendered_anima_momoi;
 //    private AbstractAnimation rendered_anima_midori;
     //3D相关
-    private static final CharacterNormalHelper normal3DCharacter=new CharacterNormalHelper();
-    private static final CharacterMaidHelper maid3DCharacter=new CharacterMaidHelper();
-    private Character3DHelper character3DHelper;
+    private static final CharacterNormalHelper normal3DCharacter = new CharacterNormalHelper();
+    private static final CharacterMaidHelper maid3DCharacter = new CharacterMaidHelper();
     //角色立绘，先暂时使用图片代替，之后使用3d模型替换
     private static final String stand_Img = ModHelper.makeImgPath("char", "standup");
     private static final String empty_Img = ModHelper.makeImgPath("char", "p");
     private static final Color BLUE_BORDER_GLOW_COLOR = new Color(0.2F, 0.9F, 1.0F, 0.25F);
-
-    public BATwinsExperencePanel getExpPanel() {
-        return expPanel;
-    }
-
+    float x = this.drawX - 400.0F * Settings.scale;
+    float y = this.drawY;
+    private Character3DHelper character3DHelper;
     private BATwinsExperencePanel expPanel;
     //排序手牌
     private ColorComparer colorComparer;
@@ -147,12 +139,12 @@ public class BATwinsCharacter extends CustomPlayer {
         //3D相关
 //        character3DHelper.init();
         if (BATwinsMod.Enable3D) {
-            switch (BATwinsMod.SelectedSkin){
+            switch (BATwinsMod.SelectedSkin) {
                 case 0:
-                    this.character3DHelper=normal3DCharacter;
+                    this.character3DHelper = normal3DCharacter;
                     break;
                 case 1:
-                    this.character3DHelper=maid3DCharacter;
+                    this.character3DHelper = maid3DCharacter;
                     break;
             }
             if (!character3DHelper.inited()) {
@@ -194,6 +186,10 @@ public class BATwinsCharacter extends CustomPlayer {
         return BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
+    public BATwinsExperencePanel getExpPanel() {
+        return expPanel;
+    }
+
     public Character3DHelper get3DHelper() {
         return character3DHelper;
     }
@@ -221,7 +217,7 @@ public class BATwinsCharacter extends CustomPlayer {
 //        AbstractAnimation.addAnimation(null);
 
         colorComparer = new ColorComparer();
-        BATwinsExperiencePower.MAX=10;
+        BATwinsExperiencePower.MAX = 10;
         expPanel = new BATwinsExperencePanel(this.drawX - 230 * Settings.scale, this.drawY);
         expPanel.show();
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
@@ -433,8 +429,6 @@ public class BATwinsCharacter extends CustomPlayer {
         }
     }
 
-    float x=this.drawX-400.0F*Settings.scale;
-    float y=this.drawY;
     @Override
     public void update() {
         super.update();
@@ -455,11 +449,11 @@ public class BATwinsCharacter extends CustomPlayer {
 
         }
         if (BATwinsMod.Enable3D && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
-            character3DHelper.setPosition(this.drawX-400.0F*Settings.scale,this.drawY-260.0F*Settings.scale);
+            character3DHelper.setPosition(this.drawX - 400.0F * Settings.scale, this.drawY - 260.0F * Settings.scale);
             character3DHelper.update();
         }
 
-        if(this.hb.hovered&& InputHelper.justClickedRight){
+        if (this.hb.hovered && InputHelper.justClickedRight) {
             this.playReactionAnima();
         }
     }
