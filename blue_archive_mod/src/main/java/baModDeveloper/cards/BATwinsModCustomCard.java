@@ -189,9 +189,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             temp.bringOutCard = true;
             temp.GradientColor = this.GradientColor;
             temp.glowColor = this.glowColor.cpy();
-            this.cardToBringOut.forEach(card -> temp.cardToBringOut.add(card.makeStatEquivalentCopy()));
+            this.cardToBringOut.forEach(card ->temp.addBringOutCard(card.makeStatEquivalentCopy()));
 //            temp.cardToBringOut.add this.cardToBringOut;
-            temp.cardsToPreview = this.cardsToPreview.makeStatEquivalentCopy();
+//            temp.cardsToPreview = this.cardsToPreview.makeStatEquivalentCopy();
         }
 //        temp.initializeDescription();
         return temp;
