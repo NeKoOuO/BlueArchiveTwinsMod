@@ -9,7 +9,7 @@ import baModDeveloper.patch.BATwinsCharacterOptionPatch;
 import baModDeveloper.power.BATwinsExperiencePower;
 import baModDeveloper.relic.BATwinsGameMagazine;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
-import baModDeveloper.ui.panels.BATwinsExperencePanel;
+import baModDeveloper.ui.panels.BATwinsExperiencePanel;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMidoriOrb;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMomoiOrb;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
@@ -118,7 +118,7 @@ public class BATwinsCharacter extends CustomPlayer {
     float x = this.drawX - 400.0F * Settings.scale;
     float y = this.drawY;
     private Character3DHelper character3DHelper;
-    private BATwinsExperencePanel expPanel;
+    private BATwinsExperiencePanel expPanel;
     //排序手牌
     private ColorComparer colorComparer;
     private EnergyOrbInterface energyOrbMomoi;
@@ -186,7 +186,7 @@ public class BATwinsCharacter extends CustomPlayer {
         return BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
-    public BATwinsExperencePanel getExpPanel() {
+    public BATwinsExperiencePanel getExpPanel() {
         return expPanel;
     }
 
@@ -218,7 +218,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
         colorComparer = new ColorComparer();
         BATwinsExperiencePower.MAX = 10;
-        expPanel = new BATwinsExperencePanel(this.drawX - 230 * Settings.scale, this.drawY);
+        expPanel = new BATwinsExperiencePanel(this.drawX - 230 * Settings.scale, this.drawY);
         expPanel.show();
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
         this.dialogY = this.drawY + 170.0F * Settings.scale;

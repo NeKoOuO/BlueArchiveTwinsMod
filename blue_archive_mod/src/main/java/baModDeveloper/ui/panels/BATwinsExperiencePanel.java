@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
 
 import static com.megacrit.cardcrawl.helpers.FontHelper.prepFont;
 
-public class BATwinsExperencePanel extends AbstractPanel {
+public class BATwinsExperiencePanel extends AbstractPanel {
     private static final String expPanelEmptyPath = ModHelper.makeImgPath("UI", "experencePanel_empty");
     private static final String expPanelFullPath = ModHelper.makeImgPath("UI", "experencePanel_full");
     private static final Texture expPanelEmpty = ImageMaster.loadImage(expPanelEmptyPath);
@@ -35,7 +35,7 @@ public class BATwinsExperencePanel extends AbstractPanel {
     private Color fontColor;
     private int MaxExp;
 
-    public BATwinsExperencePanel(float show_x, float show_y) {
+    public BATwinsExperiencePanel(float show_x, float show_y) {
         super(show_x, show_y, -480 * Settings.scale, 200 * Settings.scale, 200.0F * Settings.yScale, 12.0F * Settings.scale, null, true);
 
         this.expAmount = 0;

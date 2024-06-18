@@ -3,7 +3,7 @@ package baModDeveloper.power;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.BATwinsLevelUpInterface;
 import baModDeveloper.helpers.ModHelper;
-import baModDeveloper.ui.panels.BATwinsExperencePanel;
+import baModDeveloper.ui.panels.BATwinsExperiencePanel;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -88,7 +88,7 @@ public class BATwinsExperiencePower extends AbstractPower {
         }
         updateDescription();
         if (AbstractDungeon.player instanceof BATwinsCharacter) {
-            BATwinsExperencePanel.LevelUp();
+            BATwinsExperiencePanel.LevelUp();
         }
     }
 }
