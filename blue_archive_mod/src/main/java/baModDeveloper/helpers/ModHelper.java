@@ -12,11 +12,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ModHelper {
+    public static final Logger logger = LogManager.getLogger(BATwinsMod.class.getName());
     public static String MOMOI_FLODER = "momoi";
     public static String MIDORI_FLODER = "midori";
-
-    public static final Logger logger = LogManager.getLogger(BATwinsMod.class.getName());
-
 
     public static String makePath(String id) {
         return "BATwinsMod:" + id;
@@ -81,7 +79,7 @@ public class ModHelper {
         return makeAudioPath(filename, "ogg");
     }
 
-    public static Logger getLogger(){
+    public static Logger getLogger() {
         return logger;
     }
 }

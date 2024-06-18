@@ -21,7 +21,7 @@ import java.io.IOException;
 public class BATwinsCharacterSelectScreen implements ISubscriber {
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("ModeSelectionPrompt"));
-    private static final UIStrings skinSelector=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("Skins"));
+    private static final UIStrings skinSelector = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("Skins"));
     public static BATwinsCharacterSelectScreen instance;
     private Hitbox checkbox;
     private boolean checked;
@@ -47,12 +47,6 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
         initSkinSelector();
     }
 
-    private void initSkinSelector(){
-        this.leftArrow=new Hitbox(50*Settings.scale,50*Settings.scale);
-        this.rightArrow=new Hitbox(50*Settings.scale,50*Settings.scale);
-        this.leftArrow.move(this.current_x+200*Settings.scale,this.current_y);
-        this.rightArrow.move(this.current_x+400*Settings.scale,this.current_y);
-    }
     public static BATwinsCharacterSelectScreen getInstance() {
         if (instance == null) {
             try {
@@ -62,6 +56,13 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
             }
         }
         return instance;
+    }
+
+    private void initSkinSelector() {
+        this.leftArrow = new Hitbox(50 * Settings.scale, 50 * Settings.scale);
+        this.rightArrow = new Hitbox(50 * Settings.scale, 50 * Settings.scale);
+        this.leftArrow.move(this.current_x + 200 * Settings.scale, this.current_y);
+        this.rightArrow.move(this.current_x + 400 * Settings.scale, this.current_y);
     }
 
     public void update() {
@@ -91,12 +92,12 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
                 }
 
             }
-            if(this.leftArrow.clicked||this.rightArrow.clicked){
-                int add=this.leftArrow.clicked?-1:1;
-                this.leftArrow.clicked=false;
-                this.rightArrow.clicked=false;
+            if (this.leftArrow.clicked || this.rightArrow.clicked) {
+                int add = this.leftArrow.clicked ? -1 : 1;
+                this.leftArrow.clicked = false;
+                this.rightArrow.clicked = false;
                 CardCrawlGame.sound.play("UI_CLICK_1");
-                BATwinsMod.SelectedSkin=Math.abs((BATwinsMod.SelectedSkin+add)%skinSelector.TEXT.length);
+                BATwinsMod.SelectedSkin = Math.abs((BATwinsMod.SelectedSkin + add) % skinSelector.TEXT.length);
                 spireConfig.setInt(ModHelper.makePath("SelectedSkin"), BATwinsMod.SelectedSkin);
                 try {
                     spireConfig.save();
@@ -129,13 +130,13 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
             }
             this.checkbox.render(sb);
 
-            if(BATwinsMod.Enable3D){
+            if (BATwinsMod.Enable3D) {
                 renderSkinSelector(sb);
             }
         }
     }
 
-    private void renderSkinSelector(SpriteBatch sb){
+    private void renderSkinSelector(SpriteBatch sb) {
         if (!this.leftArrow.hovered && !Settings.isControllerMode) {
             sb.setColor(Color.LIGHT_GRAY);
         } else {

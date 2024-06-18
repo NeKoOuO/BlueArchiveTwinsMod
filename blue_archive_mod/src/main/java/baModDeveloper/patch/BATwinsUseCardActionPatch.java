@@ -1,6 +1,5 @@
 package baModDeveloper.patch;
 
-import baModDeveloper.cards.BATwinsModCustomCard;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;

@@ -257,8 +257,9 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             this.tipHitbox_MOMOI.clickStarted = false;
             if (BATwinsEnergyPanel.selectedEnergySlot != EnergyType.MOMOI) {
                 BATwinsEnergyPanel.selectedEnergySlot = EnergyType.MOMOI;
-                updateSelectedEnergyIcon();
+//                updateSelectedEnergyIcon();
             }
+            CardCrawlGame.sound.play("UI_CLICK_1");
 //            updateSelectedEnergyIcon();
         } else if (this.tipHitbox_MIDORI.clicked) {
 
@@ -266,9 +267,10 @@ public class BATwinsEnergyPanel extends EnergyPanel {
             this.tipHitbox_MIDORI.clickStarted = false;
             if (BATwinsEnergyPanel.selectedEnergySlot != EnergyType.MIDORI) {
                 BATwinsEnergyPanel.selectedEnergySlot = EnergyType.MIDORI;
-                updateSelectedEnergyIcon();
+//                updateSelectedEnergyIcon();
 
             }
+            CardCrawlGame.sound.play("UI_CLICK_1");
 //            updateSelectedEnergyIcon();
         }
 

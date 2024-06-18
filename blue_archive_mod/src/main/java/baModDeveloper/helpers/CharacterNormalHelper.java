@@ -6,12 +6,9 @@ import com.badlogic.gdx.graphics.g3d.attributes.BlendingAttribute;
 import java.util.HashMap;
 import java.util.Map;
 
-import static baModDeveloper.character.BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
-import static baModDeveloper.character.BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
 import static baModDeveloper.helpers.Character3DHelper.AnimationName.*;
-import static baModDeveloper.helpers.Character3DHelper.AnimationName.PANIC;
 
-public class CharacterNormalHelper extends Character3DHelper{
+public class CharacterNormalHelper extends Character3DHelper {
     protected static Map<AnimationName, String[]> AnimationNames = new HashMap<>();
 
     static {
@@ -27,7 +24,7 @@ public class CharacterNormalHelper extends Character3DHelper{
         AnimationNames.put(DYING, new String[]{"Armature|Momoi_Original_Vital_Dying_ing", "Armature|Midori_Original_Vital_Dying_ing"});
         AnimationNames.put(RELOAD, new String[]{"Armature|Momoi_Original_Normal_Reload", "Armature|Midori_Original_Normal_Reload"});
         AnimationNames.put(PANIC, new String[]{"Armature|Momoi_Original_Vital_Panic", "Armature|Midori_Original_Vital_Panic"});
-        AnimationNames.put(REACTION,new String[]{"Armature|Momoi_Original_Victory_Start","Armature|Midori_Original_Victory_Start"});
+        AnimationNames.put(REACTION, new String[]{"Armature|Momoi_Original_Victory_Start", "Armature|Midori_Original_Victory_Start"});
     }
 
     @Override
@@ -35,8 +32,8 @@ public class CharacterNormalHelper extends Character3DHelper{
         this.momoiController = new ModelController("baModResources/img/char/model/momoi.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[0]);
         this.midoriController = new ModelController("baModResources/img/char/model/midori.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[1]);
 
-        this.momoiController.setAttribute("Month",new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
-        this.midoriController.setAttribute("Month",new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
+        this.momoiController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
+        this.midoriController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
         super.init();
 
     }

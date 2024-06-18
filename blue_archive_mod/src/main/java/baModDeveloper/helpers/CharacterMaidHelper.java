@@ -7,12 +7,9 @@ import com.badlogic.gdx.graphics.g3d.attributes.IntAttribute;
 import java.util.HashMap;
 import java.util.Map;
 
-import static baModDeveloper.character.BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
-import static baModDeveloper.character.BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
 import static baModDeveloper.helpers.Character3DHelper.AnimationName.*;
-import static baModDeveloper.helpers.Character3DHelper.AnimationName.PANIC;
 
-public class CharacterMaidHelper extends Character3DHelper{
+public class CharacterMaidHelper extends Character3DHelper {
     protected static Map<AnimationName, String[]> AnimationNames = new HashMap<>();
 
     static {
@@ -28,17 +25,17 @@ public class CharacterMaidHelper extends Character3DHelper{
         AnimationNames.put(DYING, new String[]{"bone_root|CH0201_Vital_Dying_Ing", "bone_root|CH0202_Vital_Dying_Ing"});
         AnimationNames.put(RELOAD, new String[]{"bone_root|CH0201_Normal_Reload", "bone_root|CH0202_Normal_Reload"});
         AnimationNames.put(PANIC, new String[]{"bone_root|CH0201_Vital_Panic", "bone_root|CH0202_Vital_Panic"});
-        AnimationNames.put(REACTION,new String[]{"bone_root|CH0201_Victory_Start","bone_root|CH0202_Victory_Start"});
+        AnimationNames.put(REACTION, new String[]{"bone_root|CH0201_Victory_Start", "bone_root|CH0202_Victory_Start"});
     }
 
     @Override
     public void init() {
         this.momoiController = new ModelController("baModResources/img/char/model/momoi_maid.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[0]);
         this.midoriController = new ModelController("baModResources/img/char/model/midori_maid.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[1]);
-        this.momoiController.setAttribute("Month",new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
-        this.midoriController.setAttribute("Month",new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
-        this.momoiController.setAttribute("CH0201_Body",new IntAttribute(IntAttribute.CullFace,0));
-        this.midoriController.setAttribute("CH0202_Body",new IntAttribute(IntAttribute.CullFace,0));
+        this.momoiController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
+        this.midoriController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
+        this.momoiController.setAttribute("CH0201_Body", new IntAttribute(IntAttribute.CullFace, 0));
+        this.midoriController.setAttribute("CH0202_Body", new IntAttribute(IntAttribute.CullFace, 0));
         super.init();
 
     }

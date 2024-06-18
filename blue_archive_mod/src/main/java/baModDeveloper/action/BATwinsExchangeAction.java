@@ -87,6 +87,9 @@ public class BATwinsExchangeAction extends AbstractGameAction {
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
+                if (!(c instanceof BATwinsModCustomCard)) {
+                    continue;
+                }
                 ((BATwinsModCustomCard) c).conversionColor();
                 //如果有技艺大师buff则升级
                 if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(BATwinsMasterCraftsmanshipPower.POWER_ID)) {

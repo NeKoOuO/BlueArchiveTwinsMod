@@ -189,9 +189,9 @@ public abstract class BATwinsModCustomCard extends CustomCard {
             temp.bringOutCard = true;
             temp.GradientColor = this.GradientColor;
             temp.glowColor = this.glowColor.cpy();
-            this.cardToBringOut.forEach(card -> temp.cardToBringOut.add(card.makeStatEquivalentCopy()));
+            this.cardToBringOut.forEach(card -> temp.addBringOutCard(card.makeStatEquivalentCopy()));
 //            temp.cardToBringOut.add this.cardToBringOut;
-            temp.cardsToPreview = this.cardsToPreview.makeStatEquivalentCopy();
+//            temp.cardsToPreview = this.cardsToPreview.makeStatEquivalentCopy();
         }
 //        temp.initializeDescription();
         return temp;
@@ -410,8 +410,8 @@ public abstract class BATwinsModCustomCard extends CustomCard {
     public void renderCardPreview(SpriteBatch sb) {
         if (this.cardToBringOut.size() <= 1) {
             super.renderCardPreview(sb);
-            if(!this.cardToBringOut.isEmpty()&&this.cardToBringOut.get(0)==this.cardsToPreview){
-                this.renderCardChain(sb,this.cardsToPreview);
+            if (!this.cardToBringOut.isEmpty() && this.cardToBringOut.get(0) == this.cardsToPreview) {
+                this.renderCardChain(sb, this.cardsToPreview);
             }
             return;
         }

@@ -1,7 +1,6 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.action.BATwinsPlayHandCardAction;
-import baModDeveloper.action.BATwinsRemoveHandCardAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.power.BATwinsExperiencePower;

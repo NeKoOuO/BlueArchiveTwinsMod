@@ -81,7 +81,7 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
         this.buttonHb.move(Settings.WIDTH / 2.0F, Settings.HEIGHT / 5.0F);
         this.imgX = 0;
         this.imgY = Settings.HEIGHT / 3.0F;
-        if (BATwinsMod.Enable3D&&AbstractDungeon.player instanceof BATwinsCharacter) {
+        if (BATwinsMod.Enable3D && AbstractDungeon.player instanceof BATwinsCharacter) {
             this.character3DHelper = ((BATwinsCharacter) AbstractDungeon.player).get3DHelper();
             this.character3DHelper.resetModelPosition(-1000.0F, -1000.0F, BATwinsCharacter.Enums.BATWINS_MIDORI_CARD);
         }
@@ -117,7 +117,7 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
             case DONE:
             case LEAVE:
             case LOOK:
-                if (this.character3DHelper!=null) {
+                if (this.character3DHelper != null) {
                     this.character3DHelper.setStandAnima(Character3DHelper.AnimationName.NORMAL_IDLE, BATwinsCharacter.Enums.BATWINS_MOMOI_CARD);
                     this.character3DHelper.resetModelPosition(-150 * Settings.scale, 0, BATwinsCharacter.Enums.BATWINS_MIDORI_CARD);
                 }
@@ -135,7 +135,7 @@ public class BATwinsHurdleGame extends AbstractImageEvent {
                 super.update();
                 break;
             case GAMING:
-                if(this.character3DHelper==null){
+                if (this.character3DHelper == null) {
                     this.currentScreen = CurrentScreen.DONE;
                     openMap();
                     return;
