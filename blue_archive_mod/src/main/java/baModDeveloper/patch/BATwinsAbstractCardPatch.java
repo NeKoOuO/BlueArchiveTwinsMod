@@ -1,7 +1,9 @@
 package baModDeveloper.patch;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.power.BATwinsBorrowMePower;
 import baModDeveloper.power.BATwinsFlatFallPower;
+import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -42,22 +44,43 @@ public class BATwinsAbstractCardPatch {
 
     @SpirePatch(clz = AbstractCard.class, method = "hasEnoughEnergy")
     public static class hasEnoughEnergyPatch {
-        @SpireInsertPatch(rloc = 16)
+        @SpireInsertPatch(rloc = 34)
         public static SpireReturn<Boolean> hasEnoughEnergyPatch(AbstractCard _instance) {
-            if (AbstractDungeon.player.hasPower(BATwinsFlatFallPower.POWER_ID) && _instance.type == AbstractCard.CardType.ATTACK) {
-                if (AbstractDungeon.player.getPower(BATwinsFlatFallPower.POWER_ID).amount == 0) {
-                    _instance.cantUseMessage = BATwinsModCustomCard.flatFallMsg.TEXT[0];
-                    BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(_instance, false);
-                    return SpireReturn.Return(false);
+            if(AbstractDungeon.overlayMenu.energyPanel instanceof BATwinsEnergyPanel){
+                if(_instance.freeToPlay()||_instance.isInAutoplay){
+                    SpireReturn.Return(true);
                 }
+                boolean hasEnoughEnergy=true;
+                if(_instance instanceof BATwinsModCustomCard){
+                    if(((BATwinsModCustomCard) _instance).modifyEnergyType== BATwinsEnergyPanel.EnergyType.SHARE||AbstractDungeon.player.hasPower(BATwinsBorrowMePower.POWER_ID)){
+                        if (BATwinsEnergyPanel.MomoiCount + BATwinsEnergyPanel.MidoriCount >= _instance.costForTurn) {
+                            _instance.cantUseMessage = AbstractCard.TEXT[11];
+                            return SpireReturn.Return(true);
+                        }
+                    }else if(((BATwinsModCustomCard) _instance).modifyEnergyType== BATwinsEnergyPanel.EnergyType.MOMOI){
+                        if (BATwinsEnergyPanel.MomoiCount + BATwinsEnergyPanel.MidoriCount / 2 >= _instance.costForTurn) {
+                            _instance.cantUseMessage = AbstractCard.TEXT[11];
+                            return SpireReturn.Return(true);
+                        }
+                    }else if(((BATwinsModCustomCard) _instance).modifyEnergyType== BATwinsEnergyPanel.EnergyType.MIDORI){
+                        if (BATwinsEnergyPanel.MidoriCount + BATwinsEnergyPanel.MomoiCount / 2 >= _instance.costForTurn) {
+                            _instance.cantUseMessage = AbstractCard.TEXT[11];
+                            return SpireReturn.Return(true);
+                        }
+                    }
+                }else{
+                    if (BATwinsEnergyPanel.MomoiCount + BATwinsEnergyPanel.MidoriCount >= _instance.costForTurn) {
+                        _instance.cantUseMessage = AbstractCard.TEXT[11];
+                        return SpireReturn.Return(true);
+                    }
+                }
+
+                _instance.cantUseMessage=AbstractCard.TEXT[11];
+                return SpireReturn.Return(false);
             }
             return SpireReturn.Continue();
         }
 
-        @SpireInsertPatch(rloc = 13)
-        public static void hasEnoughEnergyPatch2(AbstractCard _instance) {
-            BATwinsAbstractCardPatch.FieldPatch.blockTheOriginalEffect.set(_instance, false);
-        }
     }
 
 //    @SpirePatch(clz = AbstractCard.class,method = "use")
