@@ -48,7 +48,7 @@ public class BATwinsAbstractCardPatch {
         public static SpireReturn<Boolean> hasEnoughEnergyPatch(AbstractCard _instance) {
             if(AbstractDungeon.overlayMenu.energyPanel instanceof BATwinsEnergyPanel){
                 if(_instance.freeToPlay()||_instance.isInAutoplay){
-                    SpireReturn.Return(true);
+                    return SpireReturn.Return(true);
                 }
                 boolean hasEnoughEnergy=true;
                 if(_instance instanceof BATwinsModCustomCard){
