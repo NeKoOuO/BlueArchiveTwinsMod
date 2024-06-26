@@ -142,5 +142,12 @@
 		"DESCRIPTIONS":[
 			"升级后给予2 #y经验值 。"
 		]
+	},
+	"BATwinsMod:Telescope": {
+		"NAME": "放大镜",
+		"FLAVOR": "emmm",
+		"DESCRIPTIONS": [
+			"加 [E] ，要近视了。"
+		]
 	}
 }
