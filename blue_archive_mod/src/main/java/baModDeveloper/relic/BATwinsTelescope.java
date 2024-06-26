@@ -49,8 +49,6 @@ public class BATwinsTelescope extends CustomRelic {
         spriteBatch.setShader(shaderProgram);
         shaderProgram.setUniformf("iResolution", Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         shaderProgram.setUniformf("iMouse", InputHelper.mX,InputHelper.mY);
-        shaderProgram.setUniformf("redius",200.0F);
-        shaderProgram.setUniformf("strength",2.0F);
         spriteBatch.draw(textureRegion, 0.0F, 0.0F);
         spriteBatch.setShader(null);
     }
