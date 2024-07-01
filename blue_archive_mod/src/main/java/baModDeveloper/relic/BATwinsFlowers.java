@@ -1,29 +1,22 @@
 package baModDeveloper.relic;
 
-import baModDeveloper.BATwinsMod;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
 import basemod.abstracts.CustomRelic;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.EnergyManager;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.input.InputHelper;
 
-import java.awt.*;
 import java.lang.reflect.Field;
 
-public class BATwinsTelescope extends CustomRelic {
-    public static final String ID= ModHelper.makePath("Telescope");
-    private static final Texture texture=TextureLoader.getTexture(ModHelper.makeImgPath("relic","MidorisGameConsole"));
-    private static final Texture outline= TextureLoader.getTexture(ModHelper.makeImgPath("relic","MidorisGameConsole_p"));
+public class BATwinsFlowers extends CustomRelic {
+    public static final String ID= ModHelper.makePath("Flowers");
+    private static final Texture texture=TextureLoader.getTexture(ModHelper.makeImgPath("relic","Flowers"));
+    private static final Texture outline= TextureLoader.getTexture(ModHelper.makeImgPath("relic","Flowers_p"));
     private static final RelicTier type=RelicTier.BOSS;
-    private static ShaderProgram shaderProgram;
     private static Color startColor=Color.WHITE.cpy();
     private static Color endColor=Color.BLUE.cpy();
     private static Color color=startColor;
@@ -31,7 +24,7 @@ public class BATwinsTelescope extends CustomRelic {
     private static int rgb=0;
     private Field field;
 
-    public BATwinsTelescope() {
+    public BATwinsFlowers() {
         super(ID, texture,outline,type, LandingSound.MAGICAL);
 //        if (shaderProgram == null) {
 //            shaderProgram = new ShaderProgram(Gdx.files.internal("baModResources/shader/telescope/vertex.glsl"), Gdx.files.internal("baModResources/shader/telescope/fragment.glsl"));
@@ -50,12 +43,31 @@ public class BATwinsTelescope extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0]+DESCRIPTIONS[1];
+        return DESCRIPTIONS[0];
     }
 
-    @Override
-    public void onEquip() {
 
+
+    @Override
+    public void atTurnStart() {
+        boolean gainEnergy=AbstractDungeon.player.drawPile.group.stream().allMatch(card -> {
+            try {
+                return !field.get(card).equals(Settings.CREAM_COLOR);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        gainEnergy=gainEnergy&&AbstractDungeon.player.discardPile.group.stream().allMatch(card -> {
+            try {
+                return !field.get(card).equals(Settings.CREAM_COLOR);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        if(gainEnergy){
+            this.flash();
+            addToBot(new DrawCardAction(1));
+        }
     }
 
     @Override
