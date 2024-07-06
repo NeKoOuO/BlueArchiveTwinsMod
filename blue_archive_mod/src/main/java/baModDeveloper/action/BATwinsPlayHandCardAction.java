@@ -74,9 +74,6 @@ public class BATwinsPlayHandCardAction extends AbstractGameAction {
         if (AbstractDungeon.player.hasRelic(BATwinsRubiksCube.ID)) {
             AbstractDungeon.player.getRelic(BATwinsRubiksCube.ID).onTrigger();
         }
-        if (this.target == null) {
-            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
-        }
         if (!card.isInAutoplay) {
             this.card.applyPowers();
             this.card.calculateCardDamage((AbstractMonster) this.target);

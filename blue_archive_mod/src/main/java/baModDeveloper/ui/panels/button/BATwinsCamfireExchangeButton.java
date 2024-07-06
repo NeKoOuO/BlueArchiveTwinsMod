@@ -1,6 +1,6 @@
 package baModDeveloper.ui.panels.button;
 
-import baModDeveloper.effect.BATwinsCamfireExchangeEffect;
+import baModDeveloper.effect.BATwinsCampfireExchangeEffect;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -23,7 +23,7 @@ public class BATwinsCamfireExchangeButton extends AbstractCampfireOption {
     @Override
     public void useOption() {
         if (this.usable) {
-            AbstractDungeon.effectList.add(new BATwinsCamfireExchangeEffect());
+            AbstractDungeon.effectList.add(new BATwinsCampfireExchangeEffect());
         }
     }
 

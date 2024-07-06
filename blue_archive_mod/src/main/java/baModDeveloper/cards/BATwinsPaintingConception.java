@@ -31,7 +31,7 @@ public class BATwinsPaintingConception extends BATwinsModCustomCard {
 
     public BATwinsPaintingConception() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock = 3;
+        this.baseBlock = 4;
         this.block = this.baseBlock;
         this.baseMagicNumber = this.magicNumber = 1;
     }

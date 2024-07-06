@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-public class BATwinsCamfireExchangeEffect extends AbstractGameEffect {
+public class BATwinsCampfireExchangeEffect extends AbstractGameEffect {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("ExchangeEffect"));
     private static final String[] TEXT = uiStrings.TEXT;
 
@@ -29,7 +29,7 @@ public class BATwinsCamfireExchangeEffect extends AbstractGameEffect {
     private Color screenColor = AbstractDungeon.fadeColor.cpy();
     private boolean momoiSound = false, midoriSound = false;
 
-    public BATwinsCamfireExchangeEffect() {
+    public BATwinsCampfireExchangeEffect() {
         this.duration = 1.5F;
         this.screenColor.a = 0.0F;
         AbstractDungeon.overlayMenu.proceedButton.hide();
