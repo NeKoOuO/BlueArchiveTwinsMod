@@ -142,5 +142,41 @@
 		"DESCRIPTIONS":[
 			"升级后给予2 #y经验值 。"
 		]
+	},
+	"BATwinsMod:RankIcon1": {
+		"NAME": "总力战大师",
+		"FLAVOR": "可以不用做爱丽丝的伙伴了。",
+		"DESCRIPTIONS": [
+			"上次游玩获得了%d分：战斗胜利后给予20金币，增加1个双选的卡牌奖励。",
+			"没有查询到上次游玩的记录，给予"
+		]
+	},
+	"BATwinsMod:RankIcon2": {
+		"NAME": "总力战高手",
+		"FLAVOR": "嘛，普普通通吧。",
+		"DESCRIPTIONS": [
+			"上次游玩获得了%d分：战斗胜利后给予20金币，增加1个单选的卡牌奖励。"
+		]
+	},
+	"BATwinsMod:RankIcon3": {
+		"NAME": "总力站低手",
+		"FLAVOR": "要好好培养角色啊。",
+		"DESCRIPTIONS": [
+			"上次游玩获得了%d分：战斗胜利后给予20金币。"
+		]
+	},
+	"BATwinsMod:RankIcon4": {
+		"NAME": "总力战低低手",
+		"FLAVOR": "是忘记打了吗？",
+		"DESCRIPTIONS": [
+			"上次游玩获得了%d分：战斗胜利后给予10金币。"
+		]
+	},
+	"BATwinsMod:RankIcon": {
+		"NAME": "总力战徽章",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"根据你上一把的得分获得不同效果。"
+		]
 	}
 }
