@@ -178,5 +178,12 @@
 		"DESCRIPTIONS": [
 			"根据你上一把的得分获得不同效果。"
 		]
+	},
+	"BATwinsMod:FullScoreAnswer": {
+		"NAME": "满分答卷",
+		"FLAVOR": "我也是能做到的！",
+		"DESCRIPTIONS": [
+			"战斗开始时获得 #b1 #y力量 #b1 #y敏捷 ，本场战斗第一次受伤后失去 #b1 #y力量 ， #b1 #y敏捷 。"
+		]
 	}
 }
