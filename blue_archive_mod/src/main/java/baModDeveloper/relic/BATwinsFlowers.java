@@ -74,7 +74,7 @@ public class BATwinsFlowers extends CustomRelic {
     public void update() {
         super.update();
 
-        if(AbstractDungeon.player!=null){
+        if(AbstractDungeon.player!=null&&AbstractDungeon.player.relics.contains(this)){
             rotate+=0.01F;
             color=blendColors(startColor,endColor,rotate);
             AbstractDungeon.player.hand.group.forEach(card -> {
