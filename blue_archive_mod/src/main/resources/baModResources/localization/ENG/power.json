@@ -2,18 +2,18 @@
     "BATwinsMod:BurnPower":{
         "NAME":"Burn",
         "DESCRIPTIONS":[
-            "At the end of the turn, deal ","damage, then decrease the amount by 1. Upon death, deal damage to other enemies equal to twice the amount."
+            "At the end of the turn, deal #b"," damage, then decrease the amount by #y1 . Upon death, deal damage to other enemies equal to #ytwice the amount."
         ]
     },
     "BATwinsMod:DeveloperCollaborationPower":{
         "NAME":"Developer collaboration",
         "DESCRIPTIONS":[
-            "After alternating between playing MomoiCard and MidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase ",
-            "%.",
+            "After alternating between playing #rMomoiCard and #gMidoriCard in battle,the damage dealt by the cards this turn and the block of gian increase #b",
+            " %.",
             "(The last card played is:",
             ")",
-            "MomoiCard",
-            "MidoriCard",
+            "#rMomoiCard",
+            "#gMidoriCard",
             "ColorLess",
             "Curses",
             "OtherCard",
@@ -24,41 +24,41 @@
     "BATwinsMod:ArtPolishingPower":{
         "NAME":"Art polishing",
         "DESCRIPTIONS":[
-            "When applying a status effect, apply to the target ",
-            "poison. This effect does not trigger due to this power"
+            "When applying a status effect, apply to the target #b",
+            " poison. This effect does not trigger due to this power"
         ]
     },
     "BATwinsMod:GainTENextTurnPower":{
         "NAME":"Next turn's energy(MOMOI)",
         "DESCRIPTIONS":[
-            "Next turn gain ",
-            "MOMOI Energy."
+            "Next turn gain #b",
+            " MOMOI Energy."
         ]
     },
     "BATwinsMod:GainLENextTurnPower":{
         "NAME":"Next turn's energy(MIDORI)",
         "DESCRIPTIONS":[
-            "Next turn gain ",
-            "MIDORI Energy."
+            "Next turn gain #b",
+            " MIDORI Energy."
         ]
     },
     "BATwinsMod:ArtPolishingExchangePower":{
         "NAME":"Art polishing(Exchage)",
         "DESCRIPTIONS":[
-            "When applying a status effect, apply to the target ",
+            "When applying a status effect, apply to the target #b",
             " burn. This effect does not trigger due to this power."
         ]
     },
 	"BATwinsMod:OnceMorePower":{
 		"NAME":"Once More",
 		"DESCRIPTIONS":[
-			"At the end of the turn, trigger burn on all enemies."
+			"At the end of the turn, trigger #yburn on all enemies."
 		]
 	},
 	"BATwinsMod:OnceMoreExchangePower":{
 		"NAME":"Once More (Exchange)",
 		"DESCRIPTIONS":[
-			"At the end of the turn, trigger poison on all enemies."
+			"At the end of the turn, trigger #ypoison on all enemies."
 		]
 	},
     "BATwinsMod:BugFixPower":{
@@ -71,7 +71,7 @@
 	"BATwinsMod:ExperiencePower":{
 		"NAME":"Experience",
 		"DESCRIPTIONS":[
-			"When playing a MOMOI or MDIORI card, gain experience points equal to its energy cost.\n Current: LV",
+			"When playing a #rMOMOI or #gMDIORI card, gain experience points equal to its energy cost.\n Current: LV",
 			"(",
 			"/",
 			")\n Card's damage and block increase by the level number.",
@@ -81,21 +81,21 @@
 	"BATwinsMod:SinglePlayerGamePower":{
 		"NAME":"Single Player Game",
 		"DESCRIPTIONS":[
-			"After playing a card, if there is no Momoi Card or Midori Card in your hand, gain ",
-			"block."
+			"After playing a card, if there is no Momoi Card or Midori Card in your hand, gain #b",
+			" block."
 		]
 	},
 	"BATwinsMod:CoolingTimePower":{
 		"NAME":"Next Turn Addition to Hand",
 		"DESCRIPTIONS":[
-			"At the start of the next turn, add ",
-			"to your hand (unless exhausted)."
+			"At the start of the next turn, add #y",
+			" to your hand (unless exhausted)."
 		]
 	},
 	"BATwinsMod:DoubleExperiencePower":{
 		"NAME":"Double Experience",
 		"DESCRIPTIONS":[
-			"Experience gained is doubled."
+			"Experience gained is #ydoubled ."
 		]
 	},
 	"BATwinsMod:DefensiveCounterattackPower":{
@@ -128,8 +128,8 @@
 	"BATwinsMod:SeeYouHaveASharenPower": {
 		"NAME": "Each to their own!",
 		"DESCRIPTIONS": [
-			"The next ",
-			"single-target attack cards played this turn will hit all enemies once."
+			"The next #b",
+			" single-target attack cards played this turn will hit all enemies once."
 		]
 	},
 	"BATwinsMod:ReadingDocumentsPower": {
@@ -147,13 +147,13 @@
 	"BATwinsMod:IntegratingAndIntegratingPower":{
 		"NAME":"Integrated Mastery",
 		"DESCRIPTIONS":[
-			"When playing a card with an energy cost greater than 1 after exchanging, add %d cards of the original color to your hand, and apply Ethereal and Exhaust."
+			"When playing a card with an energy cost greater than 1 after exchanging, add #b%d cards of the original color to your hand, and apply Ethereal and Exhaust."
 		]
 	},
 	"BATwinsMod:MasterCraftsmanshipPower":{
 		"NAME":"Mastering All",
 		"DESCRIPTIONS":[
-			"At the start of each turn, exchange up to %d cards. When exchanging cards in this battle, upgrade the cards."
+			"At the start of each turn, exchange up to #b%d cards. When exchanging cards in this battle, upgrade the cards."
 		]
 	},
 	"BATwinsMod:BorrowMePower":{
@@ -165,13 +165,13 @@
 	"BATwinsMod:MaidFormPower":{
 		"NAME":"Maid Form",
 		"DESCRIPTIONS":[
-			"After playing the %dth card each turn, play 1 card from the draw pile with energy cost lower than that card."
+			"After playing the #b%dth card each turn, play 1 card from the draw pile with energy cost lower than that card."
 		]
 	},
 	"BATwinsMod:FlatFallPower":{
 		"NAME":"Flat Fall",
 		"DESCRIPTIONS":[
-			"You can only play %d more attack cards this turn."
+			"You can only play #b%d more attack cards this turn."
 		]
 	},
 	"BATwinsMod:ExpansionMagazinePower":{
@@ -183,21 +183,21 @@
 	"BATwinsMod:DisabledMomoiPower": {
 		"NAME": "Momoi Card Prohibited",
 		"DESCRIPTIONS": [
-			"Cannot play Momoi cards this turn."
+			"Cannot play #rMomoi cards this turn."
 		]
 	},
 	"BATwinsMod:DisabledMidoriPower": {
 		"NAME": "Midori Card Prohibited",
 		"DESCRIPTIONS": [
-			"Cannot play Midori cards this turn."
+			"Cannot play #gMidori cards this turn."
 		]
 	},
 	"BATwinsMod:DeveloperCollaborationExchangedPower": {
 		"NAME": "DeveloperCollaboration(Exchange)",
 		"DESCRIPTIONS": [
-			"After alternating between playing MomoiCard and MidoriCard in battle,the enemy's poison and batwinsmod:Burn increase by %d%%.(The last card played is %s)",
-			"MomoiCard",
-			"MidoriCard",
+			"After alternating between playing #rMomoiCard and #gMidoriCard in battle,the enemy's poison and batwinsmod:Burn increase by #b%d %%.(The last card played is %s)",
+			"#rMomoiCard",
+			"#gMidoriCard",
 			"ColorLess",
 			"Curses",
 			"OtherCard",
