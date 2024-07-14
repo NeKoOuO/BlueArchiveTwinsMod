@@ -144,39 +144,46 @@
 		]
 	},
 	"BATwinsMod:RankIcon1": {
-		"NAME": "总力战大师",
-		"FLAVOR": "可以不用做爱丽丝的伙伴了。",
+		"NAME": "Total Assault Master",
+		"FLAVOR": "Great!!!!",
 		"DESCRIPTIONS": [
-			"上次游玩获得了%d分：战斗胜利后给予20金币，增加1个双选的卡牌奖励。",
-			"没有查询到上次游玩的记录：战斗胜利后给予20金币，增加1个双选的卡牌奖励。"
+			"Last play score: %d. After winning a battle, gain #b15 #ygold , and every #b4 battles, randomly upgrade #b1 card.",
+			"No record of the last play found. After winning a battle, gain #b15 #ygold , and every #b4 battles, randomly upgrade #b1 card."
 		]
 	},
 	"BATwinsMod:RankIcon2": {
-		"NAME": "总力战高手",
-		"FLAVOR": "嘛，普普通通吧。",
+		"NAME": "Total Assault Expert",
+		"FLAVOR": "Well, just average.",
 		"DESCRIPTIONS": [
-			"上次游玩获得了%d分：战斗胜利后给予20金币，增加1个单选的卡牌奖励。"
+			"Last play score: %d. After winning a battle, gain #b15 #ygold , and every #b5 battles, randomly upgrade #b1 card."
 		]
 	},
 	"BATwinsMod:RankIcon3": {
-		"NAME": "总力站低手",
-		"FLAVOR": "要好好培养角色啊。",
+		"NAME": "Total Assault Regular",
+		"FLAVOR": "You should train your characters well.",
 		"DESCRIPTIONS": [
-			"上次游玩获得了%d分：战斗胜利后给予20金币。"
+			"Last play score: %d. After winning a battle, gain #b15 #ygold ."
 		]
 	},
 	"BATwinsMod:RankIcon4": {
-		"NAME": "总力战低低手",
-		"FLAVOR": "是忘记打了吗？",
+		"NAME": "Total Assault Novice",
+		"FLAVOR": "Did you forget to play?",
 		"DESCRIPTIONS": [
-			"上次游玩获得了%d分：战斗胜利后给予10金币。"
+			"Last play score: %d. After winning a battle, gain #b10 #ygold ."
 		]
 	},
 	"BATwinsMod:RankIcon": {
-		"NAME": "总力战徽章",
+		"NAME": "Total War Badge",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
-			"根据你上一把的得分获得不同效果。"
+			"Get different effects based on your last play score."
+		]
+	},
+	"BATwinsMod:FullScoreAnswer": {
+		"NAME": "Perfect Score Answer",
+		"FLAVOR": "I can do it too!",
+		"DESCRIPTIONS": [
+			"At the start of combat, gain #b1 #yStrength and #b1 #yDexterity. Lose #b1 #yStrength and #b1 #yDexterity after taking damage for the first time in this combat."
 		]
 	}
 }
