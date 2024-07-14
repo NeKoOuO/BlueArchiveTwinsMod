@@ -142,5 +142,19 @@
 		"DESCRIPTIONS":[
 			"升级后给予2 #y经验值 。"
 		]
+	},
+	"BATwinsMod:Flowers": {
+		"NAME": "花束",
+		"FLAVOR": "很漂亮",
+		"DESCRIPTIONS": [
+			"手牌描述变得炫彩，所有牌都变得炫彩后，每回合多抽1张牌。"
+		]
+	},
+	"BATwinsMod:OldTv": {
+		"NAME": "老旧显示器",
+		"FLAVOR": "将就下。",
+		"DESCRIPTIONS": [
+			"在每回合开始时获得 [E] ，画面变得模糊。"
+		]
 	}
 }
