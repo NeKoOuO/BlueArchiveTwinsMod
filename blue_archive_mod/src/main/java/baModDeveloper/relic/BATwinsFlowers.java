@@ -16,7 +16,7 @@ public class BATwinsFlowers extends CustomRelic {
     public static final String ID= ModHelper.makePath("Flowers");
     private static final Texture texture=TextureLoader.getTexture(ModHelper.makeImgPath("relic","Flowers"));
     private static final Texture outline= TextureLoader.getTexture(ModHelper.makeImgPath("relic","Flowers_p"));
-    private static final RelicTier type=RelicTier.BOSS;
+    private static final RelicTier type=RelicTier.SHOP;
     private static Color startColor=Color.WHITE.cpy();
     private static Color endColor=Color.BLUE.cpy();
     private static Color color=startColor;

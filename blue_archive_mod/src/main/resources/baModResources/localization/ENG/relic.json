@@ -142,5 +142,19 @@
 		"DESCRIPTIONS": [
 			"Gain 2 #yExperience after Level Up."
 		]
+	},
+	"BATwinsMod:Flowers": {
+		"NAME": "Flowers",
+		"FLAVOR": "Very pretty",
+		"DESCRIPTIONS": [
+			"Hand card descriptions become colorful. After all cards become colorful, draw 1 extra card each turn."
+		]
+	},
+	"BATwinsMod:OldTv": {
+		"NAME": "Old Monitor",
+		"FLAVOR": "Make do with it.",
+		"DESCRIPTIONS": [
+			"Gain [E] at the start of each turn, but the screen becomes blurry."
+		]
 	}
 }
