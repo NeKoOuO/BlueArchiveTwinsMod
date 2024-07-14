@@ -61,8 +61,8 @@ public class Character3DHelper {
     public void init() {
         this.camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         this.camera.position.set(0, 0, -120);
-        this.camera.near = 1.0F;
-        this.camera.far = 1000.0F;
+        this.camera.near = 400.0F;
+        this.camera.far = 600.0F;
         this.camera.rotate(new Vector3(0.0F, 1.0F, 0.0F), 90.0F);
         camera.update();
 

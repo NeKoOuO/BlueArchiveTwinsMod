@@ -304,6 +304,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelicToCustomPool(new BATwinsAdaptability(), Enums.BATWINS_MOMOI_CARD);
         BaseMod.addRelic(new BATwinsFlowers(),RelicType.SHARED);
         BaseMod.addRelic(new BATwinsOldTv(),RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsRankIcon(),RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsFullScoreAnswer(),RelicType.SHARED);
     }
 
     @Override

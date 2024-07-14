@@ -2,6 +2,7 @@ package baModDeveloper.helpers;
 
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -15,7 +16,7 @@ public class ModHelper {
     public static final Logger logger = LogManager.getLogger(BATwinsMod.class.getName());
     public static String MOMOI_FLODER = "momoi";
     public static String MIDORI_FLODER = "midori";
-
+    public static Gson gson=new Gson();
     public static String makePath(String id) {
         return "BATwinsMod:" + id;
     }

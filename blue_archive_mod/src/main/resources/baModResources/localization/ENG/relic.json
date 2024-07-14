@@ -156,5 +156,48 @@
 		"DESCRIPTIONS": [
 			"Gain [E] at the start of each turn, but the screen becomes blurry."
 		]
+	},
+	"BATwinsMod:RankIcon1": {
+		"NAME": "Total Assault Master",
+		"FLAVOR": "Great!!!!",
+		"DESCRIPTIONS": [
+			"Last play score: %d. After winning a battle, gain #b15 #ygold , and every #b4 battles, randomly upgrade #b1 card.",
+			"No record of the last play found. After winning a battle, gain #b15 #ygold , and every #b4 battles, randomly upgrade #b1 card."
+		]
+	},
+	"BATwinsMod:RankIcon2": {
+		"NAME": "Total Assault Expert",
+		"FLAVOR": "Well, just average.",
+		"DESCRIPTIONS": [
+			"Last play score: %d. After winning a battle, gain #b15 #ygold , and every #b5 battles, randomly upgrade #b1 card."
+		]
+	},
+	"BATwinsMod:RankIcon3": {
+		"NAME": "Total Assault Regular",
+		"FLAVOR": "You should train your characters well.",
+		"DESCRIPTIONS": [
+			"Last play score: %d. After winning a battle, gain #b15 #ygold ."
+		]
+	},
+	"BATwinsMod:RankIcon4": {
+		"NAME": "Total Assault Novice",
+		"FLAVOR": "Did you forget to play?",
+		"DESCRIPTIONS": [
+			"Last play score: %d. After winning a battle, gain #b10 #ygold ."
+		]
+	},
+	"BATwinsMod:RankIcon": {
+		"NAME": "Total War Badge",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"Get different effects based on your last play score."
+		]
+	},
+	"BATwinsMod:FullScoreAnswer": {
+		"NAME": "Perfect Score Answer",
+		"FLAVOR": "I can do it too!",
+		"DESCRIPTIONS": [
+			"At the start of combat, gain #b1 #yStrength and #b1 #yDexterity. Lose #b1 #yStrength and #b1 #yDexterity after taking damage for the first time in this combat."
+		]
 	}
 }
