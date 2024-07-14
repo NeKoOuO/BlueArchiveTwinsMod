@@ -12,13 +12,15 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.screens.stats.RunData;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Optional;
 
 public class BATwinsRankIcon extends CustomRelic {
     public static final String ID= ModHelper.makePath("RankIcon");
@@ -73,15 +75,19 @@ public class BATwinsRankIcon extends CustomRelic {
 
     private int checkScore(){
         RunData runData = null;
-        String timestamp = null;
+//        String timestamp = null;
         try {
-            FileHandle[] fileHandler= Gdx.files.local("runs/BATwins").list();
-            for (FileHandle fileHandle : fileHandler) {
-                RunData temp = ModHelper.gson.fromJson(fileHandle.readString(), RunData.class);
-                if (timestamp == null || temp.timestamp.compareTo(timestamp) > 0) {
-                    runData = temp;
-                    timestamp = runData.timestamp;
-                }
+            FileHandle[] fileHandler= Gdx.files.local("runs/"+AbstractDungeon.player.chosenClass.name()).list();
+            Optional<FileHandle> fileHandle= Arrays.stream(fileHandler).max(Comparator.comparing(FileHandle::name));
+//            for (FileHandle fileHandle : fileHandler) {
+//                RunData temp = ModHelper.gson.fromJson(fileHandle.readString(), RunData.class);
+//                if (timestamp == null || temp.timestamp.compareTo(timestamp) > 0) {
+//                    runData = temp;
+//                    timestamp = runData.timestamp;
+//                }
+//            }
+            if(fileHandle.isPresent()){
+                runData= ModHelper.gson.fromJson(fileHandle.get().readString(), RunData.class);
             }
         }catch (Exception e){
             ModHelper.getLogger().error("Can not find last run!");
@@ -95,7 +101,7 @@ public class BATwinsRankIcon extends CustomRelic {
     }
 
     private int getRank(int score){
-        if(score==-1){
+        if(score<0){
             return 1;
         }
         if(score<1000){
