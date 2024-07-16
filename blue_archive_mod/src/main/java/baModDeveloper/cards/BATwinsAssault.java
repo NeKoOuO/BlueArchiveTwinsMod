@@ -40,7 +40,7 @@ public class BATwinsAssault extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new VulnerablePower(abstractMonster, this.magicNumber, false)));
         if (isFirstCard()) {
             addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.SKILL, 1, this.numberOfConnections + 1));
@@ -49,7 +49,7 @@ public class BATwinsAssault extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new WeakPower(abstractMonster, this.magicNumber, false)));
         if (isFirstCard()) {
             addToBot(new BATwinsSelectHandCardToPlayAction(null, abstractMonster, CardType.SKILL, 1, this.numberOfConnections + 1));
