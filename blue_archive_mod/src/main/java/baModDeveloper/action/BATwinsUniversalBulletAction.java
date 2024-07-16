@@ -1,8 +1,10 @@
 package baModDeveloper.action;
 
 import baModDeveloper.cards.BATwinsModCustomCard;
+import baModDeveloper.cards.BATwinsUniversalBullet;
 import baModDeveloper.cards.bullets.BATwinsCustomBulletCard;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.effect.BATwinsUniversalBulletEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -31,6 +33,7 @@ public class BATwinsUniversalBulletAction extends AbstractGameAction {
             if (card instanceof BATwinsModCustomCard) {
                 ((BATwinsModCustomCard) card).addBringOutCard(this.bullet);
                 card.flash(BATwinsCharacter.getColorWithCardColor(card.color));
+                AbstractDungeon.topLevelEffectsQueue.add(new BATwinsUniversalBulletEffect((BATwinsUniversalBullet) bullet,card));
             }
         }
         this.isDone = true;
