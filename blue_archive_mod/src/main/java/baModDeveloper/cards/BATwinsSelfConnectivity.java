@@ -38,7 +38,7 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final BATwinsEnergyPanel.EnergyType ENERGYTYPE = BATwinsEnergyPanel.EnergyType.MOMOI;
     private AbstractCard cardToCopy;
-    private static AbstractCard EasterEggCard=new BATwinsMomoiStrick();
+    public static AbstractCard EasterEggCard=new BATwinsMomoiStrick();
     private static ShaderProgram shaderProgram;
     private static final FrameBuffer frameBuffer=new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth(),Gdx.graphics.getHeight(),false,false);
 
@@ -175,8 +175,8 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
 //            frameBuffer.end();
             sb.setShader(shaderProgram);
             shaderProgram.setUniformf("iResolution", Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-            shaderProgram.setUniformf("center",this.current_x,this.current_y+45.0F);
-            shaderProgram.setUniformf("len",80.0F,60.0F);
+            shaderProgram.setUniformf("center",this.current_x,this.current_y+AbstractCard.IMG_HEIGHT/4.0F-30.0F*Settings.scale);
+            shaderProgram.setUniformf("len",AbstractCard.IMG_WIDTH/2.0F-30.0F*Settings.scale,AbstractCard.IMG_HEIGHT/4.0F-10.0F*Settings.scale);
             Texture renderImage=frameBuffer.getColorBufferTexture();
 
             sb.setColor(Color.WHITE.cpy());

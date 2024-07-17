@@ -31,11 +31,13 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.Settings.GameLanguage;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -44,7 +46,7 @@ import java.util.Properties;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber {
+public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber ,PostBattleSubscriber{
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -376,5 +378,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         Texture badgeTexture = ImageMaster.loadImage(ModHelper.makeImgPath("UI", "configButton"));
         BaseMod.registerModBadge(badgeTexture, "BATwinsMod", "0v0", "config", settingPanel);
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        BATwinsSelfConnectivity.EasterEggCard= AbstractDungeon.returnRandomCard();
     }
 }
