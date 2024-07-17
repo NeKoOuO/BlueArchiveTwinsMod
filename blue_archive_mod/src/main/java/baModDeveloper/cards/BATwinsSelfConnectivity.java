@@ -167,7 +167,7 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
             this.cardsToPreview.current_x = this.current_x;
             this.cardsToPreview.current_y = this.current_y + AbstractCard.IMG_HEIGHT * 0.18F * this.drawScale;
             this.cardsToPreview.render(sb);
-        }else if(this.cardsToPreview==null&&AbstractDungeon.getCurrRoom().phase== AbstractRoom.RoomPhase.COMBAT){
+        }else if(this.cardsToPreview==null&&AbstractDungeon.currMapNode!=null&&AbstractDungeon.getCurrRoom().phase== AbstractRoom.RoomPhase.COMBAT){
 //            this.renderEasterEggCard(sb);
 //            Gdx.gl.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
 //            Gdx.gl.glClear(16640);
