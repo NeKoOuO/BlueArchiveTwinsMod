@@ -160,4 +160,9 @@ public class BATwinsRankIcon extends CustomRelic {
         }
         return res;
     }
+
+    @Override
+    public boolean canSpawn() {
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 40);
+    }
 }
