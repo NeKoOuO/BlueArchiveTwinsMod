@@ -34,7 +34,7 @@ public class BATwinsEasterEggEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        this.duration -= Gdx.graphics.getDeltaTime();
+//        this.duration -= Gdx.graphics.getDeltaTime();
         if (2.0F - this.duration < this.FadeInOut) {
             this.color.a = MathHelper.scaleLerpSnap(this.color.a, 1.0F);
         } else if (this.duration < this.FadeInOut) {
@@ -50,7 +50,7 @@ public class BATwinsEasterEggEffect extends AbstractGameEffect {
 //        if(this.duration>0.0F){
         if (!this.isDone) {
 //            spriteBatch.setColor(this.color);
-            spriteBatch.setColor(this.color);
+            spriteBatch.setColor(Color.WHITE.cpy());
             spriteBatch.draw(midori1, 0, 0, midori1.getWidth() * Settings.scale, midori1.getHeight() * Settings.scale);
             spriteBatch.setBlendFunction(770, 771);
         }
