@@ -634,7 +634,8 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
-        effects.add(new BATwinsEasterEggEffect(true, false));
+        if(effects.isEmpty())
+            effects.add(new BATwinsEasterEggEffect(true, false));
     }
 
     public static class Enums {
