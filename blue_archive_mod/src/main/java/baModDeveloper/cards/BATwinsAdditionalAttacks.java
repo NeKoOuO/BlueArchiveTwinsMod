@@ -57,7 +57,7 @@ public class BATwinsAdditionalAttacks extends BATwinsModCustomCard {
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         if (c.type == CardType.ATTACK) {
             this.flash(BATwinsCharacter.getColorWithCardColor(this.color));
-            addToBot(new BATwinsAdditionalAttacksAction(this.color, new DamageInfo(AbstractDungeon.player, this.damage), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+            addToBot(new BATwinsAdditionalAttacksAction(this.color,this, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
     }
 
