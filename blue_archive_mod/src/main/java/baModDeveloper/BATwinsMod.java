@@ -41,8 +41,11 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.screens.custom.CustomModeScreen;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -251,6 +254,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, "baModResources/localization/" + lang + "/potion.json");
         BaseMod.loadCustomStringsFile(MonsterStrings.class, "baModResources/localization/" + lang + "/monster.json");
+        BaseMod.loadCustomStringsFile(RunModStrings.class,"baModResources/localization/"+lang+"/runmod.json");
 
     }
 

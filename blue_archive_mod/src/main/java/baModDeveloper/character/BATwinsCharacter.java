@@ -6,6 +6,7 @@ import baModDeveloper.core.BATwinsEnergyManager;
 import baModDeveloper.effect.BATwinsEasterEggEffect;
 import baModDeveloper.helpers.*;
 import baModDeveloper.patch.BATwinsCharacterOptionPatch;
+import baModDeveloper.patch.BATwinsCustomModeScreenPatch;
 import baModDeveloper.power.BATwinsExperiencePower;
 import baModDeveloper.relic.BATwinsGameMagazine;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
@@ -264,7 +265,11 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "ATTACK_HEAVY";
+        if (MathUtils.randomBoolean()) {
+            return ModHelper.makePath("charSelect_momoi");
+        } else {
+            return ModHelper.makePath("charSelect_midori");
+        }
     }
 
     @Override
@@ -309,17 +314,33 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(BATwinsMomoiStrick.ID);
-        retVal.add(BATwinsMomoiStrick.ID);
-        retVal.add(BATwinsMidoriStrick.ID);
-        retVal.add(BATwinsMidoriStrick.ID);
-        retVal.add(BATwinsMomoiDefend.ID);
-        retVal.add(BATwinsMomoiDefend.ID);
-        retVal.add(BATwinsMidoriDefend.ID);
-        retVal.add(BATwinsMidoriDefend.ID);
-        retVal.add(BATwinsAlreadyAngry.ID);
-        retVal.add(BATwinsPaintingConception.ID);
-
+        if(Settings.isTrial){
+            if(!BATwinsCustomModeScreenPatch.NoMomoiCardModEnable){
+                retVal.add(BATwinsMomoiStrick.ID);
+                retVal.add(BATwinsMomoiStrick.ID);
+                retVal.add(BATwinsMomoiDefend.ID);
+                retVal.add(BATwinsMomoiDefend.ID);
+                retVal.add(BATwinsAlreadyAngry.ID);
+            }
+            if(!BATwinsCustomModeScreenPatch.NoMidoriCardModEnable){
+                retVal.add(BATwinsMidoriStrick.ID);
+                retVal.add(BATwinsMidoriStrick.ID);
+                retVal.add(BATwinsMidoriDefend.ID);
+                retVal.add(BATwinsMidoriDefend.ID);
+                retVal.add(BATwinsPaintingConception.ID);
+            }
+        }else{
+            retVal.add(BATwinsMomoiStrick.ID);
+            retVal.add(BATwinsMomoiStrick.ID);
+            retVal.add(BATwinsMidoriStrick.ID);
+            retVal.add(BATwinsMidoriStrick.ID);
+            retVal.add(BATwinsMomoiDefend.ID);
+            retVal.add(BATwinsMomoiDefend.ID);
+            retVal.add(BATwinsMidoriDefend.ID);
+            retVal.add(BATwinsMidoriDefend.ID);
+            retVal.add(BATwinsAlreadyAngry.ID);
+            retVal.add(BATwinsPaintingConception.ID);
+        }
         if (BATwinsCharacterOptionPatch.updateHitboxPatch.FindEasterEgg) {
             this.masterDeck.addToBottom(new BATwinsEasterEgg());
             BATwinsCharacterOptionPatch.updateHitboxPatch.PressCount = 0;
@@ -399,26 +420,21 @@ public class BATwinsCharacter extends CustomPlayer {
     public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool) {
         AbstractCard.CardColor MomoiColor = Enums.BATWINS_MOMOI_CARD;
         AbstractCard.CardColor MidoriColor = Enums.BATWINS_MIDORI_CARD;
-        Iterator var3 = CardLibrary.cards.entrySet().iterator();
-
-        while (true) {
-            Map.Entry c;
-            AbstractCard card;
-            do {
-                do {
-                    do {
-                        if (!var3.hasNext()) {
-                            return tmpPool;
-                        }
-
-                        c = (Map.Entry) var3.next();
-                        card = (AbstractCard) c.getValue();
-                    } while (!card.color.equals(MomoiColor) && !card.color.equals(MidoriColor));
-                } while (card.rarity == AbstractCard.CardRarity.BASIC);
-            } while (UnlockTracker.isCardLocked((String) c.getKey()) && !Settings.isDailyRun);
-
+        for(Map.Entry<String, AbstractCard> c:CardLibrary.cards.entrySet()){
+            AbstractCard card=c.getValue();
+            if(UnlockTracker.isCardLocked(c.getKey()) && !Settings.isDailyRun){
+               continue;
+            }
+            if(card.rarity == AbstractCard.CardRarity.BASIC){
+                continue;
+            }
+            if((!card.color.equals(MomoiColor)||(Settings.isTrial&&BATwinsCustomModeScreenPatch.NoMomoiCardModEnable))
+                    &&(!card.color.equals(MidoriColor)||(Settings.isTrial&&BATwinsCustomModeScreenPatch.NoMidoriCardModEnable))){
+                continue;
+            }
             tmpPool.add(card);
         }
+        return tmpPool;
     }
 
     public TextureAtlas.AtlasRegion getOrb(String word) {
@@ -637,6 +653,8 @@ public class BATwinsCharacter extends CustomPlayer {
         if(effects.isEmpty())
             effects.add(new BATwinsEasterEggEffect(true, false));
     }
+
+
 
     public static class Enums {
         @SpireEnum
