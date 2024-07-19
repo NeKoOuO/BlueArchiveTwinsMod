@@ -29,6 +29,9 @@ public class BATwinsLearningMaterials extends CustomRelic implements BetterOnSmi
 
     @Override
     public void betterOnSmith(AbstractCard abstractCard) {
+        if(abstractCard.rarity!=AbstractCard.CardRarity.BASIC&&abstractCard.rarity!=AbstractCard.CardRarity.COMMON){
+            return;
+        }
         CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         if (AbstractDungeon.player != null) {
             AbstractDungeon.player.masterDeck.group.stream().filter(card -> {
