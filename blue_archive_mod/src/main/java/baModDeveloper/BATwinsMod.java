@@ -34,6 +34,9 @@ import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.Settings.GameLanguage;
@@ -56,7 +59,7 @@ import java.util.function.BiConsumer;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber, ScreenPostProcessor {
+public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber, ScreenPostProcessor,PostCreateStartingDeckSubscriber {
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -415,5 +418,24 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         spriteBatch.setProjectionMatrix(orthographicCamera.combined);
 
         BATwinsAbstractMonsterPatch.takeTime();
+    }
+
+    @Override
+    public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
+        if(playerClass== Enums.BATwins&&Settings.isTrial){
+            if(BATwinsCustomModeScreenPatch.NoMomoiCardModEnable){
+                for(AbstractCard card:cardGroup.group){
+                    if(card instanceof BATwinsModCustomCard&&card.color== Enums.BATWINS_MOMOI_CARD){
+                        ((BATwinsModCustomCard) card).conversionColor(false);
+                    }
+                }
+            }else if(BATwinsCustomModeScreenPatch.NoMidoriCardModEnable){
+                for(AbstractCard card:cardGroup.group){
+                    if(card instanceof BATwinsModCustomCard&&card.color== Enums.BATWINS_MIDORI_CARD){
+                        ((BATwinsModCustomCard) card).conversionColor(false);
+                    }
+                }
+            }
+        }
     }
 }

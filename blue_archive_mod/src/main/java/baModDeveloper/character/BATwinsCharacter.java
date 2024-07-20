@@ -314,22 +314,6 @@ public class BATwinsCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        if(Settings.isTrial){
-            if(!BATwinsCustomModeScreenPatch.NoMomoiCardModEnable){
-                retVal.add(BATwinsMomoiStrick.ID);
-                retVal.add(BATwinsMomoiStrick.ID);
-                retVal.add(BATwinsMomoiDefend.ID);
-                retVal.add(BATwinsMomoiDefend.ID);
-                retVal.add(BATwinsAlreadyAngry.ID);
-            }
-            if(!BATwinsCustomModeScreenPatch.NoMidoriCardModEnable){
-                retVal.add(BATwinsMidoriStrick.ID);
-                retVal.add(BATwinsMidoriStrick.ID);
-                retVal.add(BATwinsMidoriDefend.ID);
-                retVal.add(BATwinsMidoriDefend.ID);
-                retVal.add(BATwinsPaintingConception.ID);
-            }
-        }else{
             retVal.add(BATwinsMomoiStrick.ID);
             retVal.add(BATwinsMomoiStrick.ID);
             retVal.add(BATwinsMidoriStrick.ID);
@@ -340,7 +324,7 @@ public class BATwinsCharacter extends CustomPlayer {
             retVal.add(BATwinsMidoriDefend.ID);
             retVal.add(BATwinsAlreadyAngry.ID);
             retVal.add(BATwinsPaintingConception.ID);
-        }
+
         if (BATwinsCharacterOptionPatch.updateHitboxPatch.FindEasterEgg) {
             this.masterDeck.addToBottom(new BATwinsEasterEgg());
             BATwinsCharacterOptionPatch.updateHitboxPatch.PressCount = 0;
@@ -428,11 +412,22 @@ public class BATwinsCharacter extends CustomPlayer {
             if(card.rarity == AbstractCard.CardRarity.BASIC){
                 continue;
             }
-            if((!card.color.equals(MomoiColor)||(Settings.isTrial&&BATwinsCustomModeScreenPatch.NoMomoiCardModEnable))
-                    &&(!card.color.equals(MidoriColor)||(Settings.isTrial&&BATwinsCustomModeScreenPatch.NoMidoriCardModEnable))){
+            if(card.color!=MomoiColor&&card.color!=MidoriColor){
                 continue;
             }
             tmpPool.add(card);
+        }
+        if(Settings.isTrial){
+            for(AbstractCard card:tmpPool){
+                if(card instanceof BATwinsModCustomCard&&BATwinsCustomModeScreenPatch.NoMomoiCardModEnable
+                        &&card.color==MomoiColor){
+                    ((BATwinsModCustomCard) card).conversionColor(false);
+                }
+                if(card instanceof BATwinsModCustomCard&&BATwinsCustomModeScreenPatch.NoMidoriCardModEnable
+                        &&card.color==MidoriColor){
+                    ((BATwinsModCustomCard) card).conversionColor(false);
+                }
+            }
         }
         return tmpPool;
     }
