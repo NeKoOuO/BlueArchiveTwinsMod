@@ -49,7 +49,7 @@ public class BATwinsCollaboration extends BATwinsModCustomCard {
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD && c != this) {                addToBot(new VFXAction(new CardFlashVfx(c,true)));
+            if (c.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD && c != this) {
                 addToBot(new VFXAction(new CardFlashVfx(c,true)));
                 addToBot(new DamageAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true), new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
             }
