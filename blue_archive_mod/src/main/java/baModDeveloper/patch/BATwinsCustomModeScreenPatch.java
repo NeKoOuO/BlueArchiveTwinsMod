@@ -6,6 +6,8 @@ import basemod.abstracts.CustomSavable;
 import basemod.interfaces.ISubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.screens.custom.CustomModeScreen;
 import com.megacrit.cardcrawl.trials.CustomTrial;
@@ -18,9 +20,9 @@ public class BATwinsCustomModeScreenPatch implements CustomSavable , ISubscriber
     public static boolean NoMomoiCardModEnable=false;
     public static boolean NoMidoriCardModEnable=false;
 
-    public BATwinsCustomModeScreenPatch(){
-        BaseMod.subscribe(this);
-    }
+//    public BATwinsCustomModeScreenPatch(){
+//        BaseMod.subscribe(this);
+//    }
     @Override
     public Object onSave() {
         return new boolean[]{NoMomoiCardModEnable,NoMidoriCardModEnable};
@@ -33,7 +35,20 @@ public class BATwinsCustomModeScreenPatch implements CustomSavable , ISubscriber
         NoMidoriCardModEnable=mods[1];
     }
 
+    @Override
+    public JsonElement onSaveRaw() {
+        JsonObject object=new JsonObject();
+        object.addProperty("NoMomoiCardMod",NoMomoiCardModEnable);
+        object.addProperty("NoMidoriCardMod",NoMidoriCardModEnable);
+        return object;
+    }
 
+    @Override
+    public void onLoadRaw(JsonElement value) {
+        ModHelper.getLogger().info(value);
+        NoMomoiCardModEnable=value.getAsJsonObject().get("NoMomoiCardMod").getAsBoolean();
+        NoMidoriCardModEnable=value.getAsJsonObject().get("NoMidoriCardMod").getAsBoolean();
+    }
 
     @SpirePatch(clz = CustomModeScreen.class,method = "initializeMods")
     public static class initializeModsPatch{

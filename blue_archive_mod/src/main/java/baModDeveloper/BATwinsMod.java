@@ -9,6 +9,7 @@ import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.event.*;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractMonsterPatch;
+import baModDeveloper.patch.BATwinsCustomModeScreenPatch;
 import baModDeveloper.potion.BATwinsAcceleratePotion;
 import baModDeveloper.potion.BATwinsBurnPotion;
 import baModDeveloper.potion.BATwinsConnectPotion;
@@ -349,6 +350,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 //        BaseMod.addMonster(BATwinsAkane.ID, BATwinsAkane::new);
 //        BaseMod.addStrongMonsterEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));
 //        BaseMod.addEliteEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));
+        BaseMod.addSaveField("BATwinsRunMods",new BATwinsCustomModeScreenPatch());
     }
 
     private void CreateConfig() throws IOException {
