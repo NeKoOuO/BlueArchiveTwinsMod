@@ -51,7 +51,7 @@ public class BATwinsBookOfProhibitions extends CustomRelic {
                 }
                 addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 this.grayscale = true;
-                addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, damageAmount / 3));
+                addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, damageAmount / 10));
             }
         }
     }

@@ -126,7 +126,7 @@
 		"NAME": "Book of Prohibitions",
 		"FLAVOR": "Contains unknown contents",
 		"DESCRIPTIONS": [
-			"After cards deal damage for the #y1st time each turn, heal for #y1/3 of the damage not blocked."
+			"After cards deal damage for the #y1st time each turn, heal for #y1/10 of the damage not blocked."
 		]
 	},
 	"BATwinsMod:LearningMaterial": {
