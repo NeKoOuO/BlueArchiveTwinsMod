@@ -1,0 +1,10 @@
+{
+  "BATwinsMod:NoMomoiCard": {
+    "NAME": "No Momoi Card",
+    "DESCRIPTION": "Momoi cards will not appear. (Exclusive to Saiba sisters characters)"
+  },
+  "BATwinsMod:NoMidoriCard": {
+    "NAME": "No Midori Card",
+    "DESCRIPTION": "Midori cards will not appear. (Exclusive to Saiba sisters characters)"
+  }
+}
