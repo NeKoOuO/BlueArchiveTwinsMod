@@ -308,7 +308,11 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new BATwinsAlreadyAngry();
+        BATwinsModCustomCard card=new BATwinsAlreadyAngry();
+        if(Settings.isTrial&&BATwinsCustomModeScreenPatch.NoMomoiCardModEnable){
+            card.conversionColor(false);
+        }
+        return card;
     }
 
     @Override

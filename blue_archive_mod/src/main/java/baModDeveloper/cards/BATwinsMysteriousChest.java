@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.Objects;
+
 public class BATwinsMysteriousChest extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("MysteriousChest");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -31,7 +33,11 @@ public class BATwinsMysteriousChest extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color).makeCopy();
+        AbstractCard c=ModHelper.returnTrulyRandomCardInCombatByColor(this.color);
+        if(c==null){
+            return;
+        }
+        c=c.makeCopy();
         c.cost = 0;
         c.costForTurn = 0;
         c.isCostModified = true;
@@ -46,7 +52,11 @@ public class BATwinsMysteriousChest extends BATwinsModCustomCard {
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractCard c = ModHelper.returnTrulyRandomCardInCombatByColor(this.color).makeCopy();
+        AbstractCard c=ModHelper.returnTrulyRandomCardInCombatByColor(this.color);
+        if(c==null){
+            return;
+        }
+        c=c.makeCopy();
         c.cost = 0;
         c.costForTurn = 0;
         c.isCostModified = true;
