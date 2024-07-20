@@ -49,7 +49,7 @@
 		"NAME":"Folding Shield",
 		"FLAVOR":"A shield frequently used by Yuuka.",
 		"DESCRIPTIONS":[
-			"At the end of your turn, gain #b%d times the number of cards in your hand as Block."
+			"Increase Block by 20% at the end of the turn."
 		]
 	},
 	"BATwinsMod:Headband":{

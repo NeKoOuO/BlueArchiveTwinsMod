@@ -49,7 +49,7 @@
 		"NAME":"Q.E.D",
 		"FLAVOR":"ユウカに使ったシールド",
 		"DESCRIPTIONS":[
-			"ターン終了時、手札数× #b%d のブロックを得る。"
+			"ターン終了時にブロックが20%増加します。"
 		]
 	},
 	"BATwinsMod:Headband":{
