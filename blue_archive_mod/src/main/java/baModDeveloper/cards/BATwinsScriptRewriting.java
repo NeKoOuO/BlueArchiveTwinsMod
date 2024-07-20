@@ -29,7 +29,7 @@ public class BATwinsScriptRewriting extends BATwinsModCustomCard {
 
     public BATwinsScriptRewriting() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.exhaust = true;
+//        this.exhaust = true;
     }
 
     @Override
@@ -41,23 +41,6 @@ public class BATwinsScriptRewriting extends BATwinsModCustomCard {
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 //        addToBot(new BATwinsChangeBurnPoiAction(abstractMonster, true));
         addToBot(new BATwinsScriptRewritingAction(this.upgraded, this.color, abstractMonster));
-        if (upgraded) {
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    if (color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
-                        if (abstractMonster.hasPower(PoisonPower.POWER_ID)) {
-                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player, new BATwinsBurnPower(abstractMonster, AbstractDungeon.player, abstractMonster.getPower(PoisonPower.POWER_ID).amount)));
-                        }
-                    } else {
-                        if (abstractMonster.hasPower(BATwinsBurnPower.POWER_ID)) {
-                            addToTop(new ApplyPowerAction(abstractMonster, AbstractDungeon.player, new PoisonPower(abstractMonster, AbstractDungeon.player, abstractMonster.getPower(BATwinsBurnPower.POWER_ID).amount)));
-                        }
-                    }
-                    this.isDone = true;
-                }
-            });
-        }
     }
 
     @Override

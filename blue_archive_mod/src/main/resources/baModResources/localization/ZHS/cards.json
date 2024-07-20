@@ -413,8 +413,8 @@
 	},
 	"BATwinsMod:ScriptRewriting":{
 		"NAME":"剧本改写",
-		"DESCRIPTION":"给予等同于其 中毒 的 batwinsmod:灼伤 ,给予等同于其 batwinsmod:灼伤 的 中毒 。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION":"给予等同于其 中毒 的 batwinsmod:灼伤 ,再给予等同于其 batwinsmod:灼伤 的 中毒 。 NL 消耗 "
+		"DESCRIPTION":"给予等同于其 batwinsmod:灼伤 的 中毒 。 NL 消耗 ",
+		"UPGRADE_DESCRIPTION":"给予等同于其 batwinsmod:灼伤 2倍的 中毒 。 NL 消耗 "
 	},
 	"BATwinsMod:EasterEgg":{
 		"NAME":"彩蛋",

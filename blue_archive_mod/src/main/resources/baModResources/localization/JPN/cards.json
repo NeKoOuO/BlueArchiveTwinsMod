@@ -413,8 +413,8 @@
 	},
 	"BATwinsMod:ScriptRewriting":{
 		"NAME":"シナリオリライト",
-		"DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 、 batwinsmod:焼傷 と同じな 毒 を与える。 NL 廃棄 ",
-		"UPGRADE_DESCRIPTION":" 毒 と同じな batwinsmod:焼傷 を与える、その後 batwinsmod:焼傷 と同じな 毒 を与える。 NL 廃棄 "
+		"DESCRIPTION":" batwinsmod:焼傷 と同じ量の 毒 を与える。 NL 廃棄 ",
+		"UPGRADE_DESCRIPTION":" batwinsmod:焼傷 の2倍の 毒 を与える。 NL 廃棄 "
 	},
 	"BATwinsMod:EasterEgg":{
 		"NAME":"イースターエッグ",
