@@ -1,9 +1,11 @@
 package baModDeveloper.cards;
 
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.effect.BATwinsPenetrationDamageEffect;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -38,7 +40,9 @@ public class BATwinsPenetrationDamage extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new DamageAllEnemiesAction(abstractPlayer, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.LIGHTNING));
+        BATwinsPenetrationDamageEffect effect=new BATwinsPenetrationDamageEffect();
+        addToBot(new VFXAction(effect,effect.duration));
+        addToBot(new DamageAllEnemiesAction(abstractPlayer, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
         addToBot(new AbstractGameAction() {
             {
                 amount = BATwinsPenetrationDamage.this.magicNumber;
