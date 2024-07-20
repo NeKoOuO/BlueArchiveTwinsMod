@@ -419,7 +419,7 @@ public class BATwinsCharacter extends CustomPlayer {
             if(card.color!=MomoiColor&&card.color!=MidoriColor){
                 continue;
             }
-            tmpPool.add(card);
+            tmpPool.add(card.makeCopy());
         }
         if(Settings.isTrial){
             for(AbstractCard card:tmpPool){
