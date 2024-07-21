@@ -3,7 +3,6 @@ package baModDeveloper.action;
 import baModDeveloper.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -25,7 +24,6 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
     private boolean blockTheOriginalEffect;
     private boolean removePower = false;
     private UIStrings UISTRINGS = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
-    private CardGroup tempHand;
 
     public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type, int amount, int numberOfConnections, boolean blockTheOriginalEffect, boolean removePower) {
         this.color = color;
@@ -37,8 +35,6 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
         this.numberOfConnections = numberOfConnections;
         this.blockTheOriginalEffect = blockTheOriginalEffect;
         this.removePower = removePower;
-        this.tempHand=new CardGroup(CardGroup.CardGroupType.HAND);
-        this.tempHand.group.addAll(this.p.hand.group);
     }
 
     public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractMonster target, AbstractCard.CardType type, int amount, int numberOfConnections) {
@@ -67,7 +63,6 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
             }
             if (this.canNotSelectCards.size() == this.p.hand.group.size()) {
                 this.isDone = true;
-                this.p.hand=tempHand;
                 return;
             }
             this.p.hand.group.removeAll(this.canNotSelectCards);
@@ -90,8 +85,6 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
             this.isDone = true;
-            this.p.hand=tempHand;
-
         }
         tickDuration();
     }
