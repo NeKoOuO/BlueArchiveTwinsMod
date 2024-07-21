@@ -264,7 +264,7 @@
 	},
 	"BATwinsMod:TakeABreak":{
 		"NAME":"暂且休整",
-		"DESCRIPTION":"抽 !M! 张牌，这些牌获得 保留 。 NL batwinsmod:连携 ：多抽1张牌并选择其中1张牌打出。"
+		"DESCRIPTION":"抽 !M! 张牌，这些牌本回合 保留 。 NL batwinsmod:连携 ：多抽1张牌并选择其中1张牌打出。"
 	},
 	"BATwinsMod:AttackWithAllMight":{
 		"NAME":"力尽一击",
@@ -393,7 +393,7 @@
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"贯通伤害",
-		"DESCRIPTION":"给予所有敌人 !D! 点伤害，所有没有 格挡 的敌人失去 !M! 点 力量 。 NL 消耗 。NL batwinsmod:连携 ：本场战斗不 消耗 。",
+		"DESCRIPTION":"给予所有敌人 !D! 点伤害，所有没有 格挡 的敌人失去 !M! 点 力量 。 NL 消耗 。 NL batwinsmod:连携 ：本场战斗不 消耗 。",
 		"EXTENDED_DESCRIPTION": [
 			"给予所有敌人 !D! 点伤害，所有没有 格挡 的敌人失去 !M! 点 力量 。"
 		]
