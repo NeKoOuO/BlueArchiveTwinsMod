@@ -186,7 +186,7 @@
 	},
 	"BATwinsMod:AlternatingAttack":{
 		"NAME":"交替攻撃",
-		"DESCRIPTION":"!D! ダメージを与える。１枚 batwinsmod:ミドリカード 非パワー手札をプレイする。"
+		"DESCRIPTION":"!D! ダメージを与える。 !M! 枚 batwinsmod:ミドリカード 非パワー手札をプレイする。"
 	},
 	"BATwinsMod:TemporaryAssistance":{
 		"NAME":"臨時サッポート",

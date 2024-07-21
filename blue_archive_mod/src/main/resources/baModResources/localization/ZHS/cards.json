@@ -186,7 +186,7 @@
 	},
 	"BATwinsMod:AlternatingAttack":{
 		"NAME":"交替攻击",
-		"DESCRIPTION":"造成 !D! 点伤害。从手牌选择1张 batwinsmod:[#6fcf41]绿牌 非能力牌打出。"
+		"DESCRIPTION":"造成 !D! 点伤害。从手牌选择 !M! 张 batwinsmod:[#6fcf41]绿牌 非能力牌打出。"
 	},
 	"BATwinsMod:TemporaryAssistance":{
 		"NAME":"暂时援助",

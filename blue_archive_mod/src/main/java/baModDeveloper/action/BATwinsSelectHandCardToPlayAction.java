@@ -48,6 +48,9 @@ public class BATwinsSelectHandCardToPlayAction extends AbstractGameAction {
     public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractCard.CardType type, int numberOfConnections, boolean removePower) {
         this(color, null, type, 1, numberOfConnections, false, removePower);
     }
+    public BATwinsSelectHandCardToPlayAction(AbstractCard.CardColor color, AbstractCard.CardType type,int amount, int numberOfConnections, boolean removePower) {
+        this(color, null, type, amount, numberOfConnections, false, removePower);
+    }
 
     @Override
     public void update() {

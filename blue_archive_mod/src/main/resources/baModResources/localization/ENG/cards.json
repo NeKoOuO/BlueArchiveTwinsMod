@@ -186,7 +186,7 @@
 	},
 	"BATwinsMod:AlternatingAttack":{
 		"NAME":"Alternate Attack",
-		"DESCRIPTION":"Deal !D! Damage. NL Play 1 non-power batwinsmod:MidoriCard from your hand."
+		"DESCRIPTION":"Deal !D! Damage. NL Play !M! non-power batwinsmod:MidoriCard from your hand."
 	},
 	"BATwinsMod:TemporaryAssistance": {
 		"NAME": "Temporary Assistance",
