@@ -48,4 +48,9 @@ public class BATwinsLearningMaterials extends CustomRelic implements BetterOnSmi
 
         }
     }
+
+    @Override
+    public boolean canSpawn() {
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 48);
+    }
 }

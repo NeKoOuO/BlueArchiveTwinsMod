@@ -1,0 +1,10 @@
+{
+  "BATwinsMod:NoMomoiCard": {
+    "NAME": "没有桃牌",
+    "DESCRIPTION": "不会出现桃牌。（才羽姐妹角色限定）"
+  },
+  "BATwinsMod:NoMidoriCard": {
+    "NAME": "没有绿牌",
+    "DESCRIPTION": "不会出现绿牌。（才羽姐妹角色限定）"
+  }
+}

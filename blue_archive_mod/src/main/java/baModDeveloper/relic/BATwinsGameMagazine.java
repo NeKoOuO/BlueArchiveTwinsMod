@@ -6,6 +6,7 @@ import baModDeveloper.helpers.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class BATwinsGameMagazine extends CustomRelic {
@@ -28,7 +29,7 @@ public class BATwinsGameMagazine extends CustomRelic {
     public void atBattleStart() {
         this.flash();
         this.grayscale = true;
-        addToBot(new MakeTempCardInHandAction(new BATwinsExchange(), 1));
+        addToBot(new MakeTempCardInHandAction(CardLibrary.getCard(BATwinsExchange.ID), 1));
     }
 
     @Override

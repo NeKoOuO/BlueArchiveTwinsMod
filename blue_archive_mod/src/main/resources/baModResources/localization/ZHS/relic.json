@@ -49,7 +49,7 @@
 		"NAME":"偏折护盾",
 		"FLAVOR":"优香经常使用的护盾",
 		"DESCRIPTIONS":[
-			"回合结束时获得手牌数 #b%d 倍的格挡。"
+			"回合结束时格挡提高20%。"
 		]
 	},
 	"BATwinsMod:Headband":{
@@ -126,7 +126,7 @@
 		"NAME": "禁断之书",
 		"FLAVOR": "记录着不为人知的内容",
 		"DESCRIPTIONS": [
-			"每回合卡牌造成第 #y1 次伤害后，回复 #y1/3 未被格挡的伤害的血量。"
+			"每回合卡牌造成第 #y1 次伤害后，回复 #y1/10 未被格挡的伤害的血量。"
 		]
 	},
 	"BATwinsMod:LearningMaterial": {

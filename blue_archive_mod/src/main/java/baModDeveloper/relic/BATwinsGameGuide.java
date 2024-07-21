@@ -8,6 +8,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class BATwinsGameGuide extends CustomRelic {
@@ -24,7 +25,7 @@ public class BATwinsGameGuide extends CustomRelic {
     @Override
     public void atTurnStart() {
         this.flash();
-        addToBot(new BATwinsMakeTempCardInHandAction(new BATwinsExchange(), true, true, true, true, false));
+        addToBot(new BATwinsMakeTempCardInHandAction(CardLibrary.getCard(BATwinsExchange.ID), true, true, true, true, false));
 //        addToBot(new DrawCardAction(1));
     }
 

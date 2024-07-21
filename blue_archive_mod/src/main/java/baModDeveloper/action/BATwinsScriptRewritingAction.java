@@ -19,28 +19,18 @@ public class BATwinsScriptRewritingAction extends AbstractGameAction {
         this.color = color;
         this.target = target;
         this.duration = Settings.ACTION_DUR_FAST;
+        this.amount=this.upgrade?2:1;
     }
 
     @Override
     public void update() {
         if (this.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
-            if (!this.upgrade) {
-                if (this.target.hasPower(PoisonPower.POWER_ID)) {
-                    addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new BATwinsBurnPower(this.target, AbstractDungeon.player, this.target.getPower(PoisonPower.POWER_ID).amount)));
-                }
-            }
-
-            if (this.target.hasPower(BATwinsBurnPower.POWER_ID)) {
-                addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new PoisonPower(this.target, AbstractDungeon.player, this.target.getPower(BATwinsBurnPower.POWER_ID).amount)));
+            if (this.target.hasPower(PoisonPower.POWER_ID)) {
+                addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new BATwinsBurnPower(this.target, AbstractDungeon.player, this.target.getPower(BATwinsBurnPower.POWER_ID).amount*this.amount)));
             }
         } else {
-            if (!this.upgrade) {
-                if (this.target.hasPower(BATwinsBurnPower.POWER_ID)) {
-                    addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new PoisonPower(this.target, AbstractDungeon.player, this.target.getPower(BATwinsBurnPower.POWER_ID).amount)));
-                }
-            }
-            if (this.target.hasPower(PoisonPower.POWER_ID)) {
-                addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new BATwinsBurnPower(this.target, AbstractDungeon.player, this.target.getPower(PoisonPower.POWER_ID).amount)));
+            if (this.target.hasPower(BATwinsBurnPower.POWER_ID)) {
+                addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new PoisonPower(this.target, AbstractDungeon.player, this.target.getPower(BATwinsBurnPower.POWER_ID).amount*this.amount)));
             }
         }
 

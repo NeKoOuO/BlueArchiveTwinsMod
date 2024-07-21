@@ -1,0 +1,10 @@
+{
+  "BATwinsMod:NoMomoiCard": {
+    "NAME": "モモイカードなし",
+    "DESCRIPTION": "モモイカードは出現しません。（才羽姉妹キャラクター限定）"
+  },
+  "BATwinsMod:NoMidoriCard": {
+    "NAME": "ミドリカードなし",
+    "DESCRIPTION": "ミドリカードは出現しません。（才羽姉妹キャラクター限定）"
+  }
+}

@@ -159,7 +159,7 @@
 	"BATwinsMod:BorrowMePower":{
 		"NAME":"借用一下",
 		"DESCRIPTIONS":[
-			"本回合所有牌视为 batwinsmod:共有 。"
+			"本回合所有牌视为 #y共有 。"
 		]
 	},
 	"BATwinsMod:MaidFormPower":{

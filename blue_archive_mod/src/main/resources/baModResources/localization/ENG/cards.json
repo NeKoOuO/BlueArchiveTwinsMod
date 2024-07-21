@@ -413,8 +413,8 @@
 	},
 	"BATwinsMod:ScriptRewriting": {
 		"NAME": "Script Rewrite",
-		"DESCRIPTION": "Give poison equivalent to its batwinsmod:Burn ,gave batwinsmod:Burn equivalent to its poison . NL exhaust ",
-		"UPGRADE_DESCRIPTION": "Give poison equivalent to its batwinsmod:Burn , then gave batwinsmod:Burn equivalent to its poison. NL exhaust "
+		"DESCRIPTION": "Apply poison equal to the amount of its batwinsmod:Burn . NL Exhaust .",
+		"UPGRADE_DESCRIPTION": "Apply poison equal to twice the amount of its batwinsmod:Burn. NL Exhaust ."
 	},
 	"BATwinsMod:EasterEgg": {
 		"NAME": "Easter Egg",

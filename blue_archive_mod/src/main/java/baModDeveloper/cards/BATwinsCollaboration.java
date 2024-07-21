@@ -4,6 +4,7 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 
 public class BATwinsCollaboration extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("Collaboration");
@@ -29,33 +31,28 @@ public class BATwinsCollaboration extends BATwinsModCustomCard {
 
     public BATwinsCollaboration() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 3;
+        this.baseDamage = 2;
         this.damage = this.baseDamage;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        int amount = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD && c != this) {
-                amount++;
+                addToBot(new VFXAction(new CardFlashVfx(c,true)));
+                addToBot(new DamageRandomEnemyAction(new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+
             }
-        }
-        for (int i = 0; i < amount; i++) {
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         }
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        int amount = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD && c != this) {
-                amount++;
+                addToBot(new VFXAction(new CardFlashVfx(c,true)));
+                addToBot(new DamageAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true), new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
             }
-        }
-        for (int i = 0; i < amount; i++) {
-            addToBot(new DamageAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true), new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
         }
     }
 

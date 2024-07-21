@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 public class BATwinsAcceleratePotion extends CustomPotion {
     public static final String ID = ModHelper.makePath("AcceleratePotion");
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(ID);
-    private static final PotionRarity rarity = PotionRarity.RARE;
+    private static final PotionRarity rarity = PotionRarity.UNCOMMON;
     private static final PotionSize size = PotionSize.CARD;
     private static final PotionColor color = PotionColor.BLUE;
     public static Color liquidColor = new Color(159.0F / 255.0F, 165.0F / 255.0F, 290.0F / 255.0F, 1.0F);

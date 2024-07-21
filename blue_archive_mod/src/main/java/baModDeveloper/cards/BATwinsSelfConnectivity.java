@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -54,9 +55,18 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
             return;
         }
         if (cardToCopy instanceof BATwinsModCustomCard) {
-            ((BATwinsModCustomCard) cardToCopy).numberOfConnections = this.numberOfConnections;
-            ((BATwinsModCustomCard) cardToCopy).useMOMOI(abstractPlayer, abstractMonster);
-            ((BATwinsModCustomCard) cardToCopy).numberOfConnections = 0;
+            addToBot(new AbstractGameAction() {
+
+                final int numberOfConnections=BATwinsSelfConnectivity.this.numberOfConnections;
+                @Override
+                public void update() {
+                    ((BATwinsModCustomCard) cardToCopy).numberOfConnections = this.numberOfConnections;
+                    ((BATwinsModCustomCard) cardToCopy).useMOMOI(abstractPlayer, abstractMonster);
+                    ((BATwinsModCustomCard) cardToCopy).numberOfConnections = 0;
+                    this.isDone=true;
+                }
+            });
+
         } else {
             cardToCopy.use(abstractPlayer, abstractMonster);
         }
@@ -69,9 +79,17 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
             return;
         }
         if (cardToCopy instanceof BATwinsModCustomCard) {
-            ((BATwinsModCustomCard) cardToCopy).numberOfConnections = this.numberOfConnections;
-            ((BATwinsModCustomCard) cardToCopy).useMIDORI(abstractPlayer, abstractMonster);
-            ((BATwinsModCustomCard) cardToCopy).numberOfConnections = 0;
+            addToBot(new AbstractGameAction() {
+
+                final int numberOfConnections=BATwinsSelfConnectivity.this.numberOfConnections;
+                @Override
+                public void update() {
+                    ((BATwinsModCustomCard) cardToCopy).numberOfConnections = this.numberOfConnections;
+                    ((BATwinsModCustomCard) cardToCopy).useMIDORI(abstractPlayer, abstractMonster);
+                    ((BATwinsModCustomCard) cardToCopy).numberOfConnections = 0;
+                    this.isDone=true;
+                }
+            });
         } else {
             cardToCopy.use(abstractPlayer, abstractMonster);
         }

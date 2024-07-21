@@ -9,6 +9,7 @@ import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.event.*;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.patch.BATwinsAbstractMonsterPatch;
+import baModDeveloper.patch.BATwinsCustomModeScreenPatch;
 import baModDeveloper.potion.BATwinsAcceleratePotion;
 import baModDeveloper.potion.BATwinsBurnPotion;
 import baModDeveloper.potion.BATwinsConnectPotion;
@@ -33,6 +34,9 @@ import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.Settings.GameLanguage;
@@ -42,9 +46,12 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.screens.custom.CustomModeScreen;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +61,7 @@ import java.util.function.BiConsumer;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber, ScreenPostProcessor,PostBattleSubscriber {
+public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber, ScreenPostProcessor,PostCreateStartingDeckSubscriber,PostBattleSubscriber {
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -253,6 +260,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, "baModResources/localization/" + lang + "/potion.json");
         BaseMod.loadCustomStringsFile(MonsterStrings.class, "baModResources/localization/" + lang + "/monster.json");
+        BaseMod.loadCustomStringsFile(RunModStrings.class,"baModResources/localization/"+lang+"/runmod.json");
 
     }
 
@@ -347,6 +355,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 //        BaseMod.addMonster(BATwinsAkane.ID, BATwinsAkane::new);
 //        BaseMod.addStrongMonsterEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));
 //        BaseMod.addEliteEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));
+        BaseMod.addSaveField("BATwinsRunMods",new BATwinsCustomModeScreenPatch());
     }
 
     private void CreateConfig() throws IOException {
@@ -416,5 +425,24 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         BATwinsSelfConnectivity.EasterEggCard= AbstractDungeon.returnRandomCard();
+    }
+
+    @Override
+    public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
+        if(playerClass== Enums.BATwins&&Settings.isTrial){
+            if(BATwinsCustomModeScreenPatch.NoMomoiCardModEnable){
+                for(AbstractCard card:cardGroup.group){
+                    if(card instanceof BATwinsModCustomCard&&card.color== Enums.BATWINS_MOMOI_CARD){
+                        ((BATwinsModCustomCard) card).conversionColor(false);
+                    }
+                }
+            }else if(BATwinsCustomModeScreenPatch.NoMidoriCardModEnable){
+                for(AbstractCard card:cardGroup.group){
+                    if(card instanceof BATwinsModCustomCard&&card.color== Enums.BATWINS_MIDORI_CARD){
+                        ((BATwinsModCustomCard) card).conversionColor(false);
+                    }
+                }
+            }
+        }
     }
 }

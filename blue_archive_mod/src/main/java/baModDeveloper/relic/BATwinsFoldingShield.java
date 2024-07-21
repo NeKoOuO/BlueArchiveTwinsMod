@@ -20,14 +20,14 @@ public class BATwinsFoldingShield extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return String.format(DESCRIPTIONS[0], this.amount);
+        return DESCRIPTIONS[0];
     }
 
     @Override
     public void onPlayerEndTurn() {
-        if (!AbstractDungeon.player.hand.isEmpty()) {
+        if (!AbstractDungeon.player.hand.isEmpty()&&AbstractDungeon.player.currentBlock>0) {
             this.flash();
-            addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player.hand.size() * 2));
+            addToBot(new GainBlockAction(AbstractDungeon.player, (int) (AbstractDungeon.player.currentBlock*0.2F)));
         }
 
     }

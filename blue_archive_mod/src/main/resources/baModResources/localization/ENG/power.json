@@ -159,7 +159,7 @@
 	"BATwinsMod:BorrowMePower":{
 		"NAME":"Borrow Me",
 		"DESCRIPTIONS":[
-			"This turn, all cards are considered BATwinsMod:Shared."
+			"This turn, all cards are considered #yShared ."
 		]
 	},
 	"BATwinsMod:MaidFormPower":{

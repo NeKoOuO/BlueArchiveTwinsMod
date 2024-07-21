@@ -69,6 +69,9 @@ public class ModHelper {
                 UnlockTracker.markCardAsSeen(c.cardID);
             }
         }
+        if(list.isEmpty()){
+           return null;
+        }
         return list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1));
     }
 
