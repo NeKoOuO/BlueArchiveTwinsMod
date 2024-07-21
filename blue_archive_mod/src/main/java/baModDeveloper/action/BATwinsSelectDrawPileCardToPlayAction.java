@@ -3,6 +3,7 @@ package baModDeveloper.action;
 import baModDeveloper.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -21,6 +22,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
     private boolean isBlockOrigin = false;
     private boolean removePower = false;
     private UIStrings UISTRINGS = CardCrawlGame.languagePack.getUIString(ModHelper.makePath("GridSelectTitle"));
+    private CardGroup temp;
 
     public BATwinsSelectDrawPileCardToPlayAction(boolean isRandom) {
         this(isRandom, null);
@@ -35,6 +37,8 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
         this.canNotSelect = new ArrayList<>();
         this.amount = 1;
         this.duration = Settings.ACTION_DUR_FAST;
+        temp=new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        temp.group.addAll(this.p.drawPile.group);
     }
 
     public BATwinsSelectDrawPileCardToPlayAction(boolean isRandom, AbstractMonster target, int numberOfConnections) {
@@ -63,33 +67,33 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (this.p.drawPile.isEmpty()) {
+        if (this.temp.isEmpty()) {
             if (!this.canNotSelect.isEmpty()) {
-                this.p.drawPile.group.addAll(canNotSelect);
+                this.temp.group.addAll(canNotSelect);
             }
             this.isDone = true;
             return;
         }
         if (this.isRandom) {
             removeCards();
-            if (!this.p.drawPile.group.isEmpty()) {
-                WhatTheCardDo(this.p.drawPile.getRandomCard(AbstractDungeon.cardRandomRng));
+            if (!this.temp.group.isEmpty()) {
+                WhatTheCardDo(this.temp.getRandomCard(AbstractDungeon.cardRandomRng));
             }
             if (!this.canNotSelect.isEmpty()) {
-                this.p.drawPile.group.addAll(this.canNotSelect);
+                this.temp.group.addAll(this.canNotSelect);
             }
             this.isDone = true;
             tickDuration();
             return;
         } else if (this.duration == Settings.ACTION_DUR_FAST) {
             removeCards();
-            if (this.p.drawPile.isEmpty()) {
-                this.p.drawPile.group.addAll(this.canNotSelect);
+            if (this.temp.isEmpty()) {
+                this.temp.group.addAll(this.canNotSelect);
                 this.isDone = true;
                 return;
             }
-            this.amount = Math.min(this.amount, this.p.drawPile.size());
-            AbstractDungeon.gridSelectScreen.open(this.p.drawPile, this.amount, String.format(UISTRINGS.TEXT[10] + UISTRINGS.TEXT[0], this.amount), false);
+            this.amount = Math.min(this.amount, this.temp.size());
+            AbstractDungeon.gridSelectScreen.open(this.temp, this.amount, String.format(UISTRINGS.TEXT[10] + UISTRINGS.TEXT[0], this.amount), false);
             tickDuration();
             return;
         }
@@ -98,7 +102,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
                 WhatTheCardDo(c);
             }
             if (!this.canNotSelect.isEmpty()) {
-                this.p.drawPile.group.addAll(this.canNotSelect);
+                this.temp.group.addAll(this.canNotSelect);
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             this.isDone = true;
@@ -114,7 +118,7 @@ public class BATwinsSelectDrawPileCardToPlayAction extends AbstractGameAction {
             }
         }
 
-        this.p.drawPile.group.removeAll(this.canNotSelect);
+        this.temp.group.removeAll(this.canNotSelect);
     }
 
     private void WhatTheCardDo(AbstractCard c) {
