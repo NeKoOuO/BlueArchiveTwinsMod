@@ -190,8 +190,8 @@
 	},
 	"BATwinsMod:TemporaryAssistance":{
 		"NAME":"暂时援助",
-		"DESCRIPTION":" batwinsmod:交换 1张手牌，那张牌打出后变回原颜色。这张牌在抽牌堆时，耗尽 [batwinsmod:midoriorbicon] 时加入手牌。",
-		"UPGRADE_DESCRIPTION":" batwinsmod:交换 1张手牌，那张牌打出后变为原颜色。这张牌在抽牌堆或弃牌堆时，耗尽 [batwinsmod:midoriorbicon] 加入手牌。"
+		"DESCRIPTION":" batwinsmod:交换 !M! 张手牌，那张牌打出后变回原颜色。这张牌在抽牌堆时，耗尽 [batwinsmod:midoriorbicon] 时加入手牌。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:交换 !M! 张手牌，那张牌打出后变为原颜色。这张牌在抽牌堆或弃牌堆时，耗尽 [batwinsmod:midoriorbicon] 加入手牌。"
 	},
 	"BATwinsMod:AdventureExperience":{
 		"NAME":"冒险-历练",
