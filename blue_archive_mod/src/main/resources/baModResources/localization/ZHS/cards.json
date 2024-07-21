@@ -43,7 +43,7 @@
     },
     "BATwinsMod:Exchange":{
         "NAME":"交换",
-        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。 NL 消耗 ",
+        "DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。 NL 消耗 。",
         "UPGRADE_DESCRIPTION":" 保留 。 NL batwinsmod:交换 至多3张手牌。 "
     },
     "BATwinsMod:KeepItToTheEnd":{
@@ -77,8 +77,8 @@
     },
     "BATwinsMod:GameLaunch":{
         "NAME":"游戏启动",
-        "DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的牌中随机1张 batwinsmod:[#fa62aa]桃牌 和随机1张 batwinsmod:[#6fcf41]绿牌 本回合耗能为0. NL 消耗 ",
-        "UPGRADE_DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的牌中随机2张牌本回合耗能为0. NL 消耗 "
+        "DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的牌中随机1张 batwinsmod:[#fa62aa]桃牌 和随机1张 batwinsmod:[#6fcf41]绿牌 本回合耗能为0。 NL 消耗 。",
+        "UPGRADE_DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的牌中随机2张牌本回合耗能为0。 NL 消耗 。"
     },
     "BATwinsMod:InspirationEmergence":{
         "NAME":"灵感涌现",
@@ -108,7 +108,7 @@
     },
     "BATwinsMod:BadDesigner":{
         "NAME":"糟糕设计师",
-        "DESCRIPTION":"手牌只有时才能打出。 NL 在手牌时，打出其他牌时丢弃1张牌。再累计打出 !M! 次的话会发生蜕变。 消耗 "
+        "DESCRIPTION":"手牌只有时才能打出。 NL 在手牌时，打出其他牌时丢弃1张牌。再累计打出 !M! 次的话会发生蜕变。 消耗 。"
     },
     "BATwinsMod:BugCard":{
         "NAME":"漏洞",
@@ -155,12 +155,12 @@
 	},
 	"BATwinsMod:BDStudy":{
 		"NAME":"BD学习",
-		"DESCRIPTION":" 消耗 手牌所有 batwinsmod:[#fa62aa]桃牌 ，获得等同于 消耗 的牌总耗能 !M! 倍的 batwinsmod:经验值 。 消耗 "
+		"DESCRIPTION":" 消耗 手牌所有 batwinsmod:[#fa62aa]桃牌 ，获得等同于 消耗 的牌总耗能 !M! 倍的 batwinsmod:经验值 。 消耗 。"
 	},
 	"BATwinsMod:EmergencyRecovery":{
 		"NAME":"紧急恢复",
-		"DESCRIPTION":"获得 [batwinsmod:midoriorbicon] 。若桃能量为0，获得 [batwinsmod:momoiorbicon] 。 消耗 ",
-		"UPGRADE_DESCRIPTION":"获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。若桃能量为0，获得 [batwinsmod:momoiorbicon] 。 消耗 "
+		"DESCRIPTION":"获得 [batwinsmod:midoriorbicon] 。若桃能量为0，获得 [batwinsmod:momoiorbicon] 。 消耗 。",
+		"UPGRADE_DESCRIPTION":"获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。若桃能量为0，获得 [batwinsmod:momoiorbicon] 。 消耗 。"
 	},
 	"BATwinsMod:AbstractSchool":{
 		"NAME":"像素艺术",
@@ -222,8 +222,8 @@
 	},
 	"BATwinsMod:CheatingCodeEnabled":{
 		"NAME":"作弊码开启",
-		"DESCRIPTION":"丢弃手牌所有 batwinsmod:[#6fcf41]绿牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。 消耗 ",
-		"UPGRADE_DESCRIPTION":"丢弃手牌所有 batwinsmod:[#6fcf41]绿牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。本回合结束时将弃牌堆洗入抽牌堆。 消耗 "
+		"DESCRIPTION":"丢弃手牌所有 batwinsmod:[#6fcf41]绿牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。 消耗 。",
+		"UPGRADE_DESCRIPTION":"丢弃手牌所有 batwinsmod:[#6fcf41]绿牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽满。将所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。本回合结束时将弃牌堆洗入抽牌堆。 消耗 。"
 	},
 	"BATwinsMod:FundOverdraft":{
 		"NAME":"资金透支",
@@ -289,7 +289,7 @@
 	},
 	"BATwinsMod:SkillCombination":{
 		"NAME":"技能融合",
-		"DESCRIPTION":"选择抽牌堆1张技能牌 消耗 。将 !M! 张打击加入抽牌堆，且这些打击 batwinsmod:存储 选择的那张牌。 NL 消耗 "
+		"DESCRIPTION":"选择抽牌堆1张技能牌 消耗 。将 !M! 张打击加入抽牌堆，且这些打击 batwinsmod:存储 选择的那张牌。 NL 消耗 。"
 	},
 	"BATwinsMod:IntegratingAndIntegrating":{
 		"NAME":"融会贯通",
@@ -331,7 +331,7 @@
 	},
 	"BATwinsMod:EquipmentUpgrade":{
 		"NAME":"装备升级",
-		"DESCRIPTION":"选择手牌 !M! 张牌 升级 ，获得 batwinsmod:共有 ， 保留 。 NL 消耗 "
+		"DESCRIPTION":"选择手牌 !M! 张牌 升级 ，获得 batwinsmod:共有 ， 保留 。 NL 消耗 。"
 	},
 	"BATwinsMod:AutomaticDefense":{
 		"NAME":"自动防御",
@@ -348,7 +348,7 @@
 	},
 	"BATwinsMod:BorrowMe":{
 		"NAME":"借用一下",
-		"DESCRIPTION":"本回合所有牌视为 batwinsmod:共有 。 NL 消耗 ",
+		"DESCRIPTION":"本回合所有牌视为 batwinsmod:共有 。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION":"本回合所有牌视为 batwinsmod:共有 。"
 	},
 	"BATwinsMod:MaidForm":{
@@ -369,7 +369,7 @@
 	},
 	"BATwinsMod:CheckTheStrategy":{
 		"NAME":"查询攻略书",
-		"DESCRIPTION":"丢弃 !M! 张牌，抽 !M! 张牌，若丢弃的牌颜色相同，则多抽1张牌。 NL 消耗 ",
+		"DESCRIPTION":"丢弃 !M! 张牌，抽 !M! 张牌，若丢弃的牌颜色相同，则多抽1张牌。 NL 消耗 。",
 		"UPGRADE_DESCRIPTION":"丢弃 !M! 张牌，抽 !M! 张牌，若丢弃的牌颜色相同，则多抽1张牌。"
 	},
 	"BATwinsMod:LeaveItToMe":{
@@ -393,15 +393,15 @@
 	},
 	"BATwinsMod:PenetrationDamage":{
 		"NAME":"贯通伤害",
-		"DESCRIPTION":"给予所有敌人 !D! 点伤害，所有没有 格挡 的敌人失去 !M! 点 力量 。 NL 消耗 NL batwinsmod:连携 ：本场战斗不 消耗 。",
+		"DESCRIPTION":"给予所有敌人 !D! 点伤害，所有没有 格挡 的敌人失去 !M! 点 力量 。 NL 消耗 。NL batwinsmod:连携 ：本场战斗不 消耗 。",
 		"EXTENDED_DESCRIPTION": [
 			"给予所有敌人 !D! 点伤害，所有没有 格挡 的敌人失去 !M! 点 力量 。"
 		]
 	},
 	"BATwinsMod:LoginRewards":{
 		"NAME":"登入奖励",
-		"DESCRIPTION":"获得 !M! batwinsmod:经验值 。 NL batwinsmod:连携 ：手牌随机1张 batwinsmod:[#6fcf41]绿牌 batwinsmod:存储 1张 登入奖励 （不会重复存储）。 消耗 ",
-		"UPGRADE_DESCRIPTION":"获得 !M! batwinsmod:经验值 。 NL batwinsmod:连携 ：手牌随机1张 batwinsmod:[#6fcf41]绿牌 batwinsmod:存储 1张 登入奖励+ （不会重复存储）。 消耗 "
+		"DESCRIPTION":"获得 !M! batwinsmod:经验值 。 NL batwinsmod:连携 ：手牌随机1张 batwinsmod:[#6fcf41]绿牌 batwinsmod:存储 1张 登入奖励 （不会重复存储）。 消耗 。",
+		"UPGRADE_DESCRIPTION":"获得 !M! batwinsmod:经验值 。 NL batwinsmod:连携 ：手牌随机1张 batwinsmod:[#6fcf41]绿牌 batwinsmod:存储 1张 登入奖励+ （不会重复存储）。 消耗 。"
 	},
 	"BATwinsMod:Learned":{
 		"NAME":"完美转化",
@@ -413,13 +413,13 @@
 	},
 	"BATwinsMod:ScriptRewriting":{
 		"NAME":"剧本改写",
-		"DESCRIPTION":"给予等同于其 batwinsmod:灼伤 的 中毒 。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION":"给予等同于其 batwinsmod:灼伤 2倍的 中毒 。 NL 消耗 "
+		"DESCRIPTION":"给予等同于其 batwinsmod:灼伤 的 中毒 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION":"给予等同于其 batwinsmod:灼伤 2倍的 中毒 。 NL 消耗 。"
 	},
 	"BATwinsMod:EasterEgg":{
 		"NAME":"彩蛋",
-		"DESCRIPTION":"抽 !M! 张牌。 NL 恭喜你发现了彩蛋。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION":"抽 !M! 张牌。 NL 你居然还升级了这个彩蛋。 NL 消耗 "
+		"DESCRIPTION":"抽 !M! 张牌。 NL 恭喜你发现了彩蛋。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION":"抽 !M! 张牌。 NL 你居然还升级了这个彩蛋。 NL 消耗 。"
 	},
 	"BATwinsMod:HeavyBullets":{
 		"NAME":"重型子弹",
@@ -452,8 +452,8 @@
 	},
 	"BATwinsMod:BulletWarehouse":{
 		"NAME":"武器库",
-		"DESCRIPTION":"从4张 batwinsmod:射击 牌中选择1张加入手牌。获得 保留 并 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 NL 消耗 ",
-		"UPGRADE_DESCRIPTION":"从4张 升级 的 batwinsmod:射击 牌中选择1张加入手牌。获得 保留 并 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 NL 消耗 "
+		"DESCRIPTION":"从4张 batwinsmod:射击 牌中选择1张加入手牌。获得 保留 并 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION":"从4张 升级 的 batwinsmod:射击 牌中选择1张加入手牌。获得 保留 并 batwinsmod:存储 !M! 张随机 batwinsmod:子弹 。 NL 消耗 。"
 	},
 	"BATwinsMod:PoisonBullet":{
 		"NAME":"淬毒子弹",
@@ -513,6 +513,6 @@
 	},
 	"BATwinsMod:MultipleShadows": {
 		"NAME": "占据先机",
-		"DESCRIPTION": "获得 !B! 点 格挡 ， 格挡 在下 !M! 个回合不会消失 。 NL 消耗 "
+		"DESCRIPTION": "获得 !B! 点 格挡 ， 格挡 在下 !M! 个回合不会消失 。 NL 消耗 。"
 	}
 }
