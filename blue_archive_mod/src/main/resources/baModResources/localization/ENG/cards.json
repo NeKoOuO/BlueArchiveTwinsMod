@@ -231,7 +231,7 @@
 	},
 	"BATwinsMod:TakeActionsSeparately":{
 		"NAME":"Separate Action",
-		"DESCRIPTION":"Gain !B! Block. NL Play 1 non-power batwinsmod:MomoiCard from your hand."
+		"DESCRIPTION":"Gain !B! Block. NL Play !M! non-power batwinsmod:MomoiCard from your hand."
 	},
 	"BATwinsMod:RepeatOperation": {
 		"NAME": "Repeat Action",

@@ -29,18 +29,19 @@ public class BATwinsTakeActionsSeparately extends BATwinsModCustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseBlock = 10;
         this.block = this.baseBlock;
+        this.baseMagicNumber=this.magicNumber=1;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1, false, true));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, abstractMonster, null, this.magicNumber, this.numberOfConnections + 1, false, true));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, abstractMonster, null, 1, this.numberOfConnections + 1, false, true));
+        addToBot(new BATwinsSelectHandCardToPlayAction(BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, abstractMonster, null, this.magicNumber, this.numberOfConnections + 1, false, true));
     }
 
     @Override

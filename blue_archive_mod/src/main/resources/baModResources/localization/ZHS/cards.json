@@ -231,7 +231,7 @@
 	},
 	"BATwinsMod:TakeActionsSeparately":{
 		"NAME":"分头行动",
-		"DESCRIPTION":"获得 !B! 点 格挡 。选择手牌1张 batwinsmod:[#fa62aa]桃牌 非能力牌打出。"
+		"DESCRIPTION":"获得 !B! 点 格挡 。选择手牌 !M! 张 batwinsmod:[#fa62aa]桃牌 非能力牌打出。"
 	},
 	"BATwinsMod:RepeatOperation":{
 		"NAME":"重复操作",

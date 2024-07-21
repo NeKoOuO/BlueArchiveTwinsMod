@@ -231,7 +231,7 @@
 	},
 	"BATwinsMod:TakeActionsSeparately":{
 		"NAME":"分かれ行動",
-		"DESCRIPTION":"!B! ブロック を得る。１枚 batwinsmod:モモイカード 非パワー手札をプレイする。"
+		"DESCRIPTION":"!B! ブロック を得る。!M! 枚 batwinsmod:モモイカード 非パワー手札をプレイする。"
 	},
 	"BATwinsMod:RepeatOperation":{
 		"NAME":"リピート操作",
