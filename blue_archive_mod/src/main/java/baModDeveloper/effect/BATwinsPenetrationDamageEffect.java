@@ -39,7 +39,7 @@ public class BATwinsPenetrationDamageEffect extends AbstractGameEffect {
                 this.y=(m.hb.y+m.hb.height/2.0F+this.y)/2.0F;
             }
         }
-        this.stepX=2000.0F;
+        this.stepX=2000.0F*Settings.scale;
         this.duration=(this.endX-this.startX)/this.stepX;
         this.currentX=this.startX;
         this.playVfx=false;
