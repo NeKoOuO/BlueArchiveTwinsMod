@@ -46,8 +46,11 @@ public class BATwinsCustomModeScreenPatch implements CustomSavable , ISubscriber
     @Override
     public void onLoadRaw(JsonElement value) {
         ModHelper.getLogger().info(value);
-        NoMomoiCardModEnable=value.getAsJsonObject().get("NoMomoiCardMod").getAsBoolean();
-        NoMidoriCardModEnable=value.getAsJsonObject().get("NoMidoriCardMod").getAsBoolean();
+        if(value!=null){
+            NoMomoiCardModEnable=value.getAsJsonObject().get("NoMomoiCardMod").getAsBoolean();
+            NoMidoriCardModEnable=value.getAsJsonObject().get("NoMidoriCardMod").getAsBoolean();
+        }
+
     }
 
     @SpirePatch(clz = CustomModeScreen.class,method = "initializeMods")

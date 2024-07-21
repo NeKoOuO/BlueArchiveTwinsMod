@@ -16,7 +16,7 @@ public class BATwinsContinuousShooting extends BATwinsModCustomCard {
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "ContinuousShooting");
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MIDORI_CARD;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -46,7 +46,7 @@ public class BATwinsContinuousShooting extends BATwinsModCustomCard {
         this.timesUpgraded++;
         this.name = NAME + "+" + Integer.toString(this.timesUpgraded);
         this.initializeTitle();
-        this.upgradeMagicNumber(1);
+        this.upgradeMagicNumber(this.timesUpgraded);
     }
 
     @Override
