@@ -5,6 +5,7 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -37,8 +39,11 @@ public class BATwinsBreechLoading extends BATwinsModCustomCard {
     private final Consumer<List<AbstractCard>> callback = cards -> {
         for (AbstractCard c : cards) {
             if (c instanceof BATwinsModCustomCard) {
-                for (int i = 0; i < BATwinsBreechLoading.this.magicNumber; i++)
+                for (int i = 0; i < BATwinsBreechLoading.this.magicNumber; i++){
+                    c.superFlash();
                     ((BATwinsModCustomCard) c).addBringOutCard(BATwinsCustomBulletCard.getRandomBullet());
+                }
+
             }
         }
     };
@@ -52,7 +57,19 @@ public class BATwinsBreechLoading extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new SelectCardsInHandAction(99, SELECTTEXT.TEXT[9], false, false, filter, callback));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                ArrayList<AbstractCard> cards=new ArrayList<>();
+                for(AbstractCard card:AbstractDungeon.player.hand.group){
+                    if(filter.test(card)){
+                        cards.add(card);
+                    }
+                }
+                callback.accept(cards);
+                this.isDone=true;
+            }
+        });
     }
 
     @Override
