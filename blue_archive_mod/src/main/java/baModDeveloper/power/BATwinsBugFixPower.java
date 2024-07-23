@@ -17,14 +17,16 @@ public class BATwinsBugFixPower extends AbstractPower {
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final String IMG_84 = ModHelper.makeImgPath("power", "BugFix84");
     private static final String IMG_32 = ModHelper.makeImgPath("power", "BugFix32");
+    private static TextureAtlas.AtlasRegion REGION128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
+    private static TextureAtlas.AtlasRegion REGION48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
 
     public BATwinsBugFixPower(AbstractCreature onwer, int amount) {
         this.ID = POWER_ID;
         this.type = TYPE;
         this.name = NAME;
         this.owner = onwer;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
+        this.region128 = REGION128;
+        this.region48 = REGION48;
         this.amount = amount;
         this.updateDescription();
     }

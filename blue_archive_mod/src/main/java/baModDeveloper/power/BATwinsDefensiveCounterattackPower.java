@@ -27,6 +27,8 @@ public class BATwinsDefensiveCounterattackPower extends AbstractPower {
     private static final String[] EXCHANGE_DESCRIPTION = exchangePowerStrings.DESCRIPTIONS;
     private static final String IMG_84 = ModHelper.makeImgPath("power", "DefensiveCounterattack84");
     private static final String IMG_32 = ModHelper.makeImgPath("power", "DefensiveCounterattack32");
+    private static TextureAtlas.AtlasRegion REGION128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
+    private static TextureAtlas.AtlasRegion REGION48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
     private boolean exchange;
     private ArrayList<DamageInfo> damageInfos;
 
@@ -41,8 +43,8 @@ public class BATwinsDefensiveCounterattackPower extends AbstractPower {
         this.owner = owner;
         this.type = TYPE;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
+        this.region128 = REGION128;
+        this.region48 = REGION48;
         this.damageInfos = new ArrayList<>();
         updateDescription();
     }

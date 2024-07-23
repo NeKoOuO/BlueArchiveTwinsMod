@@ -24,6 +24,8 @@ public class BATwinsExperiencePower extends AbstractPower {
     private static final String IMG_84 = ModHelper.makeImgPath("power", "Experience84");
     private static final String IMG_32 = ModHelper.makeImgPath("power", "Experience32");
     public static int MAX = 10;
+    private static TextureAtlas.AtlasRegion REGION128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
+    private static TextureAtlas.AtlasRegion REGION48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
     public int LEVEL = 0;
 
     public BATwinsExperiencePower(AbstractCreature owner, int amount) {
@@ -31,8 +33,8 @@ public class BATwinsExperiencePower extends AbstractPower {
         this.type = TYPE;
         this.name = NAME;
         this.owner = owner;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
+        this.region128 = REGION128;
+        this.region48 = REGION48;
         this.amount = amount;
 //        MAX=((LEVEL/5)+1)*10;
         this.updateDescription();

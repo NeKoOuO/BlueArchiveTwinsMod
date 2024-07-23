@@ -26,7 +26,8 @@ public class BATwinsBurnPower extends AbstractPower implements HealthBarRenderPo
     private static final String IMG_84 = ModHelper.makeImgPath("power", "Burn84");
     private static final String IMG_32 = ModHelper.makeImgPath("power", "Burn32");
     private static final Color HEALTHBARCOLOR = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
-
+    private static TextureAtlas.AtlasRegion REGION128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
+    private static TextureAtlas.AtlasRegion REGION48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
     private AbstractCreature source;
 
     public BATwinsBurnPower(AbstractCreature owner, AbstractCreature source, int Amount) {
@@ -36,8 +37,8 @@ public class BATwinsBurnPower extends AbstractPower implements HealthBarRenderPo
         this.type = TYPE;
         this.source = source;
         this.amount = Amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
+        this.region128 = REGION128;
+        this.region48 = REGION48;
 
 
         if (this.amount >= 9999) {
