@@ -31,6 +31,8 @@ public class BATwinsDeveloperCollaborationExchangedPower extends AbstractPower {
     private static final String IMG_MOMOI_32 = ModHelper.makeImgPath("power", "DeveloperCollaboration_momoi32");
     private static final String IMG_MIDORI_84 = ModHelper.makeImgPath("power", "DeveloperCollaboration_midori84");
     private static final String IMG_MIDORI_32 = ModHelper.makeImgPath("power", "DeveloperCollaboration_midori32");
+    private static TextureAtlas.AtlasRegion REGION128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
+    private static TextureAtlas.AtlasRegion REGION48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
     private final TextureAtlas.AtlasRegion momoi128, momoi48, midori128, midori48;
     private AbstractCard.CardColor lastColor;
 
@@ -40,8 +42,8 @@ public class BATwinsDeveloperCollaborationExchangedPower extends AbstractPower {
         this.type = TYPE;
         this.owner = owner;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
+        this.region128 = REGION128;
+        this.region48 = REGION48;
         this.momoi128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MOMOI_84), 0, 0, 84, 84);
         this.momoi48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MOMOI_32), 0, 0, 32, 32);
         this.midori128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_MIDORI_84), 0, 0, 84, 84);

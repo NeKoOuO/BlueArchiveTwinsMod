@@ -16,6 +16,8 @@ public class BATwinsDoubleExperiencePower extends AbstractPower {
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final String IMG_84 = ModHelper.makeImgPath("power", "DoubleExperience84");
     private static final String IMG_32 = ModHelper.makeImgPath("power", "DoubleExperience32");
+    private static TextureAtlas.AtlasRegion REGION128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
+    private static TextureAtlas.AtlasRegion REGION48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
 
     public BATwinsDoubleExperiencePower(AbstractCreature owner) {
         this.name = NAME;
@@ -23,8 +25,8 @@ public class BATwinsDoubleExperiencePower extends AbstractPower {
         this.owner = owner;
         this.type = TYPE;
         this.amount = -1;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
+        this.region128 = REGION128;
+        this.region48 = REGION48;
 
         this.updateDescription();
     }
