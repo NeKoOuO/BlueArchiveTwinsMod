@@ -16,7 +16,7 @@ public class BATwinsSwordOfLightAction extends AbstractGameAction {
         if (shaderProgram == null) {
             shaderProgram = new ShaderProgram(Gdx.files.internal("baModResources/shader/laser/vertex.glsl"), Gdx.files.internal("baModResources/shader/laser/fragment.glsl"));
             if (!shaderProgram.isCompiled()) {
-                ModHelper.getLogger().warn("Shader Program not compiled!");
+                ModHelper.getLogger().warn(this.getClass().getName()+":Shader Program not compiled!");
             }
         }
         this.playVfx = false;

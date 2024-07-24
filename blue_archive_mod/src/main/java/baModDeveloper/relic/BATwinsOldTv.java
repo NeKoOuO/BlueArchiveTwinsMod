@@ -21,7 +21,7 @@ public class BATwinsOldTv extends CustomRelic {
         if(shaderProgram==null){
             shaderProgram=new ShaderProgram(Gdx.files.internal("baModResources/shader/oldtv/vertex.glsl"),Gdx.files.internal("baModResources/shader/oldtv/fragment.glsl"));
             if(!shaderProgram.isCompiled()){
-                throw new RuntimeException(shaderProgram.getLog());
+                ModHelper.getLogger().warn(this.getClass().getName()+":Shader Program not compiled!");
             }
         }
     }
@@ -36,13 +36,16 @@ public class BATwinsOldTv extends CustomRelic {
         super.update();
         if(AbstractDungeon.player!=null&&AbstractDungeon.player.relics.contains(this)){
             shaderTime+=Gdx.graphics.getDeltaTime();
-            BATwinsMod.postProcessQueue.add(((spriteBatch, textureRegion) -> {
-                spriteBatch.setShader(shaderProgram);
-                shaderProgram.setUniformf("iResolution", Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-                shaderProgram.setUniformf("iTime",shaderTime );
-                spriteBatch.draw(textureRegion, 0.0F, 0.0F);
-                spriteBatch.setShader(null);
-            }));
+            if(shaderProgram.isCompiled()){
+                BATwinsMod.postProcessQueue.add(((spriteBatch, textureRegion) -> {
+                    spriteBatch.setShader(shaderProgram);
+                    shaderProgram.setUniformf("iResolution", Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+                    shaderProgram.setUniformf("iTime",shaderTime );
+                    spriteBatch.draw(textureRegion, 0.0F, 0.0F);
+                    spriteBatch.setShader(null);
+                }));
+            }
+
         }
 
     }
