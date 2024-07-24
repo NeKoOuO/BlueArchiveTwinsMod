@@ -55,9 +55,9 @@ public class BATwinsSwordOfLight extends CustomRelic {
         this.counter++;
         if (this.counter == count) {
             flash();
-            addToBot((AbstractGameAction) new RelicAboveCreatureAction((AbstractCreature) AbstractDungeon.player, this));
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new BATwinsSwordOfLightAction());
-            addToBot((AbstractGameAction) new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             stopPulse();
             this.grayscale = true;
         }

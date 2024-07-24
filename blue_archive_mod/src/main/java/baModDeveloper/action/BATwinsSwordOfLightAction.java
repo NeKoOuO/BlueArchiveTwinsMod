@@ -16,7 +16,7 @@ public class BATwinsSwordOfLightAction extends AbstractGameAction {
         if (shaderProgram == null) {
             shaderProgram = new ShaderProgram(Gdx.files.internal("baModResources/shader/laser/vertex.glsl"), Gdx.files.internal("baModResources/shader/laser/fragment.glsl"));
             if (!shaderProgram.isCompiled()) {
-                throw new RuntimeException(shaderProgram.getLog());
+                ModHelper.getLogger().warn("Shader Program not compiled!");
             }
         }
         this.playVfx = false;
@@ -24,6 +24,10 @@ public class BATwinsSwordOfLightAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        if(!shaderProgram.isCompiled()){
+            this.isDone=true;
+            return;
+        }
         if (this.duration == 3.3F) {
             CardCrawlGame.sound.play(ModHelper.makePath("Alice"));
         }
