@@ -32,6 +32,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
@@ -464,7 +465,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
         }
         if (BATwinsMod.Enable3D && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
-            character3DHelper.setPosition(this.drawX - 400.0F * Settings.scale, this.drawY - 260.0F * Settings.scale);
+            character3DHelper.setPosition(this.drawX - 400.0F * Settings.xScale, this.drawY - 260.0F * Settings.yScale);
             character3DHelper.update();
         }
 
