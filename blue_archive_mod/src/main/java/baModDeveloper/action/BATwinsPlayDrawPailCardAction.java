@@ -39,6 +39,9 @@ public class BATwinsPlayDrawPailCardAction extends AbstractGameAction {
         this(card, target, exhaust, numberOfConnections);
         this.isBlockOrigin = isBlockOrigin;
     }
+    public BATwinsPlayDrawPailCardAction(AbstractCard card,AbstractCreature target,int numberOfConnections){
+        this(card,target,false,numberOfConnections);
+    }
 
     @Override
     public void update() {

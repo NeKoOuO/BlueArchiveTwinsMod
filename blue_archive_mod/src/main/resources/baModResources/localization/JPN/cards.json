@@ -276,7 +276,7 @@
 	},
 	"BATwinsMod:OperateFreely":{
 		"NAME":"意のままに捜索",
-		"DESCRIPTION":"山札にランダムな batwinsmod:モモイカード １枚にプレイする。 NL batwinsmod:連携 ：ランダムではなく batwinsmod:モモイカード １枚を選択、プレイする。"
+		"DESCRIPTION":"ドローデッキからランダムな batwinsmod:モモイカード !M! 枚選び、1枚をプレイします。 NL batwinsmod:連携 : このカードのコストがこの戦闘中1減少します。"
 	},
 	"BATwinsMod:ExperienceGiftPackage":{
 		"NAME":"経験値パケージ",

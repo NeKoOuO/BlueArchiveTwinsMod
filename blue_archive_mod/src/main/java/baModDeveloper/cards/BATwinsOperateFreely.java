@@ -1,9 +1,10 @@
 package baModDeveloper.cards;
 
-import baModDeveloper.action.BATwinsSelectDrawPileCardToPlayAction;
+import baModDeveloper.action.BATwinsOperateFreelyAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -24,34 +25,30 @@ public class BATwinsOperateFreely extends BATwinsModCustomCard {
 
     public BATwinsOperateFreely() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber = 1;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if (!this.isInAutoplay) {
-            addToBot(new BATwinsSelectDrawPileCardToPlayAction(true, BATwinsCharacter.Enums.BATWINS_MOMOI_CARD, this.numberOfConnections + 1));
-        }
+        addToBot(new BATwinsOperateFreelyAction(this.magicNumber,this.color,this.numberOfConnections));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if (!this.isInAutoplay) {
-            addToBot(new BATwinsSelectDrawPileCardToPlayAction(true, BATwinsCharacter.Enums.BATWINS_MIDORI_CARD, this.numberOfConnections + 1));
-        }
+        useMOMOI(abstractPlayer,abstractMonster);
     }
 
     @Override
     public void triggerOnConnectPlayed(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new BATwinsSelectDrawPileCardToPlayAction(false, this.color, this.numberOfConnections + 1));
+        addToBot(new ReduceCostAction(this));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(1);
+            this.upgradeMagicNumber(1);
         }
     }
 }
