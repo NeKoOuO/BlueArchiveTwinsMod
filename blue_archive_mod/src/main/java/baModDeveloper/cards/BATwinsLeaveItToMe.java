@@ -29,10 +29,10 @@ public class BATwinsLeaveItToMe extends BATwinsModCustomCard {
 
     public BATwinsLeaveItToMe() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 12;
+        this.baseDamage = 16;
         this.damage = this.baseDamage;
 //        this.isMultiDamage=true;
-        this.baseBlock = 8;
+        this.baseBlock = 5;
         this.block = this.baseBlock;
     }
 
@@ -52,7 +52,7 @@ public class BATwinsLeaveItToMe extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeDamage(4);
+            this.upgradeDamage(6);
             this.upgradeBlock(2);
         }
     }
