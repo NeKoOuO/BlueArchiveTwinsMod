@@ -49,7 +49,7 @@
 		"NAME":"偏折护盾",
 		"FLAVOR":"优香经常使用的护盾",
 		"DESCRIPTIONS":[
-			"回合结束时获得手牌数 #b%d 倍的格挡。"
+			"回合结束时格挡提高20%。"
 		]
 	},
 	"BATwinsMod:Headband":{
@@ -126,7 +126,78 @@
 		"NAME": "禁断之书",
 		"FLAVOR": "记录着不为人知的内容",
 		"DESCRIPTIONS": [
-			"每回合卡牌造成第 #y1 次伤害后，回复 #y1/3 未被格挡的伤害的血量。"
+			"每回合卡牌造成第 #y1 次伤害后，回复 #y1/10 未被格挡的伤害的血量。"
+		]
+	},
+	"BATwinsMod:LearningMaterial": {
+		"NAME": "初级学习材料",
+		"FLAVOR": "快速提升技能！",
+		"DESCRIPTIONS": [
+			"在火堆升级时，若升级的是普通或初始卡牌，则随机升级1张普通或初始卡牌。"
+		]
+	},
+	"BATwinsMod:Adaptability": {
+		"NAME": "适应力",
+		"FLAVOR": "属性提升！",
+		"DESCRIPTIONS":[
+			"升级后给予2 #y经验值 。"
+		]
+	},
+	"BATwinsMod:Flowers": {
+		"NAME": "花束",
+		"FLAVOR": "很漂亮",
+		"DESCRIPTIONS": [
+			"手牌描述变得炫彩，所有牌都变得炫彩后，每回合多抽1张牌。"
+		]
+	},
+	"BATwinsMod:OldTv": {
+		"NAME": "老旧显示器",
+		"FLAVOR": "将就下。",
+		"DESCRIPTIONS": [
+			"在每回合开始时获得 [E] ，画面变得模糊。"
+		]
+	},
+	"BATwinsMod:RankIcon1": {
+		"NAME": "总力战大师",
+		"FLAVOR": "可以不用做爱丽丝的伙伴了。",
+		"DESCRIPTIONS": [
+			"上次游玩获得了%d分：战斗胜利后给予 #b15 #y金币 ，每 #b4 场战斗随机 #y升级 #b1 张牌。",
+			"没有查询到上次游玩的记录：战斗胜利后给予 #b15 #y金币 ，每 #b4 场战斗随机 #y升级 #b1 张牌。"
+		]
+	},
+	"BATwinsMod:RankIcon2": {
+		"NAME": "总力战高手",
+		"FLAVOR": "嘛，普普通通吧。",
+		"DESCRIPTIONS": [
+			"上次游玩获得了%d分：战斗胜利后给予 #b15 #y金币 ，每 #b5 场战斗随机 #y升级 #b1 张牌。"
+		]
+	},
+	"BATwinsMod:RankIcon3": {
+		"NAME": "总力站中坚",
+		"FLAVOR": "要好好培养角色啊。",
+		"DESCRIPTIONS": [
+			"上次游玩获得了%d分：战斗胜利后给予 #b15 #y金币 。"
+		]
+	},
+	"BATwinsMod:RankIcon4": {
+		"NAME": "总力战低手",
+		"FLAVOR": "是忘记打了吗？",
+		"DESCRIPTIONS": [
+			"上次游玩获得了%d分：战斗胜利后给予 #b10 #y金币 。"
+		]
+	},
+	"BATwinsMod:RankIcon": {
+		"NAME": "总力战徽章",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"根据你上一把的得分获得不同效果。"
+		]
+	},
+	"BATwinsMod:FullScoreAnswer": {
+		"NAME": "满分答卷",
+		"FLAVOR": "我也是能做到的！",
+		"DESCRIPTIONS": [
+			"战斗开始时获得 #b1 #y力量 #b1 #y敏捷 ，本场战斗第一次受伤后失去 #b1 #y力量 ， #b1 #y敏捷 。"
 		]
 	}
 }

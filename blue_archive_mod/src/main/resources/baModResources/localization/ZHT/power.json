@@ -2,16 +2,16 @@
     "BATwinsMod:BurnPower":{
         "NAME":"灼伤",
         "DESCRIPTIONS":[
-            "回合结束时，造成","点伤害，然后层数减1。死亡时对其他敌人造成等同于层数2倍的伤害。"
+            "回合结束时，造成 #b"," 点伤害，然后层数减 #y1 。死亡时对其他敌人造成等同于层数 #y2 倍的伤害。"
         ]
     },
     "BATwinsMod:DeveloperCollaborationPower":{
         "NAME":"开发者协同",
         "DESCRIPTIONS":[
-            "战斗中连续交替打出桃牌与绿牌后，本回合卡牌的伤害和格挡上升",
-            "%。",
-            "(打出的上张牌是：",
-            ")",
+            "战斗中连续交替打出 #r桃牌 与 #g绿牌 后，本回合卡牌的伤害和格挡上升 #b",
+            " %。",
+            "(打出的上张牌是： #y",
+            " )",
             "桃牌",
             "绿牌",
             "无色牌",
@@ -24,41 +24,41 @@
     "BATwinsMod:ArtPolishingPower":{
         "NAME":"艺术打磨",
         "DESCRIPTIONS":[
-            "给予异常状态时，给予目标",
-            "层中毒。不会因本能力的效果触发。"
+            "给予异常状态时，给予目标 #b",
+            " 层中毒。不会因本能力的效果触发。"
         ]
     },
     "BATwinsMod:GainTENextTurnPower":{
         "NAME":"下回合能量（小桃）",
         "DESCRIPTIONS":[
-            "下回合获得",
-            "小桃能量。"
+            "下回合获得 #b",
+            " 小桃能量。"
         ]
     },
     "BATwinsMod:GainLENextTurnPower":{
         "NAME":"下回合能量（小绿）",
         "DESCRIPTIONS":[
-            "下回合获得",
-            "小绿能量。"
+            "下回合获得 #b",
+            " 小绿能量。"
         ]
     },
     "BATwinsMod:ArtPolishingExchangePower":{
         "NAME":"艺术打磨(交换)",
         "DESCRIPTIONS":[
-            "给予异常状态时，给予目标",
-            "层灼伤。不会因本能力的效果触发。"
+            "给予异常状态时，给予目标 #b",
+            " 层 #y灼伤 。不会因本能力的效果触发。"
         ]
     },
     "BATwinsMod:OnceMorePower":{
         "NAME":"再来一次",
         "DESCRIPTIONS":[
-            "回合结束时，触发所有敌人的灼伤。"
+            "回合结束时，触发所有敌人的 #y灼伤 。"
         ]
     },
     "BATwinsMod:OnceMoreExchangePower":{
         "NAME":"再来一次（交换）",
         "DESCRIPTIONS":[
-            "回合结束时，触发所有敌人的中毒。"
+            "回合结束时，触发所有敌人的 #y中毒 。"
         ]
     },
     "BATwinsMod:BugFixPower":{
@@ -71,9 +71,9 @@
     "BATwinsMod:ExperiencePower":{
         "NAME":"经验值",
         "DESCRIPTIONS":[
-            "打出桃牌或绿牌时，获得等同于其耗能的经验值。\n当前：LV",
-            "（",
-            "/",
+            "打出 #r桃牌 或 #g绿牌 时，获得等同于其 #y耗能 的经验值。\n当前：LV #b",
+            " （ #b",
+            " /",
             "）\n卡牌的伤害和格挡增加等级数。",
             "升级！！"
         ]
@@ -81,15 +81,15 @@
 	"BATwinsMod:SinglePlayerGamePower":{
 		"NAME":"单人游戏",
 		"DESCRIPTIONS":[
-			"打出牌后若手牌没有桃牌或绿牌，获得",
+			"打出牌后若手牌没有 #r桃牌 或 #g绿牌 ，获得",
 			"点格挡。"
 		]
 	},
 	"BATwinsMod:CoolingTimePower":{
 		"NAME":"下回合加入手牌",
 		"DESCRIPTIONS":[
-			"下回合开始时，将",
-			"加入手牌（除非其已消耗）。"
+			"下回合开始时，将 #y",
+			" 加入手牌（除非其已消耗）。"
 		]
 	},
 	"BATwinsMod:DoubleExperiencePower":{
@@ -128,8 +128,8 @@
 	"BATwinsMod:SeeYouHaveASharenPower":{
 		"NAME":"见者有份！",
 		"DESCRIPTIONS":[
-			"本回合打出的下",
-			"张单体攻击牌对所有敌人打出1次。"
+			"本回合打出的下 #b",
+			" 张单体攻击牌对所有敌人打出1次。"
 		]
 	},
 	"BATwinsMod:ReadingDocumentsPower":{
@@ -147,31 +147,31 @@
 	"BATwinsMod:IntegratingAndIntegratingPower":{
 		"NAME":"融会贯通",
 		"DESCRIPTIONS":[
-			"打出交换后的耗能1以上的牌时将%d张原本颜色的牌加入手牌，并附加 虚无 ， 消耗 。"
+			"打出交换后的耗能1以上的牌时将 #b%d 张原本颜色的牌加入手牌，并附加 虚无 ， 消耗 。"
 		]
 	},
 	"BATwinsMod:MasterCraftsmanshipPower":{
 		"NAME":"技艺大师",
 		"DESCRIPTIONS":[
-			"每回合开始时至多交换%d张手牌。且本场战斗交换牌时将牌升级。"
+			"每回合开始时至多交换 #b%d 张手牌。且本场战斗交换牌时将牌升级。"
 		]
 	},
 	"BATwinsMod:BorrowMePower":{
 		"NAME":"借用一下",
 		"DESCRIPTIONS":[
-			"本回合所有牌视为 batwinsmod:共有 。"
+			"本回合所有牌视为 #y共有 。"
 		]
 	},
 	"BATwinsMod:MaidFormPower":{
 		"NAME":"女仆形态",
 		"DESCRIPTIONS":[
-			"每回合打出第%d张牌后打出抽牌堆1张耗能低于那张牌的牌。"
+			"每回合打出第 #b%d 张牌后打出抽牌堆1张耗能低于那张牌的牌。"
 		]
 	},
 	"BATwinsMod:FlatFallPower":{
 		"NAME":"平地摔",
 		"DESCRIPTIONS":[
-			"本回合只能再打出%d张攻击牌。"
+			"本回合只能再打出 #b%d 张攻击牌。"
 		]
 	},
 	"BATwinsMod:ExpansionMagazinePower":{
@@ -183,21 +183,21 @@
 	"BATwinsMod:DisabledMomoiPower": {
 		"NAME": "桃牌禁止",
 		"DESCRIPTIONS": [
-			"本回合不能打出桃牌。"
+			"本回合不能打出 #r桃牌 。"
 		]
 	},
 	"BATwinsMod:DisabledMidoriPower": {
 		"NAME": "绿牌禁止",
 		"DESCRIPTIONS": [
-			"本回合不能打出绿牌。"
+			"本回合不能打出 #g绿牌 。"
 		]
 	},
 	"BATwinsMod:DeveloperCollaborationExchangedPower": {
 		"NAME": "开发者协同（交换）",
 		"DESCRIPTIONS": [
-			"战斗中连续交替打出桃牌与绿牌后，所有敌人的中毒与灼伤层数增加%d%%。（打出的上张牌是：%s）",
-			"桃牌",
-			"绿牌",
+			"战斗中连续交替打出 #r桃牌 与 #g绿牌 后，所有敌人的中毒与灼伤层数增加 #b%d %%。（打出的上张牌是： #y%s ）",
+			" #r桃牌 ",
+			" #g绿牌 ",
 			"无色牌",
 			"诅咒牌",
 			"其他牌",
