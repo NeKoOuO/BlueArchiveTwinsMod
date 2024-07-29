@@ -68,16 +68,22 @@ public class BATwinsRankIcon extends CustomRelic {
             return DESCRIPTIONS[0];
         }
         if(this.score==-1){
-            return DESCRIPTIONS[0];
+            return relicStrings[0].DESCRIPTIONS[0];
         }
         return String.format(relicStrings[this.rank-1].DESCRIPTIONS[0],this.score);
     }
 
     private int checkScore(){
         RunData runData = null;
+        int saveSlot=CardCrawlGame.saveSlot;
+        String folderPath="runs/";
 //        String timestamp = null;
         try {
-            FileHandle[] fileHandler= Gdx.files.local("runs/"+AbstractDungeon.player.chosenClass.name()).list();
+            if(saveSlot!=0){
+                folderPath=folderPath+saveSlot+"_";
+            }
+            folderPath+=AbstractDungeon.player.chosenClass.name();
+            FileHandle[] fileHandler= Gdx.files.local(folderPath).list();
             Optional<FileHandle> fileHandle= Arrays.stream(fileHandler).max(Comparator.comparing(FileHandle::name));
 //            for (FileHandle fileHandle : fileHandler) {
 //                RunData temp = ModHelper.gson.fromJson(fileHandle.readString(), RunData.class);
