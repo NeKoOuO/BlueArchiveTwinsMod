@@ -1,62 +1,62 @@
 {
-    "BATwinsMod:Exchange":{
-        "TEXT":[
-            "选择",
-            "手牌交换"
-        ],
-        "EXTRA_TEXT":[
-            "1张",
-            "1至3张"
-        ]
-    },
-    "BATwinsMod:BattleCommandAction":{
-        "TEXT":[
-            "选择1张手牌返回抽牌堆"
-        ]
-    },
-    "BATwinsMod:AddHandAccordColorAction":{
-        "TEXT":[
-            "选择1张牌加入手牌"
-        ]
-    },
-    "BATwinsMod:InterpretiveErrorAction":{
-        "TEXT":[
-            "选择1张牌交换"
-        ]
-    },
+	"BATwinsMod:Exchange":{
+		"TEXT":[
+			"選擇",
+			"手牌交換"
+		],
+		"EXTRA_TEXT":[
+			"1張",
+			"1至3張"
+		]
+	},
+	"BATwinsMod:BattleCommandAction":{
+		"TEXT":[
+			"選擇1張手牌返回抽牌堆"
+		]
+	},
+	"BATwinsMod:AddHandAccordColorAction":{
+		"TEXT":[
+			"選擇1張牌加入手牌"
+		]
+	},
+	"BATwinsMod:InterpretiveErrorAction":{
+		"TEXT":[
+			"選擇1張牌交換"
+		]
+	},
 	"BATwinsMod:SelectAdventureCard":{
 		"TEXT":[
-			"选择1张冒险牌"
+			"選擇1張冒險牌"
 		]
 	},
 	"BATwinsMod:ExchangeButton":{
 		"TEXT":[
-			"交换1张牌"
+			"交換1張牌"
 		]
 	},
 	"BATwinsMod:ExchangeEffect":{
 		"TEXT":[
-			"选1张牌交换"
+			"選1張牌交換"
 		]
 	},
 	"BATwinsMod:Exchange_Option":{
 		"TEXT":[
-			"#b交换 %s"
+			"#b交換 %s"
 		]
 	},
 	"BATwinsMod:GridSelectTitle":{
 		"TEXT":[
 			"打出",
 			"消耗",
-			"复制",
+			"複製",
 			"下回合加入手牌",
-			"存储",
+			"存儲",
 			"加入手牌",
-			"升级",
-			"交换",
+			"升級",
+			"交換",
 			"放入%s",
-			"添加子弹",
-			"选择%d张牌"
+			"添加子彈",
+			"選擇%d張牌"
 		]
 	},
 	"BATwinsMod:CancelButton":{
@@ -66,91 +66,91 @@
 	},
 	"BATwinsMod:TipMsg":{
 		"TEXT":[
-			"选择1张牌交换"
+			"選擇1張牌交換"
 		]
 	},
 	"BATwinsMod:CardViewBtn":{
 		"TEXT":[
-			"看交换后"
+			"看交換後"
 		]
 	},
 	"BATwinsMod:EnergyOrbLabel":{
 		"TEXT":[
 			"小桃能量",
-			"小绿能量"
+			"小綠能量"
 		]
 	},
 	"BATwinsMod:EnergyOrbMsg":{
 		"TEXT":[
-			"你当前的小桃能量，打出桃牌时优先消耗这个能量。不足时消耗两倍小绿能量代替。",
-			"你当前的小绿能量，打出绿牌时优先消耗这个能量。不足时消耗两倍小桃能量代替。"
+			"你當前的小桃能量，打出桃牌時優先消耗這個能量。不足時消耗兩倍小綠能量代替。",
+			"你當前的小綠能量，打出綠牌時優先消耗這個能量。不足時消耗兩倍小桃能量代替。"
 		]
 	},
 	"BATwinsMod:ConfigToggler":{
 		"TEXT":[
-			"自动排序手牌",
-			"显示经验条"
+			"自動排序手牌",
+			"顯示經驗條"
 		]
 	},
 	"BATwinsMod:Tips":{
 		"TEXT":[
-			"小桃和小绿喜欢玩复古游戏",
-			"小桃好像偷偷默默在选人按钮上设置了什么，说着什么多按几次。。。。",
-			"虽然小桃和小绿的性格大不相同，但对游戏相同的热情使她们关系非常好。",
-			"小桃是姐姐，小绿是妹妹。",
-			"小桃和小绿的生日都是2月4日，因为是双胞胎嘛",
-			"小桃和小绿的枪上一直挂着对方送的挂饰"
+			"小桃和小綠喜歡玩復古遊戲",
+			"小桃好像偷偷默默在選人按鈕上設置了什麼，說着什麼多按幾次。。。。",
+			"雖然小桃和小綠的性格大不相同，但對遊戲相同的熱情使她們關係非常好。",
+			"小桃是姐姐，小綠是妹妹。",
+			"小桃和小綠的生日都是2月4日，因爲是雙胞胎嘛",
+			"小桃和小綠的槍上一直掛着對方送的掛飾"
 		]
 	},
 	"BATwinsMod:FlatFall":{
 		"TEXT":[
-			"摔倒了，不能再打出攻击牌。"
+			"摔倒了，不能再打出攻擊牌。"
 		]
 	},
 	"BATwinsMod:Tutorial":{
 		"TEXT":[
-			"本角色拥有两个能量槽，并且有着两种颜色的卡牌。打出桃牌优先消耗桃能量，打出绿牌优先消耗率能量。",
-			"当此颜色的能量不足时也可以打出卡牌，但需要消耗2倍的另一颜色能量。",
-			"能量槽上有着挂饰的是主要能量槽，打出除了本角色的卡牌（例如无色牌等）时会优先消耗主要能量槽。 NL 能够提升能量上限的效果会同时提升两个能量槽的上限，但在战斗中获得临时能量的效果只会在主要能量槽上增加。 NL 你可以随时点击能量槽来设定主要能量槽。"
+			"本角色擁有兩個能量槽，並且有着兩種顏色的卡牌。打出桃牌優先消耗桃能量，打出綠牌優先消耗率能量。",
+			"當此顏色的能量不足時也可以打出卡牌，但需要消耗2倍的另一顏色能量。",
+			"能量槽上有着掛飾的是主要能量槽，打出除了本角色的卡牌（例如無色牌等）時會優先消耗主要能量槽。 NL 能夠提升能量上限的效果會同時提升兩個能量槽的上限，但在戰鬥中獲得臨時能量的效果只會在主要能量槽上增加。 NL 你可以隨時點擊能量槽來設定主要能量槽。"
 		]
 	},
 	"BATwinsMod:LoopBreak":{
 		"TEXT":[
-			" #r已经足够了！ ",
-			" #g停下来吧。 "
+			" #r已經足夠了！ ",
+			" #g停下來吧。 "
 		]
 	},
 	"BATwinsMod:ModeSelectionPrompt":{
 		"TEXT":[
-			"开启3D模型",
-			"是否开启3D模型",
-			"开启需要加载模型，会消耗一些时间。\n若开启此选项导致您无法打开游戏或游戏卡死，请重启游戏后关闭此选项。"
+			"開啓3D模型",
+			"是否開啓3D模型",
+			"開啓需要加載模型，會消耗一些時間。\n若開啓此選項導致您無法打開遊戲或遊戲卡死，請重啓遊戲後關閉此選項。"
 		]
 	},
 	"BATwinsMod:tabBarName":{
 		"TEXT":[
-			"才羽桃与才羽绿",
+			"才羽桃與才羽綠",
 			"桃牌",
 			"Batwinsmidoricard",
-			"绿牌"
+			"綠牌"
 		]
 	},
 	"BATwinsMod:ExchangeKeyowrds":{
 		"TEXT":[
 			"中毒",
-			"batwinsmod:灼伤",
+			"batwinsmod:灼傷",
 			"[batwinsmod:midoriorbicon]",
 			"[batwinsmod:momoiorbicon]",
 			"batwinsmod:[#fa62aa]桃牌",
-			"batwinsmod:[#6fcf41]绿牌",
-			"虚弱",
-			"易伤"
+			"batwinsmod:[#6fcf41]綠牌",
+			"虛弱",
+			"易傷"
 		]
 	},
 	"BATwinsMod:Skins": {
 		"TEXT": [
-			"普通形态",
-			"女仆形态"
+			"普通形態",
+			"女僕形態"
 		]
 	}
 }
