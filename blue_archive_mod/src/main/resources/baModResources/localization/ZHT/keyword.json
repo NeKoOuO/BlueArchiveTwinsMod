@@ -1,120 +1,120 @@
 [
-    {
-        "NAMES":[
-            "灼伤"
-        ],
-        "DESCRIPTION":"回合结束时，受到等同于层数的伤害，然后层数减1。死亡时对其他敌人造成等同于层数2倍的伤害。"
-    },
-    {
-        "NAMES":[
-            "[TE]"
-        ],
-        "DESCRIPTION":"小桃能量。"
-    },
-    {
-        "NAMES":[
-            "桃牌",
-			"[#fa62aa]桃牌"
-        ],
-        "DESCRIPTION":"卡面为红色的牌。上面印有可爱的小桃哦。"
-    },
-    {
-        "NAMES":[
-            "绿牌",
-			"[#6fcf41]绿牌"
-        ],
-        "DESCRIPTION":"卡面为绿色的牌。上面印有酷酷的小绿哦。"
-    },
-    {
-        "NAMES":[
-            "共有"
-        ],
-        "DESCRIPTION":"这张牌会优先消耗主能量槽的能量。主能量槽不足时消耗另一个能量槽且不会消耗两倍能量。主能量槽为显示有小挂件的能量槽。打出共有属性的牌或非本角色的牌时优先消耗的能量槽。可以点击能量槽进行切换。"
-    },
-    {
-        "NAMES":[
-            "主能量槽"
-        ],
-        "DESCRIPTION":"主能量槽为显示有小挂件的能量槽。打出共有属性的牌或非本角色的牌时优先消耗的能量槽。可以点击能量槽进行切换。"
-    },
-    {
-        "NAMES":[
-            "交换"
-        ],
-        "DESCRIPTION":"将桃牌变为绿牌，将绿牌变为桃牌。部分牌的效果会发生变化。"
-    },
-	{
-		"NAMES":[
-			"提升等级"
-		],
-		"DESCRIPTION":"立即将等级增加1级。经验值变为0."
-	},
-	{
-		"NAMES":[
-			"经验值"
-		],
-		"DESCRIPTION":"打出桃牌或绿牌后获得等同于其耗能的经验值，经验值达到10点时提升等级1."
-	},
-	{
-		"NAMES":[
-			"连携"
-		],
-		"DESCRIPTION":"被卡或能力的效果打出时触发。"
-	},
-	{
-		"NAMES":[
-			"超连携"
-		],
-		"DESCRIPTION":"打出这张牌的牌也是被效果打出时触发。"
-	},
-	{
-		"NAMES":[
-			"只能被连携"
-		],
-		"DESCRIPTION":"不能被打出，但能被效果打出。"
-	},
-	{
-		"PROPER_NAME":"[batwinsmod:momoiorbicon]",
-		"NAMES":[
-			"momoiorbicon"
-		],
-		"DESCRIPTION":"[batwinsmod:momoiorbicon] 桃牌所消耗的能量槽。"
-	},
-	{
-		"PROPER_NAME":"[batwinsmod:midoriorbicon]",
-		"NAMES":[
-			"midoriorbicon"
-		],
-		"DESCRIPTION":"[batwinsmod:midoriorbicon] 绿牌所消耗的能量槽。"
-	},
-	{
-		"NAMES":[
-			"存储"
-		],
-		"DESCRIPTION":"这张牌打出时会依次打出这张牌存储的牌。"
-	},
-	{
-		"NAMES":[
-			"子弹"
-		],
-		"DESCRIPTION":"造成伤害的无色牌。被存储时会自动合并。"
-	},
-	{
-		"NAMES":[
-			"射击"
-		],
-		"DESCRIPTION":"名字中包含 射击 的卡。"
-	},
-	{
-		"NAMES":[
-			"加速"
-		],
-		"DESCRIPTION":"选择抽牌堆1张耗能低于X的牌打出。"
-	},
-	{
-		"NAMES":[
-			"加速+"
-		],
-		"DESCRIPTION":"选择抽牌堆1张耗能低于X+1的牌打出。"
-	}
+  {
+    "NAMES": [
+      "灼傷"
+    ],
+    "DESCRIPTION": "回合結束時，受到等同於層數的傷害，然後層數減1。死亡時對其他敵人造成等同於層數2倍的傷害。"
+  },
+  {
+    "NAMES": [
+      "[TE]"
+    ],
+    "DESCRIPTION": "小桃能量。"
+  },
+  {
+    "NAMES": [
+      "桃牌",
+      "[#fa62aa]桃牌"
+    ],
+    "DESCRIPTION": "卡面為紅色的牌。上面印有可愛的小桃哦。"
+  },
+  {
+    "NAMES": [
+      "綠牌",
+      "[#6fcf41]綠牌"
+    ],
+    "DESCRIPTION": "卡面為綠色的牌。上面印有酷酷的小綠哦。"
+  },
+  {
+    "NAMES": [
+      "共有"
+    ],
+    "DESCRIPTION": "這張牌會優先消耗主能量槽的能量。主能量槽不足時消耗另一個能量槽且不會消耗兩倍能量。主能量槽為顯示有小掛件的能量槽。打出共有屬性的牌或非本角色的牌時優先消耗的能量槽。可以點擊能量槽進行切換。"
+  },
+  {
+    "NAMES": [
+      "主能量槽"
+    ],
+    "DESCRIPTION": "主能量槽為顯示有小掛件的能量槽。打出共有屬性的牌或非本角色的牌時優先消耗的能量槽。可以點擊能量槽進行切換。"
+  },
+  {
+    "NAMES": [
+      "交換"
+    ],
+    "DESCRIPTION": "將桃牌變為綠牌，將綠牌變為桃牌。部分牌的效果會發生變化。"
+  },
+  {
+    "NAMES": [
+      "提升等級"
+    ],
+    "DESCRIPTION": "立即將等級增加1級。經驗值變為0。"
+  },
+  {
+    "NAMES": [
+      "經驗值"
+    ],
+    "DESCRIPTION": "打出桃牌或綠牌後獲得等同於其耗能的經驗值，經驗值達到10點時提升等級1。"
+  },
+  {
+    "NAMES": [
+      "連攜"
+    ],
+    "DESCRIPTION": "被卡或能力的效果打出時觸發。"
+  },
+  {
+    "NAMES": [
+      "超連攜"
+    ],
+    "DESCRIPTION": "打出這張牌的牌也是被效果打出時觸發。"
+  },
+  {
+    "NAMES": [
+      "只能被連攜"
+    ],
+    "DESCRIPTION": "不能被打出，但能被效果打出。"
+  },
+  {
+    "PROPER_NAME": "[batwinsmod:momoiorbicon]",
+    "NAMES": [
+      "momoiorbicon"
+    ],
+    "DESCRIPTION": "[batwinsmod:momoiorbicon] 桃牌所消耗的能量槽。"
+  },
+  {
+    "PROPER_NAME": "[batwinsmod:midoriorbicon]",
+    "NAMES": [
+      "midoriorbicon"
+    ],
+    "DESCRIPTION": "[batwinsmod:midoriorbicon] 綠牌所消耗的能量槽。"
+  },
+  {
+    "NAMES": [
+      "存儲"
+    ],
+    "DESCRIPTION": "這張牌打出時會依次打出這張牌存儲的牌。"
+  },
+  {
+    "NAMES": [
+      "子彈"
+    ],
+    "DESCRIPTION": "造成傷害的無色牌。被存儲時會自動合併。"
+  },
+  {
+    "NAMES": [
+      "射擊"
+    ],
+    "DESCRIPTION": "名字中包含 射擊 的卡。"
+  },
+  {
+    "NAMES": [
+      "加速"
+    ],
+    "DESCRIPTION": "選擇抽牌堆1張耗能低於X的牌打出。"
+  },
+  {
+    "NAMES": [
+      "加速+"
+    ],
+    "DESCRIPTION": "選擇抽牌堆1張耗能低於X+1的牌打出。"
+  }
 ]
