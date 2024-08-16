@@ -333,6 +333,10 @@ public class Character3DHelper {
             ModHelper.getLogger().info("REACTION");
 
             animationController.queue(getAnimationString(AnimationName.REACTION, BATWINS_MOMOI_CARD), 1, 1, null, 0.5F);
+        }),
+        CONTINUEATTACK(animationController->{
+            ModHelper.getLogger().info("CONTINUEATTACK");
+            animationController.queue(getAnimationString(ATTACKING,BATWINS_MOMOI_CARD),5,1,null,0.0F);
         });
         private final Consumer<AnimationController> operation;
 
@@ -398,6 +402,10 @@ public class Character3DHelper {
             ModHelper.getLogger().info("REACTION");
 
             animationController.queue(getAnimationString(AnimationName.REACTION, BATWINS_MIDORI_CARD), 1, 1, null, 0.5F);
+        }),
+        CONTINUEATTACK(animationController->{
+            ModHelper.getLogger().info("CONTINUEATTACK");
+            animationController.queue(getAnimationString(ATTACKING,BATWINS_MIDORI_CARD),5,1,null,0.0F);
         });
         private final Consumer<AnimationController> operation;
 

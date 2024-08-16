@@ -15,6 +15,7 @@ import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMidoriOrb;
 import baModDeveloper.ui.panels.energyorb.BATwinsEnergyMomoiOrb;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
 import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
+import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomMultiPageFtue;
 import basemod.abstracts.CustomPlayer;
@@ -32,7 +33,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
@@ -47,12 +47,16 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.screens.stats.StatsScreen;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class BATwinsCharacter extends CustomPlayer {
     private static final String BATWINS_CHARACTER_SHOULDER_1 = ModHelper.makeImgPath("char", "shoulder");
@@ -654,7 +658,11 @@ public class BATwinsCharacter extends CustomPlayer {
             effects.add(new BATwinsEasterEggEffect(true, false));
     }
 
-
+    @Override
+    public void renderStatScreen(SpriteBatch sb, float screenX, float screenY) {
+        StatsScreen.renderHeader(sb, BaseMod.colorString(this.getLocalizedCharacterName(),"#"+this.getCardRenderColor().toString())+"[]",screenX,screenY);
+        this.getCharStat().render(sb,screenX,screenY);
+    }
 
     public static class Enums {
         @SpireEnum
