@@ -30,12 +30,12 @@ public class BATwinsOnceMore extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsOnceMorePower(abstractPlayer)));
+        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsOnceMorePower(abstractPlayer,1)));
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsOnceMoreExchangePower(abstractPlayer)));
+        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BATwinsOnceMoreExchangePower(abstractPlayer,1)));
     }
 
     @Override
