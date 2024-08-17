@@ -17,6 +17,7 @@ import baModDeveloper.potion.BATwinsStaminaPotion;
 import baModDeveloper.relic.*;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
 import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
+import baModDeveloper.ui.victorycut.VictoryCut1;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -417,6 +418,11 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         spriteBatch.setProjectionMatrix(orthographicCamera.combined);
 
         BATwinsAbstractMonsterPatch.takeTime();
+
+        if(cut1!=null){
+            cut1.update();
+            cut1.render(spriteBatch);
+        }
     }
 
     @Override
@@ -424,6 +430,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BATwinsSelfConnectivity.EasterEggCard= AbstractDungeon.returnRandomCard();
     }
 
+    public static VictoryCut1 cut1;
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         if(playerClass== Enums.BATwins&&Settings.isTrial){

@@ -17,6 +17,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.DamageImpactCurvyEffect;
+import com.megacrit.cardcrawl.vfx.combat.DamageImpactLineEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import java.util.ArrayList;
@@ -29,19 +31,20 @@ public class VictoryCut1 extends AbstractBATwinsVictoryCut implements Disposable
     private boolean isDone;
     private Character3DHelper character3DHelper;
     private FrameBuffer buffer;
+    private FrameBuffer charBuffer;
 
     private TextureAtlas heartAtlas;
     private Skeleton heartSkeleton;
     private AnimationState heartState;
     private AnimationStateData heartStateData;
-
+    private int effectCount;
     public static SkeletonMeshRenderer sr;
 
     private boolean setAnima=false;
 
     private List<AbstractGameEffect> effectList;
     private Random random;
-
+    private Texture endTexture;
     public VictoryCut1(){
         TextureAtlas atlas=new TextureAtlas(Gdx.files.internal("endingScene/scene.atlas"));
         this.backImg = atlas.findRegion("bg");
@@ -58,8 +61,10 @@ public class VictoryCut1 extends AbstractBATwinsVictoryCut implements Disposable
             this.character3DHelper=((BATwinsCharacter) AbstractDungeon.player).get3DHelper();
         }
         this.buffer = new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false,false);
+        this.charBuffer = new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false,false);
 
         effectList=new ArrayList<>();
+        this.effectCount=0;
         this.random=new Random();
     }
 
@@ -70,6 +75,9 @@ public class VictoryCut1 extends AbstractBATwinsVictoryCut implements Disposable
 
     @Override
     public void update() {
+        if(this.isDone){
+           return;
+        }
         this.duration-=Gdx.graphics.getDeltaTime();
         this.heartState.update(Gdx.graphics.getDeltaTime());
         this.heartState.apply(this.heartSkeleton);
@@ -82,8 +90,13 @@ public class VictoryCut1 extends AbstractBATwinsVictoryCut implements Disposable
 
         float effectOffsetX=(this.random.nextFloat()*2.0F-1.0F)*Settings.WIDTH*0.1F;
         float effectOffsetY=(this.random.nextFloat()*2.0F)*Settings.HEIGHT*0.2F;
-        effectList.add(new FlashAtkImgEffect(this.heartSkeleton.getX()+effectOffsetX,this.heartSkeleton.getY()+effectOffsetY, AbstractGameAction.AttackEffect.BLUNT_LIGHT,true));
-
+        if(effectCount%3==0){
+            effectList.add(new FlashAtkImgEffect(this.heartSkeleton.getX()+effectOffsetX,this.heartSkeleton.getY()+effectOffsetY, AbstractGameAction.AttackEffect.BLUNT_LIGHT,true));
+        }else{
+            effectList.add(new DamageImpactLineEffect(this.heartSkeleton.getX()+effectOffsetX,this.heartSkeleton.getY()+effectOffsetY));
+            effectList.add(new DamageImpactCurvyEffect(this.heartSkeleton.getX()+effectOffsetX,this.heartSkeleton.getY()+effectOffsetY));
+        }
+        effectCount++;
         for(AbstractGameEffect effect:effectList){
             effect.update();
         }
@@ -94,6 +107,11 @@ public class VictoryCut1 extends AbstractBATwinsVictoryCut implements Disposable
 
     @Override
     public void render(SpriteBatch sb) {
+        if(endTexture!=null){
+            sb.setColor(Color.ORANGE.cpy());
+            sb.draw(endTexture, 0.0F, Settings.HEIGHT / 2.0F, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT, 0.5F, 0.5F, 0.0F, 0, 0, Settings.WIDTH, Settings.HEIGHT, false, true);
+            return;
+        }
         sb.end();
 
         buffer.begin();
@@ -105,6 +123,9 @@ public class VictoryCut1 extends AbstractBATwinsVictoryCut implements Disposable
 
         sb.begin();
         Texture texture = buffer.getColorBufferTexture();
+        if(this.isDone){
+            endTexture=texture;
+        }
         sb.setColor(Color.WHITE.cpy());
         sb.draw(texture, 0.0F, Settings.HEIGHT / 2.0F, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT, 0.5F, 0.5F, 0.0F, 0, 0, Settings.WIDTH, Settings.HEIGHT, false, true);
     }
