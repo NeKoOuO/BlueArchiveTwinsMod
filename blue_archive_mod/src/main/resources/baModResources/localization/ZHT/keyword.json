@@ -1,0 +1,120 @@
+[
+  {
+    "NAMES": [
+      "灼傷"
+    ],
+    "DESCRIPTION": "回合結束時，受到等同於層數的傷害，然後層數減1。死亡時對其他敵人造成等同於層數2倍的傷害。"
+  },
+  {
+    "NAMES": [
+      "[TE]"
+    ],
+    "DESCRIPTION": "小桃能量。"
+  },
+  {
+    "NAMES": [
+      "桃牌",
+      "[#fa62aa]桃牌"
+    ],
+    "DESCRIPTION": "卡面為紅色的牌。上面印有可愛的小桃哦。"
+  },
+  {
+    "NAMES": [
+      "綠牌",
+      "[#6fcf41]綠牌"
+    ],
+    "DESCRIPTION": "卡面為綠色的牌。上面印有酷酷的小綠哦。"
+  },
+  {
+    "NAMES": [
+      "共有"
+    ],
+    "DESCRIPTION": "這張牌會優先消耗主能量槽的能量。主能量槽不足時消耗另一個能量槽且不會消耗兩倍能量。主能量槽為顯示有小掛件的能量槽。打出共有屬性的牌或非本角色的牌時優先消耗的能量槽。可以點擊能量槽進行切換。"
+  },
+  {
+    "NAMES": [
+      "主能量槽"
+    ],
+    "DESCRIPTION": "主能量槽為顯示有小掛件的能量槽。打出共有屬性的牌或非本角色的牌時優先消耗的能量槽。可以點擊能量槽進行切換。"
+  },
+  {
+    "NAMES": [
+      "交換"
+    ],
+    "DESCRIPTION": "將桃牌變為綠牌，將綠牌變為桃牌。部分牌的效果會發生變化。"
+  },
+  {
+    "NAMES": [
+      "提升等級"
+    ],
+    "DESCRIPTION": "立即將等級增加1級。經驗值變為0。"
+  },
+  {
+    "NAMES": [
+      "經驗值"
+    ],
+    "DESCRIPTION": "打出桃牌或綠牌後獲得等同於其耗能的經驗值，經驗值達到10點時提升等級1。"
+  },
+  {
+    "NAMES": [
+      "連攜"
+    ],
+    "DESCRIPTION": "被卡或能力的效果打出時觸發。"
+  },
+  {
+    "NAMES": [
+      "超連攜"
+    ],
+    "DESCRIPTION": "打出這張牌的牌也是被效果打出時觸發。"
+  },
+  {
+    "NAMES": [
+      "只能被連攜"
+    ],
+    "DESCRIPTION": "不能被打出，但能被效果打出。"
+  },
+  {
+    "PROPER_NAME": "[batwinsmod:momoiorbicon]",
+    "NAMES": [
+      "momoiorbicon"
+    ],
+    "DESCRIPTION": "[batwinsmod:momoiorbicon] 桃牌所消耗的能量槽。"
+  },
+  {
+    "PROPER_NAME": "[batwinsmod:midoriorbicon]",
+    "NAMES": [
+      "midoriorbicon"
+    ],
+    "DESCRIPTION": "[batwinsmod:midoriorbicon] 綠牌所消耗的能量槽。"
+  },
+  {
+    "NAMES": [
+      "存儲"
+    ],
+    "DESCRIPTION": "這張牌打出時會依次打出這張牌存儲的牌。"
+  },
+  {
+    "NAMES": [
+      "子彈"
+    ],
+    "DESCRIPTION": "造成傷害的無色牌。被存儲時會自動合併。"
+  },
+  {
+    "NAMES": [
+      "射擊"
+    ],
+    "DESCRIPTION": "名字中包含 射擊 的卡。"
+  },
+  {
+    "NAMES": [
+      "加速"
+    ],
+    "DESCRIPTION": "選擇抽牌堆1張耗能低於X的牌打出。"
+  },
+  {
+    "NAMES": [
+      "加速+"
+    ],
+    "DESCRIPTION": "選擇抽牌堆1張耗能低於X+1的牌打出。"
+  }
+]

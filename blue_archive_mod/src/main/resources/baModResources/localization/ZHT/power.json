@@ -1,0 +1,207 @@
+{
+	"BATwinsMod:BurnPower":{
+		"NAME":"灼傷",
+		"DESCRIPTIONS":[
+			"回合結束時，造成 #b"," 點傷害，然後層數減 #y1 。死亡時對其他敵人造成等同於層數 #y2 倍的傷害。"
+		]
+	},
+	"BATwinsMod:DeveloperCollaborationPower":{
+		"NAME":"開發者協同",
+		"DESCRIPTIONS":[
+			"戰鬥中連續交替打出 #r桃牌 與 #g綠牌 後，本回合卡牌的傷害和格擋上升 #b",
+			" %。",
+			"(打出的上張牌是： #y",
+			" )",
+			"桃牌",
+			"綠牌",
+			"無色牌",
+			"詛咒牌",
+			"其他牌",
+			"沒有牌",
+			"當前上升"
+		]
+	},
+	"BATwinsMod:ArtPolishingPower":{
+		"NAME":"藝術打磨",
+		"DESCRIPTIONS":[
+			"給予異常狀態時，給予目標 #b",
+			" 層中毒。不會因本能力的效果觸發。"
+		]
+	},
+	"BATwinsMod:GainTENextTurnPower":{
+		"NAME":"下回合能量（小桃）",
+		"DESCRIPTIONS":[
+			"下回合獲得 #b",
+			" 小桃能量。"
+		]
+	},
+	"BATwinsMod:GainLENextTurnPower":{
+		"NAME":"下回合能量（小綠）",
+		"DESCRIPTIONS":[
+			"下回合獲得 #b",
+			" 小綠能量。"
+		]
+	},
+	"BATwinsMod:ArtPolishingExchangePower":{
+		"NAME":"藝術打磨(交換)",
+		"DESCRIPTIONS":[
+			"給予異常狀態時，給予目標 #b",
+			" 層 #y灼傷 。不會因本能力的效果觸發。"
+		]
+	},
+	"BATwinsMod:OnceMorePower":{
+		"NAME":"再來一次",
+		"DESCRIPTIONS":[
+			"回合結束時，觸發所有敵人的 #y灼傷 。"
+		]
+	},
+	"BATwinsMod:OnceMoreExchangePower":{
+		"NAME":"再來一次（交換）",
+		"DESCRIPTIONS":[
+			"回合結束時，觸發所有敵人的 #y中毒 。"
+		]
+	},
+	"BATwinsMod:BugFixPower":{
+		"NAME":"漏洞修復",
+		"DESCRIPTIONS":[
+			"回合開始時，抽牌堆隨機",
+			"張狀態牌或詛咒牌消耗，若消耗的是漏洞，則獲得1力量和1敏捷。"
+		]
+	},
+	"BATwinsMod:ExperiencePower":{
+		"NAME":"經驗值",
+		"DESCRIPTIONS":[
+			"打出 #r桃牌 或 #g綠牌 時，獲得等同於其 #y耗能 的經驗值。\n當前：LV #b",
+			" （ #b",
+			" /",
+			"）\n卡牌的傷害和格擋增加等級數。",
+			"升級！！"
+		]
+	},
+	"BATwinsMod:SinglePlayerGamePower":{
+		"NAME":"單人遊戲",
+		"DESCRIPTIONS":[
+			"打出牌後若手牌沒有 #r桃牌 或 #g綠牌 ，獲得",
+			"點格擋。"
+		]
+	},
+	"BATwinsMod:CoolingTimePower":{
+		"NAME":"下回合加入手牌",
+		"DESCRIPTIONS":[
+			"下回合開始時，將 #y",
+			" 加入手牌（除非其已消耗）。"
+		]
+	},
+	"BATwinsMod:DoubleExperiencePower":{
+		"NAME":"雙倍經驗",
+		"DESCRIPTIONS":[
+			"獲得的經驗值變爲兩倍。"
+		]
+	},
+	"BATwinsMod:DefensiveCounterattackPower":{
+		"NAME":"防守與打擊",
+		"DESCRIPTIONS":[
+			"受到攻擊時，對攻擊的怪物打出",
+			"張打擊。"
+		]
+	},
+	"BATwinsMod:DefensiveCounterattackExchangePower":{
+		"NAME":"防守與打擊（交換）",
+		"DESCRIPTIONS":[
+			"受到攻擊時，對攻擊的怪物打出",
+			"張打擊。"
+		]
+	},
+	"BATwinsMod:NormalAttackMethodsPower":{
+		"NAME":"平A流",
+		"DESCRIPTIONS":[
+			"每回合開始從抽牌堆將",
+			"張打擊牌加入手牌。那張牌變爲共有"
+		]
+	},
+	"BATwinsMod:NoramlAttackAuxiliaryPower":{
+		"NAME":"平A輔助",
+		"DESCRIPTIONS":[
+			"平A流將打擊牌加入手牌時，若抽牌堆打擊牌數量不足，則進行1次洗牌。"
+		]
+	},
+	"BATwinsMod:SeeYouHaveASharenPower":{
+		"NAME":"見者有份！",
+		"DESCRIPTIONS":[
+			"本回合打出的下 #b",
+			" 張單體攻擊牌對所有敵人打出1次。"
+		]
+	},
+	"BATwinsMod:ReadingDocumentsPower":{
+		"NAME":"即時存檔",
+		"DESCRIPTIONS":[
+			"本場戰鬥效果打出的牌會回到抽牌堆。"
+		]
+	},
+	"BATwinsMod:ShufflePower":{
+		"NAME":"結束洗牌",
+		"DESCRIPTIONS":[
+			"本回合結束時將棄牌堆洗入抽牌堆。"
+		]
+	},
+	"BATwinsMod:IntegratingAndIntegratingPower":{
+		"NAME":"融會貫通",
+		"DESCRIPTIONS":[
+			"打出交換後的耗能1以上的牌時將 #b%d 張原本顏色的牌加入手牌，並附加 虛無 ， 消耗 。"
+		]
+	},
+	"BATwinsMod:MasterCraftsmanshipPower":{
+		"NAME":"技藝大師",
+		"DESCRIPTIONS":[
+			"每回合開始時至多交換 #b%d 張手牌。且本場戰鬥交換牌時將牌升級。"
+		]
+	},
+	"BATwinsMod:BorrowMePower":{
+		"NAME":"借用一下",
+		"DESCRIPTIONS":[
+			"本回合所有牌視爲 #y共有 。"
+		]
+	},
+	"BATwinsMod:MaidFormPower":{
+		"NAME":"女僕形態",
+		"DESCRIPTIONS":[
+			"每回合打出第 #b%d 張牌後打出抽牌堆1張耗能低於那張牌的牌。"
+		]
+	},
+	"BATwinsMod:FlatFallPower":{
+		"NAME":"平地摔",
+		"DESCRIPTIONS":[
+			"本回合只能再打出 #b%d 張攻擊牌。"
+		]
+	},
+	"BATwinsMod:ExpansionMagazinePower":{
+		"NAME":"擴容彈夾",
+		"DESCRIPTIONS":[
+			"本場戰鬥存儲的子彈升級。"
+		]
+	},
+	"BATwinsMod:DisabledMomoiPower": {
+		"NAME": "桃牌禁止",
+		"DESCRIPTIONS": [
+			"本回合不能打出 #r桃牌 。"
+		]
+	},
+	"BATwinsMod:DisabledMidoriPower": {
+		"NAME": "綠牌禁止",
+		"DESCRIPTIONS": [
+			"本回合不能打出 #g綠牌 。"
+		]
+	},
+	"BATwinsMod:DeveloperCollaborationExchangedPower": {
+		"NAME": "開發者協同（交換）",
+		"DESCRIPTIONS": [
+			"戰鬥中連續交替打出 #r桃牌 與 #g綠牌 後，所有敵人的中毒與灼傷層數增加 #b%d %%。（打出的上張牌是： #y%s ）",
+			" #r桃牌 ",
+			" #g綠牌 ",
+			"無色牌",
+			"詛咒牌",
+			"其他牌",
+			"沒有牌"
+		]
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"BATwinsMod:AcceleratePotion":{
+		"NAME":"加速藥水",
+		"DESCRIPTIONS":[
+			"將 #b1 張 #y加速 加入手牌。",
+			"將 #b1 張 #y加速+ 加入手牌。",
+			"加速",
+			"加速+"
+		]
+	},
+	"BATwinsMod:ConnectPotion":{
+		"NAME":"連攜藥水",
+		"DESCRIPTIONS":[
+			"選擇手牌 #b1 張牌打出。",
+			"選擇手牌 #b2 張牌打出。"
+		]
+	},
+	"BATwinsMod:BurnPotion":{
+		"NAME":"灼傷藥水",
+		"DESCRIPTIONS":[
+			"給予8層灼傷。",
+			"給予16層灼傷。",
+			"灼傷"
+		]
+	},
+	"BATwinsMod:StaminaPotion":{
+		"NAME":"體力藥劑",
+		"DESCRIPTIONS":[
+			"在火堆處使用此藥水，能夠再進行一次行動。"
+		]
+	}
+}

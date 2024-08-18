@@ -1,0 +1,203 @@
+{
+	"BATwinsMod:MomoisGameConsole":{
+		"NAME":"小桃的遊戲機",
+		"FLAVOR":"這不是已經壞了嘛，社團的經費可支撐不了買新遊戲機了！\n --小桃",
+		"DESCRIPTIONS":[
+			"每場戰鬥開始時，獲得 [batwinsmod:momoiorbicon] 。抽牌堆隨機 #ybatwinsmod:桃牌 加入手牌。"
+		]
+	},
+	"BATwinsMod:MidorisGameConsole":{
+		"NAME":"小綠的遊戲機",
+		"FLAVOR":"找到了真是太好了，要趕快檢查下游戲存檔。\n --小綠",
+		"DESCRIPTIONS":[
+			"每場戰鬥開始時，獲得 [batwinsmod:midoriorbicon] 。抽牌堆隨機 #ybatwinsmod:綠牌 加入手牌。"
+		]
+	},
+	"BATwinsMod:AncientGameCartridges":{
+		"NAME":"古老的遊戲卡帶",
+		"FLAVOR":"一塊破舊的遊戲卡帶，已經無法讀取了，勉強能看到上面寫了《殺 ■ ■ 塔》。",
+		"DESCRIPTIONS":[
+			"每場戰鬥開始時，打出抽牌堆隨機1張 #b能力牌 。"
+		]
+	},
+	"BATwinsMod:ByProving":{
+		"NAME":"關卡通過證明",
+		"FLAVOR":"一塊嶄新的獎章，上面寫着\n新手關卡通過證明！--%s。",
+		"DESCRIPTIONS":[
+			"打出 #b%s 時，對隨機敵人造成相同傷害。",
+			"打出 #b%s 時，抽1張牌",
+			"打出 #b%s 時，向棄牌堆添加1張複製。",
+			"不同類型卡牌有着不同效果",
+			"一塊嶄新的獎章，上面寫着\n新手關卡通過證明！--%s。"
+		]
+	},
+	"BATwinsMod:GameMagazine":{
+		"NAME":"遊戲雜誌",
+		"FLAVOR":"買遊戲附贈的遊戲雜誌，很遺憾沒有寫關於這款遊戲的內容。",
+		"DESCRIPTIONS":[
+			"每場戰鬥開始時，將1張 #y交換 加入手牌。"
+		]
+	},
+	"BATwinsMod:GameGuide":{
+		"NAME":"遊戲攻略書",
+		"FLAVOR":"上面說只要拖動手牌就可以將其打出！",
+		"DESCRIPTIONS":[
+			"替換 #y遊戲雜誌 。每回合開始時將 #b1 張附帶 #y虛無消耗 的 #y交換 加入手牌。"
+		]
+	},
+	"BATwinsMod:FoldingShield":{
+		"NAME":"偏折護盾",
+		"FLAVOR":"優香經常使用的護盾",
+		"DESCRIPTIONS":[
+			"回合結束時格擋提高20%。"
+		]
+	},
+	"BATwinsMod:Headband":{
+		"NAME":"女僕髮箍",
+		"FLAVOR":"這麼奇怪的地方以前也會有女僕嗎？",
+		"DESCRIPTIONS":[
+			"每回合開始時獲得 [batwinsmod:momoiorbicon] 或 [batwinsmod:midoriorbicon] 。在拾取時選擇。"
+		]
+	},
+	"BATwinsMod:SpecialAmmunition":{
+		"NAME":"特製彈藥",
+		"FLAVOR":"這可是工程部最新產品。",
+		"DESCRIPTIONS":[
+			"子彈牌的傷害提高 #b3 點。"
+		]
+	},
+	"BATwinsMod:SwordOfLight":{
+		"NAME":"光之劍",
+		"FLAVOR":"拿都很難拿得動，這給我們要怎麼用嘛。",
+		"DESCRIPTIONS":[
+			"每場戰鬥打出 #b%d 張牌後對所有敵人造成 #b%d 點傷害。"
+		]
+	},
+	"BATwinsMod:NekoHowitzer":{
+		"NAME":"喵衝",
+		"FLAVOR":"柚子的武器，可以從遠處發射榴彈炮",
+		"DESCRIPTIONS":[
+			"每回合開始時給予隨機敵人 #b%d 層灼傷，有 #b1%% 的幾率使該敵人的灼傷翻倍。"
+		]
+	},
+	"BATwinsMod:FitnessRing":{
+		"NAME":"健身環",
+		"FLAVOR":"總是三分鐘熱度。",
+		"DESCRIPTIONS":[
+			"第一回合抽到的牌在本場戰鬥中升級。"
+		]
+	},
+	"BATwinsMod:Broom":{
+		"NAME":"女僕掃把",
+		"FLAVOR":"打掃時間到！",
+		"DESCRIPTIONS":[
+			"每過 #b3 回合從棄牌堆中選擇 #b1 張牌加入手牌。"
+		]
+	},
+	"BATwinsMod:MaidAttire":{
+		"NAME":"女僕裝",
+		"FLAVOR":"誰都有點小癖好不是嗎？ --店主",
+		"DESCRIPTIONS":[
+			"若本回合打出過包含耗能爲0，1，2，3的牌，獲得1層無實體。"
+		]
+	},
+	"BATwinsMod:UnknownObject":{
+		"NAME":"不明物體",
+		"FLAVOR":"黑客部破解了遊戲，但似乎沒有完全破解。",
+		"DESCRIPTIONS":[
+			"隨機遺物效果，每回合會改變。"
+		]
+	},
+	"BATwinsMod:RubiksCube":{
+		"NAME":"益智魔方",
+		"FLAVOR":"「解開魔方的你就是真正的千年人！」",
+		"DESCRIPTIONS":[
+			"每連攜打出卡牌2次後，抽1張牌。"
+		]
+	},
+	"BATwinsMod:RetroGame": {
+		"NAME": "像素遊戲機",
+		"FLAVOR": "只能顯示一種顏色。",
+		"DESCRIPTIONS": [
+			"每回合多抽 #b2 張牌，抽到的牌全部變爲 #ybatwinsmod:桃牌 或 #ybatwinsmod:綠牌 。"
+		]
+	},
+	"BATwinsMod:BookOfProhibitions": {
+		"NAME": "禁斷之書",
+		"FLAVOR": "記錄着不爲人知的內容",
+		"DESCRIPTIONS": [
+			"每回合卡牌造成第 #y1 次傷害後，回覆 #y1/10 未被格擋的傷害的血量。"
+		]
+	},
+	"BATwinsMod:LearningMaterial": {
+		"NAME": "初級學習材料",
+		"FLAVOR": "快速提升技能！",
+		"DESCRIPTIONS": [
+			"在火堆升級時，若升級的是普通或初始卡牌，則隨機升級1張普通或初始卡牌。"
+		]
+	},
+	"BATwinsMod:Adaptability": {
+		"NAME": "適應力",
+		"FLAVOR": "屬性提升！",
+		"DESCRIPTIONS":[
+			"升級後給予2 #y經驗值 。"
+		]
+	},
+	"BATwinsMod:Flowers": {
+		"NAME": "花束",
+		"FLAVOR": "很漂亮",
+		"DESCRIPTIONS": [
+			"手牌描述變得炫彩，所有牌都變得炫彩後，每回合多抽1張牌。"
+		]
+	},
+	"BATwinsMod:OldTv": {
+		"NAME": "老舊顯示器",
+		"FLAVOR": "將就下。",
+		"DESCRIPTIONS": [
+			"在每回合開始時獲得 [E] ，畫面變得模糊。"
+		]
+	},
+	"BATwinsMod:RankIcon1": {
+		"NAME": "總力戰大師",
+		"FLAVOR": "可以不用做愛麗絲的夥伴了。",
+		"DESCRIPTIONS": [
+			"上次遊玩獲得了%d分：戰鬥勝利後給予 #b15 #y金幣 ，每 #b4 場戰鬥隨機 #y升級 #b1 張牌。",
+			"沒有查詢到上次遊玩的記錄：戰鬥勝利後給予 #b15 #y金幣 ，每 #b4 場戰鬥隨機 #y升級 #b1 張牌。"
+		]
+	},
+	"BATwinsMod:RankIcon2": {
+		"NAME": "總力戰高手",
+		"FLAVOR": "嘛，普普通通吧。",
+		"DESCRIPTIONS": [
+			"上次遊玩獲得了%d分：戰鬥勝利後給予 #b15 #y金幣 ，每 #b5 場戰鬥隨機 #y升級 #b1 張牌。"
+		]
+	},
+	"BATwinsMod:RankIcon3": {
+		"NAME": "總力站中堅",
+		"FLAVOR": "要好好培養角色啊。",
+		"DESCRIPTIONS": [
+			"上次遊玩獲得了%d分：戰鬥勝利後給予 #b15 #y金幣 。"
+		]
+	},
+	"BATwinsMod:RankIcon4": {
+		"NAME": "總力戰低手",
+		"FLAVOR": "是忘記打了嗎？",
+		"DESCRIPTIONS": [
+			"上次遊玩獲得了%d分：戰鬥勝利後給予 #b10 #y金幣 。"
+		]
+	},
+	"BATwinsMod:RankIcon": {
+		"NAME": "總力戰徽章",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"根據你上一把的得分獲得不同效果。"
+		]
+	},
+	"BATwinsMod:FullScoreAnswer": {
+		"NAME": "滿分答卷",
+		"FLAVOR": "我也是能做到的！",
+		"DESCRIPTIONS": [
+			"戰鬥開始時獲得 #b1 #y力量 #b1 #y敏捷 ，本場戰鬥第一次受傷後失去 #b1 #y力量 ， #b1 #y敏捷 。"
+		]
+	}
+}
