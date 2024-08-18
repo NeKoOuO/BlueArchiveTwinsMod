@@ -276,7 +276,7 @@
     },
     "BATwinsMod:OperateFreely": {
         "NAME": "随意操作",
-        "DESCRIPTION": "隨機打出抽牌堆1張 batwinsmod:[#fa62aa]桃牌 。 NL batwinsmod:連攜 ：改为選擇抽牌堆1張 batwinsmod:[#fa62aa]桃牌 打出。"
+        "DESCRIPTION": "隨機抽牌堆 !M! 張 batwinsmod:[#fa62aa]桃牌 选择1张打出。 NL batwinsmod:連攜 ：這張牌本場戰鬥耗能减少1。"
     },
     "BATwinsMod:ExperienceGiftPackage": {
         "NAME": "经验大礼包",
