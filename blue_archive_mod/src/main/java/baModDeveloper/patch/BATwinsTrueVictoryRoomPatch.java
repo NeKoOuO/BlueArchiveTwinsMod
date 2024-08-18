@@ -1,5 +1,6 @@
 package baModDeveloper.patch;
 
+import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.ui.victorycut.BATwinsCutScenes;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
@@ -10,12 +11,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.TrueVictoryRoom;
 
 public class BATwinsTrueVictoryRoomPatch {
-    @SpirePatch(clz = TrueVictoryRoom.class,method = SpirePatch.CONSTRUCTOR)
-    public static class ConstructorPatch{
+    @SpirePatch(clz = TrueVictoryRoom.class, method = SpirePatch.CONSTRUCTOR)
+    public static class ConstructorPatch {
         @SpirePostfixPatch
-        public static void postFix(TrueVictoryRoom __instance, @ByRef Cutscene[] ___cutscene){
-            if(AbstractDungeon.player.chosenClass== BATwinsCharacter.Enums.BATwins){
-                ___cutscene[0]=new BATwinsCutScenes();
+        public static void postFix(TrueVictoryRoom __instance, @ByRef Cutscene[] ___cutscene) {
+            if (AbstractDungeon.player.chosenClass == BATwinsCharacter.Enums.BATwins && BATwinsMod.Enable3D
+                    && AbstractDungeon.player instanceof BATwinsCharacter && ((BATwinsCharacter) AbstractDungeon.player).get3DHelper() != null) {
+                ___cutscene[0] = new BATwinsCutScenes();
             }
         }
     }
