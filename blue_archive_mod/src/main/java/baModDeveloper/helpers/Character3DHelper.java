@@ -432,6 +432,15 @@ public class Character3DHelper {
             finishLoading = true;
         }
     }
+    public void clearCountdown(){
+        for(Countdown c:this.controlCountdown){
+            if (c.color == BATWINS_MOMOI_CARD)
+                c.consumer.accept(this.momoiController);
+            else
+                c.consumer.accept(this.midoriController);
+        }
+        this.controlCountdown.clear();
+    }
 
     private static class Countdown {
         public Consumer<ModelController> consumer;
