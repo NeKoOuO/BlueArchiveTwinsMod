@@ -11,11 +11,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
+import com.badlogic.gdx.utils.Disposable;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
-public class VictoryCut3 extends AbstractBATwinsVictoryCut{
+public class VictoryCut3 extends AbstractBATwinsVictoryCut implements Disposable {
 
     private Texture background;
     private Character3DHelper character3DHelper;
@@ -96,5 +97,12 @@ public class VictoryCut3 extends AbstractBATwinsVictoryCut{
         sb.setColor(Color.WHITE.cpy());
         sb.draw(texture1, Settings.WIDTH/2.0F, 0.0F, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT, 1.0F, 1.0F, 0.0F, 0, 0, Settings.WIDTH, Settings.HEIGHT, false, true);
 
+    }
+
+    @Override
+    public void dispose() {
+        this.background.dispose();
+        this.charBuffer.dispose();
+        this.buffer.dispose();
     }
 }

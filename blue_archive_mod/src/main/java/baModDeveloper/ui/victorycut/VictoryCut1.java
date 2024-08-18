@@ -68,7 +68,13 @@ public class VictoryCut1 extends AbstractBATwinsVictoryCut implements Disposable
 
     @Override
     public void dispose() {
-
+        this.buffer.dispose();
+        this.charBuffer.dispose();
+        this.heartAtlas.dispose();
+        for(AbstractGameEffect effect:effectList){
+            effect.dispose();
+        }
+        effectList.clear();
     }
 
     @Override

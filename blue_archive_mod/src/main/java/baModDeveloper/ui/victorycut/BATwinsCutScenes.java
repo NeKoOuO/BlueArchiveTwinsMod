@@ -6,6 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.Disposable;
 import com.megacrit.cardcrawl.core.GameCursor;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.Cutscene;
@@ -80,19 +81,21 @@ public class BATwinsCutScenes extends Cutscene {
 
     @Override
     public void renderAbove(SpriteBatch sb) {
-        sb.setColor(this.bgColor);
-        sb.draw(this.blackBg,0.0F,0.0F,Settings.WIDTH,Settings.HEIGHT);
+
         if(!this.isDone){
+            sb.setColor(this.bgColor);
+            sb.draw(this.blackBg,0.0F,0.0F,Settings.WIDTH,Settings.HEIGHT);
             for(AbstractBATwinsVictoryCut cut:this.cuts){
                 cut.render(sb);
                 if(!cut.isDone){
                     break;
                 }
             }
+            sb.setColor(this.bgColor);
+            sb.draw(this.twinsBg,0.0F,0.0F,Settings.WIDTH,Settings.HEIGHT);
         }
 
-        sb.setColor(this.bgColor);
-        sb.draw(this.twinsBg,0.0F,0.0F,Settings.WIDTH,Settings.HEIGHT);
+
         //        if(this.bgImgField!=null&&this.bgColorField!=null){
 //            try {
 //                if (this.bgImgField.get(this) != null) {
@@ -108,6 +111,13 @@ public class BATwinsCutScenes extends Cutscene {
     @Override
     public void dispose() {
         super.dispose();
+        this.twinsBg.dispose();
+        this.blackBg.dispose();
+        for(AbstractBATwinsVictoryCut cut:cuts){
+            if(cut instanceof Disposable){
+                ((Disposable) cut).dispose();
+            }
+        }
     }
 
     private void renderImg(SpriteBatch sb, Texture img) {

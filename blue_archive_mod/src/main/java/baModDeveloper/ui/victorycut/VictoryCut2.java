@@ -12,13 +12,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
+import com.badlogic.gdx.utils.Disposable;
 import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
-public class VictoryCut2 extends AbstractBATwinsVictoryCut{
+public class VictoryCut2 extends AbstractBATwinsVictoryCut implements Disposable {
     private TextureAtlas.AtlasRegion backImg;
     private TextureRegion fire;
     private Character3DHelper character3DHelper;
@@ -139,5 +140,13 @@ public class VictoryCut2 extends AbstractBATwinsVictoryCut{
         this.heartSkeleton.setColor(Color.WHITE);
         this.heartStateData = new AnimationStateData(skeletonData);
         this.heartState = new AnimationState(this.heartStateData);
+    }
+
+    @Override
+    public void dispose() {
+        this.buffer.dispose();
+        this.charBuffer.dispose();
+        this.heartAtlas.dispose();
+
     }
 }
