@@ -8,9 +8,10 @@ public class BATwinsOneMoreAction extends AbstractGameAction {
     private String powerid;
     private boolean allEnemy = false;
 
-    public BATwinsOneMoreAction(String powerid, boolean allEnemy) {
+    public BATwinsOneMoreAction(String powerid, boolean allEnemy,int amount) {
         this.powerid = powerid;
         this.allEnemy = allEnemy;
+        this.amount=amount;
     }
 
     public BATwinsOneMoreAction(String powerid, AbstractMonster target) {
@@ -34,6 +35,9 @@ public class BATwinsOneMoreAction extends AbstractGameAction {
                     target.getPower(this.powerid).atEndOfTurn(false);
                 }
             }
+        }
+        if(this.amount>1){
+            addToBot(new BATwinsOneMoreAction(this.powerid,this.allEnemy,this.amount-1));
         }
         this.isDone = true;
     }

@@ -275,8 +275,8 @@
 		"DESCRIPTION": "Gain !B! Block ,Draw !M! cards. NL batwinsmod:Synergy :Gain !B! Block ,Draw !M! cards."
 	},
 	"BATwinsMod:OperateFreely": {
-		"NAME": "Free Manipulation",
-		"DESCRIPTION": "Randomly play 1 batwinsmod:MomoiCard from your draw pile. NL batwinsmod:Synergy :Choose and play 1 batwinsmod:MomoiCard from the draw pile instand."
+		"NAME": "Operate Freely",
+		"DESCRIPTION": "Choose 1 card to play from !M! random batwinsmod:MomoiCard in the draw pile. NL batwinsmod:Synergy: This card costs 1 less energy this combat."
 	},
 	"BATwinsMod:ExperienceGiftPackage": {
 		"NAME": "Experience Gift Pack",

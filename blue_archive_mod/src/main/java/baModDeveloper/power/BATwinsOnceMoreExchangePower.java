@@ -21,7 +21,7 @@ public class BATwinsOnceMoreExchangePower extends AbstractPower {
     private static TextureAtlas.AtlasRegion REGION128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
     private static TextureAtlas.AtlasRegion REGION48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
 
-    public BATwinsOnceMoreExchangePower(AbstractCreature owner) {
+    public BATwinsOnceMoreExchangePower(AbstractCreature owner,int amount) {
         this.ID = POWER_ID;
         this.name = NAME;
         this.type = TYPE;
@@ -29,7 +29,7 @@ public class BATwinsOnceMoreExchangePower extends AbstractPower {
         this.region48 = REGION48;
 
         this.owner = owner;
-        this.amount = -1;
+        this.amount = amount;
         this.updateDescription();
     }
 
@@ -42,8 +42,8 @@ public class BATwinsOnceMoreExchangePower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             this.flash();
-
-            addToBot(new BATwinsOneMoreAction(PoisonPower.POWER_ID, true));
+            for(int i=0;i<this.amount;i++)
+                addToBot(new BATwinsOneMoreAction(PoisonPower.POWER_ID, true,this.amount));
         }
     }
 }

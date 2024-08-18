@@ -12,7 +12,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,7 +30,6 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "SelfConnectivity");
-    private static final String IMG_PATH2 = ModHelper.makeImgPath("cards", "SelfConnectivity2");
     private static final int COST = 1;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = BATwinsCharacter.Enums.BATWINS_MOMOI_CARD;
@@ -55,18 +53,9 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
             return;
         }
         if (cardToCopy instanceof BATwinsModCustomCard) {
-            addToBot(new AbstractGameAction() {
-
-                final int numberOfConnections=BATwinsSelfConnectivity.this.numberOfConnections;
-                @Override
-                public void update() {
-                    ((BATwinsModCustomCard) cardToCopy).numberOfConnections = this.numberOfConnections;
-                    ((BATwinsModCustomCard) cardToCopy).useMOMOI(abstractPlayer, abstractMonster);
-                    ((BATwinsModCustomCard) cardToCopy).numberOfConnections = 0;
-                    this.isDone=true;
-                }
-            });
-
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections = this.numberOfConnections;
+            ((BATwinsModCustomCard) cardToCopy).useMOMOI(abstractPlayer, abstractMonster);
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections = 0;
         } else {
             cardToCopy.use(abstractPlayer, abstractMonster);
         }
@@ -79,17 +68,9 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
             return;
         }
         if (cardToCopy instanceof BATwinsModCustomCard) {
-            addToBot(new AbstractGameAction() {
-
-                final int numberOfConnections=BATwinsSelfConnectivity.this.numberOfConnections;
-                @Override
-                public void update() {
-                    ((BATwinsModCustomCard) cardToCopy).numberOfConnections = this.numberOfConnections;
-                    ((BATwinsModCustomCard) cardToCopy).useMIDORI(abstractPlayer, abstractMonster);
-                    ((BATwinsModCustomCard) cardToCopy).numberOfConnections = 0;
-                    this.isDone=true;
-                }
-            });
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections = this.numberOfConnections;
+            ((BATwinsModCustomCard) cardToCopy).useMIDORI(abstractPlayer, abstractMonster);
+            ((BATwinsModCustomCard) cardToCopy).numberOfConnections = 0;
         } else {
             cardToCopy.use(abstractPlayer, abstractMonster);
         }

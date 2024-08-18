@@ -37,23 +37,38 @@ public class BATwinsCollaboration extends BATwinsModCustomCard {
 
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD && c != this) {
-                addToBot(new VFXAction(new CardFlashVfx(c,true)));
-                addToBot(new DamageRandomEnemyAction(new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
-
+        addToBot(new AbstractGameAction() {
+            final int damage=BATwinsCollaboration.this.damage;
+            @Override
+            public void update() {
+                for(int i=AbstractDungeon.player.hand.size()-1;i>=0;i--){
+                    AbstractCard c=AbstractDungeon.player.hand.group.get(i);
+                    if (c.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+                        addToTop(new VFXAction(new CardFlashVfx(c,true)));
+                        addToTop(new DamageRandomEnemyAction(new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+                    }
+                }
+                this.isDone=true;
             }
-        }
+        });
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD && c != this) {
-                addToBot(new VFXAction(new CardFlashVfx(c,true)));
-                addToBot(new DamageAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true), new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        addToBot(new AbstractGameAction() {
+            final int damage=BATwinsCollaboration.this.damage;
+            @Override
+            public void update() {
+                for(int i=AbstractDungeon.player.hand.size()-1;i>=0;i--){
+                    AbstractCard c=AbstractDungeon.player.hand.group.get(i);
+                    if (c.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
+                        addToTop(new VFXAction(new CardFlashVfx(c,true)));
+                        addToTop(new DamageRandomEnemyAction(new DamageInfo(abstractPlayer, this.damage), AbstractGameAction.AttackEffect.LIGHTNING));
+                    }
+                }
+                this.isDone=true;
             }
-        }
+        });
     }
 
     @Override

@@ -29,7 +29,7 @@ public class BATwinsUniversalBulletAction extends AbstractGameAction {
         CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         AbstractDungeon.player.hand.group.stream().filter(this::filter).forEach(temp::addToBottom);
         if (!temp.isEmpty()) {
-            AbstractCard card = temp.getRandomCard(true);
+            AbstractCard card = temp.getRandomCard(AbstractDungeon.cardRandomRng);
             if (card instanceof BATwinsModCustomCard) {
                 ((BATwinsModCustomCard) card).addBringOutCard(this.bullet);
                 card.flash(BATwinsCharacter.getColorWithCardColor(card.color));
