@@ -223,7 +223,7 @@ public class BATwinsCharacter extends CustomPlayer {
 //        AbstractAnimation.addAnimation(null);
 
         colorComparer = new ColorComparer();
-        BATwinsExperiencePower.MAX = 10;
+        BATwinsExperiencePower.MAX = BATwinsExperiencePower.ORIGINMAX;
         expPanel = new BATwinsExperiencePanel(this.drawX - 230 * Settings.scale, this.drawY);
         expPanel.show();
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
