@@ -30,7 +30,7 @@ public class BATwinsLevelUpEffect extends AbstractGameEffect {
         this.duration-= Gdx.graphics.getDeltaTime();
         if(this.duration<0.0F){
             if(this.num>=0){
-                AbstractDungeon.topLevelEffectsQueue.add(new BATwinsLittleBlockEffect(this.startColor.cpy(),this.x,this.y,0.2F,50.0F,false));
+                AbstractDungeon.topLevelEffectsQueue.add(new BATwinsLittleBlockEffect(this.startColor.cpy(),this.x,this.y,0.25F*Settings.scale,62.5F*Settings.scale,false));
                 this.startColor= ModHelper.getBATwinsOtherColor(this.startColor.cpy());
                 this.y+=this.distance;
                 this.num--;
