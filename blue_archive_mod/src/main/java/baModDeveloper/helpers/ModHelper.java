@@ -2,6 +2,7 @@ package baModDeveloper.helpers;
 
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
+import com.badlogic.gdx.graphics.Color;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -85,5 +86,13 @@ public class ModHelper {
 
     public static Logger getLogger() {
         return logger;
+    }
+
+    public static Color getBATwinsOtherColor(Color color){
+        if(color.equals(BATwinsMod.MOMOIColor)){
+            return BATwinsMod.MIDORIColor;
+        }else{
+            return BATwinsMod.MOMOIColor;
+        }
     }
 }
