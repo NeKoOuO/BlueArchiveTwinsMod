@@ -190,8 +190,8 @@
 	},
 	"BATwinsMod:TemporaryAssistance": {
 		"NAME": "Temporary Assistance",
-		"DESCRIPTION": " batwinsmod:Exchange !M! card from your hand,the card returns to its original color after being palyed.When this card is in the draw pile,if [batwinsmod:midoriorbicon] is exhuausted,add it to your hand.",
-		"UPGRADE_DESCRIPTION": " batwinsmod:Exchange !M! card from your hand,the card returns to its original color after being palyed.When this card is in the draw pile or discard pile,if [batwinsmod:midoriorbicon] is exhuausted,add it to your hand."
+		"DESCRIPTION": " batwinsmod:Exchange !M! card from your hand.When this card is in the draw pile,if [batwinsmod:midoriorbicon] is exhuausted,add it to your hand.",
+		"UPGRADE_DESCRIPTION": " batwinsmod:Exchange !M! card from your hand.When this card is in the draw pile or discard pile,if [batwinsmod:midoriorbicon] is exhuausted,add it to your hand."
 	},
 	"BATwinsMod:AdventureExperience": {
 		"NAME": "冒险-历练",

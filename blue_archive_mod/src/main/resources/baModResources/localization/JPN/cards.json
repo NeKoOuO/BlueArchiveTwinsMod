@@ -190,8 +190,8 @@
 	},
 	"BATwinsMod:TemporaryAssistance":{
 		"NAME":"臨時サッポート",
-		"DESCRIPTION":" batwinsmod:チェンジ !M! 枚手札。プレイしたあと、そのカードの色は元に戻る。もしこのカードは山札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。",
-		"UPGRADE_DESCRIPTION":" batwinsmod:チェンジ !M! 枚手札。プレイしたあと、そのカードの色は元に戻る。もしこのカードは山札も捨て札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。"
+		"DESCRIPTION":" batwinsmod:チェンジ !M! 枚手札。もしこのカードは山札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:チェンジ !M! 枚手札。もしこのカードは山札も捨て札にいる、 [batwinsmod:midoriorbicon] を尽きた時に手札に加える。"
 	},
 	"BATwinsMod:AdventureExperience":{
 		"NAME":"冒险-历练",
