@@ -22,9 +22,9 @@ public class BATwinsGameLaunchAction extends AbstractGameAction {
                 CardGroup MIDORICards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
 
                 for (AbstractCard c : DrawCardAction.drawnCards) {
-                    if (c.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
+                    if (c.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD&&c.costForTurn!=0) {
                         MOMOICards.addToTop(c);
-                    } else if (c.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD) {
+                    } else if (c.color == BATwinsCharacter.Enums.BATWINS_MIDORI_CARD&&c.costForTurn!=0) {
                         MIDORICards.addToTop(c);
                     }
                 }

@@ -27,6 +27,7 @@ public class BATwinsSeeYouHaveASharen extends BATwinsModCustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
+        this.exhaust=true;
     }
 
     @Override
@@ -43,7 +44,9 @@ public class BATwinsSeeYouHaveASharen extends BATwinsModCustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            this.originRawDescription=this.rawDescription=CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
+            this.exhaust=false;
         }
     }
 }

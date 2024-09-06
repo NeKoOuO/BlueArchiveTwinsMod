@@ -27,7 +27,7 @@ public class BATwinsTemporaryAssistance extends BATwinsModCustomCard {
 
     public BATwinsTemporaryAssistance() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber = 1;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }
 

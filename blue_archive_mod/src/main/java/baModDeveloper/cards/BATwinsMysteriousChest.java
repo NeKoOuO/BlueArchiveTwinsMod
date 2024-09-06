@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.util.Objects;
-
 public class BATwinsMysteriousChest extends BATwinsModCustomCard {
     public static final String ID = ModHelper.makePath("MysteriousChest");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);

@@ -190,8 +190,8 @@
 	},
 	"BATwinsMod:TemporaryAssistance":{
 		"NAME":"暂时援助",
-		"DESCRIPTION":" batwinsmod:交换 !M! 张手牌，那张牌打出后变回原颜色。这张牌在抽牌堆时，耗尽 [batwinsmod:midoriorbicon] 时加入手牌。",
-		"UPGRADE_DESCRIPTION":" batwinsmod:交换 !M! 张手牌，那张牌打出后变为原颜色。这张牌在抽牌堆或弃牌堆时，耗尽 [batwinsmod:midoriorbicon] 加入手牌。"
+		"DESCRIPTION":" batwinsmod:交换 !M! 张手牌。这张牌在抽牌堆时，耗尽 [batwinsmod:midoriorbicon] 时加入手牌。",
+		"UPGRADE_DESCRIPTION":" batwinsmod:交换 !M! 张手牌。这张牌在抽牌堆或弃牌堆时，耗尽 [batwinsmod:midoriorbicon] 时加入手牌。"
 	},
 	"BATwinsMod:AdventureExperience":{
 		"NAME":"冒险-历练",
@@ -218,7 +218,8 @@
 	},
 	"BATwinsMod:SeeYouHaveAShare":{
 		"NAME":"见者有份！",
-		"DESCRIPTION":"本回合打出的下 !M! 张单体攻击牌会额外对所有敌人打出1次。"
+		"DESCRIPTION":"本回合打出的下 !M! 张单体攻击牌会额外对所有敌人打出1次。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "本回合打出的下 !M! 张单体攻击牌会额外对所有敌人打出1次。"
 	},
 	"BATwinsMod:CheatingCodeEnabled":{
 		"NAME":"作弊码开启",
