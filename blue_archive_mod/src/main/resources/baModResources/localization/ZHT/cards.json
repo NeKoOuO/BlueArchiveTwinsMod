@@ -218,7 +218,8 @@
     },
     "BATwinsMod:SeeYouHaveAShare": {
         "NAME": "见者有份！",
-        "DESCRIPTION": "本回合打出的下 !M! 張单体攻擊牌会額外對所有敵人打出1次。"
+        "DESCRIPTION": "本回合打出的下 !M! 張单体攻擊牌会額外對所有敵人打出1次。 消耗 。",
+        "UPGRADE_DESCRIPTION": "本回合打出的下 !M! 張单体攻擊牌会額外對所有敵人打出1次。"
     },
     "BATwinsMod:CheatingCodeEnabled": {
         "NAME": "作弊码开启",

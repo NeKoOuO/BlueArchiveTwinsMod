@@ -218,7 +218,8 @@
 	},
 	"BATwinsMod:SeeYouHaveAShare":{
 		"NAME":"全員くらえ！",
-		"DESCRIPTION":"このターン、次の !M! 枚単体アタックを敵全体にもう１回をプレイする。"
+		"DESCRIPTION":"このターン、次の !M! 枚単体アタックを敵全体にもう１回をプレイする。 廃棄 。",
+		"UPGRADE_DESCRIPTION": "このターン、次の !M! 枚単体アタックを敵全体にもう１回をプレイする。"
 	},
 	"BATwinsMod:CheatingCodeEnabled":{
 		"NAME":"チートコード",

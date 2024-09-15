@@ -218,7 +218,8 @@
 	},
 	"BATwinsMod:SeeYouHaveAShare": {
 		"NAME": "Each to Their Own！",
-		"DESCRIPTION": "Each of the next !M! single-target attack cards played this turn will additionally target all enemies once."
+		"DESCRIPTION": "Each of the next !M! single-target attack cards played this turn will additionally target all enemies once. Exhaust .",
+		"UPGRADE_DESCRIPTION": "Each of the next !M! single-target attack cards played this turn will additionally target all enemies once."
 	},
 	"BATwinsMod:CheatingCodeEnabled": {
 		"NAME": "Cheat Code Activated",
