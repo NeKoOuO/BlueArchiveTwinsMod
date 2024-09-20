@@ -18,27 +18,27 @@
         "DESCRIPTION": "獲得 !B! 點 格擋 。"
     },
     "BATwinsMod:AlreadyAngry": {
-        "NAME": "我生气了！！",
+        "NAME": "我生氣了！！",
         "DESCRIPTION": "給予 !M! 層 batwinsmod:灼傷 ,造成 !D! 點傷害。"
     },
     "BATwinsMod:PaintingConception": {
-        "NAME": "画面构思",
+        "NAME": "畫面構思",
         "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 打出 !M! 張手牌中的隨機非能力 batwinsmod:[#6fcf41]綠牌 。",
         "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 選擇打出 !M! 張手牌中的非能力 batwinsmod:[#6fcf41]綠牌 。"
     },
     "BATwinsMod:ParoxysmalPain": {
-        "NAME": "创作之痛",
+        "NAME": "創作之痛",
         "DESCRIPTION": "給予所有敵人 !M! 層 batwinsmod:灼傷 ， NL 對所有敵人造成 !D! 點傷害。"
     },
     "BATwinsMod:PaintingArt": {
-        "NAME": "绘画艺术",
+        "NAME": "繪畫藝術",
         "DESCRIPTION": "對隨機敵人造成 !D! 點傷害並給予2層 中毒 !M! 次。"
     },
     "BATwinsMod:DeveloperCollaboration": {
-        "NAME": "开发者协同",
-        "DESCRIPTION": " batwinsmod:共有 。 NL 戰鬥中持續交替打出 batwinsmod:[#fa62aa]桃牌 与 batwinsmod:[#6fcf41]綠牌 后，本回合卡牌造成的伤害和獲得的 格擋 增加 !M! %。",
+        "NAME": "開發者協同",
+        "DESCRIPTION": " batwinsmod:共有 。 NL 戰鬥中持續交替打出 batwinsmod:[#fa62aa]桃牌 與 batwinsmod:[#6fcf41]綠牌 後，本回合卡牌造成的傷害和獲得的 格擋 增加 !M! %。",
         "EXTENDED_DESCRIPTION": [
-            " batwinsmod:共有 。 NL 戰鬥中持續交替打出 batwinsmod:[#fa62aa]桃牌 与 batwinsmod:[#6fcf41]綠牌 后，敵人的 中毒 和 batwinsmod:灼傷 增加 !M! %。"
+            " batwinsmod:共有 。 NL 戰鬥中持續交替打出 batwinsmod:[#fa62aa]桃牌 與 batwinsmod:[#6fcf41]綠牌 後，敵人的 中毒 和 batwinsmod:灼傷 增加 !M! %。"
         ]
     },
     "BATwinsMod:Exchange": {
@@ -47,16 +47,16 @@
         "UPGRADE_DESCRIPTION": " 保留 。 NL batwinsmod:交換 至多3張手牌。 "
     },
     "BATwinsMod:KeepItToTheEnd": {
-        "NAME": "严守截稿日",
-        "DESCRIPTION": "丢弃手牌中所有 batwinsmod:[#fa62aa]桃牌 ，每丢弃一張獲得 !B! 點 格擋 。"
+        "NAME": "嚴守截稿日",
+        "DESCRIPTION": "丟棄手牌中所有 batwinsmod:[#fa62aa]桃牌 ，每丟棄一張獲得 !B! 點 格擋 。"
     },
     "BATwinsMod:ArtPolishing": {
-        "NAME": "艺术打磨",
-        "DESCRIPTION": "給予异常状态时，給予目标 !M! 層 中毒 。不会因此能力的效果触发。"
+        "NAME": "藝術打磨",
+        "DESCRIPTION": "給予異常狀態時，給予目標 !M! 層 中毒 。不會因此能力的效果觸發。"
     },
     "BATwinsMod:BattleCommand": {
-        "NAME": "戰鬥指导",
-        "DESCRIPTION": "選擇1張牌返回抽牌堆，从抽牌堆中選擇1張不同颜色的卡牌加入手牌。"
+        "NAME": "戰鬥指導",
+        "DESCRIPTION": "選擇1張牌返回抽牌堆，從抽牌堆中選擇1張不同顏色的卡牌加入手牌。"
     },
     "BATwinsMod:IgniteTheUpperBody": {
         "NAME": "引火上身",
@@ -69,174 +69,174 @@
     },
     "BATwinsMod:AdditionalAttacks": {
         "NAME": "附加攻擊",
-        "DESCRIPTION": " 不能被打出 。 NL 在手牌並打出其他攻擊牌时，對隨機敵人造成 !D! 點傷害。"
+        "DESCRIPTION": " 不能被打出 。 NL 在手牌並打出其他攻擊牌時，對隨機敵人造成 !D! 點傷害。"
     },
     "BATwinsMod:AccurateBlocking": {
-        "NAME": "精准格擋",
-        "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 若当前 格擋 小于選擇敵人的攻擊伤害，獲得 !B! 點 格擋 。 NL 在手牌没有其他 batwinsmod:[#6fcf41]綠牌 时才能打出。"
+        "NAME": "精準格擋",
+        "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 若當前 格擋 小於選擇敵人的攻擊傷害，獲得 !B! 點 格擋 。 NL 在手牌沒有其他 batwinsmod:[#6fcf41]綠牌 時才能打出。"
     },
     "BATwinsMod:GameLaunch": {
-        "NAME": "游戏启动",
-        "DESCRIPTION": " batwinsmod:共有 , 固有 。 NL 抽 !M! 張牌，抽到的牌中隨機1張 batwinsmod:[#fa62aa]桃牌 和隨機1張 batwinsmod:[#6fcf41]綠牌 本回合耗能为0. NL 消耗 ",
-        "UPGRADE_DESCRIPTION": " batwinsmod:共有 , 固有 。 NL 抽 !M! 張牌，抽到的牌中隨機2張牌本回合耗能为0. NL 消耗 "
+        "NAME": "遊戲啟動",
+        "DESCRIPTION": " batwinsmod:共有 , 固有 。 NL 抽 !M! 張牌，抽到的牌中隨機1張 batwinsmod:[#fa62aa]桃牌 和隨機1張 batwinsmod:[#6fcf41]綠牌 本回合耗能為0. NL 消耗 ",
+        "UPGRADE_DESCRIPTION": " batwinsmod:共有 , 固有 。 NL 抽 !M! 張牌，抽到的牌中隨機2張牌本回合耗能為0. NL 消耗 "
     },
     "BATwinsMod:InspirationEmergence": {
-        "NAME": "灵感涌现",
-        "DESCRIPTION": " batwinsmod:共有 。 NL 抽 !M! 張牌， 预见 2X 然后抽1張牌。(X为抽到牌的颜色数）"
+        "NAME": "靈感湧現",
+        "DESCRIPTION": " batwinsmod:共有 。 NL 抽 !M! 張牌， 預見 2X 然後抽1張牌。(X為抽到牌的顏色數）"
     },
     "BATwinsMod:PassageInForce": {
-        "NAME": "强行通过",
-        "DESCRIPTION": "對全体敵人造成 !D! 點傷害，獲得 !B! 點 格擋 ，丢弃2張牌。"
+        "NAME": "強行通過",
+        "DESCRIPTION": "對全體敵人造成 !D! 點傷害，獲得 !B! 點 格擋 ，丟棄2張牌。"
     },
     "BATwinsMod:SiteAdaptation": {
-        "NAME": "场地适应",
+        "NAME": "場地適應",
         "DESCRIPTION": "獲得 !M! 力量 ， !M! 敏捷 ， !M! 金属化 。"
     },
     "BATwinsMod:OnceMore": {
-        "NAME": "火焰扩散",
-        "DESCRIPTION": "我方回合结束时，触发所有敵人的 batwinsmod:灼傷 。",
-        "UPGRADE_DESCRIPTION": " 固有 。 NL 我方回合结束时，触发所有敵人的 batwinsmod:灼傷 。"
+        "NAME": "火焰擴散",
+        "DESCRIPTION": "我方回合結束時，觸發所有敵人的 batwinsmod:灼傷 。",
+        "UPGRADE_DESCRIPTION": " 固有 。 NL 我方回合結束時，觸發所有敵人的 batwinsmod:灼傷 。"
     },
     "BATwinsMod:EnchantedBullet": {
         "NAME": "附魔",
         "DESCRIPTION": "給予 !M! 層 batwinsmod:灼傷 ， NL 造成 !D! 點傷害。"
     },
     "BATwinsMod:ExcellentDesigner": {
-        "NAME": "最棒的开发者们",
-        "DESCRIPTION": " 虛無 。 NL 抽到时抽 !M! 張牌。 NL 造成 !D! 點傷害，獲得 !B! 點 格擋 。在手牌时打出其他牌，在打出前上升那張牌基础伤害值和基础格擋值。",
-        "UPGRADE_DESCRIPTION": "抽到时抽 !M! 張牌。 NL 造成 !D! 點傷害，獲得 !B! 點 格擋 。在手牌时打出其他牌，在打出前上升那張牌基础伤害值和基础格擋值。"
+        "NAME": "最棒的開發者們",
+        "DESCRIPTION": " 虛無 。 NL 抽到時抽 !M! 張牌。 NL 造成 !D! 點傷害，獲得 !B! 點 格擋 。在手牌時打出其他牌，在打出前上升那張牌基礎傷害值和基礎格擋值。",
+        "UPGRADE_DESCRIPTION": "抽到時抽 !M! 張牌。 NL 造成 !D! 點傷害，獲得 !B! 點 格擋 。在手牌時打出其他牌，在打出前上升那張牌基礎傷害值和基礎格擋值。"
     },
     "BATwinsMod:BadDesigner": {
-        "NAME": "糟糕设计师",
-        "DESCRIPTION": "手牌只有时才能打出。 NL 在手牌时，打出其他牌时丢弃1張牌。再累计打出 !M! 次的话会发生蜕變。 消耗 "
+        "NAME": "糟糕設計師",
+        "DESCRIPTION": "手牌只有時才能打出。 NL 在手牌時，打出其他牌時丟棄1張牌。再累計打出 !M! 次的話會發生蛻變。 消耗 "
     },
     "BATwinsMod:BugCard": {
         "NAME": "漏洞",
-        "DESCRIPTION": "抽到时，隨機 消耗 1張其他手牌。 消耗 。"
+        "DESCRIPTION": "抽到時，隨機 消耗 1張其他手牌。 消耗 。"
     },
     "BATwinsMod:RushToDraft": {
-        "NAME": "赶稿",
+        "NAME": "趕稿",
         "DESCRIPTION": "抽 !M! 張牌。將1張漏洞放入棄牌堆。"
     },
     "BATwinsMod:PlotRepair": {
-        "NAME": "剧情修补",
+        "NAME": "劇情修補",
         "DESCRIPTION": "造成 !D! 點傷害， 消耗 抽牌堆1張漏洞，將1張漏洞放入棄牌堆。",
         "UPGRADE_DESCRIPTION": "造成 !D! 點傷害， 消耗 抽牌堆所有漏洞，將1張漏洞放入棄牌堆。"
     },
     "BATwinsMod:BugFix": {
-        "NAME": "漏洞修复",
-        "DESCRIPTION": "回合开始时，抽牌堆隨機 !M! 張状态牌或诅咒牌 消耗 。若消耗的是漏洞，獲得1 力量 和1 敏捷 。"
+        "NAME": "漏洞修復",
+        "DESCRIPTION": "回合開始時，抽牌堆隨機 !M! 張狀態牌或詛咒牌 消耗 。若消耗的是漏洞，獲得1 力量 和1 敏捷 。"
     },
     "BATwinsMod:AdventureOpening": {
-        "NAME": "冒险-开幕",
-        "DESCRIPTION": " 保留 NL 打出消耗的牌。从手牌選擇一張冒险牌消耗。",
-        "UPGRADE_DESCRIPTION": " 保留 batwinsmod:共有 NL 打出消耗的牌。从手牌選擇一張冒险牌消耗。"
+        "NAME": "冒險-開幕",
+        "DESCRIPTION": " 保留 NL 打出消耗的牌。從手牌選擇一張冒險牌消耗。",
+        "UPGRADE_DESCRIPTION": " 保留 batwinsmod:共有 NL 打出消耗的牌。從手牌選擇一張冒險牌消耗。"
     },
     "BATwinsMod:AdventureBattle": {
-        "NAME": "冒险-戰鬥",
-        "DESCRIPTION": "造成 !D! 點傷害。本回合打出的上一張牌如果是冒险牌，伤害翻倍。 NL 消耗 。"
+        "NAME": "冒險-戰鬥",
+        "DESCRIPTION": "造成 !D! 點傷害。本回合打出的上一張牌如果是冒險牌，傷害翻倍。 NL 消耗 。"
     },
     "BATwinsMod:LightSpeedStrike": {
         "NAME": "光速打擊",
-        "DESCRIPTION": "造成 !D! 點傷害，給予 !M! 層 易伤 。 NL 選擇手牌1張攻擊牌打出並丢弃其他攻擊牌。"
+        "DESCRIPTION": "造成 !D! 點傷害，給予 !M! 層 易傷 。 NL 選擇手牌1張攻擊牌打出並丟棄其他攻擊牌。"
     },
     "BATwinsMod:SinglePlayerGame": {
-        "NAME": "单人游戏",
-        "DESCRIPTION": "打出牌后若手牌没有 batwinsmod:[#fa62aa]桃牌 或 batwinsmod:[#6fcf41]綠牌 。獲得 !M! 點 格擋 。"
+        "NAME": "單人遊戲",
+        "DESCRIPTION": "打出牌後若手牌沒有 batwinsmod:[#fa62aa]桃牌 或 batwinsmod:[#6fcf41]綠牌 。獲得 !M! 點 格擋 。"
     },
     "BATwinsMod:CoolingTime": {
-        "NAME": "冷却加速",
-        "DESCRIPTION": "獲得 !B! 點 格擋 。从棄牌堆選擇1張 batwinsmod:[#6fcf41]綠牌 在下回合开始时加入手牌（除非其已消耗）。"
+        "NAME": "冷卻加速",
+        "DESCRIPTION": "獲得 !B! 點 格擋 。從棄牌堆選擇1張 batwinsmod:[#6fcf41]綠牌 在下回合開始時加入手牌（除非其已消耗）。"
     },
     "BATwinsMod:DoubleExperience": {
-        "NAME": "双倍经验",
-        "DESCRIPTION": "本场戰鬥打出卡牌而獲得的 batwinsmod:經驗值 變为2倍。",
-        "UPGRADE_DESCRIPTION": " batwinsmod:提升等级 1 . NL 本场戰鬥打出卡牌而獲得的 batwinsmod:經驗值 變为2倍。"
+        "NAME": "雙倍經驗",
+        "DESCRIPTION": "本場戰鬥打出卡牌而獲得的 batwinsmod:經驗值 變為2倍。",
+        "UPGRADE_DESCRIPTION": " batwinsmod:提升等級 1 . NL 本場戰鬥打出卡牌而獲得的 batwinsmod:經驗值 變為2倍。"
     },
     "BATwinsMod:BDStudy": {
-        "NAME": "BD学习",
-        "DESCRIPTION": " 消耗 手牌所有 batwinsmod:[#fa62aa]桃牌 ，獲得等同于 消耗 的牌总耗能 !M! 倍的 batwinsmod:經驗值 。 消耗 "
+        "NAME": "BD學習",
+        "DESCRIPTION": " 消耗 手牌所有 batwinsmod:[#fa62aa]桃牌 ，獲得等同於 消耗 的牌總耗能 !M! 倍的 batwinsmod:經驗值 。 消耗 "
     },
     "BATwinsMod:EmergencyRecovery": {
-        "NAME": "紧急恢复",
-        "DESCRIPTION": "獲得 [batwinsmod:midoriorbicon] 。若桃能量为0，獲得 [batwinsmod:momoiorbicon] 。 消耗 ",
-        "UPGRADE_DESCRIPTION": "獲得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。若桃能量为0，獲得 [batwinsmod:momoiorbicon] 。 消耗 "
+        "NAME": "緊急恢復",
+        "DESCRIPTION": "獲得 [batwinsmod:midoriorbicon] 。若桃能量為0，獲得 [batwinsmod:momoiorbicon] 。 消耗 ",
+        "UPGRADE_DESCRIPTION": "獲得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。若桃能量為0，獲得 [batwinsmod:momoiorbicon] 。 消耗 "
     },
     "BATwinsMod:AbstractSchool": {
-        "NAME": "像素艺术",
-        "DESCRIPTION": "造成手牌颜色数 !B! 倍（ !D! ）點傷害，抽手牌颜色数（ !M! ）張牌。"
+        "NAME": "像素藝術",
+        "DESCRIPTION": "造成手牌顏色數 !B! 倍（ !D! ）點傷害，抽手牌顏色數（ !M! ）張牌。"
     },
     "BATwinsMod:DefensiveCounterattack": {
-        "NAME": "防守与打擊",
-        "DESCRIPTION": "獲得 !B! 點格擋。受到攻擊后在下个回合开始时對攻擊的怪物打出一張打擊。"
+        "NAME": "防守與打擊",
+        "DESCRIPTION": "獲得 !B! 點格擋。受到攻擊後在下個回合開始時對攻擊的怪物打出一張打擊。"
     },
     "BATwinsMod:AdventureRewards": {
-        "NAME": "冒险-奖励",
-        "DESCRIPTION": "隨機獲得以下1项： NL 獲得5 batwinsmod:經驗值 NL 回复3生命 NL 獲得 [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,抽2張牌 NL 消耗 。若上張牌是冒险牌，改为隨機選擇2项。",
-        "UPGRADE_DESCRIPTION": "隨機獲得以下1项： NL 獲得5 batwinsmod:經驗值 NL 回复3生命 NL 獲得 [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,抽2張牌 NL 獲得1隨機药水 NL 消耗 。若上張牌是冒险牌，改为隨機選擇2项。"
+        "NAME": "冒險-獎勵",
+        "DESCRIPTION": "隨機獲得以下1項： NL 獲得5 batwinsmod:經驗值 NL 恢復3生命 NL 獲得 [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,抽2張牌 NL 消耗 。若上張牌是冒險牌，改為隨機選擇2項。",
+        "UPGRADE_DESCRIPTION": "隨機獲得以下1項： NL 獲得5 batwinsmod:經驗值 NL 恢復3生命 NL 獲得 [batwinsmod:momoiorbicon] [batwinsmod:midoriorbicon] ,抽2張牌 NL 獲得1隨機藥水 NL 消耗 。若上張牌是冒險牌，改為隨機選擇2項。"
     },
     "BATwinsMod:AccumulatedStrike": {
         "NAME": "蓄力打擊",
-        "DESCRIPTION": "造成 !D! 點傷害。本场戰鬥每打出1張打擊牌，這張牌的伤害上升 !M! 。"
+        "DESCRIPTION": "造成 !D! 點傷害。本場戰鬥每打出1張打擊牌，這張牌的傷害上升 !M! 。"
     },
     "BATwinsMod:NormalAttackMethods": {
         "NAME": "平A流",
-        "DESCRIPTION": "每回合开始时，將抽牌堆隨機1張打擊牌加入手牌。那張牌變为 batwinsmod:共有 。",
-        "UPGRADE_DESCRIPTION": "每回合开始时，將抽牌堆隨機1張打擊牌加入手牌。那張牌變为 batwinsmod:共有 。 NL 抽牌堆打擊牌不足时，將棄牌堆洗入抽牌堆。"
+        "DESCRIPTION": "每回合開始時，將抽牌堆隨機1張打擊牌加入手牌。那張牌變為 batwinsmod:共有 。",
+        "UPGRADE_DESCRIPTION": "每回合開始時，將抽牌堆隨機1張打擊牌加入手牌。那張牌變為 batwinsmod:共有 。 NL 抽牌堆打擊牌不足時，將棄牌堆洗入抽牌堆。"
     },
     "BATwinsMod:AlternatingAttack": {
         "NAME": "交替攻擊",
-        "DESCRIPTION": "造成 !D! 點傷害。从手牌選擇1張 batwinsmod:[#6fcf41]綠牌 非能力牌打出。"
+        "DESCRIPTION": "造成 !D! 點傷害。從手牌選擇1張 batwinsmod:[#6fcf41]綠牌 非能力牌打出。"
     },
     "BATwinsMod:TemporaryAssistance": {
-        "NAME": "暂时援助",
-        "DESCRIPTION": " batwinsmod:交換 1張手牌，那張牌打出后變回原颜色。這張牌在抽牌堆时，耗尽 [batwinsmod:midoriorbicon] 时加入手牌。",
-        "UPGRADE_DESCRIPTION": " batwinsmod:交換 1張手牌，那張牌打出后變为原颜色。這張牌在抽牌堆或棄牌堆时，耗尽 [batwinsmod:midoriorbicon] 加入手牌。"
+        "NAME": "暫時援助",
+        "DESCRIPTION": " batwinsmod:交換 1張手牌，那張牌打出後變回原顏色。這張牌在抽牌堆時，耗盡 [batwinsmod:midoriorbicon] 時加入手牌。",
+        "UPGRADE_DESCRIPTION": " batwinsmod:交換 1張手牌，那張牌打出後變為原顏色。這張牌在抽牌堆或棄牌堆時，耗盡 [batwinsmod:midoriorbicon] 時加入手牌。"
     },
     "BATwinsMod:AdventureExperience": {
-        "NAME": "冒险-历练",
-        "DESCRIPTION": "獲得 [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,抽 !M! 張牌。本回合打出的上一張牌是冒险牌时，獲得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。",
-        "UPGRADE_DESCRIPTION": "獲得 [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,抽 !M! 張牌。本回合打出的上一張牌是冒险牌时，獲得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。"
+        "NAME": "冒險-歷練",
+        "DESCRIPTION": "獲得 [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,抽 !M! 張牌。本回合打出的上一張牌是冒險牌時，獲得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。",
+        "UPGRADE_DESCRIPTION": "獲得 [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] [batwinsmod:momoiorbicon] ,抽 !M! 張牌。本回合打出的上一張牌是冒險牌時，獲得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] 。"
     },
     "BATwinsMod:SwitchStrike": {
         "NAME": "切換打擊",
         "DESCRIPTION": "造成 !D! 點傷害。 NL batwinsmod:連攜 ：打出手牌中1張同名的 batwinsmod:[#6fcf41]綠牌 。"
     },
     "BATwinsMod:CoverCharge": {
-        "NAME": "掩护冲锋",
-        "DESCRIPTION": "造成 !D! 點傷害桃能量次，獲得 !B! 點 格擋 绿能量次。"
+        "NAME": "掩護衝鋒",
+        "DESCRIPTION": "造成 !D! 點傷害桃能量次，獲得 !B! 點 格擋 綠能量次。"
     },
     "BATwinsMod:MutualUnderstanding": {
-        "NAME": "双胞胎默契",
+        "NAME": "雙胞胎默契",
         "DESCRIPTION": "抽 !M! 張牌，若是 batwinsmod:[#fa62aa]桃牌 ，將其打出。",
-        "UPGRADE_DESCRIPTION": " 预见 1。抽 !M! 張牌，若是 batwinsmod:[#fa62aa]桃牌 ，將其打出。"
+        "UPGRADE_DESCRIPTION": " 預見 1。抽 !M! 張牌，若是 batwinsmod:[#fa62aa]桃牌 ，將其打出。"
     },
     "BATwinsMod:MysteriousChest": {
-        "NAME": "神秘宝箱",
-        "DESCRIPTION": "將1張隨機 batwinsmod:[#6fcf41]綠牌 加入手牌，那張牌獲得 虛無 ， 消耗 ,打出前耗能为0。 NL batwinsmod:交換 這張牌。",
-        "UPGRADE_DESCRIPTION": "將1張隨機 batwinsmod:[#6fcf41]綠牌 加入手牌，那張牌獲得 保留 ， 消耗 ，打出前耗能为0。 NL batwinsmod:交換 這張牌。"
+        "NAME": "神秘寶箱",
+        "DESCRIPTION": "將1張隨機 batwinsmod:[#6fcf41]綠牌 加入手牌，那張牌獲得 虛無 ， 消耗 ,打出前耗能為0。 NL batwinsmod:交換 這張牌。",
+        "UPGRADE_DESCRIPTION": "將1張隨機 batwinsmod:[#6fcf41]綠牌 加入手牌，那張牌獲得 保留 ， 消耗 ，打出前耗能為0。 NL batwinsmod:交換 這張牌。"
     },
     "BATwinsMod:SeeYouHaveAShare": {
-        "NAME": "见者有份！",
-        "DESCRIPTION": "本回合打出的下 !M! 張单体攻擊牌会額外對所有敵人打出1次。 消耗 。",
-        "UPGRADE_DESCRIPTION": "本回合打出的下 !M! 張单体攻擊牌会額外對所有敵人打出1次。"
+        "NAME": "見者有份！",
+        "DESCRIPTION": "本回合打出的下 !M! 張單體攻擊牌會額外對所有敵人打出1次。 消耗 。",
+        "UPGRADE_DESCRIPTION": "本回合打出的下 !M! 張單體攻擊牌會額外對所有敵人打出1次。"
     },
     "BATwinsMod:CheatingCodeEnabled": {
-        "NAME": "作弊码开启",
-        "DESCRIPTION": "丢弃手牌所有 batwinsmod:[#6fcf41]綠牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽满。將所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。 消耗 ",
-        "UPGRADE_DESCRIPTION": "丢弃手牌所有 batwinsmod:[#6fcf41]綠牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽满。將所有 [batwinsmod:midoriorbicon] 转化为 [batwinsmod:momoiorbicon] 。本回合结束时將棄牌堆洗入抽牌堆。 消耗 "
+        "NAME": "作弊碼開啟",
+        "DESCRIPTION": "丟棄手牌所有 batwinsmod:[#6fcf41]綠牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽满。將所有 [batwinsmod:midoriorbicon] 轉化為 [batwinsmod:momoiorbicon] 。 消耗 ",
+        "UPGRADE_DESCRIPTION": "丟棄手牌所有 batwinsmod:[#6fcf41]綠牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽滿。將所有 [batwinsmod:midoriorbicon] 轉化為 [batwinsmod:momoiorbicon] 。本回合結束時將棄牌堆洗入抽牌堆。 消耗 "
     },
     "BATwinsMod:FundOverdraft": {
-        "NAME": "资金透支",
-        "DESCRIPTION": "抽 !M! 張牌。每次打出后抽牌数-1. NL batwinsmod:連攜 ：抽牌数重置。"
+        "NAME": "資金透支",
+        "DESCRIPTION": "抽 !M! 張牌。每次打出後抽牌數-1. NL batwinsmod:連攜 ：抽牌數重置。"
     },
     "BATwinsMod:TakeActionsSeparately": {
-        "NAME": "分头行动",
+        "NAME": "分頭行動",
         "DESCRIPTION": "獲得 !B! 點 格擋 。選擇手牌1張 batwinsmod:[#fa62aa]桃牌 非能力牌打出。"
     },
     "BATwinsMod:RepeatOperation": {
-        "NAME": "重复操作",
-        "DESCRIPTION": "選擇至多 !M! 張非能力手牌，將其 batwinsmod:交換 后的复制加入手牌。"
+        "NAME": "重複操作",
+        "DESCRIPTION": "選擇至多 !M! 張非能力手牌，將其 batwinsmod:交換 後的複製加入手牌。"
     },
     "BATwinsMod:ConvenientConnectivity": {
         "NAME": "便捷連攜",
@@ -244,124 +244,124 @@
         "UPGRADE_DESCRIPTION": "選擇 !M! 張手牌打出。 NL batwinsmod:連攜 ：選擇抽牌堆1張牌打出。"
     },
     "BATwinsMod:EndCombo": {
-        "NAME": "终结连击",
+        "NAME": "終結連擊",
         "DESCRIPTION": "造成 !D! 點傷害。 NL batwinsmod:連攜 ：造成 !B! 點傷害。 NL batwinsmod:超連攜 ：造成 !M! 點傷害。"
     },
     "BATwinsMod:ReadingDocuments": {
-        "NAME": "即时存档",
-        "DESCRIPTION": "本场戰鬥被效果打出的牌会回到抽牌堆。"
+        "NAME": "及時存檔",
+        "DESCRIPTION": "本場戰鬥被效果打出的牌會回到抽牌堆。"
     },
     "BATwinsMod:MandatoryInstruction": {
-        "NAME": "强制连锁",
-        "DESCRIPTION": "選擇抽牌堆 !M! 張非能力牌打出，但只会使用其 batwinsmod:連攜 和 batwinsmod:超連攜 效果。",
-        "UPGRADE_DESCRIPTION": " 保留 NL 選擇抽牌堆 !M! 張非能力牌打出，但只会使用其 batwinsmod:連攜 和 batwinsmod:超連攜 效果。"
+        "NAME": "強制連鎖",
+        "DESCRIPTION": "選擇抽牌堆 !M! 張非能力牌打出，但只會使用其 batwinsmod:連攜 和 batwinsmod:超連攜 效果。",
+        "UPGRADE_DESCRIPTION": " 保留 NL 選擇抽牌堆 !M! 張非能力牌打出，但只會使用其 batwinsmod:連攜 和 batwinsmod:超連攜 效果。"
     },
     "BATwinsMod:TwoStageAttack": {
         "NAME": "二次打擊",
-        "DESCRIPTION": " batwinsmod:只能被連攜 NL 在手牌並打出 打擊 牌时打出這張牌。 NL batwinsmod:連攜 ， batwinsmod:超連攜 ：對全体敵人造成 !D! 點傷害。",
+        "DESCRIPTION": " batwinsmod:只能被連攜 NL 在手牌並打出 打擊 牌時打出這張牌。 NL batwinsmod:連攜 ， batwinsmod:超連攜 ：對全體敵人造成 !D! 點傷害。",
         "EXTENDED_DESCRIPTION": [
             "這張牌只能被效果打出。"
         ]
     },
     "BATwinsMod:TakeABreak": {
-        "NAME": "暂且休整",
+        "NAME": "暫且休整",
         "DESCRIPTION": "抽 !M! 張牌，這些牌獲得 保留 。 NL batwinsmod:連攜 ：多抽1張牌並選擇其中1張牌打出。"
     },
     "BATwinsMod:AttackWithAllMight": {
-        "NAME": "力尽一击",
-        "DESCRIPTION": "造成 !D! 點傷害，這張牌本场戰鬥伤害降低为 !M! %。 NL batwinsmod:連攜 ：伤害恢复为100%。"
+        "NAME": "力盡一擊",
+        "DESCRIPTION": "造成 !D! 點傷害，這張牌本場戰鬥傷害降低為 !M! %。 NL batwinsmod:連攜 ：傷害恢復為100%。"
     },
     "BATwinsMod:DualProtection": {
-        "NAME": "双重防护",
+        "NAME": "雙重防護",
         "DESCRIPTION": "獲得 !B! 點 格擋 ，抽 !M! 張牌。 NL batwinsmod:連攜 ：獲得 !B! 點 格擋 ,抽 !M! 張牌。"
     },
     "BATwinsMod:OperateFreely": {
-        "NAME": "随意操作",
-        "DESCRIPTION": "隨機抽牌堆 !M! 張 batwinsmod:[#fa62aa]桃牌 选择1张打出。 NL batwinsmod:連攜 ：這張牌本場戰鬥耗能减少1。"
+        "NAME": "隨意操作",
+        "DESCRIPTION": "隨機抽牌堆 !M! 張 batwinsmod:[#fa62aa]桃牌 選擇1張打出。 NL batwinsmod:連攜 ：這張牌本場戰鬥耗能減少1。"
     },
     "BATwinsMod:ExperienceGiftPackage": {
-        "NAME": "经验大礼包",
-        "DESCRIPTION": " batwinsmod:共有 NL 若拥有的 batwinsmod:經驗值 大于這張牌的耗能，打出這張牌（0耗能时除外）。 NL 抽 !M! 張牌,然后這張牌本场戰鬥耗能减1。"
+        "NAME": "經驗大禮包",
+        "DESCRIPTION": " batwinsmod:共有 NL 若擁有的 batwinsmod:經驗值 等於或大於這張牌的耗能，打出這張牌（0耗能時除外）。 NL 抽 !M! 張牌,然後這張牌本場戰鬥耗能減少1。"
     },
     "BATwinsMod:SelfConnectivity": {
         "NAME": "自我連攜",
-        "DESCRIPTION": "复制本场戰鬥打出的上一張 batwinsmod:[#fa62aa]桃牌 的效果。",
-        "UPGRADE_DESCRIPTION": "复制本场戰鬥打出的上一張牌的效果。"
+        "DESCRIPTION": "複製本場戰鬥打出的上一張 batwinsmod:[#fa62aa]桃牌 的效果。",
+        "UPGRADE_DESCRIPTION": "複製本場戰鬥打出的上一張牌的效果。"
     },
     "BATwinsMod:SkillCombination": {
         "NAME": "技能融合",
         "DESCRIPTION": "選擇抽牌堆1張技能牌 消耗 。將 !M! 張打擊加入抽牌堆，且這些打擊 batwinsmod:存儲 選擇的那張牌。 NL 消耗 "
     },
     "BATwinsMod:IntegratingAndIntegrating": {
-        "NAME": "融会贯通",
-        "DESCRIPTION": " batwinsmod:共有 NL 打出 batwinsmod:交換 后的耗能1以上的牌时將1張原本颜色的那張牌加入手牌，並附加 虛無 ， 消耗 。"
+        "NAME": "融會貫通",
+        "DESCRIPTION": " batwinsmod:共有 NL 打出 batwinsmod:交換 後的耗能1以上的牌時將1張原本顏色的那張牌加入手牌，並附加 虛無 ， 消耗 。"
     },
     "BATwinsMod:EndlessCombo": {
-        "NAME": "无尽连击",
-        "DESCRIPTION": "對所有敵人造成 !D! 點傷害。這張牌的伤害翻倍打出這張牌时的連攜層数的次數。"
+        "NAME": "無盡連擊",
+        "DESCRIPTION": "對所有敵人造成 !D! 點傷害。這張牌的傷害翻倍打出這張牌時的連攜層數的次數。"
     },
     "BATwinsMod:PlotPrediction": {
-        "NAME": "剧情编排",
-        "DESCRIPTION": "回合开始时，失去 [batwinsmod:momoiorbicon] ,每回合结束时打出 !M! 張 batwinsmod:[#fa62aa]桃牌。"
+        "NAME": "劇情編排",
+        "DESCRIPTION": "回合開始時，失去 [batwinsmod:momoiorbicon] ,每回合結束時打出 !M! 張 batwinsmod:[#fa62aa]桃牌。"
     },
     "BATwinsMod:MasterCraftsmanship": {
-        "NAME": "技艺大师",
-        "DESCRIPTION": " batwinsmod:共有 NL 每回合开始时 batwinsmod:交換 至多1張牌。 NL 且本场戰鬥进行 batwinsmod:交換 的牌 升级 。",
-        "UPGRADE_DESCRIPTION": " 固有 ， batwinsmod:共有 NL 每回合开始时 batwinsmod:交換 至多1張牌。 NL 且本场戰鬥进行 batwinsmod:交換 的牌 升级 。"
+        "NAME": "技藝大師",
+        "DESCRIPTION": " batwinsmod:共有 NL 每回合開始時 batwinsmod:交換 至多1張牌。 NL 且本場戰鬥進行 batwinsmod:交換 的牌 升級 。",
+        "UPGRADE_DESCRIPTION": " 固有 ， batwinsmod:共有 NL 每回合開始時 batwinsmod:交換 至多1張牌。 NL 且本場戰鬥進行 batwinsmod:交換 的牌 升級 。"
     },
     "BATwinsMod:PoisonGasBomb": {
-        "NAME": "毒气炸弹",
-        "DESCRIPTION": "給予 !M! 層 中毒 !M! 層 batwinsmod:灼傷 。触发该敵人的 中毒 。 NL batwinsmod:連攜 ：触发该敵人的 batwinsmod:灼傷 。"
+        "NAME": "毒氣炸彈",
+        "DESCRIPTION": "給予 !M! 層 中毒 !M! 層 batwinsmod:灼傷 。觸發該敵人的 中毒 。 NL batwinsmod:連攜 ：觸發該敵人的 batwinsmod:灼傷 。"
     },
     "BATwinsMod:AdventureBegins": {
-        "NAME": "冒险小队",
-        "DESCRIPTION": "選擇一張和所有 batwinsmod:存儲 的牌类型不同的非消耗的手牌 消耗 並 batwinsmod:存儲 。",
-        "UPGRADE_DESCRIPTION": "可以 選擇一張和所有 batwinsmod:存儲 的牌类型不同的非消耗的手牌 消耗 並 batwinsmod:存儲 。",
+        "NAME": "冒險小隊",
+        "DESCRIPTION": "選擇一張和所有 batwinsmod:存儲 的牌類型不同的非消耗的手牌 消耗 並 batwinsmod:存儲 。",
+        "UPGRADE_DESCRIPTION": "可以 選擇一張和所有 batwinsmod:存儲 的牌類型不同的非消耗的手牌 消耗 並 batwinsmod:存儲 。",
         "EXTENDED_DESCRIPTION": [
             "攻擊",
             "技能",
             "能力",
-            "状态",
-            "诅咒"
+            "狀態",
+            "詛咒"
         ],
         "FLAVOR": "lll"
     },
     "BATwinsMod:PropCollection": {
         "NAME": "道具收集",
-        "DESCRIPTION": "从抽牌堆与棄牌堆選擇 !M! 張牌加入手牌。 NL 本回合不能再抽牌。"
+        "DESCRIPTION": "從抽牌堆與棄牌堆選擇 !M! 張牌加入手牌。 NL 本回合不能再抽牌。"
     },
     "BATwinsMod:EquipmentUpgrade": {
-        "NAME": "装备升级",
-        "DESCRIPTION": "選擇手牌 !M! 張牌 升级 ，獲得 batwinsmod:共有 ， 保留 。 NL 消耗 "
+        "NAME": "裝備升級",
+        "DESCRIPTION": "選擇手牌 !M! 張牌 升級 ，獲得 batwinsmod:共有 ， 保留 。 NL 消耗 "
     },
     "BATwinsMod:AutomaticDefense": {
-        "NAME": "自动防禦",
-        "DESCRIPTION": " 不能被打出 。 NL 在手牌並打出其他攻擊牌时，獲得 !B! 點 格擋 。"
+        "NAME": "自動防禦",
+        "DESCRIPTION": " 不能被打出 。 NL 在手牌並打出其他攻擊牌時，獲得 !B! 點 格擋 。"
     },
     "BATwinsMod:BenefitReducingMagic": {
-        "NAME": "大头照",
+        "NAME": "大頭照",
         "DESCRIPTION": "給予所有敵人 !M! 層 虛弱 。去除所有敵人的 格擋 。",
         "EXTENDED_DESCRIPTION": [
-            "可爱",
-            "好可爱",
-            "太可爱了"
+            "可愛",
+            "好可愛",
+            "太可愛了"
         ]
     },
     "BATwinsMod:BorrowMe": {
         "NAME": "借用一下",
-        "DESCRIPTION": "本回合所有牌视为 batwinsmod:共有 。 NL 消耗 ",
-        "UPGRADE_DESCRIPTION": "本回合所有牌视为 batwinsmod:共有 。"
+        "DESCRIPTION": "本回合所有牌視為 batwinsmod:共有 。 NL 消耗 ",
+        "UPGRADE_DESCRIPTION": "本回合所有牌視為 batwinsmod:共有 。"
     },
     "BATwinsMod:MaidForm": {
-        "NAME": "女仆形态",
-        "DESCRIPTION": "每回合打出第1張牌后打出抽牌堆1張耗能低于那張牌的牌。",
-        "UPGRADE_DESCRIPTION": " batwinsmod:共有 NL 每回合打出第1張牌后打出抽牌堆1張耗能低于那張牌的牌。"
+        "NAME": "女僕型態",
+        "DESCRIPTION": "每回合打出第1張牌後打出抽牌堆1張耗能低於那張牌的牌。",
+        "UPGRADE_DESCRIPTION": " batwinsmod:共有 NL 每回合打出第1張牌後打出抽牌堆1張耗能低於那張牌的牌。"
     },
     "BATwinsMod:Collaboration": {
         "NAME": "蓄力",
         "DESCRIPTION": "手牌每有1張 batwinsmod:[#fa62aa]桃牌 ，對隨機敵人造成 !D! 點傷害。",
         "EXTENDED_DESCRIPTION": [
-            "(当前为%s)"
+            "(當前為%s)"
         ]
     },
     "BATwinsMod:ShiftingAndGhosting": {
@@ -369,58 +369,58 @@
         "DESCRIPTION": "獲得 !B! 點 格擋 ， batwinsmod:交換 抽牌堆 !M! 張牌。"
     },
     "BATwinsMod:CheckTheStrategy": {
-        "NAME": "查询攻略书",
-        "DESCRIPTION": "抽 !M! 張牌，丢弃所有 batwinsmod:[#fa62aa]桃牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆選擇1張牌加入手牌。",
-        "UPGRADE_DESCRIPTION": "抽 !M! 張牌，丢弃所有 batwinsmod:[#fa62aa]桃牌 抽等量牌。 NL 若此牌没有丢弃牌则从抽牌堆選擇1張牌加入手牌。"
+        "NAME": "查詢攻略書",
+        "DESCRIPTION": "抽 !M! 張牌，丟棄所有 batwinsmod:[#fa62aa]桃牌 抽等量牌。 NL 若此牌沒有丟棄牌則從抽牌堆選擇1張牌加入手牌。",
+        "UPGRADE_DESCRIPTION": "抽 !M! 張牌，丟棄所有 batwinsmod:[#fa62aa]桃牌 抽等量牌。 NL 若此牌沒有丟棄牌則從抽牌堆選擇1張牌加入手牌。"
     },
     "BATwinsMod:LeaveItToMe": {
-        "NAME": "交给我吧",
-        "DESCRIPTION": "造成 !D! 點傷害。 NL 手牌全是 batwinsmod:[#fa62aa]桃牌 或 batwinsmod:連攜 ：每有1个敵人獲得 !B! 點 格擋 。"
+        "NAME": "交給我吧",
+        "DESCRIPTION": "造成 !D! 點傷害。 NL 手牌全是 batwinsmod:[#fa62aa]桃牌 或 batwinsmod:連攜 ：每有1個敵人獲得 !B! 點 格擋 。"
     },
     "BATwinsMod:Assault": {
-        "NAME": "突袭",
-        "DESCRIPTION": "造成 !D! 點傷害，給予 !M! 層 虛弱 。 NL 本回合未打出牌时，選擇手牌1張技能牌打出。"
+        "NAME": "突襲",
+        "DESCRIPTION": "造成 !D! 點傷害，給予 !M! 層 虛弱 。 NL 本回合未打出牌時，選擇手牌1張技能牌打出。"
     },
     "BATwinsMod:DontSayIt": {
         "NAME": "要對姐姐保密哦",
-        "DESCRIPTION": "獲得 !B! 點 格擋 2次，丢弃手牌中所有 batwinsmod:[#fa62aa]桃牌 。 NL 若此牌没有丢弃牌则獲得 !M! 層 batwinsmod:經驗值 。",
+        "DESCRIPTION": "獲得 !B! 點 格擋 2次，丟棄手牌中所有 batwinsmod:[#fa62aa]桃牌 。 NL 若此牌沒有丟棄牌則獲得 !M! 層 batwinsmod:經驗值 。",
         "EXTENDED_DESCRIPTION": [
             "要對妹妹保密哦"
         ]
     },
     "BATwinsMod:ItsSoPainful": {
-        "NAME": "单独进攻",
-        "DESCRIPTION": "給予 !D! 點傷害 !M! 次，丢弃手牌中所有 batwinsmod:[#6fcf41]綠牌 。若此牌没有丢弃牌则本场戰鬥此牌伤害次數增加1。"
+        "NAME": "單獨進攻",
+        "DESCRIPTION": "給予 !D! 點傷害 !M! 次，丟棄手牌中所有 batwinsmod:[#6fcf41]綠牌 。若此牌沒有丟棄牌則本場戰鬥此牌傷害次數增加1。"
     },
     "BATwinsMod:PenetrationDamage": {
-        "NAME": "贯通伤害",
-        "DESCRIPTION": "給予所有敵人 !D! 點傷害，所有没有 格擋 的敵人失去 !M! 點 力量 。 NL 消耗 NL batwinsmod:連攜 ：本场戰鬥不 消耗 。",
+        "NAME": "貫通傷害",
+        "DESCRIPTION": "給予所有敵人 !D! 點傷害，所有沒有 格擋 的敵人失去 !M! 點 力量 。 NL 消耗 NL batwinsmod:連攜 ：本場戰鬥不 消耗 。",
         "EXTENDED_DESCRIPTION": [
-            "給予所有敵人 !D! 點傷害，所有没有 格擋 的敵人失去 !M! 點 力量 。"
+            "給予所有敵人 !D! 點傷害，所有沒有 格擋 的敵人失去 !M! 點 力量 。"
         ]
     },
     "BATwinsMod:LoginRewards": {
-        "NAME": "登入奖励",
-        "DESCRIPTION": "獲得 !M! batwinsmod:經驗值 。 NL batwinsmod:連攜 ：手牌隨機1張 batwinsmod:[#6fcf41]綠牌 batwinsmod:存儲 1張 登入奖励 （不会重复存儲）。 消耗 ",
-        "UPGRADE_DESCRIPTION": "獲得 !M! batwinsmod:經驗值 。 NL batwinsmod:連攜 ：手牌隨機1張 batwinsmod:[#6fcf41]綠牌 batwinsmod:存儲 1張 登入奖励+ （不会重复存儲）。 消耗 "
+        "NAME": "登入獎勵",
+        "DESCRIPTION": "獲得 !M! batwinsmod:經驗值 。 NL batwinsmod:連攜 ：手牌隨機1張 batwinsmod:[#6fcf41]綠牌 batwinsmod:存儲 1張 登入獎勵 （不會重複存儲）。 消耗 ",
+        "UPGRADE_DESCRIPTION": "獲得 !M! batwinsmod:經驗值 。 NL batwinsmod:連攜 ：手牌隨機1張 batwinsmod:[#6fcf41]綠牌 batwinsmod:存儲 1張 登入獎勵+ （不會重複存儲）。 消耗 "
     },
     "BATwinsMod:Learned": {
-        "NAME": "完美转化",
-        "DESCRIPTION": "抽到时選擇1張非能力手牌 消耗 並 batwinsmod:存儲 。（只会存儲1張牌） NL 造成 !D! 點傷害， 斩杀 时 batwinsmod:存儲 的那張牌永久 batwinsmod:交換 为 batwinsmod:[#fa62aa]桃牌 。"
+        "NAME": "完美轉化",
+        "DESCRIPTION": "抽到時選擇1張非能力手牌 消耗 並 batwinsmod:存儲 。（只會存儲1張牌） NL 造成 !D! 點傷害， 斬殺 時 batwinsmod:存儲 的那張牌永久 batwinsmod:交換 為 batwinsmod:[#fa62aa]桃牌 。"
     },
     "BATwinsMod:ForceDetonation": {
-        "NAME": "强行引爆",
-        "DESCRIPTION": "触发所有敵人的 batwinsmod:灼傷 和 中毒 !M! 次。之后所有敵人的 batwinsmod:灼傷 和 中毒 層数减半。"
+        "NAME": "強行引爆",
+        "DESCRIPTION": "觸發所有敵人的 batwinsmod:灼傷 和 中毒 !M! 次。之後所有敵人的 batwinsmod:灼傷 和 中毒 層數減半。"
     },
     "BATwinsMod:ScriptRewriting": {
-        "NAME": "剧本改写",
-        "DESCRIPTION": "給予等同于其 中毒 的 batwinsmod:灼傷 ,給予等同于其 batwinsmod:灼傷 的 中毒 。 NL 消耗 ",
-        "UPGRADE_DESCRIPTION": "給予等同于其 中毒 的 batwinsmod:灼傷 ,再給予等同于其 batwinsmod:灼傷 的 中毒 。 NL 消耗 "
+        "NAME": "劇本改寫",
+        "DESCRIPTION": "給予等同於其 中毒 的 batwinsmod:灼傷 ,給予等同於其 batwinsmod:灼傷 的 中毒 。 NL 消耗 ",
+        "UPGRADE_DESCRIPTION": "給予等同於其 中毒 的 batwinsmod:灼傷 ,再給予等同於其 batwinsmod:灼傷 的 中毒 。 NL 消耗 "
     },
     "BATwinsMod:EasterEgg": {
         "NAME": "彩蛋",
-        "DESCRIPTION": "抽 !M! 張牌。 NL 恭喜你发现了彩蛋。",
-        "UPGRADE_DESCRIPTION": "抽 !M! 張牌。 NL 你居然还升级了這个彩蛋。"
+        "DESCRIPTION": "抽 !M! 張牌。 NL 恭喜你發現了彩蛋。",
+        "UPGRADE_DESCRIPTION": "抽 !M! 張牌。 NL 你居然還升級了這個彩蛋。"
     },
     "BATwinsMod:HeavyBullets": {
         "NAME": "重型子彈",
@@ -428,7 +428,7 @@
     },
     "BATwinsMod:ArmorPiercingBullet": {
         "NAME": "破甲子彈",
-        "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 易伤 。"
+        "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 易傷 。"
     },
     "BATwinsMod:Shooting": {
         "NAME": "射擊",
@@ -439,8 +439,8 @@
         "DESCRIPTION": "造成 !D! 點傷害。"
     },
     "BATwinsMod:ContinuousShooting": {
-        "NAME": "连续射擊",
-        "DESCRIPTION": "保留 ，能被多次 升级 NL 保留 时 batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 打出后清空 batwinsmod:存儲 的 batwinsmod:子彈 。"
+        "NAME": "連續射擊",
+        "DESCRIPTION": "保留 ，能被多次 升級 NL 保留 時 batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 打出後清空 batwinsmod:存儲 的 batwinsmod:子彈 。"
     },
     "BATwinsMod:BreechLoading": {
         "NAME": "上膛",
@@ -448,62 +448,62 @@
         "UPGRADE_DESCRIPTION": " 保留 NL 獲得 !B! 點 格擋 。 NL 手牌所有 batwinsmod:射擊 牌 batwinsmod:存儲 !M! 張 隨機 batwinsmod:子彈 。"
     },
     "BATwinsMod:ExpansionMagazine": {
-        "NAME": "扩容弹夹",
-        "DESCRIPTION": "本场戰鬥 batwinsmod:存儲 的 batwinsmod:子彈 牌 升级 。"
+        "NAME": "擴容彈夾",
+        "DESCRIPTION": "本場戰鬥 batwinsmod:存儲 的 batwinsmod:子彈 牌 升級 。"
     },
     "BATwinsMod:BulletWarehouse": {
-        "NAME": "武器库",
-        "DESCRIPTION": "从4張 batwinsmod:射擊 牌中選擇1張加入手牌。獲得 保留 並 batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 NL 消耗 ",
-        "UPGRADE_DESCRIPTION": "从4張 升级 的 batwinsmod:射擊 牌中選擇1張加入手牌。獲得 保留 並 batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 NL 消耗 "
+        "NAME": "武器庫",
+        "DESCRIPTION": "從4張 batwinsmod:射擊 牌中選擇1張加入手牌。獲得 保留 並 batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 NL 消耗 ",
+        "UPGRADE_DESCRIPTION": "從4張 升級 的 batwinsmod:射擊 牌中選擇1張加入手牌。獲得 保留 並 batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 NL 消耗 "
     },
     "BATwinsMod:PoisonBullet": {
         "NAME": "淬毒子彈",
         "DESCRIPTION": "造成 !D! 點傷害，給予 !M! 層 中毒 。"
     },
     "BATwinsMod:IncendiaryBullet": {
-        "NAME": "燃烧子彈",
+        "NAME": "燃燒子彈",
         "DESCRIPTION": "造成 !D! 點傷害，給予 !M! 層 batwinsmod:灼傷 。"
     },
     "BATwinsMod:SniperBullet": {
-        "NAME": "狙击子彈",
+        "NAME": "狙擊子彈",
         "DESCRIPTION": "造成 !D! 點傷害，給予 !M! 層 虛弱 。"
     },
     "BATwinsMod:StableShooting": {
-        "NAME": "稳定射擊",
-        "DESCRIPTION": "造成 !D! 點傷害。 NL 每 batwinsmod:存儲 了一張牌伤害提升 !M! 。"
+        "NAME": "穩定射擊",
+        "DESCRIPTION": "造成 !D! 點傷害。 NL 每 batwinsmod:存儲 了一張牌傷害提升 !M! 。"
     },
     "BATwinsMod:RandomShooting": {
-        "NAME": "胡乱射擊",
-        "DESCRIPTION": " batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 NL 打出后將 batwinsmod:存儲 的 batwinsmod:子彈 牌 batwinsmod:存儲 在手牌隨機 batwinsmod:射擊 牌中后清空。"
+        "NAME": "胡亂射擊",
+        "DESCRIPTION": " batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 NL 打出後將 batwinsmod:存儲 的 batwinsmod:子彈 牌 batwinsmod:存儲 在手牌隨機 batwinsmod:射擊 牌中後清空。"
     },
     "BATwinsMod:FocusShooting": {
         "NAME": "集中射擊",
-        "DESCRIPTION": "造成 !D! 點傷害。 NL  batwinsmod:存儲 batwinsmod:子彈 时再 batwinsmod:存儲 !M! 張相同的 batwinsmod:子彈 牌。打出后清空 batwinsmod:存儲 的 batwinsmod:子彈 。"
+        "DESCRIPTION": "造成 !D! 點傷害。 NL  batwinsmod:存儲 batwinsmod:子彈 時再 batwinsmod:存儲 !M! 張相同的 batwinsmod:子彈 牌。打出後清空 batwinsmod:存儲 的 batwinsmod:子彈 。"
     },
     "BATwinsMod:Accelerate": {
         "NAME": "加速",
-        "DESCRIPTION": "選擇抽牌堆 !M! 張耗能低于X的牌打出。",
-        "UPGRADE_DESCRIPTION": "選擇抽牌堆 !M! 張耗能低于X+1的牌打出。"
+        "DESCRIPTION": "選擇抽牌堆 !M! 張耗能低於X的牌打出。",
+        "UPGRADE_DESCRIPTION": "選擇抽牌堆 !M! 張耗能低於X+1的牌打出。"
     },
     "BATwinsMod:HeadbandChice": {
-        "NAME": "给小桃戴上",
-        "DESCRIPTION": "每回合开始时獲得 [batwinsmod:momoiorbicon] 。",
+        "NAME": "給小桃戴上",
+        "DESCRIPTION": "每回合開始時獲得 [batwinsmod:momoiorbicon] 。",
         "EXTENDED_DESCRIPTION": [
-            "给小绿戴上"
+            "給小綠戴上"
         ]
     },
     "BATwinsMod:Excitation": {
-        "NAME": "激励",
-        "DESCRIPTION": "不能被升级 NL 从所有角色的能力牌中選擇1張打出。"
+        "NAME": "激勵",
+        "DESCRIPTION": "不能被升級 NL 從所有角色的能力牌中選擇1張打出。"
     },
     "BATwinsMod:TacticalRelay": {
-        "NAME": "战术接力",
+        "NAME": "戰術接力",
         "DESCRIPTION": "獲得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交換 至多2張手牌 NL 本回合不能再打出 batwinsmod:[#fa62aa]桃牌 。",
         "UPGRADE_DESCRIPTION": "獲得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交換 至多2張手牌 NL 本回合不能再打出 batwinsmod:[#fa62aa]桃牌 。"
     },
     "BATwinsMod:Gorgeous": {
-        "NAME": "华丽散场",
-        "DESCRIPTION": " 不能被打出 NL 本回合达到 batwinsmod:連攜 5时丢弃這張牌並對所有敵人造成 !D! 點傷害。",
+        "NAME": "華麗散場",
+        "DESCRIPTION": " 不能被打出 NL 本回合達到 batwinsmod:連攜 5時丢棄這張牌並對所有敵人造成 !D! 點傷害。",
         "EXTENDED_DESCRIPTION": [
             "這張牌只能被效果打出"
         ]
@@ -513,7 +513,7 @@
         "DESCRIPTION": "造成 !D! 點傷害，隨機手牌1張 batwinsmod:[#fa62aa]桃牌 batwinsmod:存儲 !M! 張 *通配子彈 。 NL 消耗 。"
     },
     "BATwinsMod:MultipleShadows": {
-        "NAME": "占据先机",
-        "DESCRIPTION": "獲得 !B! 點 格擋 ， 格擋 在下 !M! 个回合不会消失 。 NL 消耗 "
+        "NAME": "佔據先機",
+        "DESCRIPTION": "獲得 !B! 點 格擋 ， 格擋 在下 !M! 個回合不會消失 。 NL 消耗 。"
     }
 }

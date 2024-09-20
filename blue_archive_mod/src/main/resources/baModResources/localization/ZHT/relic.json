@@ -126,7 +126,7 @@
 		"NAME": "禁斷之書",
 		"FLAVOR": "記錄着不爲人知的內容",
 		"DESCRIPTIONS": [
-			"每回合卡牌造成第 #y1 次傷害後，回覆 #y1/10 未被格擋的傷害的血量。"
+			"每回合卡牌造成第 #y1 次傷害後，恢復 #y1/10 未被格擋的傷害的血量。"
 		]
 	},
 	"BATwinsMod:LearningMaterial": {
@@ -173,7 +173,7 @@
 		]
 	},
 	"BATwinsMod:RankIcon3": {
-		"NAME": "總力站中堅",
+		"NAME": "總力站中階",
 		"FLAVOR": "要好好培養角色啊。",
 		"DESCRIPTIONS": [
 			"上次遊玩獲得了%d分：戰鬥勝利後給予 #b15 #y金幣 。"
