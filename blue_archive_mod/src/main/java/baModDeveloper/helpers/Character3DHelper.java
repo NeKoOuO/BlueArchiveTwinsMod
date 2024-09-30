@@ -139,8 +139,8 @@ public class Character3DHelper {
 
         if (flipHorizontal) {
             psb.draw(region, this.current_x - 125.0F * Settings.scale, this.current_y,
-                    0, 0,
-                    region.getRegionWidth() ,region.getRegionHeight() ,
+                    Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),
+                    Gdx.graphics.getWidth() / 2.0F, Gdx.graphics.getHeight() / 2.0F,
                     1.0F, 1.0F, 0.0F);
         } else {
             psb.draw(region, this.current_x, this.current_y,
