@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -15,6 +16,7 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.math.Vector3;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import org.lwjgl.opengl.EXTFramebufferObject;
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -25,7 +27,7 @@ import static baModDeveloper.helpers.Character3DHelper.AnimationName.*;
 
 public class Character3DHelper {
     protected static Map<AnimationName, String[]> AnimationNames = new HashMap<>();
-
+    public static int ExpandScale=2;
 
     public float current_x = 0, current_y = 0;
     OrthographicCamera camera;
@@ -59,7 +61,7 @@ public class Character3DHelper {
     }
 
     public void init() {
-        this.camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        this.camera = new OrthographicCamera(Gdx.graphics.getWidth()*ExpandScale, Gdx.graphics.getHeight()*ExpandScale);
         this.camera.position.set(0, 0, -120);
         this.camera.near = 1.0F;
         this.camera.far = 1000.0F;
@@ -67,7 +69,7 @@ public class Character3DHelper {
         camera.update();
 
 
-        frameBuffer = new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
+        frameBuffer = new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth()*ExpandScale, Gdx.graphics.getHeight()*ExpandScale, true);
         environment = new Environment();
         environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 1.0F, 1.0F, 1.0F, 1.0F));
 
@@ -111,7 +113,7 @@ public class Character3DHelper {
         frameBuffer.begin();
 //
         Gdx.gl.glClearColor(0, 0, 0, 0);
-        Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth()*ExpandScale, Gdx.graphics.getHeight()*ExpandScale);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
         Gdx.gl.glEnable(GL20.GL_BLEND);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
@@ -121,15 +123,24 @@ public class Character3DHelper {
         midoriController.render(camera, environment);
 
         frameBuffer.end();
-        region = new TextureRegion(frameBuffer.getColorBufferTexture());
+        try {
+            Texture texture = this.frameBuffer.getColorBufferTexture();
+            texture.bind(0);
+            EXTFramebufferObject.glGenerateMipmapEXT(texture.glTarget);
+            texture.setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.Linear);
+        } catch (Throwable ex) {
+            ModHelper.logger.warn("Generate mipmap for remember frame buffer failed: " + ex);
+        }
+        region = new TextureRegion(this.frameBuffer.getColorBufferTexture());
+
+
         region.flip(flipHorizontal, true);
-        frameBuffer.getColorBufferTexture().bind(0);
         psb.begin();
 
         if (flipHorizontal) {
             psb.draw(region, this.current_x - 125.0F * Settings.scale, this.current_y,
-                    Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),
-                    Gdx.graphics.getWidth() / 2.0F, Gdx.graphics.getHeight() / 2.0F,
+                    0, 0,
+                    region.getRegionWidth() ,region.getRegionHeight() ,
                     1.0F, 1.0F, 0.0F);
         } else {
             psb.draw(region, this.current_x, this.current_y,
@@ -260,8 +271,8 @@ public class Character3DHelper {
     }
 
     public void resetCharacterPosition() {
-        this.momoiController.resetPosition(150 * Settings.scale, 0);
-        this.midoriController.resetPosition(-150 * Settings.scale, 0);
+        this.momoiController.resetPosition(150*ExpandScale * Settings.scale, 0);
+        this.midoriController.resetPosition(-150*ExpandScale * Settings.scale, 0);
     }
 
     public enum AnimationName {
@@ -416,6 +427,10 @@ public class Character3DHelper {
         public Consumer<AnimationController> getOperation() {
             return operation;
         }
+    }
+
+    private void renderFrame(){
+
     }
 
     public static class ModelLoaderThread extends Thread {
