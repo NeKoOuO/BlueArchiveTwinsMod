@@ -152,6 +152,9 @@ public class Character3DHelper {
         psb.setShader(null);
         psb.setBlendFunction(770, 771);
         psb.end();
+
+        Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
 //        sb.setProjectionMatrix(BATwinsCardCrawlGamePatch.createPatch.camera.combined);
         sb.begin();
     }
