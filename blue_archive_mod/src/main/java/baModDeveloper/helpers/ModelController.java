@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 
 public class ModelController {
     private static final float SCALE = 4.5F * Settings.scale*Character3DHelper.ExpandScale;
-    private static final float MOVESCALE = Settings.scale * 4;
+    private static final float MOVESCALE = Settings.xScale * 4;
     private G3dModelLoader loader;
     private Model model;
     private ModelInstance instance;
