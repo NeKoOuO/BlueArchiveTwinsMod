@@ -164,6 +164,7 @@ public class BATwinsCharacter extends CustomPlayer {
                 //如果打不开请在这里面把选项关闭
                 character3DHelper.init();
             }
+            this.character3DHelper.SwitchLighting();
             this.img = ImageMaster.loadImage(empty_Img);
             this.corpseImg = ImageMaster.loadImage(empty_Img);
             character3DHelper.setPosition(Settings.WIDTH * 0.04F, Settings.HEIGHT * 0.07F);

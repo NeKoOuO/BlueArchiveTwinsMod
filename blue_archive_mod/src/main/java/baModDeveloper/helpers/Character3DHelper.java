@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g3d.Environment;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
+import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.utils.AnimationController;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.math.Vector3;
@@ -27,7 +28,7 @@ import static baModDeveloper.helpers.Character3DHelper.AnimationName.*;
 
 public class Character3DHelper {
     protected static Map<AnimationName, String[]> AnimationNames = new HashMap<>();
-    public static int ExpandScale=2;
+    public static int ExpandScale = 2;
 
     public float current_x = 0, current_y = 0;
     OrthographicCamera camera;
@@ -61,7 +62,7 @@ public class Character3DHelper {
     }
 
     public void init() {
-        this.camera = new OrthographicCamera(Gdx.graphics.getWidth()*ExpandScale, Gdx.graphics.getHeight()*ExpandScale);
+        this.camera = new OrthographicCamera(Gdx.graphics.getWidth() * ExpandScale, Gdx.graphics.getHeight() * ExpandScale);
         this.camera.position.set(0, 0, -120);
         this.camera.near = 1.0F;
         this.camera.far = 1000.0F;
@@ -69,9 +70,9 @@ public class Character3DHelper {
         camera.update();
 
 
-        frameBuffer = new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth()*ExpandScale, Gdx.graphics.getHeight()*ExpandScale, true);
+        frameBuffer = new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth() * ExpandScale, Gdx.graphics.getHeight() * ExpandScale, true);
         environment = new Environment();
-        environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 1.0F, 1.0F, 1.0F, 1.0F));
+        this.SwitchLighting();
 
         psb = new PolygonSpriteBatch();
         this.resetCharacterPosition();
@@ -113,7 +114,7 @@ public class Character3DHelper {
         frameBuffer.begin();
 //
         Gdx.gl.glClearColor(0, 0, 0, 0);
-        Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth()*ExpandScale, Gdx.graphics.getHeight()*ExpandScale);
+        Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth() * ExpandScale, Gdx.graphics.getHeight() * ExpandScale);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
         Gdx.gl.glEnable(GL20.GL_BLEND);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
@@ -274,8 +275,8 @@ public class Character3DHelper {
     }
 
     public void resetCharacterPosition() {
-        this.momoiController.resetPosition(150*ExpandScale * Settings.scale, 0);
-        this.midoriController.resetPosition(-150*ExpandScale * Settings.scale, 0);
+        this.momoiController.resetPosition(150 * ExpandScale * Settings.scale, 0);
+        this.midoriController.resetPosition(-150 * ExpandScale * Settings.scale, 0);
     }
 
     public enum AnimationName {
@@ -348,9 +349,9 @@ public class Character3DHelper {
 
             animationController.queue(getAnimationString(AnimationName.REACTION, BATWINS_MOMOI_CARD), 1, 1, null, 0.5F);
         }),
-        CONTINUEATTACK(animationController->{
+        CONTINUEATTACK(animationController -> {
             ModHelper.getLogger().info("CONTINUEATTACK");
-            animationController.queue(getAnimationString(ATTACKING,BATWINS_MOMOI_CARD),5,1,null,0.0F);
+            animationController.queue(getAnimationString(ATTACKING, BATWINS_MOMOI_CARD), 5, 1, null, 0.0F);
         });
         private final Consumer<AnimationController> operation;
 
@@ -417,9 +418,9 @@ public class Character3DHelper {
 
             animationController.queue(getAnimationString(AnimationName.REACTION, BATWINS_MIDORI_CARD), 1, 1, null, 0.5F);
         }),
-        CONTINUEATTACK(animationController->{
+        CONTINUEATTACK(animationController -> {
             ModHelper.getLogger().info("CONTINUEATTACK");
-            animationController.queue(getAnimationString(ATTACKING,BATWINS_MIDORI_CARD),5,1,null,0.0F);
+            animationController.queue(getAnimationString(ATTACKING, BATWINS_MIDORI_CARD), 5, 1, null, 0.0F);
         });
         private final Consumer<AnimationController> operation;
 
@@ -432,7 +433,7 @@ public class Character3DHelper {
         }
     }
 
-    private void renderFrame(){
+    private void renderFrame() {
 
     }
 
@@ -450,8 +451,9 @@ public class Character3DHelper {
             finishLoading = true;
         }
     }
-    public void clearCountdown(){
-        for(Countdown c:this.controlCountdown){
+
+    public void clearCountdown() {
+        for (Countdown c : this.controlCountdown) {
             if (c.color == BATWINS_MOMOI_CARD)
                 c.consumer.accept(this.momoiController);
             else
@@ -472,6 +474,19 @@ public class Character3DHelper {
             this.color = color;
             this.ID = ID;
         }
+
+    }
+
+    public void SwitchLighting() {
+        environment.clear();
+        if (BATwinsMod.EnableModelLighting) {
+            environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.5F, 0.5F, 0.5F, 0.7F));
+            environment.add(new DirectionalLight().set(0.3F, 0.3F, 0.3F, -1F, 0.0F, 0.8F));
+        } else {
+            environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 1.0F, 1.0F, 1.0F, 1.0F));
+        }
+        this.momoiController.switchLighting();
+        this.midoriController.switchLighting();
 
     }
 }

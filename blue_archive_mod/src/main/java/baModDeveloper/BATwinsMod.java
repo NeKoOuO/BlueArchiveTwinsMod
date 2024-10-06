@@ -91,6 +91,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public static boolean Enable3D = false;
     public static int SelectedSkin = 0;
     public static boolean Tutorial = true;
+    public static boolean EnableModelLighting=false;
 
 
     public BATwinsMod() {
@@ -113,6 +114,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             Enable3D = config.getBool(ModHelper.makePath("Enable3D"));
             Tutorial = config.getBool(ModHelper.makePath("Tutorial"));
             SelectedSkin = config.getInt(ModHelper.makePath("SelectedSkin"));
+            EnableModelLighting=config.getBool(ModHelper.makePath("EnableModelLighting"));
 
 //            Settings.isDebug=true;
         } catch (Exception e) {
@@ -372,7 +374,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         settingPanel.addUIElement(autoSort);
 
-        ModLabeledToggleButton showExpBar = new ModLabeledToggleButton("ShowExpBar", 500.0F, 400.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, ShowExpBar, settingPanel, modLabel -> {
+        ModLabeledToggleButton showExpBar = new ModLabeledToggleButton("ShowExpBar", 500.0F, 500.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, ShowExpBar, settingPanel, modLabel -> {
 
         }, modToggleButton -> {
             spireConfig.setBool(ModHelper.makePath("ShowExpBar"), ShowExpBar = modToggleButton.enabled);
@@ -386,7 +388,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         settingPanel.addUIElement(showExpBar);
 
-        ModLabeledToggleButton enable3D = new ModLabeledToggleButton("Enable3D", 500.0F, 200.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, Enable3D, settingPanel, modLabel -> {
+        ModLabeledToggleButton enable3D = new ModLabeledToggleButton("Enable3D", 500.0F, 400.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, Enable3D, settingPanel, modLabel -> {
 
         }, modToggleButton -> {
             spireConfig.setBool(ModHelper.makePath("Enable3D"), Enable3D = modToggleButton.enabled);
@@ -399,6 +401,19 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         });
 
         settingPanel.addUIElement(enable3D);
+
+        ModLabeledToggleButton enableModelLighting=new ModLabeledToggleButton("EnableModelLighting(Need restart game!)",500.0F,300.0F,Settings.CREAM_COLOR,FontHelper.charDescFont,EnableModelLighting,settingPanel,modLabel -> {
+
+        },modToggleButton -> {
+            spireConfig.setBool(ModHelper.makePath("EnableModelLighting"),EnableModelLighting=modToggleButton.enabled);
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+            try {
+                spireConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        settingPanel.addUIElement(enableModelLighting);
 
         Texture badgeTexture = ImageMaster.loadImage(ModHelper.makeImgPath("UI", "configButton"));
         BaseMod.registerModBadge(badgeTexture, "BATwinsMod", "0v0", "config", settingPanel);

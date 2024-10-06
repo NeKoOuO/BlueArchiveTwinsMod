@@ -1,5 +1,6 @@
 package baModDeveloper.helpers;
 
+import baModDeveloper.BATwinsMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -7,6 +8,7 @@ import com.badlogic.gdx.graphics.g3d.*;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.loader.G3dModelLoader;
 import com.badlogic.gdx.graphics.g3d.utils.AnimationController;
+import com.badlogic.gdx.graphics.g3d.utils.DefaultShaderProvider;
 import com.badlogic.gdx.utils.JsonReader;
 import com.megacrit.cardcrawl.core.Settings;
 
@@ -30,7 +32,11 @@ public class ModelController {
 
         animationController = new AnimationController(instance);
 
-        modelBatch = new ModelBatch();
+        DefaultShaderProvider shaderProvider = new DefaultShaderProvider();
+        if(BATwinsMod.EnableModelLighting){
+            shaderProvider.config.fragmentShader = Gdx.files.internal("baModResources/shader/model/myfragshader.fs").readString();
+        }
+        modelBatch = new ModelBatch(shaderProvider);
         instance.transform.setTranslation(z, y, x);
         instance.transform.rotate(0, 3, 1, 180);
         instance.transform.rotate(1, 0, 0, 34);
@@ -122,6 +128,20 @@ public class ModelController {
 
     public void rotate(float x, float y, float z, float degree) {
         this.instance.transform.rotate(x, y, z, degree);
+    }
+
+    public void switchLighting(){
+        if(this.modelBatch==null){
+            return;
+        }
+        this.modelBatch.dispose();
+        if(BATwinsMod.EnableModelLighting){
+            DefaultShaderProvider shaderProvider = new DefaultShaderProvider();
+            shaderProvider.config.fragmentShader = Gdx.files.internal("baModResources/shader/model/myfragshader.fs").readString();
+            modelBatch = new ModelBatch(shaderProvider);
+        }else{
+            modelBatch=new ModelBatch();
+        }
     }
 
 }
