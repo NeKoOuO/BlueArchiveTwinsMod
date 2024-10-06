@@ -402,7 +402,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         settingPanel.addUIElement(enable3D);
 
-        ModLabeledToggleButton enableModelLighting=new ModLabeledToggleButton("EnableModelLighting(Need restart game!)",500.0F,300.0F,Settings.CREAM_COLOR,FontHelper.charDescFont,EnableModelLighting,settingPanel,modLabel -> {
+        ModLabeledToggleButton enableModelLighting=new ModLabeledToggleButton("EnableModelLighting",500.0F,300.0F,Settings.CREAM_COLOR,FontHelper.charDescFont,EnableModelLighting,settingPanel,modLabel -> {
 
         },modToggleButton -> {
             spireConfig.setBool(ModHelper.makePath("EnableModelLighting"),EnableModelLighting=modToggleButton.enabled);
