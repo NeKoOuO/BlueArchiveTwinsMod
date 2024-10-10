@@ -2,6 +2,7 @@ package baModDeveloper.event;
 
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
+import baModDeveloper.relic.BATwinsPackage;
 import baModDeveloper.ui.BATwinsSoraShopItem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -10,9 +11,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.esotericsoftware.spine.*;
+import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.GenericEventDialog;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -20,6 +23,7 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -37,7 +41,7 @@ public class BATwinsSoraShop extends AbstractImageEvent {
     private static Texture shopBackground = TextureLoader.getTexture(ModHelper.makeImgPath("UI/soraShop", "shopBackGround"));
 
     private static UIStrings soraMessage=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("SoraMessage"));
-    private enum CurrentScreen {START, SHOPPING, END}
+    private enum CurrentScreen {START, SHOPPING,SHOPEND, END}
 
 
     private CurrentScreen currentScreen = CurrentScreen.START;
@@ -136,8 +140,39 @@ public class BATwinsSoraShop extends AbstractImageEvent {
                 CardCrawlGame.music.unsilenceBGM();
                 CardCrawlGame.music.playTempBgmInstantly(ModHelper.makePath("soraShop"));
                 break;
+            case SHOPEND:
+                switch (i){
+                    case 0:
+                        this.imageEventText.clearAllDialogs();
+                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
+                        this.imageEventText.setDialogOption(eventStrings.OPTIONS[1]);
+                        this.currentScreen=CurrentScreen.END;
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(((float) Settings.WIDTH / 2), ((float) Settings.HEIGHT / 2), new BATwinsPackage());
+                        break;
+                    case 1:
+                        try{
+                            this.items.get(0).activeEffect();
+                            this.items.get(0).activeEffect();
+                            this.items.get(1).activeEffect();
+                        }catch (Exception e){
+                            ModHelper.logger.warn("What happened?");
+                        }
+                        this.imageEventText.clearAllDialogs();
+                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
+                        this.imageEventText.setDialogOption(eventStrings.OPTIONS[1]);
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Shame(), ((float) Settings.WIDTH / 2), ((float) Settings.HEIGHT / 2)));
+                        this.currentScreen=CurrentScreen.END;
+                        break;
+                    case 2:
+                        openMap();
+                        break;
+                    default:
+                        openMap();
+                }
+                break;
             case END:
                 openMap();
+                break;
         }
     }
 
@@ -160,9 +195,11 @@ public class BATwinsSoraShop extends AbstractImageEvent {
             this.leaveButtonHb.update();
             if(this.leaveButtonHb.hovered&&InputHelper.justClickedLeft){
                 InputHelper.justClickedLeft=false;
-                this.currentScreen=CurrentScreen.END;
+                this.currentScreen=CurrentScreen.SHOPEND;
                 this.imageEventText.clearAllDialogs();
                 this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
+                this.imageEventText.setDialogOption(eventStrings.OPTIONS[2],new BATwinsPackage());
+                this.imageEventText.setDialogOption(eventStrings.OPTIONS[3],new Shame());
                 this.imageEventText.setDialogOption(eventStrings.OPTIONS[1]);
                 GenericEventDialog.show();
                 CardCrawlGame.music.silenceTempBgmInstantly();

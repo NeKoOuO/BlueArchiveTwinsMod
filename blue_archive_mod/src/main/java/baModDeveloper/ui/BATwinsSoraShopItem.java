@@ -87,7 +87,7 @@ public class BATwinsSoraShopItem {
         }
     }
 
-    private void activeEffect() {
+    public void activeEffect() {
         boolean isActivated=true;
         switch (this.item) {
             case LIFE:

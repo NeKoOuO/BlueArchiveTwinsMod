@@ -339,6 +339,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsRankIcon(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsFullScoreAnswer(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsCrystalHaniwa(),RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsPackage(),RelicType.SHARED);
     }
 
     @Override
