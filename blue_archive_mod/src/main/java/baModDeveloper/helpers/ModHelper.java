@@ -2,6 +2,7 @@ package baModDeveloper.helpers;
 
 import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
+import baModDeveloper.localization.SoraItemStrings;
 import com.badlogic.gdx.graphics.Color;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +12,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class ModHelper {
     public static final Logger logger = LogManager.getLogger(BATwinsMod.class.getName());
@@ -95,4 +98,10 @@ public class ModHelper {
             return BATwinsMod.MOMOIColor;
         }
     }
+
+    public static String makeFilePath(String floder,String fileName,String fileType){
+        return "baModResources/img/" + floder + "/" + fileName + "."+fileType;
+    }
+
+    public static Map<String, SoraItemStrings> soraItemStringsMap=new HashMap<>();
 }

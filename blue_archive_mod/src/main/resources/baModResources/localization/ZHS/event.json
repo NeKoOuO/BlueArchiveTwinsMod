@@ -101,5 +101,16 @@
 			"[继续]",
 			"[离开]"
 		]
+	},
+	"BATwinsMod:SoraShop": {
+		"NAME": "便利店",
+		"DESCRIPTIONS": [
+			"偶遇商店",
+			"买完了。"
+		],
+		"OPTIONS": [
+			"进入",
+			"离开"
+		]
 	}
 }
