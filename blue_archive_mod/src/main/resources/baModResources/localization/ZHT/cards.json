@@ -394,7 +394,7 @@
     },
     "BATwinsMod:PenetrationDamage": {
         "NAME": "貫通傷害",
-        "DESCRIPTION": "給予所有敵人 !D! 點傷害，所有沒有 格擋 的敵人失去 !M! 點 力量 。 NL 消耗 NL batwinsmod:連攜 ：本場戰鬥嗎 消耗 。",
+        "DESCRIPTION": "給予所有敵人 !D! 點傷害，所有沒有 格擋 的敵人失去 !M! 點 力量 。 NL 消耗 NL batwinsmod:連攜 ：本場戰鬥不 消耗 。",
         "EXTENDED_DESCRIPTION": [
             "給予所有敵人 !D! 點傷害，所有沒有 格擋 的敵人失去 !M! 點 力量 。"
         ]
