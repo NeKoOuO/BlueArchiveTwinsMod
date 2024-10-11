@@ -95,7 +95,7 @@
 	"BATwinsMod:DoubleExperiencePower":{
 		"NAME":"雙倍經驗",
 		"DESCRIPTIONS":[
-			"獲得的經驗值變爲兩倍。"
+			"獲得的經驗值變為兩倍。"
 		]
 	},
 	"BATwinsMod:DefensiveCounterattackPower":{
@@ -116,7 +116,7 @@
 		"NAME":"平A流",
 		"DESCRIPTIONS":[
 			"每回合開始從抽牌堆將",
-			"張打擊牌加入手牌。那張牌變爲共有"
+			"張打擊牌加入手牌。那張牌變為共有"
 		]
 	},
 	"BATwinsMod:NoramlAttackAuxiliaryPower":{
@@ -159,7 +159,7 @@
 	"BATwinsMod:BorrowMePower":{
 		"NAME":"借用一下",
 		"DESCRIPTIONS":[
-			"本回合所有牌視爲 #y共有 。"
+			"本回合所有牌視為 #y共有 。"
 		]
 	},
 	"BATwinsMod:MaidFormPower":{
@@ -177,7 +177,7 @@
 	"BATwinsMod:ExpansionMagazinePower":{
 		"NAME":"擴容彈夾",
 		"DESCRIPTIONS":[
-			"本場戰鬥存儲的子彈升級。"
+			"本場戰鬥儲存的子彈升級。"
 		]
 	},
 	"BATwinsMod:DisabledMomoiPower": {
