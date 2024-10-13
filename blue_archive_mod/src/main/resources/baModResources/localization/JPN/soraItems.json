@@ -1,0 +1,65 @@
+{
+  "Life": {
+    "name": "ライフポイント",
+    "description": "HPを20%回復する。",
+    "message": "",
+    "price": 30,
+    "count": 2
+  },
+  "Smith": {
+    "name": "強化石",
+    "description": "デッキ内のカード1枚をランダムで強化する。",
+    "message": "強化できるカードがありません。",
+    "price": 50,
+    "count": 2
+  },
+  "CrystalHaniwa": {
+    "name": "オーパーツ",
+    "description": "次の2回のエリートまたはボス戦の開始時に、すべての敵に脆弱3と弱体3を付与する。",
+    "message": "",
+    "price": 150,
+    "count": 1
+  },
+  "Key": {
+    "name": "鍵",
+    "description": "拾った奇妙な鍵。用途は不明。",
+    "message": "",
+    "price": 130,
+    "count": 1
+  },
+  "Challenge": {
+    "name": "チャレンジ券",
+    "description": "次の部屋がランダムなエリート戦になる。",
+    "message": "",
+    "price": 30,
+    "count": 1
+  },
+  "SecretStone": {
+    "name": "神の文字",
+    "description": "",
+    "message": "",
+    "price": 30,
+    "count": 1
+  },
+  "InitialRelics": {
+    "name": "初期遺物",
+    "description": "もう一つ入手できる。",
+    "message": "",
+    "price": 120,
+    "count": 1
+  },
+  "PotionSlot": {
+    "name": "ポーションスロット",
+    "description": "ポーションスロットが1つ増え、ランダムなポーションを1つ獲得する。",
+    "message": "",
+    "price": 100,
+    "count": 2
+  },
+  "Telephone": {
+    "name": "ソラの電話",
+    "description": "第4幕でソラの店が出現し、次のソラの店の価格が30%引きになる。",
+    "message": "",
+    "price": 50,
+    "count": 1
+  }
+}
