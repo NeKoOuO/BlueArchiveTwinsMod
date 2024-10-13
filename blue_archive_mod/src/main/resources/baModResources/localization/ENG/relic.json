@@ -199,5 +199,12 @@
 		"DESCRIPTIONS": [
 			"At the start of combat, gain #b1 #yStrength and #b1 #yDexterity. Lose #b1 #yStrength and #b1 #yDexterity after taking damage for the first time in this combat."
 		]
+	},
+	"BATwinsMod:FileBag": {
+		"NAME": "File Bag",
+		"FLAVOR": "An essential part of the game.",
+		"DESCRIPTIONS": [
+			"At the start of combat, choose 1 card from #b10 random cards to add to your draw pile. The next time it is played, it costs 0 energy"
+		]
 	}
 }
