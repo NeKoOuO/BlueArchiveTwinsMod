@@ -100,5 +100,37 @@
 			"[Continue]",
 			"[Leave]"
 		]
+	},
+	"BATwinsMod:SoraShop": {
+		"NAME": "Convenience Store",
+		"DESCRIPTIONS": [
+			"You proceed along the @winding@ road, and after rounding a corner, a #bbright building# appears ahead. NL You see a #broom# on the first floor with its lights on. As you approach, the door to that room suddenly opens, revealing what seems to be a #bshop#.",
+			"After you’ve happily shopped around, you leave the store. NL As you exit, the door closes automatically, and you notice a package placed on the shelf by the door. It has an address on it—seems like a delivery task.",
+			"You feel like you could play the role of a delivery person. NL So, you reach out to pick up the package, but it’s heavier than expected. You drop it on your foot. After picking it up, you continue on your way.",
+			"The shopkeeper doesn’t seem to notice you as you take the package. You walk a few steps and then open it. NL Inside are packed store items. Although it feels a bit @embarrassing@, you stuff them into your bag anyway."
+		],
+		"OPTIONS": [
+			"Enter",
+			"Leave",
+			"#gTake #gthe #gpackage Gain #bpackage, #rlose %d HP",
+			"#gOpen #gthe #gpackage Recover 40% HP, randomly upgrade 1 card, gain 1 #yShame"
+		]
+	},
+	"BATwinsMod:TransportationTask": {
+		"NAME": "Anonymous Customer",
+		"DESCRIPTIONS": [
+			"As you proceed, a mysterious person blocks your way. NL 'The package you’re holding is mine. Hand it over, and here’s your reward.'",
+			"Wait, why are you keeping the package? I already said it’s mine! Fine, how about I offer you a little more for it?'",
+			"'Hold on, hold on. It’s not something very valuable, but it’s important to me! Even if you keep it, no one else will buy it, so please give it back to me! This is all my pocket money.'",
+			"'Here, take this as well. I really have nothing else to trade.'",
+			"You like the package’s design so much that not even all this money can convince you to give it up.",
+			"'Thank you.' NL She takes the package and leaves immediately. After a few turns, she disappears from your sight—it seems like she’s hiding from someone."
+		],
+		"OPTIONS": [
+			"#gGive her the package Gain %d gold.",
+			"Don’t give it",
+			"#gGive her the package Gain %d gold, gain #b%s.",
+			"Leave"
+		]
 	}
 }

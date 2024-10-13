@@ -28,5 +28,11 @@
 		"DESCRIPTIONS":[
 			"Use this potion at the campfire to gain an extra action."
 		]
+	},
+	"BATwinsMod:GeneralMedicine": {
+		"NAME": "大瓶体力药",
+		"DESCRIPTIONS": [
+			"在火堆处使用此效果，能够再进行一次行动，可以使用2次。"
+		]
 	}
 }

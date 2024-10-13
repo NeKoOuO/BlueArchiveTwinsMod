@@ -152,5 +152,19 @@
 		"Normal Form",
 		"Maid Form"
 		]
+	},
+	"BATwinsMod:SoraMessage": {
+		"TEXT": [
+			"I'm so bored... Ah, ah, when did you get here...?",
+			"So... it's better to buy a bit more before heading back! There's definitely an advantage to buying from our store!",
+			"But, but... our store has really reasonable prices!",
+			"Thank you for your patronage."
+		],
+		"EXTRA_TEXT": [
+			"soraEnterShop",
+			"soraMsg1",
+			"soraMsg2",
+			"soraMsg3"
+		]
 	}
 }

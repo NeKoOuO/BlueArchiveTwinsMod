@@ -199,5 +199,19 @@
 		"DESCRIPTIONS": [
 			"战斗开始时获得 #b1 #y力量 #b1 #y敏捷 ，本场战斗第一次受伤后失去 #b1 #y力量 ， #b1 #y敏捷 。"
 		]
+	},
+	"BATwinsMod:CrystalHaniwa": {
+		"NAME": "欧帕兹",
+		"FLAVOR": "商店里有这东西很奇怪吧！",
+		"DESCRIPTIONS": [
+			"下 #b2 场BOSS战开始时，给予所有敌人 #b3 层 #y易伤 和 #b3 层 #y虚弱 。"
+		]
+	},
+	"BATwinsMod:Package": {
+		"NAME": "包裹（运送中）",
+		"FLAVOR": "相当重！！！",
+		"DESCRIPTIONS": [
+			"战斗开始时，对所有敌人造成5点伤害。"
+		]
 	}
 }

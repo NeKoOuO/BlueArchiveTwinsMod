@@ -199,5 +199,12 @@
 		"DESCRIPTIONS": [
 			"At the start of combat, gain #b1 #yStrength and #b1 #yDexterity. Lose #b1 #yStrength and #b1 #yDexterity after taking damage for the first time in this combat."
 		]
+	},
+	"BATwinsMod:Package": {
+		"NAME": "Package (In Transit)",
+		"FLAVOR": "It's really heavy!!!",
+		"DESCRIPTIONS": [
+			"At the start of battle, deal 5 damage to all enemies."
+		]
 	}
 }

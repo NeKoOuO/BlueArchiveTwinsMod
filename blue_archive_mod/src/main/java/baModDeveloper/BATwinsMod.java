@@ -8,6 +8,8 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.character.BATwinsCharacter.Enums;
 import baModDeveloper.event.*;
 import baModDeveloper.helpers.ModHelper;
+import baModDeveloper.helpers.SaveHelper;
+import baModDeveloper.localization.SoraItemStrings;
 import baModDeveloper.patch.BATwinsAbstractMonsterPatch;
 import baModDeveloper.patch.BATwinsCustomModeScreenPatch;
 import baModDeveloper.potion.BATwinsAcceleratePotion;
@@ -34,6 +36,7 @@ import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -49,16 +52,20 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.function.BiConsumer;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber, ScreenPostProcessor,PostCreateStartingDeckSubscriber,PostBattleSubscriber {
+public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber,
+        EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber, ScreenPostProcessor,
+        PostCreateStartingDeckSubscriber, PostBattleSubscriber,PostDungeonInitializeSubscriber {
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -91,7 +98,9 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public static boolean Enable3D = false;
     public static int SelectedSkin = 0;
     public static boolean Tutorial = true;
-    public static boolean EnableModelLighting=false;
+    public static boolean EnableModelLighting = false;
+
+    public static SaveHelper saveHelper;
 
 
     public BATwinsMod() {
@@ -100,6 +109,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addColor(Enums.BATWINS_MIDORI_CARD, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, MIDORIColor, BATWINS_MIDORI_ATTACK_512, BATWINS_MIDORI_SKILL_512, BATWINS_MIDORI_POWER_512, MIDORI_BIG_ORB, BATWINS_MIDORI_ATTACK_1024, BATWINS_MIDORI_SKILL_1024, BATWINS_MIDORI_POWER_1024, MIDORI_ENERGY_ORB, MIDORI_SMALL_ORB);
 
         ScreenPostProcessorManager.addPostProcessor(this);
+
+        saveHelper=new SaveHelper();
     }
 
     public static void initialize() {
@@ -114,7 +125,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             Enable3D = config.getBool(ModHelper.makePath("Enable3D"));
             Tutorial = config.getBool(ModHelper.makePath("Tutorial"));
             SelectedSkin = config.getInt(ModHelper.makePath("SelectedSkin"));
-            EnableModelLighting=config.getBool(ModHelper.makePath("EnableModelLighting"));
+            EnableModelLighting = config.getBool(ModHelper.makePath("EnableModelLighting"));
 
 //            Settings.isDebug=true;
         } catch (Exception e) {
@@ -246,10 +257,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             lang = "ZHS";
 //        } else if(language==GameLanguage.ENG){
 //            lang = "ENG";
-        }else if(language==GameLanguage.ZHT){
-            lang="ZHT";
-        }else if(language==GameLanguage.JPN){
-            lang="JPN";
+        } else if (language == GameLanguage.ZHT) {
+            lang = "ZHT";
+        } else if (language == GameLanguage.JPN) {
+            lang = "JPN";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "baModResources/localization/" + lang + "/cards.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "baModResources/localization/" + lang + "/character.json");
@@ -259,7 +270,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.loadCustomStringsFile(EventStrings.class, "baModResources/localization/" + lang + "/event.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, "baModResources/localization/" + lang + "/potion.json");
         BaseMod.loadCustomStringsFile(MonsterStrings.class, "baModResources/localization/" + lang + "/monster.json");
-        BaseMod.loadCustomStringsFile(RunModStrings.class,"baModResources/localization/"+lang+"/runmod.json");
+        BaseMod.loadCustomStringsFile(RunModStrings.class, "baModResources/localization/" + lang + "/runmod.json");
 
     }
 
@@ -274,10 +285,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         String lang = "ENG";
         if (language == GameLanguage.ZHS) {
             lang = "ZHS";
-        }else if(language==GameLanguage.ZHT){
-            lang="ZHT";
-        }else if(language==GameLanguage.JPN){
-            lang="JPN";
+        } else if (language == GameLanguage.ZHT) {
+            lang = "ZHT";
+        } else if (language == GameLanguage.JPN) {
+            lang = "JPN";
         }
         String json = Gdx.files.internal("baModResources/localization/" + lang + "/keyword.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
@@ -286,7 +297,19 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
                 BaseMod.addKeyword("batwinsmod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+        this.initSoraItemString(lang);
 
+    }
+
+    private void initSoraItemString(String lang) {
+        //添加小空商店道具
+        String json = Gdx.files.internal("baModResources/localization/" + lang + "/soraItems.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        Gson gson = new Gson();
+        Type soraItemMapType = new TypeToken<Map<String, SoraItemStrings>>() {
+        }.getType();
+        ModHelper.soraItemStringsMap = gson.fromJson(json, soraItemMapType);
+
+        ModHelper.getLogger().info(ModHelper.soraItemStringsMap);
 
     }
 
@@ -311,10 +334,12 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsBookOfProhibitions(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsLearningMaterials(), RelicType.SHARED);
         BaseMod.addRelicToCustomPool(new BATwinsAdaptability(), Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelic(new BATwinsFlowers(),RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsOldTv(),RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsRankIcon(),RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsFullScoreAnswer(),RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsFlowers(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsOldTv(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsRankIcon(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsFullScoreAnswer(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsCrystalHaniwa(),RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsPackage(),RelicType.SHARED);
     }
 
     @Override
@@ -330,6 +355,12 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("Momoi_Ex"), ModHelper.makeAudioPath("Momoi_Ex"));
         BaseMod.addAudio(ModHelper.makePath("Midori_Ex"), ModHelper.makeAudioPath("Midori_Ex"));
         BaseMod.addAudio(ModHelper.makePath("Alice"), ModHelper.makeAudioPath("alice"));
+        BaseMod.addAudio(ModHelper.makePath("soraShop"), ModHelper.makeAudioPath("soraShop"));
+        BaseMod.addAudio(ModHelper.makePath("soraEnterShop"), ModHelper.makeAudioPath("soraEnterShop"));
+        BaseMod.addAudio(ModHelper.makePath("soraMsg1"), ModHelper.makeAudioPath("soraMsg1"));
+        BaseMod.addAudio(ModHelper.makePath("soraMsg2"), ModHelper.makeAudioPath("soraMsg2"));
+        BaseMod.addAudio(ModHelper.makePath("soraMsg3"), ModHelper.makeAudioPath("soraMsg3"));
+
     }
 
     @Override
@@ -345,6 +376,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addEvent(BATwinsHurdleGame.ID, BATwinsHurdleGame.class);
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsCommunication.ID, BATwinsCommunication.class).playerClass(Enums.BATwins).dungeonID(Exordium.ID).create());
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsTheRoadIsLong.ID, BATwinsTheRoadIsLong.class).playerClass(Enums.BATwins).dungeonID(TheBeyond.ID).create());
+        BaseMod.addEvent(BATwinsSoraShop.ID, BATwinsSoraShop.class);
+        BaseMod.addEvent(new AddEventParams.Builder(BATwinsTransportationTask.ID,BATwinsTransportationTask.class).spawnCondition(()->{
+            return AbstractDungeon.player!=null&&AbstractDungeon.player.hasRelic(BATwinsPackage.ID);
+        }).create());
         //添加药水
         BaseMod.addPotion(BATwinsAcceleratePotion.class, BATwinsAcceleratePotion.liquidColor, BATwinsAcceleratePotion.hybridColor, BATwinsAcceleratePotion.spotsColor, BATwinsAcceleratePotion.ID);
         BaseMod.addPotion(BATwinsConnectPotion.class, BATwinsConnectPotion.liquidColor, BATwinsConnectPotion.hybridColor, BATwinsConnectPotion.spotsColor, BATwinsConnectPotion.ID);
@@ -354,7 +389,9 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 //        BaseMod.addMonster(BATwinsAkane.ID, BATwinsAkane::new);
 //        BaseMod.addStrongMonsterEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));
 //        BaseMod.addEliteEncounter(Exordium.ID,new MonsterInfo(BATwinsAkane.ID,10));
-        BaseMod.addSaveField("BATwinsRunMods",new BATwinsCustomModeScreenPatch());
+        BaseMod.addSaveField("BATwinsRunMods", new BATwinsCustomModeScreenPatch());
+
+
     }
 
     private void CreateConfig() throws IOException {
@@ -402,10 +439,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         settingPanel.addUIElement(enable3D);
 
-        ModLabeledToggleButton enableModelLighting=new ModLabeledToggleButton("EnableModelLighting",500.0F,300.0F,Settings.CREAM_COLOR,FontHelper.charDescFont,EnableModelLighting,settingPanel,modLabel -> {
+        ModLabeledToggleButton enableModelLighting = new ModLabeledToggleButton("EnableModelLighting(Need restart game!)", 500.0F, 300.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, EnableModelLighting, settingPanel, modLabel -> {
 
-        },modToggleButton -> {
-            spireConfig.setBool(ModHelper.makePath("EnableModelLighting"),EnableModelLighting=modToggleButton.enabled);
+        }, modToggleButton -> {
+            spireConfig.setBool(ModHelper.makePath("EnableModelLighting"), EnableModelLighting = modToggleButton.enabled);
             CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
             try {
                 spireConfig.save();
@@ -437,21 +474,21 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-        BATwinsSelfConnectivity.EasterEggCard= AbstractDungeon.returnRandomCard();
+        BATwinsSelfConnectivity.EasterEggCard = AbstractDungeon.returnRandomCard();
     }
 
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
-        if(playerClass== Enums.BATwins&&Settings.isTrial){
-            if(BATwinsCustomModeScreenPatch.NoMomoiCardModEnable){
-                for(AbstractCard card:cardGroup.group){
-                    if(card instanceof BATwinsModCustomCard&&card.color== Enums.BATWINS_MOMOI_CARD){
+        if (playerClass == Enums.BATwins && Settings.isTrial) {
+            if (BATwinsCustomModeScreenPatch.NoMomoiCardModEnable) {
+                for (AbstractCard card : cardGroup.group) {
+                    if (card instanceof BATwinsModCustomCard && card.color == Enums.BATWINS_MOMOI_CARD) {
                         ((BATwinsModCustomCard) card).conversionColor(false);
                     }
                 }
-            }else if(BATwinsCustomModeScreenPatch.NoMidoriCardModEnable){
-                for(AbstractCard card:cardGroup.group){
-                    if(card instanceof BATwinsModCustomCard&&card.color== Enums.BATWINS_MIDORI_CARD){
+            } else if (BATwinsCustomModeScreenPatch.NoMidoriCardModEnable) {
+                for (AbstractCard card : cardGroup.group) {
+                    if (card instanceof BATwinsModCustomCard && card.color == Enums.BATWINS_MIDORI_CARD) {
                         ((BATwinsModCustomCard) card).conversionColor(false);
                     }
                 }
@@ -459,6 +496,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         }
 
 
+    }
 
+    @Override
+    public void receivePostDungeonInitialize() {
+        saveHelper.values=new SaveHelper.SaveValue();
     }
 }
