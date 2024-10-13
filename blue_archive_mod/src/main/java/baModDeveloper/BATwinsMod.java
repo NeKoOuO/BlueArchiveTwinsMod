@@ -377,6 +377,9 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsCommunication.ID, BATwinsCommunication.class).playerClass(Enums.BATwins).dungeonID(Exordium.ID).create());
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsTheRoadIsLong.ID, BATwinsTheRoadIsLong.class).playerClass(Enums.BATwins).dungeonID(TheBeyond.ID).create());
         BaseMod.addEvent(BATwinsSoraShop.ID, BATwinsSoraShop.class);
+        BaseMod.addEvent(new AddEventParams.Builder(BATwinsTransportationTask.ID,BATwinsTransportationTask.class).spawnCondition(()->{
+            return AbstractDungeon.player!=null&&AbstractDungeon.player.hasRelic(BATwinsPackage.ID);
+        }).create());
         //添加药水
         BaseMod.addPotion(BATwinsAcceleratePotion.class, BATwinsAcceleratePotion.liquidColor, BATwinsAcceleratePotion.hybridColor, BATwinsAcceleratePotion.spotsColor, BATwinsAcceleratePotion.ID);
         BaseMod.addPotion(BATwinsConnectPotion.class, BATwinsConnectPotion.liquidColor, BATwinsConnectPotion.hybridColor, BATwinsConnectPotion.spotsColor, BATwinsConnectPotion.ID);
