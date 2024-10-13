@@ -2,10 +2,9 @@ package baModDeveloper.helpers;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
-import basemod.interfaces.ISubscriber;
 import com.google.gson.JsonElement;
 
-public class SaveHelper implements CustomSavable, ISubscriber {
+public class SaveHelper implements CustomSavable {
 
     public static class SaveValue {
         public boolean challengeCoupons = false;
@@ -17,7 +16,7 @@ public class SaveHelper implements CustomSavable, ISubscriber {
     public SaveValue values = new SaveValue();
 
     public SaveHelper() {
-        BaseMod.subscribe(this);
+        BaseMod.addSaveField("BATwinsSaveValue",this);
     }
 
     @Override

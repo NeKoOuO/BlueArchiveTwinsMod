@@ -1,5 +1,6 @@
 package baModDeveloper.event;
 
+import baModDeveloper.BATwinsMod;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
 import baModDeveloper.relic.BATwinsPackage;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.GenericEventDialog;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -142,6 +144,10 @@ public class BATwinsSoraShop extends AbstractImageEvent {
                 CardCrawlGame.music.playTempBgmInstantly(ModHelper.makePath("soraShop"));
                 break;
             case SHOPEND:
+                if(BATwinsMod.saveHelper.values.hasSoraPhone){
+                    openMap();
+                    break;
+                }
                 switch (i){
                     case 0:
                         this.imageEventText.clearAllDialogs();
@@ -198,9 +204,12 @@ public class BATwinsSoraShop extends AbstractImageEvent {
                 InputHelper.justClickedLeft=false;
                 this.currentScreen=CurrentScreen.SHOPEND;
                 this.imageEventText.clearAllDialogs();
-                this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
-                this.imageEventText.setDialogOption(String.format(eventStrings.OPTIONS[2],lostHp),new BATwinsPackage());
-                this.imageEventText.setDialogOption(eventStrings.OPTIONS[3],new Shame());
+                this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1].substring(0,eventStrings.DESCRIPTIONS[1].indexOf("NL")));
+                if(!AbstractDungeon.id.equals(TheEnding.ID)){
+                    this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
+                    this.imageEventText.setDialogOption(String.format(eventStrings.OPTIONS[2],lostHp),new BATwinsPackage());
+                    this.imageEventText.setDialogOption(eventStrings.OPTIONS[3],new Shame());
+                }
                 this.imageEventText.setDialogOption(eventStrings.OPTIONS[1]);
                 GenericEventDialog.show();
                 CardCrawlGame.music.silenceTempBgmInstantly();
