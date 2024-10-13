@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.esotericsoftware.spine.*;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -155,6 +156,7 @@ public class BATwinsSoraShop extends AbstractImageEvent {
                         this.imageEventText.setDialogOption(eventStrings.OPTIONS[1]);
                         this.currentScreen=CurrentScreen.END;
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(((float) Settings.WIDTH / 2), ((float) Settings.HEIGHT / 2), new BATwinsPackage());
+                        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player,7, DamageInfo.DamageType.HP_LOSS));
                         break;
                     case 1:
                         try{
