@@ -1,0 +1,65 @@
+{
+  "Life": {
+    "name": "Life Points",
+    "description": "Restore 20% of your health.",
+    "message": "",
+    "price": 30,
+    "count": 2
+  },
+  "Smith": {
+    "name": "Smithing Stone",
+    "description": "Randomly upgrade 1 card from your deck.",
+    "message": "There are no cards available to upgrade.",
+    "price": 50,
+    "count": 2
+  },
+  "CrystalHaniwa": {
+    "name": "OOPArts",
+    "description": "At the start of the next 2 elite or boss fights, apply 3 Vulnerable and 3 Weak to all enemies.",
+    "message": "",
+    "price": 150,
+    "count": 1
+  },
+  "Key": {
+    "name": "A Key",
+    "description": "A strange key you picked up. Its use is unknown.",
+    "message": "",
+    "price": 130,
+    "count": 1
+  },
+  "Challenge": {
+    "name": "Challenge Ticket",
+    "description": "The next room will be a random elite fight.",
+    "message": "",
+    "price": 30,
+    "count": 1
+  },
+  "SecretStone": {
+    "name": "神明文字",
+    "description": "",
+    "message": "",
+    "price": 30,
+    "count": 1
+  },
+  "InitialRelics": {
+    "name": "Initial Relic",
+    "description": "You can get another one.",
+    "message": "",
+    "price": 120,
+    "count": 1
+  },
+  "PotionSlot": {
+    "name": "Potion Slot",
+    "description": "Gain 1 additional potion slot and receive 1 random potion.",
+    "message": "",
+    "price": 100,
+    "count": 2
+  },
+  "Telephone": {
+    "name": "Sora's Telephone",
+    "description": "Sora’s shop will appear in Act 4, and the next shop’s prices will be reduced by 30%.",
+    "message": "",
+    "price": 50,
+    "count": 1
+  }
+}
