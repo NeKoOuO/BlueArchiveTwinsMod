@@ -28,5 +28,11 @@
 		"DESCRIPTIONS":[
 			"在火堆處使用此藥水，能夠再進行一次行動。"
 		]
+	},
+	"BATwinsMod:GeneralMedicine": {
+		"NAME": "大瓶体力药",
+		"DESCRIPTIONS": [
+			"在火堆处使用此效果，能够再进行一次行动，可以使用2次。"
+		]
 	}
 }

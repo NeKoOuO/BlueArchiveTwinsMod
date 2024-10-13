@@ -199,5 +199,26 @@
 		"DESCRIPTIONS": [
 			"戰鬥開始時獲得 #b1 #y力量 #b1 #y敏捷 ，本場戰鬥第一次受傷後失去 #b1 #y力量 ， #b1 #y敏捷 。"
 		]
+	},
+	"BATwinsMod:Package": {
+		"NAME": "包裹（运送中）",
+		"FLAVOR": "相当重！！！",
+		"DESCRIPTIONS": [
+			"战斗开始时，对所有敌人造成5点伤害。"
+		]
+	},
+	"BATwinsMod:CrystalHaniwa": {
+		"NAME": "歐帕茲",
+		"FLAVOR": "商店裡有這東西很奇怪吧！",
+		"DESCRIPTIONS": [
+			"下 #b2 場BOSS戰開始時，給予所有敵人 #b3 層 #y易傷 和 #b3 層 #y虛弱。"
+		]
+	},
+	"BATwinsMod:FileBag": {
+		"NAME": "檔案袋",
+		"FLAVOR": "遊戲必不可少的一環。",
+		"DESCRIPTIONS": [
+			"戰鬥開始時，從 #b10 張隨機牌中選擇 #b1 張放入抽牌堆，且下次打出前耗能為0。"
+		]
 	}
 }

@@ -28,5 +28,11 @@
 		"DESCRIPTIONS":[
 			"休憩場所にこのポーションを使う、もう一度行動ができる。"
 		]
+	},
+	"BATwinsMod:GeneralMedicine": {
+		"NAME": "大瓶体力药",
+		"DESCRIPTIONS": [
+			"在火堆处使用此效果，能够再进行一次行动，可以使用2次。"
+		]
 	}
 }

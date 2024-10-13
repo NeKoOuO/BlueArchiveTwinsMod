@@ -199,5 +199,26 @@
 		"DESCRIPTIONS": [
 			"At the start of combat, gain #b1 #yStrength and #b1 #yDexterity. Lose #b1 #yStrength and #b1 #yDexterity after taking damage for the first time in this combat."
 		]
+	},
+	"BATwinsMod:Package": {
+		"NAME": "Package (In Transit)",
+		"FLAVOR": "It's really heavy!!!",
+		"DESCRIPTIONS": [
+			"At the start of battle, deal 5 damage to all enemies."
+		]
+	},
+	"BATwinsMod:CrystalHaniwa": {
+		"NAME": "OOPArts",
+		"FLAVOR": "Isn't it strange to have this in a shop?",
+		"DESCRIPTIONS": [
+			"At the start of the next #b2 boss fights, apply #b3 stacks of #yVulnerable and #b3 stacks of #yWeak to all enemies."
+		]
+	},
+	"BATwinsMod:FileBag": {
+		"NAME": "File Bag",
+		"FLAVOR": "An essential part of the game.",
+		"DESCRIPTIONS": [
+			"At the start of combat, choose 1 card from #b10 random cards to add to your draw pile. The next time it is played, it costs 0 energy"
+		]
 	}
 }
