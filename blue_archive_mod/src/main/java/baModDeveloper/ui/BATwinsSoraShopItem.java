@@ -48,6 +48,8 @@ public class BATwinsSoraShopItem {
     BATwinsSoraShop shop;
     Random random;
 
+    private int price;
+
 
     public BATwinsSoraShopItem(boolean isRare, Vector2 position, ShopItem item,BATwinsSoraShop shop) {
         this.isRare = isRare;
@@ -71,13 +73,18 @@ public class BATwinsSoraShopItem {
 
         this.img = getItemImg(this.item);
 
+        this.price=soraItemStrings.price;
+        if(BATwinsMod.saveHelper.values.hasSoraPhone){
+            this.price= (int) (this.price*0.7F);
+        }
+
     }
 
     public void update() {
         this.hitbox.update();
         this.buttonHb.update();
 
-        if (this.buttonHb.hovered && InputHelper.justClickedLeft && this.enable && AbstractDungeon.player.gold >= this.soraItemStrings.price) {
+        if (this.buttonHb.hovered && InputHelper.justClickedLeft && this.enable && AbstractDungeon.player.gold >= this.price) {
             InputHelper.justClickedLeft = false;
             this.activeEffect();
             this.count--;
@@ -140,7 +147,7 @@ public class BATwinsSoraShopItem {
                 break;
         }
         if(isActivated){
-            AbstractDungeon.player.loseGold(this.soraItemStrings.price);
+            AbstractDungeon.player.loseGold(this.price);
         }
     }
 
@@ -175,13 +182,13 @@ public class BATwinsSoraShopItem {
                 0.8F * Settings.scale, 0.8F * Settings.scale,
                 0, 0, 0, ImageMaster.UI_GOLD.getWidth(), ImageMaster.UI_GOLD.getHeight(), false, false);
         Color color;
-        if (AbstractDungeon.player.gold >= this.soraItemStrings.price) {
+        if (AbstractDungeon.player.gold >= this.price) {
             color = Color.WHITE.cpy();
         } else {
             color = Color.RED.cpy();
         }
         FontHelper.renderFontLeftTopAligned(sb, FontHelper.tipHeaderFont,
-                Integer.toString(this.soraItemStrings.price), this.position.x + ITEMBUTTON.getWidth() * BGSCALE * 0.5F, this.position.y + ITEMBUTTON.getHeight() * BGSCALE * 0.2F + FontHelper.tipHeaderFont.getCapHeight() * 2, color);
+                Integer.toString(this.price), this.position.x + ITEMBUTTON.getWidth() * BGSCALE * 0.5F, this.position.y + ITEMBUTTON.getHeight() * BGSCALE * 0.2F + FontHelper.tipHeaderFont.getCapHeight() * 2, color);
 
         this.renderTitle(sb);
         this.renderItemImage(sb);
