@@ -199,5 +199,12 @@
 		"DESCRIPTIONS": [
 			"戰鬥開始時獲得 #b1 #y力量 #b1 #y敏捷 ，本場戰鬥第一次受傷後失去 #b1 #y力量 ， #b1 #y敏捷 。"
 		]
+	},
+	"BATwinsMod:Package": {
+		"NAME": "包裹（运送中）",
+		"FLAVOR": "相当重！！！",
+		"DESCRIPTIONS": [
+			"战斗开始时，对所有敌人造成5点伤害。"
+		]
 	}
 }
