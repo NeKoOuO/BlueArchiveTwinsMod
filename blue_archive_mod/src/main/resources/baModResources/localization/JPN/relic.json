@@ -207,6 +207,13 @@
 			"戦闘開始時、すべての敵に5ダメージを与える。"
 		]
 	},
+	"BATwinsMod:CrystalHaniwa": {
+		"NAME": "オーパーツ",
+		"FLAVOR": "店にこれがあるのは変じゃない？",
+		"DESCRIPTIONS": [
+			"次の #b2 回のボス戦の開始時に、すべての敵に #b3 層の #y脆弱 と #b3 層の #y弱体 を付与する。"
+		]
+	},
 	"BATwinsMod:FileBag": {
 		"NAME": "ファイルバッグ",
 		"FLAVOR": "ゲームに不可欠な要素。",
