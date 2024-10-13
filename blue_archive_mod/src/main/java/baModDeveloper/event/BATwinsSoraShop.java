@@ -35,7 +35,7 @@ public class BATwinsSoraShop extends AbstractImageEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String title = eventStrings.NAME;
-    private static final String imgUrl = ModHelper.makeImgPath("event", "HurdleGame");
+    private static final String imgUrl = ModHelper.makeImgPath("event", "SoraShop");
     private static Texture DIALOG = TextureLoader.getTexture(ModHelper.makeImgPath("UI/soraShop", "dialog"));
 
     private static Texture shopBackground = TextureLoader.getTexture(ModHelper.makeImgPath("UI/soraShop", "shopBackGround"));
@@ -43,6 +43,7 @@ public class BATwinsSoraShop extends AbstractImageEvent {
     private static UIStrings soraMessage=CardCrawlGame.languagePack.getUIString(ModHelper.makePath("SoraMessage"));
     private enum CurrentScreen {START, SHOPPING,SHOPEND, END}
 
+    private static int lostHp=7;
 
     private CurrentScreen currentScreen = CurrentScreen.START;
 
@@ -198,7 +199,7 @@ public class BATwinsSoraShop extends AbstractImageEvent {
                 this.currentScreen=CurrentScreen.SHOPEND;
                 this.imageEventText.clearAllDialogs();
                 this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
-                this.imageEventText.setDialogOption(eventStrings.OPTIONS[2],new BATwinsPackage());
+                this.imageEventText.setDialogOption(String.format(eventStrings.OPTIONS[2],lostHp),new BATwinsPackage());
                 this.imageEventText.setDialogOption(eventStrings.OPTIONS[3],new Shame());
                 this.imageEventText.setDialogOption(eventStrings.OPTIONS[1]);
                 GenericEventDialog.show();
@@ -349,5 +350,11 @@ public class BATwinsSoraShop extends AbstractImageEvent {
         if (!StringUtils.isEmpty(audioKey)) {
             CardCrawlGame.sound.play(audioKey);
         }
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        this.atlas.dispose();
     }
 }
