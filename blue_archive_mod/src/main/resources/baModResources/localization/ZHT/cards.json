@@ -90,7 +90,7 @@
     },
     "BATwinsMod:SiteAdaptation": {
         "NAME": "場地適應",
-        "DESCRIPTION": "獲得 !M! 力量 ， !M! 敏捷 ， !M! 金属化 。"
+        "DESCRIPTION": "獲得 !M! 力量 ， !M! 敏捷 ， !M! 金屬化 。"
     },
     "BATwinsMod:OnceMore": {
         "NAME": "火焰擴散",
@@ -223,12 +223,12 @@
     },
     "BATwinsMod:CheatingCodeEnabled": {
         "NAME": "作弊碼開啟",
-        "DESCRIPTION": "丟棄手牌所有 batwinsmod:[#6fcf41]綠牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽满。將所有 [batwinsmod:midoriorbicon] 轉化為 [batwinsmod:momoiorbicon] 。 消耗 ",
+        "DESCRIPTION": "丟棄手牌所有 batwinsmod:[#6fcf41]綠牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽滿。將所有 [batwinsmod:midoriorbicon] 轉化為 [batwinsmod:momoiorbicon] 。 消耗 ",
         "UPGRADE_DESCRIPTION": "丟棄手牌所有 batwinsmod:[#6fcf41]綠牌 ，抽 batwinsmod:[#fa62aa]桃牌 直到手牌抽滿。將所有 [batwinsmod:midoriorbicon] 轉化為 [batwinsmod:momoiorbicon] 。本回合結束時將棄牌堆洗入抽牌堆。 消耗 "
     },
     "BATwinsMod:FundOverdraft": {
         "NAME": "資金透支",
-        "DESCRIPTION": "抽 !M! 張牌。每次打出後抽牌數-1. NL batwinsmod:連攜 ：抽牌數重置。"
+        "DESCRIPTION": "抽 !M! 張牌。每次打出後抽牌數-1. NL batwinsmod:連攜 ：抽牌數重設。"
     },
     "BATwinsMod:TakeActionsSeparately": {
         "NAME": "分頭行動",
@@ -290,7 +290,7 @@
     },
     "BATwinsMod:SkillCombination": {
         "NAME": "技能融合",
-        "DESCRIPTION": "選擇抽牌堆1張技能牌 消耗 。將 !M! 張打擊加入抽牌堆，且這些打擊 batwinsmod:存儲 選擇的那張牌。 NL 消耗 "
+        "DESCRIPTION": "選擇抽牌堆1張技能牌 消耗 。將 !M! 張打擊加入抽牌堆，且這些打擊 batwinsmod:儲存 選擇的那張牌。 NL 消耗 "
     },
     "BATwinsMod:IntegratingAndIntegrating": {
         "NAME": "融會貫通",
@@ -315,8 +315,8 @@
     },
     "BATwinsMod:AdventureBegins": {
         "NAME": "冒險小隊",
-        "DESCRIPTION": "選擇一張和所有 batwinsmod:存儲 的牌類型不同的非消耗的手牌 消耗 並 batwinsmod:存儲 。",
-        "UPGRADE_DESCRIPTION": "可以 選擇一張和所有 batwinsmod:存儲 的牌類型不同的非消耗的手牌 消耗 並 batwinsmod:存儲 。",
+        "DESCRIPTION": "選擇一張和所有 batwinsmod:儲存 的牌類型不同的非消耗的手牌 消耗 並 batwinsmod:儲存 。",
+        "UPGRADE_DESCRIPTION": "可以 選擇一張和所有 batwinsmod:儲存 的牌類型不同的非消耗的手牌 消耗 並 batwinsmod:儲存 。",
         "EXTENDED_DESCRIPTION": [
             "攻擊",
             "技能",
@@ -401,12 +401,12 @@
     },
     "BATwinsMod:LoginRewards": {
         "NAME": "登入獎勵",
-        "DESCRIPTION": "獲得 !M! batwinsmod:經驗值 。 NL batwinsmod:連攜 ：手牌隨機1張 batwinsmod:[#6fcf41]綠牌 batwinsmod:存儲 1張 登入獎勵 （不會重複存儲）。 消耗 ",
-        "UPGRADE_DESCRIPTION": "獲得 !M! batwinsmod:經驗值 。 NL batwinsmod:連攜 ：手牌隨機1張 batwinsmod:[#6fcf41]綠牌 batwinsmod:存儲 1張 登入獎勵+ （不會重複存儲）。 消耗 "
+        "DESCRIPTION": "獲得 !M! batwinsmod:經驗值 。 NL batwinsmod:連攜 ：手牌隨機1張 batwinsmod:[#6fcf41]綠牌 batwinsmod:儲存 1張 登入獎勵 （不會重複儲存）。 消耗 ",
+        "UPGRADE_DESCRIPTION": "獲得 !M! batwinsmod:經驗值 。 NL batwinsmod:連攜 ：手牌隨機1張 batwinsmod:[#6fcf41]綠牌 batwinsmod:儲存 1張 登入獎勵+ （不會重複儲存）。 消耗 "
     },
     "BATwinsMod:Learned": {
         "NAME": "完美轉化",
-        "DESCRIPTION": "抽到時選擇1張非能力手牌 消耗 並 batwinsmod:存儲 。（只會存儲1張牌） NL 造成 !D! 點傷害， 斬殺 時 batwinsmod:存儲 的那張牌永久 batwinsmod:交換 為 batwinsmod:[#fa62aa]桃牌 。"
+        "DESCRIPTION": "抽到時選擇1張非能力手牌 消耗 並 batwinsmod:儲存 。（只會儲存1張牌） NL 造成 !D! 點傷害， 斬殺 時 batwinsmod:儲存 的那張牌永久 batwinsmod:交換 為 batwinsmod:[#fa62aa]桃牌 。"
     },
     "BATwinsMod:ForceDetonation": {
         "NAME": "強行引爆",
@@ -440,21 +440,21 @@
     },
     "BATwinsMod:ContinuousShooting": {
         "NAME": "連續射擊",
-        "DESCRIPTION": "保留 ，能被多次 升級 NL 保留 時 batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 打出後清空 batwinsmod:存儲 的 batwinsmod:子彈 。"
+        "DESCRIPTION": "保留 ，能被多次 升級 NL 保留 時 batwinsmod:儲存 !M! 張隨機 batwinsmod:子彈 。 打出後清空 batwinsmod:儲存 的 batwinsmod:子彈 。"
     },
     "BATwinsMod:BreechLoading": {
         "NAME": "上膛",
-        "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 手牌所有 batwinsmod:射擊 牌 batwinsmod:存儲 !M! 張 隨機 batwinsmod:子彈 。",
-        "UPGRADE_DESCRIPTION": " 保留 NL 獲得 !B! 點 格擋 。 NL 手牌所有 batwinsmod:射擊 牌 batwinsmod:存儲 !M! 張 隨機 batwinsmod:子彈 。"
+        "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 手牌所有 batwinsmod:射擊 牌 batwinsmod:儲存 !M! 張 隨機 batwinsmod:子彈 。",
+        "UPGRADE_DESCRIPTION": " 保留 NL 獲得 !B! 點 格擋 。 NL 手牌所有 batwinsmod:射擊 牌 batwinsmod:儲存 !M! 張 隨機 batwinsmod:子彈 。"
     },
     "BATwinsMod:ExpansionMagazine": {
         "NAME": "擴容彈夾",
-        "DESCRIPTION": "本場戰鬥 batwinsmod:存儲 的 batwinsmod:子彈 牌 升級 。"
+        "DESCRIPTION": "本場戰鬥 batwinsmod:儲存 的 batwinsmod:子彈 牌 升級 。"
     },
     "BATwinsMod:BulletWarehouse": {
         "NAME": "武器庫",
-        "DESCRIPTION": "從4張 batwinsmod:射擊 牌中選擇1張加入手牌。獲得 保留 並 batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 NL 消耗 ",
-        "UPGRADE_DESCRIPTION": "從4張 升級 的 batwinsmod:射擊 牌中選擇1張加入手牌。獲得 保留 並 batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 NL 消耗 "
+        "DESCRIPTION": "從4張 batwinsmod:射擊 牌中選擇1張加入手牌。獲得 保留 並 batwinsmod:儲存 !M! 張隨機 batwinsmod:子彈 。 NL 消耗 ",
+        "UPGRADE_DESCRIPTION": "從4張 升級 的 batwinsmod:射擊 牌中選擇1張加入手牌。獲得 保留 並 batwinsmod:儲存 !M! 張隨機 batwinsmod:子彈 。 NL 消耗 "
     },
     "BATwinsMod:PoisonBullet": {
         "NAME": "淬毒子彈",
@@ -470,15 +470,15 @@
     },
     "BATwinsMod:StableShooting": {
         "NAME": "穩定射擊",
-        "DESCRIPTION": "造成 !D! 點傷害。 NL 每 batwinsmod:存儲 了一張牌傷害提升 !M! 。"
+        "DESCRIPTION": "造成 !D! 點傷害。 NL 每 batwinsmod:儲存 了一張牌傷害提升 !M! 。"
     },
     "BATwinsMod:RandomShooting": {
         "NAME": "胡亂射擊",
-        "DESCRIPTION": " batwinsmod:存儲 !M! 張隨機 batwinsmod:子彈 。 NL 打出後將 batwinsmod:存儲 的 batwinsmod:子彈 牌 batwinsmod:存儲 在手牌隨機 batwinsmod:射擊 牌中後清空。"
+        "DESCRIPTION": " batwinsmod:儲存 !M! 張隨機 batwinsmod:子彈 。 NL 打出後將 batwinsmod:儲存 的 batwinsmod:子彈 牌 batwinsmod:儲存 在手牌隨機 batwinsmod:射擊 牌中後清空。"
     },
     "BATwinsMod:FocusShooting": {
         "NAME": "集中射擊",
-        "DESCRIPTION": "造成 !D! 點傷害。 NL  batwinsmod:存儲 batwinsmod:子彈 時再 batwinsmod:存儲 !M! 張相同的 batwinsmod:子彈 牌。打出後清空 batwinsmod:存儲 的 batwinsmod:子彈 。"
+        "DESCRIPTION": "造成 !D! 點傷害。 NL  batwinsmod:儲存 batwinsmod:子彈 時再 batwinsmod:儲存 !M! 張相同的 batwinsmod:子彈 牌。打出後清空 batwinsmod:儲存 的 batwinsmod:子彈 。"
     },
     "BATwinsMod:Accelerate": {
         "NAME": "加速",
@@ -503,14 +503,14 @@
     },
     "BATwinsMod:Gorgeous": {
         "NAME": "華麗散場",
-        "DESCRIPTION": " 不能被打出 NL 本回合達到 batwinsmod:連攜 5時丢棄這張牌並對所有敵人造成 !D! 點傷害。",
+        "DESCRIPTION": " 不能被打出 NL 本回合達到 batwinsmod:連攜 5時丟棄這張牌並對所有敵人造成 !D! 點傷害。",
         "EXTENDED_DESCRIPTION": [
             "這張牌只能被效果打出"
         ]
     },
     "BATwinsMod:UniversalBullet": {
         "NAME": "通配子彈",
-        "DESCRIPTION": "造成 !D! 點傷害，隨機手牌1張 batwinsmod:[#fa62aa]桃牌 batwinsmod:存儲 !M! 張 *通配子彈 。 NL 消耗 。"
+        "DESCRIPTION": "造成 !D! 點傷害，隨機手牌1張 batwinsmod:[#fa62aa]桃牌 batwinsmod:儲存 !M! 張 *通配子彈 。 NL 消耗 。"
     },
     "BATwinsMod:MultipleShadows": {
         "NAME": "佔據先機",
