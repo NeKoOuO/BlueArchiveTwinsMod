@@ -48,6 +48,7 @@ public class BATwinsSingleCardViewPopupPatch {
             } else {
                 FieldPatch.exchangeHb.get(_instance).move(-1000.0F * Settings.scale, -1000.0F * Settings.scale);
             }
+            FieldPatch.isViewingExchange.set(_instance,false);
         }
     }
 
@@ -60,6 +61,7 @@ public class BATwinsSingleCardViewPopupPatch {
             } else {
                 FieldPatch.exchangeHb.get(_instance).move(-1000.0F * Settings.scale, -1000.0F * Settings.scale);
             }
+            FieldPatch.isViewingExchange.set(_instance,false);
         }
     }
 
