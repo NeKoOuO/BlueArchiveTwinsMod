@@ -206,5 +206,12 @@
 		"DESCRIPTIONS": [
 			"战斗开始时，对所有敌人造成5点伤害。"
 		]
+	},
+	"BATwinsMod:CrystalHaniwa": {
+		"NAME": "歐帕茲",
+		"FLAVOR": "商店裡有這東西很奇怪吧！",
+		"DESCRIPTIONS": [
+			"下 #b2 場BOSS戰開始時，給予所有敵人 #b3 層 #y易傷 和 #b3 層 #y虛弱。"
+		]
 	}
 }
