@@ -1,6 +1,5 @@
 package baModDeveloper.event;
 
-import baModDeveloper.BATwinsMod;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.helpers.TextureLoader;
 import baModDeveloper.relic.BATwinsPackage;
@@ -145,7 +144,7 @@ public class BATwinsSoraShop extends AbstractImageEvent {
                 CardCrawlGame.music.playTempBgmInstantly(ModHelper.makePath("soraShop"));
                 break;
             case SHOPEND:
-                if(BATwinsMod.saveHelper.values.hasSoraPhone){
+                if(AbstractDungeon.id.equals(TheEnding.ID)){
                     openMap();
                     break;
                 }
