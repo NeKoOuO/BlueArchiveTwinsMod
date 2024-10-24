@@ -32,10 +32,16 @@ public class CharacterMaidHelper extends Character3DHelper {
     public void init() {
         this.momoiController = new ModelController("baModResources/img/char/model/momoi_maid.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[0]);
         this.midoriController = new ModelController("baModResources/img/char/model/midori_maid.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[1]);
-        this.momoiController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
-        this.midoriController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
-        this.momoiController.setAttribute("CH0201_Body", new IntAttribute(IntAttribute.CullFace, 0));
-        this.midoriController.setAttribute("CH0202_Body", new IntAttribute(IntAttribute.CullFace, 0));
+        if(this.momoiController.inited){
+            this.momoiController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
+            this.momoiController.setAttribute("CH0201_Body", new IntAttribute(IntAttribute.CullFace, 0));
+
+        }
+        if(this.midoriController.inited){
+            this.midoriController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
+            this.midoriController.setAttribute("CH0202_Body", new IntAttribute(IntAttribute.CullFace, 0));
+
+        }
         super.init();
 
     }
