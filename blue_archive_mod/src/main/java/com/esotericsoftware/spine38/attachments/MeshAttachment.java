@@ -29,11 +29,11 @@
 
 package com.esotericsoftware.spine38.attachments;
 
-import static com.esotericsoftware.spine38.utils.SpineUtils.*;
-
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+
+import static com.esotericsoftware.spine38.utils.SpineUtils.arraycopy;
 
 /** An attachment that displays a textured mesh. A mesh has hull vertices and internal vertices within the hull. Holes are not
  * supported. Each vertex has UVs (texture coordinates) and triangles are used to map an image on to the mesh.
@@ -74,13 +74,12 @@ public class MeshAttachment extends VertexAttachment {
 		float[] uvs = this.uvs;
 		int n = uvs.length;
 		float u, v, width, height;
-		if (region instanceof AtlasRegion) {
+		if (region instanceof TextureAtlas.AtlasRegion) {
 			u = region.getU();
 			v = region.getV();
-			AtlasRegion region = (AtlasRegion)this.region;
+			TextureAtlas.AtlasRegion region = (TextureAtlas.AtlasRegion)this.region;
 			float textureWidth = region.getTexture().getWidth(), textureHeight = region.getTexture().getHeight();
-			switch (region.degrees) {
-			case 90:
+			if (region.rotate) {
 				u -= (region.originalHeight - region.offsetY - region.packedWidth) / textureWidth;
 				v -= (region.originalWidth - region.offsetX - region.packedHeight) / textureHeight;
 				width = region.originalHeight / textureWidth;
@@ -88,26 +87,6 @@ public class MeshAttachment extends VertexAttachment {
 				for (int i = 0; i < n; i += 2) {
 					uvs[i] = u + regionUVs[i + 1] * width;
 					uvs[i + 1] = v + (1 - regionUVs[i]) * height;
-				}
-				return;
-			case 180:
-				u -= (region.originalWidth - region.offsetX - region.packedWidth) / textureWidth;
-				v -= region.offsetY / textureHeight;
-				width = region.originalWidth / textureWidth;
-				height = region.originalHeight / textureHeight;
-				for (int i = 0; i < n; i += 2) {
-					uvs[i] = u + (1 - regionUVs[i]) * width;
-					uvs[i + 1] = v + (1 - regionUVs[i + 1]) * height;
-				}
-				return;
-			case 270:
-				u -= region.offsetY / textureWidth;
-				v -= region.offsetX / textureHeight;
-				width = region.originalHeight / textureWidth;
-				height = region.originalWidth / textureHeight;
-				for (int i = 0; i < n; i += 2) {
-					uvs[i] = u + (1 - regionUVs[i + 1]) * width;
-					uvs[i + 1] = v + regionUVs[i] * height;
 				}
 				return;
 			}

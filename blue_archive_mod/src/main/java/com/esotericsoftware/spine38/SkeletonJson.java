@@ -29,50 +29,18 @@
 
 package com.esotericsoftware.spine38;
 
-import static com.esotericsoftware.spine38.utils.SpineUtils.*;
-
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.FloatArray;
-import com.badlogic.gdx.utils.IntArray;
-import com.badlogic.gdx.utils.JsonReader;
-import com.badlogic.gdx.utils.JsonValue;
-import com.badlogic.gdx.utils.SerializationException;
-
-import com.esotericsoftware.spine38.Animation.AttachmentTimeline;
-import com.esotericsoftware.spine38.Animation.ColorTimeline;
-import com.esotericsoftware.spine38.Animation.CurveTimeline;
-import com.esotericsoftware.spine38.Animation.DeformTimeline;
-import com.esotericsoftware.spine38.Animation.DrawOrderTimeline;
-import com.esotericsoftware.spine38.Animation.EventTimeline;
-import com.esotericsoftware.spine38.Animation.IkConstraintTimeline;
-import com.esotericsoftware.spine38.Animation.PathConstraintMixTimeline;
-import com.esotericsoftware.spine38.Animation.PathConstraintPositionTimeline;
-import com.esotericsoftware.spine38.Animation.PathConstraintSpacingTimeline;
-import com.esotericsoftware.spine38.Animation.RotateTimeline;
-import com.esotericsoftware.spine38.Animation.ScaleTimeline;
-import com.esotericsoftware.spine38.Animation.ShearTimeline;
-import com.esotericsoftware.spine38.Animation.Timeline;
-import com.esotericsoftware.spine38.Animation.TransformConstraintTimeline;
-import com.esotericsoftware.spine38.Animation.TranslateTimeline;
-import com.esotericsoftware.spine38.Animation.TwoColorTimeline;
+import com.badlogic.gdx.utils.*;
+import com.esotericsoftware.spine38.Animation.*;
 import com.esotericsoftware.spine38.BoneData.TransformMode;
 import com.esotericsoftware.spine38.PathConstraintData.PositionMode;
 import com.esotericsoftware.spine38.PathConstraintData.RotateMode;
 import com.esotericsoftware.spine38.PathConstraintData.SpacingMode;
-import com.esotericsoftware.spine38.attachments.AtlasAttachmentLoader;
-import com.esotericsoftware.spine38.attachments.Attachment;
-import com.esotericsoftware.spine38.attachments.AttachmentLoader;
-import com.esotericsoftware.spine38.attachments.AttachmentType;
-import com.esotericsoftware.spine38.attachments.BoundingBoxAttachment;
-import com.esotericsoftware.spine38.attachments.ClippingAttachment;
-import com.esotericsoftware.spine38.attachments.MeshAttachment;
-import com.esotericsoftware.spine38.attachments.PathAttachment;
-import com.esotericsoftware.spine38.attachments.PointAttachment;
-import com.esotericsoftware.spine38.attachments.RegionAttachment;
-import com.esotericsoftware.spine38.attachments.VertexAttachment;
+import com.esotericsoftware.spine38.attachments.*;
+
+import static com.esotericsoftware.spine38.utils.SpineUtils.arraycopy;
 
 /** Loads skeleton data in the Spine JSON format.
  * <p>
@@ -126,8 +94,9 @@ public class SkeletonJson {
 		if (skeletonMap != null) {
 			skeletonData.hash = skeletonMap.getString("hash", null);
 			skeletonData.version = skeletonMap.getString("spine", null);
-			if ("3.8.75".equals(skeletonData.version))
-				throw new RuntimeException("Unsupported skeleton data, please export with a newer version of Spine.");
+//			if ("3.8.75".equals(skeletonData.version))
+//				throw new RuntimeException("Unsupported skeleton data, please export with a newer version of Spine.");
+
 			skeletonData.x = skeletonMap.getFloat("x", 0);
 			skeletonData.y = skeletonMap.getFloat("y", 0);
 			skeletonData.width = skeletonMap.getFloat("width", 0);
