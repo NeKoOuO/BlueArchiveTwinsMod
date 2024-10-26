@@ -8,9 +8,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.esotericsoftware.spine.*;
+import com.esotericsoftware.spine.SkeletonRendererDebug;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -56,12 +55,13 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
     }
 
     private TextureAtlas atlas;
-    private SkeletonJson json;
-    private SkeletonData data;
-    private AnimationStateData stateData;
-    private Skeleton skeleton;
-    private AnimationState state;
+    private com.esotericsoftware.spine38.SkeletonJson json;
+    private com.esotericsoftware.spine38.SkeletonData data;
+    private com.esotericsoftware.spine38.AnimationStateData stateData;
+    private com.esotericsoftware.spine38.Skeleton skeleton;
+    private com.esotericsoftware.spine38.AnimationState state;
     private SkeletonRendererDebug debug;
+    private com.esotericsoftware.spine38.SkeletonRenderer renderer;
 
     public BATwinsCharacterSelectScreen() throws IOException {
         this.checkbox = new Hitbox(300.0F * Settings.scale, 50.0F * Settings.scale);
@@ -79,6 +79,8 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
         initBgSelector();
 
         debug=new SkeletonRendererDebug();
+        renderer=new com.esotericsoftware.spine38.SkeletonRenderer();
+        renderer.setPremultipliedAlpha(true);
     }
 
     private void initBgSelector() {
@@ -188,13 +190,13 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
                     this.atlas.dispose();
                 }
                 this.atlas = new TextureAtlas(path + "atlas");
-                this.json = new SkeletonJson(this.atlas);
+                this.json = new com.esotericsoftware.spine38.SkeletonJson(this.atlas);
                 this.json.setScale(Settings.renderScale*0.58F);
                 this.data = json.readSkeletonData(Gdx.files.internal(path + "json"));
-                this.skeleton = new Skeleton(data);
+                this.skeleton = new com.esotericsoftware.spine38.Skeleton(data);
                 this.skeleton.setColor(Color.WHITE.cpy());
-                this.stateData = new AnimationStateData(data);
-                this.state = new AnimationState(this.stateData);
+                this.stateData = new com.esotericsoftware.spine38.AnimationStateData(data);
+                this.state = new com.esotericsoftware.spine38.AnimationState(this.stateData);
                 this.state.addAnimation(0, "Start_Idle_01", false, 0);
                 this.state.addAnimation(0, "Idle_01", true, 0);
             } else {
@@ -239,7 +241,9 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
         if (BATwinsMod.SelectedBg != 0 && this.skeleton != null) {
             sb.end();
             CardCrawlGame.psb.begin();
-            AbstractCreature.sr.draw(CardCrawlGame.psb, this.skeleton);
+//            AbstractCreature.sr.draw(CardCrawlGame.psb, this.skeleton);
+
+            renderer.draw(CardCrawlGame.psb,this.skeleton);
             CardCrawlGame.psb.end();
 //            debug.draw(skeleton);
             sb.begin();
