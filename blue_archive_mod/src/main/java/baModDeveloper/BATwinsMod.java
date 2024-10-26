@@ -65,7 +65,7 @@ import static com.megacrit.cardcrawl.core.Settings.language;
 @SpireInitializer
 public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber,
         EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber, PostInitializeSubscriber, ScreenPostProcessor,
-        PostCreateStartingDeckSubscriber, PostBattleSubscriber,PostDungeonInitializeSubscriber {
+        PostCreateStartingDeckSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber {
 
     public static final Color BATwinsColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
     public static final Color MOMOIColor = new Color(254.0F / 255.0F, 168.0F / 255.0F, 198.0F / 255.0F, 1.0F);
@@ -99,6 +99,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public static int SelectedSkin = 0;
     public static boolean Tutorial = true;
     public static boolean EnableModelLighting = false;
+    public static int SelectedBg = 0;
 
     public static SaveHelper saveHelper;
 
@@ -110,7 +111,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
         ScreenPostProcessorManager.addPostProcessor(this);
 
-        saveHelper=new SaveHelper();
+        saveHelper = new SaveHelper();
     }
 
     public static void initialize() {
@@ -338,9 +339,9 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsOldTv(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsRankIcon(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsFullScoreAnswer(), RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsCrystalHaniwa(),RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsPackage(),RelicType.SHARED);
-        BaseMod.addRelic(new BATwinsFileBag(),RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsCrystalHaniwa(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsPackage(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsFileBag(), RelicType.SHARED);
     }
 
     @Override
@@ -378,8 +379,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsCommunication.ID, BATwinsCommunication.class).playerClass(Enums.BATwins).dungeonID(Exordium.ID).create());
         BaseMod.addEvent(new AddEventParams.Builder(BATwinsTheRoadIsLong.ID, BATwinsTheRoadIsLong.class).playerClass(Enums.BATwins).dungeonID(TheBeyond.ID).create());
         BaseMod.addEvent(BATwinsSoraShop.ID, BATwinsSoraShop.class);
-        BaseMod.addEvent(new AddEventParams.Builder(BATwinsTransportationTask.ID,BATwinsTransportationTask.class).spawnCondition(()->{
-            return AbstractDungeon.player!=null&&AbstractDungeon.player.hasRelic(BATwinsPackage.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(BATwinsTransportationTask.ID, BATwinsTransportationTask.class).spawnCondition(() -> {
+            return AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(BATwinsPackage.ID);
         }).create());
         //添加药水
         BaseMod.addPotion(BATwinsAcceleratePotion.class, BATwinsAcceleratePotion.liquidColor, BATwinsAcceleratePotion.hybridColor, BATwinsAcceleratePotion.spotsColor, BATwinsAcceleratePotion.ID);
@@ -501,6 +502,6 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void receivePostDungeonInitialize() {
-        saveHelper.values=new SaveHelper.SaveValue();
+        saveHelper.values = new SaveHelper.SaveValue();
     }
 }
