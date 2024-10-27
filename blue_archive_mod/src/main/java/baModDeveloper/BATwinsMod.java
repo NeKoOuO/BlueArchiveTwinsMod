@@ -127,7 +127,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             Tutorial = config.getBool(ModHelper.makePath("Tutorial"));
             SelectedSkin = config.getInt(ModHelper.makePath("SelectedSkin"));
             EnableModelLighting = config.getBool(ModHelper.makePath("EnableModelLighting"));
-
+            SelectedBg= config.getInt(ModHelper.makePath("SelectedBg"));
 //            Settings.isDebug=true;
         } catch (Exception e) {
 //            throw new RuntimeException(e);

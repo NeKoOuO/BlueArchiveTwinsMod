@@ -44,13 +44,18 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
     private float bgSelectorOffset = 50.0F * Settings.yScale;
     private static final ArrayList<String> bgList = new ArrayList<>();
 
+    private static float BGSCALE = 0.58F;
+    private static float BGSCALE1610 = 0.6F;
+    private static float BGSCALE43 = 0.7F;
+    private float BGTransparency=1.0F;
+
     static {
         String floder = "char/selectscreen";
         bgList.add("");
-        bgList.add(ModHelper.makeFilePath(floder+"/momoi_normal", "Momoi_home", ""));
-        bgList.add(ModHelper.makeFilePath(floder+"/midori_normal","Midori_home",""));
-        bgList.add(ModHelper.makeFilePath(floder+"/momoi_maid","CH0201_home",""));
-        bgList.add(ModHelper.makeFilePath(floder+"/midori_maid","CH0202_home",""));
+        bgList.add(ModHelper.makeFilePath(floder + "/momoi_normal", "Momoi_home", ""));
+        bgList.add(ModHelper.makeFilePath(floder + "/midori_normal", "Midori_home", ""));
+        bgList.add(ModHelper.makeFilePath(floder + "/momoi_maid", "CH0201_home", ""));
+        bgList.add(ModHelper.makeFilePath(floder + "/midori_maid", "CH0202_home", ""));
 //        bgList.add(ModHelper.makeFilePath(floder))
     }
 
@@ -78,9 +83,10 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
 
         initBgSelector();
 
-        debug=new SkeletonRendererDebug();
-        renderer=new com.esotericsoftware.spine38.SkeletonRenderer();
+        debug = new SkeletonRendererDebug();
+        renderer = new com.esotericsoftware.spine38.SkeletonRenderer();
         renderer.setPremultipliedAlpha(true);
+        this.ChangeBg();
     }
 
     private void initBgSelector() {
@@ -122,10 +128,10 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
                     this.leftArrow.clickStarted = true;
                 } else if (this.rightArrow.hovered) {
                     this.rightArrow.clickStarted = true;
-                }else if(this.bg_leftArrow.hovered){
-                    this.bg_leftArrow.clickStarted=true;
-                }else if(this.bg_rightArrow.hovered){
-                    this.bg_rightArrow.clickStarted=true;
+                } else if (this.bg_leftArrow.hovered) {
+                    this.bg_leftArrow.clickStarted = true;
+                } else if (this.bg_rightArrow.hovered) {
+                    this.bg_rightArrow.clickStarted = true;
                 }
             }
 
@@ -153,8 +159,8 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
                 this.bg_rightArrow.clicked = false;
                 CardCrawlGame.sound.play("UI_CLICK_1");
                 BATwinsMod.SelectedBg = (BATwinsMod.SelectedBg + add) % backgroundSelector.TEXT.length;
-                if(BATwinsMod.SelectedBg<0){
-                    BATwinsMod.SelectedBg+=backgroundSelector.TEXT.length;
+                if (BATwinsMod.SelectedBg < 0) {
+                    BATwinsMod.SelectedBg += backgroundSelector.TEXT.length;
                 }
                 spireConfig.setInt(ModHelper.makePath("SelectedBg"), BATwinsMod.SelectedBg);
                 this.ChangeBg();
@@ -179,6 +185,12 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
             this.skeleton.updateWorldTransform();
             this.skeleton.setPosition(Settings.WIDTH / 2.0F, 0);
         }
+        if(this.BGTransparency<1.0F){
+            this.BGTransparency=Math.min(this.BGTransparency+Gdx.graphics.getDeltaTime(),1.0F);
+            if(this.skeleton!=null){
+                this.skeleton.getColor().a=this.BGTransparency;
+            }
+        }
 
     }
 
@@ -191,7 +203,13 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
                 }
                 this.atlas = new TextureAtlas(path + "atlas");
                 this.json = new com.esotericsoftware.spine38.SkeletonJson(this.atlas);
-                this.json.setScale(Settings.renderScale*0.58F);
+                if (Settings.isFourByThree) {
+                    this.json.setScale(Settings.renderScale * BGSCALE43);
+                } else if (Settings.isSixteenByTen) {
+                    this.json.setScale(Settings.renderScale * BGSCALE1610);
+                } else {
+                    this.json.setScale(Settings.renderScale * BGSCALE);
+                }
                 this.data = json.readSkeletonData(Gdx.files.internal(path + "json"));
                 this.skeleton = new com.esotericsoftware.spine38.Skeleton(data);
                 this.skeleton.setColor(Color.WHITE.cpy());
@@ -199,6 +217,7 @@ public class BATwinsCharacterSelectScreen implements ISubscriber {
                 this.state = new com.esotericsoftware.spine38.AnimationState(this.stateData);
                 this.state.addAnimation(0, "Start_Idle_01", false, 0);
                 this.state.addAnimation(0, "Idle_01", true, 0);
+                this.BGTransparency=0.0F;
             } else {
                 BATwinsMod.SelectedBg = 0;
             }
