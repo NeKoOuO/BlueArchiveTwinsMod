@@ -124,7 +124,8 @@
 		"TEXT":[
 			"Enable 3D Models",
 			"Enable 3D Models?",
-			"Enabling 3D models requires loading, which may take some time.\nIf enabling this option prevents you from opening the game or causes the game to freeze, please restart the game and disable this option."
+			"Enabling 3D models requires loading, which may take some time.\nIf enabling this option prevents you from opening the game or causes the game to freeze, please restart the game and disable this option.",
+			"Background image"
 		]
 	},
 	"BATwinsMod:tabBarName":{
@@ -165,6 +166,15 @@
 			"soraMsg1",
 			"soraMsg2",
 			"soraMsg3"
+		]
+	},
+	"BATwinsMod:Backgrounds": {
+		"TEXT": [
+			"default",
+			"momoi",
+			"midori",
+			"momoi(maid)",
+			"midori(maid)"
 		]
 	}
 }
