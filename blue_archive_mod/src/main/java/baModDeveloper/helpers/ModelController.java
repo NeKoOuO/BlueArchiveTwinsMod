@@ -10,8 +10,10 @@ import com.badlogic.gdx.graphics.g3d.loader.G3dModelLoader;
 import com.badlogic.gdx.graphics.g3d.utils.AnimationController;
 import com.badlogic.gdx.graphics.g3d.utils.DefaultShaderProvider;
 import com.badlogic.gdx.utils.JsonReader;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.core.Settings;
 
+import java.io.IOException;
 import java.util.function.Consumer;
 
 public class ModelController {
@@ -24,28 +26,42 @@ public class ModelController {
     private AnimationController animationController;
     private float current_x = 0, current_y = 0, target_x = 0, target_y = 0;
     private String StandAnima;
+    public boolean inited=false;
 
     public ModelController(String modelPath, float x, float y, float z, String StandAnima) {
-        loader = new G3dModelLoader(new JsonReader());
-        model = loader.loadModel(Gdx.files.internal(modelPath));
-        instance = new ModelInstance(model, 0, 0, 0);
+        try {
+            loader = new G3dModelLoader(new JsonReader());
+            model = loader.loadModel(Gdx.files.internal(modelPath));        instance = new ModelInstance(model, 0, 0, 0);
 
-        animationController = new AnimationController(instance);
+            animationController = new AnimationController(instance);
 
-        DefaultShaderProvider shaderProvider = new DefaultShaderProvider();
-        if(BATwinsMod.EnableModelLighting){
-            shaderProvider.config.fragmentShader = Gdx.files.internal("baModResources/shader/model/myfragshader.fs").readString();
+            DefaultShaderProvider shaderProvider = new DefaultShaderProvider();
+            if(BATwinsMod.EnableModelLighting){
+                shaderProvider.config.fragmentShader = Gdx.files.internal("baModResources/shader/model/myfragshader.fs").readString();
+            }
+            modelBatch = new ModelBatch(shaderProvider);
+            instance.transform.setTranslation(z, y, x);
+            instance.transform.rotate(0, 3, 1, 180);
+            instance.transform.rotate(1, 0, 0, 34);
+            instance.transform.scale(SCALE, SCALE, SCALE);
+            for (int i = 0; i < instance.materials.size; i++) {
+                instance.materials.get(i).set(ColorAttribute.createDiffuse(Color.WHITE));
+            }
+
+            this.StandAnima = StandAnima;
+            this.inited=true;
+        }catch (OutOfMemoryError error){
+            BATwinsMod.Enable3D=false;
+            this.inited=false;
+            try {
+                SpireConfig spireConfig = new SpireConfig("BATwinsMod", "Common");
+                spireConfig.setBool(ModHelper.makePath("Enable3D"), BATwinsMod.Enable3D);
+                spireConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        modelBatch = new ModelBatch(shaderProvider);
-        instance.transform.setTranslation(z, y, x);
-        instance.transform.rotate(0, 3, 1, 180);
-        instance.transform.rotate(1, 0, 0, 34);
-        instance.transform.scale(SCALE, SCALE, SCALE);
-        for (int i = 0; i < instance.materials.size; i++) {
-            instance.materials.get(i).set(ColorAttribute.createDiffuse(Color.WHITE));
-        }
 
-        this.StandAnima = StandAnima;
     }
 
     public void update() {

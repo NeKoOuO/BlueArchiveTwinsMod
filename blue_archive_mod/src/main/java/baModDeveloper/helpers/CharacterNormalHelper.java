@@ -31,9 +31,14 @@ public class CharacterNormalHelper extends Character3DHelper {
     public void init() {
         this.momoiController = new ModelController("baModResources/img/char/model/momoi.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[0]);
         this.midoriController = new ModelController("baModResources/img/char/model/midori.g3dj", 0, 0, -500, AnimationNames.get(NORMAL_IDLE)[1]);
+        if(this.midoriController.inited){
+            this.midoriController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
 
-        this.momoiController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
-        this.midoriController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
+        }
+        if(this.momoiController.inited){
+            this.momoiController.setAttribute("Month", new BlendingAttribute(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA));
+
+        }
         super.init();
 
     }
