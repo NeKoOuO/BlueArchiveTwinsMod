@@ -19,10 +19,13 @@ public class BATwinsMainMenuPatch {
     public static class updatePatch{
         @SpirePostfixPatch
         public static void postfixPatch(MainMenuScreen _instance){
-            if(!achievement.shown){
-                achievement.delayShow(3.0F);
+            if(ModHelper.ENABLE_DLC){
+                if(!achievement.shown){
+                    achievement.delayShow(3.0F);
+                }
+                achievement.update();
             }
-            achievement.update();
+
         }
     }
     @SuppressWarnings("unused")
@@ -30,7 +33,9 @@ public class BATwinsMainMenuPatch {
     public static class renderPatch{
         @SpirePostfixPatch
         public static void postfixPatch(MainMenuScreen _instance,SpriteBatch sb){
-            achievement.render(sb);
+            if(ModHelper.ENABLE_DLC){
+                achievement.render(sb);
+            }
         }
     }
 
