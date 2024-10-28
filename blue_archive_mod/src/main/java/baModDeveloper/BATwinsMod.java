@@ -132,6 +132,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 //            throw new RuntimeException(e);
             e.printStackTrace();
         }
+        ModHelper.isEnableDlc();
     }
 
     @Override
