@@ -324,8 +324,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsFoldingShield(), RelicType.SHARED);
         BaseMod.addRelicToCustomPool(new BATwinsHeadband(), Enums.BATWINS_MOMOI_CARD);
         BaseMod.addRelicToCustomPool(new BATwinsSpecialAmmunition(), Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelicToCustomPool(new BATwinsSwordOfLight(), Enums.BATWINS_MOMOI_CARD);
-        BaseMod.addRelicToCustomPool(new BATwinsNekoHowitzer(), Enums.BATWINS_MOMOI_CARD);
+        BaseMod.addRelic(new BATwinsSwordOfLight(), RelicType.SHARED);
+        BaseMod.addRelic(new BATwinsNekoHowitzer(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsFitnessRing(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsBroom(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsMaidAttire(), RelicType.SHARED);
