@@ -45,7 +45,7 @@ public class ModelController {
             instance.transform.rotate(1, 0, 0, 34);
             instance.transform.scale(SCALE, SCALE, SCALE);
             for (int i = 0; i < instance.materials.size; i++) {
-                instance.materials.get(i).set(ColorAttribute.createDiffuse(Color.WHITE));
+                instance.materials.get(i).set(ColorAttribute.createDiffuse(Color.WHITE.cpy()));
             }
 
             this.StandAnima = StandAnima;
