@@ -4,6 +4,7 @@ import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.ui.panels.BATwinsCharacterSelectScreen;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -29,7 +30,7 @@ public class BATwinsCharacterSelectScreenPatch {
 
     @SpirePatch(clz = CharacterSelectScreen.class, method = "render")
     public static class renderPatch {
-        @SpirePostfixPatch
+        @SpireInsertPatch(rloc = 78)
         public static void renderPatch(CharacterSelectScreen _instance, SpriteBatch sb) {
             if (isBATwinsSelected()) {
                 BATwinsCharacterSelectScreen.getInstance().render(sb);
