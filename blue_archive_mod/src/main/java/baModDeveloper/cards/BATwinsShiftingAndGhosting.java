@@ -1,10 +1,10 @@
 package baModDeveloper.cards;
 
-import baModDeveloper.action.BATwinsExchangeDrawPailAction;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.helpers.ModHelper;
 import baModDeveloper.ui.panels.BATwinsEnergyPanel;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -25,10 +25,13 @@ public class BATwinsShiftingAndGhosting extends BATwinsModCustomCard {
 
     public BATwinsShiftingAndGhosting() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseBlock = 14;
+        this.baseBlock = 12;
         this.block = this.baseBlock;
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
+        BATwinsModCustomCard card=new BATwinsExchange();
+        card.conversionColor(false);
+        this.cardsToPreview=card;
     }
 
     @Override
@@ -39,16 +42,24 @@ public class BATwinsShiftingAndGhosting extends BATwinsModCustomCard {
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, this.block));
-        addToBot(new BATwinsExchangeDrawPailAction(this.magicNumber));
-
+//        addToBot(new BATwinsExchangeDrawPailAction(this.magicNumber));
+        addToBot(new MakeTempCardInHandAction(this.cardsToPreview,this.magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             this.upgradeName();
-            this.upgradeBlock(4);
+            this.upgradeBlock(3);
 //            this.upgradeMagicNumber(1);
+        }
+    }
+
+    @Override
+    public void conversionColor(boolean flash) {
+        super.conversionColor(flash);
+        if(this.cardsToPreview instanceof BATwinsModCustomCard){
+            ((BATwinsModCustomCard) this.cardsToPreview).conversionColor(false);
         }
     }
 }
