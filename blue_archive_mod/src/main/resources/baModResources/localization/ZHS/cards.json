@@ -366,7 +366,7 @@
 	},
 	"BATwinsMod:ShiftingAndGhosting":{
 		"NAME":"移形换影",
-		"DESCRIPTION":"获得 !B! 点 格挡 ， batwinsmod:交换 抽牌堆 !M! 张牌。"
+		"DESCRIPTION":"获得 !B! 点 格挡 ，将 !M! 张 *交换 加入手牌。"
 	},
 	"BATwinsMod:CheckTheStrategy":{
 		"NAME":"查询攻略书",
@@ -514,6 +514,7 @@
 	},
 	"BATwinsMod:MultipleShadows": {
 		"NAME": "占据先机",
-		"DESCRIPTION": "获得 !B! 点 格挡 ， 格挡 在下 !M! 个回合不会消失 。 NL 消耗 。"
+		"DESCRIPTION": " 虚无 。 NL 抽到时获得 !M! 层 残影 。 NL 打出时保留 手牌 1回合。",
+		"UPGRADE_DESCRIPTION": "抽到时获得 !M! 层 残影 。 NL 打出时保留 手牌 1回合。"
 	}
 }

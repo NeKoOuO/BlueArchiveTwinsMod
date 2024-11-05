@@ -366,7 +366,7 @@
 	},
 	"BATwinsMod:ShiftingAndGhosting": {
 		"NAME": "Shape-Shifting",
-		"DESCRIPTION": "Gain !B! Block, batwinsmod:Exchange !M! cards from your draw pile."
+		"DESCRIPTION": "Gain !B! Block and add !M! *Exchange to your hand."
 	},
 	"BATwinsMod:CheckTheStrategy": {
 		"NAME": "Search Strategy Guide",
@@ -514,6 +514,7 @@
 	},
 	"BATwinsMod:MultipleShadows": {
 		"NAME": "Seize the Initiative",
-		"DESCRIPTION": "Gain !B! Block. Block is not removed at the start of your next !M! turns. NL Exhaust "
+		"DESCRIPTION": " Ethereal . NL When drawn, gain !M! Blur . NL When played, retain your hand for 1 turn.",
+		"UPGRADE_DESCRIPTION": "When drawn, gain !M! Blur . NL When played, retain your hand for 1 turn."
 	}
 }

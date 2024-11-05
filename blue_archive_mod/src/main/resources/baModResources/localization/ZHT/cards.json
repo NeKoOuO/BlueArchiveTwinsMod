@@ -366,7 +366,7 @@
     },
     "BATwinsMod:ShiftingAndGhosting": {
         "NAME": "移形換影",
-        "DESCRIPTION": "獲得 !B! 點 格擋 ， batwinsmod:交換 抽牌堆 !M! 張牌。"
+        "DESCRIPTION": "獲得 !B! 點 格擋 ，將 !M! 張 *交換 加入手牌。"
     },
     "BATwinsMod:CheckTheStrategy": {
         "NAME": "查詢攻略書",
@@ -514,6 +514,7 @@
     },
     "BATwinsMod:MultipleShadows": {
         "NAME": "佔據先機",
-        "DESCRIPTION": "獲得 !B! 點 格擋 ， 格擋 在下 !M! 個回合不會消失 。 NL 消耗 。"
+        "DESCRIPTION": "虛無。 NL 抽到時獲得 !M! 層 殘影 。 NL 打出時保留手牌 1回合。",
+        "UPGRADE_DESCRIPTION": "抽到時獲得 !M! 層 殘影 。 NL 打出時保留手牌 1回合。"
     }
 }

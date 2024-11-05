@@ -366,7 +366,7 @@
 	},
 	"BATwinsMod:ShiftingAndGhosting":{
 		"NAME":"影の入れ替わり",
-		"DESCRIPTION":" !B! ブロック を得る，山札の !M! 枚 を batwinsmod:チェンジ する。"
+		"DESCRIPTION":" !B! 点のブロックを得て、 !M! 枚の *チェンジ を手札に加える。"
 	},
 	"BATwinsMod:CheckTheStrategy":{
 		"NAME":"攻略本を参考",
@@ -514,6 +514,7 @@
 	},
 	"BATwinsMod:MultipleShadows": {
 		"NAME": "先手を取る",
-		"DESCRIPTION": "!B! ブロック を得る。 NL 次のターン開始時にブロックを失わない。 NL 廃棄 "
+		"DESCRIPTION": " エーテリアル 。 NL 引いた時、!M! 層の残影を得る。 NL 使用すると手札を1ターン保持する。",
+		"UPGRADE_DESCRIPTION": "引いた時、!M! 層の残影を得る。 NL 使用すると手札を1ターン保持する。"
 	}
 }
