@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.potions.PotionSlot;
+import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.vfx.ObtainKeyEffect;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
@@ -132,9 +133,11 @@ public class BATwinsSoraShopItem {
                 break;
             case INITIALRELIC:
                 ArrayList<String> relics=AbstractDungeon.player.getStartingRelics();
-                String relicId=relics.get(relics.size()-1);
-                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(((float) Settings.WIDTH / 2), ((float) Settings.HEIGHT / 2),RelicLibrary.getRelic(relicId));
-                break;
+                if(!relics.isEmpty()){
+                    String relicId=relics.get(0);
+                    AbstractDungeon.getCurrRoom().spawnRelicAndObtain(((float) Settings.WIDTH / 2), ((float) Settings.HEIGHT / 2),RelicLibrary.getRelic(relicId));
+                }
+               break;
             case POTIONSLOT:
                 AbstractDungeon.player.potionSlots += 1;
                 AbstractDungeon.player.potions.add(new PotionSlot(AbstractDungeon.player.potionSlots - 1));
@@ -276,8 +279,11 @@ public class BATwinsSoraShopItem {
                 return TextureLoader.getTexture(ModHelper.makeImgPath("UI/soraShop","challengeCoupons"));
             case INITIALRELIC:
                 ArrayList<String> relics=AbstractDungeon.player.getStartingRelics();
-                String relicId=relics.get(relics.size()-1);
-                return RelicLibrary.getRelic(relicId).img;
+                if(!relics.isEmpty()){
+                    String relicId=relics.get(0);
+                    return RelicLibrary.getRelic(relicId).img;
+                }
+                return RelicLibrary.getRelic(BurningBlood.ID).img;
             case POTIONSLOT:
                 return ImageMaster.POTION_T_CONTAINER;
             case TELEPHONE:
