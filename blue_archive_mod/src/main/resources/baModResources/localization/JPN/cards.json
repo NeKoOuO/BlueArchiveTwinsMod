@@ -77,8 +77,8 @@
     },
     "BATwinsMod:GameLaunch":{
         "NAME":"ゲームスタート",
-        "DESCRIPTION":" batwinsmod:共有 , 天賦 。 NL カード !M! 枚を引く、ランダムな batwinsmod:モモイカード と batwinsmod:ミドリカード の１枚に、このターン、エナジー消費しない. NL 廃棄 ",
-        "UPGRADE_DESCRIPTION":" batwinsmod:共有 、 天賦 。 NL !M! 枚カードを引く、ランダムな２枚カードに、このターン、エナジー消費しない。 NL 廃棄 "
+        "DESCRIPTION":" batwinsmod:共有 , 天賦 。 NL カード !M! 枚を引く、 batwinsmod:モモイカード エナジー消費しない. NL 廃棄 ",
+        "UPGRADE_DESCRIPTION":" batwinsmod:共有 、 天賦 。 NL !M! 枚カードを引く、 batwinsmod:モモイカード エナジー消費しない NL 廃棄 "
     },
     "BATwinsMod:InspirationEmergence":{
         "NAME":"インスピレーション",

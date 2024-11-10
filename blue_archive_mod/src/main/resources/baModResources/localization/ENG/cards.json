@@ -77,8 +77,8 @@
 	},
 	"BATwinsMod:GameLaunch": {
 		"NAME": "Game Launch",
-		"DESCRIPTION": " batwinsmod:Share , innate . NL Draw !M! cards,random 1 batwinsmod:MomoiCard and random 1 batwinsmod:MidoriCard drawn set cost 0 this turn. NL exhaust ",
-		"UPGRADE_DESCRIPTION": " batwinsmod:Share , innate . NL Draw !M! cards,2 random cards drawn set cost 0 this turn. NL exhaust "
+		"DESCRIPTION": " batwinsmod:Share , innate . NL Draw !M! cards, batwinsmod:MomoiCard drawn set cost 0 this turn. NL exhaust ",
+		"UPGRADE_DESCRIPTION": " batwinsmod:Share , innate . NL Draw !M! cards, batwinsmod:MomoiCard drawn set cost 0 this turn. NL exhaust "
 	},
 	"BATwinsMod:InspirationEmergence": {
 		"NAME": "Inspiration Emerges",

@@ -77,8 +77,8 @@
     },
     "BATwinsMod:GameLaunch":{
         "NAME":"游戏启动",
-        "DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的牌中随机1张 batwinsmod:[#fa62aa]桃牌 和随机1张 batwinsmod:[#6fcf41]绿牌 本回合耗能为0。 NL 消耗 。",
-        "UPGRADE_DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的牌中随机2张牌本回合耗能为0。 NL 消耗 。"
+        "DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的 batwinsmod:[#fa62aa]桃牌 本回合耗能为0。 NL 消耗 。",
+        "UPGRADE_DESCRIPTION":" batwinsmod:共有 , 固有 。 NL 抽 !M! 张牌，抽到的 batwinsmod:[#fa62aa]桃牌 本回合耗能为0。 NL 消耗 。"
     },
     "BATwinsMod:InspirationEmergence":{
         "NAME":"灵感涌现",
@@ -498,8 +498,8 @@
 	},
 	"BATwinsMod:TacticalRelay":{
 		"NAME": "战术接力",
-		"DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:[#fa62aa]桃牌 。",
-		"UPGRADE_DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:[#fa62aa]桃牌 。"
+		"DESCRIPTION": "获得 [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:[#fa62aa]桃牌 。",
+		"UPGRADE_DESCRIPTION": "获得 [batwinsmod:midoriorbicon] [batwinsmod:midoriorbicon] , batwinsmod:交换 至多2张手牌 NL 本回合不能再打出 batwinsmod:[#fa62aa]桃牌 。"
 	},
 	"BATwinsMod:Gorgeous": {
 		"NAME": "华丽散场",

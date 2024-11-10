@@ -42,6 +42,6 @@ public class BATwinsEquipmentUpgradeAction extends SelectCardsInHandAction {
     };
 
     public BATwinsEquipmentUpgradeAction(int amount) {
-        super(amount, uiStrings.TEXT[6], false, false, cardFilter, callback);
+        super(amount, uiStrings.TEXT[6], true, true, cardFilter, callback);
     }
 }

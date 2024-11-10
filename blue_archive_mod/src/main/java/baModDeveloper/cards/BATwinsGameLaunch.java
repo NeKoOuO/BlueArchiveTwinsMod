@@ -46,13 +46,13 @@ public class BATwinsGameLaunch extends BATwinsModCustomCard {
     @Override
     public void useMOMOI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 //        CardCrawlGame.sound.play(ModHelper.makePath("eateregg1"));
-        addToBot(new DrawCardAction(this.magicNumber, new BATwinsGameLaunchAction(this.upgraded)));
+        addToBot(new DrawCardAction(this.magicNumber, new BATwinsGameLaunchAction(this.color)));
 
     }
 
     @Override
     public void useMIDORI(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 //        CardCrawlGame.sound.play(ModHelper.makePath("eateregg2"));
-        addToBot(new DrawCardAction(this.magicNumber, new BATwinsGameLaunchAction(this.upgraded)));
+        addToBot(new DrawCardAction(this.magicNumber, new BATwinsGameLaunchAction(this.color)));
     }
 }

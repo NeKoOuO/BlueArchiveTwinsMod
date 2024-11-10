@@ -28,10 +28,9 @@ public class BATwinsCoverCharge extends BATwinsModCustomCard {
 
     public BATwinsCoverCharge() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 5;
+        this.baseDamage = 6;
         this.damage = this.baseDamage;
-        this.block = 5;
-        this.baseBlock = 5;
+        this.block = this.baseBlock = 6;
     }
 
     @Override

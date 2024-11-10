@@ -11,7 +11,7 @@ public class BATwinsFitnessRing extends CustomRelic {
     public static final String ID = ModHelper.makePath("FitnessRing");
     private static final Texture texture = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "FitnessRing"));
     private static final Texture outline = TextureLoader.getTexture(ModHelper.makeImgPath("relic", "FitnessRing_p"));
-    private static final RelicTier type = RelicTier.UNCOMMON;
+    private static final RelicTier type = RelicTier.RARE;
     private int count = 0;
 
     public BATwinsFitnessRing() {

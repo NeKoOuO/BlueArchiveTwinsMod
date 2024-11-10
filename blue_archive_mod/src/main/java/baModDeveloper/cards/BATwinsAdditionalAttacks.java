@@ -29,7 +29,7 @@ public class BATwinsAdditionalAttacks extends BATwinsModCustomCard {
 
     public BATwinsAdditionalAttacks() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseDamage = 5;
+        this.baseDamage = 4;
         this.damage = this.baseDamage;
     }
 

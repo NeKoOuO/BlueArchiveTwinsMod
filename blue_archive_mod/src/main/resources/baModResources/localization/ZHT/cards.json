@@ -77,8 +77,8 @@
     },
     "BATwinsMod:GameLaunch": {
         "NAME": "遊戲啟動",
-        "DESCRIPTION": " batwinsmod:共有 , 固有 。 NL 抽 !M! 張牌，抽到的牌中隨機1張 batwinsmod:[#fa62aa]桃牌 和隨機1張 batwinsmod:[#6fcf41]綠牌 本回合耗能為0. NL 消耗 ",
-        "UPGRADE_DESCRIPTION": " batwinsmod:共有 , 固有 。 NL 抽 !M! 張牌，抽到的牌中隨機2張牌本回合耗能為0. NL 消耗 "
+        "DESCRIPTION": " batwinsmod:共有 , 固有 。 NL 抽 !M! 張牌，抽到的 batwinsmod:[#fa62aa]桃牌 本回合耗能為0. NL 消耗 ",
+        "UPGRADE_DESCRIPTION": " batwinsmod:共有 , 固有 。 NL 抽到的 batwinsmod:[#fa62aa]桃牌 本回合耗能為0. NL 消耗 "
     },
     "BATwinsMod:InspirationEmergence": {
         "NAME": "靈感湧現",

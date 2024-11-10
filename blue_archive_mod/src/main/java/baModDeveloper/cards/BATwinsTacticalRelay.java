@@ -28,7 +28,7 @@ public class BATwinsTacticalRelay extends BATwinsModCustomCard {
 
     public BATwinsTacticalRelay() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber = this.magicNumber = 2;
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     @Override

@@ -24,7 +24,7 @@ public class BATwinsEquipmentUpgrade extends BATwinsModCustomCard {
 
     public BATwinsEquipmentUpgrade() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET, ENERGYTYPE);
-        this.baseMagicNumber = 3;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
         this.exhaust = true;
     }
