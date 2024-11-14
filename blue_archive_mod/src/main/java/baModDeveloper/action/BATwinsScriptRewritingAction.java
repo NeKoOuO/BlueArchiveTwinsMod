@@ -26,7 +26,7 @@ public class BATwinsScriptRewritingAction extends AbstractGameAction {
     public void update() {
         if (this.color == BATwinsCharacter.Enums.BATWINS_MOMOI_CARD) {
             if (this.target.hasPower(PoisonPower.POWER_ID)) {
-                addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new BATwinsBurnPower(this.target, AbstractDungeon.player, this.target.getPower(BATwinsBurnPower.POWER_ID).amount*this.amount)));
+                addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new BATwinsBurnPower(this.target, AbstractDungeon.player, this.target.getPower(PoisonPower.POWER_ID).amount*this.amount)));
             }
         } else {
             if (this.target.hasPower(BATwinsBurnPower.POWER_ID)) {
