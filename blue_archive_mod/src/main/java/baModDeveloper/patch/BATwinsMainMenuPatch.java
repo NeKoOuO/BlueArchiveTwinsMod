@@ -8,8 +8,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 
 public class BATwinsMainMenuPatch {
@@ -43,6 +45,7 @@ public class BATwinsMainMenuPatch {
     //成就弹框
     public static class BATwinsSpecialAchievement{
         private static Texture bgImg= TextureLoader.getTexture(ModHelper.makeImgPath("UI","achievement"));
+        private static UIStrings achieveStrings= CardCrawlGame.languagePack.getUIString(ModHelper.makePath("Achieve"));
         private float currentX,currentY;
         private boolean show;
         private float showX,showY;
@@ -93,9 +96,9 @@ public class BATwinsMainMenuPatch {
         public void render(SpriteBatch sb){
             sb.setColor(Color.WHITE.cpy());
             sb.draw(bgImg, Settings.WIDTH-bgImg.getWidth(),this.currentY,bgImg.getWidth(),bgImg.getHeight());
-            FontHelper.renderFontLeft(sb,FontHelper.topPanelInfoFont,"游戏开发部集结",
+            FontHelper.renderFontLeft(sb,FontHelper.topPanelInfoFont,achieveStrings.TEXT[1],
                     this.currentX+bgImg.getWidth()*0.25F,this.currentY+bgImg.getHeight()*0.7F,Color.WHITE.cpy());
-            FontHelper.renderFontLeft(sb,FontHelper.cardDescFont_L,"DLC已开启",
+            FontHelper.renderFontLeft(sb,FontHelper.cardDescFont_L,achieveStrings.TEXT[0],
                     this.currentX+bgImg.getWidth()*0.25F,this.currentY+bgImg.getHeight()*0.3F,Color.WHITE.cpy());
         }
 
