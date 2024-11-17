@@ -285,7 +285,7 @@ public class BATwinsCharacter extends CustomPlayer {
 
     @Override
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo(characterStrings.NAMES[0], characterStrings.TEXT[0], 75, 75, 0, 99, 5, this,
+        return new CharSelectInfo(characterStrings.NAMES[0], characterStrings.TEXT[0], 70, 70, 0, 99, 5, this,
                 this.getStartingRelics(), this.getStartingDeck(), false);
     }
 
