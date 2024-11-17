@@ -166,5 +166,11 @@
 			"soraMsg2",
 			"soraMsg3"
 		]
+	},
+	"BATwinsMod:Achieve": {
+		"TEXT": [
+			"Game Development Department",
+			"Gather all members of the Game Development Department"
+		]
 	}
 }

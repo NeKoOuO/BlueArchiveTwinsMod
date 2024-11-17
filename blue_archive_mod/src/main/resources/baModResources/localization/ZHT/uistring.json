@@ -166,5 +166,11 @@
 			"soraMsg2",
 			"soraMsg3"
 		]
+	},
+	"BATwinsMod:Achieve": {
+		"TEXT": [
+			"遊戲開發部",
+			"集齊遊戲開發部的成員"
+		]
 	}
 }

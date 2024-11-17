@@ -96,15 +96,16 @@ public class BATwinsMainMenuPatch {
         public void render(SpriteBatch sb){
             sb.setColor(Color.WHITE.cpy());
             sb.draw(bgImg, Settings.WIDTH-bgImg.getWidth(),this.currentY,bgImg.getWidth(),bgImg.getHeight());
-            FontHelper.renderFontLeft(sb,FontHelper.topPanelInfoFont,achieveStrings.TEXT[1],
+            FontHelper.renderFontLeft(sb,FontHelper.topPanelInfoFont,achieveStrings.TEXT[0],
                     this.currentX+bgImg.getWidth()*0.25F,this.currentY+bgImg.getHeight()*0.7F,Color.WHITE.cpy());
-            FontHelper.renderFontLeft(sb,FontHelper.cardDescFont_L,achieveStrings.TEXT[0],
+            FontHelper.renderFontLeft(sb,FontHelper.cardDescFont_L,achieveStrings.TEXT[1],
                     this.currentX+bgImg.getWidth()*0.25F,this.currentY+bgImg.getHeight()*0.3F,Color.WHITE.cpy());
         }
 
         public void show(){
             this.duration=2.0F;
             this.show=true;
+            CardCrawlGame.sound.play(ModHelper.makePath("achievement"));
         }
         public void delayShow(float duration){
             this.waitDuration =duration;

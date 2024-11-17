@@ -167,5 +167,11 @@
 			"soraMsg2",
 			"soraMsg3"
 		]
+	},
+	"BATwinsMod:Achieve": {
+		"TEXT": [
+			"ゲーム開発部",
+			"ゲーム開発部のメンバーを全員集める"
+		]
 	}
 }
