@@ -14,7 +14,7 @@ public class BATwinsExcitation extends CustomCard {
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final String IMG_PATH = ModHelper.makeImgPath("cards", "Excitation");
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final CardType TYPE = CardType.POWER;
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardTarget TARGET = CardTarget.NONE;

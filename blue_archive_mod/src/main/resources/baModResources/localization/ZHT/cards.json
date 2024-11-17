@@ -494,7 +494,7 @@
     },
     "BATwinsMod:Excitation": {
         "NAME": "激勵",
-        "DESCRIPTION": "不能被升級 NL 從所有角色的能力牌中選擇1張打出。"
+        "DESCRIPTION": "不能被升級 NL 從5张所有角色的能力牌中選擇1張打出。"
     },
     "BATwinsMod:TacticalRelay": {
         "NAME": "戰術接力",

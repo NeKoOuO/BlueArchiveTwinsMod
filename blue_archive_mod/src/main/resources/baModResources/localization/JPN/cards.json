@@ -494,7 +494,7 @@
 	},
 	"BATwinsMod:Excitation":{
 		"NAME":"励まし",
-		"DESCRIPTION":"アップグレードができない NL すべてのキャラクターの中でパワーカード1枚を選び、プレイする。"
+		"DESCRIPTION":"アップグレードができない NL 5 すべてのキャラクターの中でパワーカード1枚を選び、プレイする。"
 	},
 	"BATwinsMod:TacticalRelay":{
 		"NAME": "戦術リレー",
