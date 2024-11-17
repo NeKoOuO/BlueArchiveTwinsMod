@@ -16,11 +16,13 @@ import baModDeveloper.potion.BATwinsAcceleratePotion;
 import baModDeveloper.potion.BATwinsBurnPotion;
 import baModDeveloper.potion.BATwinsConnectPotion;
 import baModDeveloper.potion.BATwinsStaminaPotion;
+import baModDeveloper.power.BATwinsExperiencePower;
 import baModDeveloper.relic.*;
 import baModDeveloper.ui.panels.icons.BATwinsMidoriEnergyOrbSmall;
 import baModDeveloper.ui.panels.icons.BATwinsMomoiEnergyOrbSmall;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
+import basemod.ModMinMaxSlider;
 import basemod.ModPanel;
 import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
@@ -100,6 +102,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public static boolean Tutorial = true;
     public static boolean EnableModelLighting = false;
     public static int SelectedBg = 0;
+    public static int ExperienceMax = 10;
 
     public static SaveHelper saveHelper;
 
@@ -127,7 +130,8 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             Tutorial = config.getBool(ModHelper.makePath("Tutorial"));
             SelectedSkin = config.getInt(ModHelper.makePath("SelectedSkin"));
             EnableModelLighting = config.getBool(ModHelper.makePath("EnableModelLighting"));
-            SelectedBg= config.getInt(ModHelper.makePath("SelectedBg"));
+            SelectedBg = config.getInt(ModHelper.makePath("SelectedBg"));
+            ExperienceMax = config.getInt(ModHelper.makePath("ExperienceMax"));
 //            Settings.isDebug=true;
         } catch (Exception e) {
 //            throw new RuntimeException(e);
@@ -453,6 +457,17 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
             }
         });
         settingPanel.addUIElement(enableModelLighting);
+
+        ModMinMaxSlider slider = new ModMinMaxSlider("Max Experience", 650.0F, 250.0F, 1, 30, ExperienceMax, "%.0f", settingPanel, modMinMaxSlider -> {
+            spireConfig.setInt(ModHelper.makePath("ExperienceMax"), BATwinsExperiencePower.ORIGINMAX=ExperienceMax = (int) modMinMaxSlider.getValue());
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+            try {
+                spireConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        settingPanel.addUIElement(slider);
 
         Texture badgeTexture = ImageMaster.loadImage(ModHelper.makeImgPath("UI", "configButton"));
         BaseMod.registerModBadge(badgeTexture, "BATwinsMod", "0v0", "config", settingPanel);
