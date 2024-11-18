@@ -176,5 +176,11 @@
 			"momoi(maid)",
 			"midori(maid)"
 		]
+	},
+	"BATwinsMod:Achieve": {
+		"TEXT": [
+			"Game Development Department",
+			"Gather all members of the Game Development Department"
+		]
 	}
 }

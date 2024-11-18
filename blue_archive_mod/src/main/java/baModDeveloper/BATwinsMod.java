@@ -137,6 +137,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
 //            throw new RuntimeException(e);
             e.printStackTrace();
         }
+        ModHelper.isEnableDlc();
     }
 
     @Override
@@ -366,6 +367,7 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addAudio(ModHelper.makePath("soraMsg1"), ModHelper.makeAudioPath("soraMsg1"));
         BaseMod.addAudio(ModHelper.makePath("soraMsg2"), ModHelper.makeAudioPath("soraMsg2"));
         BaseMod.addAudio(ModHelper.makePath("soraMsg3"), ModHelper.makeAudioPath("soraMsg3"));
+        BaseMod.addAudio(ModHelper.makePath("achievement"),ModHelper.makeAudioPath("desktop_toast_default"));
 
     }
 

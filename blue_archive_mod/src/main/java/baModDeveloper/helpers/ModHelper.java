@@ -4,6 +4,7 @@ import baModDeveloper.BATwinsMod;
 import baModDeveloper.character.BATwinsCharacter;
 import baModDeveloper.localization.SoraItemStrings;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -104,4 +105,11 @@ public class ModHelper {
     }
 
     public static Map<String, SoraItemStrings> soraItemStringsMap=new HashMap<>();
+
+    public static boolean ENABLE_DLC=false;
+
+    public static boolean isEnableDlc(){
+        ENABLE_DLC=Loader.isModLoaded("BlueArchive_yuzu_Mod")&&Loader.isModLoaded("BlueArchive_Aris");
+        return ENABLE_DLC;
+    }
 }
