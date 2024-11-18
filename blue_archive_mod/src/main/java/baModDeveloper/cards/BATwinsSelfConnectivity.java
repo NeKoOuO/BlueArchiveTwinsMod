@@ -141,6 +141,7 @@ public class BATwinsSelfConnectivity extends BATwinsModCustomCard {
                 this.cardToCopy = preCard.get();
                 this.cardToCopy.applyPowers();
                 this.target=this.cardToCopy.target;
+                this.type=this.cardToCopy.type;
 
             }
         }
