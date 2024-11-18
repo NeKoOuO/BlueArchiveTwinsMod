@@ -40,7 +40,7 @@ public class BATwinsExperiencePanel extends AbstractPanel {
 
         this.expAmount = 0;
         this.expLevel = 0;
-        this.MaxExp = 10;
+        this.MaxExp = BATwinsExperiencePower.ORIGINMAX;
 
         this.color = Color.WHITE.cpy();
         this.color.a = 1.0F;

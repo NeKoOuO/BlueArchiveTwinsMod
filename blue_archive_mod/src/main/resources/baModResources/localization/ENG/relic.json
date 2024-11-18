@@ -218,7 +218,9 @@
 		"NAME": "File Bag",
 		"FLAVOR": "An essential part of the game.",
 		"DESCRIPTIONS": [
-			"At the start of combat, choose 1 card from #b10 random cards to add to your draw pile. The next time it is played, it costs 0 energy"
+			"Card rewards can be converted into recruitment points, with each Common/UnCommon/Rare card adding #b5 / #b10 / #b30 points. NL At #b200 points, you may choose 1 Rare card to add to your deck.",
+			"Cumulative Recruitment Points",
+			"Choose 1 card"
 		]
 	}
 }

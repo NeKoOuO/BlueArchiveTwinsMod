@@ -28,7 +28,7 @@ public class BATwinsExperiencePower extends AbstractPower {
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final String IMG_84 = ModHelper.makeImgPath("power", "Experience84");
     private static final String IMG_32 = ModHelper.makeImgPath("power", "Experience32");
-    public static int ORIGINMAX=10;
+    public static int ORIGINMAX=BATwinsMod.ExperienceMax;
     public static int MAX = ORIGINMAX;
     private static TextureAtlas.AtlasRegion REGION128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_84), 0, 0, 84, 84);
     private static TextureAtlas.AtlasRegion REGION48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(IMG_32), 0, 0, 32, 32);
