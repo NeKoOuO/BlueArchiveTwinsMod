@@ -480,8 +480,10 @@ public class BATwinsCharacter extends CustomPlayer {
     }
 
     private void playReactionAnima() {
-        character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.REACTION);
-        character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.REACTION);
+        if(this.character3DHelper!=null){
+            character3DHelper.setMomoiAnimation(Character3DHelper.MomoiActionList.REACTION);
+            character3DHelper.setMidoriAnimation(Character3DHelper.MidoriActionList.REACTION);
+        }
     }
 
     @Override
