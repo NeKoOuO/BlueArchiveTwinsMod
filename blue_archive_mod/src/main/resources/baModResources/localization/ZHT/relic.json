@@ -222,5 +222,12 @@
 			"累計招募點數",
 			"選擇1張牌"
 		]
+	},
+	"BATwinsMod:BirthdayCake": {
+		"NAME": "生日蛋糕",
+		"FLAVOR": "就是今天",
+		"DESCRIPTIONS": [
+			"許個願吧。"
+		]
 	}
 }

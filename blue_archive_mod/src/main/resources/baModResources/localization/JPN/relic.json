@@ -222,5 +222,12 @@
 			"累計招集ポイント",
 			"カードを1枚選択"
 		]
+	},
+	"BATwinsMod:BirthdayCake": {
+		"NAME": "バースデーケーキ",
+		"FLAVOR": "今日はその日。",
+		"DESCRIPTIONS": [
+			"願いをかけて。"
+		]
 	}
 }
