@@ -35,7 +35,7 @@ public class BATwinsShopScreenPatch {
     public static class purchaseCardPatch {
         @SpireInsertPatch(locator = Locator.class)
         public static void insertPatch(ShopScreen _instance, AbstractCard hoveredCard, @ByRef SpeechTextEffect[] ___dialogTextEffect) {
-            if (!filedPatch.GIVEN_GIFT.get(_instance)) {
+            if (ModHelper.BIRTH_DAY&&!filedPatch.GIVEN_GIFT.get(_instance)) {
                 AbstractDungeon.topLevelEffectsQueue.add(new HappyBirthDaySpeedEffect(_instance, hoveredCard, ___dialogTextEffect));
             }
 

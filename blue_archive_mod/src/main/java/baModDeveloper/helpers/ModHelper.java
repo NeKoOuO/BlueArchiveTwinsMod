@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.MonthDay;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -114,6 +115,6 @@ public class ModHelper {
     }
 
     //todo:修改回12月8日开启
-//    public static boolean BIRTH_DAY= MonthDay.now().equals(MonthDay.of(12,8));
-    public static boolean BIRTH_DAY=true;
+    public static boolean BIRTH_DAY= MonthDay.now().equals(MonthDay.of(12,8));
+//    public static boolean BIRTH_DAY=true;
 }
