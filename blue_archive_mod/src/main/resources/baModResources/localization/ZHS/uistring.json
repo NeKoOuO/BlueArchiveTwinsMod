@@ -182,5 +182,16 @@
 			"游戏开发部",
 			"集齐游戏开发部的成员"
 		]
+	},
+	"BATwinsMod:NeowBirthDay": {
+		"TEXT": [
+			"~生日……~ NL ~快乐……~",
+			"~许个愿……~"
+		]
+	},
+	"BATwinsMod:ShopBirthDay":{
+		"TEXT": [
+			"既然是 #r生日 NL 给你便宜点"
+		]
 	}
 }
