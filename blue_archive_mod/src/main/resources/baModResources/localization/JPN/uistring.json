@@ -183,5 +183,21 @@
 			"ゲーム開発部",
 			"ゲーム開発部のメンバーを全員集める"
 		]
+	},
+	"BATwinsMod:NeowBirthDay": {
+		"TEXT": [
+			"~誕生日……~ NL ~おめでとう……~",
+			"~願いをかけて……~"
+		]
+	},
+	"BATwinsMod:ShopBirthDay": {
+		"TEXT": [
+			"今日は #r誕生日 NL だから少し値引きしてあげる"
+		]
+	},
+	"BATwinsMod:EliteBirthDay": {
+		"TEXT": [
+			"これは誕生日プレゼントだ…………"
+		]
 	}
 }

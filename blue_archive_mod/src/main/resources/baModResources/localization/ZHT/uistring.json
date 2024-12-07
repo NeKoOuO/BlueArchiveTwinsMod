@@ -182,5 +182,21 @@
 			"遊戲開發部",
 			"集齊遊戲開發部的成員"
 		]
+	},
+	"BATwinsMod:NeowBirthDay": {
+		"TEXT": [
+			"~生日……~ NL ~快樂……~",
+			"~許個願……~"
+		]
+	},
+	"BATwinsMod:ShopBirthDay": {
+		"TEXT": [
+			"既然是 #r生日 NL 給你便宜點"
+		]
+	},
+	"BATwinsMod:EliteBirthDay": {
+		"TEXT": [
+			"這是生日禮物…………"
+		]
 	}
 }

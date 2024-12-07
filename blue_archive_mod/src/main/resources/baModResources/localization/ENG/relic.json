@@ -222,5 +222,12 @@
 			"Cumulative Recruitment Points",
 			"Choose 1 card"
 		]
+	},
+	"BATwinsMod:BirthdayCake": {
+		"NAME": "Birthday Cake",
+		"FLAVOR": "It's today.",
+		"DESCRIPTIONS": [
+			"Make a wish."
+		]
 	}
 }

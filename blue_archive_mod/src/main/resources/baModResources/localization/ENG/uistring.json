@@ -182,5 +182,21 @@
 			"Game Development Department",
 			"Gather all members of the Game Development Department"
 		]
+	},
+	"BATwinsMod:NeowBirthDay": {
+		"TEXT": [
+			"~Birthday...~ NL ~Happy...~",
+			"~Make a wish...~"
+		]
+	},
+	"BATwinsMod:ShopBirthDay": {
+		"TEXT": [
+			"Since it's your #rbirthday NL I'll give you a discount"
+		]
+	},
+	"BATwinsMod:EliteBirthDay": {
+		"TEXT": [
+			"This is your birthday gift..."
+		]
 	}
 }
