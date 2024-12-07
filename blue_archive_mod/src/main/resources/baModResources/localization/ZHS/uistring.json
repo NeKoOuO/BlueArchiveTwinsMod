@@ -193,5 +193,10 @@
 		"TEXT": [
 			"既然是 #r生日 NL 给你便宜点"
 		]
+	},
+	"BATwinsMod:EliteBirthDay":{
+		"TEXT": [
+			"这是生日礼物…………"
+		]
 	}
 }

@@ -347,6 +347,10 @@ public class BATwinsMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addRelic(new BATwinsCrystalHaniwa(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsPackage(), RelicType.SHARED);
         BaseMod.addRelic(new BATwinsFileBag(), RelicType.SHARED);
+
+        if(ModHelper.BIRTH_DAY){
+            BaseMod.addRelicToCustomPool(new BATwinsBirthdayCake(),Enums.BATWINS_MOMOI_CARD);
+        }
     }
 
     @Override
