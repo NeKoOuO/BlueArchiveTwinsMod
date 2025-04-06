@@ -21,7 +21,7 @@
 		]
 	},
 	"BATwinsMod:ByProving":{
-		"NAME":"關卡通過證明",
+		"NAME":"關卡透過證明",
 		"FLAVOR":"一塊嶄新的獎章，上面寫著\n新手關卡通過證明！--%s。",
 		"DESCRIPTIONS":[
 			"打出 #b%s 時，對隨機敵人造成相同傷害。",
@@ -42,7 +42,7 @@
 		"NAME":"遊戲攻略書",
 		"FLAVOR":"上面說只要拖動手牌就可以將其打出！",
 		"DESCRIPTIONS":[
-			"替換 #y遊戲雜誌 。每回合開始時將 #b1 張附帶 #y虛無消耗 的 #y交換 加入手牌。"
+			"取代 #y遊戲雜誌 。每回合開始時將 #b1 張附帶 #y虛無消耗 的 #y交換 加入手牌。"
 		]
 	},
 	"BATwinsMod:FoldingShield":{
@@ -201,10 +201,10 @@
 		]
 	},
 	"BATwinsMod:Package": {
-		"NAME": "包裹（运送中）",
-		"FLAVOR": "相当重！！！",
+		"NAME": "包裹（運送中）",
+		"FLAVOR": "相當重！！！",
 		"DESCRIPTIONS": [
-			"战斗开始时，对所有敌人造成5点伤害。"
+			"戰鬥開始時，對所有敵人造成5點傷害。"
 		]
 	},
 	"BATwinsMod:CrystalHaniwa": {

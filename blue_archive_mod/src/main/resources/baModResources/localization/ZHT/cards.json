@@ -73,7 +73,7 @@
     },
     "BATwinsMod:AccurateBlocking": {
         "NAME": "精準格擋",
-        "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 若當前 格擋 小於選擇敵人的攻擊傷害，獲得 !B! 點 格擋 。 NL 在手牌沒有其他 batwinsmod:[#6fcf41]綠牌 時才能打出。"
+        "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 若目前 格擋 小於選擇敵人的攻擊傷害，獲得 !B! 點 格擋 。 NL 在手牌沒有其他 batwinsmod:[#6fcf41]綠牌 時才能打出。"
     },
     "BATwinsMod:GameLaunch": {
         "NAME": "遊戲啟動",
@@ -361,7 +361,7 @@
         "NAME": "蓄力",
         "DESCRIPTION": "手牌每有1張 batwinsmod:[#fa62aa]桃牌 ，對隨機敵人造成 !D! 點傷害。",
         "EXTENDED_DESCRIPTION": [
-            "(當前為%s)"
+            "(目前為%s)"
         ]
     },
     "BATwinsMod:ShiftingAndGhosting": {
@@ -494,7 +494,7 @@
     },
     "BATwinsMod:Excitation": {
         "NAME": "激勵",
-        "DESCRIPTION": "不能被升級 NL 從5张所有角色的能力牌中選擇1張打出。"
+        "DESCRIPTION": "不能被升級 NL 從5張所有角色的能力牌中選擇1張打出。"
     },
     "BATwinsMod:TacticalRelay": {
         "NAME": "戰術接力",

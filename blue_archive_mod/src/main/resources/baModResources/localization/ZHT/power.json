@@ -18,7 +18,7 @@
 			"詛咒牌",
 			"其他牌",
 			"沒有牌",
-			"當前上升"
+			"目前上升"
 		]
 	},
 	"BATwinsMod:ArtPolishingPower":{
@@ -71,7 +71,7 @@
 	"BATwinsMod:ExperiencePower":{
 		"NAME":"經驗值",
 		"DESCRIPTIONS":[
-			"打出 #r桃牌 或 #g綠牌 時，獲得等同於其 #y耗能 的經驗值。\n當前：LV #b",
+			"打出 #r桃牌 或 #g綠牌 時，獲得等同於其 #y耗能 的經驗值。\n目前：LV #b",
 			" （ #b",
 			" /",
 			"）\n卡牌的傷害和格擋增加等級數。",
